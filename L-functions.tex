@@ -1,0 +1,38 @@
+\subsection{Artin Representations and  \texorpdfstring{$\ell$}{TEXT}-adic Representations}
+
+\cite[Just trying]{BH1}
+
+The Birch-Swinnerton-Dyer conjecture classically provides a connection between the arithmetic of elliptic curves and their $L$-functions. In this prelimiary section, we explore the classical definition of $L$-functions attached to an elliptic curve and their twists, and we explore some of the relevant properties that we will use later on. To do so, we first need to explore the notion of an Artin representation and of an $\ell$-adic representation. 
+
+Throughout this section we fix a field $K$, which will either be a number field or a local field of characteristic $0$. We also fix an algebraic closure $\hat{K}$ of $K$ and we denote by $G_K$ the absolute galois group $\Gal(\bar{K}|K)$ of $K$. We recall that $G_K$ is a profinite group
+$$G_K=\varprojlim_{F}\Gal(F|K),$$
+where $F$ ranges over the finite Galois extensions of $K$ and therefore has a natural topology where a basis of open sets is given by $\Gal(\bar{K}|F)$ where $F$ is a finite extension of $K$.
+
+\begin{defn}
+    Let $K$ be a number field or a local field with characteristic $0$. An \textbf{Artin representation} $\rho$ over $K$ is a complex finite-dimensional vector space $V$ together with a homomorphism $\rho:G_K\to\GL(V)=\GL_n(\CC)$ such that there is some finite Galois extension $F/K$ with $\Gal(\bar{K}|F)\subseteq\ker\rho$. In other words, $\rho$ factors through $\Gal(F|K)$ for some finite extension $F$ of $K$.
+\end{defn}
+
+\begin{rem}
+    The condition above that $\Gal(\bar{K}|F)\subseteq\ker\rho$ is equivalent to $\ker\rho$ being open in $G_K$. This clearly implies that $\rho$ is a continuous homomorphism of topological groups. Surprisingly, the converse is also true: a continous homomorphism $\rho:G_K\to\GL_n(\CC)$ has open kernel. The proof of this result relies on the fact that `small' neighbourhoods of the identity in $\GL(V)=\GL_n(\CC)$ do not contain any non-trivial subgroups. Hence, if $\phi:G_K\to\GL(V)$ is continous and $U$ is such a neighbourhood in $\GL(V)$, then $\phi^{-1}(U)\subseteq\ker\phi$ and $\phi^{-1}(U)$ is open, showing that $\ker\rho$ is open too. Hence the above condition is equivalent to continuity of $\rho$ with respect to the natural topologies.
+\end{rem}
+
+Next, we define the notion of an $\ell$-adic representation, which will be needed to define the $L$-function of an elliptic curve.
+
+\begin{defn}
+    Let $K$ be a number field or a local field of characteristic $0$. A \textbf{continuous $\ell$-adic representation} $\rho$ over $K$ is a continous homomorphism $\rho:G_K\to\GL_n(F)$ where $F$ is a finite extension of $\QQ_\ell$.
+\end{defn}
+
+\begin{rem}
+    The topologies on $\GL_n(\CC)$ and $\GL_n(\QQ_\ell)$ are very different, and in particular and $\ell$-adic representation may not have an open kernel. Instead, continouity is equivalent to the following condition: for every $m\geq1$, there is some finite field extension $F_m$ of $K$ such that for all $g\in\Gal(\bar{K}|F_m)$, $\rho(g)\equiv \mathrm{Id}_n\pmod{\ell^m}$.
+\end{rem}
+
+Given an Artin representation $\rho$, one can view it as homomorphism $\rho:G_K\to\GL_n(\bar{\QQ})$ and since it factors through a finite quotient, we can realise it as $\rho:G_K\to\GL_n(F)$ for some number field $F$. Hence, if $\ell$ is any rational prime and $\mathfrak{l}$ is a prime in $F$ above $\ell$, then one can realise $\rho$ as an $\ell$-adic representation $$\rho:G_K\longrightarrow\GL_n(F_\mathfrak{l}),$$
+which is continous since $\rho$ factors through a finite quotient. Furthermore, Artin and $\ell$-adic representations over $K$ have more structure; namely, one can take \textbf{tensor products}.
+
+We describe the construction for Artin representations, since the $\ell$-adic case is completely analogous. Suppose we have two Artin representations $\rho_1,\rho_2$ over $K$
+
+\subsection{The Tate Module of an Elliptic Curve}
+
+\subsection{Local Polynomials of Representations}
+
+
