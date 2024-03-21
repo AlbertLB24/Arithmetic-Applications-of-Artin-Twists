@@ -39,6 +39,8 @@
 \newcommand{\Smo}{\mathrm{Smo}}
 \newcommand{\Span}{\mathrm{Span}}
 \newcommand{\supp}{\mathrm{supp}}
+\newcommand{\trivial}{\mathbbm{1}}
+\newcommand{\Irr}{\mathrm{Irr}}
 
 
 % mathcal
@@ -84,6 +86,9 @@
 \newtheorem{examples}[thm]{Examples}
 \newtheorem{fact}[thm]{Fact}
 
+% some shortcuts
+\input{commands.tex}
+
 
 \title{Arithmetic Applications of Artin Twist and BSD}
 \author{Edwina Aylward, Albert Lopez Bruch}
@@ -91,10 +96,27 @@
 \begin{document}
 	\maketitle
 	\pagenumbering{arabic}
+	\newpage
+	\tableofcontents
+	\newpage
 
+\section*{Introduction}
+\input{intro.tex}
+
+\newpage
 \section{Birch and Swinnerton-Dyer Conjecture}
 \input{BSD_conj.tex}
 
+\newpage
+\section{Algebraic number theory and representation theory background}
+\input{section2/rep-theory.tex}
+\input{section2/prime-decomp.tex}
+\input{section2/class-field-theory.tex}
+
+\newpage
+\section{Proving things\dots}
+\input{section3/norm-relations.tex}
+\input{section3/odd-order.tex}
 
 \newpage
 
