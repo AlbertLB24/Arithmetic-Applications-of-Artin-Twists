@@ -14,8 +14,24 @@ Given such a $\rho$, consider functions $\psi \colon B(G) \to \bQ^{\times} / N_{
 \begin{example}
     Consider $G = C_2 \times C_2$.
 \end{example}
-\subsubsection{D-local functions}
 
+
+\subsubsection{D-local functions}\label{D-loc}
+
+This is taken from section 2.3 of Vlad and Tim's regulator constants paper.
+
+Consider $G = \Gal(F / \bQ)$ and intermediate field $F^H$ for $H < G$. Let $p$ be a prime with decomposition group $D$ in $G$. 
+Then the primes above $p$ in $F^H$ correspond to double cosets $H\ G/ D$. If a prime $w$ in $F^H$ coresponds to the double coset $HxD$, then its decomposition and inertia groups in $F / F^H$ are $H \cap D^x$ and $H \cap I^x$ respectively. In partiular, the ramification degree and residue degree over $\bQ$ are given by $e_w = \frac{|I|}{|H \cap I^x|}$ and $f_w = \frac{[D \colon I]}{[H \cap D^x \colon H \cap I^x]}$. 
+
+Since we consider many local functions which depend on $e$ and $f$, we introduce the following definition:
+
+\begin{defn}
+    Suppose $I \triangleleft D < G$ with $D / I$ cyclic, and $\psi(e,f)$ is a function of $e, f \in \bN$. Define
+    \[ \left(D, I, \psi\right) \colon \quad H \mapsto \prod_{x \in H\ G / D} \psi\left(\frac{|I|}{|H \cap I^x|}, \frac{[D \colon I]}{[H \cap D^x \colon H \cap I^x]}\right). \]
+    Then, this is a function on the Burnside ring.
+\end{defn}
+
+For example, for semi-stable reduction, we're considering $\psi(e, f) = e$ (the Tamagawa number). For the $d_v$ terms in the case of additive potentially good reduction (at residue characteristic not equal to $2$ or $3$), we consider $\psi(e, f) = p^{f \floor{e n /12}}$, where $n \in \{2,3,4,6,9,10\}$.
 
 
 
