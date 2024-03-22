@@ -1,26 +1,22 @@
 \subsection{Compatibility in odd order extensions}
 
-Suppose that $G = \Gal(F / \bQ)$ has odd order, and $E / \bQ$ an elliptic curve with good reduction at wildly ramified primes in $F / \bQ$. We look at a relation of the form
+Consider $G = \Gal(F / \bQ)$ with odd order, and $E / \bQ$ an elliptic curve with good reduction at wildly ramified primes in $F / \bQ$. Consider a relation of the form
 \begin{equation}\label{reln} 
-    \sum_i n_i \Ind_{H_i}^G \trivial \simeq \rho \oplus \tau(\rho),
+    \Theta = \sum_i n_i \Ind_{H_i}^G \trivial \simeq \rho \oplus \tau(\rho),
 \end{equation}
-where $\rho$ is a character of $G$ with $\Gal(\bQ(\rho) / \bQ) = \langle \tau \rangle $ of size $2$. In particular we let $m$ denote the minimal positive integer such that $\bQ(\rho) \subset \bQ(\zeta_m)$. The sum on the left is over subgroups $H_i \subseteq G$. 
+where $\rho$ is a character of $G$ with $\Gal(\bQ(\rho) / \bQ) = \langle \tau \rangle $ of size $2$. Let $m$ denote the minimal positive integer such that $\bQ(\rho) \subset \bQ(\zeta_m)$. The sum on the left is over subgroups $H_i \leq G$. 
 
-If I consider $\Res_D(\rho)$ where $D$ is a decomposition group of exponent $k$, then for $\Res_D(\rho)$ to be non-rationally valued, one needs $m \mid k$. Note that in the context of norm relations, if $\Res_D(\rho) = \Res_D(\tau(\rho))$, then we always get squares.
+Observe that $\Res_D\rho$, where $D$ is a decomposition group of exponent $n$, is rationally-valued when $m \nmid n$. In the context of norm relations, if $\Res_D\rho = \Res_D\tau(\rho)$, then we always get squares. Thus the interesting case is when $m \mid n$. 
 
-So now suppose that $D = I = C_n$ with $m \mid n$. Applying $\Res_D$ to (\ref{reln}), we get
+We understand $\Res_D$ best when $D$ is cyclic. Let $D = C_n$ with $m \mid n$. Applying $\Res_D$ to (\ref{reln}), we get
 \begin{equation}\label{reln-resD}
 \sum_i n_i \sum_{x \in H_i \backslash G / D} \Ind_{D \cap x^{-1}H_i x}^D \trivial \simeq \Res_D \rho \oplus \tau(\Res_D \rho).
 \end{equation}
 
-Since both sides are now rationally valued, we can write this as $\sum_{d \mid n} a_d \cdot \chi_d$ where $a_d \in \bZ$ and $\{ \chi_d \colon d\mid n \}$ form a basis for the irreducible rational-valued representations of $D$. Explicitly, $\chi_d$ is the sum of the Galois conjugates of an irreducible complex character of $D$ with field of values $\bQ(\zeta_d)$ and kernel of index $d$ (which we'll write as $D_d$ ).
+Since both sides are now rationally valued, we can write this as $\sum_{d \mid n} a_d \cdot \chi_d$ where $a_d \in \bZ$ and $\chi_d$ are defined in Example \ref{cyclic-relns}. Writing each $\chi_d$ in terms of permutation representations as in the Example, one obtains an expression for the LHS of (\ref{reln}) (since cyclic groups have no Brauer relations, this is on the nose).
+Therefore, if $\psi(\Theta) = \prod_p \psi(\Res_{D_p} \Theta)$, we have $\psi(\Res_{D_p} \Theta) = \prod_{d \mid n} \psi(\chi_d)^{a_d}$ whenever $D_p = C_n$.
 
-We can write each $\chi_d$ in terms of permutation modules:
-\begin{equation}\label{chi-d} \chi_d = \sum_{d' \mid d} \mu(d' / d)\Ind_{D_d'}^D \trivial .\end{equation}
-Substituting this into  $\sum_{d \mid n} a_d \cdot \chi_d$ gives an expression for the LHS of (\ref{reln}) (since cyclic groups have no Brauer relations, this is on the nose).
-In particular, if we have a $D$-local function, we can evaluate it on each $\chi_d$-relation as in (\ref{chi-d}). Then the total expression is the product of these, raised to $a_d$.
-
-Since we understand represntation theory of cyclic groups (wow!), we'd like to be able to reduce to cyclic decomposotion groups. Note that since we only assume bad reduction at tamely ramified primes in $F / \bQ$, one has that $I$ is cyclic. 
+As such, we'd like to be able to reduce to cyclic decomposotion groups. As we only assume bad reduction at tamely ramified primes in $F / \bQ$, one has that $I$ is cyclic. 
 It turns out that we may assume that $D = I$ when $[D \colon I]$ is odd. 
 
 \begin{lemma}\label{DeqI}
@@ -111,7 +107,10 @@ In summary,
     \end{cases}
 \end{equation}
 
-(There's no reason why we can't get 3; see elliptic curve 441b1 with additive reduction at $7$ of type IV and Tamagawa number equal to $3$)
+\begin{rem}
+   There's no reason why we can't get 3; see elliptic curve 441b1 with additive reduction at $7$ of type IV and Tamagawa number equal to $3$) 
+\end{rem}
+
 
 However, it turns out we will only get $3$ occuring oddly when $d = 3$. Indeed, one has that $\langle \Ind_{D_{d'}}^D \trivial, \psi_3 \rangle = 1$ if $3 \mid d'$, and $0$ if $3 \nmid d'$, where $\psi_3$ is an irreducible character of $D$ of order $3$. Therefore one sees that the number of places with ramification degree divisible by $3$ cancels unless $d = 3$. Indeed, $\langle \chi_d , \psi_3 \rangle = 0$ unless $d = 3$, 
 in which case it is $1$. Therefore (\ref{tam-contrib}) can only be non-square when $d = 3$.
