@@ -1,5 +1,3 @@
-\subsection{Norm relations}
-
 Recall that in Section \ref{rep}, we associated to $\rho \in R_{\bC}(G)$ the character
     \[ \widetilde{\rho} = \sum_{\sigma \in \Gal(\bQ(\rho) / \bQ)} m(\rho) \rho^{\sigma} \quad \in R_{\bQ}(G) .\]
  Call $\Theta = \sum_i n_i H_i \in B(G)$ a \textbf{$\rho$-relation} if 
@@ -18,7 +16,7 @@ In particular, when $\psi \sim_{\rho} 1$, then we obtain a norm relation for all
 \end{example}
 
 \begin{example}
-    Let $G = C_p$ for $p$ a prime. Let $\rho$ be a character of degree $p$. There is a unique $\rho$-relation given by $\Theta = C_1 - C_p$. Let $\psi(H) = [G \colon H]$. Then $\psi(\Theta) = p$, which is a norm from $\bQ(\zeta_p)$ by Corollary \ref{p-norm}. 
+    Let $G = C_p$ for $p$ a prime. Let $\rho$ be a character of degree $p$. There is a unique $\rho$-relation given by $\Theta = C_1 - C_p$. Let $\psi(H) = [G \colon H]$. Then $\psi(\Theta) = p$, which is a norm from $\bQ(\sqrt{p^*}) \subset \bQ(\zeta_p)$ by Corollary \ref{p-norm}. 
 \end{example}
 
 \begin{example}\label{cyclic-relns}
@@ -31,12 +29,14 @@ Then $\{ \chi_d \colon d\mid n \}$ form a basis for the irreducible rational-val
 Let $E / \bQ$ be an elliptic curve, $G = \Gal(F / \bQ)$ for $F / \bQ$ a Galois extension. For $H \leq G$, the function $\psi \colon H \mapsto C(E / F^H)$ extends to a multiplicative function on the Burnside ring. Given a representation $\rho$ of $G$, one can ask when $\psi \sim_{\rho} 1$.
 \end{example}
 
-\subsubsection{D-local functions}\label{D-loc}
+\subsection{D-local functions}\label{D-loc}
+
+{\color{red} Maybe just add in definition of D-local function, and explain all this way better. Maybe also some parts of Theorem 2.36 in the reg consts paper (the parts that translate).}
 
 (This is taken from section 2.3 of Vlad and Tim's regulator constants paper.)
 
 Consider $G = \Gal(F / \bQ)$ and intermediate field $F^H$ for $H < G$. Let $p$ be a prime with decomposition group $D$ in $G$. 
-Then the primes above $p$ in $F^H$ correspond to double cosets $H\ G/ D$. If a prime $w$ in $F^H$ coresponds to the double coset $HxD$, then its decomposition and inertia groups in $F / F^H$ are $H \cap D^x$ and $H \cap I^x$ respectively. In partiular, the ramification degree and residue degree over $\bQ$ are given by $e_w = \frac{|I|}{|H \cap I^x|}$ and $f_w = \frac{[D \colon I]}{[H \cap D^x \colon H \cap I^x]}$. 
+Then the primes above $p$ in $F^H$ correspond to double cosets $H\backslash G/ D$. If a prime $w$ in $F^H$ coresponds to the double coset $HxD$, then its decomposition and inertia groups in $F / F^H$ are $H \cap D^x$ and $H \cap I^x$ respectively. In partiular, the ramification degree and residue degree over $\bQ$ are given by $e_w = \frac{|I|}{|H \cap I^x|}$ and $f_w = \frac{[D \colon I]}{[H \cap D^x \colon H \cap I^x]}$. 
 
 Our fudge factors $C(E / F)$ are defined locally; one has $C(E / F) = \prod_v c_v(E / F) \cdot |\omega / \omega_{v, \min}|$. Here $v$ runs over finite places of $F$, $\omega$ is a global minimal differential for $E / \bQ$, and $\omega_{v, \min}$ is a minimal differential at $v$.
 Considering the function $H \mapsto C(E / F^H)$, and writing $C_p(E / F^H) =\prod_{v | p} c_v(E / F)\cdot |\omega / \omega_{v, \min}|$ one has
@@ -44,7 +44,7 @@ Considering the function $H \mapsto C(E / F^H)$, and writing $C_p(E / F^H) =\pro
 \[ \sum_{i} n_i H_i \mapsto \prod_i C(E / F^{H_i})^{n_i} = \prod_{p} C_p(E / F^H)^{n_i}. \]
 Therefore, our function is the product of local functions for each $p$. Since $C_p(E / F^H)$ depends on $e_w$, $f_w$ for $w | p$, we are motivated to define the following:
 
-\begin{defn}
+\begin{defn}\label{D-I-fn}
     Suppose $I \triangleleft D < G$ with $D / I$ cyclic, and $\psi(e,f)$ is a function of $e, f \in \bN$. Define
     \[ \left(D, I, \psi\right) \colon \quad H \mapsto \prod_{x \in H\backslash G / D} \psi\left(\frac{|I|}{|H \cap I^x|}, \frac{[D \colon I]}{[H \cap D^x \colon H \cap I^x]}\right). \]
     Then, this is a function on the Burnside ring.

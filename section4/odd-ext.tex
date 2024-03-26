@@ -1,5 +1,42 @@
 \subsection{Compatibility in odd order extensions}
 
+In this section we prove the following:
+
+\begin{thm}
+    Let $E / \bQ$ be an elliptic curve. Let $F / \bQ$ be an extension of \textbf{odd order} with Galois group $G$. Suppose that the primes of additive reduction of $E$ are at worst tamely ramified in $F / \bQ$ (and $\geq 5$). 
+    
+    Then for any representation $\rho$ of $G$ and any expression as in \ref{rho-reln}, the corresponding ratio of Tamagawa numbers is a norm from any quadratic subfield of $\bQ(\rho)$.
+\end{thm}
+
+If $\bQ(\rho) = \bQ$ there is nothing to prove. 
+If $[\bQ(\rho) \colon \bQ] > 1$ then this index is even. Indeed, since $G$ has odd order, there is an element $\sigma \in \Aut(\bQ(\rho) / \bQ)$ that acts by conjugation (i.e. is of order $2$). Therefore there is a quadratic subfield $\bQ(\sqrt{d}) \subset \bQ(\rho)$. Choose any such quadratic subfield. Replacing $\rho$ by the sum of its conjugates by elements of $ \Gal(\bQ(\rho) / \bQ(\sqrt{d}))$, we may assume that $\bQ(\rho) = \bQ(\sqrt{d})$. Let $\tau$ be the generator of $\Gal(\bQ(\sqrt{d}) / \bQ)$. Let $m$ be the smallest integer such that $\bQ(\sqrt{d}) \subset \bQ(\zeta_m)$. Then $m$ divides the exponent of $G$, hence is odd.
+
+We prove that each $(D_p, I_p, \psi_p)$  satisfies $(D_p, I_p, \psi_p) \sim_{\rho} 1$. Since we deal with each local factor individually, we may assume that $D_p = I_p$ by theorem \ref{DeqI}.
+
+\subsubsection*{Good reduction}
+If $E / \bQ$ has good reduction at $p$, then it has good reduction at all primes lying above $p$ in subfields of $F$. Thus $C_p(E / F_i) = 1$ for each subfield $F_i \subset F$, so that $(D_p, I_p, \psi_p) = 1$ on $\rho$-relations. 
+
+\subsubsection*{Multiplicative reduction}
+
+Let $p$ be a prime of muliplicative reduction. First suppose that this reduction is non-split. Since $D_p = I_p$, all primes above $p$ have residue degree $1$. Thus the reduction type remains non-split at primes above $p$. Therefore $\psi_p = 1$ or $2$, depending on $\ord_p(\Delta)$ being even or odd. 
+
+We prove a more general lemma that constant functions are trivial on $\rho$-relations.
+
+\begin{lemma}
+Let $G$, $\rho$ be as above. If $(D_p, I_p, \psi_p)$ is such that $\psi_p$ is constant, then $(D_p, I_p, \psi_p) \sim_{\rho} 1$.  
+\end{lemma}   
+
+\begin{proof}
+    Let $\psi_p = \alpha$. Then $(D_p, I_p, \psi_p)$ sends $H \leq G$ to $\alpha^{| H \backslash G / D_p|}$. Thus if $\Theta = \sum_i n_i H_i$ is a $\rho$-relation, $(D_p, I_p, \psi_p)(\Theta) = \alpha^{ \sum_i n_i \cdot | H_i \backslash G / D_p|}$. We show that $\sum_i n_i \cdot | H_i \backslash G / D_p|$ is even. 
+
+    %Since $G$ is odd, each $| H_i \backslash G / D_p|$ is odd. On the other hand, $\rho \oplus \tau(\rho)$ has even dimension. Therefore $\sum_i |n_i|$ is even. 
+    One has $\Res_D \Theta = \sum_i n_i \sum_{x \in H_i \backslash G / D} D \cap H^{x^{-1}}$ and the permutation representation corresponding to $\Res_D \Theta$ is isomorphic to $\Res_D (\rho \oplus \tau(\rho))$. In particular the dimension of this permutation representation is even. The dimension is $\sum_i n_i \sum_{x \in H_i \backslash G / D} [D \colon D \cap H^{x^{-1}} ]$. Since each $[D \colon D \cap H^{x^{-1}} ]$ is odd, this implies there are an even number of terms in the summation, i.e. that $\sum_i n_i \cdot | H_i \backslash G / D_p|$ is even. 
+    
+\end{proof}
+
+Now suppose that $p$ has split multiplicative reduction. Then $\psi_p(e, f) = e$. We have $I_p = P_p \ltimes C_l$, where $P_p \triangleleft I_p$ is wild inertia, and $C_l = I_p / P_p$ is the tame quotient. $C_l$ is a cyclic group, with $l \mid p^f - 1 = p - 1$ (recalling we can take $D_p = I_p$).
+
+
 Consider $G = \Gal(F / \bQ)$ with odd order, and $E / \bQ$ an elliptic curve with good reduction at wildly ramified primes in $F / \bQ$. Consider a relation of the form
 \begin{equation}\label{reln} 
     \Theta = \sum_i n_i \Ind_{H_i}^G \trivial \simeq \rho \oplus \tau(\rho),
@@ -13,21 +50,15 @@ We understand $\Res_D$ best when $D$ is cyclic. Let $D = C_n$ with $m \mid n$. A
 \sum_i n_i \sum_{x \in H_i \backslash G / D} \Ind_{D \cap x^{-1}H_i x}^D \trivial \simeq \Res_D \rho \oplus \tau(\Res_D \rho).
 \end{equation}
 
-Since both sides are now rationally valued, we can write this as $\sum_{d \mid n} a_d \cdot \chi_d$ where $a_d \in \bZ$ and $\chi_d$ are defined in Example \ref{cyclic-relns}. Writing each $\chi_d$ in terms of permutation representations as in the Example, one obtains an expression for the LHS of (\ref{reln}) (since cyclic groups have no Brauer relations, this is on the nose).
+Since both sides are now rationally valued, we can write this as $\sum_{d \mid n} a_d \cdot \chi_d$ where $a_d \in \bZ$ and $\chi_d$ are defined in example \ref{cyclic-relns}. Writing each $\chi_d$ in terms of permutation representations as in the example, one obtains an expression for the LHS of (\ref{reln}) (since cyclic groups have no Brauer relations, this is on the nose).
 Therefore, if $\psi(\Theta) = \prod_p \psi(\Res_{D_p} \Theta)$, we have $\psi(\Res_{D_p} \Theta) = \prod_{d \mid n} \psi(\chi_d)^{a_d}$ whenever $D_p = C_n$.
 
 As such, we'd like to be able to reduce to cyclic decomposotion groups. As we only assume bad reduction at tamely ramified primes in $F / \bQ$, one has that $I$ is cyclic. 
 It turns out that we may assume that $D = I$ when $[D \colon I]$ is odd. 
 
-\begin{lemma}\label{DeqI}
-    In an odd degree unramified extension, Tamagawa numbers change only up to squares. In particular, if $[D \colon I]$ is odd, then $(D, I, \psi) \sim_{\rho} (I, I, \psi)$ for any $\rho$ with $\bQ(\rho)$ even, where $\psi(e,f)$ is the Tamagawa number. 
-\end{lemma}
 
-\begin{proof}
-    Yadada
-\end{proof}
 
-\subsubsection{Semistable reduction}
+\subsubsection*{Semistable reduction}
 
 In this subsection we work towards proving the following:
 
@@ -39,10 +70,12 @@ In this subsection we work towards proving the following:
     \bQ^{\times} / N_{\bQ(\rho) / \bQ}(\bQ(\rho)^{\times})$ sending $H \mapsto C(E / F^{H})$ satisfies $f \sim_{\rho} 1$.
 \end{thm}
 
-\subsubsection{dv terms in additive reduction}
 
 
-\subsubsection{Tamagawa numbers in additive reduction}
+\subsubsection*{dv terms in additive reduction}
+
+
+\subsubsection*{Tamagawa numbers in additive reduction}
 
 We use the following description of Tamagawa numbers. %Tim and Vlad reg consts Lemma 3.19
 
