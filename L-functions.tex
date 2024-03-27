@@ -1,19 +1,19 @@
-\subsection{Artin Representations and  \texorpdfstring{$\ell$}{TEXT}-adic Representations}
-
-\cite[Just trying]{BH1}
+\subsection{Artin Representations and  \texorpdfstring{$\ell$}{TEXT}-adic Representations} \label{subsection_reps}
 
 The Birch-Swinnerton-Dyer conjecture classically provides a connection between the arithmetic of elliptic curves and their $L$-functions. In this prelimiary section, we explore the classical definition of $L$-functions attached to an elliptic curve and their twists, and we explore some of the relevant properties that we will use later on. To do so, we first need to explore the notion of an Artin representation and of an $\ell$-adic representation. 
 
-Throughout this section we fix a field $K$, which will either be a number field or a local field of characteristic $0$. We also fix an algebraic closure $\hat{K}$ of $K$ and we denote by $G_K$ the absolute galois group $\Gal(\bar{K}|K)$ of $K$. We recall that $G_K$ is a profinite group
-$$G_K=\varprojlim_{F}\Gal(F|K),$$
-where $F$ ranges over the finite Galois extensions of $K$ and therefore has a natural topology where a basis of open sets is given by $\Gal(\bar{K}|F)$ where $F$ is a finite extension of $K$.
+Throughout this section we fix a field $K$, which will either be a number field or a local field of characteristic $0$. We also fix an algebraic closure $\hat{K}$ of $K$ and we denote by $G_K$ the absolute galois group $\Gal(\bar{K}/K)$ of $K$. We recall that $G_K$ is a profinite group
+$$G_K=\varprojlim_{F}\Gal(F/K),$$
+where $F$ ranges over the finite Galois extensions of $K$ and therefore has a natural topology where a basis of open sets is given by $\Gal(\bar{K}/F)$ where $F$ is a finite extension of $K$.
 
 \begin{defn}
-    Let $K$ be a number field or a local field with characteristic $0$. An \textbf{Artin representation} $\rho$ over $K$ is a complex finite-dimensional vector space $V$ together with a homomorphism $\rho:G_K\to\GL(V)=\GL_n(\CC)$ such that there is some finite Galois extension $F/K$ with $\Gal(\bar{K}|F)\subseteq\ker\rho$. In other words, $\rho$ factors through $\Gal(F|K)$ for some finite extension $F$ of $K$.
+    Let $K$ be a number field or a local field with characteristic $0$. An \textbf{Artin representation} $\rho$ over $K$ is a complex finite-dimensional vector space $V$ together with a homomorphism $\rho:G_K\to\GL(V)=\GL_n(\CC)$ such that there is some finite Galois extension $F/K$ with $\Gal(\bar{K}/F)\subseteq\ker\rho$. In other words, $\rho$ factors through $\Gal(F/K)$ for some finite extension $F$ of $K$.
 \end{defn}
 
+Hence, an Artin representation can be equivalently viewed as a finite dimensional representation of $\Gal(F/K)$ where $F$ is some finite Galois extension of $K$. Throughout the document, we will use both notions depending of the context, and refer to either of them as Artin representations.
+
 \begin{rem}
-    The condition above that $\Gal(\bar{K}|F)\subseteq\ker\rho$ is equivalent to $\ker\rho$ being open in $G_K$. This clearly implies that $\rho$ is a continuous homomorphism of topological groups. Surprisingly, the converse is also true: a continous homomorphism $\rho:G_K\to\GL_n(\CC)$ has open kernel. The proof of this result relies on the fact that `small' neighbourhoods of the identity in $\GL(V)=\GL_n(\CC)$ do not contain any non-trivial subgroups. Hence, if $\phi:G_K\to\GL(V)$ is continous and $U$ is such a neighbourhood in $\GL(V)$, then $\phi^{-1}(U)\subseteq\ker\phi$ and $\phi^{-1}(U)$ is open, showing that $\ker\rho$ is open too. Hence the above condition is equivalent to continuity of $\rho$ with respect to the natural topologies.
+    The condition above that $\Gal(\bar{K}/F)\subseteq\ker\rho$ is equivalent to $\ker\rho$ being open in $G_K$. This clearly implies that $\rho$ is a continuous homomorphism of topological groups. Surprisingly, the converse is also true: a continous homomorphism $\rho:G_K\to\GL_n(\CC)$ has open kernel. The proof of this result relies on the fact that `small' neighbourhoods of the identity in $\GL(V)=\GL_n(\CC)$ do not contain any non-trivial subgroups. Hence, if $\phi:G_K\to\GL(V)$ is continous and $U$ is such a neighbourhood in $\GL(V)$, then $\phi^{-1}(U)\subseteq\ker\phi$ and $\phi^{-1}(U)$ is open, showing that $\ker\rho$ is open too. Hence the above condition is equivalent to continuity of $\rho$ with respect to the natural topologies.
 \end{rem}
 
 Next, we define the notion of an $\ell$-adic representation, which will be needed to define the $L$-function of an elliptic curve.
@@ -22,17 +22,140 @@ Next, we define the notion of an $\ell$-adic representation, which will be neede
     Let $K$ be a number field or a local field of characteristic $0$. A \textbf{continuous $\ell$-adic representation} $\rho$ over $K$ is a continous homomorphism $\rho:G_K\to\GL_n(F)$ where $F$ is a finite extension of $\QQ_\ell$.
 \end{defn}
 
-\begin{rem}
-    The topologies on $\GL_n(\CC)$ and $\GL_n(\QQ_\ell)$ are very different, and in particular and $\ell$-adic representation may not have an open kernel. Instead, continouity is equivalent to the following condition: for every $m\geq1$, there is some finite field extension $F_m$ of $K$ such that for all $g\in\Gal(\bar{K}|F_m)$, $\rho(g)\equiv \mathrm{Id}_n\pmod{\ell^m}$.
+\begin{rem} \label{rem_cont_ladic}
+    The topologies on $\GL_n(\CC)$ and $\GL_n(\QQ_\ell)$ are very different, and in particular and $\ell$-adic representation may not have an open kernel. Instead, continouity is equivalent to the following condition: for every $m\geq1$, there is some finite field extension $F_m$ of $K$ such that for all $g\in\Gal(\bar{K}/F_m)$, $\rho(g)\equiv \mathrm{Id}_n\pmod{\ell^m}$.
 \end{rem}
 
 Given an Artin representation $\rho$, one can view it as homomorphism $\rho:G_K\to\GL_n(\bar{\QQ})$ and since it factors through a finite quotient, we can realise it as $\rho:G_K\to\GL_n(F)$ for some number field $F$. Hence, if $\ell$ is any rational prime and $\mathfrak{l}$ is a prime in $F$ above $\ell$, then one can realise $\rho$ as an $\ell$-adic representation $$\rho:G_K\longrightarrow\GL_n(F_\mathfrak{l}),$$
-which is continous since $\rho$ factors through a finite quotient. Furthermore, Artin and $\ell$-adic representations over $K$ have more structure; namely, one can take \textbf{tensor products}.
+which is continous since $\rho$ factors through a finite quotient. Furthermore, Artin and $\ell$-adic representations over $K$ have more structure; namely, one can take \textbf{direct sums} and \textbf{tensor products}.
 
-We describe the construction for Artin representations, since the $\ell$-adic case is completely analogous. Suppose we have two Artin representations $\rho_1,\rho_2$ over $K$
+We describe the construction for Artin representations, since the $\ell$-adic case is completely analogous. Suppose we have two Artin representations $\rho_1,\rho_2$ over $K$, and by the discussion on the preceeding paragraph we can realise them as maps $\rho_i:G_K\to\GL_{n_i}(L_i),\ i=1,2$ where $L_1$ and $L_2$ are number fields. If we let $L=L_1L_2$, then the natural maps $\rho_1\oplus\rho_2:G_K\to\GL_{n_1+n_2}(L)$ and $\rho_1\otimes\rho_2:G_K\to\GL_{n_1n_2}(L)$ are both Artin representations. One can also show that this construction is also well-defined up to equivalence.
 
-\subsection{The Tate Module of an Elliptic Curve}
+\subsection{Local Polynomials and L-functions}
+We now briefly discuss how to attach analytic objects to Artin and $\ell$-adic reperesentations. These objects are usually described locally first, and then this local information is put together to get a global object. 
 
-\subsection{Local Polynomials of Representations}
+To begin, let $K$ be a local field with $0$ characteristic and let $p$ be the characteristic of the residue field $\kappa$. Let $\rho:G_K\to\GL(V)$ be an Artin or $\ell$-adic representation such that $\ell\neq p$ (this is an important technical assumption that we will not discuss further). By the \textbf{section on algebraic number theory} we have a short exact sequence
+$$0\longrightarrow I_K\longrightarrow \Gal(\bar{K}/K)\xlongrightarrow{\epsilon} \Gal(\bar{\kappa}/\kappa)\cong\tilde{\ZZ}\longrightarrow 0,$$
+where under the last isomorphism $1\in\tilde{\ZZ}$ corresponds to the map $\phi:\bar{\kappa}\to\bar{\kappa}$ where $x\mapsto x^p$ and this map is a topological generator of $\Gal(\bar\kappa/\kappa)$. Any preimage of $\phi$ under $\epsilon$ is called a Frobenius element $\Frob_K$ and it is therefore well-defined up to $I_K$. Furthermore, the space of intertia-invariants 
+$$V^{I_K}:=\{v\in V:\rho(g)v=v\text{ for all }g\in I_K\}$$
+is naturally a $G_K/I_K$ representation, which we denote $\rho^{I_K}$. we are now ready to define the local polynomial attached to $\rho$.
+
+\begin{defn}
+    Let $K$ be a local field of characteristic $0$ and let $p$ the characteristic of its local field. If $\rho$ is an Artin or $\ell$-adic representation such that $\ell\neq p$. Then the local polynomial attached to $\rho$ is
+    $$P(\rho,T):=\det\left(I-T\cdot\rho^{I_K}\left(\Frob_K^{-1}\right)\right).$$  
+\end{defn}
+
+If $K$ is instead a number field, the idea is to consider all finite places of $K$ and consider all the local polynomials attached to all local completions of $K$ to build the corresponding L-function. More concretely, let $\rho:G_K\to\GL(V)$ be an Artin or $\ell$-adic representation and let $\pp$ be a finite place of $K$ and $K_\pp$ be the corresponding completion. Since $G_{K_\pp}=\Gal(\bar{K_\pp}/K_\pp)$ is naturally a subgroup of $G_K$, we can restrict $\rho$ to $\Res_\pp\rho:G_{K_\pp}\to\GL(V)$ and then calculate the corresponding local polynomial as long as $\pp$ and $\ell$ are coprime. If $\rho$ is an Artin representation, this allows us to construct the associalted $L$-function.
+
+\begin{defn}
+    Let $K$ be a number field and $\rho$ an Artin representation over $K$. If $\pp$ is a finite place of $K$, we denote the local polynomial at $\pp$ as 
+    $$P_\pp(\rho,T):=P(\Res_\pp\rho,T).$$
+    The associated $L$-function to $\rho$ is 
+    $$L(\rho,s):=\prod_{\pp\text{ prime}}\frac{1}{P_\pp(\rho,N(\pp)^{-s})}.$$
+\end{defn}
+
+However, if $\rho$ is an $ell$-adic representation, constructing a global object is harder, since the above method does not yield information at the finite places $\pp$ that divide $\ell$. This motivates the following important definition.
+
+\begin{defn}
+    Let $\{\rho_\ell\}_{\ell\text{ prime}}$ be a family of $\ell$-adic representations for each prime $\ell$. We then say that $\{\rho_\ell\}_\ell$ is a \textbf{weakly compatible system of $\ell$-adic representations} if for every finite place $\pp$ of $K$ and rational primes $\ell,\ell'$ not divisible $\pp$, 
+    $$P_\pp(\rho_\ell,T)=P_\pp(\rho_{\ell'},T)$$.
+\end{defn}
+
+When $\{\rho_\ell\}_\ell$ is a weakly compatible system of $\ell$-adic representations, the local polynomial $P_\pp(\rho_\ell,T)$ can be computed using any $\ell$ not divisible by $\pp$. This also allows us to define the $L$-function in this context.
+
+\begin{defn}
+    Let $K$ be a number field and let $\{\rho_\ell\}_\ell$ be a weakly compatible system of $\ell$-adic representations. Then the $L$-function attached to the system is 
+    $$L(\{\rho_\ell\}_\ell, s)=\prod_{\pp\text{ prime}}\frac{1}{P_\pp(\{\rho_\ell\},N(\pp)^{-s})}.$$
+\end{defn}
 
 
+
+
+\subsection{The Tate Module of an Elliptic Curve and their L-function}
+Let $K$ be a number field or a local field with characteristic $0$ \textbf{(Maybe for this section we should only assume K is a number field? Otherwise I don't know if it makes sense to talk about their L-function)} and fix an algebraic closure $\bar{K}$ of $K$. Let $E$ be an elliptic curve defined over $K$. To avoid notational confusion, whenever we write $E$ we refer to all of its $\bar{K}$ points, while $E(K)$ refers only to the $K$-rational points. The aim of this section is to describe a procedure to attach an $L$-function to a given elliptic curve over $K$. In order to achieve this, we will first construct a $2$-dimensional $\ell$-adic representation attached to $E$, and then construct the $L$-function as described in the section above.
+Let $\ell$ be a rational prime number. For any $n\geq1$, we denote by $E[\ell^n]$ to be the $\ell^n$-torsion points; in other words, $E[\ell^n]$ is the kernel of the map $E[\ell^n]:E\to E$. We then have the diagram of compatible maps
+\[
+    \longrightarrow E[\ell^{n+1}]\xlongrightarrow{[\ell]} E[\ell^{n}]\xlongrightarrow{[\ell]}\cdots\xlongrightarrow{[\ell]} E[\ell^2]\xlongrightarrow{[\ell]} E[\ell]\xlongrightarrow{[\ell]} \{\mathcal{O}_E\} 
+\] 
+and therefore we can construct the inverse limit of this diagram
+$$T_\ell(E):=\varprojlim_{n}E[\ell^n],$$
+denoted as the $\ell$-adic Tate module of the elliptic curve $E$. By the uniformization theorem, we know that 
+$$E[\ell^n]\cong\frac{\ZZ}{\ell^n\ZZ}\oplus\frac{\ZZ}{\ell^n\ZZ}$$
+as groups, and therefore 
+$$T_\ell(E)\cong\ZZ_\ell\oplus\ZZ_\ell$$
+as $\ZZ_\ell$-modules. In addition, the Tate module carries important extra structure, namely the action of the absolute Galois group $G_K$. Since $E$ is defined over $K$, and the multiplication by $m$ maps are determined by polynomials with coefficients in $K$, there is a well-defined additive action $\psi_n:G_K\rightarrow\Aut_{\ZZ}(E[\ell^n])$. Furthermore, one can show that this actions are compatible with the inverse limit diagram of the Tate module. That is, for every $n\geq 1$ and $\sigma\in G_K$, the diagram
+
+
+\begin{center}
+    \begin{tikzcd}
+        E[\ell^{n+1}] \arrow[d, "\psi_{n+1}(\sigma)"] \arrow[r, "\ell"] & E[\ell^n] \arrow[d, "\psi_n(\sigma)"]\\
+        E[\ell^{n+1}] \arrow[r, "\ell"] & E[\ell^n]
+    \end{tikzcd}
+\end{center}
+
+commutes. Therefoere, the actions $\psi_n$ induce an action of $G_K$ on $T_\ell(E)$ and since $T_\ell(E)\cong\ZZ_\ell\oplus\ZZ_\ell$, this corresponds to a $2$-dimensional $\ell$-adic representations
+$$\psi_{E,\ell}:G_K\longrightarrow \GL_2(\ZZ_\ell)\subseteq\GL_2(\QQ_\ell).$$
+We will also denote from now on $\rho_{E,\ell}$ to be the dual representation of $\psi_{E,\ell}$. For technical reasons we will not discuss, the $L$-function is tipycally constructed using the later ones.
+
+\begin{rem}
+    The representation above does indeed satisfy the conditions in Remark \ref{rem_cont_ladic}. In particular, given any $n\geq 1$, the field $F_n:=K(E[\ell^n])$ is a finite extension of $K$ since it is obtained by attaching finitely many algebraic numbers. By construction, $\Gal(\bar{K}/F_n)$ acts trivially on $E[\ell^n]$ and thus $\rho_{E,\ell}(g)\equiv \mathrm{Id}\pmod{\ell^n}$ for all $g\in\Gal(\bar{K}/F_n)$.
+\end{rem}
+
+Of course, the above construction can be followed by any rational prime $\ell$, and this gives a family $\{\rho_{E,\ell}\}_\ell$. To build an $L$-function as described in the section above, we would need this family to be weakly compatible. Thankfully, this and much more is true, and the next theorem collects the relevant results.
+
+\begin{thm}
+    Let $E$ be an elliptic curve over a number field $K$ and $\rho_{E,\ell}$ be the dual representation on $T_\ell(E)$. For every finite place $\pp$ of $K$, let $\kappa_\pp$ be the residue field of $K_\pp$, $q_\pp=|\kappa_\pp|$ and $a_\pp=1+q_\pp-|\tilde{E}(\kappa_\pp)|$. Then for any $\pp$ not diving $\ell$,
+    \begin{align*}
+        P_\pp(\rho_{E,\ell},T) & = 1-a_\pp T+q_p T^2, & \text{if } E/K_\pp \text{ has good reduction,}\\
+        & = 1-T, & \text{if } E/K_\pp \text{ has split multiplicative reduction,}\\
+        & = 1+T, & \text{if } E/K_\pp \text{ has non-split multiplicative reduction,}\\
+        & = 1, & \text{if } E/K_\pp \text{ has additive reduction.}
+    \end{align*}
+
+    In particular, for any $\ell,\ell'$ not divisible by $\pp$, 
+    $$P_\pp(\rho_{E,\ell},T)=P_\pp(\rho_{E,\ell'},T),$$
+    and so $\{\rho_{E,\ell}\}$ is a weakly compatible system of $\ell$-adic representations.
+\end{thm}
+
+This allows us to define the $L$-function of an elliptic curve as above.
+
+\begin{defn}
+    Let $E$ be an elliptic curve over $K$. Then the $L$-function attached to $E$ is 
+    $$L(E/K,s)=L(\{\rho_{E,\ell}\},s)=\prod_{\pp\text{ prime}}\frac{1}{P_\pp(\rho_{E,\ell},N(p)^{-s})}$$
+\end{defn}
+
+\subsection{Artin Twists of L-functions of Elliptic Curves}
+
+We have already seen that given an elliptic curve over a number field $K$, one can construct the $L$-function $L(E/K,s)$. However, given an Artin representation $\rho$ over $K$, it is possible to attach more analytic objects, with remarkable arithmetic properties. We outline the main results below, without proofs. \textbf{Insert here relevant reference}. 
+
+Fix some number field $K$, an elliptic curve $E$ over $K$ and an Artin repesentation $\rho$. Then, similary to the previous section, it is possible to show that $\{\rho_{E,\ell}\otimes\rho\}_\ell$ is also a weakly compatible system of $\ell$-adic representations. The corresponding $L$-function
+$$L(E,\rho,s)=L(\{\rho_{E,\ell}\otimes\rho\},s)$$
+is denoted as the \textbf{Artin-twist} of $L(E,s)$ by $\rho$. These objects have remarkable (both proven and conjectural) properties that we describe now.
+
+\begin{thm}[Artin Formalism]
+    Let $E$ be an elliptic curve over a number field $K$.
+    \begin{enumerate}
+        \item For Artin representations $\rho_1,\rho_2$ over $K$,
+        $$L(\rho_1\oplus\rho_2,s)=L(\rho_1,s)L(\rho_2,s)\quad and\quad L(E/K,\rho_1\oplus\rho_2,s)=L(E/K,\rho_1,s)L(E/K,\rho_2,s)$$
+        \item If $L/K$ is a finite extension and $\rho$ is an Artin representation over $L$, then $\Ind_{G_L}^{G_K}\rho$ is an Artin representation over $K$ and 
+        $$L(\rho,s)=L(\Ind_{G_L}^{G_K}\rho,s)\quad and\quad L(E/L,\rho,s)=L(E/L,\Ind_{G_L}^{G_K}\rho,s).$$
+        \item If $L/K$ is a finite extension as above and 
+        $$\Ind_{G_L}^{G_K}\mathds{1}\cong\bigoplus_i\rho_i,$$
+        then
+        $$L(E/L,s)=\prod_i L(E/K,\rho_i,s).$$
+    \end{enumerate}
+\end{thm}
+
+To simply notation, given any Artin representation $\rho$ over $L$ we will write $\Ind_{L/K}\rho$ instead of $\Ind_{G_L}^{G_K}\rho$. Furthermore if $F$ is a finite Galois extension of $K$ such that $\rho$ factors through $\Gal(F/L)$, then $\Ind_{L/K}\rho$ factors through $\Gal(F/K)$ and 
+$$\Ind_{L/K}\rho\cong\Ind_{\Gal(F/L)}^{\Gal(F/K)}\rho.$$
+
+Furthermore, as mentioned after Remark \ref{rem_cont_ladic}, by fixing some basis $\mathcal{B}$ of $V$ any Artin representation $\rho$ can be viewed as a representation $\rho:G_K\to\GL_n(F)$ for some number field $F$. The smallest such field is the \textbf{field of values} of $\rho$ and denoted by $\QQ(\rho)$. Any $\sigma\in\Gal(\QQ(\rho)/\QQ)$ induces a homomorphism $\sigma:\GL_n(\QQ(\rho))\to\GL_n(\QQ(\rho))$ and also a map
+\begin{align*}
+    \rho^\sigma:G_K &\longrightarrow\GL_n(F)\\
+    g&\longmapsto \sigma(\rho(g)),
+\end{align*}
+which is another Artin representation, denoted as the twist of $\rho$ by $\sigma$.
+
+\begin{conj}[Galois Equivariance of L-Twists]
+    I need to check the precise statement of this result. This may need to come after the discussion on BSD.
+\end{conj}

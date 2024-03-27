@@ -1,1 +1,64 @@
-The Birch-Swinnerton-Dyer conjecture classically provides a connection between the arithmetic of elliptic curves and their $L$-functions. 
+The Birch-Swinnerton-Dyer conjecture classically provides a connection between the arithmetic of elliptic curves and their $L$-functions. We have already investigated the construction and main results of the `$L$-functions side', and now we turn out attention to statement of the conjecture and towards understanding the arithmetic terms present in the conjecture. 
+
+\begin{conj}[BSD]
+    Let $E$ be an elliptic curve over a number field $K$. Then 
+    \begin{enumerate}[label={\bfseries  BSD\arabic*.}]
+        \item The rank of the Mordell-Weil group of $E$ over $K$ equals the order of vanishing of the $L$-function; that is,
+        $$\ord_{s=1}L(E/K,s)=\rk E/K.$$
+        \item The leading term of the Taylor series at $s=1$ of the $L$-function is given by 
+        \begin{align}\label{BSD_2}
+            \lim_{s\to1}\frac{L(E/K,s)}{(s-1)^r}\cdot\frac{\sqrt{|\Delta_K|}}{\Omega_+(E)^{r_1+r_2}|\Omega_-(E)|^{r_2}}=\frac{\Reg_{E/K}|\Sha_{E/K}|C_{E/K}}{|E(K)_{tors}|^2}.
+        \end{align}
+    \end{enumerate}
+\end{conj}
+
+Many arithmetic invariants appear as part of the statement of BSD2, and it is worth exploring them briefly. The way we have organised the terms is not arbitrary, and in fact we give specific notation to both sides of the equation. 
+
+\begin{notation}
+    Let $E/\QQ$ be a number field and $K$ a number field. We define 
+    $$\mathcal{L}(E/F)=\lim_{s\to1}\frac{L(E/K,s)}{(s-1)^r}\cdot\frac{\sqrt{|\Delta_K|}}{\Omega_+(E)^{r_1+r_2}|\Omega_-(E)|^{r_2}}$$
+    and
+    $$\BSD(E/F)=\frac{\Reg_{E/K}|\Sha_{E/K}|C_{E/K}}{|E(K)_{tors}|^2}$$
+\end{notation}
+
+A natural question to ask at this point is whether there is a conjectural analogue to the above for the Artin twists of $L$-functions. The analogue of $\BSD1$ is known in this case, which is directly compatible with Artin formalism.
+
+\begin{conj}[BSD1 for Twists]
+    Let $E/\QQ$ be an elliptic curve, $\rho$ an Artin representation and $K$ any Galois extension over $\QQ$ such that $\rho$ factors through $G=\Gal(K/\QQ)$. Then
+    $$\ord_{s=1}L(E,\rho,s)=\langle\rho,E(K)_\CC\rangle_G$$
+    \textbf{maybe delete this last sentence.} where $\rho$ and $E(K)_\CC=E(K)\otimes_\ZZ\CC$ are viewed as representations of $G$.
+\end{conj}
+
+Unfortunately, a conjectural analogue for $\BSD2$ is not known. The problem is the lack of an analogue for the term $\BSD(E/F)$ as above. However, there is indeed an important analogue of the term $\mathcal{L}(E/F)$ in this setting.
+
+\begin{notation}
+    Let $E/\QQ$ be an elliptic curve and $\rho$ an Artin representation over $\QQ$. We define
+    $$\mathcal{L}(E,\rho)=\lim_{s\to1}\frac{L(E,\rho,s)}{(s-1)^r}\cdot\frac{\sqrt{\mathfrak{f}_\rho}}{\Omega_+(E)^{d^+(\rho)}|\Omega_-(E)|^{d^-(\rho)}\omega_\rho},$$
+    where $r = \ord_{s=1} L(E, \rho, s)$ is the order of the zero at $s = 1$, $\mathfrak{f}_\rho$ is the conductor of $\rho$, and $d^{\pm}(\rho)$ are the dimensions of the $\pm1$-eigenspaces of complex conjugation in its action on $\rho$.
+\end{notation}
+
+Even though the precise conjectural expression of the $\BSD(E,\rho)$ is not known, they conjecturally satisfy many important properties. The next conjecture lists some of these properties.
+
+\begin{conj}\cite[Conjecture 4]{DEW1}\label{conj_4}
+    Let $E/\QQ$ be an elliptic curve. For every Artin representation $\rho$ over $\QQ$ there is an invariant $\mathrm{BSD}(E,\rho)\in\CC^{\times}$ with the following properties. Let $\rho$ and $\tau$ be Artin representations and $K$ a finite extension of $\QQ$ such that $\rho$ and $\tau$ factor through $\Gal(K/\QQ)$.
+    \begin{enumerate}[label={\bfseries C\arabic*.}]
+        \item $\mathrm{BSD}(E/F)=\mathrm{BSD}(E,\Ind_{F/\QQ}\mathds{1})$ for a number field $F$ (and $\Sha_{E/F}$ is finite).
+        \item $\mathrm{BSD}(E,\rho\oplus\tau)=\mathrm{BSD}(E,\rho)\mathrm{BSD}(E,\tau)$.
+        \item $\mathrm{BSD}(E,\rho)=\mathrm{BSD}(E,\rho^*)\cdot(-1)^{r}\omega_{E,\rho}\omega_\rho^{-2}$, where $r=\langle\rho,E(K)_\CC\rangle$.
+        \item If $\rho$ is self-dual, then $\mathrm{BSD}(E,\rho)\in\RR$ and $\sign\ \mathrm{BSD}(E,\rho)=\sign\ \omega_\rho$.
+        
+        If $\langle\rho,E(K)_\CC\rangle=0$, then moreover:
+        \item $\BSD(E,\rho)\in\QQ(\rho)^{\times}$ and $\BSD(E,\rho^g)=\BSD(E,\rho)^g$ for all $g\in\Gal(\QQ(\rho)/\QQ)$.
+        \item If $\rho$ is a non-trivial primitive Dirichlet character of order $d$, and either the conductors of $E$ and $\rho$ are coprime or $E$ is semistable and has no non-trivial isogenies over $\QQ$, thenn $\BSD(E,\rho)\in\ZZ[\zeta_d]$. 
+    \end{enumerate}
+\end{conj}
+
+The great advantage of the above conjecture is that it is free of $L$-functions since only the `arithmetic' $\BSD(E/F)$ terms appear. Conditional to some well-known conjectures, Conjecture \ref{conj_4} holds.
+
+\begin{thm} \cite[Theorem 5]{DEW1}
+    Conjecture $4$ holds with $\BSD(E,\rho)=\mathcal{L}(E,\rho)$ assuming the analytic continuation of $L$-functions $L(E,\rho,s)$, their functional equation, the Birch-Swinnerton-Dyer conjecture,
+    Deligne's period conjecture, Stevens's Manin constant conjecture for $E/\QQ$ and the Riemann
+    hypothesis for $L(E,\rho,s)$.
+\end{thm}
+
+

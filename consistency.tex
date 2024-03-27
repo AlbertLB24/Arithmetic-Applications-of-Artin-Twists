@@ -1,0 +1,43 @@
+As we discussed in the previous section, our motivation is to use Theorem \ref*{thm_positive_rank} to predict points of infinite order for families of elliptic curves. However, in this section we prove that in several cases the theorem will never make such a prediction. In other words, in such cases, the product 
+$$\frac{\prod_i C_{E/F_i}}{\prod_j C_{E/F_j'}}$$ 
+is always a norm for every subfield $\QQ(\sqrt{D})\subseteq\QQ(\rho)$.
+
+\subsection{Cyclic Extensions}
+In this subsection we prove the following. 
+\begin{thm}\label{thm_consistent_cyclic}
+    Let $E/\QQ$ be a semistable elliptic curve and let $F$ a finite cyclic Galois extension over $\QQ$ so that $\Gal(F/\QQ)=C_d$ for some $d\geq 2$. Let $\chi$ be a faithful character of $C_d$ (so that $\QQ(\chi)=\QQ(\zeta_d)$), and let $F_i,F'_j\subseteq F$ be such that
+    $$\bigoplus_{\mathfrak{g}\in\Gal(\QQ(\zeta_d)/\QQ)}\chi^{\mathfrak{g}}=\bigoplus_i\Ind_{F_i/\QQ}\mathds{1}\ominus\bigoplus_j\Ind_{F'_j/\QQ}\mathds{1}.$$
+    Then for any $\QQ(\sqrt{D})\subseteq\QQ(\zeta_d)$,
+    $$\frac{\prod_i C_{E/F_i}}{\prod_j C_{E/F_j'}}$$
+    is a norm of $\QQ(\sqrt{D})$.
+\end{thm}
+
+The first step in proving Theorem \ref*{thm_consistent_cyclic} is to show that the fields $F_i, F'_j$ exist, and to give a precise description. Recall that for each $k\mid d$ the cyclic group $C_d$ has one unique subgroup of order $k$, which is of course also cyclic. Therefore, for each $k\mid d$, there is one unique subfield $F_k$ of $F$ of degree $k$ over $\QQ$ which is also cyclic. The corresponding subgroup $H_k=\Gal(F/F_k)=C_{d/k}$.
+
+To give the required description, we recall that the Möbius function $\mu$ is the function supported on the square-free integers, and $\mu(n)=(-1)^s$ whenever $n$ is square free and $s$ is the number of prime factors of $n$.
+
+\begin{lemma}
+    Let $E/\QQ$, $F$ and $\chi$ be as in Theorem \ref*{thm_consistent_cyclic}. Writing characters of $C_d$ additively, we have that
+    \begin{equation}
+        \sum_{\mathfrak{g}\in\Gal(\QQ(\zeta_d)/\QQ)}\chi^{\mathfrak{g}}=\sum_{k\mid d}\mu(d/k)\Ind_{F_k/\QQ}\mathds{1}.
+    \end{equation}
+\end{lemma}
+
+\begin{proof}
+    The proof is essentially application of Frobenius reciprocity and the inclusion exclusion lemma. Let $p_1,\ldots,p_s$ be the distinct primes dividing $d$. By Frobenius reciprocity, for any character $\theta$ of $C_d$ and $k\mid d$,
+    $$\langle\theta,\Ind_{F_k/\QQ}\mathds{1}\rangle_{C_d}=\langle\Res_{F_k/\QQ}\theta,\mathds{1}\rangle_{C_{d/k}}.$$
+    That is, $\theta$ appears as a factor of $\Ind_{F_k/\QQ}\mathds{1}$ if and only if $\chi|_{C_{d/k}}$ is trivial, and it can only appear once. Therefore,
+    $$\Ind_{F_k/\QQ}\mathds{1}=\sum_{\theta\in\mathcal{A}_{d/k}}\theta$$
+    where $\mathcal{A}_k=\{\theta\in\widehat{C_d}:\theta|_{C_{k}}=\mathds{1}_{C_{k}}\}$. Note that if $k,k'\mid d$ are coprime, then $\mathcal{A}_k\cap\mathcal{A}_{k'}=\mathcal{A}_{kk'}$. If $\mathcal{B}$ is the set of faithful characters of $C_d$, then by the inclusion-exclusion lemma
+    \begin{align*}
+        \sum_{\theta\in\mathcal{B}}\theta=&\sum_{i=0}^s(-1)^i\sum_{1\leq j_1\leq\dots\leq j_i\leq s}\ \sum_{\theta\in\cap_{l=1}^i\mathcal{A}_{p_{j_l}}}\theta\\
+        =&\sum_{i=0}^s(-1)^i\sum_{1\leq j_1\leq\dots\leq j_i\leq s}\ \sum_{\theta\in\mathcal{A}_{\prod_{l=1}^i p_{j_l}}}\theta\\
+        =&\sum_{k\mid d}\mu(k)\sum_{\theta\in\mathcal{A}_k}\theta=\sum_{k\mid d}\mu(d/k)\Ind_{F_k/\QQ}\mathds{1}.
+    \end{align*}
+    The proof now follows from the fact that if $\chi$ is a faithful character, then the set $\{\chi^{\mathfrak{g}}:\mathfrak{g}\in\Gal(\QQ(\zeta_d)/\QQ)\}$ spans over all faithful characters of $C_d$ once. 
+\end{proof}
+
+
+\subsection{Abelian Extensions}
+
+\subsection{Odd-Degree Extensions}

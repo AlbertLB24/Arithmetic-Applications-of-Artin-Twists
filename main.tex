@@ -6,12 +6,21 @@
 
 
 
-\usepackage{enumitem}
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
 \usepackage{amsfonts,amsmath, soul, matlab-prettifier, bm, amsthm,enumitem,amssymb,multirow,float,mathtools,bbm,array,varwidth,hyperref}
 \usepackage[all]{xy}
 \usepackage[margin=0.9in]{geometry}
 \usepackage{graphicx}
 \usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+%\usepackage{bbold}
+\usepackage[OT2,T1]{fontenc}
+\usepackage{calrsfs}
+\usepackage{dsfont}
+
+
 
 
 \raggedbottom
@@ -39,6 +48,10 @@
 \newcommand{\Smo}{\mathrm{Smo}}
 \newcommand{\Span}{\mathrm{Span}}
 \newcommand{\supp}{\mathrm{supp}}
+\newcommand{\sign}{\mathrm{sign}}
+\newcommand{\BSD}{\mathrm{BSD}}
+\newcommand{\ord}{\mathrm{ord}}
+\newcommand{\Reg}{\mathrm{Reg}}
 
 
 % mathcal
@@ -66,6 +79,7 @@
 
 \DeclareMathOperator{\Ima}{Im}
 
+
 \linespread{1.5}
 
 \theoremstyle{plain}
@@ -83,6 +97,19 @@
 \newtheorem{example}[thm]{Example}
 \newtheorem{examples}[thm]{Examples}
 \newtheorem{fact}[thm]{Fact}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{notation}[thm]{Notation}
+
+%Sha:
+\usepackage[OT2,T1]{fontenc}
+\DeclareSymbolFont{cyrletters}{OT2}{wncyr}{m}{n}
+\DeclareMathSymbol{\Sha}{\mathalpha}{cyrletters}{"58}
+%end of Sha
+
+%\DeclareSymbolFont{cyrletters}{OT2}{wncyr}{m}{n}
+%\DeclareMathSymbol{\Sha}{\mathalpha}{cyrletters}{"58}
+
+%\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
 
 
 \title{Arithmetic Applications of Artin Twist and BSD}
@@ -95,13 +122,23 @@
 \section{Representations, L-functions and Artin Twists}
 \input{L-functions.tex}
 
-\section{Birch and Swinnerton-Dyer Conjecture}
+\section{Birch and Swinnerton-Dyer and Other Conjectures}
 \input{BSD_conj.tex}
+
+\section{Brauer Relations}
+
+
+\section{Predicting Positive Rank}
+\input{positive_rank.tex}
+
+\section{Consistency cases with BSD}
+\input{consistency.tex}
+
 
 
 \newpage
 
-\bibliography{references}
+\bibliography{references.bib}
 \bibliographystyle{amsalpha}
 
 
