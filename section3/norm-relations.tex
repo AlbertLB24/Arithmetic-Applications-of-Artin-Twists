@@ -1,11 +1,14 @@
-Recall that in Section \ref{rep}, we associated to $\rho \in R_{\bC}(G)$ the character
-    \[ \widetilde{\rho} = \sum_{\sigma \in \Gal(\bQ(\rho) / \bQ)} m(\rho) \rho^{\sigma} \quad \in R_{\bQ}(G) .\]
- Call $\Theta = \sum_i n_i H_i \in B(G)$ a \textbf{$\rho$-relation} if 
-    \[ \sum_i n_i \Ind_{H_i}^G \trivial \simeq \widetilde{\rho}. \]
-Given such a $\rho$, consider functions $\psi \colon B(G) \to \bQ^{\times} / N_{\bQ(\rho) / \bQ}(\bQ(\rho)^\times)$ (written multiplicatively). We say two functions $\psi$, $\psi'$ are \textbf{$\rho$-equivalent}, written $\psi \sim_{\rho} \psi'$, if $\psi / \psi'$ is trivial on all $\rho$-relations. 
+\subsection{Functions on the Burnside ring and norm relations}
 
-If $\Theta \in \ker \psi$, then $\psi(\Theta)$ is the norm of an element from $\bQ(\rho)^{\times}$. We call an instance of this a \textbf{norm relation}.
-In particular, when $\psi \sim_{\rho} 1$, then we obtain a norm relation for all $\rho$-relations $\Theta$. 
+Consider multiplicative functions on the Burnside ring $\psi \colon B(G) \to \bQ^{\times}$. Given $\rho \in R_{\bC}(G)$ we can extend such functions from the Burnside ring to $\overline{\psi} \colon B(G) \to \bQ^{\times} / N_{\bQ(\rho) / \bQ}(\bQ(\rho)^\times)$.
+
+\begin{defn}
+If $\Theta \in \ker \overline{\psi}$, then $\psi(\Theta)$ is the norm of an element from $\bQ(\rho)^{\times}$. We call an instance of this a \textbf{norm relation}.
+\end{defn}
+
+\begin{defn}
+ We say two functions $\psi$, $\psi'$ are \textbf{$\rho$-equivalent}, written $\psi \sim_{\rho} \psi'$, if $\overline{\psi /\psi'}$ is trivial on all $\rho$-relations. Equivalently, $\psi(\Theta) / \psi'(\Theta)$ is a norm relation for all $\rho$-relations $\Theta$. 
+\end{defn}
 
 \begin{rem}
     If $\rho = 0$ then we call functions $\psi \sim_{\rho} 1$ \textbf{representation theoretic}. These have been studied in {\color{red} cite}.
@@ -19,11 +22,7 @@ In particular, when $\psi \sim_{\rho} 1$, then we obtain a norm relation for all
     Let $G = C_p$ for $p$ a prime. Let $\rho$ be a character of degree $p$. There is a unique $\rho$-relation given by $\Theta = C_1 - C_p$. Let $\psi(H) = [G \colon H]$. Then $\psi(\Theta) = p$, which is a norm from $\bQ(\sqrt{p^*}) \subset \bQ(\zeta_p)$ by Corollary \ref{p-norm}. 
 \end{example}
 
-\begin{example}\label{cyclic-relns}
-Let $G = C_n$. For each $d \mid n$, let $\chi_d = \widetilde{\varphi_d}$, where $\varphi_d$ is an irreducible complex character of $G$ with field of values $\bQ(\zeta_d)$ and kernel of index $d$.
-Then $\{ \chi_d \colon d\mid n \}$ form a basis for the irreducible rational-valued representations of $G$. These are orthogonal, but not orthonormal. Note that $\Ind_{C_{n/ d}}^G \trivial$ is the direct sum of irreducible complex representations of $G$ contain $C_{n / d}$ in their kernel. Thus, $\Ind_{C_{n/ d}}^G \trivial \simeq \sum_{d' \mid d} \chi_{d'}$. Applying M\"{o}bius inversion, we obtain the unqiue $\varphi_d$-relation for each $d \mid n$:
-\[ \chi_d = \sum_{d' \mid d} \mu(d / d') \cdot \Ind_{C_{n/ d}}^G \trivial. \]
-\end{example}
+
 
 
 \begin{example}
@@ -31,6 +30,10 @@ Let $E / \bQ$ be an elliptic curve, $G = \Gal(F / \bQ)$ for $F / \bQ$ a Galois e
 \end{example}
 
 \subsection{D-local functions}\label{D-loc}
+
+
+
+
 
 {\color{red} Maybe just add in definition of D-local function, and explain all this way better. Maybe also some parts of Theorem 2.36 in the reg consts paper (the parts that translate).}
 
