@@ -54,6 +54,8 @@
 \newcommand{\BSD}{\mathrm{BSD}}
 \newcommand{\ord}{\mathrm{ord}}
 \newcommand{\Reg}{\mathrm{Reg}}
+\newcommand{\Cl}{\mathrm{Cl}}
+\newcommand{\Stab}{\mathrm{Stab}}
 
 
 % mathcal
@@ -134,16 +136,19 @@
 \section*{Introduction}
 \input{intro.tex}
 
-\newpage
 \section{Algebraic number theory and representation theory background}
-\input{section2/rep-theory.tex}
 \input{section2/prime-decomp.tex}
 \input{section2/class-field-theory.tex}
 
 \newpage
-\section{Proving things\dots}
+\section{Norm relations}
+\input{section3/rep-theory.tex}
 \input{section3/norm-relations.tex}
-\input{section3/odd-order.tex}
+
+\newpage
+\section{Forcing points of infinite order}
+\input{section4/inf-order.tex}
+\input{section4/odd-ext.tex}
 
 \newpage
 \section{Representations, L-functions and Artin Twists}
@@ -160,6 +165,7 @@
 
 \section{Consistency cases with BSD}
 \input{consistency.tex}
+
 
 
 
