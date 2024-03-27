@@ -20,6 +20,7 @@
 \usepackage[OT2,T1]{fontenc}
 \usepackage{calrsfs}
 \usepackage{dsfont}
+\usepackage[title]{appendix}
 
 
 
@@ -137,19 +138,10 @@
 \section*{Introduction}
 \input{intro.tex}
 
-\section{Algebraic number theory and representation theory background}
-\input{section2/prime-decomp.tex}
-\input{section2/class-field-theory.tex}
-
 \newpage
 \section{Norm relations}
 \input{section3/rep-theory.tex}
 \input{section3/norm-relations.tex}
-
-\newpage
-\section{Forcing points of infinite order}
-\input{section4/inf-order.tex}
-\input{section4/odd-ext.tex}
 
 \newpage
 \section{Representations, L-functions and Artin Twists}
@@ -158,16 +150,28 @@
 \section{Birch and Swinnerton-Dyer and Other Conjectures}
 \input{BSD_conj.tex}
 
+\section{Predicting Positive Rank}
+\input{positive_rank.tex}
+
+\newpage
+\section{Forcing points of infinite order}
+\input{section4/inf-order.tex}
+\input{section4/odd-ext.tex}
+
+
 \section{Brauer Relations}
 
 
-\section{Predicting Positive Rank}
-\input{positive_rank.tex}
+
 
 \section{Consistency cases with BSD}
 \input{consistency.tex}
 
-
+\begin{appendices}
+\section{Algebraic number theory background}
+\input{appendix/prime-decomp.tex}
+\input{appendix/class-field-theory.tex}
+\end{appendices}
 
 
 \newpage
