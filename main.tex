@@ -48,6 +48,8 @@
 \newcommand{\Smo}{\mathrm{Smo}}
 \newcommand{\Span}{\mathrm{Span}}
 \newcommand{\supp}{\mathrm{supp}}
+\newcommand{\trivial}{\mathbbm{1}}
+\newcommand{\Irr}{\mathrm{Irr}}
 \newcommand{\sign}{\mathrm{sign}}
 \newcommand{\BSD}{\mathrm{BSD}}
 \newcommand{\ord}{\mathrm{ord}}
@@ -77,6 +79,10 @@
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\hatv}[1]{\overset{\vee}{\mathstrut#1}}
 
+% floor and ceiling
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
 \DeclareMathOperator{\Ima}{Im}
 
 
@@ -97,6 +103,9 @@
 \newtheorem{example}[thm]{Example}
 \newtheorem{examples}[thm]{Examples}
 \newtheorem{fact}[thm]{Fact}
+
+% some shortcuts
+\input{commands.tex}
 \newtheorem{conj}[thm]{Conjecture}
 \newtheorem{notation}[thm]{Notation}
 
@@ -118,7 +127,25 @@
 \begin{document}
 	\maketitle
 	\pagenumbering{arabic}
+	\newpage
+	\tableofcontents
+	\newpage
 
+\section*{Introduction}
+\input{intro.tex}
+
+\newpage
+\section{Algebraic number theory and representation theory background}
+\input{section2/rep-theory.tex}
+\input{section2/prime-decomp.tex}
+\input{section2/class-field-theory.tex}
+
+\newpage
+\section{Proving things\dots}
+\input{section3/norm-relations.tex}
+\input{section3/odd-order.tex}
+
+\newpage
 \section{Representations, L-functions and Artin Twists}
 \input{L-functions.tex}
 

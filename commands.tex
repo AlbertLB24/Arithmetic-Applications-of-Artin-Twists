@@ -1,0 +1,68 @@
+\RequirePackage{etoolbox}
+%\AtEndEnvironment{remark}{\hfill$\lozenge$}
+%\AtEndEnvironment{example}{\hfill$\lozenge$}
+
+% Auxiliary commands
+\DeclareMathSymbol{:}{\mathpunct}{operators}{"3A}%semicolon spaces
+\RequirePackage{xspace}
+\def\mat#1{\ensuremath{#1}\xspace}
+\def\dmat#1#2{\gdef#1{\mat{#2}}}
+\def\csdmat#1#2{\csdef{#1}{\mat{#2}}}
+
+% Operators. Usage: \GL
+\def\oper#1{\csdmat{#1}{\operatorname{#1}}}
+\forcsvlist\oper{un, ord, tors, span, hol, rk, Ta, new, old,Jac, min,Rad, res, Tr,char, Det,Trace,GL,SL,deg,Hom,End,Vect,Mod,Rep,Ker,Im,Id,Gal,Aut, Frob,min, PGL, PSL, SO, sw, Ad}
+
+
+% Mathbb Letters. Usage: \bA
+\def\defbb#1{\csdmat{b#1}{\mathbb{#1}}}
+\forcsvlist\defbb{1,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z}
+\RequirePackage{bbm}
+\dmat\bk{\mathbbm k}
+
+% Mathcal Letters. Usage: \cA
+\def\defcal#1{\csdmat{c#1}{\mathcal{#1}}}
+\forcsvlist\defcal{A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,a,v}
+
+% Mathfrak Letters. Usage: \fA
+\def\defcal#1{\csdmat{f#1}{\mathfrak{#1}}}
+\forcsvlist\defcal{A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,a,m,n,p,q, g, t}
+
+% overline letters Usage \ovA
+\def\defcal#1{\csdmat{ov#1}{\overline{#1}}}
+\forcsvlist\defcal{A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z}
+
+% Greek letters
+\dmat\al\alpha
+\dmat\be\beta
+\dmat\ga\gamma
+\dmat\de\delta
+\dmat\la\lambda
+\dmat\ta\tau
+\dmat\hi\chi
+\dmat\eps\varepsilon
+\dmat\vi\phi
+\dmat\te\theta
+\dmat\ksi\xi
+\dmat\si\sigma
+\dmat\om\omega
+\dmat\Ga\Gamma
+\dmat\La\Lambda
+
+% Structures
+\def\set#1{\left\{#1\right\}}
+\def\sets#1#2{\left\{\left.#1\ \right\vert#2\right\}}
+\def\rbr#1{\left(#1\right)}
+\def\ang#1{\left\langle#1\right\rangle}
+\def\n#1{\left\lvert#1\right\rvert}
+\def\nn#1{\left\lVert#1\right\rVert}
+\def\eq#1{\begin{equation}#1\end{equation}}
+\def\ov#1#2{{\substack{#1\\#2}}} % #1 over #2
+
+% Symbols
+\def\mto{\mapsto}
+\def\emb{\hookrightarrow}
+\def\es{\emptyset}
+\def\bs{\backslash}
+\def\cupp{\smallsmile}
+\def\surj{\twoheadrightarrow}
