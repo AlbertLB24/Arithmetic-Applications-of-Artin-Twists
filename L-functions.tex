@@ -105,12 +105,15 @@ Of course, the above construction can be followed by any rational prime $\ell$, 
 
 \begin{thm}
     Let $E$ be an elliptic curve over a number field $K$ and $\rho_{E,\ell}$ be the dual representation on $T_\ell(E)$. For every finite place $\pp$ of $K$, let $\kappa_\pp$ be the residue field of $K_\pp$, $q_\pp=|\kappa_\pp|$ and $a_\pp=1+q_\pp-|\tilde{E}(\kappa_\pp)|$. Then for any $\pp$ not diving $\ell$,
-    \begin{align*}
-        P_\pp(\rho_{E,\ell},T) & = 1-a_\pp T+q_p T^2, & \text{if } E/K_\pp \text{ has good reduction,}\\
-        & = 1-T, & \text{if } E/K_\pp \text{ has split multiplicative reduction,}\\
-        & = 1+T, & \text{if } E/K_\pp \text{ has non-split multiplicative reduction,}\\
-        & = 1, & \text{if } E/K_\pp \text{ has additive reduction.}
-    \end{align*}
+    \[
+        \begin{array}{l l l}
+            P_\pp(\rho_{E,\ell},T)&= 1-a_\pp T+q_p T^2, & \text{if } E/K_\pp \text{ has good reduction,}\\
+            & = 1-T, & \text{if } E/K_\pp \text{ has split multiplicative reduction,}\\
+            & = 1+T, & \text{if } E/K_\pp \text{ has non-split multiplicative reduction,}\\
+            & = 1, & \text{if } E/K_\pp \text{ has additive reduction.}
+        \end{array}
+    \]
+    
 
     In particular, for any $\ell,\ell'$ not divisible by $\pp$, 
     $$P_\pp(\rho_{E,\ell},T)=P_\pp(\rho_{E,\ell'},T),$$
@@ -150,10 +153,10 @@ To simply notation, given any Artin representation $\rho$ over $L$ we will write
 $$\Ind_{L/K}\rho\cong\Ind_{\Gal(F/L)}^{\Gal(F/K)}\rho.$$
 
 Furthermore, as mentioned after Remark \ref{rem_cont_ladic}, by fixing some basis $\mathcal{B}$ of $V$ any Artin representation $\rho$ can be viewed as a representation $\rho:G_K\to\GL_n(F)$ for some number field $F$. The smallest such field is the \textbf{field of values} of $\rho$ and denoted by $\QQ(\rho)$. Any $\sigma\in\Gal(\QQ(\rho)/\QQ)$ induces a homomorphism $\sigma:\GL_n(\QQ(\rho))\to\GL_n(\QQ(\rho))$ and also a map
-\begin{align*}
-    \rho^\sigma:G_K &\longrightarrow\GL_n(F)\\
-    g&\longmapsto \sigma(\rho(g)),
-\end{align*}
+%\begin{align*}
+%    \rho^\sigma:G_K &\longrightarrow\GL_n(F)\\
+%    g&\longmapsto \sigma(\rho(g)),
+%\end{align*}
 which is another Artin representation, denoted as the twist of $\rho$ by $\sigma$.
 
 \begin{conj}[Galois Equivariance of L-Twists]

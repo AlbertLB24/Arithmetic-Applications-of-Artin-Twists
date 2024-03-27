@@ -29,11 +29,11 @@ To give the required description, we recall that the Möbius function $\mu$ is t
     That is, $\theta$ appears as a factor of $\Ind_{F_k/\QQ}\mathds{1}$ if and only if $\chi|_{C_{d/k}}$ is trivial, and it can only appear once. Therefore,
     $$\Ind_{F_k/\QQ}\mathds{1}=\sum_{\theta\in\mathcal{A}_{d/k}}\theta$$
     where $\mathcal{A}_k=\{\theta\in\widehat{C_d}:\theta|_{C_{k}}=\mathds{1}_{C_{k}}\}$. Note that if $k,k'\mid d$ are coprime, then $\mathcal{A}_k\cap\mathcal{A}_{k'}=\mathcal{A}_{kk'}$. If $\mathcal{B}$ is the set of faithful characters of $C_d$, then by the inclusion-exclusion lemma
-    \begin{align*}
-        \sum_{\theta\in\mathcal{B}}\theta=&\sum_{i=0}^s(-1)^i\sum_{1\leq j_1\leq\dots\leq j_i\leq s}\ \sum_{\theta\in\cap_{l=1}^i\mathcal{A}_{p_{j_l}}}\theta\\
-        =&\sum_{i=0}^s(-1)^i\sum_{1\leq j_1\leq\dots\leq j_i\leq s}\ \sum_{\theta\in\mathcal{A}_{\prod_{l=1}^i p_{j_l}}}\theta\\
-        =&\sum_{k\mid d}\mu(k)\sum_{\theta\in\mathcal{A}_k}\theta=\sum_{k\mid d}\mu(d/k)\Ind_{F_k/\QQ}\mathds{1}.
-    \end{align*}
+    %\begin{multline*}
+    %    \sum_{\theta\in\mathcal{B}}\theta=&\sum_{i=0}^s(-1)^i\sum_{1\leq j_1\leq\dots\leq j_i\leq s}\ \sum_{\theta\in\cap_{l=1}^i\mathcal{A}_{p_{j_l}}}\theta\\
+    %    =&\sum_{i=0}^s(-1)^i\sum_{1\leq j_1\leq\dots\leq j_i\leq s}\ \sum_{\theta\in\mathcal{A}_{\prod_{l=1}^i p_{j_l}}}\theta\\
+    %    =&\sum_{k\mid d}\mu(k)\sum_{\theta\in\mathcal{A}_k}\theta=\sum_{k\mid d}\mu(d/k)\Ind_{F_k/\QQ}\mathds{1}.
+    %\end{multline*}
     The proof now follows from the fact that if $\chi$ is a faithful character, then the set $\{\chi^{\mathfrak{g}}:\mathfrak{g}\in\Gal(\QQ(\zeta_d)/\QQ)\}$ spans over all faithful characters of $C_d$ once. 
 \end{proof}
 
