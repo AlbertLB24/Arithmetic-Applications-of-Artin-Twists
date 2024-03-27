@@ -21,7 +21,7 @@ In particular, when $\psi \sim_{\rho} 1$, then we obtain a norm relation for all
 
 \begin{example}\label{cyclic-relns}
 Let $G = C_n$. For each $d \mid n$, let $\chi_d = \widetilde{\varphi_d}$, where $\varphi_d$ is an irreducible complex character of $G$ with field of values $\bQ(\zeta_d)$ and kernel of index $d$.
-Then $\{ \chi_d \colon d\mid n \}$ form a basis for the irreducible rational-valued representations of $G$. Note that $\Ind_{C_{n/ d}}^G \trivial$ is the direct sum of irreducible complex representations of $G$ contain $C_{n / d}$ in their kernel. Thus, $\Ind_{C_{n/ d}}^G \trivial \simeq \sum_{d' \mid d} \chi_{d'}$. Applying M\"{o}bius inversion, we obtain the unqiue $\varphi_d$-relation for each $d \mid n$:
+Then $\{ \chi_d \colon d\mid n \}$ form a basis for the irreducible rational-valued representations of $G$. These are orthogonal, but not orthonormal. Note that $\Ind_{C_{n/ d}}^G \trivial$ is the direct sum of irreducible complex representations of $G$ contain $C_{n / d}$ in their kernel. Thus, $\Ind_{C_{n/ d}}^G \trivial \simeq \sum_{d' \mid d} \chi_{d'}$. Applying M\"{o}bius inversion, we obtain the unqiue $\varphi_d$-relation for each $d \mid n$:
 \[ \chi_d = \sum_{d' \mid d} \mu(d / d') \cdot \Ind_{C_{n/ d}}^G \trivial. \]
 \end{example}
 
@@ -51,6 +51,7 @@ Therefore, our function is the product of local functions for each $p$. Since $C
     Then, this is a function on the Burnside ring.
 \end{defn}
 
+{\color{red} try make thick brackets}
 \begin{example}
 For semi-stable reduction, we're considering $\psi(e, f) = e$ (the Tamagawa number). For the $d_v$ terms in the case of additive potentially good reduction at p ($p$ not equal to $2$ or $3$), we consider $\psi(e, f) = p^{f \floor{e n /12}}$, where $n \in \{2,3,4,6,9,10\}$.
 \end{example}

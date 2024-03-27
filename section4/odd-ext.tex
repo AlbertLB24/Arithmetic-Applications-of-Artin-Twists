@@ -9,7 +9,7 @@ In this section we prove the following:
 \end{thm}
 
 If $\bQ(\rho) = \bQ$ there is nothing to prove. 
-If $[\bQ(\rho) \colon \bQ] > 1$ then this index is even. Indeed, since $G$ has odd order, there is an element $\sigma \in \Aut(\bQ(\rho) / \bQ)$ that acts by conjugation (i.e. is of order $2$). Therefore there is a quadratic subfield $\bQ(\sqrt{d}) \subset \bQ(\rho)$. Choose any such quadratic subfield. Replacing $\rho$ by the sum of its conjugates by elements of $ \Gal(\bQ(\rho) / \bQ(\sqrt{d}))$, we may assume that $\bQ(\rho) = \bQ(\sqrt{d})$. Let $\tau$ be the generator of $\Gal(\bQ(\sqrt{d}) / \bQ)$. Let $m$ be the smallest integer such that $\bQ(\sqrt{d}) \subset \bQ(\zeta_m)$. Then $m$ divides the exponent of $G$, hence is odd.
+If $[\bQ(\rho) \colon \bQ] > 1$ then this index is even. Indeed, since $G$ has odd order, all its characters are complex, so there is an element $\sigma \in \Aut(\bQ(\rho) / \bQ)$ that acts by complex conjugation (i.e. is of order $2$). Therefore there is a quadratic subfield $\bQ(\sqrt{d}) \subset \bQ(\rho)$. Choose any such quadratic subfield. Replacing $\rho$ by the sum of its conjugates by elements of $ \Gal(\bQ(\rho) / \bQ(\sqrt{d}))$, we may assume that $\bQ(\rho) = \bQ(\sqrt{d})$. Let $\tau$ be the generator of $\Gal(\bQ(\sqrt{d}) / \bQ)$. Let $m$ be the smallest integer such that $\bQ(\sqrt{d}) \subset \bQ(\zeta_m)$. Then $m$ divides the exponent of $G$, hence is odd.
 
 We prove that each $(D_p, I_p, \psi_p)$  satisfies $(D_p, I_p, \psi_p) \sim_{\rho} 1$. Since we deal with each local factor individually, we may assume that $D_p = I_p$ by theorem \ref{DeqI}. 
 
@@ -17,6 +17,9 @@ We prove that each $(D_p, I_p, \psi_p)$  satisfies $(D_p, I_p, \psi_p) \sim_{\rh
 If $E / \bQ$ has good reduction at $p$, then it has good reduction at all primes lying above $p$ in subfields of $F$. Thus $C_p(E / F_i) = 1$ for each subfield $F_i \subset F$, so that $(D_p, I_p, \psi_p) = 1$ on $\rho$-relations. 
 
 \subsubsection*{Multiplicative reduction}
+{\color{red} say that the dv term goes away}
+
+\noindent\underline{\textit{Non-split multiplicative reduction}}
 
 Let $p$ be a prime of muliplicative reduction. First suppose that this reduction is non-split. Since $D_p = I_p$, all primes above $p$ have residue degree $1$. Thus the reduction type remains non-split at primes above $p$. Therefore $\psi_p = 1$ or $2$, depending on $\ord_p(\Delta)$ being even or odd. 
 
@@ -34,10 +37,12 @@ Let $G$, $\rho$ be as above. If $(D_p, I_p, \psi_p)$ is such that $\psi_p$ is co
     
 \end{proof}
 
-Now suppose that $p$ has split multiplicative reduction. Then $\psi_p(e, f) = e$.
-The following result shows that if $\bQ(\Res_{D_p}\rho ) = \bQ$, then $(D_p, I_p, \psi_p) \sim_{\rho} 1$\dots
+\noindent\underline{\textit{Split multiplicative reduction}}
 
-\begin{lemma}
+Now suppose that $p$ has split multiplicative reduction. Then $\psi_p(e, f) = e$.
+The following result shows that if $\bQ(\Res_{D_p}\rho ) = \bQ$, then $(D_p, I_p, \psi_p) \sim_{\rho} 1$.
+
+\begin{lemma}\label{rational-res}
     Let $G, \rho$ be as above, $D_p \leq G$. Let the exponent of $D_p$ be $b$. If $m \nmid b$, then $(D_p, I_p, \psi_p) \sim_{\rho} 1$. 
 \end{lemma}
 
@@ -57,21 +62,64 @@ Let  $D_p \cap H^{x^{-1}} = P' \ltimes C_k$ where $P' \leq P$ and $k | l$. Then 
 
 
 Consider taking fixed points $\bC[D_p / D_p \cap H^{x^{-1}}]^{P_p} \simeq \bC[D_p / P_p (D_p \cap H^{x^{-1}})] \simeq \bC[D_p / P_p \ltimes C_k]$. Now this has dimension $\frac{l}{k}$, so we've killed off the $p$-part. 
+Then $\bC[\Res_{D_p} \Theta]^{P_p} \simeq \left(\Res_{D_p} \rho \oplus \tau(\rho)\right)^{P_p}$. Both sides have $P_p$ in their kernel, so we can project this relation to the quotient $D_p / P_p \simeq C_l$. Then
+$(C_l, C_l, e)$ evaluated at $P_p \cdot \Res_{D_p}\Theta / P_p$ equals $(D_p, D_p, \psi_p)$ evaluated at $\Res_{D_p} \Theta$ modulo squares up to (possibly) a factor of $p$.
 
-We have $\bC[\Res_{D_p} \Theta]^{P_p} \simeq \left(\Res_{D_p} \rho \oplus \tau(\rho)\right)^{P_p}$. 
+It turns out that this factor of $p$ doesn't matter:
+
+\begin{lemma}
+    Let $K = \bQ(\sqrt{d})$ be a quadratic field, contained in the minimal cyclotomic field $\bQ(\zeta_m)$ with $m$ odd. Let $m \mid p^u l $, for some $u \geq 0$ and $l$ such that $p \equiv 1 \pmod l$. Then $p$ is the norm of an element from $K^{\times}$.
+\end{lemma}
+
+\begin{proof}
+    Since $m$ is odd, it is clear that $d = \prod_{q | m} q^*$. We show that $p$ has inertial degree $1$ in the extended genus field $E^{+} = K(\{\sqrt{q^*} \colon q | m \})$ of $K$.
+    If $q \not= p$ then $q \mid l$, so $p \equiv 1 \pmod l$. Therefore $p$ splits in any quadratic subfield of $E^{+}$ of disriminant not divisible by $p$. Else, $p$ ramifies in any quadratic subfield with discriminant divisible by $p$. Thus it is clear that $p$ has inertial degree $1$ in $E^{+}$, hence also in the genus field $E$, and it follows from theorem \ref{p-principal} that $p$ is the norm of a principal ideal. If $K$ is imaginary then $p$ is the norm of an element of $K$. Else, we invoke theorem \ref{minus-one-norm}.
+\end{proof}
+
+Thus, we only need to worry about the tame part of our ramification indices. If $m \nmid l$, then $\phi = (\Res_{D_p} \rho)^{P_p}$ (viewed as a representation on $D_p / P_p$) has rational character. Therefore by lemma \ref{rational-res}, $(C_l, C_l, e) \sim_{\phi} 1$ as a function to $\bQ^{\times} / \bQ^{\times 2}$.
+Therefore we may assume that $m \mid l$ and that $\phi$ has $\bQ(\phi) = \bQ(\rho) = K$.
+
+\begin{prop}
+    Let $m \mid l$, then one has $(C_l, C_l, e) \sim_{\phi} 1$.   
+\end{prop}
+
+\begin{proof}
+    Let $\Psi$ be a $\phi$-relation. One may write $\phi \oplus \tau(\phi) = \bC[\Psi] = \sum_{k \mid l}{a_k} \chi_k$ where $a_k \in \bZ$ and $\chi_k$ are defined in example \ref{cyclic-relns}. Writing each $\chi_k$ in terms of permutation representations as in the example, one obtains an expression for $\bC[\Psi]$, noting this is exact since cyclic groups have no Brauer relations.
+
+    Evaluating $e$ on $\chi_k$ is trivial unless $k = q^a$ for some $q$ prime, $a \geq 1$. Indeed, if $k = p_1^{e_1} \cdots p_r^{e_r}$ , with $r \geq 2$ and $e_i \geq 1$, then {\color{red} maybe expand on this}
+    \[ \prod_{k' \mid k} (k')^{\mu(k / k')} = \prod_{j_1, \ldots j_r \in \{0,1\}^r } \left(p_1^{e_1 - j_1} \cdots p_r^{e_r - j_r}\right)^{\# j_i = 1} = \prod_{i = 1}^r \left(\frac{p_i^{e_i}}{p_i^{e_i - 1}}\right)^{\sum_{ j = 0}^{r - 1} \binom{r-1}{j} (-1)^j} = 1. \]
+    On the other hand,
+    \[ \prod_{k' \mid q^a} (k')^{\mu(q^a / k')} = q .\]
+    
+    We claim that $m \nmid k$ implies $a_k$ is even. The irreducible representations of $C_l$ over $\bQ(\phi)$ are given by the orbits of the complex irreducible characters of $C_l$ acted upon by $H = \Gal (\bQ(\zeta_l) / \bQ(\phi))$. One has $\chi_k = \widetilde{\varphi_k}$ where $\bQ(\varphi_k) = \bQ(\zeta_k)$. If $ m \nmid k$ then $\bQ(\phi) \not\subset \bQ(\zeta_k)$, so that $B = \Gal(\bQ(\zeta_l) / \bQ(\zeta_k)) \not\leq H$. Then $\bQ(\phi) = \bQ(\zeta_k) = \bQ$ so $BH = \Gal(\bQ(\zeta_l) / \bQ)$. Then the orbit of $\varphi_k$ under $H$ is fixed by $BH$, hence is rational. It follows that $\langle \phi, \varphi_k \rangle = \langle \tau(\phi) , \varphi_k \rangle$ so that $a_k$ is even.  
+
+    Thus we can only possibly get something interesting if $m = q$ is a prime. But then $q$ is a norm from $\bQ(\sqrt{q^*})$ by corollary \ref{p-principal}. 
+\end{proof}
+
+\subsubsection{Additive reduction}
+
+Now suppose that $E$ has additive reduction at $p$. In this case, assume that $p \geq 5$ is at worst tamely ramified in $F / \bQ$. This ensures that $D_p = I_p = C_l$ is cyclic, and $l \mid p - 1$. 
+
+\noindent\underline{\textit{Potentially multiplicative reduction}}
+
+{\color{red} TO DO}
+\vspace{10em}
 
 
+\noindent\underline{\textit{Potentially good reduction}}
 
+\begin{lemma}
+    Consider $M / L$ a field extension. Let $E / L$ be an elliptic curve, $v$ a finite place of $L$ and $w$ a finite place of $M$ with $w \mid v$. Let $\omega_v$ and $\omega_w$ be the minimal differentials for $E / L_v$ and $E / M_w$ respectively. 
+    
+    Then, if $E / K_v$ has potentially good reduction and the residue characteristic is not $3$ or $2$, one has
+    
+    \[ \left|\frac{\omega_v}{\omega_w} \right|_{w} = q^{\floor{\frac{e_{F / K} \cdot \ord_v(\Delta_{E, v}^{\min})}{12}}}, \]
+    where $q$ is the size of the residue field at $w$.
+\end{lemma}
 
-Therefore, the place is tamely ramified if and only if $P_p \subset I \cap H^{x^{-1}}$. 
+We consider $F / \bQ$ with additive potentially good reduction at $p$ . Since $D_p = I_p$, the size of the residue field is $p$ at all intermediate extensions. Let $n = v_p(\Delta)$. Then $n \in \{2,3,4,6,8,9,10\}$.  Consider $(D_p, I_p, \psi_p)$ where $\psi_p(e,f) = p^{\floor{e n / 12}}$. Then $(D_p, I_p, \psi_p) \sim_{\rho} 1$. Indeed, this takes values $1$ or $p$ in $\bQ^{\times} / \bQ^{\times 2}$. But $p \equiv 1 \pmod l$ implies that $p$ is the norm of a principal ideal in $\bQ(\rho)$, and hence the norm of an element, by corollary \ref{p-one-mod-disc} and theorem \ref{minus-one-norm}.
 
-
-\subsubsection*{dv terms in additive reduction}
-
-
-\subsubsection*{Tamagawa numbers in additive reduction}
-
-We use the following description of Tamagawa numbers. %Tim and Vlad reg consts Lemma 3.19
+The Tamagawa numbers take a little more work. We use the following description of Tamagawa numbers. %Tim and Vlad reg consts Lemma 3.19
 
 \begin{lemma}
     Let $K' /K / \bQ_p$ be finite extensions and $p \geq 5$. Let $E / K$ be an elliptic curve with addtive reduction; 
@@ -135,9 +183,8 @@ In summary,
 \end{equation}
 
 \begin{rem}
-   There's no reason why we can't get 3; see elliptic curve 441b1 with additive reduction at $7$ of type IV and Tamagawa number equal to $3$) 
+   There's no reason why we can't get 3; see elliptic curve 441b1 with additive reduction at $7$ of type IV and Tamagawa number equal to $3$
 \end{rem}
 
-
 However, it turns out we will only get $3$ occuring oddly when $d = 3$. Indeed, one has that $\langle \Ind_{D_{d'}}^D \trivial, \psi_3 \rangle = 1$ if $3 \mid d'$, and $0$ if $3 \nmid d'$, where $\psi_3$ is an irreducible character of $D$ of order $3$. Therefore one sees that the number of places with ramification degree divisible by $3$ cancels unless $d = 3$. Indeed, $\langle \chi_d , \psi_3 \rangle = 0$ unless $d = 3$, 
-in which case it is $1$. Therefore (\ref{tam-contrib}) can only be non-square when $d = 3$.
+in which case it is $1$. Therefore (\ref{tam-contrib}) can only be non-square when $d = 3$. {\color{red} then conclude why this is fine}
