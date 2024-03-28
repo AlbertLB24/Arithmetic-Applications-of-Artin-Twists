@@ -4,11 +4,9 @@
 %% package setup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
 \usepackage{enumerate}
 \usepackage[shortlabels]{enumitem}
-\usepackage{amsfonts,amsmath, soul, matlab-prettifier, bm, amsthm,enumitem,amssymb,multirow,float,mathtools,bbm,array,varwidth,hyperref}
+\usepackage{amsfonts,amsmath, soul, matlab-prettifier, bm, amsthm,enumitem,amssymb,multirow,float,mathtools,bbm,array,varwidth,hyperref, etoolbox}
 \usepackage[all]{xy}
 \usepackage[margin=0.9in]{geometry}
 \usepackage{graphicx}
@@ -22,46 +20,32 @@
 \usepackage{dsfont}
 \usepackage[title]{appendix}
 
-
-
-
 \raggedbottom
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% operators and symbols
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newcommand{\define}[4]{\expandafter#1\csname#3#4\endcsname{#2{#4}}}
+
 % operators
-\newcommand{\Hom}{\mathrm{Hom}}
-\newcommand{\Ker}{\mathrm{Ker}}
-\newcommand{\Pic}{\mathrm{Pic}}
-\newcommand{\Proj}{\mathrm{Proj}}
-\newcommand{\rk}{\mathrm{rk}}
-\newcommand{\Spec}{\mathrm{Spec}}
-\newcommand{\Sym}{\mathrm{Sym}}
-\newcommand{\Frob}{\mathrm{Frob}}
-\newcommand{\Gal}{\mathrm{Gal}}
-\newcommand{\GL}{\mathrm{GL}}
-\newcommand{\SL}{\mathrm{SL}}
-\newcommand{\Ind}{\mathrm{Ind}}
-\newcommand{\Aut}{\mathrm{Aut}}
-\newcommand{\Res}{\mathrm{Res}}
-\newcommand{\Rep}{\mathrm{Rep}}
-\newcommand{\Smo}{\mathrm{Smo}}
-\newcommand{\Span}{\mathrm{Span}}
-\newcommand{\supp}{\mathrm{supp}}
+\forcsvlist{\define{\DeclareMathOperator}{\mathrm}{}}{Ad, Aut, BSD, Char, Cl, Det, End, Frob, Gal, GL, hol, Hom, Id, Ind, Irr, Jac, Ker, Mod, new, old, ord,  Perm, PGL, Pic, Proj, PSL, Rad, Reg, Rep,res, Res, rk, sign, SL, Smo, SO, Span, Spec, Stab, supp, sw, Sym, Ta, tors, Tr, Trace, un, Vect}
+
+%trivial and ell
 \newcommand{\trivial}{\mathbbm{1}}
-\newcommand{\Irr}{\mathrm{Irr}}
-\newcommand{\sign}{\mathrm{sign}}
-\newcommand{\BSD}{\mathrm{BSD}}
-\newcommand{\ord}{\mathrm{ord}}
-\newcommand{\Reg}{\mathrm{Reg}}
-\newcommand{\Cl}{\mathrm{Cl}}
-\newcommand{\Stab}{\mathrm{Stab}}
+\renewcommand{\ell}{l}
 
+%mathbb letters 
+\forcsvlist{\define{\newcommand}{\mathbb}{b}}{1,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z}
 
-% mathcal
-\newcommand{\cO}{\mathcal{O}}
+%mathcal letters
+\forcsvlist{\define{\newcommand}{\mathcal}{c}}{A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,a,v}
+
+%mathfrak letters
+\forcsvlist{\define{\newcommand}{\mathfrak}{f}}{A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,a,m,n,p,q, g, t}
+
+%overline letters
+\forcsvlist{\define{\newcommand}{\overline}{ov}}{H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z}
 
 % mathbb
 \newcommand{\CC}{\mathbb{C}}
@@ -76,19 +60,35 @@
 \newcommand{\pp}{\mathfrak{p}}
 
 % mathfra
-\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\fm}{\mathfrak{m}}
-
+%\newcommand{\fg}{\mathfrak{g}}
+%\newcommand{\fm}{\mathfrak{m}}
 
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\hatv}[1]{\overset{\vee}{\mathstrut#1}}
+
+% Structures
+\def\set#1{\left\{#1\right\}}
+%\def\sets#1#2{\left\{\left.#1\ \right\vert#2\right\}}
+\def\rbr#1{\left(#1\right)}
+\def\ang#1{\left\langle#1\right\rangle}
+\def\n#1{\left\lvert#1\right\rvert}
+\def\nn#1{\left\lVert#1\right\rVert}
+\def\eq#1{\begin{equation}#1\end{equation}}
+\def\ov#1#2{{\substack{#1\\#2}}} % #1 over #2
+
+% Symbols
+\def\mto{\mapsto}
+\def\emb{\hookrightarrow}
+\def\es{\emptyset}
+\def\bs{\backslash}
+\def\cupp{\smallsmile}
+\def\surj{\twoheadrightarrow}
 
 % floor and ceiling
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 \DeclareMathOperator{\Ima}{Im}
-
 
 \linespread{1.5}
 
@@ -108,8 +108,6 @@
 \newtheorem{examples}[thm]{Examples}
 \newtheorem{fact}[thm]{Fact}
 
-% some shortcuts
-\input{commands.tex}
 \newtheorem{conj}[thm]{Conjecture}
 \newtheorem{notation}[thm]{Notation}
 
@@ -140,8 +138,8 @@
 
 \newpage
 \section{Norm relations}
-\input{section3/rep-theory.tex}
-\input{section3/norm-relations.tex}
+\input{section1/rep-theory.tex}
+\input{section1/norm-relations.tex}
 
 \newpage
 \section{Representations, L-functions and Artin Twists}
@@ -158,11 +156,7 @@
 \input{section4/inf-order.tex}
 \input{section4/odd-ext.tex}
 
-
 \section{Brauer Relations}
-
-
-
 
 \section{Consistency cases with BSD}
 \input{consistency.tex}
@@ -172,7 +166,6 @@
 \input{appendix/prime-decomp.tex}
 \input{appendix/class-field-theory.tex}
 \end{appendices}
-
 
 \newpage
 
