@@ -21,7 +21,7 @@ If $E / \bQ$ has good reduction at $p$, then it has good reduction at all primes
 
 \noindent\underline{\textit{Non-split multiplicative reduction}}
 
-Let $p$ be a prime of muliplicative reduction. First suppose that this reduction is non-split. Since $D_p = I_p$, all primes above $p$ have residue degree $1$. Thus the reduction type remains non-split at primes above $p$. Therefore $\psi_p = 1$ or $2$, depending on $\ord_p(\Delta)$ being even or odd. 
+Let $p$ be a prime of multiplicative reduction. First suppose that this reduction is non-split. Since $D_p = I_p$, all primes above $p$ have residue degree $1$. Thus the reduction type remains non-split at primes above $p$. Therefore $\psi_p = 1$ or $2$, depending on $\ord_p(\Delta)$ being even or odd. 
 
 We prove a more general lemma that constant functions are trivial on $\rho$-relations.
 
@@ -55,7 +55,7 @@ The following result shows that if $\bQ(\Res_{D_p}\rho ) = \bQ$, then $(D_p, I_p
 
 We have $D_p = I_p = P_p \ltimes C_l$, where $P_p \triangleleft I_p$ is wild inertia, and $C_l = I_p / P_p$ is the tame quotient. $C_l$ is a cyclic group, with $l \mid p^f - 1 = p - 1$. By the previous result, it is only of interest to consider decomposition groups $D_p = P_p \ltimes C_l$, with $m \mid p^u l$ for some $u \geq 0$. 
 
-In this case, $(D_p, I_p, \psi_p)(\Theta)$ is the product of ramification indices at primes above $p$. We seperate the $p$-part and tame part of this expression.
+In this case, $(D_p, I_p, \psi_p)(\Theta)$ is the product of ramification indices at primes above $p$. We separate the $p$-part and tame part of this expression.
 Recall that the ramification index of a place $w$ above $p$ corresponding to the double coset $H_i x D_p$ has ramification degree $\frac{|I_p|}{|H_i \cap I_p^x|} =\frac{|I_p|}{|I_p \cap H^{x^{-1}}|}$.
 This is the dimension of the permutation representation $\bC[D_p / D_p \cap H^{x^{-1}}]$.
 Let  $D_p \cap H^{x^{-1}} = P' \ltimes C_k$ where $P' \leq P$ and $k | l$. Then the ramification index is $\frac{|P|}{|P'|}\cdot \frac{l}{k}$. 
@@ -73,7 +73,7 @@ It turns out that this factor of $p$ doesn't matter:
 
 \begin{proof}
     Since $m$ is odd, it is clear that $d = \prod_{q | m} q^*$. We show that $p$ has inertial degree $1$ in the extended genus field $E^{+} = K(\{\sqrt{q^*} \colon q | m \})$ of $K$.
-    If $q \not= p$ then $q \mid l$, so $p \equiv 1 \pmod l$. Therefore $p$ splits in any quadratic subfield of $E^{+}$ of disriminant not divisible by $p$. Else, $p$ ramifies in any quadratic subfield with discriminant divisible by $p$. Thus it is clear that $p$ has inertial degree $1$ in $E^{+}$, hence also in the genus field $E$, and it follows from theorem \ref{p-principal} that $p$ is the norm of a principal ideal. If $K$ is imaginary then $p$ is the norm of an element of $K$. Else, we invoke theorem \ref{minus-one-norm}.
+    If $q \not= p$ then $q \mid l$, so $p \equiv 1 \pmod l$. Therefore $p$ splits in any quadratic subfield of $E^{+}$ of discriminant not divisible by $p$. Else, $p$ ramifies in any quadratic subfield with discriminant divisible by $p$. Thus it is clear that $p$ has inertial degree $1$ in $E^{+}$, hence also in the genus field $E$, and it follows from theorem \ref{p-principal} that $p$ is the norm of a principal ideal. If $K$ is imaginary then $p$ is the norm of an element of $K$. Else, we invoke theorem \ref{minus-one-norm}.
 \end{proof}
 
 Thus, we only need to worry about the tame part of our ramification indices. If $m \nmid l$, then $\phi = (\Res_{D_p} \rho)^{P_p}$ (viewed as a representation on $D_p / P_p$) has rational character. Therefore by lemma \ref{rational-res}, $(C_l, C_l, e) \sim_{\phi} 1$ as a function to $\bQ^{\times} / \bQ^{\times 2}$.
@@ -122,7 +122,7 @@ We consider $F / \bQ$ with additive potentially good reduction at $p$ . Since $D
 The Tamagawa numbers take a little more work. We use the following description of Tamagawa numbers. %Tim and Vlad reg consts Lemma 3.19
 
 \begin{lemma}
-    Let $K' /K / \bQ_p$ be finite extensions and $p \geq 5$. Let $E / K$ be an elliptic curve with addtive reduction; 
+    Let $K' /K / \bQ_p$ be finite extensions and $p \geq 5$. Let $E / K$ be an elliptic curve with additive reduction; 
     \[ E \colon y^2 = x^3 + Ax + B, \]
     with discriminant $\Delta = -16(4 A^3 + 27 B^2)$. Let $\delta = v_K(\Delta)$, and $e = e_{K' / K}$.
 
@@ -146,11 +146,11 @@ So suppose an elliptic curve $E / \bQ$ has additive reduction at $p$, with $p \g
 \prod_{d ' \mid d} C(E / F_{\fp}^{D_{d'}})^{\mu(d / d')}.
 \end{equation}
 
-Observe that in a totally ramified extension of degree coprime to $12$, the Tamagawa number remains the same. If $(12, d) = 1$, then $(12, d') = 1$ for $d' \mid  d$, so the Tamagawa number is consant accross subfields $F_{\fp}^{D_{d'}}$. Therefore,
+Observe that in a totally ramified extension of degree coprime to $12$, the Tamagawa number remains the same. If $(12, d) = 1$, then $(12, d') = 1$ for $d' \mid  d$, so the Tamagawa number is constant across subfields $F_{\fp}^{D_{d'}}$. Therefore,
 \[\prod_{d ' \mid d} C(E / F_{\fp}^{D_{d'}})^{\mu(d / d')} = C(E / \bQ_p)^{\sum_{d' \mid d} \mu(d / d')} = 1,\]
 assuming $d > 1$. 
 
-So we only need to worry about when $3 \mid d$. If we have type $III$ or $III^*$ or $I_0^*$ then the Tamagawa number is still unchanged in any totally ramified cyclic extension of degree dividing $d$. We will treat the other cases seperately: 
+So we only need to worry about when $3 \mid d$. If we have type $III$ or $III^*$ or $I_0^*$ then the Tamagawa number is still unchanged in any totally ramified cyclic extension of degree dividing $d$. We will treat the other cases separately: 
 
 \vspace{1em}
 
@@ -186,5 +186,5 @@ In summary,
    There's no reason why we can't get 3; see elliptic curve 441b1 with additive reduction at $7$ of type IV and Tamagawa number equal to $3$
 \end{rem}
 
-However, it turns out we will only get $3$ occuring oddly when $d = 3$. Indeed, one has that $\langle \Ind_{D_{d'}}^D \trivial, \psi_3 \rangle = 1$ if $3 \mid d'$, and $0$ if $3 \nmid d'$, where $\psi_3$ is an irreducible character of $D$ of order $3$. Therefore one sees that the number of places with ramification degree divisible by $3$ cancels unless $d = 3$. Indeed, $\langle \chi_d , \psi_3 \rangle = 0$ unless $d = 3$, 
+However, it turns out we will only get $3$ occurring oddly when $d = 3$. Indeed, one has that $\langle \Ind_{D_{d'}}^D \trivial, \psi_3 \rangle = 1$ if $3 \mid d'$, and $0$ if $3 \nmid d'$, where $\psi_3$ is an irreducible character of $D$ of order $3$. Therefore one sees that the number of places with ramification degree divisible by $3$ cancels unless $d = 3$. Indeed, $\langle \chi_d , \psi_3 \rangle = 0$ unless $d = 3$, 
 in which case it is $1$. Therefore (\ref{tam-contrib}) can only be non-square when $d = 3$. {\color{red} then conclude why this is fine}
