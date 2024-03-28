@@ -8,10 +8,12 @@
         "consts",
         "coprime",
         "cyclotomic",
+        "Frob",
         "Grothendieck",
         "Mackey's",
         "mathbb",
         "mathfra",
+        "mathfrak",
         "quotiened",
         "Schur",
         "Serre",
@@ -20,6 +22,7 @@
         "surjective",
         "Swinnerton",
         "Tamagawa",
-        "unramified"
+        "unramified",
+        "Vect"
     ]
 }
