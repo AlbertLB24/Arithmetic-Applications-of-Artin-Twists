@@ -1,12 +1,5 @@
 In this report we study a method proposed in \cite{DEW1} for forcing points of infinite order on elliptic curves over finite extensions $F / \bQ$. 
 
-
-
-
-
-
-
-
 \subsection*{Notation}
 We use the following notation for characters:
 
@@ -30,4 +23,7 @@ We use the following notation for characters:
 Given an elliptic curve $E / \bQ$ and a number field $F$, we define
 
 \[ C_{E / F} = \prod_v c_v(E / F) \left| \frac{\omega}{\omega_v^{\min}} \right|_v. \]
-The product is taken over the finite places of $F$, $\omega$ is a global minimal differential for $E / \bQ$, and $\omega_v^{\min}$ is a minimal differential at $v$.
+The product is taken over the finite places of $F$, $\omega$ is a global minimal differential for $E / \bQ$, and $\omega_v^{\min}$ is a minimal differential at $v$. In terms of minimal discriminants, if $E$ is of the form
+\[ y^2 + a_1 x y + a_3 y = x^3 + a_2 x^2 + a_4 x + a_6 \]
+with minimal discriminant $\Delta_E$ and $\omega = \frac{dx}{2 y + a_1 x + a_3}$, then
+\[ \left| \frac{\omega}{\omega_v^{\min}} \right|_v^{-12} = \left| \frac{\Delta_E}{\Delta_{E, v}^{\min}} \right|_v . \]
