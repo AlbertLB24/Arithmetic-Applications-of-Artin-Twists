@@ -1,36 +1,50 @@
 \subsection{Compatibility in odd order extensions}
 
-In this section we prove the following:
+ Let $E / \bQ$ be an elliptic curve. Let $F / \bQ$ be an extension of \textbf{odd order} with Galois group $G$. Consider a representation $\rho \in R(G)$ and the expression as in theorem \ref{thm_positive_rank}. The $m$ occurring in this expression divides $|G|$, hence is odd. The theorem then states that if the corresponding product of fudge factors $C_{E / \cdot}$ is not a norm from a quadratic subfield $\bQ(\sqrt{D}) \subset \bQ(\rho)$, then $E / F$ must have infinite order. 
+
+ In this section, we show under some restrictions for $E$ that we can never use this test to force positive rank.
 
 \begin{thm}
-    Let $E / \bQ$ be an elliptic curve. Let $F / \bQ$ be an extension of \textbf{odd order} with Galois group $G$. Suppose that the primes of additive reduction of $E$ are at worst tamely ramified in $F / \bQ$ (and $\geq 5$). 
-    
-    Then for any representation $\rho$ of $G$ and any expression as in (\ref{rho-reln}), the corresponding ratio of Tamagawa numbers is a norm from any quadratic subfield of $\bQ(\rho)$.
+    Suppose that the primes of additive reduction of $E$ are at worst tamely ramified in $F / \bQ$ (and $\geq 5$). 
+    Then for any representation $\rho$ of $G$ and any expression as in theorem \ref{thm_positive_rank}, the corresponding ratio of fudge factors is a norm from any quadratic subfield of $\bQ(\rho)$.
+    Equivalently, the function $H \mapsto C(E / F^H)$ is trivial on $\rho$-relations. 
 \end{thm}
 
 If $\bQ(\rho) = \bQ$ there is nothing to prove. 
-If $[\bQ(\rho) \colon \bQ] > 1$ then this index is even. Indeed, since $G$ has odd order, all its characters are complex, so there is an element $\sigma \in \Aut(\bQ(\rho) / \bQ)$ that acts by complex conjugation (i.e. is of order $2$). Therefore there is a quadratic subfield $\bQ(\sqrt{d}) \subset \bQ(\rho)$. Choose any such quadratic subfield. Replacing $\rho$ by the sum of its conjugates by elements of $ \Gal(\bQ(\rho) / \bQ(\sqrt{d}))$, we may assume that $\bQ(\rho) = \bQ(\sqrt{d})$. Let $\tau$ be the generator of $\Gal(\bQ(\sqrt{d}) / \bQ)$. Let $m$ be the smallest integer such that $\bQ(\sqrt{d}) \subset \bQ(\zeta_m)$. Then $m$ divides the exponent of $G$, hence is odd.
+Thus we assume $[\bQ(\rho) \colon \bQ] > 1$. Then this index is even. Indeed, since $G$ has odd order, all its characters are complex, so there is an element $\sigma \in \Aut(\bQ(\rho) / \bQ)$ that acts by complex conjugation (i.e. is of order $2$). Therefore there is a quadratic subfield $\bQ(\sqrt{D}) \subset \bQ(\rho)$. Choose any such quadratic subfield. Replacing $\rho$ by the sum of its conjugates by elements of $ \Gal(\bQ(\rho) / \bQ(\sqrt{d}))$, we may assume that $\bQ(\rho) = \bQ(\sqrt{D})$. Let $\tau$ be the generator of $\Gal(\bQ(\sqrt{D}) / \bQ)$. 
 
-We prove that each $(D_p, I_p, \psi_p)$  satisfies $(D_p, I_p, \psi_p) \sim_{\rho} 1$. Since we deal with each local factor individually, we may assume that $D_p = I_p$ by theorem \ref{DeqI}. 
+Let $k$ be the smallest integer such that $\bQ(\sqrt{D}) \subset \bQ(\zeta_k)$. Then $k$ divides the exponent of $G$, hence is odd.
+
+\vspace{1em}
+Let us break up the function $C \colon H \mapsto C(E / F^H)$ into $C = \prod_p  C_p \cdot d_p$ where
+        \[ C_p(H) =  C_p(E / F^H) := \prod_{v | p}  c_v(E / F^H) , \qquad d_p(H) = \prod_{v | p} \left|\frac{\omega}{\omega_{v}^{\min}}\right|_v . \]
+We will observe later that for each reduction type, $C_p$ and $d_p$ are $D_p$-local functions. 
+ 
+We prove that each $C_p \sim_{\rho} 1$ and $d_p \sim_{\rho} 1$ for all primes $p$. We do this by considering serpately each reduction type. Since we deal with each local factor individually, we may assume that $D_p = I_p$ by theorem \ref{DeqI}. {\color{red} does that include the dv terms???}
 
 \subsubsection*{Good reduction}
-If $E / \bQ$ has good reduction at $p$, then it has good reduction at all primes lying above $p$ in subfields of $F$. Thus $C_p(E / F_i) = 1$ for each subfield $F_i \subset F$, so that $(D_p, I_p, \psi_p) = 1$ on $\rho$-relations. 
+If $E / \bQ$ has good reduction at $p$, then it has good reduction at all primes lying above $p$ in subfields of $F$. Then the tamagawa number is always one, as well as $\left|\omega / \omega_{v}^{\min}\right|_v$ for any place $v \mid p$ in an intermediate field. Therefore $C_p$, $d_p \sim_{\rho} 1$.
 
 \subsubsection*{Multiplicative reduction}
-{\color{red} say that the dv term goes away}
+
+If $E / \bQ_p$ has multiplicative reduction, then as in the good reduction case one has $\left|\omega / \omega_{v}^{\min}\right|_v = 1$ for any place $v \mid p$ in an intermediate field. Thus $d_p \sim_{\rho} 1$.
+For the Tamagawa numbers, we consider non-split/ split reduction separately.
+\vspace{1em}
 
 \noindent\underline{\textit{Non-split multiplicative reduction}}
 
-Let $p$ be a prime of multiplicative reduction. First suppose that this reduction is non-split. Since $D_p = I_p$, all primes above $p$ have residue degree $1$. Thus the reduction type remains non-split at primes above $p$. Therefore $\psi_p = 1$ or $2$, depending on $\ord_p(\Delta)$ being even or odd. 
+Let $E / \bQ_p$ have non-split multiplicative reduction. Since $D_p = I_p$, all primes above $p$ have residue degree $1$. Then the reduction at places above $p$ remains non-split in all intermediate subfields.
+It follows that 
+\[ C_p = (D_p, \alpha) \]
+where $\alpha$ is the constant function on $B(D_p)$ with $\alpha \in \{1, 2\}$, depending on $\ord_p(\Delta)$ being even or odd. 
+We prove a more general lemma that $D_p$-local constant functions are trivial on $\rho$-relations.
 
-We prove a more general lemma that constant functions are trivial on $\rho$-relations.
-
-\begin{lemma}
-Let $G$, $\rho$ be as above. If $(D_p, I_p, \psi_p)$ is such that $\psi_p$ is constant, then $(D_p, I_p, \psi_p) \sim_{\rho} 1$.  
+\begin{lemma}\label{const-fns}
+Let $G$, $\rho$ be as above. The function $(D_p, \alpha)$ for $\alpha \in \bQ^{\times}$ satisfies $(D_p, \alpha) \sim_{\rho} 1$.  
 \end{lemma}   
 
 \begin{proof}
-    Let $\psi_p = \alpha$. Then $(D_p, I_p, \psi_p)$ sends $H \leq G$ to $\alpha^{| H \backslash G / D_p|}$. Thus if $\Theta = \sum_i n_i H_i$ is a $\rho$-relation, $(D_p, I_p, \psi_p)(\Theta) = \alpha^{ \sum_i n_i \cdot | H_i \backslash G / D_p|}$. We show that $\sum_i n_i \cdot | H_i \backslash G / D_p|$ is even. 
+    The function $(D_p, \alpha)$ on $B(G)$ sends $H \leq G$ to $\alpha^{| H \backslash G / D_p|}$. Thus if $\Theta = \sum_i n_i H_i$ is a $\rho$-relation, $(D_p, \alpha)(\Theta) = \alpha^{ \sum_i n_i \cdot | H_i \backslash G / D_p|}$. We show that $\sum_i n_i \cdot | H_i \backslash G / D_p|$ is even. 
 
     %Since $G$ is odd, each $| H_i \backslash G / D_p|$ is odd. On the other hand, $\rho \oplus \tau(\rho)$ has even dimension. Therefore $\sum_i |n_i|$ is even. 
     One has $\Res_D \Theta = \sum_i n_i \sum_{x \in H_i \backslash G / D} D \cap H^{x^{-1}}$ and the permutation representation $\bC[\Res_D \Theta]$ of $D$ is isomorphic to $\Res_D (\rho \oplus \tau(\rho))$. In particular the dimension of this permutation representation is even. The dimension is $\sum_i n_i \sum_{x \in H_i \backslash G / D} [D \colon D \cap H^{x^{-1}} ]$. Since each $[D \colon D \cap H^{x^{-1}} ]$ is odd, this implies there are an even number of terms in the summation, i.e. that $\sum_i n_i \cdot | H_i \backslash G / D_p|$ is even. 
@@ -39,70 +53,90 @@ Let $G$, $\rho$ be as above. If $(D_p, I_p, \psi_p)$ is such that $\psi_p$ is co
 
 \noindent\underline{\textit{Split multiplicative reduction}}
 
-Now suppose that $p$ has split multiplicative reduction. Then $\psi_p(e, f) = e$.
-The following result shows that if $\bQ(\Res_{D_p}\rho ) = \bQ$, then $(D_p, I_p, \psi_p) \sim_{\rho} 1$.
+Now suppose $E / \bQ_p$ has split multiplicative reduction. The reduction type remains split at all places above $p$ within sub-extensions of $F / \bQ$. Let $\ord_p(\Delta) = n$. Then 
+\[ C_v = (D_p, I_p, en). \]
+Since the $n$ factor is constant by lemma \ref{const-fns} we have $(D_p, I_p, en) \sim_{\rho} (D_p, I_p, e)$.
+This is a $D_p$-local function.
+The following result shows that if $\bQ(\Res_{D_p}\rho ) = \bQ$, then $(D_p, I_p, e) \sim_{\rho} 1$.
 
 \begin{lemma}\label{rational-res}
-    Let $G, \rho$ be as above, $D_p \leq G$. Let the exponent of $D_p$ be $b$. If $m \nmid b$, then $(D_p, I_p, \psi_p) \sim_{\rho} 1$. 
+    Let $G, \rho$ be as above, $D_p \leq G$. Let the exponent of $D_p$ be $b$. If $k \nmid b$, then $(D_p, I_p, e) \sim_{\rho} 1$. 
 \end{lemma}
 
 \begin{proof}
-    Note that $\bQ(\Res_{D_p}{\rho}) \subset \bQ(\zeta_b) \cap \bQ(\rho) \subset \bQ(\zeta_b)$. Then $\bQ(\rho) \subset \bQ(\zeta_b) \implies m \mid b$ by minimality of $m$. Thus, if $m \nmid b$, one has $\bQ(\rho) \not\subset \bQ(\zeta_b)$ and so $\bQ(\Res_{D_p} \rho) = \bQ$. 
-
-    Then, $\Res_{D_p} \rho = \tau (\Res_{D_p} \rho)$. Let $\Theta$ be a $\rho$-relation. It follows that every rational representation that is a summand of $\bC[\Res_{D_p} \Theta]$ arises with multiplicity two. 
-    Thus, there is a $(\Res_{D_p}\rho$)-relation $\Theta ' $ such that $\bC[\Res_{D_p} \Theta] \simeq \bC[2 \Theta']$. This means $\Psi = \Theta - 2 \Theta'$ is a Brauer relation for $D_p$. Therefore, $(D_p, I_p, \psi_p)(\Theta) = (D_p, I_p, \psi_p)(\Psi) \cdot (D_p, I_p, \psi_p)(2 \Theta') = (D_p, I_p, e)(\Psi)  \cdot (D_p, I_p, \psi_p)(\Theta')^2 = 1$ as as function to $\bQ^{\times} / \bQ^{\times}$. Indeed $(D_p, I_p, e) = 1$ as a function to $\bQ^{\times} / \bQ^{\times}$ on Brauer relations, as per example \ref{trivial-on-brauer}.
+    Note that $\bQ(\Res_{D_p}{\rho}) \subset \bQ(\zeta_b) \cap \bQ(\rho) \subset \bQ(\zeta_b)$. Then $\bQ(\rho) \subset \bQ(\zeta_b) \implies k \mid b$ by minimality of $k$. Thus, if $k \nmid b$, one has $\bQ(\rho) \not\subset \bQ(\zeta_b)$, so $\bQ(\Res_{D_p} \rho) = \bQ$ and $\Res_{D_p} \rho = \tau (\Res_{D_p} \rho)$. 
+    
+    Let $\Theta$ be a $\rho$-relation. It follows that every rational representation that is a summand of $\bC[\Res_{D_p} \Theta]$ arises with multiplicity two. 
+    Thus, there is a $(\Res_{D_p}\rho$)-relation $\Theta ' $ such that $\bC[\Res_{D_p} \Theta] \simeq \bC[2 \Theta']$. Then $\Psi = \Theta - 2 \Theta'$ is a Brauer relation for $D_p$. We have 
+    \[(D_p, I_p, e)(\Theta) = (D_p, I_p, e)(\Psi) \cdot (D_p, I_p, e)(2 \Theta') = (D_p, I_p, e)(\Psi)  \cdot ((D_p, I_p, e)(\Theta'))^2 = 1\]
+    as a function to $\bQ^{\times} / \bQ^{\times}$. Indeed $(D_p, I_p, e)(\Psi) = 1$ on Brauer relations, as per example \ref{trivial-on-brauer} (noting that $D_p$ is odd). Thus $(D_p, I_p, e) \sim_{\rho} 1$.
 \end{proof}
 
-We have $D_p = I_p = P_p \ltimes C_l$, where $P_p \triangleleft I_p$ is wild inertia, and $C_l = I_p / P_p$ is the tame quotient. $C_l$ is a cyclic group, with $l \mid p^f - 1 = p - 1$. By the previous result, it is only of interest to consider decomposition groups $D_p = P_p \ltimes C_l$, with $m \mid p^u l$ for some $u \geq 0$. 
+We have $D_p = I_p = P_p \ltimes C_l$, where $P_p \triangleleft I_p$ is wild inertia, and $C_l = I_p / P_p$ is the tame quotient. $C_l$ is a cyclic group, with $l \mid p^f - 1 = p - 1$. By the previous result, it is only of interest to consider decomposition groups $D_p = P_p \ltimes C_l$, with $k \mid p^u l$ for some $u \geq 0$. 
 
-In this case, $(D_p, I_p, \psi_p)(\Theta)$ is the product of ramification indices at primes above $p$. We separate the $p$-part and tame part of this expression.
-Recall that the ramification index of a place $w$ above $p$ corresponding to the double coset $H_i x D_p$ has ramification degree $\frac{|I_p|}{|H_i \cap I_p^x|} =\frac{|I_p|}{|I_p \cap H^{x^{-1}}|}$.
+Now, $(D_p, I_p, e)(\Theta)$ is the product of ramification indices at primes above $p$. We separate the $p$-part and tame part of this expression.
+Recall that the ramification index of a place $w$ above $p$ corresponding to the double coset $H_i x D_p$ has ramification degree $e_w = \frac{|I_p|}{|H_i \cap I_p^x|} =\frac{|I_p|}{|I_p \cap H^{x^{-1}}|}$.
 This is the dimension of the permutation representation $\bC[D_p / D_p \cap H^{x^{-1}}]$.
-Let  $D_p \cap H^{x^{-1}} = P' \ltimes C_k$ where $P' \leq P$ and $k | l$. Then the ramification index is $\frac{|P|}{|P'|}\cdot \frac{l}{k}$. 
+Let  $D_p \cap H^{x^{-1}} = P' \ltimes C_a$ where $P' \leq P$ and $a | l$. Then the ramification index is $\frac{|P|}{|P'|}\cdot \frac{l}{a}$. 
 
 
-Consider taking fixed points $\bC[D_p / D_p \cap H^{x^{-1}}]^{P_p} \simeq \bC[D_p / P_p (D_p \cap H^{x^{-1}})] \simeq \bC[D_p / P_p \ltimes C_k]$. Now this has dimension $\frac{l}{k}$, so we've killed off the $p$-part. 
-Then $\bC[\Res_{D_p} \Theta]^{P_p} \simeq \left(\Res_{D_p} \rho \oplus \tau(\rho)\right)^{P_p}$. Both sides have $P_p$ in their kernel, so we can project this relation to the quotient $D_p / P_p \simeq C_l$. Then
-$(C_l, C_l, e)$ evaluated at $P_p \cdot \Res_{D_p}\Theta / P_p$ equals $(D_p, D_p, \psi_p)$ evaluated at $\Res_{D_p} \Theta$ modulo squares up to (possibly) a factor of $p$.
+Consider taking fixed points $$\bC[D_p / D_p \cap H^{x^{-1}}]^{P_p} \simeq \bC[D_p / P_p (D_p \cap H^{x^{-1}})] \simeq \bC[D_p / P_p \ltimes C_a].$$ This permutation representation has dimension $\frac{l}{a}$, so we've killed off the $p$-part. 
+Then $$\bC[\Res_{D_p} \Theta]^{P_p} \simeq \left(\Res_{D_p} \rho \oplus \tau(\rho)\right)^{P_p}$$
+and we can consider these as representations of $D_p / I_p = C_l$. 
+Consider the function $g$ on $B(C_l)$ sending $H$ to $[C_l \colon H]$. 
+It follows that $(D_p, D_p, e)(\Theta)$ differs from $g(P_p \cdot \Res_{D_p}\Theta / P_p)$ up to a factor of $p$. 
 
-It turns out that this factor of $p$ doesn't matter:
+%$(C_l, C_l, e)$ evaluated at $P_p \cdot \Res_{D_p}\Theta / P_p$ equals $(D_p, D_p, \psi_p)$ evaluated at $\Res_{D_p} \Theta$ modulo squares up to (possibly) a factor of $p$.
+
+Crucially, this factor of $p$ doesn't matter:
 
 \begin{lemma}
-    Let $K = \bQ(\sqrt{d})$ be a quadratic field, contained in the minimal cyclotomic field $\bQ(\zeta_m)$ with $m$ odd. Let $m \mid p^u l $, for some $u \geq 0$ and $l$ such that $p \equiv 1 \pmod l$. Then $p$ is the norm of an element from $K^{\times}$.
+    Let $K = \bQ(\sqrt{D})$ be a quadratic field, contained in the minimal cyclotomic field $\bQ(\zeta_k)$ with $k$ odd. Let $k \mid p^u l $, for some $u \geq 0$ and $l$ such that $p \equiv 1 \pmod l$. Then $p$ is the norm of an element from $K^{\times}$.
 \end{lemma}
 
 \begin{proof}
-    Since $m$ is odd, it is clear that $d = \prod_{q | m} q^*$. We show that $p$ has inertial degree $1$ in the extended genus field $E^{+} = K(\{\sqrt{q^*} \colon q | m \})$ of $K$.
-    If $q \not= p$ then $q \mid l$, so $p \equiv 1 \pmod l$. Therefore $p$ splits in any quadratic subfield of $E^{+}$ of discriminant not divisible by $p$. Else, $p$ ramifies in any quadratic subfield with discriminant divisible by $p$. Thus it is clear that $p$ has inertial degree $1$ in $E^{+}$, hence also in the genus field $E$, and it follows from theorem \ref{p-principal} that $p$ is the norm of a principal ideal. If $K$ is imaginary then $p$ is the norm of an element of $K$. Else, we invoke theorem \ref{minus-one-norm}.
+    Since $k$ is odd, it is clear that $D = \prod_{q | k} q^*$, the product being taken over primes dividing $k$. Note that if $q \not= p$, then since $q \mid l$, we have $p \equiv 1 \pmod l \implies p \equiv 1 \pmod q$. By theorem \ref{p-one-mod-disc},  $p$ is the norm of a principal fractional ideal of $K$. If $K$ is imaginary, then $p$ is the norm of an element of $K$. Else, we invoke theorem \ref{p-norm-elem-1} or theorem \ref{p-norm-elem-2}.
+    %We show that $p$ has inertial degree $1$ in the extended genus field $E^{+} = K(\{\sqrt{q^*} \colon q | k \})$ of $K$ ({\color{red} cf. appendix}).
+    %If $q \not= p$ then $q \mid l$, so $p \equiv 1 \pmod l$. Therefore $p$ splits in any quadratic subfield of $E^{+}$ of discriminant not divisible by $p$. Else, $p$ ramifies in any quadratic subfield with discriminant divisible by $p$. Thus it is clear that $p$ has inertial degree $1$ in $E^{+}$, hence also in the genus field $E$, and it follows from theorem \ref{p-principal} that $p$ is the norm of a principal ideal.  Else, we invoke theorem \ref{minus-one-norm}.
 \end{proof}
 
-Thus, we only need to worry about the tame part of our ramification indices. If $m \nmid l$, then $\phi = (\Res_{D_p} \rho)^{P_p}$ (viewed as a representation on $D_p / P_p$) has rational character. Therefore by lemma \ref{rational-res}, $(C_l, C_l, e) \sim_{\phi} 1$ as a function to $\bQ^{\times} / \bQ^{\times 2}$.
-Therefore we may assume that $m \mid l$ and that $\phi$ has $\bQ(\phi) = \bQ(\rho) = K$.
+Thus, we only need to worry about the tame part of our ramification indices, and the triviality of the function $g$ on $B(C_l)$. If $k \nmid l$, then $\phi = (\Res_{D_p} \rho)^{P_p}$ (viewed as a representation on $D_p / P_p$) has rational character. Therefore, arguing as in lemma \ref{rational-res}, $g \sim_{\phi} 1$ as a function to $\bQ^{\times} / \bQ^{\times 2}$.
+Therefore we may assume that $k \mid l$ and that $\phi$ has $\bQ(\phi) = \bQ(\rho) = K$.
 
 \begin{prop}
-    Let $m \mid l$, then one has $(C_l, C_l, e) \sim_{\phi} 1$.   
+    Let $k \mid l$, then one has $g \sim_{\phi} 1$.   
 \end{prop}
 
 \begin{proof}
-    Let $\Psi$ be a $\phi$-relation. One may write $\phi \oplus \tau(\phi) = \bC[\Psi] = \sum_{k \mid l}{a_k} \chi_k$ where $a_k \in \bZ$ and $\chi_k$ are defined in example \ref{cyclic-relns}. Writing each $\chi_k$ in terms of permutation representations as in the example, one obtains an expression for $\bC[\Psi]$, noting this is exact since cyclic groups have no Brauer relations.
+    Let $\Psi$ be a $\phi$-relation. One may write $\phi \oplus \tau(\phi) = \bC[\Psi] = \sum_{l' \mid l}{a_{l'}} \chi_{l'}$ where $a_{l'} \in \bZ$ and $\chi_{l'}$ are defined in example \ref{cyclic-relns}. Writing each $\chi_{l'}$ in terms of permutation representations as in the example, one obtains an expression for $\bC[\Psi]$, noting this is exact since cyclic groups have no Brauer relations.
 
-    Evaluating $e$ on $\chi_k$ is trivial unless $k = q^a$ for some $q$ prime, $a \geq 1$. Indeed, if $k = p_1^{e_1} \cdots p_r^{e_r}$ , with $r \geq 2$ and $e_i \geq 1$, then {\color{red} maybe expand on this}
-    \[ \prod_{k' \mid k} (k')^{\mu(k / k')} = \prod_{j_1, \ldots j_r \in \{0,1\}^r } \left(p_1^{e_1 - j_1} \cdots p_r^{e_r - j_r}\right)^{\# j_i = 1} = \prod_{i = 1}^r \left(\frac{p_i^{e_i}}{p_i^{e_i - 1}}\right)^{\sum_{ j = 0}^{r - 1} \binom{r-1}{j} (-1)^j} = 1. \]
+    Evaluating $g$ on $\chi_{l'}$ is trivial unless $l' = q^a$ for some $q$ prime, $a \geq 1$. Indeed, if $l' = p_1^{e_1} \cdots p_r^{e_r}$ , with $r \geq 2$ and $e_i \geq 1$, then {\color{red} maybe expand on this}
+    \[ \prod_{l'' \mid l'} (l'')^{\mu(l' / l'')} = \prod_{j_1, \ldots j_r \in \{0,1\}^r } \left(p_1^{e_1 - j_1} \cdots p_r^{e_r - j_r}\right)^{\# j_i = 1} = \prod_{i = 1}^r \left(\frac{p_i^{e_i}}{p_i^{e_i - 1}}\right)^{\sum_{ j = 0}^{r - 1} \binom{r-1}{j} (-1)^j} = 1. \]
     On the other hand,
-    \[ \prod_{k' \mid q^a} (k')^{\mu(q^a / k')} = q .\]
+    \[ \prod_{l' \mid q^a} (l')^{\mu(q^a / l')} = q .\]
     
-    We claim that $m \nmid k$ implies $a_k$ is even. The irreducible representations of $C_l$ over $\bQ(\phi)$ are given by the orbits of the complex irreducible characters of $C_l$ acted upon by $H = \Gal (\bQ(\zeta_l) / \bQ(\phi))$. One has $\chi_k = \widetilde{\varphi_k}$ where $\bQ(\varphi_k) = \bQ(\zeta_k)$. If $ m \nmid k$ then $\bQ(\phi) \not\subset \bQ(\zeta_k)$, so that $B = \Gal(\bQ(\zeta_l) / \bQ(\zeta_k)) \not\leq H$. Then $\bQ(\phi) = \bQ(\zeta_k) = \bQ$ so $BH = \Gal(\bQ(\zeta_l) / \bQ)$. Then the orbit of $\varphi_k$ under $H$ is fixed by $BH$, hence is rational. It follows that $\langle \phi, \varphi_k \rangle = \langle \tau(\phi) , \varphi_k \rangle$ so that $a_k$ is even.  
+    We claim that $k \nmid l'$ implies $a_{l'}$ is even. The irreducible representations of $C_l$ over $\bQ(\phi)$ are given by the orbits of the complex irreducible characters of $C_l$ acted upon by $H = \Gal (\bQ(\zeta_l) / \bQ(\phi))$. One has $\chi_{l'} = \widetilde{\varphi_{l'}}$ where $\bQ(\varphi_{l'}) = \bQ(\zeta_{l'})$. If $ k \nmid l'$ then $\bQ(\phi) \not\subset \bQ(\zeta_{l'})$, so that $B = \Gal(\bQ(\zeta_l) / \bQ(\zeta_{l'})) \not\leq H$. Then $\bQ(\phi) \cap \bQ(\zeta_{l'}) = \bQ$ so $BH = \Gal(\bQ(\zeta_l) / \bQ)$. Then the orbit of $\varphi_{l'}$ under $H$ is fixed by $BH$, hence is rational. It follows that $\langle \phi, \varphi_{l'} \rangle = \langle \tau(\phi) , \varphi_{l'} \rangle$ so that $a_{l'}$ is even.  
 
-    Thus we can only possibly get something interesting if $m = q$ is a prime. But then $q$ is a norm from $\bQ(\sqrt{q^*})$ by corollary \ref{p-principal}. 
+    Thus we can only possibly get something interesting if $k = q$ is a prime. But then $q$ is a norm from $\bQ(\sqrt{q^*})$ by corollary \ref{p-principal}. 
 \end{proof}
 
 \subsubsection{Additive reduction}
 
-Now suppose that $E$ has additive reduction at $p$. In this case, assume that $p \geq 5$ is at worst tamely ramified in $F / \bQ$. This ensures that $D_p = I_p = C_l$ is cyclic, and $l \mid p - 1$. 
+Now suppose that $E / bQ_p$ has additive reduction. In this case, assume that $p \geq 5$ is at worst tamely ramified in $F / \bQ$. This ensures that $D_p = I_p = C_l$ is cyclic, and $l \mid p - 1$.
+
+This time the terms involving the minimal differentials are not trivial. 
+Let $n = \ord_p(\Delta_E)$. 
+Consider a place $w$ of $F^H$ over $p$ with ramification degree and inertial degree $e_w$, $f_w$ over $\bQ$. Then $\Delta_E$ has valuation $n e_w$ in $F^H$. It follows that $\Delta_{E,w}^{\min}$ has valuation $n e_w - 12 \cdot \floor{e_w n /12}$. Therefore
+
+%\[ \left|\frac{\Delta_{E}}{\Delta_{E, w}^\min} \right|_w = p^{f_w 12 \cdot \floor{e_w n / 12}} \implies 
+%       \left|\frac{\omega}{\omega_{w}^\min} \right|_w = p \]
+
+{\color{red} first say something about how dv terms go away }
+
 
 \noindent\underline{\textit{Potentially multiplicative reduction}}
 
-Suppose that $E / \bQ_p$ has Kodaira type $I_n^*$. For a finite extension tamely ramified $K' / \bQ_p$ with ramification degree $e$, $E / K'$ has Kodaira type $I_{en}^*$ if $e$ is odd, and type $I_{en}$ if $n$ is even. Thus in odd degree extensions the reduction type will stay potentially multiplicative.
+Suppose that $E / \bQ_p$ has Kodaira type $I_n^*$. For a tamely ramified finite extension $K' / \bQ_p$ with ramification degree $e$, $E / K'$ has Kodaira type $I_{en}^*$ if $e$ is odd, and type $I_{en}$ if $n$ is even. Thus in odd degree extensions the reduction type will stay potentially multiplicative.
 One has that $v_{K'}(\Delta_{E / K'}) = e v_p(\Delta) - 12\floor{e / 2}$.
 
 
