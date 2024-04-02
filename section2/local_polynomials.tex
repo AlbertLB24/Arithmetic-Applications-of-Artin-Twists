@@ -1,0 +1,39 @@
+\subsection{Local Polynomials and L-functions}
+We now briefly discuss how to attach analytic objects to Artin and $\ell$-adic reperesentations. These objects are usually described for local fields of characteristic $0$ first. Then, one constructs global objects attached to number fields by completing them at their finite places, obtaining the local information and then combinining it appropiately. 
+
+To begin, let $K$ be a local field with $0$ characteristic and let $p$ be the characteristic of the residue field $\kappa$. Let $\rho:G_K\to\GL(V)$ be an Artin or $\ell$-adic representation such that $\ell\neq p$ (this is an important technical assumption that we will not discuss further). It is a fundamental resut in algebraic number theory that the natural map 
+$$\epsilon:\Gal(\bar{K}/K)\longrightarrow\Gal(\bar{\kappa}/\kappa)$$
+is surjective, and $I_K:=\ker\epsilon$ is denoted as the inertia group of $K$. Therefore, we have a short exact sequence
+$$0\longrightarrow I_K\longrightarrow \Gal(\bar{K}/K)\xlongrightarrow{\epsilon} \Gal(\bar{\kappa}/\kappa)\longrightarrow 0.$$
+
+In addition, the map $\phi\in\Gal(\bar\kappa/\kappa)$ such that $\phi(x)=x^p$ is a topological generator of $\Gal(\bar\kappa/\kappa)$ and any preimage of $\phi$ under $\epsilon$ is called a Frobenius element $\Frob_K$, which is well-defined up to $I_K$. Furthermore, the space of intertia-invariants 
+$$V^{I_K}:=\{v\in V:\rho(g)v=v\text{ for all }g\in I_K\}$$
+is naturally a $G_K/I_K$ representation, which we denote $\rho^{I_K}$. In this setting, $\rho^{I_K}(\Frob_K)$ is therefore well-defined. We are now ready to define the local polynomial attached to $\rho$.
+
+\begin{defn}
+    Let $K$ be a local field of characteristic $0$ and let $p$ the characteristic of its local field. If $\rho$ is an Artin or $\ell$-adic representation such that $\ell\neq p$, then the local polynomial attached to $\rho$ is
+    $$P(\rho,T):=\det\left(I-T\cdot\rho^{I_K}\left(\Frob_K^{-1}\right)\right).$$  
+\end{defn}
+
+If $K$ is instead a number field, the idea is to consider all finite places of $K$ and consider all the local polynomials attached to all local completions of $K$ to build the corresponding L-function. More concretely, let $\rho:G_K\to\GL(V)$ be an Artin or $\ell$-adic representation, let $\pp$ be a finite place of $K$ and let $K_\pp$ be the corresponding completion. Since $G_{K_\pp}=\Gal(\bar{K_\pp}/K_\pp)$ is naturally a subgroup of $G_K$, we can restrict $\rho$ to $\Res_\pp\rho:G_{K_\pp}\to\GL(V)$ and then calculate the corresponding local polynomial as long as $\pp$ and $\ell$ are coprime. If $\rho$ is an Artin representation, this allows us to construct the associalted $L$-function.
+
+\begin{defn}
+    Let $K$ be a number field and $\rho$ an Artin representation over $K$. If $\pp$ is a finite place of $K$, we denote the local polynomial at $\pp$ as 
+    $$P_\pp(\rho,T):=P(\Res_\pp\rho,T).$$
+    The associated $L$-function to $\rho$ is 
+    $$L(\rho,s):=\prod_{\pp\text{ prime}}\frac{1}{P_\pp(\rho,N(\pp)^{-s})}.$$
+\end{defn}
+
+However, if $\rho$ is an $\ell$-adic representation, constructing a global object is harder, since the above method does not yield information at the finite places $\pp$ that divide $\ell$. This motivates the following important definition.
+
+\begin{defn}
+    Let $\{\rho_\ell\}_{\ell}$ be a family of $\ell$-adic representations for each prime $\ell$. We then say that $\{\rho_\ell\}_\ell$ is a \textbf{weakly compatible system of $\ell$-adic representations} if for every finite place $\pp$ of $K$ and rational primes $\ell,\ell'$ not divisible $\pp$, 
+    $$P_\pp(\rho_\ell,T)=P_\pp(\rho_{\ell'},T)$$.
+\end{defn}
+
+When $\{\rho_\ell\}_\ell$ is a weakly compatible system of $\ell$-adic representations, the local polynomial $P_\pp(\rho_\ell,T)$ can be computed using any $\ell$ not divisible by $\pp$. This also allows us to define the $L$-function in this context.
+
+\begin{defn}
+    Let $K$ be a number field and let $\{\rho_\ell\}_\ell$ be a weakly compatible system of $\ell$-adic representations. Then the $L$-function attached to the system is 
+    $$L(\{\rho_\ell\}, s)=\prod_{\pp\text{ prime}}\frac{1}{P_\pp(\{\rho_\ell\},N(\pp)^{-s})}.$$
+\end{defn}

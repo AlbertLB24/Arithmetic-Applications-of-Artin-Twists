@@ -1,0 +1,57 @@
+
+\subsection{The Tate Module of an Elliptic Curve and their L-function}
+For this subsection, let $K$ be a number field and let $E$ be an elliptic curve defined over $K$. To avoid notational confusion, whenever we write $E$ we refer to all of its $\bar{K}$ points, while $E(K)$ refers only to the $K$-rational points. The aim of this section is to describe a procedure to attach an $L$-function to a given elliptic curve over $K$. In order to achieve this, we will first construct a $2$-dimensional $\ell$-adic representation attached to $E$, and then construct the $L$-function as described in the section above.
+
+Let $\ell$ be a rational prime number. For any $n\geq1$, we denote by $E[\ell^n]$ to be the $\ell^n$-torsion points; in other words, $E[\ell^n]$ is the kernel of the map $E[\ell^n]:E\to E$. We then have the diagram of compatible maps
+\[
+    \longrightarrow E[\ell^{n+1}]\xlongrightarrow{[\ell]} E[\ell^{n}]\xlongrightarrow{[\ell]}\cdots\xlongrightarrow{[\ell]} E[\ell^2]\xlongrightarrow{[\ell]} E[\ell]\xlongrightarrow{[\ell]} \{\mathcal{O}_E\} 
+\] 
+and therefore we can construct the inverse limit of this diagram
+$$T_\ell(E):=\varprojlim_{n}E[\ell^n],$$
+denoted as the $\ell$-adic Tate module of the elliptic curve $E$. By the uniformization theorem, we know that 
+$$E[\ell^n]\cong\frac{\ZZ}{\ell^n\ZZ}\oplus\frac{\ZZ}{\ell^n\ZZ}$$
+as groups, and therefore 
+$$T_\ell(E)\cong\ZZ_\ell\oplus\ZZ_\ell$$
+as $\ZZ_\ell$-modules. In addition, the Tate module carries important extra structure, namely the action of the absolute Galois group $G_K$. Since $E$ is defined over $K$, and the multiplication by $m$ maps are determined by polynomials with coefficients in $K$, there is a well-defined additive action $\psi_n:G_K\rightarrow\Aut_{\ZZ}(E[\ell^n])$. Furthermore, one can show that these actions are compatible with the inverse limit diagram of the Tate module. That is, for every $n\geq 1$ and $\sigma\in G_K$, the diagram
+
+
+\begin{center}
+    \begin{tikzcd}
+        E[\ell^{n+1}] \arrow[d, "\psi_{n+1}(\sigma)"] \arrow[r, "\ell"] & E[\ell^n] \arrow[d, "\psi_n(\sigma)"]\\
+        E[\ell^{n+1}] \arrow[r, "\ell"] & E[\ell^n]
+    \end{tikzcd}
+\end{center}
+
+commutes. Therefoere, the actions $\psi_n$ induce an action of $G_K$ on $T_\ell(E)$ and since $T_\ell(E)\cong\ZZ_\ell\oplus\ZZ_\ell$, this corresponds to a $2$-dimensional $\ell$-adic representations
+$$\psi_{E,\ell}:G_K\longrightarrow \GL_2(\ZZ_\ell)\subseteq\GL_2(\QQ_\ell).$$
+We will also denote from now on $\rho_{E,\ell}$ to be the dual representation of $\psi_{E,\ell}$. For technical reasons we will not discuss, the $L$-function is tipycally constructed using the later ones.
+
+\begin{rem}
+    The representation above does indeed satisfy the conditions in Remark \ref{rem_cont_ladic}. In particular, given any $n\geq 1$, the field $F_n:=K(E[\ell^n])$ is a finite extension of $K$ since it is obtained by attaching finitely many algebraic numbers. By construction, $\Gal(\bar{K}/F_n)$ acts trivially on $E[\ell^n]$ and thus $\rho_{E,\ell}(g)\equiv \mathrm{Id}\pmod{\ell^n}$ for all $g\in\Gal(\bar{K}/F_n)$.
+\end{rem}
+
+Of course, the above construction can be followed by any rational prime $\ell$, and this gives a family $\{\rho_{E,\ell}\}_\ell$. To build an $L$-function as described in the section above, we would need this family to be weakly compatible. Thankfully, this and much more is true, and the next theorem collects the relevant results.
+
+\begin{thm}
+    Let $E$ be an elliptic curve over a number field $K$ and $\rho_{E,\ell}$ be the dual representation on $T_\ell(E)$. For every finite place $\pp$ of $K$, let $\kappa_\pp$ be the residue field of $K_\pp$, $q_\pp=|\kappa_\pp|$ and $a_\pp=1+q_\pp-|\tilde{E}(\kappa_\pp)|$. Then for any $\pp$ not diving $\ell$,
+    \[
+        \begin{array}{l l l}
+            P_\pp(\rho_{E,\ell},T)&= 1-a_\pp T+q_p T^2, & \text{if } E/K_\pp \text{ has good reduction,}\\
+            & = 1-T, & \text{if } E/K_\pp \text{ has split multiplicative reduction,}\\
+            & = 1+T, & \text{if } E/K_\pp \text{ has non-split multiplicative reduction,}\\
+            & = 1, & \text{if } E/K_\pp \text{ has additive reduction.}
+        \end{array}
+    \]
+    
+
+    In particular, for any $\ell,\ell'$ not divisible by $\pp$, 
+    $$P_\pp(\rho_{E,\ell},T)=P_\pp(\rho_{E,\ell'},T),$$
+    and so $\{\rho_{E,\ell}\}$ is a weakly compatible system of $\ell$-adic representations.
+\end{thm}
+
+This allows us to define the $L$-function of an elliptic curve as above.
+
+\begin{defn}
+    Let $E$ be an elliptic curve over $K$. Then the $L$-function attached to $E$ is 
+    $$L(E/K,s)=L(\{\rho_{E,\ell}\},s)=\prod_{\pp\text{ prime}}\frac{1}{P_\pp(\rho_{E,\ell},N(p)^{-s})}$$
+\end{defn}

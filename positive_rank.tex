@@ -26,4 +26,12 @@ Rational squares are not necessarily the norms of general number fields, but the
     for some $m\geq 1$ and subfields $F_i,F'_j\subseteq F$. If either $\frac{\prod_i C_{E/F_i}}{\prod_j C_{E/F'_j}}$ is not a norm from some quadratic subfield $\QQ(\sqrt{D})\subseteq\QQ(\rho)$, or if it is not a rational square when $m$ is even, then $E$ has a point of infinite order over $F$.
 \end{thm}
 
-This is a remarkable result, since it can predict positive rank of general families of elliptic curves based solely on local data. 
+This is a remarkable result, since it can predict positive rank of general families of elliptic curves based solely on local data. In later sections, we will aim to show that the product of local factors is indeed a norm in quadratic subextension of the field of values, and the following notation, which expands on Notation \ref*{not_contr} will be useful.
+
+\begin{notation} \label{not_total_contr}
+    Let $F$, $\rho$, $m$ and the fields $F_i,F'_j$ be as in Theorem \ref*{thm_positive_rank}. Then we define
+    $$\contr_\rho(p)=\frac{\prod_i C_{\pp\mid p}(F_i)}{\prod_j C_{\pp\mid p}(F'_j)}.$$
+    We remark that 
+    $$\frac{\prod_i C_{E/F_i}}{\prod_j C_{E/F'_j}}=\prod_p\contr_\rho(p)$$
+    where the product runs over all rational primes. Our strategy is to calculate all $\contr_\rho(p)$ locally first, to then multiply them together. We recall once again that if $p$ is a prime of good reduction of the elliptic curve, then $\contr_\rho(p)=1$, so we will only care about the primes of bad reduction.
+\end{notation}

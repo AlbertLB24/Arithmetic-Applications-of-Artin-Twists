@@ -1,32 +1,10 @@
-The Birch-Swinnerton-Dyer conjecture classically provides a connection between the arithmetic of elliptic curves and their $L$-functions. We have already investigated the construction and main results of the `$L$-functions side', and now we turn out attention to statement of the conjecture and towards understanding the arithmetic terms present in the conjecture. 
-
-\begin{conj}[BSD]
-    Let $E$ be an elliptic curve over a number field $K$. Then 
-    \begin{enumerate}[label={\bfseries  BSD\arabic*.}]
-        \item The rank of the Mordell-Weil group of $E$ over $K$ equals the order of vanishing of the $L$-function; that is,
-        $$\ord_{s=1}L(E/K,s)=\rk E/K.$$
-        \item The leading term of the Taylor series at $s=1$ of the $L$-function is given by 
-        \begin{equation}\label{BSD_2}
-            \lim_{s\to1}\frac{L(E/K,s)}{(s-1)^r}\cdot\frac{\sqrt{|\Delta_K|}}{\Omega_+(E)^{r_1+r_2}|\Omega_-(E)|^{r_2}}=\frac{\Reg_{E/K}|\Sha_{E/K}|C_{E/K}}{|E(K)_{tors}|^2}.
-        \end{equation}
-    \end{enumerate}
-\end{conj}
-
-Many arithmetic invariants appear as part of the statement of BSD2, and it is worth exploring them briefly. The way we have organised the terms is not arbitrary, and in fact we give specific notation to both sides of the equation. 
-
-\begin{notation}
-    Let $E/\QQ$ be a number field and $K$ a number field. We define 
-    $$\mathcal{L}(E/F)=\lim_{s\to1}\frac{L(E/K,s)}{(s-1)^r}\cdot\frac{\sqrt{|\Delta_K|}}{\Omega_+(E)^{r_1+r_2}|\Omega_-(E)|^{r_2}}$$
-    and
-    $$\BSD(E/F)=\frac{\Reg_{E/K}|\Sha_{E/K}|C_{E/K}}{|E(K)_{tors}|^2}$$
-\end{notation}
+\subsection{A BSD Analogue for Artin Twists}
 
 A natural question to ask at this point is whether there is a conjectural analogue to the above for the Artin twists of $L$-functions. The analogue of $\BSD1$ is known in this case, which is directly compatible with Artin formalism.
 
 \begin{conj}[BSD1 for Twists]
     Let $E/\QQ$ be an elliptic curve, $\rho$ an Artin representation and $K$ any Galois extension over $\QQ$ such that $\rho$ factors through $G=\Gal(K/\QQ)$. Then
-    $$\ord_{s=1}L(E,\rho,s)=\langle\rho,E(K)_\CC\rangle_G$$
-    \textbf{maybe delete this last sentence.} where $\rho$ and $E(K)_\CC=E(K)\otimes_\ZZ\CC$ are viewed as representations of $G$.
+    $$\ord_{s=1}L(E,\rho,s)=\langle\rho,E(K)_\CC\rangle_G.$$
 \end{conj}
 
 Unfortunately, a conjectural analogue for $\BSD2$ is not known. The problem is the lack of an analogue for the term $\BSD(E/F)$ as above. However, there is indeed an important analogue of the term $\mathcal{L}(E/F)$ in this setting.

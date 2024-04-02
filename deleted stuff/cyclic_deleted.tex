@@ -1,0 +1,91 @@
+
+We now prove Theorem \ref*{thm_consistent_cyclic} for $d=p$ a prime number. If $p=2$, then $\QQ(\chi)=\QQ$ and therefore there is nothing to prove. So assume that $p$ is odd. If $\chi$ is a faithful character of $C_p$, then $\QQ(\chi)=\QQ(\zeta_p)$ and 
+$$\bigoplus_{\mathfrak{g}\in\Gal(\QQ(\zeta_p)/\QQ)}\chi^{\mathfrak{g}}=\Ind_{F/\QQ}\mathds{1}\ominus\Ind_{\QQ/\QQ}\mathds{1}.$$
+
+Furthermore, since $\Gal(\QQ(\zeta_p)/\QQ)\cong(\ZZ/p\ZZ)^*\cong C_{p-1}$ is cyclic, $\QQ(\zeta_p)$ has a unique quadratic subextension. Since 
+$$\left(\sum_{a=0}^{p-1}\left(\frac{a}{p}\right)\zeta_p^a\right)^2=(-1)^{(p-1)/2}p,$$
+if follows that $\QQ(\sqrt{*p})\subseteq\QQ(\zeta_p)$, where $*p=(-1)^{(p-1)/2}p$.
+
+Therefore, it now suffices to show that 
+$$\frac{C_{E/F}}{C_{E/\QQ}}=\Norm_{\QQ(\sqrt{*p})}(x)$$
+for some $x\in\QQ(\sqrt{p^*})$. To do so, we fix a rational prime $r$, and then check $\contr_\chi(r)$ as in Notation \ref*{not_total_contr}. The following table records the contribution depending on the ramification index $e_r$ and the inertia degree $f_r$. We assume $r$ to have semistable bad reduction, so the entries for split and non-split multiplicative reduction of type $\mathrm{I}_n$ are separated by a ``;''.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|}
+    \hline
+    $e_r$ & $f_r$  & $C_{\rr\mid r}(K)$ & $C_{\rr\mid r}(F)$  & $\contr_\chi(r)$ \\ \hline
+    $1$ & $1$ & $n;\tilde{n}$ & $n^p;\tilde{n}^p$ & $\square$ \\ \hline
+    $p$ & $1$ & $n;\tilde{n}$ & $pn;\tilde{n}$ & $p\square;\square$ \\ \hline
+    $1$ & $p$ & $n;\tilde{n}$ & $n;\tilde{n}$ & $\square$ \\ \hline
+    \end{tabular}
+\end{table}
+
+The only potential non-square contribution would be a factor of $p$, so this case follows as soon as we show that $p$ is a norm of $\QQ(\sqrt{p^*})$. But that's precisely the content of Corollay \ref*{p-norm}, so the result follows.
+
+\subsection*{\texorpdfstring{$C_{pq}$}{TEXT}-Extensions for odd primes \texorpdfstring{$p,q$}{TEXT}} \label{case_Cpq}
+
+
+If $\Gal(F/K)=C_{pq}$, where $p$ and $q$ are odd primes, then there are two intermediate subfields $L_p$ and  $L_q$ of degree $p$ and $q$ over $K$ respectively. Let $\chi$ be a faithful character of $C_{pq}$ so that $\QQ(\chi)=\QQ(\zeta_{pq})$. From Lemma \ref*{lem_cyclic_decomp} we know that 
+$$\sum_{\mathfrak{g}\in\Gal(\QQ(\zeta_{pq})/\QQ)}\chi^{\mathfrak{g}}=\Ind_{F/K}\mathds{1}\ominus\Ind_{L_p/K}\mathds{1}\ominus\Ind_{L_q/K}\mathds{1}\oplus\Ind_{K/K}\mathds{1}.$$
+Furthermore, since $\Gal(\QQ(\zeta_{pq})/\QQ)=(\ZZ/pq\ZZ)^*=C_{p-1}\times C_{q-1}$, $\QQ(\zeta_{pq})$ has three quadratic subfields, $\QQ(\sqrt{p^*}), \QQ(\sqrt{q^*})$ and $\QQ(\sqrt{p^*q^*})$. For the semistable case, however, we will show that the product of local terms is a square, so this will in fact be irrelevant. As before, we fix some rational prime $r$, and the following table records the contribution of $r$ depending on $e_r$ and $f_r$. Split and non-split reduction are again seprarated by a ``;''.
+
+
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|}
+    \hline
+    $e_r$ & $f_r$  & $C_{\rr\mid r}(K)$ & $C_{\rr\mid r}(L_p)$ & $C_{\rr\mid r}(L_q)$ & $C_{\rr\mid r}(F)$ & $\contr_\chi(r)$ \\ \hline
+    $1$ & $1$ & $n;\tilde{n}$ & $n^p;\tilde{n}^p$ & $n^q;\tilde{n}^q$ & $n^{pq};\tilde{n}^{pq}$ & $\square$ \\ \hline
+    $1$ & $p$ & $n;\tilde{n}$ & $n;\tilde{n}$ & $n^q;\tilde{n}^q$ & $n^q;\tilde{n}^q$ & $\square$ \\ \hline
+    $1$ & $q$ & $n;\tilde{n}$ & $n^p;\tilde{n}^p$ & $n;\tilde{n}$ & $n^p;\tilde{n}^p$ & $\square$ \\ \hline
+    $1$ & $pq$ & $n;\tilde{n}$ & $n;\tilde{n}$ & $n;\tilde{n}$ & $n;\tilde{n}$ & $\square$ \\ \hline
+    $p$ & $1$ & $n;\tilde{n}$ & $pn;\tilde{n}$ & $n^q;\tilde{n}^q$ & $p^qn^q;\tilde{n}^q$ & $\square$ \\ \hline
+    $p$ & $q$ & $n;\tilde{n}$ & $pn;\tilde{n}$ & $n;\tilde{n}$ & $pn;\tilde{n}$ & $\square$ \\ \hline
+    $q$ & $1$ & $n;\tilde{n}$ & $n^p;\tilde{n}^p$ & $qn;\tilde{n}$ & $q^pn^p;\tilde{n}^p$ & $\square$ \\ \hline
+    $q$ & $p$ & $n;\tilde{n}$ & $n;\tilde{n}$ & $qn;\tilde{n}$ & $qn;\tilde{n}$ & $\square$ \\ \hline
+    $pq$ & $1$ & $n;\tilde{n}$ & $pn;\tilde{n}$ & $qn;\tilde{n}$ & $pqn;\tilde{n}$ & $\square$ \\ \hline
+    \end{tabular}
+\end{table}
+
+All contributions are indeed squares, and the result follows.
+
+\subsection*{\texorpdfstring{$C_{p^n}$}{TEXT}-Extensions for odd prime \texorpdfstring{$p$}{TEXT}} \label{case_Cpn}
+
+If $\Gal(F/K)=C_{p^n}$ for some $n\geq 1$ and odd prime $p$, and $\chi$ is a faithful character of $C_{p^n}$, then $\QQ(\chi)=\QQ(\zeta_{p^n})$ and
+$$\bigoplus_{\mathfrak{g}\in\Gal(\QQ(\zeta_{p^n})/\QQ)}\chi^{\mathfrak{g}}=\Ind_{F/K}\mathds{1}\ominus\Ind_{K'/K}\mathds{1},$$
+where $K'$ is the unique intermediate field of degree $p^{n-1}$ over $K$. Note that only the fields $F$ and $K'$ appear on the right hand side and $\Gal(F/K')=C_p$. From the $C_p$ case, we know that $C_{E/F}/C_{E/K'}$ contributes a square up to factors of $p$. Since $\Gal(\QQ(\zeta_{p^n})/\QQ)=(\ZZ/p^n\ZZ)$ is cyclic, $\QQ(\zeta_{p^n})$ has a unique quadratic subfield, which must also be $\QQ(\sqrt{p^*})$. This case follows similarly from the fact that $p$ is the norm of an element in $\QQ(\sqrt{p^*})$.
+
+
+\subsection*{\texorpdfstring{$C_{2p}$}{TEXT}-Extensions for odd prime \texorpdfstring{$p$}{TEXT}} \label{case_C2p}
+
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|}
+    \hline
+    $e_r$ & $f_r$  & $C_{\rr\mid r}(\QQ)$ & $C_{\rr\mid r}(L_p)$ & $C_{\rr\mid r}(L_2)$ & $C_{\rr\mid r}(F)$ & $\contr_\chi(r)$ \\ \hline
+    $1$ & $1$ & $n;\tilde{n}$ & $n^p;\tilde{n}^p$ & $n^2;\tilde{n}^2$ & $n^{2p};\tilde{n}^{2p}$ & $\square$ \\ \hline
+    $1$ & $p$ & $n;\tilde{n}$ & $n;\tilde{n}$ & $n^2;\tilde{n}^2$ & $n^2;\tilde{n}^2$ & $\square$ \\ \hline
+    $1$ & $2$ & $n;\tilde{n}$ & $n^p;\tilde{n}^p$ & $n;n$ & $n^p;n^p$ & $\square$ \\ \hline
+    $1$ & $2p$ & $n;\tilde{n}$ & $n;\tilde{n}$ & $n;n$ & $n;n$ & $\square$ \\ \hline
+    $p$ & $1$ & $n;\tilde{n}$ & $pn;\tilde{n}$ & $n^2;\tilde{n}^2$ & $p^2n^2;\tilde{n}^2$ & $p\square;\square$ \\ \hline
+    $p$ & $2$ & $n;\tilde{n}$ & $pn;\tilde{n}$ & $n;n$ & $pn;n$ & $\square$ \\ \hline
+    $2$ & $1$ & $n;\tilde{n}$ & $n^p;\tilde{n}^p$ & $2n;1$ & $2^pn^p;1^p$ & $\square$ \\ \hline
+    $2$ & $p$ & $n;\tilde{n}$ & $n;\tilde{n}$ & $2n;1$ & $2n;1$ & $\square$ \\ \hline
+    $2p$ & $1$ & $n;\tilde{n}$ & $pn;\tilde{n}$ & $2n;1$ & $2pn;1$ & $\square$ \\ \hline
+    \end{tabular}
+\end{table}
+
+%\begin{proof}
+    %The proof is essentially application of Frobenius reciprocity and the inclusion exclusion lemma. Let $p_1,\ldots,p_s$ be the distinct primes dividing $d$. By Frobenius reciprocity, for any character $\theta$ of $C_d$ and $k\mid d$,
+    %$$\langle\theta,\Ind_{L_k/\QQ}\mathds{1}\rangle_{C_d}=\langle\Res_{L_k/\QQ}\theta,\mathds{1}\rangle_{C_{d/k}}.$$
+    %That is, $\theta$ appears as a factor of $\Ind_{L_k/\QQ}\mathds{1}$ if and only if $\chi|_{C_{d/k}}$ is trivial, and it can only appear once. Therefore,
+    %$$\Ind_{L_k/\QQ}\mathds{1}=\sum_{\theta\in\mathcal{A}_{d/k}}\theta$$
+    %where $\mathcal{A}_k=\{\theta\in\widehat{C_d}:\theta|_{C_{k}}=\mathds{1}_{C_{k}}\}$. Note that if $k,k'\mid d$ are coprime, then $\mathcal{A}_k\cap\mathcal{A}_{k'}=\mathcal{A}_{kk'}$. If $\mathcal{B}$ is the set of faithful characters of $C_d$, then by the inclusion-exclusion lemma
+    %\begin{multline*}
+    %    \sum_{\theta\in\mathcal{B}}\theta=&\sum_{i=0}^s(-1)^i\sum_{1\leq j_1\leq\dots\leq j_i\leq s}\ \sum_{\theta\in\cap_{l=1}^i\mathcal{A}_{p_{j_l}}}\theta\\
+    %    =&\sum_{i=0}^s(-1)^i\sum_{1\leq j_1\leq\dots\leq j_i\leq s}\ \sum_{\theta\in\mathcal{A}_{\prod_{l=1}^i p_{j_l}}}\theta\\
+    %    =&\sum_{k\mid d}\mu(k)\sum_{\theta\in\mathcal{A}_k}\theta=\sum_{k\mid d}\mu(d/k)\Ind_{L_k/\QQ}\mathds{1}.
+    %\end{multline*}
+    %The proof now follows from the fact that if $\chi$ is a faithful character, then the set $\{\chi^{\mathfrak{g}}:\mathfrak{g}\in\Gal(\QQ(\zeta_d)/\QQ)\}$ spans over all faithful characters of $C_d$ once. 
+%\end{proof}

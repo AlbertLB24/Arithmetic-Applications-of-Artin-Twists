@@ -1,0 +1,32 @@
+\subsection{Artin Twists of L-functions of Elliptic Curves}
+
+We have already seen that given an elliptic curve over a number field $K$, one can construct the $L$-function $L(E/K,s)$. However, given an Artin representation $\rho$ over $K$, it is possible to attach more analytic objects, with remarkable arithmetic properties. We outline the main results below, without proofs. \textbf{Insert here relevant reference}. 
+
+Fix some number field $K$, an elliptic curve $E$ over $K$ and an Artin repesentation $\rho$. Then, similary to the previous section, it is possible to show that $\{\rho_{E,\ell}\otimes\rho\}_\ell$ is also a weakly compatible system of $\ell$-adic representations. The corresponding $L$-function
+$$L(E,\rho,s)=L(\{\rho_{E,\ell}\otimes\rho\},s)$$
+is denoted as the \textbf{Artin-twist} of $L(E,s)$ by $\rho$. These objects have remarkable (both proven and conjectural) properties that we describe now.
+
+\begin{thm}[Artin Formalism]
+    Let $E$ be an elliptic curve over a number field $K$.
+    \begin{enumerate}
+        \item For Artin representations $\rho_1,\rho_2$ over $K$,
+        $$L(\rho_1\oplus\rho_2,s)=L(\rho_1,s)L(\rho_2,s)\quad and\quad L(E/K,\rho_1\oplus\rho_2,s)=L(E/K,\rho_1,s)L(E/K,\rho_2,s)$$
+        \item If $L/K$ is a finite extension and $\rho$ is an Artin representation over $L$, then $\Ind_{L/K}\rho$ is an Artin representation over $K$ and 
+        $$L(\rho,s)=L(\Ind_{L/K}\rho,s)\quad and\quad L(E/L,\rho,s)=L(E/L,\Ind_{L/K}\rho,s).$$
+        \item If $L/K$ is a finite extension as above and 
+        $$\Ind_{L/K}\mathds{1}\cong\bigoplus_i\rho_i,$$
+        then
+        $$L(E/L,s)=\prod_i L(E/K,\rho_i,s).$$
+    \end{enumerate}
+\end{thm}
+
+Furthermore, as mentioned after Remark \ref{rem_cont_ladic}, by fixing some basis of $V$, any Artin representation $\rho$ can be viewed as a representation $\rho:G_K\to\GL_n(F)$ for some number field $F$. The smallest such field is the \textbf{field of values} of $\rho$ and denoted by $\QQ(\rho)$. Any $\sigma\in\Gal(\QQ(\rho)/\QQ)$ induces a homomorphism $\sigma:\GL_n(\QQ(\rho))\to\GL_n(\QQ(\rho))$ and also a map
+%\begin{align*}
+%    \rho^\sigma:G_K &\longrightarrow\GL_n(F)\\
+%    g&\longmapsto \sigma(\rho(g)),
+%\end{align*}
+which is another Artin representation, denoted as the twist of $\rho$ by $\sigma$.
+
+\begin{conj}[Galois Equivariance of L-Twists]
+    I need to check the precise statement of this result. This may need to come after the discussion on BSD.
+\end{conj}

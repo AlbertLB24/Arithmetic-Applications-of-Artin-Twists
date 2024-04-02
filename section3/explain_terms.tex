@@ -1,0 +1,70 @@
+\subsection{BSD and the Arithmetic Terms}
+
+The Birch-Swinnerton-Dyer conjecture states the following.
+
+\begin{conj}[BSD]
+    Let $E$ be an elliptic curve over a number field $K$. Then 
+    \begin{enumerate}[label={\bfseries  BSD\arabic*.}]
+        \item The rank of the Mordell-Weil group of $E$ over $K$ equals the order of vanishing of the $L$-function; that is,
+        $$\ord_{s=1}L(E/K,s)=\rk E/K.$$
+        \item The leading term of the Taylor series at $s=1$ of the $L$-function is given by 
+        \begin{equation}\label{BSD_2}
+            \lim_{s\to1}\frac{L(E/K,s)}{(s-1)^r}\cdot\frac{\sqrt{|\Delta_K|}}{\Omega_+(E)^{r_1+r_2}|\Omega_-(E)|^{r_2}}=\frac{\Reg_{E/K}|\Sha_{E/K}|C_{E/K}}{|E(K)_{\tors}|^2}.
+        \end{equation}
+    \end{enumerate}
+\end{conj}
+
+Many arithmetic invariants appear as part of the statement of BSD2, and it is worth exploring them briefly. Some of these invariants depend only on the number field $K$. These are the discriminant $\Delta_K$ of $K$ and the numbers $r_1$ and $r_2$, corresponding to the number of real and complex embeddings of $K$. A basic formula states that if $n=[K:\QQ]$, then $r_1+2r_2=n$. The other factors are arithmetic values related to the elliptic curve $E$. {\color{red} I have not found how to define periods and the dv terms coming from the minimal differential for elliptic curves defined over general number fields, as there may not necessarily be a global minimal equation.} Some of these terms are easier to define if we assume that the elliptic curve is defined over $\QQ$. Since these will be our main object of interest, we assume from now on that $E$ is defined over $\QQ$. We can then assume that $E$ is given by the Weierstrass equation 
+$$E:y^2+a_1xy+a_3y=x^3+a_2x^2+a_4x+a_6$$ 
+for some $a_1,a_2,a_3,a_4,a_6\in\QQ$, and we can furthermore assume that this is a \textbf{global minimal equation} for $E$. Associated to $E$, there is also the \textbf{global minimal differential}
+$$w=\frac{dx}{2y+a_1x+a_3}=\frac{dy}{3x^2+2a_2x+a_4-a_1y}$$ 
+
+
+\begin{enumerate}
+    \item \textbf{Periods: } For elliptic curves $E$ defined over $\QQ$, there is a conjugation map $E\to E$, $P\mapsto\bar{P}$. We then define $E(\CC)^+=\{P\in E:\bar{P}=P\}=E(\RR)$ and $E(\CC)^-=\{P\in E:\bar{P}=-P\}$. Then the $\pm$-periods of $E$ are 
+    $$\Omega_+(E)=\int_{E(\CC)^+}\omega \quad\text{and}\quad\Omega_-(E)=\int_{E(\CC)^-}\omega,$$
+    and orientation chosen so that $\Omega_+(E)\in\RR_{>0}$ and $\Omega_-(E)\in i\RR_{>0}$ .
+    \item \textbf{Torsion:} $|E(K)_{\tors}|$ is the size of the torsion subgroup of $E(K)$.
+    \item \textbf{Regulator:} To properly define the regulator one neeeds to carefully construct the canonical height $\hat{h}:E(\bar{K})\rightarrow\RR^+$, which rougly evaluates the `arithmetic complexity' of a given point $P\in E(\bar{K})$. We refer the reader to \cite[Chapter VIII: \S4, \S5, \S6 and \S9]{S1} for a complete discussion of this topic. This map satisfies many important properties (as listed in \cite[Chapter VIII, Theorem 9.3]{S1}), among which is the fact that $\hat{h}$ is a quadratic form; in particular, the pairing
+    \begin{align*}
+        \langle\cdot,\cdot\rangle&:E(\bar{K})\times E(\bar{K})\longmapsto\RR\\
+        \langle P,Q\rangle&=\hat{h}(P\oplus Q)-\hat{h}(P)-\hat{h}(Q)
+    \end{align*}
+    is bilinear. Then the regulator is the volume of $E(K)/E(K)_{\tors}$ computed using the quadratic form $\hat{h}$. In other words, let $P_1,\ldots,P_r$ be generators of the group $E(K)/E(K)_{\tors}$. Then $$\Reg_{E/K}=\det(\langle P_i,P_j\rangle)_{1\leq i,j\leq r}$$
+    if $r\geq1$ and $\Reg_{E/K}=1$ if $r=0$.
+    \item \textbf{Tate-Shafarevich group:} This is the most misterious group and it is commonly defined using Galois cohomology as
+    $$\Sha_{E/K}=\ker\left[H^1(K,E)\rightarrow\prod_{\pp}H^1(K_\pp,E)\right],$$
+    where $H^1(F,E):=H^1(G_F,E(\bar{F}))$ and the implicit map is induced by the inclusions $G_{K_\pp}\emb G_K$. One can interpret $H^1(F,E)$ as `homogeneous spaces' of $E$ over $K$ up to equivalence. A homogeneous space over $K$ is trivial if and only if it has a $K$-rational point, so a non-trivial element of $\Sha_{E/F}$ is a homogeneous space that has points locally in every $K_\pp$ but has no $K$-rational point.
+    \item \textbf{Local data:} The term $C_{E/K}$ is defined in terms of local data as 
+    $$C_{E/K}=\prod_{\pp}c_\pp(E/K)\left|\frac{\omega}{\omega_\pp^{\min}}\right|_\pp=\prod_{\pp}c_\pp(E/K)\left|\frac{\Delta_{E,\pp}^{\min}}{\Delta_E}\right|_\pp^{\frac{1}{12}}.$$
+    Fix some finite place $\pp$ of $K$ and let $p\ZZ=\pp\cap\QQ$. By assumption, $\Delta_E$ is a minimal discriminant at $p$, but this may not be a minimal discriminat at $\pp$. However, if $p$ is unramified at $K$, or if $E$ has semistable reduction at $p$, then $\Delta_{E,\pp}^{\min}=\Delta_E$ and the second term vanishes.
+
+    To discuss the \textbf{Tamagawa numbers} $c_\pp(E/K)$, let $K_\pp$ and $\kappa_\pp$ be the completion of $K$ at $\pp$ and its residue field. Then there is an associated elliptic curve $\tilde{E}$ over $\kappa_\pp$ and reduction map
+    $$\widetilde{(\cdot)}:E(K_\pp)\longrightarrow \tilde{E}(\kappa_\pp)$$
+    obtained by reducing both coordinates of a point $P\in E(K_\pp)$ modulo $\kappa_\pp$. This map is in general not surjective, but it surjects onto the \textbf{subgroup} $\tilde{E}_{ns}$ of non-singular points of $\tilde{E}$. Thus, it is natural to define $E_0(K_\pp)=\{P\in E(K_\pp):\widetilde{P}\in \tilde{E}_{ns}(\kappa_\pp)\}$, which is also a subgroup of $E(\kappa_\pp)$. Then 
+    $$c_\pp(E/K):=|E(K_\pp)/E_0(K_\pp)|.$$
+    We remark that if $E$ has good reduction at $\pp$, then $E_0(K_\pp)=E(K_\pp)$ and thus $c_\pp(E/K)=1$.
+\end{enumerate}
+
+At this stage, it is also convenient to introduce some more notation that will be used throughout. 
+
+\begin{notation}\label{not_contr}
+    Let $E$ be an elliptic curve defined over $\QQ$ and let $F/K$ be a finite extension of number fields. For each finite place $\pp$ of $K$, we write  
+    $$C_{\mathfrak{P}\mid \pp}(F/K)=\prod_{\mathfrak{P}\mid \pp}c_\mathfrak{P}(E/F)\left|\frac{\Delta_{E,\mathfrak{P}}^{\min}}{\Delta_E}\right|_\mathfrak{P}^{\frac{1}{12}},$$
+    for the contribution of $\pp$ inside $F$, and
+    where the product is taken over the primes $\mathfrak{P}$ of $F$ above $\pp$.
+\end{notation}
+
+An important observation is that if $E$ has good reduction over $\pp$, then $C_{\mathfrak{P}\mid\pp}(F/K)=1$ for any finite extension $F$ of $K$. 
+%{\color{red} also important to mention at some point that if the reduction is semistable, then the terms in a norm relation coming from the discriminant also vanish. Probably this would have to be introduced later.}
+
+We remark that the way we have organised the terms in \eqref{BSD_2} is not arbitrary, and in fact we give specific notation to both sides of the equation. 
+
+\begin{notation}
+    Let $E/\QQ$ be a number field and $K$ a number field. We define 
+    $$\mathcal{L}(E/F)=\lim_{s\to1}\frac{L(E/K,s)}{(s-1)^r}\cdot\frac{\sqrt{|\Delta_K|}}{\Omega_+(E)^{r_1+r_2}|\Omega_-(E)|^{r_2}}$$
+    and
+    $$\BSD(E/F)=\frac{\Reg_{E/K}|\Sha_{E/K}|C_{E/K}}{|E(K)_{\tors}|^2}.$$
+\end{notation}
+
+
