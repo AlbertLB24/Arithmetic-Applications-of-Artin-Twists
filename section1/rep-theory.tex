@@ -62,28 +62,31 @@ The \textbf{Burnside ring} $B(G)$ is the free abelian group on isomorphism class
 There is a homomorphism from the Burnside ring to the rational representation ring $R_{\bQ}(G)$ of $G$ given by taking the corresponding permutation representation:
 \[ \bC[-] \colon B(G) \to \Perm(G),  \qquad \Theta = \sum_i n_i H_i \ \mapsto \ \bC[\Theta ] = \sum_i n_i \Ind_{H_i}^G \trivial_{H_i}. \]
 \end{notn}
-Elements in the kernel of this map are known as \textbf{Brauer relations}. These show instances of non-isomorphic $G$-sets giving rise to isomorphic permutation representations. 
+Elements in the kernel of this map are known as \textbf{Brauer relations}. Non-trivial Brauer relations are instances of non-isomorphic $G$-sets giving rise to isomorphic permutation representations. 
 
 \begin{example}
     {\color{red} $S_3$ example}
 \end{example}
 
 \begin{example}
-Cyclic groups have no Brauer relations. 
+Cyclic groups have no Brauer relations. {\color{red} reference/explain?}
 \end{example}
 
 In the last section, we constructed a character in $\Perm(G)$ for $\rho \in R(G)$. We are interested in when this is an image of an element from the Burnside ring.
 
 \begin{defn}
-We call $\Theta = \sum_i n_i H_i \in B(G)$ a \textbf{$\rho$-relation} if $\bC[\Theta] \simeq \widetilde{\rho}^{\ \oplus m}$, where $m$ is the order of $\widetilde{\rho}$ in $C(G)$ {\color{red} for some $m \geq 1$??? }.
+We call $\Theta = \sum_i n_i H_i \in B(G)$ a \textbf{$\rho$-relation} if $\bC[\Theta] \simeq \widetilde{\rho}^{\ \oplus m}$, for some $m \geq 1$.
+%where $m$ is the order of $\widetilde{\rho}$ in $C(G)$ {\color{red} for some $m \geq 1$??? }.
 \end{defn}
-There are $\#$(Brauer relations) $+ 1$ such elements $\Theta$ {\color{red} expand on why?}. Of course, when $\rho = 0$ these are Brauer relations. 
+%There are $\#$(Brauer relations) $+ 1$ such elements $\Theta$ {\color{red} expand on why?}. 
+Of course, when $\rho = 0$ these are Brauer relations. 
 
 
 \begin{example}\label{cyclic-relns}
     Let $G = C_n$. For each $d \mid n$, let $\chi_d = \widetilde{\varphi_d}$, where $\varphi_d$ is an irreducible complex character of $G$ with field of values $\bQ(\zeta_d)$ and kernel of index $d$.
-    Then $\{ \chi_d \colon d\mid n \}$ form an orthogonal basis for the irreducible rational-valued representations of $G$. Note that $\Ind_{C_{n/ d}}^G \trivial$ is the direct sum of irreducible complex representations of $G$ contain $C_{n / d}$ in their kernel. Thus, $\Ind_{C_{n/ d}}^G \trivial \simeq \sum_{d' \mid d} \chi_{d'}$. Applying M\"{o}bius inversion, we obtain the \textit{unique} $\varphi_d$-relation for each $d \mid n$:
+    Then $\{ \chi_d \colon d\mid n \}$ form an orthogonal basis for the irreducible rational-valued representations of $G$. Note that $\Ind_{C_{n/ d}}^G \trivial$ is the direct sum of irreducible complex representations of $G$ contain $C_{n / d}$ in their kernel. Thus, $\Ind_{C_{n/ d}}^G \trivial \simeq \sum_{d' \mid d} \chi_{d'}$. Applying M\"{o}bius inversion, we a $\varphi_d$-relation for each $d \mid n$:
     \[ \chi_d = \sum_{d' \mid d} \mu(d / d') \cdot \Ind_{C_{n/ d}}^G \trivial. \]
+    Note that this is the only way of writing $\chi_d$ as a sum of permutation representations, since cyclic groups have no Brauer relations. Similarly, there is a unique $\Theta \in B(G)$ such that $\bC[\Theta] \simeq \chi_d^{m}$ for all $m \geq 1$.
     \end{example}
 
 \begin{notn}

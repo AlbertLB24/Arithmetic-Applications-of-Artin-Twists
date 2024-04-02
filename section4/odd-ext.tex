@@ -36,7 +36,7 @@ where $f_p$ is a function on $B(D_p)$ with $D_p \cap H^{x^{-1}} \mapsto C_v(E / 
 We first argue that it is enough to prove this theorem when $m$ is the order of $\widetilde{\rho}$ in $C(G)$. 
 
 \begin{lemma}
-    Consider the set-up as in theorem \ref{odd-exts}. If the statement of the theorem holds when $m$ is the order of $\widetilde{\rho}$ in $C(G)$, then it holds for all possible $m$.
+    Consider the set-up as in theorem \ref{odd-exts}. If the statement of the theorem holds when $m$ is the order of $\widetilde{\rho}$ in $C(G)$, then it holds for all possible $m$. {\color{red} really, this is saying that if $f$ is trivial on Brauer relations, then showing it is trivial on rho-relations for minimum m is enough (maybe I could add that in rep theory section)}
 \end{lemma}
 
 \begin{proof}
@@ -189,53 +189,31 @@ Therefore we may assume that $k \mid l$ and that $\bQ(\phi) = \bQ(\rho) = K$.
 
 \subsubsection*{Additive reduction}
 
-Now suppose that $E / \bQ_p$ has additive reduction. In this case, assume that $p \geq 5$ is at worst tamely ramified in $F / \bQ$. This ensures that $D_p = I_p = C_l$ is cyclic, and $l \mid p - 1$.
+Now suppose that $E / \bQ_p$ has additive reduction. In this case, assume that $p \geq 5$ is at worst tamely ramified in $F / \bQ$. This ensures that $D_p = I_p = C_l$ is cyclic, and $l \mid p - 1$. Once again we may assume that $k \mid l$ by lemma \ref{rational-res}.
 
 Let $\delta = \ord_p(\Delta_E)$. Consider a place $w$ of $F^H$ over $p$ with ramification degree  $e_w$over $\bQ$. Then $\Delta_E$ has valuation $n e_w$ with respect to $w$. Then $\left| \Delta_E / \Delta_{E, w}^{\min} \right|_w = p^{-(\delta\cdot e_w - \delta_H)}$, where $\delta_H = \ord_w(\Delta_{E, w}^{\min})$.
 Recall that
 \[ \left| \frac{\omega}{\omega_{w}^{\min}} \right|_{w}^{-12} = \left| \frac{\Delta_E}{\Delta_{E, w}^{\min}} \right|_w .\] 
 Therefore $\left| \omega / \omega_{w}^{\min} \right|_w = p^{\floor{\frac{\delta\cdot e_w - \delta_H}{12}}}$.
 
-Suppose that $E / \bQ_p$ has Kodaira type $I_n^*$, so $\delta = 6 + n$. For a tamely ramified finite extension $K' / \bQ_p$ with ramification degree $e$, $E / K'$ has Kodaira type $I_{en}^*$ if $e$ is odd, and type $I_{en}$ if $n$ is even. Thus in odd degree extensions the reduction type will stay potentially multiplicative. Then $\delta \cdot e_w - \delta_H = 6 e_w$.
+Suppose that $E / \bQ_p$ has Kodaira type $I_n^*$, so $\delta = 6 + n$. For a finite extension $K' / \bQ_p$ with ramification degree $e$, $E / K'$ has Kodaira type $I_{en}^*$ if $e$ is odd, and type $I_{en}$ if $n$ is even. Thus in odd degree extensions the reduction type will stay potentially multiplicative. Then $\delta \cdot e_w - \delta_H = 6 e_w$.
 
 If $E / \bQ_p$ has potentially good reduction then $\delta \in \{2,3,4,6,8,9,10 \}$. $E$ also has potentially good reduction at the place $w$ in $F^H$. It follows that $\delta_H = \delta \cdot e_w - 12 \cdot \floor{\delta \cdot e_w /12}$.
 
 In conclusion, 
 \[ d_p = 
     \begin{cases}
-        (D_p, D_p,\ p^{\floor{e /2}}) & \text{if } E \text{ has potentially multiplicative reduction}, \\
+        (D_p, D_p,\ p^{\floor{e_w /2}}) & \text{if } E \text{ has potentially multiplicative reduction}, \\
         (D_p, D_p,\ p^{\floor{\delta \cdot e_w/12}}) & \text{if } E \text { has potentially good reduction}.
     \end{cases}
     \]
 
-{\color{red} now we say how in any case this $p$ doesn't matter... i should try not assume tame here}
+In either case, $d_p(\Theta) \in N_{\bQ(\rho) / \bQ}(\bQ(\rho)^{\times})$. Indeed, this takes values $1$ or $p$ in $\bQ^{\times} / \bQ^{\times 2}$. But $p \equiv 1 \pmod l$ implies $p \equiv 1 \pmod k$ so that $p$ is the norm of a principal ideal in $\bQ(\rho)$, and hence the norm of an element, by corollary \ref{p-one-mod-disc} and theorem \ref{p-norm-elem-1}.
 
 %\[ \left|\frac{\Delta_{E}}{\Delta_{E, w}^\min} \right|_w = p^{f_w 12 \cdot \floor{e_w n / 12}} \implies 
 %       \left|\frac{\omega}{\omega_{w}^\min} \right|_w = p \]
 
-For the Tamagawa number computations we consider potentially multiplicative and potentially good separately.
-
-
-\noindent\underline{\textit{Potentially multiplicative reduction}}
-
-{\color{red} TO DO}
-\vspace{10em}
-
-
-\noindent\underline{\textit{Potentially good reduction}}
-
-\begin{lemma}
-    Consider $M / L$ a field extension. Let $E / L$ be an elliptic curve, $v$ a finite place of $L$ and $w$ a finite place of $M$ with $w \mid v$. Let $\omega_v$ and $\omega_w$ be the minimal differentials for $E / L_v$ and $E / M_w$ respectively. 
-    
-    Then, if $E / K_v$ has potentially good reduction and the residue characteristic is not $3$ or $2$, one has
-    
-    \[ \left|\frac{\omega_v}{\omega_w} \right|_{w} = q^{\floor{\frac{e_{F / K} \cdot \ord_v(\Delta_{E, v}^{\min})}{12}}}, \]
-    where $q$ is the size of the residue field at $w$.
-\end{lemma}
-
-We consider $F / \bQ$ with additive potentially good reduction at $p$ . Since $D_p = I_p$, the size of the residue field is $p$ at all intermediate extensions. Let $n = v_p(\Delta)$. Then $n \in \{2,3,4,6,8,9,10\}$.  Consider $(D_p, I_p, \psi_p)$ where $\psi_p(e,f) = p^{\floor{e n / 12}}$. Then $(D_p, I_p, \psi_p) \sim_{\rho} 1$. Indeed, this takes values $1$ or $p$ in $\bQ^{\times} / \bQ^{\times 2}$. But $p \equiv 1 \pmod l$ implies that $p$ is the norm of a principal ideal in $\bQ(\rho)$, and hence the norm of an element, by corollary \ref{p-one-mod-disc} and theorem \ref{minus-one-norm}.
-
-The Tamagawa numbers take a little more work. We use the following description of Tamagawa numbers. %Tim and Vlad reg consts Lemma 3.19
+For the Tamagawa number computations we use the following description 
 
 \begin{lemma}
     Let $K' /K / \bQ_p$ be finite extensions and $p \geq 5$. Let $E / K$ be an elliptic curve with additive reduction; 
@@ -255,7 +233,39 @@ The Tamagawa numbers take a little more work. We use the following description o
         \end{array}
         \]
     Moreover, the extensions $K'(\sqrt{B}) / K'$ and $K'(\sqrt{\Delta}) / K'$ are unramified.
+
+    If $E$ has potentially multiplicative reduction of type $I_n^*$ over $K$, and $e$ is odd, then it has Kodaira type $I_{en}^*$ over $K'$. Moreover, 
+    \[
+        \begin{array}{l l l l}
+        2 \nmid n & \implies & c_v(E / K') = \begin{cases} 2, & \sqrt{B} \not\in K', \\ 4, & \sqrt{B} \in K'. \end{cases} & \quad (I_{ne^*}) \\
+        2 \mid n & \implies & c_v(E / K') = \begin{cases} 2 & \sqrt{\Delta} \not\in K', \\ 4 & \sqrt{\Delta} \in K' \end{cases} & \quad ({I_{ne}^*})   
+        \end{array} 
+    \]
 \end{lemma}
+
+
+\noindent\underline{\textit{Potentially multiplicative reduction}}
+
+{\color{red} TO DO}
+\vspace{10em}
+
+
+\noindent\underline{\textit{Potentially good reduction}}
+
+%\begin{lemma}
+%    Consider $M / L$ a field extension. Let $E / L$ be an elliptic curve, $v$ a finite place of $L$ and $w$ a finite place of $M$ with $w \mid v$. Let $\omega_v$ and $\omega_w$ be the minimal differentials for $E / L_v$ and $E / M_w$ respectively. 
+    
+%    Then, if $E / K_v$ has potentially good reduction and the residue characteristic is not $3$ or $2$, one has
+    
+%    \[ \left|\frac{\omega_v}{\omega_w} \right|_{w} = q^{\floor{\frac{e_{F / K} \cdot \ord_v(\Delta_{E, v}^{\min})}{12}}}, \]
+%    where $q$ is the size of the residue field at $w$.
+%\end{lemma}
+
+%We consider $F / \bQ$ with additive potentially good reduction at $p$ . Since $D_p = I_p$, the size of the residue field is $p$ at all intermediate extensions. Let $n = v_p(\Delta)$. Then $n \in \{2,3,4,6,8,9,10\}$.  Consider $(D_p, I_p, \psi_p)$ where $\psi_p(e,f) = p^{\floor{e n / 12}}$. Then $(D_p, I_p, \psi_p) \sim_{\rho} 1$. Indeed, this takes values $1$ or $p$ in $\bQ^{\times} / \bQ^{\times 2}$. But $p \equiv 1 \pmod l$ implies that $p$ is the norm of a principal ideal in $\bQ(\rho)$, and hence the norm of an element, by corollary \ref{p-one-mod-disc} and theorem \ref{minus-one-norm}.
+
+%The Tamagawa numbers take a little more work. We use the following description of Tamagawa numbers. %Tim and Vlad reg consts Lemma 3.19
+
+
 
 So suppose an elliptic curve $E / \bQ$ has additive reduction at $p$, with $p \geq 5$. Then we can write $E \colon y^2 = x^3 + Ax + B$. Let $D = \Gal(F_{\fp} / \bQ_p)$ be the local Galois group at $p$. Assume that $p$ is totally tamely ramified, so that $D = I = C_n$. Since there is no wild ramification, and $f = 1$, this means that $n \mid p - 1$. We consider the contribution corresponding to an irreducible rational character $\chi_d$ of $D$, given by 
 \begin{equation}\label{tam-contrib}
