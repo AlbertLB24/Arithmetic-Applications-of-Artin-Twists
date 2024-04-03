@@ -121,7 +121,7 @@ We are finally ready to prove the main result of this section, from which Theore
 
 \begin{lemma}\label{lem_Cd_odd}
     Let $d$ be a composite, odd squarefree integer and let $F/K$ be a Galois extension of number fields such that $\Gal(F/K)=C_{d}$. Let $E/\QQ$ be an elliptic curve and let $L_k$ be the fields as above. Then
-    $$\prod_{k\mid d}(C_{E/L_k})^{\mu(d/K)}$$
+    $$\prod_{k\mid d}(C_{E/L_k})^{\mu(d/k)}$$
     is always a rational square.
 \end{lemma}
 
@@ -212,7 +212,7 @@ A bit more care is required to prove Theorem \ref*{thm_consistent_cyclic} for ev
 
 However, as soon as $d$ is divisible by $4$, the product of local factors is a rational square even if the individual contributions might not be, as the next lemma suggests. 
 
-\begin{lemma}
+\begin{lemma}\label{lem_C4p}
     Let $p$ be an odd prime and let $F/K$ be a Galois extension of number fields such that $\Gal(F/K)=C_{4p}$ and let $L_k$ be the fields as above. Let $E/\QQ$ be an elliptic curve. Then
     $$\frac{C_{E/F}C_{E/L_2}}{C_{E/L_4}C_{E/L_{2p}}}$$
     is a rational square.
@@ -259,8 +259,14 @@ $$\mathcal{A}=\{L_k\supseteq K:2\nmid [L_k:K]\}\quad\text{and}\quad\mathcal{B}=\
 Then the fiels in $\mathcal{A}$ and $\mathcal{B}$ are the intermediate fields of (distinct!) $C_{\rad(d)/2}$ extensions. These are odd cyclic extensions, and therefore by Lemma \ref*{lem_Cd_odd} the contribution is a rational square and therefore the norm of any quadratic extension.
 
 \subsubsection*{Case 3: $d$ is divisible by one odd prime}
-In this case, write $d=2^lp^n$.
+In this case, write $d=2^lp^n$ and let $L_k$ be the fields as above. In this case, we note that 
+$$\frac{\prod_i C_{E/F_i}}{\prod_j C_{E/F'_j}}=\frac{C_{E/F}C_{E/L_{d/2p}}}{C_{E/L_{d/2}}C_{E/L_{d/p}}}.$$
+By Lemma \ref*{lem_Cp}, we know that this product is a square up to multiples of $p$. If $l=1$, then $\Gal(\QQ(\zeta_{2p^n})/\QQ)=(\ZZ/2p^n\ZZ)^*=(\ZZ/p^n\ZZ)^*$ is cyclic, and therefore the unique quadratic subfield is $\QQ(\sqrt{p^*})$, and we already know that $p$ is a norm of this field.
 
+From Lemma \ref*{lem_C2p} that the contribution of $p$ comes from those primes $\pp$ in $L_{d/2p}$ such that they ramify in $L_{d/2}$ and they split in $L_{d/p}$. However, as in the proof of Lemma \ref*{lem_C4p}, the prime $\bar{\pp}=\pp\cap L_{d/4p}$ must also split in $L_{d/2p}$ so $\bar{\pp}=\pp\pp'$ for $\pp'\neq\pp$ in $L_{d/2p}$. Since $\pp$ and $\pp'$ have the same splitting behaviour, they give the same contribution. Hence, the product of local terms is in fact a rational square and therefore the norm of any quadratic extension.
+
+This concludes the proof of Theorem \ref*{thm_consistent_cyclic}, and we have in addition shown that the contribution is always a square except when $d=2^n,p^n$ or $2p^n$, where $p$ is an odd rational prime.
+\qed
 
 \subsection{Abelian Extensions}
 
