@@ -7,29 +7,29 @@ Consider a multiplicative function $f \colon B(G) \to A$, where $A$ is an abelia
 \end{example}
 
 We want to extend this notion and consider functions that are trivial on $\rho$-relations.
-Take a multiplicative function on the Burnside ring of the form $\psi \colon B(G) \to \bQ^{\times}$. Given $\rho \in R_{\bC}(G)$ we can extend such functions from the Burnside ring to $\overline{\psi} \colon B(G) \to \bQ^{\times} / N_{\bQ(\rho) / \bQ}(\bQ(\rho)^\times)$. {\color{red} try motivate this a bit better, e.g. why do we expect functions to give norms... try relate this back to introduction}
+Take a multiplicative function on the Burnside ring of the form $\psi \colon B(G) \to \bQ^{\times}$. Given $\rho \in R_{\bC}(G)$ we can extend such functions from the Burnside ring to $\overline{\psi} \colon B(G) \to \bQ^{\times} / N_{\bQ(\rho) / \bQ}(\bQ(\rho)^\times)$. {\color{red} motivate this a bit better?}
 
 \begin{defn}
 If $\Theta \in \ker \overline{\psi}$, then $\psi(\Theta)$ is the norm of an element from $\bQ(\rho)^{\times}$. We call an instance of this a \textbf{norm relation}.
 \end{defn}
 
-\begin{defn}
- We say two functions $\psi$, $\psi'$ are \textbf{$\rho$-equivalent}, written $\psi \sim_{\rho} \psi'$, if $\overline{\psi /\psi'}$ is trivial on all $\rho$-relations. Equivalently, $\psi(\Theta) / \psi'(\Theta)$ is a norm relation for all $\rho$-relations $\Theta$. 
-\end{defn}
+%\begin{defn}
+% We say two functions $\psi$, $\psi'$ are \textbf{$\rho$-equivalent}, written $\psi \sim_{\rho} \psi'$, if $\overline{\psi /\psi'}$ is trivial on all $\rho$-relations. Equivalently, $\psi(\Theta) / \psi'(\Theta)$ is a norm relation for all $\rho$-relations $\Theta$. 
+%\end{defn}
 
-If a function $f$ satisfies $f \sim_{\rho} 1$, we say $f$ is trivial on $\rho$-relations. 
+%If a function $f$ satisfies $f \sim_{\rho} 1$, we say $f$ is trivial on $\rho$-relations. 
 
 \begin{example}
     Let $G = C_p$ for $p$ a prime. Let $\rho$ be a character of degree $p$. There is a unique $\rho$-relation given by $\Theta = C_1 - C_p$. Let $\psi(H) = [G \colon H]$. Then $\psi(\Theta) = p$, which is a norm from $\bQ(\sqrt{p^*}) \subset \bQ(\zeta_p)$ by Corollary \ref{p-norm}. 
 \end{example}
 
-\begin{example}
-Let $\bQ(\rho)$ be a quadratic field. Then if $f \colon B(G) \to \bQ^{\times}$ satisfies $f(\Theta) \in \bQ^{\times 2}$ for all $\rho$-relations $\Theta$, one has $f \sim_{\rho} 1$.
-\end{example}
+%\begin{example}
+%Let $\bQ(\rho)$ be a quadratic field. Then if $f \colon B(G) \to \bQ^{\times}$ satisfies $f(\Theta) \in \bQ^{\times 2}$ for all $\rho$-relations $\Theta$, one has $f \sim_{\rho} 1$.
+%\end{example}
 
-\begin{example}
-Let $E / \bQ$ be an elliptic curve, $G = \Gal(F / \bQ)$ for $F / \bQ$ a Galois extension. For $H \leq G$, the function $\psi \colon H \mapsto C(E / F^H)$ extends to a multiplicative function on the Burnside ring. Given a representation $\rho$ of $G$, one can ask when $\psi \sim_{\rho} 1$.
-\end{example}
+%\begin{example}
+%Let $E / \bQ$ be an elliptic curve, $G = \Gal(F / \bQ)$ for $F / \bQ$ a Galois extension. For $H \leq G$, the function $\psi \colon H \mapsto C(E / F^H)$ extends to a multiplicative function on the Burnside ring. Given a representation $\rho$ of $G$, one can ask when $\psi \sim_{\rho} 1$.
+%\end{example}
 
 \subsection{D-local functions}\label{D-loc}
 

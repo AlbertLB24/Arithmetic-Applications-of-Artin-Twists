@@ -8,7 +8,7 @@
 \usepackage[shortlabels]{enumitem}
 \usepackage{amsfonts,amsmath, soul, matlab-prettifier, bm, amsthm,enumitem,amssymb,multirow,float,mathtools,bbm,array,varwidth,hyperref, etoolbox}
 \usepackage[all]{xy}
-\usepackage[margin=0.9in]{geometry}
+\usepackage[margin=1.3in]{geometry}
 \usepackage{graphicx}
 \usepackage{mathtools}
 \usepackage{extarrows}
@@ -22,7 +22,7 @@
 \usepackage{wrapfig}
 \usepackage{subcaption}
 
-\raggedbottom
+%\raggedbottom
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% operators and symbols
@@ -70,6 +70,7 @@
 
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\hatv}[1]{\overset{\vee}{\mathstrut#1}}
+\newcommand{\legendre}[2]{\ensuremath{\left( \frac{#1}{#2} \right) }}
 
 % Structures
 \def\set#1{\left\{#1\right\}}
@@ -94,7 +95,7 @@
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 \DeclareMathOperator{\Ima}{Im}
-\linespread{1.5}
+%\linespread{1.5}
 
 \theoremstyle{plain}
 \newtheorem{thm}{Theorem}[section]
@@ -160,7 +161,7 @@
 %\input{section4/inf-order.tex}
 %
 
-\section{Brauer Relations}
+%\section{Brauer Relations}
 
 \newpage
 \section{Consistency cases with BSD}
@@ -169,7 +170,7 @@
 
 \begin{appendices}
 \section{Algebraic number theory background}
-\input{appendix/prime-decomp.tex}
+%\input{appendix/prime-decomp.tex}
 \input{appendix/class-field-theory.tex}
 \end{appendices}
 
