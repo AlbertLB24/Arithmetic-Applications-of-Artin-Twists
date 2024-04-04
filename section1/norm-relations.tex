@@ -1,16 +1,21 @@
 \subsection{Functions on the Burnside ring and norm relations}
 
-Consider a multiplicative function $f \colon B(G) \to A$, where $A$ is an abelian group. As in \cite{reg-const}, say that $f$ is \textbf{representation theoretic} if $f$ is trivial on Brauer relations. This means that for a $G$-set $X$, $f$ only depends on the representation $\bC[X]$. 
+Consider a multiplicative function $f \colon \B(G) \to A$, where $A$ is an abelian group. As in \cite{reg-const}, we say that $f$ is \textbf{representation theoretic} if $f$ is trivial on Brauer relations. This implies that for a $G$-set $X$, $f$ only depends on the representation $\bC[X]$. In other words, there exists a map $g \colon \R(G) \to A$ such that $f(H) = g(\bC[G / H])$ for all $H \leq G$. 
 
 \begin{example}
-  Let $V$ be a representation of $G$. The function $\psi(H) = \dim V^H$ is trivial on Brauer relations, as $\dim V^H = \langle \Res_{H} V , \trivial_H \rangle = \langle V, \Ind_{H}^G \trivial \rangle$ by Frobenius reciprocity.
+  Let $V$ be a representation of $G$. The function sending $H \mapsto \dim V^H$ is equal on conjugate subgroups and so defines a map $\psi \colon \B(G) \to \bZ$. This
+  is trivial on Brauer relations as $\dim V^H = \langle \Res_{H} V , \trivial_H \rangle = \langle V, \Ind_{H}^G \trivial \rangle$ by Frobenius reciprocity.
 \end{example}
 
-We want to extend this notion and consider functions that are trivial on $\rho$-relations.
-Take a multiplicative function on the Burnside ring of the form $\psi \colon B(G) \to \bQ^{\times}$. Given $\rho \in R_{\bC}(G)$ we can extend such functions from the Burnside ring to $\overline{\psi} \colon B(G) \to \bQ^{\times} /\fieldnorm{\rho}$. {\color{red} motivate this a bit better?}
+Let $\rho \in \R(G)$. Let $\Theta \in \B(G)$ be a $\rho$-relation, with $\bC[G / \Theta] \simeq \repnorm{\rho}^{\oplus m}$. If we have a function $f \colon B(G) \to \bQ^{\times}$, we may then ask whether $f(\Theta) \in \fieldnorm{\rho}$. 
+
+%Take a multiplicative function on the Burnside ring of the form $\psi \colon B(G) \to \bQ^{\times}$. Given $\rho \in R_{\bC}(G)$ we can extend such functions from the Burnside ring to $\overline{\psi} \colon B(G) \to \bQ^{\times} /\fieldnorm{\rho}$. {\color{red} motivate this a bit better?}
 
 \begin{defn}
-If $\Theta \in \ker \overline{\psi}$, then $\psi(\Theta)$ is the norm of an element from $\bQ(\rho)^{\times}$. We call an instance of this a \textbf{norm relation}.
+Let $\rho \in \R(G)$, $\Theta$ a $\rho$-relation, and $f \colon B(G) \to \bQ^{\times}$. If $f(\Theta) \in \fieldnorm{\rho}$, then we call $\Theta$ a \textbf{norm relation} for $f$. 
+If $f(\Theta) \in \fieldnorm{\rho}$ for every $\rho$-relation in $\B(G)$, then we say $f$ is \textbf{trivial on $\rho$-relations}.
+
+    %If $\Theta \in \ker \overline{\psi}$, then $\psi(\Theta)$ is the norm of an element from $\bQ(\rho)^{\times}$. We call an instance of this a \textbf{norm relation}.
 \end{defn}
 
 %\begin{defn}
@@ -20,8 +25,21 @@ If $\Theta \in \ker \overline{\psi}$, then $\psi(\Theta)$ is the norm of an elem
 %If a function $f$ satisfies $f \sim_{\rho} 1$, we say $f$ is trivial on $\rho$-relations. 
 
 \begin{example}
-    Let $G = C_p$ for $p$ a prime. Let $\rho$ be a character of degree $p$, so $\bQ(\rho) = \bQ(\zeta_p)$. There is a unique $\rho$-relation given by $\Theta = C_1 - C_p$. Let $\psi(H) = [G \colon H]$. Then $\psi(\Theta)$ is a norm relation. We have $\psi(\Theta) = p \in \fieldnorm{\rho}$ since the element $1 - \zeta_p$ has norm $p$. {\color{red} check this is true lol}
+    Let $G = C_p$ for $p$ a prime. Let $\rho$ be a character of degree $p$, so $\bQ(\rho) = \bQ(\zeta_p)$. There is a unique $\rho$-relation given by $\Theta = C_1 - C_p$. Let $\psi \colon \B(G) \to \bQ^{\times}$ be given by $\psi(H) = [G : H]$. Then $\psi(\Theta)$ is a norm relation, as $\psi(\Theta) = p \in \fieldnorm{\rho}$ is the norm of $1 - \zeta_p$.
 \end{example}
+
+There is some ambiguity in ... 
+
+\begin{prop}
+    Let $\rho \in \R(G)$ and $f \colon \B(G) \to \bQ^{\times}$. Suppose that $f(\Psi) \in \fieldnorm{\rho}$ for every Brauer relation $\Psi \in \B(G)$. If there exists a $\rho$-relation $\Theta \in \B(G)$ such that $\Theta$ is a norm relation for $f$, then $f$ is trivial on $\rho$-relations. 
+\end{prop}
+
+\begin{proof}
+    We have that $\bC[G / \Theta ] = \repnorm{\rho}^{\oplus m'}$ for some $m' \geq 1$. Write $m' = k m $ for $k \geq 1$ and $m$ the order of $\repnorm{\rho}$ in $\C(G)$. 
+
+    Consider an arbitrary $\rho$-relation $\Theta'$, with $\bC[G / \Theta' ] = \repnorm{\rho}^{\oplus l m}$ for $l \geq 1$. Then $\Psi = l\Theta - k\Theta'$ is a Brauer relation. Therefore
+    \[ f(\Theta') = \]
+\end{proof}
 
 In later applications, we consider when $\bQ(\rho)$ is quadratic, so that $\bQ^{\times 2} \subset \fieldnorm{\rho}$
 
@@ -66,7 +84,7 @@ The ramification degree and residue degree of $w$ over $K$ are given by $e_w = \
 \end{defn}
 
 \begin{example}
-    If $E / K$ has split multiplicative reduction at $v$ with $c_v(E / K) = n$, then $c_w(E / F^H) = e_w n$ for a place $w$ of $F^H$ above $v$. In this case the function in example \ref{tama-ex} is $(D, I, e)$. 
+    If $E / K$ has split multiplicative reduction at $v$ with $c_v(E / K) = n$, then $c_w(E / F^H) = e_w n$ for a place $w$ of $F^H$ above $v$. In this case the function in Example \ref{tama-ex} is $(D, I, e)$. 
 \end{example}
 
 \begin{example}\label{trivial-on-brauer}

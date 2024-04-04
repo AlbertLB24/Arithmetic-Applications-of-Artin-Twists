@@ -49,7 +49,7 @@ Let $p$ be a prime in $\bQ$. If the residue degree of $p$ in $L / \bQ$ is $1$, t
 \end{thm} 
 
 \begin{proof}
-Let $\varphi \colon C_K \to \Gal(H / K)$ be the isomorphism induced by the Artin map. By theorem \ref{janusz-3.3}, $\Gal(L / K) = \Cl_K / \left(\Cl_K\right)^2$ is abelian. Let $\fp$ be a prime of $K$ lying over $p$. Then $N_{K / \bQ}(\fp) = p$ and $\fp$ has residue degree $1$ in $L$. It follows that $\varphi([\fp])|_{L} = \Id$ so that $\varphi([\fp]) \in \Gal(H / L)$. Thus by theorem \ref{janusz-3.3} there is a fractional ideal $\fU$ of $I_K$ such that 
+Let $\varphi \colon C_K \to \Gal(H / K)$ be the isomorphism induced by the Artin map. By Theorem \ref{janusz-3.3}, $\Gal(L / K) = \Cl_K / \left(\Cl_K\right)^2$ is abelian. Let $\fp$ be a prime of $K$ lying over $p$. Then $N_{K / \bQ}(\fp) = p$ and $\fp$ has residue degree $1$ in $L$. It follows that $\varphi([\fp])|_{L} = \Id$ so that $\varphi([\fp]) \in \Gal(H / L)$. Thus by Theorem \ref{janusz-3.3} there is a fractional ideal $\fU$ of $I_K$ such that 
 $[\fp] = [\sigma(\fU)\fU^{-1}]$. Observe that $N_{K / \bQ}(\sigma(\fU)\fU^{-1}) = 1$. It follows that we can represent $[\fp]^n$ by a fractional ideal of norm $p$ for all $n$. Since $\Cl_K$ is finite, this implies there is a principal fractional ideal in $K$ of norm $p$. 
 \end{proof}
 
@@ -80,7 +80,7 @@ The following results are used in the body of the report:
 \end{cor}
 
 \begin{proof}
-    Any prime above $p$ in $K$ splits in $L^{+}$, hence also in $L$ (in particular it has residue degree $1$). Similarly for $K'$, the residue degree of $p$ in its extended genus field is $1$, and so in its genus field also. The result follows by theorem \ref{p-principal}.
+    Any prime above $p$ in $K$ splits in $L^{+}$, hence also in $L$ (in particular it has residue degree $1$). Similarly for $K'$, the residue degree of $p$ in its extended genus field is $1$, and so in its genus field also. The result follows by Theorem \ref{p-principal}.
 \end{proof}
 
 We want to understand when $p$ is the norm of an element. Note that if $H = H^{+}$, then $p$ being the norm of a principal fractional ideal guarantees that it is the norm of an element. If $-1$ is a norm in our field then we are also fine. 
@@ -101,7 +101,7 @@ Note that $-1$ being the norm of an element in $K$ does not ensure that $-1$ is 
 \end{thm}
 
 \begin{proof}
-    Note that $k$ being odd implies $D$ is odd. We know that $p$ is the norm of a principal fractional ideal of $K$ by corollary \ref{p-one-mod-disc}. Therefore there exists integers $x$, $y$, $z$ such that $\pm p z^2 = x^2 - Dy^2$. Suppose firstly that all primes dividing $D$ are congruent to $1 \pmod 4$. Then there is an element of $K^{\times}$ of norm $-1$ by theorem \ref{minus-one-norm}. Hence we can find an element of norm $p$.
+    Note that $k$ being odd implies $D$ is odd. We know that $p$ is the norm of a principal fractional ideal of $K$ by corollary \ref{p-one-mod-disc}. Therefore there exists integers $x$, $y$, $z$ such that $\pm p z^2 = x^2 - Dy^2$. Suppose firstly that all primes dividing $D$ are congruent to $1 \pmod 4$. Then there is an element of $K^{\times}$ of norm $-1$ by Theorem \ref{minus-one-norm}. Hence we can find an element of norm $p$.
 
     Otherwise, there exists a prime $q \mid D$ such that $q \equiv 3 \pmod 4$. Reducing mod $q$, we have
     $ \pm p = \square$. Since $p \equiv 1 \pmod q$, it is a square $\pmod q$. But $-1$ is not a square mod $q$, hence our sign must have been $+$ and so $p$ is the norm of an element from $K^{\times}$.
