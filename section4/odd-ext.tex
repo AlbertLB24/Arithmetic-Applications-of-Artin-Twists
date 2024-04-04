@@ -5,10 +5,10 @@
 \begin{thm}\label{odd-exts}
  Let $E / \bQ$ be an elliptic curve, $F / \bQ$ be an extension of \textbf{odd order} with Galois group $G$. 
  
-Suppose that the primes of additive reduction of $E$ are at worst tamely ramified in $F / \bQ$ (and $\geq 5$). 
-Take any representation $\rho \in R(G)$ with quadratic subfield $\bQ(\sqrt{D}) \subset \bQ(\rho)$ and relation
-\begin{equation*}\label{odd-exp}
- \left(\bigoplus_{\mathfrak{g}\in\Gal(\QQ(\rho)/\QQ)}\rho^{\mathfrak{g}}\right)^m=\bigoplus_i\Ind_{F_i/\QQ}\mathds{1}\ominus\bigoplus_j\Ind_{F'_j/\QQ}\mathds{1}
+Assume that the primes of additive reduction of $E$ are $\geq 5$. 
+Take any representation $\rho \in \R(G)$ with quadratic subfield $\bQ(\sqrt{D}) \subset \bQ(\rho)$ and relation
+\begin{equation*}\label{odd-exp} \repnorm{\rho}^{\oplus m} =
+ \left(\bigoplus_{\mathfrak{g}\in\Gal(\QQ(\rho)/\QQ)}\rho^{\mathfrak{g}}\right)^{\oplus m }=\bigoplus_i\Ind_{F_i/\QQ}\mathds{1}\ominus\bigoplus_j\Ind_{F'_j/\QQ}\mathds{1}
 \end{equation*}
  as in Theorem \ref{thm_positive_rank}. Then
  \[ \frac{\prod_i C_{E/F_i}}{\prod_j C_{E/F_j'}}  \in 
@@ -18,7 +18,13 @@ Take any representation $\rho \in R(G)$ with quadratic subfield $\bQ(\sqrt{D}) \
     \end{cases} \] 
     In other words, one cannot use Theorem \ref{thm_positive_rank} to conclude that $E / F$ must have positive rank. 
 \end{thm}
-Let us break up the function $C \colon H \mapsto C_{E / F^H}$ into $C = \prod_p  \fc_p \cdot d_p$ where
+
+Replacing $\rho$ by the sum of its conjugates by elements of $ \Gal(\bQ(\rho) / \bQ(\sqrt{D}))$, we may assume that $\bQ(\rho) = \bQ(\sqrt{D})$. Note that this does not affect the order of $\rho$ in $\C(G)$, nor the set of $\rho$-relations (since $\repnorm{\rho}$ is unchanged). 
+
+The product of terms we are computing is $C(\Theta)$, where $C \colon B(G) \to \bQ^{\times}$ is given by $C \colon H \mapsto C_{E / F^H}$, and $\Theta$ is any $\rho$-relation. Since $\bQ(\rho)$ is quadratic, we have $\bQ^{\times 2} \subset \fieldnorm{\rho}$. As $G$ is of odd order, it follows from \cite[Theorem 2.47]{reg-const} and \cite[Theorem 3.2  (Tam)]{reg-const} that $C(\Psi) \in \bQ^{\times 2}$ for any Brauer relation $\Psi$. Thus by Proposition \ref{min-to-all}, it is enough to prove Theorem \ref{odd-exts} when $m$ is the order of $\repnorm{\rho}$ in $\C(G)$. Then $m$ divides $|G|$, hence is odd. Therefore we need to prove that, given any $
+\Theta \in B(G)$ such that $\bC[\Theta] \simeq \repnorm{\rho}^{\oplus m}$, $\Theta$ is a norm relation for the function $C$. 
+
+Let us break up the function $C$ into $C = \prod_p  \fc_p \cdot d_p$ where
 \begin{equation}\label{c-and-d}
          \fc_p(H) = \prod_{v | p}  c_v(E / F^H) , \qquad d_p(H) = \prod_{v | p} \left|\frac{\omega}{\omega_{v}^{\min}}\right|_v, 
 \end{equation}
@@ -31,24 +37,6 @@ Then
 where $f_p$ is a function on $B(D_p)$ with $H \mapsto C_v(E / F_w^H)$.
 %We will observe throughout that if $v$ is a place of $F^H$ corresponding to the double coset $HxD_{p}$, then $C_v(E / F^H)$ is a function of $e_v$ and $f_v$. Thus we have
 %\[ \fc_p \cdot d_p = (D_p, I_p, C_v) \]
-
-We first argue that it is enough to prove this theorem when $m$ is the order of $\repnorm{\rho}$ in $C(G)$. 
-
-\begin{lemma}
-    Consider the set-up as in Theorem \ref{odd-exts}. If the statement of the theorem holds when $m$ is the order of $\repnorm{\rho}$ in $C(G)$, then it holds for all possible $m$. {\color{red} really, this is saying that if $f$ is trivial on Brauer relations, then showing it is trivial on rho-relations for minimum m is enough (maybe I could add that in rep theory section)}
-\end{lemma}
-
-\begin{proof}
-    By definition, if $m$ is the order of $\repnorm{\rho}$ in $C(G)$ then there exists $\Theta \in B(G)$ such that $\bC[\Theta] \simeq \repnorm{\rho}^{\oplus m}$.
-    Now consider $n$ and $\Psi \in B(G)$ such that $\bC[\Psi] \simeq \repnorm{\rho}^{\oplus n}$. Clearly $m \mid n$.  Then $\Phi = \Psi - \frac{n}{m}\Theta$ is a Brauer relation.
-
-    At this point, we use that the function $C$ on $B(G)$, viewed as a function to $\bQ^{\times} / \bQ^{\times 2}$, is trivial on Brauer relations. For odd order groups this follows from \cite[Theorem 2.47]{reg-const} and \cite[Theorem 3.2  (Tam)]{reg-const}, looking locally at each $C_p$. 
-    Then $C(\Psi) = C(\Theta)^{n / m} \cdot C(\Phi)$ so $C(\Psi) \equiv C(\Theta)^{n / m} \mod \bQ^{\times 2}$. It follows that if $C(\Theta)$ satisfies the conditions of Theorem \ref{odd-exts}, then so does $C(\Psi)$.
-\end{proof}
-
-Taking $m$ to be the order of $\repnorm{\rho}$ in $C(G)$, we have that $m$ divides $|G|$, hence is odd. Therefore we need to prove that, given any $
-\Theta \in B(G)$ such that $\bC[\Theta] \simeq \repnorm{\rho}^{\oplus m}$, the expression $C(\Theta)$ is the norm of an element from $\bQ(\sqrt{D})^{\times}$.
-Replacing $\rho$ by the sum of its conjugates by elements of $ \Gal(\bQ(\rho) / \bQ(\sqrt{D}))$, we may assume that $\bQ(\rho) = \bQ(\sqrt{D})$. Note that this does not affect $m$. 
 
 We record
 \begin{table}[H]

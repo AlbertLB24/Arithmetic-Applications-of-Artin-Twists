@@ -25,44 +25,44 @@ If $f(\Theta) \in \fieldnorm{\rho}$ for every $\rho$-relation in $\B(G)$, then w
 %If a function $f$ satisfies $f \sim_{\rho} 1$, we say $f$ is trivial on $\rho$-relations. 
 
 \begin{example}
-    Let $G = C_p$ for $p$ a prime. Let $\rho$ be a character of degree $p$, so $\bQ(\rho) = \bQ(\zeta_p)$. There is a unique $\rho$-relation given by $\Theta = C_1 - C_p$. Let $\psi \colon \B(G) \to \bQ^{\times}$ be given by $\psi(H) = [G : H]$. Then $\psi(\Theta)$ is a norm relation, as $\psi(\Theta) = p \in \fieldnorm{\rho}$ is the norm of $1 - \zeta_p$.
+    Let $G = C_p$ for $p$ a prime. Let $\rho$ be a character of degree $p$, so $\bQ(\rho) = \bQ(\zeta_p)$. There is a unique $\rho$-relation given by $\Theta = C_1 - C_p$. Let $\psi \colon \B(G) \to \bQ^{\times}$ be given by $\psi(H) = [G \colon H]$. Then $\psi(\Theta)$ is a norm relation, as $\psi(\Theta) = p \in \fieldnorm{\rho}$ is the norm of $1 - \zeta_p$.
 \end{example}
 
-There is some ambiguity in ... 
+In general, showing that a $\rho$-relation $\Theta$ is a norm relation for $f$ does not imply that this is the case for all possible $\rho$-relations. Under certain circumstances however, we can.
 
-\begin{prop}
-    Let $\rho \in \R(G)$ and $f \colon \B(G) \to \bQ^{\times}$. Suppose that $f(\Psi) \in \fieldnorm{\rho}$ for every Brauer relation $\Psi \in \B(G)$. If there exists a $\rho$-relation $\Theta \in \B(G)$ such that $\Theta$ is a norm relation for $f$, then $f$ is trivial on $\rho$-relations. 
+\begin{prop}\label{min-to-all}
+    Let $\rho \in \R(G)$ and $f \colon \B(G) \to \bQ^{\times}$. Suppose that $f(\Psi) \in \fieldnorm{\rho}$ for every Brauer relation $\Psi \in \B(G)$. 
+    Let $\Theta \in \B(G)$ be a $\rho$-relation, with $\bC[G / \Theta] = \repnorm{\rho}^{\oplus m}$, where $m$ is the order of $\repnorm{\rho}$ in $\C(G)$. 
+    If $\Theta$ is a norm relation for $f$, then $f$ is trivial on $\rho$-relations. 
 \end{prop}
 
 \begin{proof}
-    We have that $\bC[G / \Theta ] = \repnorm{\rho}^{\oplus m'}$ for some $m' \geq 1$. Write $m' = k m $ for $k \geq 1$ and $m$ the order of $\repnorm{\rho}$ in $\C(G)$. 
-
-    Consider an arbitrary $\rho$-relation $\Theta'$, with $\bC[G / \Theta' ] = \repnorm{\rho}^{\oplus l m}$ for $l \geq 1$. Then $\Psi = l\Theta - k\Theta'$ is a Brauer relation. Therefore
-    \[ f(\Theta') = \]
+    Consider an arbitrary $\rho$-relation $\Theta'$ such that $\bC[G / \Theta'] = \repnorm{\rho}^{\oplus l}$ for some $l \geq 1$. Then $m \mid l$ and $\Psi = \Theta' - \frac{l}{m}\Theta$ is a Brauer relation. Thus
+    \[ f(\Theta') = f(\Psi)\cdot f(\Theta)^{\frac{l}{m}} \in \fieldnorm{\rho} \]
+    and so $f$ is trivial on all $\rho$-relations.
 \end{proof}
 
-In later applications, we consider when $\bQ(\rho)$ is quadratic, so that $\bQ^{\times 2} \subset \fieldnorm{\rho}$
+\begin{example}
+    Let $G = C_n$. Then any function $f \colon B(G) \to \bQ^{\times}$ is trivial on Brauer relations since $G$ does not have any. Let $\varphi_d$ be an irreducible complex character of $G$ of order $d \mid n$. Thus to conclude that $f$ is trivial on $\varphi_d$-relations, it is enough to show that the $\varphi_d$-relation constructed in Example \ref{cyclic-relns} is a norm relation for $f$.
+\end{example}
 
 %\begin{example}
 %Let $\bQ(\rho)$ be a quadratic field. Then if $f \colon B(G) \to \bQ^{\times}$ satisfies $f(\Theta) \in \bQ^{\times 2}$ for all $\rho$-relations $\Theta$, one has $f \sim_{\rho} 1$.
 %\end{example}
 
-%\begin{example}
-%Let $E / \bQ$ be an elliptic curve, $G = \Gal(F / \bQ)$ for $F / \bQ$ a Galois extension. For $H \leq G$, the function $\psi \colon H \mapsto C(E / F^H)$ extends to a multiplicative function on the Burnside ring. Given a representation $\rho$ of $G$, one can ask when $\psi \sim_{\rho} 1$.
-%\end{example}
+\begin{example}
+Let $E / \bQ$ be an elliptic curve, $G = \Gal(F / \bQ)$ for $F / \bQ$ a Galois extension. The function $\psi \colon H \mapsto C_{E / F^H}$ ({\color{red} see Definition in Albert section}) for $H \leq G$ extends to a multiplicative function on the Burnside ring. In later sections we will investigate when this is trivial on $\rho$-relations, for $\rho \in \R(G)$. 
+\end{example}
 
 \subsubsection{D-local functions}\label{D-loc}
 
-For our application of functions on the Burnside ring to {\color{red} reference something in intro}, we introduce some of the concepts and notation introduced in \cite[Section 2.iii]{reg-const}.
-
-We are interested in functions on the Burnside ring that are number-theoretic in nature, where we take $G$ to be a Galois group. Often, these functions are \textit{local}. For example, let $G = \Gal(F / K)$ and $D$ the decomposition group at the place $v$. For $H \leq G$, the number of primes in $L = F^{H}$ above $v$ are in one-to-one correspondence with the double cosets $D \backslash H / G$. We can use the function $f \colon B(G) \to \bQ[x]^{\times}$ given by $H \mapsto  x^{| H \backslash G / D|}$ to describe the number of places above $v$ in any intermediate extension of $F / K$. But if we let $g \colon B(D) \to \bQ[x]^{\times}$ be defined by $H \mapsto x$, then 
+We are interested in functions on the Burnside ring that are number-theoretic in nature, where we take $G$ to be a Galois group. Often, these functions are \textit{local}. For example, let $F / K$ be a finite Galois extension of number fields and let $G = \Gal(F / K)$. Let $D$ be the decomposition group at a place $v$ of $K$. For $H \leq G$, the number of primes in $L = F^{H}$ above $v$ are in one-to-one correspondence with the double cosets $H \backslash G / D$. We can use the function $f \colon \B(G) \to \bQ^{\times}$ given by $H \mapsto  \lambda^{| H \backslash G / D|}$ (for $\lambda \not= \pm 1$) to describe the number of places above $v$ in any intermediate extension of $F / K$. But if we let $g \colon \B(D) \to \bQ^{\times}$ be defined by $H \mapsto \lambda$, then 
         \[ f(H) = g\left(\Res_D H\right) = \prod_{x \in H \backslash G / D} g(D \cap H^{x^{-1}}) .\]
-Therefore the value of $f$ on any $G$-set $X$ only depends on the structure of $X$ as a $D$-set. 
-
+Therefore the value of $f$ on any $G$-set $X$ only depends on the structure of $X$ as a $D$-set.
 Such functions motivate the following definition:
 
 \begin{defn}(\cite[Definition 2.33]{reg-const})\label{D-loc-fn}
-    If $D \leq G$, we say a function $f$ on $B(G)$ is \textbf{$D$-local} if there is a function $f_D$ on $B(D)$ such that $f(H) = f_D(\Res_D H)$ for $H \leq G$.
+    If $D \leq G$, we say a function $f$ on $\B(G)$ is \textbf{$D$-local} if there is a function $f_D$ on $\B(D)$ such that $f(H) = f_D(\Res_D H)$ for $H \leq G$.
     If this is the case, we write
     \[ f = (D, f_D). \]
 \end{defn}
@@ -74,32 +74,33 @@ Such functions motivate the following definition:
 \end{example}
 
 Let $I \triangleleft D$ be the inertia subgroup of the place $v$, so $D / I$ is cyclic. If a prime $w$ in $F^H$ corresponds to the double coset $HxD$, then its decomposition and inertia groups in $F / F^H$ are $H \cap D^x$ and $H \cap I^x$ respectively.
-The ramification degree and residue degree of $w$ over $K$ are given by $e_w = \frac{|I|}{|H \cap I^x|}$ and $f_w = \frac{[D \colon I]}{[H \cap D^x \colon H \cap I^x]}$. We will consider functions that depend on $e$ and $f$, and so introduce the following:
+The ramification degree and residue degree of $w$ over $K$ are given by $e_w = \frac{|I|}{|H \cap I^x|}$ and $f_w = \frac{[D : I]}{[H \cap D^x : H \cap I^x]}$. We will consider functions that depend on $e$ and $f$, and so introduce the following:
 
 \begin{defn}\cite[Definition 2.35]{reg-const}\label{D-I-fn}
-    Suppose $I \triangleleft D < G$ with $D / I$ cyclic, and $\psi(e,f)$ is a function of $e, f \in \bN$. Define a function on $B(G)$ by 
-    \[ \left(D, I, \psi\right) \colon \quad H \mapsto \prod_{x \in H\backslash G / D} \psi\left(\frac{|I|}{|H \cap I^x|}, \frac{[D \colon I]}{[H \cap D^x \colon H \cap I^x]}\right). \]
-    This is a $D$-local function on $B(G)$ with
-    \[ (D, I, \psi) = \left(D, U \mapsto \psi(\frac{|I|}{|U \cap I}, \frac{|D|}{|UI|})\right). \]
+    Suppose $I \triangleleft D < G$ with $D / I$ cyclic, and $\psi(e,f)$ is a function of $e, f \in \bN$. Define a function on $\B(G)$ by 
+    \[ \left(D, I, \psi\right) \colon \quad H \mapsto \prod_{x \in H\backslash G / D} \psi\left(\frac{|I|}{|H \cap I^x|}, \frac{[D : I]}{[H \cap D^x : H \cap I^x]}\right). \]
+    This is a $D$-local function on $\B(G)$ with
+    \[ (D, I, \psi) = \left(D, U \mapsto \psi\left(\frac{|I|}{|U \cap I|}, \frac{|D|}{|UI|}\right)\right). \]
 \end{defn}
 
 \begin{example}
-    If $E / K$ has split multiplicative reduction at $v$ with $c_v(E / K) = n$, then $c_w(E / F^H) = e_w n$ for a place $w$ of $F^H$ above $v$. In this case the function in Example \ref{tama-ex} is $(D, I, e)$. 
+    If $E / K$ has split multiplicative reduction at $v$ with $c_v(E / K) = n$, then $c_w(E / F^H) = e_w n$ for a place $w$ of $F^H$ above $v$. In this case the function in Example \ref{tama-ex} is $(D, I, e n)$. 
 \end{example}
 
-\begin{example}\label{trivial-on-brauer}
-    Let $\rho = 0$. If $W$ is a group of odd order, then $(W, W, e) \sim 1$ as functions to $\bQ^{\times} / \bQ^{\times 2}$.
-    More generally if $D$ has odd order and $I \triangleleft D$ then $(D, I, e) \sim_{\rho} 1$. {\color{red} explain and reference}
-\end{example}
+%\begin{example}\label{trivial-on-brauer}
+%    Let $\rho = 0$. If $W$ is a group of odd order, then $(W, W, e) \sim 1$ as functions to $\bQ^{\times} / \bQ^{\times 2}$.More generally if $D$ has odd order and $I \triangleleft D$ then $(D, I, e) \sim_{\rho} 1$. {\color{red} explain and reference}
+%\end{example}
 
-{\color{red} Question: do i need to be worried about m when i restrict a representation? do i need to adjust my definition of rho relations?}
 \begin{prop}
-    Let $I \triangleleft D \leq G$ with $D / I$ cyclic. Let $\rho \in R(G)$ Then
+    Let $I \triangleleft D \leq G$ with $D / I$ cyclic. Let $\rho \in \R(G)$ Then
     \begin{enumerate}
         \item If $f = (D, f_D)$ and $f_D$ is trivial on $(\Res_D \rho)$-relations, then $f$ is trivial on $\rho$-relations.
         \item {\color{red} maybe more things to say here. See e.g. \cite[Theorem 2.36]{reg-const}}  
+        \item {\color{red} how about passing to quotients?}
     \end{enumerate}
 \end{prop}
+
+{\color{red} maybe some more of when $\rho$ is a quadratic field}
 
 
 %Our fudge factors $C(E / F)$ are defined locally; one has $C(E / F) = \prod_v c_v(E / F) \cdot |\omega / \omega_{v, \min}|$. Here $v$ runs over finite places of $F$, $\omega$ is a global minimal differential for $E / \bQ$, and $\omega_{v, \min}$ is a minimal differential at $v$.
