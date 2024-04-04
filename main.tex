@@ -32,7 +32,7 @@
 
 
 % operators
-\forcsvlist{\define{\DeclareMathOperator}{\mathrm}{}}{Ad, Aut, BSD, Char, Cl, Det, End, Frob, Gal, GL, hol, Hom, Id, Ind, Irr, Jac, Ker, Mod, new, old, ord,  Perm, PGL, Pic, Proj, PSL, Rad, Reg, Rep, res, Res, rk, sign, SL, Smo, SO, Span, Spec, Stab, supp, sw, Sym, Ta, tors, Tr, Trace, un, Vect, contr, Sel, rad, Norm}
+\forcsvlist{\define{\DeclareMathOperator}{\mathrm}{}}{Ad, Aut, B, BSD, C, Char, Cl, Det, End, Frob, Gal, GL, hol, Hom, Id, Ind, Irr, Jac, Ker, Mod, N, new, old, ord,  Perm, PGL, Pic, Proj, PSL, R, Rad, Reg, Rep, res, Res, rk, sign, SL, Smo, SO, Span, Spec, Stab, supp, sw, Sym, Ta, tors, Tr, Trace, un, Vect, contr, Sel, rad, Norm}
 
 %trivial and ell
 \newcommand{\trivial}{\mathbbm{1}}
@@ -71,6 +71,8 @@
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\hatv}[1]{\overset{\vee}{\mathstrut#1}}
 \newcommand{\legendre}[2]{\ensuremath{\left( \frac{#1}{#2} \right) }}
+\newcommand{\repnorm}[1]{\fN_{\bQ(#1) / \bQ}(#1)}
+\newcommand{\fieldnorm}[1]{N_{\bQ(#1) / \bQ}(\bQ(#1)^{\times})}
 
 % Structures
 \def\set#1{\left\{#1\right\}}

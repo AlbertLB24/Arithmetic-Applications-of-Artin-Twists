@@ -32,22 +32,22 @@ where $f_p$ is a function on $B(D_p)$ with $H \mapsto C_v(E / F_w^H)$.
 %We will observe throughout that if $v$ is a place of $F^H$ corresponding to the double coset $HxD_{p}$, then $C_v(E / F^H)$ is a function of $e_v$ and $f_v$. Thus we have
 %\[ \fc_p \cdot d_p = (D_p, I_p, C_v) \]
 
-We first argue that it is enough to prove this theorem when $m$ is the order of $\widetilde{\rho}$ in $C(G)$. 
+We first argue that it is enough to prove this theorem when $m$ is the order of $\repnorm{\rho}$ in $C(G)$. 
 
 \begin{lemma}
-    Consider the set-up as in theorem \ref{odd-exts}. If the statement of the theorem holds when $m$ is the order of $\widetilde{\rho}$ in $C(G)$, then it holds for all possible $m$. {\color{red} really, this is saying that if $f$ is trivial on Brauer relations, then showing it is trivial on rho-relations for minimum m is enough (maybe I could add that in rep theory section)}
+    Consider the set-up as in theorem \ref{odd-exts}. If the statement of the theorem holds when $m$ is the order of $\repnorm{\rho}$ in $C(G)$, then it holds for all possible $m$. {\color{red} really, this is saying that if $f$ is trivial on Brauer relations, then showing it is trivial on rho-relations for minimum m is enough (maybe I could add that in rep theory section)}
 \end{lemma}
 
 \begin{proof}
-    By definition, if $m$ is the order of $\widetilde{\rho}$ in $C(G)$ then there exists $\Theta \in B(G)$ such that $\bC[\Theta] \simeq \widetilde{\rho}^{\oplus m}$.
-    Now consider $n$ and $\Psi \in B(G)$ such that $\bC[\Psi] \simeq \widetilde{\rho}^{\oplus n}$. Clearly $m \mid n$.  Then $\Phi = \Psi - \frac{n}{m}\Theta$ is a Brauer relation.
+    By definition, if $m$ is the order of $\repnorm{\rho}$ in $C(G)$ then there exists $\Theta \in B(G)$ such that $\bC[\Theta] \simeq \repnorm{\rho}^{\oplus m}$.
+    Now consider $n$ and $\Psi \in B(G)$ such that $\bC[\Psi] \simeq \repnorm{\rho}^{\oplus n}$. Clearly $m \mid n$.  Then $\Phi = \Psi - \frac{n}{m}\Theta$ is a Brauer relation.
 
     At this point, we use that the function $C$ on $B(G)$, viewed as a function to $\bQ^{\times} / \bQ^{\times 2}$, is trivial on Brauer relations. For odd order groups this follows from \cite[Theorem 2.47]{reg-const} and \cite[Theorem 3.2  (Tam)]{reg-const}, looking locally at each $C_p$. 
     Then $C(\Psi) = C(\Theta)^{n / m} \cdot C(\Phi)$ so $C(\Psi) \equiv C(\Theta)^{n / m} \mod \bQ^{\times 2}$. It follows that if $C(\Theta)$ satisfies the conditions of theorem \ref{odd-exts}, then so does $C(\Psi)$.
 \end{proof}
 
-Taking $m$ to be the order of $\widetilde{\rho}$ in $C(G)$, we have that $m$ divides $|G|$, hence is odd. Therefore we need to prove that, given any $
-\Theta \in B(G)$ such that $\bC[\Theta] \simeq \widetilde{\rho}^{\oplus m}$, the expression $C(\Theta)$ is the norm of an element from $\bQ(\sqrt{D})^{\times}$.
+Taking $m$ to be the order of $\repnorm{\rho}$ in $C(G)$, we have that $m$ divides $|G|$, hence is odd. Therefore we need to prove that, given any $
+\Theta \in B(G)$ such that $\bC[\Theta] \simeq \repnorm{\rho}^{\oplus m}$, the expression $C(\Theta)$ is the norm of an element from $\bQ(\sqrt{D})^{\times}$.
 Replacing $\rho$ by the sum of its conjugates by elements of $ \Gal(\bQ(\rho) / \bQ(\sqrt{D}))$, we may assume that $\bQ(\rho) = \bQ(\sqrt{D})$. Note that this does not affect $m$. 
 
 We record
@@ -61,7 +61,7 @@ We record
 \end{tabular}
 \vspace{-1em}
 \end{table}
-Fix $\Theta = \sum_i n_i H_i \in B(G)$ with $\bC[\Theta] \simeq \widetilde{\rho}^{\oplus m}$. We prove that at each prime $p$, $\fc_p(\Theta)$ and $d_p(\Theta)$ are the norms of elements from $\bQ(\rho)^{\times}$.  These depends on $D_p$ and $I_p$ ; the decomposition and inertia group respectively at $p$. As we deal with each local factor individually, we argue that one can take $D_p = I_p$.
+Fix $\Theta = \sum_i n_i H_i \in B(G)$ with $\bC[\Theta] \simeq \repnorm{\rho}^{\oplus m}$. We prove that at each prime $p$, $\fc_p(\Theta)$ and $d_p(\Theta)$ are the norms of elements from $\bQ(\rho)^{\times}$.  These depends on $D_p$ and $I_p$ ; the decomposition and inertia group respectively at $p$. As we deal with each local factor individually, we argue that one can take $D_p = I_p$.
 
 \begin{lemma}\label{tam-up-to-square}
     Let $E / K$ be an elliptic curve. Let $K' / K$ be an extension of number fields odd degree, unramified at the place $v$ of $K$. Then $C_w(E / K') \equiv C_v(E / K) \mod \bQ^{\times 2}$ for any place $w$ of $K'$ with $ w \mid v$. 
@@ -182,7 +182,7 @@ Hence we may assume that $k \mid l$ and that $\bQ(\phi) = \bQ(\rho) = K$.
     On the other hand,
     \[ \prod_{l' \mid q^a} (l')^{\mu(q^a / l')} = q .\]
     
-    We claim that $k \nmid l'$ implies $a_{l'}$ is even. The irreducible representations of $C_l$ over $\bQ(\phi)$ are given by the orbits of the complex irreducible characters of $C_l$ acted upon by $H = \Gal (\bQ(\zeta_l) / \bQ(\phi))$. One has $\chi_{l'} = \widetilde{\varphi_{l'}}$ where $\bQ(\varphi_{l'}) = \bQ(\zeta_{l'})$. If $ k \nmid l'$ then $\bQ(\phi) \not\subset \bQ(\zeta_{l'})$, so that $B = \Gal(\bQ(\zeta_l) / \bQ(\zeta_{l'})) \not\leq H$. Then $\bQ(\phi) \cap \bQ(\zeta_{l'}) = \bQ$ so $BH = \Gal(\bQ(\zeta_l) / \bQ)$. The orbit of $\varphi_{l'}$ under $H$ is fixed by $BH$, hence is rational. It follows that $\langle \phi, \varphi_{l'} \rangle = \langle \tau(\phi) , \varphi_{l'} \rangle$ so that $a_{l'}$ is even.  
+    We claim that $k \nmid l'$ implies $a_{l'}$ is even. The irreducible representations of $C_l$ over $\bQ(\phi)$ are given by the orbits of the complex irreducible characters of $C_l$ acted upon by $H = \Gal (\bQ(\zeta_l) / \bQ(\phi))$. One has $\chi_{l'} = \repnorm{\varphi_{l'}}$ where $\bQ(\varphi_{l'}) = \bQ(\zeta_{l'})$. If $ k \nmid l'$ then $\bQ(\phi) \not\subset \bQ(\zeta_{l'})$, so that $B = \Gal(\bQ(\zeta_l) / \bQ(\zeta_{l'})) \not\leq H$. Then $\bQ(\phi) \cap \bQ(\zeta_{l'}) = \bQ$ so $BH = \Gal(\bQ(\zeta_l) / \bQ)$. The orbit of $\varphi_{l'}$ under $H$ is fixed by $BH$, hence is rational. It follows that $\langle \phi, \varphi_{l'} \rangle = \langle \tau(\phi) , \varphi_{l'} \rangle$ so that $a_{l'}$ is even.  
 
     Thus we can only possibly get something interesting if $k = q$ is a prime. But then $q$ is a norm from $\bQ(\sqrt{q^*})$ by corollary \ref{p-principal}. 
 \end{proof}
