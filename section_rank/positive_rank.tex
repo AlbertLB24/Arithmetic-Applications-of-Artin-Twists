@@ -29,10 +29,11 @@ Rational squares are not necessarily the norms of general number fields, but the
 This is a remarkable result, since it can predict positive rank of general families of elliptic curves based solely on local data. In later sections, we will aim to show that the product of local factors is indeed a norm in quadratic subextension of the field of values, and the following notation, which expands on Notation \ref*{not_contr} will be useful.
 
 \begin{notation} \label{not_total_contr}
-    Let $F$, $\rho$, $m$ and the fields $F_i,F'_j$ be as in Theorem \ref*{thm_positive_rank}. Then we define
-    $$\contr_\rho(p)=\frac{\prod_i C_{\pp\mid p}(F_i)}{\prod_j C_{\pp\mid p}(F'_j)}.$$
+    Let $F$, $\rho$, $m$ and the fields $F_i,F'_j$ be as in Theorem \ref*{thm_positive_rank}. Let $K$ be a subfield of $F$ and $\pp$ a prime of $K$. Then we define
+    $$\contr_\rho(\pp)=\frac{\prod'_i C_{\pp\mid p}(F_i)}{\prod'_j C_{\pp\mid p}(F'_j)},$$
+    where the restricted product is taken over all $F_i$ and $F'_j$ containing $K$.
     We remark that 
-    $$\frac{\prod_i C_{E/F_i}}{\prod_j C_{E/F'_j}}=\prod_p\contr_\rho(p)$$
+    $$\frac{\prod'_i C_{E/F_i}}{\prod'_j C_{E/F'_j}}=\prod_p\contr_\rho(p)$$
     where the product runs over all rational primes. Our strategy is to calculate all $\contr_\rho(p)$ locally first, to then multiply them together. We recall once again that if $p$ is a prime of good reduction of the elliptic curve, then $\contr_\rho(p)=1$, so we will only care about the primes of bad reduction.
 \end{notation}
 

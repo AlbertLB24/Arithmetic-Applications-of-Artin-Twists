@@ -1,0 +1,151 @@
+
+Having discussed the relevant aspects of representation theory that we will require, we now introduce elliptic curves, our main object to study. Our discussion will be rather informal and brief, and will avoid most proofs. We will spend some time discussing the reduction type of elliptic curves and how this can change over finite extensions. Nevertheless, we assume good familiarity with elliptic curves. There is great material available for elliptic curves, and \cite{S1} gives a complete discussion.
+
+An elliptic curve $E$ over a field $K$ is a genus one smooth projective curve with a specified $K$-rational point. Any such curve can be written as the locus on $\PP^2$ of a \textbf{Weierstrass equation}
+\begin{equation}\label{eqn_gen_elliptic}
+    E: y^2+a_1xy+a_3y=x^3+a_2x^2+a_4x+a_6,\quad a_2,a_4,a_6\in K,
+\end{equation}
+together with the specified $K$-rational point $[0:1:0]$ at infinity.
+
+When $\Char(K)\neq2$, which will always be the case, we can further simplify the equation to
+\begin{equation}\label{eqn_elliptic}
+    E: y^2=f(x)=x^3+a_2x^2+a_4x+a_6,\quad a_2,a_4,a_6\in K,
+\end{equation}
+so unless stated otherwise we will assume that $E$ has an equation of this form. We remark that if $\Char(K)=2$, then \eqref{eqn_elliptic} always defines a singular curve. Associated to this equation there are constants 
+$$c_4=16(a_2^2-3a_4) \quad\text{and}\quad \Delta=16(a_2^2a_4^2-4a_2^3a_6-4a_4^3-27a_6^2+18a_2a_4a_6)$$
+and differential 
+\begin{equation}\label{eqn_differential}
+    w=\frac{dx}{2y}=\frac{dy}{3x^2+2a_2x+a_4}.
+\end{equation}
+One can also define these constants for the general Wieirstrass equation \eqref{eqn_gen_elliptic}, but we omit the description. A complete description is given in \cite[\S III.1]{S1}
+
+The curve defined by \eqref{eqn_elliptic} is singular if and only if the polynomial $f(x)$ has repeated roots over $\bar{K}$. If it has a double and a simple root, then we say it has a node; if it has a triple root, then it has a cusp. The following proposition characterizes this behaviour in terms of $c_4$ and $\Delta$.
+
+\begin{prop}\label{prop_nodecusp}
+    The curve given by a Weierstrass equation satisfies:
+    \begin{enumerate}
+        \item It is nonsingular if and only if $\Delta\neq0$.
+        \item It has a node if and only if $\Delta=0$ and $c_4 \neq 0$.
+        \item It has a cusp if and only if $\Delta= c_4 = 0$. 
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    \cite[\S III Proposition 1.4]{S1}.
+\end{proof}
+
+When $\Delta\neq0$, the equation defines an elliptic curve. A fundamental property is that the set of $K$-rational points of an elliptic curve forms an abelian group, denoted by $(E(K),\oplus)$ (\cite[\S III.2]{S1}). When $K$ is a number field, the Mordell-Weil theorem shows that this group is also finitely generated, and therefore 
+$$E(K)=E(K)_{\tors}\times\ZZ^r,$$
+where $E(K)_{\tors}$ is a finite abelian group and $r$ is denoted the rank of $E$.
+
+\subsection{Elliptic Curves over Local Fields and Reduction Types}
+
+Now assume that $K$ is a local field of characteristic $0$ with a discrete valuation $\nu$, ring of integers $R$ and residue field $\kappa$. We denote by $a\mapsto \tilde{a}$ for the natural quotient map $K\to\kappa$. We say that \eqref{eqn_elliptic} is a \textbf{minimal Weierstrass equation} if $a_2,a_4,a_6\in R$ and $\nu(\Delta)$ is minimal among all such equations. When this is the case, we have a well-defined associated curve $\tilde{E}$ over $\kappa$ defined by the equation $y^2=x^3+\tilde{a_2}x^2+\tilde{a_4}x+\tilde{a_6}$ and the associated \textbf{reduction map}
+\begin{equation}\label{eqn_reduction}
+    \widetilde{(\cdot)}:E(K)\longrightarrow \tilde{E}(\kappa),
+\end{equation}
+
+obtained by reducing the coordinates of a point $P\in E(K)$ modulo $\kappa$. One needs to have some care defining the reduction map. For a detailed construction, see \cite[\S1 VII.2]{S1}. We remark that $\tilde{E}$ may be a singular curve, and the \textbf{reduction type} of $E$ over $K$ describes the behaviour of $\tilde{E}$ as a curve over $\kappa$.
+
+\begin{defn}
+    Let $E/K$ and $\tilde{E}/\kappa$ be as above. Then we say that 
+    \begin{enumerate}[label={(\alph*)}]
+        \item $E/K$ has good (or stable) reduction if $\tilde{E}$ is non-singular.
+        \item $E/K$ has multiplicative (or semistable) reduction if $\tilde{E}$ has a node.
+        \item $E/K$ has additive (or unstable) reduction if $\tilde{E}$ has a cusp.
+    \end{enumerate}
+    In cases (b) and (c) we say that $E/K$ has bad reduction. Moreover, if $E/K$ has multiplicative reduction, we say that the reduction is split if the slopes of the tangent lines at the node are in $K$, and non-split otherwise.
+\end{defn}
+
+By Proposition \ref*{prop_nodecusp} we immediately see that $E/K$ has good reduction if $\nu(\Delta)=0$ and bad otherwise. In that case, $E/K$ has multiplicative reduction if $\nu(c_4)=0$ and additive otherwise.
+
+An important question which will be of interest for us is to understand how the reduction type of an elliptic curve $E$ changes over a finite field extension $F/K$. The following proposition gathers this information.
+
+\begin{prop}[Semistable reduction Theorem]
+    Let $E$ be an elliptic curve over a local field $K$ of characteristic $0$. 
+    \begin{enumerate}[label={(\roman*)}]
+        \item Let $F/K$ be an unramified extension. Then the reduction type of $E$ over $K$ (good multiplicative or additive) is the same as the reduction type of $E$ over $F$.
+        \item Let $F/K$ be a finite extension. If $E$ has good or multiplicative reduction over $K$, then it has the same reduction type over $F$. This also applies specfically to split multiplicative reduction.
+        \item If $E$ has non-split multiplicative reduction over $K$ and $F/K$ is a finite extension with even residual degree, then $E$ has split multiplicative reduction over $F$. 
+        \item There exists a finite extension $F/K$ such that $E$ has either good or spit multiplicative over $F$.
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    \cite[\S VII Proposition 5.4]{S1} 
+\end{proof}
+
+Given an unstable elliptic curve $E$ over $K$, we say that it has potentially good (resp. multiplicative) reduction if it has good (resp. multiplicative) reduction over a finite field extension of $K$.
+
+\subsection{Tamagawa Numbers} \label{subs_tamagawa}
+
+Recall from the previous section that if $E/K$ has bad reduction, then $\tilde{E}$ is not a smooth curve and therefore its $\kappa$-rational points may not form a group. However, the set $\tilde{E}_{ns}(\kappa)$ of non-singular points of $\tilde{E}(\kappa)$ does indeed form a group. The reduction map \eqref{eqn_reduction} is in general not surjective, but it does surject onto $\tilde{E}_{ns}(\kappa)$. It is natural therefore to define $E_0(K)=\{P\in E(K):\widetilde{P}\in\tilde{E}_{ns}(\kappa)\}$, which is also a subgroup of $E(K)$. Importantly, the resulting reduction map 
+$$\widetilde{(\cdot)}:E_0(K)\longrightarrow \tilde{E}_{ns}(\kappa)$$
+is a surjective homomorphism of abelian groups.
+\begin{defn}
+    The \textbf{Tamagawa number} of $E/K$ is defined as
+    \begin{equation}
+        c(E/K):=|E(K)/E_0(K)|.
+    \end{equation}
+\end{defn}
+In later sections we will be concerned in computing Tamagawa numbers. Note that if $E/K$ has good reduction, then $E_0(K)=E(K)$ and therefore $c(E/K)=1$. However, when $E/K$ has bad reduction, this is a hard question to answer in general. Fortunately, this question can always be resolved using Tate's Algorithm (see \cite[\S IV.9]{S2}), and for semistable reduction, Tamagawa numbers have a simple explicit description.
+
+\begin{prop}
+    Let $E/K$ have multiplicative reduction, and let $n=\nu(\Delta)$ be the valuation of the minimal discriminant. Then
+    \begin{align*}
+        c(E/K)=
+        \begin{cases}
+            n \quad\text{if $E/K$ has split reduction,}\\
+            1 \quad\text{if $n$ is odd and $E/K$ is non-split,}\\
+            2 \quad\text{if $n$ is even and $E/K$ is non-split}.
+        \end{cases}    
+    \end{align*}
+\end{prop}
+
+The unstable case is harder, but there exists an explicit description for elliptic curves with equation $y^2=x^3+Ax+B$ and residual characteristic is at least $5$. 
+
+\begin{lemma}
+    Let $F /K / \bQ_p$ be finite extensions and $p \geq 5$. Let 
+    $$E:  y^2 = x^3 + Ax + B$$
+    be an elliptic curve over $K$ with additive reduction. Let $n=v_K(\Delta)$ be the valuation of the minimal discriminant, and $e$ the ramification index of $K'/K$.
+
+    If $E$ has potentially good reduction, then 
+        \[
+        \begin{array}{l l l l}
+            \gcd(ne, 12) = 2 & \implies & c(E / K') = 1, & \quad (II, II^*) \\
+            \gcd(ne, 12) = 3 & \implies & c(E / K') = 2, & \quad (III, III^*) \\
+            \gcd(ne, 12) = 4 & \implies & c(E / K') = \begin{cases} 1, & \sqrt{B} \notin K'
+                                \\ 3, & \sqrt{B} \in K' \end{cases}, & \quad (IV, IV^*) \\
+            \gcd(ne, 12) = 6 & \implies & c(E / K') = \begin{cases} 2, & \sqrt{\Delta} \notin K'
+                \\ 1 \ \text{or} \ 4, & \sqrt{\Delta} \in K' \end{cases}, & \quad (I_0^*) \\
+            \gcd(ne, 12) = 12 & \implies & c(E / K') = 1. & \quad (I_0)
+        \end{array}
+        \]
+    Moreover, the extensions $K'(\sqrt{B}) / K'$ and $K'(\sqrt{\Delta}) / K'$ are unramified.
+
+    If $E$ has potentially multiplicative reduction of type $I_n^*$ over $K$, and $e$ is odd, then it has Kodaira type $I_{en}^*$ over $K'$. Moreover, 
+    \[
+        \begin{array}{l l l l}
+        2 \nmid n & \implies & c(E / K') = \begin{cases} 2, & \sqrt{B} \not\in K', \\ 4, & \sqrt{B} \in K'. \end{cases} & \quad (I_{ne^*}) \\
+        2 \mid n & \implies & c(E / K') = \begin{cases} 2 & \sqrt{\Delta} \not\in K', \\ 4 & \sqrt{\Delta} \in K' \end{cases} & \quad ({I_{ne}^*})   
+        \end{array} 
+    \]
+\end{lemma}
+
+\begin{proof}
+    \cite[Lemma 3.22]{reg-const}
+\end{proof}
+
+\subsection{Elliptic Curves over Global Fields}
+
+The topics we have discussed so far, such as the reduction type of an elliptic curve and the Tamagawa number, are intrinsically local objects. We now briefly discuss how we can associate these objects to global fields. For simplicity, assume that $E$ is an elliptic curve over a number field $K$, let $\pp$ be a finite place of $K$ and denote $K_\pp$ by the completion of $K$ at $\pp$ with residue field $\kappa_\pp$. Clearly, we have that $E(K)\subseteq E(K_\pp)$ and therefore we can apply the previous description to the curve $E/K_\pp$.
+
+In particular, the reduction type of $E/K$ at $\pp$ is the reduction type of $E/K_\pp$ and the Tamagawa number of $E/K$ at $\pp$ is defined as 
+$$c_\pp(E/K):=c(E/K_\pp),$$
+and we also define 
+$$c(E/K):=\prod_\pp c_\pp(E/K).$$
+Finally, we say that a Weierstrass equation \eqref{eqn_gen_elliptic} is a \textbf{global minimal equation} if it is a minimal equation for all finite places $\pp$ of $K$. Even though such an equation does not always exists for any $K$, it does hold for $\QQ$.
+
+\begin{prop}\label{prop_globmin}
+    Let $E/\QQ$ be an elliptic curve. Then $E$ has a global minimal Weierstrass equation.
+\end{prop}
+
+Throughout the document, we will work with elliptic curves over $\QQ$, so unless stated otherwise we will assume the defining equation is global minimal.
