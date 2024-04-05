@@ -4,13 +4,13 @@
 %% package setup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{enumerate}
+%\usepackage{enumerate}
 \usepackage[shortlabels]{enumitem}
-\usepackage{amsfonts,amsmath, soul, matlab-prettifier, bm, amsthm,enumitem,amssymb,multirow,float,mathtools,bbm,array,varwidth,hyperref, etoolbox}
-\usepackage[all]{xy}
+\usepackage{amsfonts, amsmath, amsthm, amssymb, float, mathtools, hyperref, bbm, etoolbox, xcolor}
+%\usepackage{soul, matlab-prettifier, multirow, varwidth, array, bm, amssymb}
+%\usepackage[all]{xy}
 \usepackage[margin=1.3in]{geometry}
-\usepackage{graphicx}
-\usepackage{mathtools}
+%\usepackage{graphicx}
 \usepackage{extarrows}
 \usepackage{tikz}
 \usepackage{tikz-cd}
@@ -158,19 +158,13 @@
 \input{section3/BSD_conj.tex}
 
 \section{Predicting Positive Rank}
-\input{positive_rank.tex}
-
-%\newpage
-%\section{Forcing points of infinite order}
-%\input{section4/inf-order.tex}
-%
-
-%\section{Brauer Relations}
+\input{section4/positive_rank.tex}
+\input{section4/examples.tex}
 
 \newpage
 \section{Consistency cases with BSD}
-\input{consistency.tex}
-\input{section4/odd-ext.tex}
+\input{section5/consistency.tex}
+\input{section5/odd-ext.tex}
 
 \begin{appendices}
 \section{Algebraic number theory background}
