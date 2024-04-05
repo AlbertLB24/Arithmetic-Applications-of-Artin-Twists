@@ -40,12 +40,29 @@ In the last section, we described how to obtain a character in $\Perm(G)$ from a
 
 \begin{defn}
 We call $\Theta = \sum_i n_i H_i \in \B(G)$ a \textbf{$\rho$-relation} if $\bC[G / \Theta] \simeq \repnorm{\rho}^{\ \oplus m}$, for some $m \geq 1$.
-%where $m$ is the order of $\repnorm{\rho}$ in $C(G)$ {\color{red} for some $m \geq 1$??? }.
 \end{defn}
-%There are $\#$(Brauer relations) $+ 1$ such elements $\Theta$ {\color{red} expand on why?}. 
-\begin{rem}
-If such a relation exists, then $m$ is a multiple of the order of $\repnorm{\rho}$ in $C(G)$. Note that if $\Theta$ is a $\rho$-relation and $\Psi \in B(G)$ is a Brauer relation, then $\Theta + \Psi$ is also a $\rho$-relation. It follows that for a fixed $m \geq 1$, if $\repnorm{\rho}^{\oplus m} \in \Perm(G)$ then there are $\#$(Brauer relations of $G$) $+ 1$ elements $\Theta \in \B(G)$ with $\bC[G / \Theta] = \repnorm{\rho}^{\oplus m}$.
-\end{rem}
+%\begin{rem}
+%If such a relation exists, then $m$ is a multiple of the order of $\repnorm{\rho}$ in $C(G)$. Note that if $\Theta$ is a $\rho$-relation and $\Psi \in B(G)$ is a Brauer relation, then $\Theta + \Psi$ is also a $\rho$-relation. It follows that for a fixed $m \geq 1$, if $\repnorm{\rho}^{\oplus m} \in \Perm(G)$ then there are $\#$(Brauer relations of $G$) $+ 1$ elements $\Theta \in \B(G)$ with $\bC[G / \Theta] = \repnorm{\rho}^{\oplus m}$.
+%\end{rem}
+
+The following are some elementary properties of these relations:
+
+\begin{prop} Let $\rho \in \R(G)$, $\Theta  \sum_i n_i H_i \in \B(G)$ a $\rho$-relation. Then,
+    \begin{enumerate}
+        \item $n \Theta$ is a $\rho$-relation for all $n \geq 1$.
+        \item $\bC[G / \Theta] \simeq \repnorm{\rho}^{\oplus m}$ where $m$ is a multiple of the order of $\repnorm{\rho}$ in $\C(G)$.
+        \item If $\Psi \in B(G)$ is a Brauer relation, then $\Theta + \Psi$ is also a $\rho$-relation. 
+        \item For a fixed $m \geq 1$, if $\repnorm{\rho}^{\oplus m} \in \Perm(G)$ then there are $\#$(Brauer relations of $G$) $+ 1$ elements $\Theta \in \B(G)$ with $\bC[G / \Theta] = \repnorm{\rho}^{\oplus m}$.
+        
+        \item (Projection) If $N \trianglelefteq G$ then $(N \cdot \Theta) / N = \sum_i n_i N H_i / N$ is a $\rho^N$-relation, viewing this relation in $\R(G / N)$.
+        \item (Restriction) For $D \leq G$, $\Res_D \Theta$ is a $\Res_D \rho$-relation.
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    All but (5) are clear. For (5), observe that for $H \leq G$, $\bC[G / H]^N \simeq \bC[G / NH]$ as $G$-representations (see proof of \cite[Theorem 2.8]{reg-const}). We also need to show that $\repnorm{\rho}^N = \repnorm{\rho^N}^{\oplus k}$ for some $k \geq 1$. This is the case; 
+\end{proof}
+
 
 \begin{example}\label{cyclic-relns}
     Let $G = C_n$. For each $d \mid n$, let $\chi_d = \repnorm{\varphi_d}$, where $\varphi_d$ is an irreducible complex character of $G$ with field of values $\bQ(\zeta_d)$ and kernel of index $d$.

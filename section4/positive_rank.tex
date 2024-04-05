@@ -36,7 +36,7 @@ This is a remarkable result, since it can predict positive rank of general famil
     where the product runs over all rational primes. Our strategy is to calculate all $\contr_\rho(p)$ locally first, to then multiply them together. We recall once again that if $p$ is a prime of good reduction of the elliptic curve, then $\contr_\rho(p)=1$, so we will only care about the primes of bad reduction.
 \end{notation}
 
-\begin{rem}
+\begin{rem}\label{rephrase-thm}
 We rephrase Theorem \ref{thm_positive_rank} in the language introduced in $\S$\ref{sec-norm-rels}. 
 Replacing $\rho$ by the sum of its conjugates by elements of $ \Gal(\bQ(\rho) / \bQ(\sqrt{D}))$, we may assume that $\bQ(\rho) = \bQ(\sqrt{D})$. Note that this does not affect the order of $\rho$ in $\C(G)$, nor the set of $\rho$-relations (since $\repnorm{\rho}$ is unchanged). 
 
@@ -46,3 +46,19 @@ Let $\Theta$ be a $\rho$-relation with $\bC[G / \Theta] = \repnorm{\rho}^{\oplus
 %{\color{red} I think at this point it would be nice to give some examples about when this test forces positive rank. In later sections we talk about when it's useless, so it's probably good to stress that there are plenty of times when it's not. On the other hand, in any examples we know the forced positive rank is also always described by root numbers. I don't know if we need to explain much about root numbers (or want to) but it might be worth mentioning that we haven't found an example where our norm relations force positive rank and root numbers don't explain it (and we don't know whether one exists).
 
 %Is there an example where root numbers force pos rank but our norm relations don't?}
+
+\subsection{Parity tests vs. norm relations tests}
+
+Let $K$ be a number field and $E / K$ an elliptic curve. The parity conjecture states that the rank of $E / K$ is determined by the global root number $w(E / K) \in \{ \pm 1 \}$, that is
+
+\begin{conj}
+    $(-1)^{\rk E / K} = w(E / K).$
+\end{conj}
+
+{\color{red} This is known when... }
+
+Therefore if $w(E / K) = -1$, one has that $\rk E / K$ is odd, in particular $\rk E / K > 0$. Therefore the computation of root numbers can force an elliptic curve to have positive rank. 
+
+As expected, the global root number is a product of local root numbers 
+\[ w(E / K) = \prod_v w(E / K_v), \]
+taking the product over all places (including infinite ones) of $K$. 
