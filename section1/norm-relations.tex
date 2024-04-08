@@ -3,16 +3,15 @@
 Consider a multiplicative function $f \colon \B(G) \to A$, where $A$ is an abelian group. As in \cite{reg-const}, we say that $f$ is \textbf{representation theoretic} if $f$ is trivial on Brauer relations. This implies that for a $G$-set $X$, $f$ only depends on the representation $\bC[X]$. In other words, there exists a map $g \colon \R(G) \to A$ such that $f(H) = g(\bC[G / H])$ for all $H \leq G$. 
 
 \begin{example}
-  Let $V$ be a representation of $G$. The function sending $H \mapsto \dim V^H$ is equal on conjugate subgroups and so defines a map $\psi \colon \B(G) \to \bZ$. This
-  is trivial on Brauer relations as $\dim V^H = \langle \Res_{H} V , \trivial_H \rangle = \langle V, \Ind_{H}^G \trivial \rangle$ by Frobenius reciprocity.
+  Let $\lambda \in \bR^{\times}$ and consider the function $H \mapsto \lambda^{[G : H]}$. This is trivial on Brauer relations;  if $\sum_i n_i H_i$ is a Brauer relation then $\lambda^{\sum_i n_i [G : H]} = \lambda^{\dim( \oplus_i \bC[G / H_i]^{\oplus n_i})} = 1$.
 \end{example}
 
-Let $\rho \in \R(G)$. Let $\Theta \in \B(G)$ be a $\rho$-relation, with $\bC[G / \Theta] \simeq \repnorm{\rho}^{\oplus m}$. If we have a function $f \colon B(G) \to \bQ^{\times}$, we may then ask whether $f(\Theta) \in \fieldnorm{\rho}$. 
+Let $\rho \in \R(G)$. Let $\Theta \in \B(G)$ be a $\rho$-relation, with $\bC[G / \Theta] \simeq \repnorm{\rho}^{\oplus m}$. If we have a function $f \colon \B(G) \to \bQ^{\times}$, we may then ask whether $f(\Theta) \in \fieldnorm{\rho}$. 
 
-%Take a multiplicative function on the Burnside ring of the form $\psi \colon B(G) \to \bQ^{\times}$. Given $\rho \in R_{\bC}(G)$ we can extend such functions from the Burnside ring to $\overline{\psi} \colon B(G) \to \bQ^{\times} /\fieldnorm{\rho}$. {\color{red} motivate this a bit better?}
+%Take a multiplicative function on the Burnside ring of the form $\psi \colon \B(G) \to \bQ^{\times}$. Given $\rho \in R_{\bC}(G)$ we can extend such functions from the Burnside ring to $\overline{\psi} \colon \B(G) \to \bQ^{\times} /\fieldnorm{\rho}$. {\color{red} motivate this a bit better?}
 
 \begin{defn}
-Let $\rho \in \R(G)$, $\Theta$ a $\rho$-relation, and $f \colon B(G) \to \bQ^{\times}$. If $f(\Theta) \in \fieldnorm{\rho}$, then we call $\Theta$ a \textbf{norm relation} for $f$. 
+Let $\rho \in \R(G)$, $\Theta$ a $\rho$-relation, and $f \colon \B(G) \to \bQ^{\times}$. If $f(\Theta) \in \fieldnorm{\rho}$, then we call $\Theta$ a \textbf{norm relation} for $f$. 
 If $f(\Theta) \in \fieldnorm{\rho}$ for every $\rho$-relation in $\B(G)$, then we say $f$ is \textbf{trivial on $\rho$-relations}.
 
     %If $\Theta \in \ker \overline{\psi}$, then $\psi(\Theta)$ is the norm of an element from $\bQ(\rho)^{\times}$. We call an instance of this a \textbf{norm relation}.
@@ -43,16 +42,39 @@ In general, showing that a $\rho$-relation $\Theta$ is a norm relation for $f$ d
 \end{proof}
 
 \begin{example}
-    Let $G = C_n$. Then any function $f \colon B(G) \to \bQ^{\times}$ is trivial on Brauer relations since $G$ does not have any. Let $\varphi_d$ be an irreducible complex character of $G$ of order $d \mid n$. Thus to conclude that $f$ is trivial on $\varphi_d$-relations, it is enough to show that the $\varphi_d$-relation constructed in Example \ref{cyclic-relns} is a norm relation for $f$.
+    Let $G = C_n$. Then any function $f \colon \B(G) \to \bQ^{\times}$ is trivial on Brauer relations since $G$ does not have any. Let $\varphi_d$ be an irreducible complex character of $G$ of order $d \mid n$. Thus to conclude that $f$ is trivial on $\varphi_d$-relations, it is enough to show that the $\varphi_d$-relation constructed in Example \ref{cyclic-relns} is a norm relation for $f$.
 \end{example}
 
 %\begin{example}
-%Let $\bQ(\rho)$ be a quadratic field. Then if $f \colon B(G) \to \bQ^{\times}$ satisfies $f(\Theta) \in \bQ^{\times 2}$ for all $\rho$-relations $\Theta$, one has $f \sim_{\rho} 1$.
+%Let $\bQ(\rho)$ be a quadratic field. Then if $f \colon \B(G) \to \bQ^{\times}$ satisfies $f(\Theta) \in \bQ^{\times 2}$ for all $\rho$-relations $\Theta$, one has $f \sim_{\rho} 1$.
 %\end{example}
 
 \begin{example}
 Let $E / \bQ$ be an elliptic curve, $G = \Gal(F / \bQ)$ for $F / \bQ$ a Galois extension. The function $\psi \colon H \mapsto C_{E / F^H}$ (the fudge factor in the BSD term, see (\ref{fudge-factor})) for $H \leq G$ extends to a multiplicative function on the Burnside ring. In later sections we will investigate when this is trivial on $\rho$-relations, for $\rho \in \R(G)$. 
 \end{example}
+
+%\begin{prop}
+   % Let $G = C_n$. Let $\rho \in \R(G)$ and consider the function $g \colon \B(G) \to \bQ^{\times}$ given by $H \mapsto [G : H]$. Then $g$ is trivial on $\rho$-relations.
+%\end{prop}
+
+%\begin{proof}
+ %   Let $k$ be the minimum positive integer such that $\bQ(\rho) \subset \bQ(\zeta_k)$. Then $k = 2^{a}q_1\cdots q_t$ where $q_i$ are odd primes and $a \in \{ 0, 1, 2, 3\}$.
+  %  Observe that $k \mid n$ since all characters of $G$ are realized over $\bQ(\zeta_n)$. Since $\C(G) = 1$ and $G$ has no Brauer relations, by Proposition \ref{min-to-all} it suffices to show that $\Theta \in \fieldnorm{\rho}$ for $\Theta \in \B(G)$ such that $\bC[G / \Theta] = \repnorm{\rho}$.
+   % Let $\repnorm{\rho} = \sum_{d \mid n} a_d \chi_d$ where $a_d \in \bZ$ and $\chi_d$ are the basis of irreducible rational representations of $C_n$ defined in Example \ref{cyclic-relns}. %(recall $\chi_{d} = \repnorm{\varphi_{d}}$ with $\bQ(\varphi_{d}) = \bQ(\zeta_{d})$ form a basis for the irreducible rational representations of $C_n$). 
+    %Let $\Psi_{d} = \sum_{d' | d}\mu(d / d')\cdot C_{n / d}$ so that $\bC[\Psi_{d}] = \chi_{d}$, as observed in the example. Then $\bC[G / \Theta] \simeq \bC[\sum_{d | n } a_{d} \Psi_{d}]$ which implies that $\Psi = \sum_{d | n } a_{d} \Psi_{d}$.
+
+    %Evaluating $g$ on $\Psi_{d}$ is trivial unless $d = q^a$ for some $q$ prime, $a \geq 1$. Indeed, if $d = p_1^{e_1} \cdots p_r^{e_r}$ , with $r \geq 2$ and $e_i \geq 1$, then
+    %\[ \prod_{d' \mid d} (d')^{\mu(d / d')} = \prod_{j_1, \ldots j_r \in \{0,1\}^r } \left(p_1^{e_1 - j_1} \cdots p_r^{e_r - j_r}\right)^{\# j_i = 1} = \prod_{i = 1}^r \left(\frac{p_i^{e_i}}{p_i^{e_i - 1}}\right)^{\sum_{ j = 0}^{r - 1} \binom{r-1}{j} (-1)^j} = 1. \]
+    %On the other hand,
+    %\[ \prod_{d' \mid q^a} (d')^{\mu(q^a / d')} = q .\]
+    
+    %The irreducible representations of $C_n$ over $\bQ(\rho)$ are given by the orbits of the complex irreducible characters of $C_n$ acted upon by $H = \Gal (\bQ(\zeta_n) / \bQ(\rho))$. Consider $d \mid n$ with $(k, d) = 1$. Recall that $\chi_d = \repnorm{\varphi_d}$, where $\bQ(\varphi_d) = \bQ(\zeta_d)$. Let $B = \Gal(\bQ(\zeta_n) / \bQ(\zeta_d))$. Then $\bQ(\rho) \cap \bQ(\zeta_d) = \bQ$, so $BH = \Gal(\bQ(\zeta_n) / \bQ)$. The orbit of $\varphi_{d}$ under $H$ is fixed by $BH$, hence is rational. It follows that $\langle \rho, \varphi_{d} \rangle = \langle \rho^{\sigma} , \varphi_{d} \rangle$ for all $\sigma \in \Gal(\bQ(\rho) / \bQ)$. Thus $[\bQ(\rho) : \bQ]$ divides $a_d$, and so $g(a_d \Psi_d) = d(\Psi_d)^{a_d} \in \bQ^{\times [\bQ(\rho) : \bQ]} \subset \fieldnorm{\rho}$.
+
+    %Therefore 
+    %\[ g(\Psi) = 2^{a_2} \cdot q_1^{a_{q_1}} \ldots q_t^{a_{q_t}}  \pmod {\fieldnorm{\rho}} \]   
+
+%\end{proof}
+
 
 \subsubsection{D-local functions}\label{D-loc}
 
@@ -91,17 +113,41 @@ The ramification degree and residue degree of $w$ over $K$ are given by $e_w = \
 %    Let $\rho = 0$. If $W$ is a group of odd order, then $(W, W, e) \sim 1$ as functions to $\bQ^{\times} / \bQ^{\times 2}$.More generally if $D$ has odd order and $I \triangleleft D$ then $(D, I, e) \sim_{\rho} 1$. {\color{red} explain and reference}
 %\end{example}
 
-\begin{prop}
-    Let $I \triangleleft D \leq G$ with $D / I$ cyclic. Let $\rho \in \R(G)$ Then
-    \begin{enumerate}
-        \item If $f = (D, f_D)$ and $f_D$ is trivial on $(\Res_D \rho)$-relations, then $f$ is trivial on $\rho$-relations.
-        \item {\color{red} maybe more things to say here. See e.g. \cite[Theorem 2.36]{reg-const}}  
-        \item {\color{red} how about passing to quotients?}
-    \end{enumerate}
+%\begin{prop}
+%    {\color{red} these aren't right... i need to consider the fields...}
+%    Let $I \triangleleft D \leq G$ with $D / I$ cyclic. Let $\rho \in \R(G)$ Then
+%    \begin{enumerate}
+%        \item If $f = (D, f_D)$ and $f_D$ is trivial on $(\Res_D \rho)$-relations, then $f$ is trivial on $\rho$-relations.
+%        \item Let $N \trianglelefteq G$, and $f$ a function on $\B(G)$ such that $f(H) = f_{G / N}(N H / N)$ for some function $f_{G / N}$ on $\B(G / N)$. If $f_{G / N}$ is trivial on $\rho^N$-relations (viewed in $\R(G / N)$ ), then $f$ is trivial on $\rho$-relations.
+%    \end{enumerate}
+%\end{prop}
+
+One would like to be able to say that if $f = (D, f_D)$ and $f_D$ is trivial on $(\Res_D \rho)$-relations, then $f$ is trivial on $\rho$-relations. But as defined, one cannot conclude this when $[\bQ(\rho) : \bQ(\Res_D \rho) ] > 1$. Under some conditions however, when $\bQ(\Res_D \rho) = \bQ$, one can automatically conclude that $f$ is trivial on $\rho$-relations, as in the following.
+
+\begin{prop}\label{rational-res}
+Let $D \leq G$. Consider $\rho \in \R(G)$ with $[\bQ(\rho) : \bQ] = n$, where multiplication by $n$ is injective on $\C(D)$. Consider $f = (D, f_D)$ a $D$-local function on $\B(G)$. 
+Suppose that $f_D(\Psi) \in \fieldnorm{\rho}$ for every Brauer relation $\Psi \in \B(D)$.
+Then, if $\bQ(\Res_D \rho) = \bQ$, $f$ is trivial on $\rho$-relations.
+%\colon \B(G) \bQ^{\times}$ a $D$-local function be a function that is trivial on Brauer relations. We also show that if $\bQ(\Res_{D_p} \rho) = \bQ$, then $(T_{\fP \mid p} \cdot D_{\fP \mid p})(\Theta) \in \bQ^{\times 2}$.
 \end{prop}
 
-{\color{red} maybe some more of when $\rho$ is a quadratic field}
+\begin{proof}
+    Let $\Theta$ be a $\rho$-relation, with $\bC[G / \Theta] \simeq \repnorm{\rho}^{\oplus m}$. Then $$\bC[D / \Res_D \Theta] \simeq \repnorm{\Res_D \rho}^{\oplus m n}.$$ 
+    The condition on $n$ ensures that there exists $\Theta' \in \B(D)$ with $\bC[D / \Theta'] \simeq \repnorm{\Res_D \rho}^{\oplus m}.$ Then $\Psi = \Res_D\Theta - n\Theta'$ is a Brauer relation for $D$. Thus
+    \[ f(\Theta) = f_D(\Res_D \Theta) = f_D(\Psi)f_D(n\Theta') = f_D(\Psi)f_D(\Theta')^n \in \fieldnorm{\rho}, \]
+    since $f_D(\Psi) \in \fieldnorm{\rho}$ and $\bQ^{\times n} \subset \fieldnorm{\rho}$. 
+\end{proof}
 
+\begin{prop}\label{const-fns}
+     Let $D \leq G$ with $D$ of odd order, and $f = (D, \alpha)$ a $D$-local function on $\B(G)$, where $\alpha \in \bQ^{\times}$ is constant. Let $\rho \in \R(G)$ with $[\bQ(\rho) : \bQ ]$ even. Then for a $\rho$-relation $\Theta$, $f(\Theta) \in \bQ^{\times 2}$. 
+\end{prop}
+
+\begin{proof}
+    The function $(D, \alpha)$ on $\B(G)$ sends $H \leq G$ to $\alpha^{| H \backslash G / D|}$. Let $\Theta = \sum_i n_i H_i$ be a $\rho$-relation with $\bC[G / \Theta] \simeq \repnorm{\rho}^{\oplus m}$ for some $m \geq 1$. One has $(D, \alpha) = \alpha^{\sum_i n_i \cdot | H_i \backslash G / D|}$. We show that $\sum_i n_i \cdot | H_i \backslash G / D |$ is even.
+
+    One has $\Res_D \Theta = \sum_i n_i \sum_{x \in H_i \backslash G / D} D \cap H_i^{x^{-1}}$, and $\bC[D / \Res_D \Theta]$ has even dimension, since it is isomorphic to $\sum_{\Gal(\bQ(\rho) / \bQ)} \Res_D \rho^{\sigma}$ and $\Gal(\bQ(\rho) / \bQ)$ has even order. The dimension is $$\sum_i n_i \sum_{x \in H_i \backslash G / D} [D : D \cap H_i^{x^{-1}} ].$$ Since each $[D : D \cap H_i^{x^{-1}} ]$ is odd, this implies there are an even number of terms in the summation, i.e. that $\sum_i n_i \cdot | H_i \backslash G / D|$ is even. 
+
+\end{proof}
 
 %Our fudge factors $C(E / F)$ are defined locally; one has $C(E / F) = \prod_v c_v(E / F) \cdot |\omega / \omega_{v, \min}|$. Here $v$ runs over finite places of $F$, $\omega$ is a global minimal differential for $E / \bQ$, and $\omega_{v, \min}$ is a minimal differential at $v$.
 %Considering the function $H \mapsto C(E / F^H)$, and writing $C_p(E / F^H) =\prod_{v | p} c_v(E / F)\cdot |\omega / \omega_{v, \min}|$ one has
