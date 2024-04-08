@@ -1,31 +1,32 @@
 In this report we study a method proposed in \cite{DEW1} for forcing points of infinite order on elliptic curves over finite extensions $F / \bQ$. 
 
 \subsection*{Notation}
-We use the following notation for characters:
+Let $G$ be a finite group. We use the following notation for characters:
 
 \bigskip
 
 \begin{tabular}{l | l}
-    $B(G)$ & the Burnside ring of $G$, \\
-    $R(G)$ & the representation ring of $G$, \\
-    $R_{\bQ}(G)$ & the rational representation ring of $G$, \\
+     $\R(G)$ & the representation ring of $G$ (Definition \ref{rep-ring}), \\
+     $\B(G)$ & the Burnside ring of $G$ (Definition \ref{burnside}), \\
+    $\R_{\bQ}(G)$ & the rational representation ring of $G$, \\
     $\Perm(G)$ & the ring of virtual permutations of $G$, \\
     $\Char_{\bQ}(G)$ & the ring of rationally-valued characters of $G$,\\
     $\Irr(G)$ & the set of characters of complex irreducible representations of $G$, \\
     %$\Irr_{\bQ}(G)$ & the set of characters of $\bQ$-irreducible representations of $G$, \\ 
     $\bQ(\rho)$ & the field of character values of a complex character $\rho$ of $G$, \\
-    $C(G)$ & the finite abelian group $\Char_{\bQ}(G) / \Perm(G)$, \\ 
+    $\C(G)$ & the finite abelian group $\Char_{\bQ}(G) / \Perm(G)$, \\ 
     %$m(\rho)$ & the Schur Index of an irreducible complex character $\rho$ over $\bQ(\rho)$, \\
+    $\repnorm{\rho}$ &  $ = \sum_{\sigma \in \Gal(\bQ(\rho) / \bQ)} \rho^{\sigma}$, where $\rho \in \R(G)$ (Definition \ref{rho-norm}),\\
     \\
     $H^{x}$ & $= xHx^{-1}$  for $H \leq G$ a subgroup of a group $G$ and $x \in G$,\\
     $p^*$ & defined for an odd prime $p$. If $p \equiv 1 \pmod 4$, $p^* = p$. If $p \equiv 3 \pmod 4$, $p^* = -p$
 \end{tabular}
 \vspace{2em}
 
-Given an elliptic curve $E / \bQ$ and a number field $F$, we define
+%Given an elliptic curve $E / \bQ$ and a number field $F$, we define
 
-\[ C_{E / F} = \prod_v c_v(E / F) \left| \frac{\omega}{\omega_v^{\min}} \right|_v. \]
-The product is taken over the finite places of $F$, $\omega$ is a global minimal differential for $E / \bQ$, and $\omega_v^{\min}$ is a minimal differential at $v$. In terms of minimal discriminants, if $E$ is of the form
-\[ y^2 + a_1 x y + a_3 y = x^3 + a_2 x^2 + a_4 x + a_6 \]
-with minimal discriminant $\Delta_E$ and $\omega = \frac{dx}{2 y + a_1 x + a_3}$, then
-\[ \left| \frac{\omega}{\omega_v^{\min}} \right|_v^{-12} = \left| \frac{\Delta_E}{\Delta_{E, v}^{\min}} \right|_v . \]
+%\[ C_{E / F} = \prod_v c_v(E / F) \left| \frac{\omega}{\omega_v^{\min}} \right|_v. \]
+%The product is taken over the finite places of $F$, $\omega$ is a global minimal differential for $E / \bQ$, and $\omega_v^{\min}$ is a minimal differential at $v$. In terms of minimal discriminants, if $E$ is of the form
+%\[ y^2 + a_1 x y + a_3 y = x^3 + a_2 x^2 + a_4 x + a_6 \]
+%with minimal discriminant $\Delta_E$ and $\omega = \frac{dx}{2 y + a_1 x + a_3}$, then
+%\[ \left| \frac{\omega}{\omega_v^{\min}} \right|_v^{-12} = \left| \frac{\Delta_E}{\Delta_{E, v}^{\min}} \right|_v . \]

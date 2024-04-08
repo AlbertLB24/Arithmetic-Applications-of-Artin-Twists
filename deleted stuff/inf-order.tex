@@ -1,0 +1,37 @@
+In [Dok-Wier-Ev], they establish a (dependent on some conjectures) test for forcing a point of infinite order.
+
+\begin{thm}\label{dew-thm}
+    Let $E / \bQ$ be an elliptic curve, $F / \bQ$ a Galois extension with Galois group $G$, $\rho$ an irreducible representation of $G$ and 
+    \begin{equation}\label{rho-reln}
+        \left(\bigoplus_{g \in \Gal(\bQ(\rho) / \bQ)} \rho^g\right)^{\oplus m(\rho)} = 
+        \left(\bigoplus_i \Ind_{H_i}^G \trivial \right) \ominus \left(\bigoplus_j \Ind_{H_j'}^G \trivial \right),
+    \end{equation}
+    for some $m(\rho) \in \bZ$ and subgroups $H_i, H_j' \leq G$. 
+
+    If either $\prod_i C(E / F^{H_i}) / \prod_j  C(E / F^{H_j'})$ is not a norm from some quadratic field $\bQ(\sqrt{D}) \subset \bQ(\rho)$, or if it is not a rational square when $m(\rho)$ is even, then $E$ has a point of infinite order over $F$.
+\end{thm}
+
+In this paper, they give two examples of applications of this theorem. Of course, another means of forcing infinite order is via root numbers. We are currently unsure as to whether this norm test is weaker/equivalent/stronger than the test of root numbers. For example, in odd order extensions, root numbers don't tell us anything. We show in the next section that this norm test doesn't either, that is, the product of Tamagawa numbers is always a norm.
+
+\vspace{1em}
+
+As discussed in section \ref{D-loc}, the function on $B(G)$ sending $H \mapsto C(E / F^H)$ is the product of local functions depending on the decomposition group $D_p$ at a prime $p$. We denote each of these as $(D_p, I_p, \psi_p)$, as in definition \ref{D-I-fn}. Then the product of Tamagawa numbers in \ref{dew-thm} is the evaluation of $\prod_p (D_p, I_p, \psi_p)$ on $\sum_i H_i - \sum_j H_j'$.
+
+If we are interested in evaluating each $(D_p, I_p, \psi_p)$ individually, then we have some freedom to change our field extension to make computations easier. In particular, 
+
+\begin{lemma}\label{DeqI}
+    In an odd degree unramified extension, Tamagawa numbers change only up to squares. In particular, if $[D_p \colon I_p]$ is odd, then $(D_p, I_p, \psi_p) \sim_{\rho} (D_p, D_p, \psi_p)$ for any $\rho$ with $[\bQ(\rho) \colon \bQ]$ even. 
+\end{lemma}
+
+\begin{proof}
+    Yadada
+\end{proof}
+
+
+%Let $F_i = F^{H_i}$, $F_j = F^{H_j'}$.
+%Note that $$\prod_i C(E / F_i) / \prod_j  C(E / F_j')  = \prod_p \left(\prod_i  C_{p}(E / F_i) /  \prod_j C_{p}(E / F_j')\right)$$
+%where $C_p(E / F_i) =\prod_{v | p} c_v(E / F_i)\cdot |\omega / \omega_{v, \min}|$.
+
+%Let $D_p$, $I_p$ be the decomposition and inertia subgroups of $G$ at $p$.
+%The function on the Burnside ring of $G$ sending $H$ to $C_p(E / F^H)$ is then of the form $(D_p, I_p, \psi_p).$ 
+
