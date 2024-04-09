@@ -1,4 +1,3 @@
-
 \subsection{Cyclic Extensions}
 In this subsection we prove the following. 
 \begin{thm}\label{thm_consistent_cyclic}
@@ -16,10 +15,12 @@ To give the required description, we recall that the Möbius function $\mu$ is t
 \begin{lemma}\label{lem_cyclic_decomp}
     Let $E/\QQ$, $F$ and $\chi$ be as in Theorem \ref*{thm_consistent_cyclic}. Writing characters of $C_d$ additively, we have that
     \begin{equation}\label{eqn_cyclic_relation}
-        \sum_{\mathfrak{g}\in\Gal(\QQ(\zeta_d)/\QQ)}\chi^{\mathfrak{g}}=\sum_{k\mid d}\mu(d/k)\Ind_{L_k/\QQ}\mathds{1}.
+        \mathcal{N}_{\QQ(\zeta_d)/\QQ}(\chi)=\sum_{\mathfrak{g}\in\Gal(\QQ(\zeta_d)/\QQ)}\chi^{\mathfrak{g}}=\sum_{k\mid d}\mu(d/k)\Ind_{L_k/\QQ}\mathds{1}.
     \end{equation}
     Furthermore, such an expression is unique.
 \end{lemma}
+
+\textbf{Add reference here from the exact result in the Rep Theory section.}
 
 \begin{rem}\label{rem_radical}
     This lemma has an important consequence. Given an integer $d\geq2$, let $\rad(d)=\prod_{p\mid d}p$ be the radical of $d$, and let $K=L_{d/\rad(d)}$ be the unique subfield of $F$ such that $[F:K]=\rad(d)$. For $k\mid d$, $\mu(d/k)\neq 0$ precisely when $[K:\QQ]=\frac{d}{\rad(d)}\mid k$ and therefore the fields appearing in the right hand side of \eqref{eqn_cyclic_relation} are the fields $L_k$ satisfying $K\subseteq L_k\subseteq F$. 
@@ -40,30 +41,65 @@ An immediate consequence of the above definition is the fact that
 
 and therefore we can calculate the product of local terms \textbf{locally}, one prime $\pp$ at a time.
 
-We divide the proof of Theorem \ref*{thm_consistent_cyclic} into two cases: odd and even cyclic extensions. The main idea in both cases is to simplify the general case into smaller cases where we can directly compute $\contr_\chi(\pp)$ for each finite place $\pp$ of $K$. We note that if $E$ has good reduction over $\pp$, then $\contr_\chi(\pp)=1$ and therefore we focus our attention to bad semistable reduction. 
+We divide the proof of Theorem \ref*{thm_consistent_cyclic} into two cases: odd and even cyclic extensions. The main idea in both cases is to simplify the general case into smaller cases where we can directly compute $\contr_\chi(\pp)$ for each finite place $\pp$ of $K$. During the proof, we will also need the following result about quadratic subfields of cyclotomic extensions.
+
+\begin{lemma}
+    Let $p$ be a rational prime, $n$ a positive integer and let $p^*=(-1)^{(p-1)/2}p$. Then the quadratic subfields of $\QQ(\zeta_{p^n})$ are
+    \begin{itemize}
+        \item $\QQ(\sqrt{p^*})$ if $p$ is odd,
+        \item $\QQ(i)$ if $p=n=2$,
+        \item $\QQ(i),\QQ(\sqrt{2})$ and $\QQ(\sqrt{-2})$ if $p=2$ and $n\geq 3$.
+    \end{itemize}
+\end{lemma}
+
+\begin{proof}
+    If $p$ is odd, then $\Gal(\QQ(\zeta_{p^n})/\QQ)=(\ZZ/p^n\ZZ)^*=C_{p^{n-1}(p-1)}$ is a cyclic group of even order, and therefore $\QQ(\zeta_{p^n})$ has one unique quadratic subfield. Hence, it suffices to find the unique quadratic subfield of $\QQ(\zeta_p)$.
+    Two proofs:
+    \begin{enumerate}
+        \item A simple calculation shows that 
+        $$\left(\sum_{a=0}^{p-1}\left(\frac{a}{p}\right)\zeta_p^a\right)^2=(-1)^{(p-1)/2}p,$$
+        and therefore $\sqrt{p^*}\in\QQ(\zeta_p)$ as desired.
+        \item Let $\QQ(\sqrt{D})\subseteq\QQ(\zeta_{p^n})$ be a quadratic subfield. The extension $\QQ(\zeta_{p^n})/\QQ$ only ramifies at $p$ and therefore $\QQ(\sqrt{D})$ can only (in fact, it must) ramify at $p$. If $p\equiv 1\pmod{4}$, then the only such field is $\QQ(\sqrt{p})$ and if $p\equiv 3\pmod{4}$, then the field is $\QQ(\sqrt{-p})$.
+    \end{enumerate} 
+    If $p=n=2$, then $\QQ(\zeta_4)=\QQ(i)$ so there is nothing to prove. If $p=2$ and $n\geq 3$, then $\Gal(\QQ(\zeta_{2^n})/\QQ)=(\ZZ/2^n\ZZ)^*=C_2\times C_2^{n-2}$ and therefore $\QQ(\zeta_{2^n})$ has three quadratic subfields, and therefore it is enough to find the quadratic subfields of $\QQ(\zeta_8)$. Since $\zeta_8=(1+i)/\sqrt{2}$, it is clear that the quadratic subfields are $\QQ(i)$, $\QQ(\sqrt{2})$ and $\QQ(\sqrt{-2})$ as desired.
+
+\end{proof}
 
 \subsection*{Odd Cyclic Extensions} \label{case_Cp}
 
 For the first case, we assume that $d$ is odd. Following the observation in Remark \ref*{rem_radical}, we need to calculate $\contr_\chi(\pp)$ for each finite place $\pp$ of $K$. To that objective, we first calculate them for ``small'' cases and then we use them for the general case. The following lemmas build on this idea.
 
 \begin{lemma}\label{lem_Cp}
-    Let $p$ be a rational prime, $F/K$ a Galois extension of number fields such that $\Gal(F/K)=C_p$ and $E/\QQ$ an elliptic curve with semistable reduction at $2$ and $3$. Then 
+    Let $q$ be an odd rational prime, $F/K$ a Galois extension of number fields such that $\Gal(F/K)=C_q$ and $E/\QQ$ an elliptic curve with semistable reduction at $2$ and $3$. Then 
     $$\frac{C_{E/F}}{C_{E/K}}$$
-    is a rational square up factors of $p$.
+    is a norm from $\QQ(\sqrt{q^*})$.
 \end{lemma}
 
 \begin{proof}
-    Fix some prime $\pp$ in $K$. Since the extension $L/K$ is cyclic, the splitting behaviour in $L$ is determined by the ramification index $e_\pp$ and the residual degree $f_\pp$. Since $\contr_\chi(\pp)=1$ if $E$ has good reduction at $\pp$ and $E$ is assumed to be semistable, we assume that $E$ has split or non-split multiplicative reduction. The following table records the contribution of $\pp$ dependinng on $e_\pp$ and $f_\pp$, and the entries for split and non-split multiplicative reduction of type $\mathrm{I}_n$ are separated by a ``;''.
-    \begin{table}[h!]
+    Fix some prime $\pp$ in $K$ and note that since the extension $L/K$ is cyclic, the splitting behaviour of $\pp$ in $L$ is determined by the ramification index $e_\pp$ and the residual degree $f_\pp$. Since $\contr_\chi(\pp)=1$ if $E$ has good reduction at $\pp$, we assume that $E$ bad reduction at $\pp$. If $\pp$ has multiplicative reduction, then $D_{\mathfrak{P}\mid\pp}(F/K)=1$ and the following table records the contribution of the Tamagawa numbers of $\pp$ depending on $e_\pp$ and $f_\pp$, and the entries for split and non-split multiplicative reduction of type $\mathrm{I}_n$ are separated by a ``;''. To complete these calculations, we use repeatedly Proposition \ref*{prop_semi_red} and Lemmas \ref*{lem_mult_tam} and \ref*{lem_add_tam}. We also use Notation \ref*{not_n}.
+
+    \begin{table}[!ht]
         \centering
         \begin{tabular}{|l|l|l|l|l|}
         \hline
-        $e_\pp$ & $f_\pp$  & $C_{\mathfrak{P}\mid \pp}(K/K)$ & $C_{\mathfrak{P}\mid \pp}(F/K)$  & $\contr_\chi(\pp)$ \\ \hline
-        $1$ & $1$ & $n;\tilde{n}$ & $n^p;\tilde{n}^p$ & $\square$ \\ \hline
-        $p$ & $1$ & $n;\tilde{n}$ & $pn;\tilde{n}$ & $p\square;\square$ \\ \hline
-        $1$ & $p$ & $n;\tilde{n}$ & $n;\tilde{n}$ & $\square$ \\ \hline
+        $e_\pp$ & $f_\pp$  & $T_{\mathfrak{P}\mid \pp}(K/K)$ & $T_{\mathfrak{P}\mid \pp}(F/K)$  & $\contr_\chi(\pp)$ \\ \hline
+        $1$ & $1$ & $n;\tilde{n}$ & $n^q;\tilde{n}^q$ & $\square$ \\ \hline
+        $q$ & $1$ & $n;\tilde{n}$ & $qn;\tilde{n}$ & $q\square;\square$ \\ \hline
+        $1$ & $q$ & $n;\tilde{n}$ & $n;\tilde{n}$ & $\square$ \\ \hline
         \end{tabular}
     \end{table}
+
+    Since $q$ is indeed a norm from $\QQ(\sqrt{q^*})$ by Lemma \ref*{p-norm}, it follows that $\contr_\chi(\pp)$ is a norm from $\QQ(\sqrt{q^*})$ as well.
+
+    Now assume $\pp$ has additive reduction, and let $p\ZZ=\pp\cap\QQ$. By assumption, $p\neq2,3$. Firstly, we note that $D_{\mathfrak{P}\mid\pp}(F/K)=1$ unless $\pp$ ramifies in $F/K$, and in that case it is a power of $N_{K/\QQ}(\pp)=p^s$. If $s$ is even, we are immediately done, so assume instead that $s$ is odd. If $L_\mathfrak{P}/K_\pp$ is wildly ramified, then $p=q$ is a norm from $\QQ(\sqrt{q^*})$. If $L_\mathfrak{P}/K_\pp$ is tamely ramified, then by Lemma \textbf{Add here reference of Lemma for tame totally ramified extensions}, it follows that $q\mid p^r-1$ and therefore 
+    \begin{equation}
+        \left(\frac{q^*}{p}\right)=\left(\frac{p}{q}\right)=\left(\frac{p^s}{q}\right)=1
+    \end{equation}
+    Therefore, $p$ splits in $\QQ(\sqrt{q^*})$ and by Lemma \textbf{insert relevant thm here}, it follows that $p$ is a norm from $\QQ(\sqrt{q^*})$. 
+    Finally, we need to consider the Tamagawa numbers. Note that since $q$ is odd, if $\mathfrak{P}$ is any prime in $F$ above $\pp$, then $\sqrt{D}\in K_\pp$ if and only if $\sqrt{D}\in L_\mathfrak{P}$ for any $D\in\QQ$. Moreover, if $q\neq 3$, then $\gcd(e_{\mathfrak{P}\mid\pp},12)=1$ and by Lemma \ref{lem_add_tam}, $c_\pp(E/K)=c_\mathfrak{P}(E/F)$. Therefore, we get a square in this case.
+    If $q=3$, we have $\gcd(e_{\mathfrak{P}\mid\pp},12)=1$ unless $L_\mathfrak{P}/K_\pp$ is a ramified extension. 
+
+
     The proof follows immediately from \eqref{eqn_local_contr}.
 \end{proof}
 
@@ -123,9 +159,9 @@ We are finally ready to prove the main result of this section, from which Theore
 \end{lemma}
 
 \begin{proof}
-    Let $n$ be the number of distinct prime numbers dividing $d$, so that $d=p_1\ldots p_n$ for some distinct odd primes $p_i$. We prove this result by induction. The base case for $n=2$ is the content of Lemma \ref*{lem_Cpq}. Assume that the result holds for squarefree integers with $n-1$ prime factors and consider the two sets of fields
+    Let $n$ be the number of distinct prime numbers dividing $d$, so that $d=p_1\ldots p_n$ for some distinct odd primes $p_i$. We prove this result by induction. The base case for $n=2$ is the content of Lemma \ref*{lem_Cpq}. Assume that the result holds for squarefree cyclic Galois extensions with $n-1$ prime factors and consider the two sets of fields
     $$\mathcal{A}=\{L_k:p_n\nmid k\}\quad\text{and}\quad\mathcal{B}=\{L_k:p_n\mid k\},$$
-    which are clearly a partition of all intermediate fields of $F/K$. Furthermore, the fields in $\mathcal{A}$ are precisely the intermediate fields of $K$ and $L_{d/p_n}$, while the fields in $\mathcal{B}$ are the intermediate fields of $L_{p_n}$ and $F$. However, since $\Gal(L_{d/p_n}/K)=\Gal(F/L_{p_n})=C_{d/p_n}$, it follows from the inductive hypothesis applied to the fields of $\mathcal{A}$ and $\mathcal{B}$ respectively that
+    which are clearly a partition of all intermediate fields of $F/K$. Furthermore, the fields in $\mathcal{A}$ are precisely the intermediate fields of $L_{d/p_n}/K$, while the fields in $\mathcal{B}$ are the intermediate fields of $F/L_{p_n}$. However, since $\Gal(L_{d/p_n}/K)=\Gal(F/L_{p_n})=C_{d/p_n}$, it follows from the inductive hypothesis applied to $L_{d/p_n}/K$ and $F/L_{p_n}$ respectively that
     $$\prod_{k\mid \frac{d}{p_n}}(C_{E/L_k})^{\mu\left(\frac{d}{kp_n}\right)}\quad\text{and}\quad\prod_{p_n\mid k\mid d}(C_{E/L_{k}})^{\mu\left(d/k\right)}$$
     are both rational squares. By the natural decomposition
     $$\prod_{k\mid d}(C_{E/L_k})^{\mu(d/K)}=\prod_{k\mid \frac{d}{p_n}}(C_{E/L_k})^{\mu\left(d/k\right)}\prod_{p_n\mid k\mid d}(C_{E/L_{k}})^{\mu\left(d/k\right)}=\left(\prod_{k\mid \frac{d}{p_n}}(C_{E/L_k})^{\mu\left(\frac{d}{kp_n}\right)}\right)^{-1}\prod_{p_n\mid k\mid d}(C_{E/L_{k}})^{\mu\left(d/k\right)},$$
@@ -247,13 +283,13 @@ We are now ready to prove Theorem \ref*{thm_consistent_cyclic} for even $d$. We 
 \subsubsection*{Case 1: $d$ is not divisible by any odd prime, so $d=2^l$}
 If $l=1$, then $\QQ(\zeta_2)=\QQ$, so there is nothing to prove, so assume that $l\geq2$. If $\Gal(F/\QQ)=C_{2^l}$, then 
 $$\frac{\prod_i C_{E/F_i}}{\prod_j C_{E/F'_j}}=\frac{C_{E/F}}{C_{E/L_{2^{l-1}}}},$$
-and by Lemma \ref*{lem_Cp}, we know that this is a rational square up to factors of $2$, so it suffices to show that $2$ is a norm of every quadratic subfield of $\QQ(\zeta_{2^l})$. A standard argument shows that $\Gal(\QQ(2^l)/\QQ)=(\ZZ/2^l\ZZ)^*=C_{2^{l-2}}\times C_2$ and therefore $\QQ(\zeta_{2^l})$ has $\QQ(i)$ as its unique quadratic subextension if $l=2$ and has three quadratic subextensions if $l\geq 3$. Note that $\zeta_8=(1+i)/\sqrt{2}$ and therefore $\QQ(\zeta_8)=\QQ(i,\sqrt{2})$. The three quadratic subextensions are therefore $\QQ(i), \QQ(\sqrt{2})$ and $\QQ(\sqrt{-2})$. Then the result follows from the fact that 
+and by Lemma \ref*{lem_Cp}, we know that this is a rational square up to factors of $2$, so it suffices to show that $2$ is a norm of every quadratic subfield of $\QQ(\zeta_{2^l})$. A standard argument shows that $\Gal(\QQ(\zeta_{2^l})/\QQ)=(\ZZ/2^l\ZZ)^*=C_{2^{l-2}}\times C_2$ and therefore $\QQ(\zeta_{2^l})$ has $\QQ(i)$ as its unique quadratic subextension if $l=2$ and has three quadratic subextensions if $l\geq 3$. Note that $\zeta_8=(1+i)/\sqrt{2}$ and therefore $\QQ(\zeta_8)=\QQ(i,\sqrt{2})$. The three quadratic subextensions are therefore $\QQ(i), \QQ(\sqrt{2})$ and $\QQ(\sqrt{-2})$. Then the result follows from the fact that 
 $$2=\Norm_{\QQ(i)}(1+i)=\Norm_{\QQ(\sqrt{-2})}(2)=\Norm_{\QQ(\sqrt{2})}(2+\sqrt{2}).$$
 
 \subsubsection*{Case 1: $d$ is divisible by at least two odd primes}
 Let $K=L_{d/\rad(d)}$ be as in Remark \ref*{rem_radical} such that $\Gal(F/K)=C_{\rad(d)}$ and all fields appearing in the product of local factors contain $K$. Then using the same idea as in Lemma \ref*{lem_Cd_odd}, let 
 $$\mathcal{A}=\{L_k\supseteq K:2\nmid [L_k:K]\}\quad\text{and}\quad\mathcal{B}=\{L_k\supseteq K:2\mid [L_k:K]\}.$$
-Then the fiels in $\mathcal{A}$ and $\mathcal{B}$ are the intermediate fields of (distinct!) $C_{\rad(d)/2}$ extensions. These are odd cyclic extensions, and therefore by Lemma \ref*{lem_Cd_odd} the contribution is a rational square and therefore the norm of any quadratic extension.
+Then the fields in $\mathcal{A}$ and $\mathcal{B}$ are the intermediate fields of (distinct!) $C_{\rad(d)/2}$ extensions. These are odd cyclic extensions, and therefore by Lemma \ref*{lem_Cd_odd} the contribution is a rational square and therefore a norm from any quadratic extension.
 
 \subsubsection*{Case 3: $d$ is divisible by one odd prime}
 In this case, write $d=2^lp^n$ and let $L_k$ be the fields as above. In this case, we note that 

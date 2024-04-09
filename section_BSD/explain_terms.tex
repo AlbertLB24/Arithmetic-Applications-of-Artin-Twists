@@ -30,7 +30,7 @@ The other factors are arithmetic values related to the elliptic curve $E$. Impor
     \end{align*}
     is bilinear. Then the regulator is the volume of $E(K)/E(K)_{\tors}$ computed using the quadratic form $\hat{h}$. In other words, let $P_1,\ldots,P_r$ be generators of the group $E(K)/E(K)_{\tors}$. Then $$\Reg_{E/K}=\det(\langle P_i,P_j\rangle)_{1\leq i,j\leq r}$$
     if $r\geq1$ and $\Reg_{E/K}=1$ if $r=0$.
-    \item \textbf{Tate-Shafarevich group:} This is the most misterious group and it is commonly defined using Galois cohomology as
+    \item \textbf{Tate-Shafarevich group:} This is the most mysterious group and it is commonly defined using Galois cohomology as
     $$\Sha_{E/K}=\ker\left[H^1(K,E)\rightarrow\prod_{\pp}H^1(K_\pp,E)\right],$$
     where $H^1(F,E):=H^1(G_F,E(\bar{F}))$ and the implicit map is induced by the inclusions $G_{K_\pp}\emb G_K$. One can interpret $H^1(F,E)$ as `homogeneous spaces' of $E$ over $K$ up to equivalence. A homogeneous space over $K$ is trivial if and only if it has a $K$-rational point, so a non-trivial element of $\Sha_{E/F}$ is a homogeneous space that has points locally in every $K_\pp$ but has no $K$-rational point.
 
@@ -60,10 +60,10 @@ that is, we can calculate $C_{E/F}$ by calculating the contribution locally at e
 We remark that the way we have organised the terms in \eqref{BSD_2} is not arbitrary, and in fact we give specific notation to both sides of the equation. 
 
 \begin{notation}
-    Let $E/\QQ$ be a number field and $K$ a number field. We define 
-    $$\mathcal{L}(E/F)=\lim_{s\to1}\frac{L(E/K,s)}{(s-1)^r}\cdot\frac{\sqrt{|\Delta_K|}}{\Omega_+(E)^{r_1+r_2}|\Omega_-(E)|^{r_2}}$$
+    Let $E/\QQ$ be an elliptic curve and $K$ a number field. We define 
+    $$\mathcal{L}(E/K)=\lim_{s\to1}\frac{L(E/K,s)}{(s-1)^r}\cdot\frac{\sqrt{|\Delta_K|}}{\Omega_+(E)^{r_1+r_2}|\Omega_-(E)|^{r_2}}$$
     and
-    $$\BSD(E/F)=\frac{\Reg_{E/K}|\Sha_{E/K}|C_{E/K}}{|E(K)_{\tors}|^2}.$$
+    $$\BSD(E/K)=\frac{\Reg_{E/K}|\Sha_{E/K}|C_{E/K}}{|E(K)_{\tors}|^2}.$$
 \end{notation}
 
 

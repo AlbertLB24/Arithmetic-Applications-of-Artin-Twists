@@ -1,0 +1,73 @@
+
+\subsection{Tamagawa Numbers} \label{subs_tamagawa}
+
+Recall from the previous section that if $E/K$ has bad reduction, then $\tilde{E}$ is not a smooth curve and therefore its $\kappa$-rational points may not form a group. However, the set $\tilde{E}_{ns}(\kappa)$ of non-singular points of $\tilde{E}(\kappa)$ does indeed form a group. The reduction map \eqref{eqn_reduction} is in general not surjective, but it does surject onto $\tilde{E}_{ns}(\kappa)$. It is natural therefore to define $E_0(K)=\{P\in E(K):\widetilde{P}\in\tilde{E}_{ns}(\kappa)\}$, which is also a subgroup of $E(K)$. Importantly, the resulting reduction map 
+$$\widetilde{(\cdot)}:E_0(K)\longrightarrow \tilde{E}_{ns}(\kappa)$$
+is a surjective homomorphism of abelian groups.
+\begin{defn}
+    The \textbf{Tamagawa number} of $E/K$ is defined as
+    \begin{equation}
+        c(E/K):=|E(K)/E_0(K)|.
+    \end{equation}
+\end{defn}
+In later sections we will be concerned in computing Tamagawa numbers. Note that if $E/K$ has good reduction, then $E_0(K)=E(K)$ and therefore $c(E/K)=1$. However, when $E/K$ has bad reduction, this is a hard question to answer in general. Fortunately, this question can always be resolved using Tate's Algorithm (see \cite[\S IV.9]{S2}), and for semistable reduction, Tamagawa numbers have a simple explicit description.
+
+\begin{lemma}\label{lem_mult_tam}
+    Let $E/K$ have multiplicative reduction, and let $n=\nu(\Delta)$ be the valuation of the minimal discriminant. Then
+    \begin{align*}
+        c(E/K)=
+        \begin{cases}
+            n \quad\text{if $E/K$ has split reduction,}\\
+            1 \quad\text{if $n$ is odd and $E/K$ is non-split,}\\
+            2 \quad\text{if $n$ is even and $E/K$ is non-split}.
+        \end{cases}    
+    \end{align*}
+\end{lemma}
+
+Elliptic curves with multiplicative reduction and $n=\nu(\Delta)$ are said to be of type $\mathrm{I}_n$. The following notation is motivated by the above result and will be useful later on.
+\begin{notation}\label{not_n}
+    Let $n$ be a positive integer. Let 
+    \[
+        \tilde{n}=
+        \begin{cases}
+            1 \text{ if } n \text{ is odd,}\\
+            2 \text{ if } n \text{ is even.}
+        \end{cases}
+    \]
+    
+\end{notation}
+
+The unstable case is harder, but there exists an explicit description for elliptic curves with equation $y^2=x^3+Ax+B$ and residual characteristic is at least $5$. 
+
+\begin{lemma}\label{lem_add_tam}
+    Let $F /K / \bQ_p$ be finite extensions and $p \geq 5$. Let 
+    $$E:  y^2 = x^3 + Ax + B$$
+    be an elliptic curve over $K$ with additive reduction. Let $n=v_K(\Delta)$ be the valuation of the minimal discriminant, and $e$ the ramification index of $F/K$.
+
+    If $E$ has potentially good reduction, then 
+        \[
+        \begin{array}{l l l l}
+            \gcd(ne, 12) = 2 & \implies & c(E / F) = 1, & \quad (II, II^*) \\
+            \gcd(ne, 12) = 3 & \implies & c(E / F) = 2, & \quad (III, III^*) \\
+            \gcd(ne, 12) = 4 & \implies & c(E / F) = \begin{cases} 1, & \sqrt{B} \notin F
+                                \\ 3, & \sqrt{B} \in F \end{cases}, & \quad (IV, IV^*) \\
+            \gcd(ne, 12) = 6 & \implies & c(E / F) = \begin{cases} 2, & \sqrt{\Delta} \notin F
+                \\ 1 \ \text{or} \ 4, & \sqrt{\Delta} \in F \end{cases}, & \quad (I_0^*) \\
+            \gcd(ne, 12) = 12 & \implies & c(E / F) = 1. & \quad (I_0)
+        \end{array}
+        \]
+    Moreover, the extensions $F\left(\sqrt{B}\right) / F$ and $F\left(\sqrt{\Delta}\right) / F$ are unramified.
+
+    If $E$ has potentially multiplicative reduction of type $I_n^*$ over $K$, and $e$ is odd, then it has Kodaira type $I_{en}^*$ over $F$. Moreover, 
+    \[
+        \begin{array}{l l l l}
+        2 \nmid n & \implies & c(E / F) = \begin{cases} 2, & \sqrt{B} \not\in F, \\ 4, & \sqrt{B} \in F. \end{cases} & \quad (I_{ne^*}) \\
+        2 \mid n & \implies & c(E / F) = \begin{cases} 2 & \sqrt{\Delta} \not\in F, \\ 4 & \sqrt{\Delta} \in F \end{cases} & \quad ({I_{ne}^*})   
+        \end{array} 
+    \]
+\end{lemma}
+
+\begin{proof}
+    \cite[Lemma 3.22]{reg-const}
+\end{proof}
+
