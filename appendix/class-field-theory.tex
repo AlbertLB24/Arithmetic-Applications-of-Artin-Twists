@@ -41,7 +41,7 @@ Let $\sigma \in \Gal(H^{+} / \bQ)$ be such that $\sigma|_{K}$ generates $\Gal(K 
     Let $G = \Gal(H / \bQ)$. Then $L = H^{[G, G]}$ is the fixed field of the commutator subgroup of $G$. The Artin map induces an isomorphism $\varphi \colon C_K \to C \subset G$ with $\varphi(C_K) \simeq C = \Gal(H / K)$. One shows that $\varphi([\sigma(\fU)\fU^{-1}]) \in [G, C]$ and conversely that every commutator element in $[G, G]$ can be expressed as $\varphi([\sigma(\fU)\fU^{-1}])$ for some $\fU \in I_K$. 
 \end{proof}
 
-Note that this says that every class $[\sigma(\fU) \fU^{-1}]$ is a square in $C_K$.
+%Note that this says that every class $[\sigma(\fU) \fU^{-1}]$ is a square in $C_K$.
 This allows us to deduce the following:
 
 \begin{thm}\label{p-principal}
@@ -50,19 +50,24 @@ Let $p$ be a prime in $\bQ$. If the residue degree of $p$ in $L / \bQ$ is $1$, t
 
 \begin{proof}
 Let $\varphi \colon C_K \to \Gal(H / K)$ be the isomorphism induced by the Artin map. By Theorem \ref{janusz-3.3}, $\Gal(L / K) = \Cl_K / \left(\Cl_K\right)^2$ is abelian. Let $\fp$ be a prime of $K$ lying over $p$. Then $N_{K / \bQ}(\fp) = p$ and $\fp$ has residue degree $1$ in $L$. It follows that $\varphi([\fp])|_{L} = \Id$ so that $\varphi([\fp]) \in \Gal(H / L)$. Thus by Theorem \ref{janusz-3.3} there is a fractional ideal $\fU$ of $I_K$ such that 
-$[\fp] = [\sigma(\fU)\fU^{-1}]$. Observe that $N_{K / \bQ}(\sigma(\fU)\fU^{-1}) = 1$. It follows that we can represent $[\fp]^n$ by a fractional ideal of norm $p$ for all $n$. Since $\Cl_K$ is finite, this implies there is a principal fractional ideal in $K$ of norm $p$. 
+$[\fp] = [\sigma(\fU)\fU^{-1}]$. Observe that $N_{K / \bQ}(\sigma(\fU)\fU^{-1}) = 1$. It follows that we can represent $[\fp]^n$ by a fractional ideal of norm $p$ for all $n \geq 1$. Since $\Cl_K$ is finite, this implies there is a principal fractional ideal in $K$ of norm $p$. 
 \end{proof}
 
 Observe that $C_K / (C_K)^2$ is an abelian group of exponent $2$. The following theorem describes its order:
 
-\begin{thm} 
+\begin{thm}\cite[Ch VI, \S3, Theorem 3.9]{Janusz}
 Suppose the discriminant of $K / \bQ$ has $t$ prime divisors. Then $C_K / (C_K)^2$ has order $2^{t-1}$ if $D < 0$ or if $D > 0$ and a unit of $K$ has norm $-1$. Otherwise, if $D > 0$ and all units of $K$ have norm $1$, it has order $2^{t - 2}$.
 \end{thm} 
 
-Our introduction of the extended genus field $L^{+}$ is mostly because it is easier to describe than $L$ when $K = \bQ(\sqrt{D})$.
+\begin{rem}\label{conductor}
+    The conductor of $K / \bQ$ is a particular modulus for $K / \bQ$ ({\color{red} ref}). We denote the finite part of it by $\ff \in \bZ_{>0}$ . Then $\ff$ is the smallest positive integer such that $K \subset \bQ(\zeta_{\ff})$. For quadratic fields, one has that $\ff = |\Delta|$ where $\Delta$ is the discriminant of $K$ ({\color{red} ref}). Thus
+\[ \ff = |\Delta| =  \begin{cases} |D| & D \equiv 1 \pmod 4, \\ 4|D| & D \not\equiv 1 \pmod 4. \end{cases} \]
+\end{rem}
 
-\begin{thm} 
-Let the discriminant of $K$ be $\Delta$ and suppose $|\Delta| = p_1 p_2 \cdots p_t$ where $p_2, \ldots p_t$ are odd primes, and $p_1$ is either odd or a power of $2$. Then the extended genus field of $K$ is 
+Our introduction of the extended genus field $L^{+}$ is mostly because it is easier to describe than $L$.
+
+\begin{thm}\label{extended-genus}\cite[Ch VI, \S3, Theorem 3.10]{Janusz}
+Let the discriminant of $K = \bQ(\sqrt{D})$ be $\Delta$ and suppose $|\Delta| = p_1 p_2 \cdots p_t$ where $p_2, \ldots p_t$ are odd primes, and $p_1$ is either odd or a power of $2$. Then the extended genus field of $K$ is 
     \[ L^{+} = \bQ(\sqrt{D}, \sqrt{p_2^*}, \ldots \sqrt{p_t^*}) = K(\sqrt{p_2^*}, \ldots \sqrt{p_t^*}), \] 
 where 
 \[ \begin{cases}
@@ -71,19 +76,33 @@ where
 \end{cases}\]
 \end{thm} 
 
-\vspace{2em}
-
-The following results are used in the body of the report:
+\vspace{1em}
 
 \begin{cor}\label{p-one-mod-disc}
-    Let $p$ be a prime in $\bQ$, $K = \bQ(\sqrt{D})$ with discriminant $\Delta$ such that $|\Delta| = p_1 p_2 \cdots p_t$, where all $p_i$ are odd primes. If $p \equiv 1 \mod {|\Delta|}$, then $p$ is the norm of a principal fractional ideal in $K$. It is also the norm of a principal fractional ideal in $K' = \bQ({\sqrt{p^*D}})$.
+    Let $p$ be an odd prime in $\bQ$, $K = \bQ(\sqrt{D})$ with discriminant $\Delta$ such that $|\Delta| = p_1 p_2 \cdots p_t$, as in Theorem \ref{extended-genus}. If $p \equiv 1 \mod {|\Delta|}$, then $p$ is the norm of a principal fractional ideal in $K$. 
+    It is also the norm of a principal fractional ideal in $K' = \bQ({\sqrt{p^*D}})$.
 \end{cor}
 
 \begin{proof}
-    Any prime above $p$ in $K$ splits in $L^{+}$, hence also in $L$ (in particular it has residue degree $1$). Similarly for $K'$, the residue degree of $p$ in its extended genus field is $1$, and so in its genus field also. The result follows by Theorem \ref{p-principal}.
+   Let $L^+ = \bQ(\sqrt{D}, \sqrt{p_2^*}, \ldots \sqrt{p_t^*})$ be the extended genus field of $K$, and $L$ the genus field. If $p$ has residue degree $1$ in $L^+ / \bQ$, then it has residue degree $1$ in $L / \bQ$, and the first result follows by Theorem \ref{p-principal}. 
+
+   Note that $p$ splits in the quadratic subfields $\bQ(\sqrt{p_i^*})$ for $i = 2, \ldots t$, since $\legendre{p_i^*}{p} = \legendre{p}{p_i} = 1$, as $p \equiv 1 \pmod {\Delta} \implies p \equiv 1 \pmod {p_i}$ for $i = 2, \ldots t$. To show that $p$ splits in $L^+$ we just need to show that it also splits in $K$. 
+   
+   First suppose $D \equiv 1 \pmod 4$. Write $D = \prod_{i=1}^t p_i^*$. Then 
+    \[ \legendre{D}{p} = \prod_{i = 1}^t \legendre{p_i^*}{p} = \prod_{i = 1}^t \legendre{p}{p_i} = 1. \]
+    Thus $p$ splits in $K$.
+
+    Now consider that $D \not\equiv 1 \pmod 4$. First assume $D \equiv 3 \pmod 4$. Write $D = -\prod_{i=2}^t p_i^*$. Then
+    \[ \legendre{D}{p} = \legendre{-1}{p} \prod_{i = 2}^t \legendre{p_i^*}{p} = \legendre{-1}{p} = 1, \] 
+    since $p \equiv 1 \pmod {|\Delta|}$ and $4 \mid |\Delta| \implies p \equiv 1 \pmod 4$. 
+
+    Now assume that $2 \mid D$ so that $8 \mid |\Delta|$ and $p \equiv 1 \pmod 8$. Then $D = \pm 2 \prod_{i = 2}^t p_i^*$. Thus
+    \[ \legendre{D}{p} = \legendre{\pm 1}{p} \legendre{2}{p}\prod_{i = 2}^t \legendre{p_i^*}{p} = 1 .\] 
+
+    Let $L'^{+}$ be the extended genus field of $K'$. Now $p$ ramifies in $K'$, $\bQ(\sqrt{p^*})$. Using the calculations above, it is either split or ramified in all quadratic subfields of $L'^{+}$, and so has residue degree $1$ in $L'^{+}$, and the result follows. 
 \end{proof}
 
-We want to understand when $p$ is the norm of an element. Note that if $H = H^{+}$, then $p$ being the norm of a principal fractional ideal guarantees that it is the norm of an element. If $-1$ is a norm in our field then we are also fine. 
+We want to understand when $p \in N_{K / \bQ}(K^{\times})$. If $p$ is the norm of a principal fractional ideal in $K$, then $\pm p \in N_{K / \bQ}(K^{\times})$. If $K$ is imaginary, one must have $p \in N_{K / \bQ}(K^{\times})$. We can also arrive to the same conclusion when $K$ is real and $-1 \in N_{K / \bQ}(K^{\times})$. 
 
 \begin{thm}\label{minus-one-norm}
 Let $K = \bQ(\sqrt{D})$ with $D >0$ squarefree and suppose that all odd primes dividing $D$ are congruent to $1 \pmod 4$. Then $-1$ is the norm of an element of $K^{\times}$. 
@@ -91,35 +110,34 @@ Let $K = \bQ(\sqrt{D})$ with $D >0$ squarefree and suppose that all odd primes d
 
 \begin{proof}
 The condition on $D$ ensures that there exists $x$, $y \in \bQ$ such that $D = x^2 + y^2$. Therefore $-1 = (x / y)^2 - D(1/ y)^2$ so that $-1$ is the norm of the element $\frac{x}{y} + \frac{1}{y} \sqrt{D}$.
-
 \end{proof}
 
 Note that $-1$ being the norm of an element in $K$ does not ensure that $-1$ is the norm of a unit in $K$. The smallest counter-example is $K = \bQ(\sqrt{34})$. The element $\frac{5}{3} + \sqrt{34}$ has norm $-1$, but there is no unit with norm $-1$. 
 
 \begin{thm}\label{p-norm-elem-1}
-    Let $K = \bQ(\sqrt{D})$ and let $k$ be the minimal cyclotomic field such that $K \subset \bQ(\zeta_k)$. Suppose that $k$ is odd and $K$ is real.  If $p$ is a prime such that $p \equiv 1 \pmod {|\Delta|}$, then $p$ is the norm of an element from $K$. 
+    Let $K = \bQ(\sqrt{D})$ be a real quadratic field.  If $p$ is an odd prime such that $p \equiv 1 \pmod {|\Delta|}$, then $p$ is the norm of an element from $K$. 
 \end{thm}
 
 \begin{proof}
-    Note that $k$ being odd implies $D$ is odd. We know that $p$ is the norm of a principal fractional ideal of $K$ by corollary \ref{p-one-mod-disc}. Therefore there exists integers $x$, $y$, $z$ such that $\pm p z^2 = x^2 - Dy^2$. Suppose firstly that all primes dividing $D$ are congruent to $1 \pmod 4$. Then there is an element of $K^{\times}$ of norm $-1$ by Theorem \ref{minus-one-norm}. Hence we can find an element of norm $p$.
+    We know that $p$ is the norm of a principal fractional ideal of $K$ by Corollary \ref{p-one-mod-disc}. 
+    Therefore there exists integers $x$, $y$, $z$ such that $\pm p z^2 = x^2 - Dy^2$. 
+    
+    Suppose firstly that all odd primes dividing $D$ are congruent to $1 \pmod 4$. Then there is an element of $K^{\times}$ of norm $-1$ by Theorem \ref{minus-one-norm}. Hence we can find an element of norm $p$.
 
     Otherwise, there exists a prime $q \mid D$ such that $q \equiv 3 \pmod 4$. Reducing mod $q$, we have
     $ \pm p = \square$. Since $p \equiv 1 \pmod q$, it is a square $\pmod q$. But $-1$ is not a square mod $q$, hence our sign must have been $+$ and so $p$ is the norm of an element from $K^{\times}$.
 \end{proof}
 
+
 \begin{thm}\label{p-norm-elem-2}
-    Let $K = \bQ(\sqrt{D})$ and let $k$ be the minimal cyclotomic field such that $K \subset \bQ(\zeta_k)$. Suppose that $k$ is odd and $K$ is real. Let $p$ be a prime such that $p \mid D$ and $p \equiv 1 \pmod q$ for all other primes $q \mid D$. Then $p$ is the norm of an element from $K$. 
+    Let $K = \bQ(\sqrt{D})$ be a real quadratic field. Let $p$ be an odd prime such that $p \mid D$ and $p \equiv 1 \pmod {|\Delta| / p}$. Then $p$ is the norm of an element from $K$. 
 \end{thm}
 
 \begin{proof}
-    By corollary \ref{p-one-mod-disc}, we know that $p$ is the norm of a principal fractional ideal of $K$. The rest of the argument is analogous to the previous proof.
-\end{proof}
-
-
-\begin{prop}
-$\bQ(\sqrt{p^*})$ has odd narrow class number.
-\end{prop}    
+    By Corollary \ref{p-one-mod-disc}, we know that $p$ is the norm of a principal fractional ideal of $K$. The rest of the argument is analogous to the previous proof.
+\end{proof}  
 
 \begin{cor}\label{p-norm}
-The prime $p \in \bQ$ is the norm of an element in $\bQ(\sqrt{p^*})^{\times}$.
+The odd prime $p \in \bQ$ is the norm of an element in $\bQ(\sqrt{p^*})^{\times}$.
 \end{cor}
+
