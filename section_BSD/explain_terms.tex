@@ -47,16 +47,31 @@ We will spend some time computing the local terms for families of elliptic curve
 
 \begin{notation}\label{not_contr}
     Let $E$ be an elliptic curve defined over $\QQ$ and let $F/K$ be a finite extension of number fields. For each finite place $\pp$ of $K$, we write 
-    $$T_{\mathfrak{P}\mid\pp}(F/K)=\prod_{\mathfrak{P}\mid\pp}c_\mathfrak{P}(E/F)\quad\text{and}\quad D_{\mathfrak{P}\mid\pp}(F/K)=\prod_{\mathfrak{P}\mid\pp}\left|\frac{\Delta_{E,\mathfrak{P}}^{\min}}{\Delta_E}\right|_\mathfrak{P}^{\frac{1}{12}},$$
-    and we also write 
-    $$C_{\mathfrak{P}\mid \pp}(F/K)=T_{\mathfrak{P}\mid \pp}(F/K)D_{\mathfrak{P}\mid \pp}(F/K)$$
-    for the contribution of $\pp$ inside $F$, and
-    where the product is taken over the primes $\mathfrak{P}$ of $F$ above $\pp$. 
+    $$T_{\mathfrak{P}\mid\pp}(E/F)=\prod_{\mathfrak{P}\mid\pp}c_\mathfrak{P}(E/F)\quad\text{and}\quad D_{\mathfrak{P}\mid\pp}(E/F)=\prod_{\mathfrak{P}\mid\pp}\left|\frac{\Delta_{E,\mathfrak{P}}^{\min}}{\Delta_E}\right|_\mathfrak{P}^{\frac{1}{12}},$$
+    where the product ranges over primes $\fP$ of $F$ dividing $p$. We also write 
+    $$C_{\mathfrak{P}\mid \pp}(E/F)=T_{\mathfrak{P}\mid \pp}(E/F)D_{\mathfrak{P}\mid \pp}(E/F).$$
 \end{notation}
 
-An immediate consequence of this notation is the fact that 
-$$C_{E/F}=\prod_{\pp}C_{\mathfrak{P}\mid \pp}(F/K);$$
-that is, we can calculate $C_{E/F}$ by calculating the contribution locally at each prime of $K$. Another important observation is that if $E$ has good reduction over $\pp$, then $C_{\mathfrak{P}\mid\pp}(F/K)=1$ for any finite extension $F$ of $K$. 
+An immediate consequence of this notation is the fact that $C_{E/F}=\prod_{\pp}C_{\mathfrak{P}\mid \pp}(E / F)$.
+Observe that if $E$ has good reduction over $\pp$, then $C_{\mathfrak{P}\mid\pp}(E/F)=1$ for any finite extension $F$ of $K$. 
+
+\begin{notation}\label{not_contr_fns}
+    If $G = \Gal(F / \bQ)$ then we define functions $T_{\fP \mid p}$, $D_{\fP \mid p}$ and $C_{\fP \mid p}$ on $\B(G)$ by 
+    \[ T_{\fP \mid p}(H) = T_{\fP \mid p}(E / F^H), \quad D_{\fP \mid p}(H) = D_{\fP \mid p}(E / F^H), \quad C_{\fP \mid p}(H) = C_{\fP \mid p}(E / F^H). \]
+    Note that if $H$, $H'$ are conjugate then $F^H$, $F^{H'}$ are isomorphic, and so the values of these functions are constant on conjugate subgroups, hence they are well-defined. Let $C \colon \B(G) \to \bQ^{\times}$ be given by $C \colon H \mapsto C_{E / F^H}$.  
+    
+    Note that $C_{\fP \mid p}$ is a $D_p$-local function. Indeed, suppose $D_p = \Gal(F_w / \bQ_p)$, where $F_w$ denotes the completion of $F$ with respect to a place $w$ lying above $p$. Recall the notation that for a number field $K$ and place $v$, $C_v(E / K) = c_v(E / K) \cdot \left| \omega / \omega_v^{\min} \right|_v$ {\color{red} put this somewhere...}. We use the same notation if $K$ is a local field (then the $v$ subscript holds no meaning).
+    One has
+    \begin{equation*}\label{Dp-loc}
+    C_{\fP \mid p} = (D_p, C_v)
+    \end{equation*}
+    where $C_v$ is a function on $\B(D_p)$ sending $H \mapsto C_v(E / F_w^H)$.
+
+\end{notation}
+
+%An immediate consequence of this notation is the fact that 
+%$$C_{E/F}=\prod_{\pp}C_{\mathfrak{P}\mid \pp}(F/K);$$
+%that is, we can calculate $C_{E/F}$ by calculating the contribution locally at each prime of $K$. 
 %{\color{red} also important to mention at some point that if the reduction is semistable, then the terms in a norm relation coming from the discriminant also vanish. Probably this would have to be introduced later.}
 
 We remark that the way we have organised the terms in \eqref{BSD_2} is not arbitrary, and in fact we give specific notation to both sides of the equation. 

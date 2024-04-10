@@ -22,13 +22,9 @@ Take any representation $\rho \in \R(G)$ with quadratic subfield $\bQ(\sqrt{D}) 
 As in Remark \ref{rephrase-thm}, we may replace $\rho$ by the sum of its conjugates by elements of $ \Gal(\bQ(\rho) / \bQ(\sqrt{D}))$, we may assume that $\bQ(\rho) = \bQ(\sqrt{D})$. We take $D \in \bZ \ \{0,1 \}$ to be squarefree.
 
 The product of terms we are computing is $C(\Theta)$, where $C \colon \B(G) \to \bQ^{\times}$ is given by $C \colon H \mapsto C_{E / F^H}$, and $\Theta$ is any $\rho$-relation.
-We break up the function $C$ into $C = \prod_p  T_{\fP \mid p} \cdot D_{\fP \mid p}$ ranging over primes $p \in \bQ$, where $T_{\fP | p}$, $D_{\fP \mid p} \colon \B(G) \to \bQ^{\times}$ with
-\begin{equation}\label{c-and-d}
-         T_{\fP \mid p}(H) = T_{\fP \mid p}(F^H / \bQ), \qquad D_{\fP \mid p}(H) = D_{\fP \mid p}(F^H / \bQ), 
-\end{equation}
-as defined in Notation \ref{not_contr}.
-Then $T_{\fP \mid p} \cdot D_{\fP \mid p}$ is a $D_p$-local function. Indeed, suppose $D_p = \Gal(F_w / \bQ_p)$, where $F_w$ denotes the completion of $F$ with respect to a place $w$ lying above $p$. Recall the notation that for a number field $K$ and place $v$, $C_v(E / K) = c_v(E / K) \cdot \left| \omega / \omega_v^{\min} \right|_v.$ We use the same notation if $K$ is a local field (then the $v$ subscript holds no meaning).
-One has
+We break up the function $C$ into $C = \prod_p C_{\fP \mid p} \prod_p = T_{\fP \mid p} \cdot D_{\fP \mid p}$, ranging over primes $p \in \bQ$,
+as defined in Notation \ref{not_contr_fns}.
+Then one has
 \begin{equation*}\label{Dp-loc}
 T_{\fP \mid p} \cdot D_{\fP \mid p} = (D_p, C_v)
 \end{equation*}
