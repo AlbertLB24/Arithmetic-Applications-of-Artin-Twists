@@ -18,8 +18,10 @@
         "mathbb",
         "mathfra",
         "mathfrak",
+        "Mordell",
         "quotiened",
         "Schur",
+        "semidirect",
         "Serre",
         "squarefree",
         "subextension",
@@ -28,6 +30,7 @@
         "Swinnerton",
         "Tamagawa",
         "unramified",
-        "Vect"
+        "Vect",
+        "Weil"
     ]
 }

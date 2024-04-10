@@ -5,7 +5,7 @@
 \begin{thm}\label{odd-exts}
  Let $E / \bQ$ be an elliptic curve, $F / \bQ$ be an extension of odd order with Galois group $G$. 
  
-Assume that the primes of additive reduction of $E / \bQ$ are $\geq 5$. 
+Assume that $E$ has semistable reduction at $2$ and $3$. 
 Take any representation $\rho \in \R(G)$ with quadratic subfield $\bQ(\sqrt{D}) \subset \bQ(\rho)$ and relation
 \begin{equation*}\label{odd-exp} \repnorm{\rho}^{\oplus m} =
  \left(\bigoplus_{\mathfrak{g}\in\Gal(\QQ(\rho)/\QQ)}\rho^{\mathfrak{g}}\right)^{\oplus m }=\bigoplus_i\Ind_{F_i/\QQ}\mathds{1}\ominus\bigoplus_j\Ind_{F'_j/\QQ}\mathds{1}
@@ -250,6 +250,8 @@ Thus $$h(\Psi) = 3^{\langle \bC[C_l / \Psi], \psi_3 \rangle}.$$ As in the proof 
 We have observed that for all reduction types of $E / \bQ_p$, one always has $T_{\fP \mid p} \cdot D_{\fP \mid p}(\Theta) \in \fieldnorm{\rho}$, and so $C(\Theta) \in \fieldnorm{\rho}$, completing the proof of Theorem \ref{odd-exts}.
 
 \qed
+
+{\color{red} corollary about restricting to odd order decomposition groups??}
 %However, it turns out we will only get $3$ occurring oddly when $d = 3$. Indeed, one has that $\langle \Ind_{D_{d'}}^D \trivial, \psi_3 \rangle = 1$ if $3 \mid d'$, and $0$ if $3 \nmid d'$, where $\psi_3$ is an irreducible character of $D$ of order $3$. Therefore one sees that the number of places with ramification degree divisible by $3$ cancels unless $d = 3$. Indeed, $\langle \chi_d , \psi_3 \rangle = 0$ unless $d = 3$, 
 %in which case it is $1$. Therefore (\ref{tam-contrib}) can only be non-square when $d = 3$. {\color{red} then conclude why this is fine}
 
