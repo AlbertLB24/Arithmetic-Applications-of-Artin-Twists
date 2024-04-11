@@ -180,7 +180,7 @@ In either case, $D_{\fP \mid p}(\Theta) \in N_{\bQ(\rho) / \bQ}(\bQ(\rho)^{\time
 %       \left|\frac{\omega}{\omega_{w}^\min} \right|_w = p \]
 \vspace{1em}
 
-For the Tamagawa number computations, we use the description from \cite{reg-const} for computing Tamagawa numbers, as detailed in Lemma \ref{tamagawa-num}. {\color{red} maybe add a small reminder}
+For the Tamagawa number computations, since $p \geq 5$ we may write $E / \bQ_p$ as $E \colon y^2 = x^3 + A x + B$ and use the description from \cite{reg-const} for computing Tamagawa numbers, as detailed in Lemma \ref{tamagawa-num}. The discriminant of $E / \bQ_p$ is $\Delta = -16(4A^3 + 27 B^2)$, and we write $\delta = v_p(\Delta)$. {\color{red} maybe add a small reminder}
 
 Firstly, suppose that $E / \bQ_p$ has reduction type $I_{n}^{*}$. 
 Write $D_p = \Gal(F_w / \bQ_p)$. Since we assume $D_p = I_p$, i.e. the residue degree is one, it follows that any subextension $L'$ of $F_{w} / \bQ_p$ satisfies $\sqrt{B} \in L' \iff \sqrt{B} \in \bQ_p$ and $\sqrt{\Delta} \in L' \iff \sqrt{B} \in \bQ_p$. 
@@ -196,10 +196,11 @@ If we have type $III$ or $III^*$ or $I_0^*$ then the Tamagawa number is still un
 
 \noindent\underline{\textit{Type $II$ and $II^*$ reduction:}}
 
-Suppose $\delta = 2$, that is we have Type $II$ reduction. If $L' / \bQ_p$ is an odd degree extension that is divisible by $3$, then $E / L'$ has reduction type $I_0^*$. By Lemma \ref{tamagawa-num} the Tamagawa number of $E / L'$ then depends on whether $\sqrt{\Delta} \in \bQ_p$. Since we have additive reduction, we know that $p \mid A$, $p \mid B$. Moreover, $\delta = 2$ implies that $v_p(B) = 1$. Then, $\Delta = p^2\cdot \alpha$, and $\alpha \equiv -27\cdot\square \pmod p$. Therefore $\sqrt{\Delta} \in \bQ_p \iff -3$ is a square $\pmod p$. But this is the case; we assumed $p \equiv 1 \pmod l$, so $p \equiv 1 \pmod 3$. Then $\legendre{-3}{p} = \legendre{p}{3} = 1$. Therefore the Tamagawa number will be $1$ or $4$, which is a square.
+Suppose $\delta = 2$, that is we have Type $II$ reduction. If $L' / \bQ_p$ is an odd degree extension that is divisible by $3$, then $E / L'$ has reduction type $I_0^*$. By Lemma \ref{tamagawa-num} the Tamagawa number of $E / L'$ then depends on whether $\sqrt{\Delta} \in \bQ_p$. Since we have additive reduction, we know that $p \mid A$, $p \mid B$. Moreover, $\delta = 2$ implies $2 = v_p(\Delta) = v_p(27 B^2 + 4A^3)$, so that $v_p(B) = 1$. Then, $\Delta = p^2\cdot \alpha$, and $\alpha \equiv -27\cdot\square \pmod p$. Therefore $\sqrt{\Delta} \in \bQ_p \iff -3$ is a square $\pmod p$. But this is the case; we assumed $p \equiv 1 \pmod l$, so $p \equiv 1 \pmod 3$. Then $\legendre{-3}{p} = \legendre{p}{3} = 1$. Therefore the Tamagawa number will be $1$ or $4$, which is a square.
 On the other hand if $L' / \bQ_p$ is an extension of odd degree then the reduction type over $L'$ is $II$ or $II^*$ and the Tamagawa number is $1$. It follows that $T_{\fP \mid p}(\Theta)$ is a product of square terms, so is itself square. 
 
-If $\delta = 10$, then $E / L'$ has reduction type $I_0^*$ whenever $3 \mid [ L' : \bQ_p]$. Once more, $v_p(A)$, $v_p(B) \geq 1$, and $v_p(\Delta) = 10 = \min(3 v_p(A), 2 v_p(B)) \implies v_p(B) = 5$. Therefore we get $\Delta = p^{10} \cdot \alpha$ with $\alpha \equiv -27\cdot\square \pmod p$, and we conclude as above.
+If $\delta = 10$, then $E / L'$ has reduction type $I_0^*$ whenever $3 \mid [ L' : \bQ_p]$. 
+We show again that one must have $\sqrt{\Delta} \in \bQ_p$. Recall that $E / \bQ_p$ has potentially good reduction if and only if its $j$-invariant is integral, i.e. $v_p(j) \geq 0$ (cf. \cite[\S VII.5, Proposition 5.5]{S1}). One has $j = -1728(4A^3) / \Delta$ and so $3 v_p(A) \geq v_p(\Delta) = 10 \implies 3 v_p(A) > v_p(\Delta) \implies v_p(\Delta) = 2v_p(B)$, so $v_p(B) = 5$. Thus $\Delta = p^{10} \cdot \alpha$ with $\alpha \equiv -27 \cdot \square \pmod p$, and we conclude as above.    
 
 \vspace{1em}
 
@@ -238,9 +239,9 @@ since $3 \nmid|P_p|$. Therefore we may compute the number of subgroups divisible
 \end{prop}
 
 \begin{proof}
-The fact that $T_{\fP \mid p}(\Theta)  h(\Psi) \mod \bQ^{\times 2}$ has been observed above.
+The fact that $T_{\fP \mid p}(\Theta) \equiv h(\Psi) \mod \bQ^{\times 2}$ has been observed above.
 Let $\psi_3$ be an irreducible character of $D_p$ of order $3$. One has that $ \langle \Ind_{C_{l / l'}}^{C_l} \trivial , \psi_3 \rangle =  1$ when $3 \mid l'$ and is zero when  $3 \nmid l'$. 
-Thus $$h(\Psi) = 3^{\langle \bC[C_l / \Psi], \psi_3 \rangle}.$$ As in the proof of Proposition \ref{index-fn-trivial}, write $\bC[C_l / \Psi] = \sum_{l' \mid l} a_{l'} \chi_{l'}$, where $\chi_{l'}$ is an irreducible rational character of $C_l$ with kernel of index $l'$. Observe that $\langle \chi_{l'}, \psi_3 \rangle = 0$ unless $l' = 3$, in which case it is $1$. Therefore $h(\Psi) \equiv 3^{a_3} \mod \bQ^{\times 2}$. In the proof of Proposition \ref{index-fn-trivial}, we showed that $a_3$ is even unless $\ff \mid 3$,  i.e. that $\bQ(\rho) = \bQ(\sqrt{-3})$. But then $3$ is a norm in $\bQ(\rho)$. Thus we see that in all cases $T_{\fP \mid p}(\Theta) \in N_{\bQ(\rho) / \bQ}(\bQ(\rho)^{\times})$. 
+Thus $$h(\Psi) = 3^{\langle \bC[C_l / \Psi], \psi_3 \rangle}.$$ As in the proof of Proposition \ref{index-fn-trivial}, write $\bC[C_l / \Psi] = \sum_{l' \mid l} a_{l'} \chi_{l'}$, where $\chi_{l'}$ is an irreducible rational character, of $C_l$ with kernel of index $l'$. Observe that $\langle \chi_{l'}, \psi_3 \rangle = 0$ unless $l' = 3$, in which case it is $1$. Therefore $h(\Psi) \equiv 3^{a_3} \mod \bQ^{\times 2}$. In the proof of Proposition \ref{index-fn-trivial}, we showed that $a_3$ is even unless $\ff \mid 3$,  i.e. that $\bQ(\rho) = \bQ(\sqrt{-3})$. But then $3$ is a norm in $\bQ(\rho)$. Thus we see that in all cases $T_{\fP \mid p}(\Theta) \in N_{\bQ(\rho) / \bQ}(\bQ(\rho)^{\times})$. 
 \end{proof}
 
 We have observed that for all reduction types of $E / \bQ_p$, one always has $T_{\fP \mid p} \cdot D_{\fP \mid p}(\Theta) \in \fieldnorm{\rho}$, and so $C(\Theta) \in \fieldnorm{\rho}$, completing the proof of Theorem \ref{odd-exts}.
