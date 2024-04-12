@@ -18,7 +18,7 @@ The product of BSD terms on the LHS of \eqref{eqn_rank} involve regulators, the 
     Let $E$ be an elliptic curve over a number field $K$. If $\Sha_{E/K}$ is finite, then $|\Sha_{E/K}|$ is a square.
 \end{thm}
 
-Rational squares are not necessarily the norms of general number fields, but they are always norms of quadratic number fields. Furthermore, if $\QQ(\sqrt{D})$ is a quadratic subfield fo $\QQ(\rho)$, then the RHS of \eqref{eqn_rank} is also the norm of an element of $\QQ(\sqrt{D})$ and a rational square if $m$ is even. Under the assumption of finiteness of $\Sha$, we know that $|\Sha_{E/F}|$ and $|E(F)_{tors}|^2$ are rational squares and therefore norms of $\QQ(\sqrt{D})$. The only remaining terms on the LHS of \eqref{eqn_rank} are the product of local factors $C_{E/F_i}$ and $C_{E/F'_j}$. We have therefore proven the following.
+Rational squares are not necessarily the norms of general number fields, but they are always norms of quadratic number fields. Furthermore, if $\QQ(\sqrt{D})$ is a quadratic subfield fo $\QQ(\rho)$, then the RHS of \eqref{eqn_rank} is also the norm of an element of $\QQ(\sqrt{D})$ and a rational square if $m$ is even. Under the assumption of finiteness of $\Sha$, we know that $|\Sha_{E/F}|$ and $|E(F)_{\tors}|^2$ are rational squares and therefore norms of $\QQ(\sqrt{D})$. The only remaining terms on the LHS of \eqref{eqn_rank} are the product of local factors $C_{E/F_i}$ and $C_{E/F'_j}$. We have therefore proven the following.
 
 \begin{thm}\cite[Theorem 33]{DEW1} \label{thm_positive_rank}
     Suppose Conjecture \ref*{conj_4} holds. Let $E/\QQ$ be an elliptic curve, $F/\QQ$ a finite Galois extension with Galois group $G$, $\rho \in \R(G)$ and  
@@ -26,7 +26,7 @@ Rational squares are not necessarily the norms of general number fields, but the
     for some $m\geq 1$ and subfields $F_i,F'_j\subseteq F$. If either $\frac{\prod_i C_{E/F_i}}{\prod_j C_{E/F'_j}}$ is not a norm from some quadratic subfield $\QQ(\sqrt{D})\subseteq\QQ(\rho)$, or if it is not a rational square when $m$ is even, then $E$ has a point of infinite order over $F$.
 \end{thm}
 
-This is a remarkable result, since it can predict positive rank of general families of elliptic curves based solely on local data. In later sections, we will aim to show that the product of local factors is indeed a norm in quadratic subextension of the field of values, and the following notation, which expands on Notation \ref*{not_contr} will be useful.
+This is a remarkable result, since it can predict positive rank of general families of elliptic curves based solely on local data. Let us call applying this theorem a "norm relations test". In later sections, we will aim to show that the product of local factors is indeed a norm in quadratic subextension of the field of values, and the following notation, which expands on Notation \ref*{not_contr} will be useful.
 
 \begin{notation} \label{not_total_contr}
     Let $F$, $\rho$, $m$ and the fields $F_i,F'_j$ be as in Theorem \ref*{thm_positive_rank}. Let $K$ be a subfield of $F$ and $\pp$ a prime of $K$. Then we define
@@ -44,19 +44,6 @@ Replacing $\rho$ by the sum of its conjugates by elements of $ \Gal(\bQ(\rho) / 
 Let $\Theta$ be a $\rho$-relation with $\bC[G / \Theta] = \repnorm{\rho}^{\oplus m}$. Let $C \colon \B(G) \to \bQ^{\times}$ be the function sending $H \mapsto C_{E / F^H}$. The theorem then states that, if $\Theta$ is not a norm relation for $C$ when $m$ is odd, or if $C(\Theta) \not\in \bQ^{\times 2}$ for $m$ even, then $ \rk E / F > 0$. 
 \end{rem}
 
+\input{section_rank/root_numbers.tex}
 
-%\subsection{Parity tests vs. norm relations tests}
-
-%Let $K$ be a number field and $E / K$ an elliptic curve. The parity conjecture states that the rank of $E / K$ is determined by the global root number $w(E / K) \in \{ \pm 1 \}$, that is
-
-%\begin{conj}
-%    $(-1)^{\rk E / K} = w(E / K).$
-%\end{conj}
-
-%{\color{red} This is known when... }
-
-%Therefore if $w(E / K) = -1$, one has that $\rk E / K$ is odd, in particular $\rk E / K > 0$. Therefore the computation of root numbers can force an elliptic curve to have positive rank. 
-
-%As expected, the global root number is a product of local root numbers 
-%\[ w(E / K) = \prod_v w(E / K_v), \]
-%taking the product over all places (including infinite ones) of $K$. 
+\input{section_rank/examples.tex}

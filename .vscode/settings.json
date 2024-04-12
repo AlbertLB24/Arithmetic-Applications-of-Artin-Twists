@@ -32,5 +32,8 @@
         "unramified",
         "Vect",
         "Weil"
+    ],
+    "cSpell.ignoreWords": [
+        "globmin"
     ]
 }

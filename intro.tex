@@ -1,4 +1,16 @@
+The Birch--Swinnerton-Dyer conjecture has long been exploited to obtain arithmetical information about elliptic curves. Firstly, it relates the rank of an elliptic curve over a number field to the order of vanishing of its $L$-function $L(E / K, s)$ at $s = 1$. Secondly, and more astonishingly, it relates the leading term of the Taylor series of $L(E / K, s)$ at $s = 1$ to a myriad of quantities associated to $E$;  regulators, Tamagawa numbers, size of torsion subgroup and size of Tate-Shafarevich group, discriminant, periods ... {\color{red} maybe we just put in expression haha}
+
+
+
 In this report we study a method proposed in \cite{DEW1} for forcing points of infinite order on elliptic curves over finite extensions $F / \bQ$. 
+
+The main idea is to apply Artin formalism of twisted $L$-functions of elliptic curves to force constraints on the the terms in the BSD quotients.
+
+
+
+%Let $E / \bQ$ be an elliptic curve, and consider a finite Galois extension $F / \bQ$ with $G = \Gal(G / \bQ)$. Then $E(F) \otimes_{\bZ} \bQ$ is a $\bQ G$-module, of dimension equal to $\rk E / F$. Therefore 
+
+
 
 \subsection*{Notation}
 Let $G$ be a finite group. We use the following notation for characters:
@@ -17,6 +29,7 @@ Let $G$ be a finite group. We use the following notation for characters:
     $\C(G)$ & the finite abelian group $\Char_{\bQ}(G) / \Perm(G)$, \\ 
     %$m(\rho)$ & the Schur Index of an irreducible complex character $\rho$ over $\bQ(\rho)$, \\
     $\repnorm{\rho}$ &  $ = \sum_{\sigma \in \Gal(\bQ(\rho) / \bQ)} \rho^{\sigma}$, where $\rho \in \R(G)$ (Definition \ref{rho-norm}),\\
+    $\rho^*$ & the character associated to the dual of the representation associated to $\rho$,
     \\
     $H^{x}$ & $= xHx^{-1}$  for $H \leq G$ a subgroup of a group $G$ and $x \in G$,\\
     $p^*$ & defined for an odd prime $p$. If $p \equiv 1 \pmod 4$, $p^* = p$. If $p \equiv 3 \pmod 4$, $p^* = -p$
