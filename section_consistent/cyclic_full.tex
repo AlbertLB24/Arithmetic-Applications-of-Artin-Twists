@@ -1,11 +1,18 @@
 \subsection{Cyclic Extensions}
-In this subsection we prove the following. 
+In this section we prove the following. 
 \begin{thm}\label{thm_consistent_cyclic}
-    Let $E/\QQ$ be a semistable elliptic curve and let $F$ be a finite cyclic Galois extension of $\QQ$, so that $\Gal(F/\QQ)=C_d$ for some $d\geq 2$. Let $\chi$ be a faithful character of $C_d$ (so that $\QQ(\chi)=\QQ(\zeta_d)$), and let $F_i,F'_j\subseteq F$ be such that
+    Let $d\geq2$ be a positive integer and let $f/\QQ$ be a Galois extension so that $\Gal(F/\QQ)=C_d$. Let $\chi$ be a faithful character of $C_d$ (so that $\QQ(\chi)=\QQ(\zeta_d)$), and let $F_i,F'_j\subseteq F$ be such that
     $$\bigoplus_{\fg\in\Gal(\QQ(\zeta_d)/\QQ)}\chi^{\fg}=\bigoplus_i\Ind_{F_i/\QQ}\mathds{1}\ominus\bigoplus_j\Ind_{F'_j/\QQ}\mathds{1}.$$
+
+    Let $E/\QQ$ be an elliptic curve such that
+    \begin{itemize}
+        \item it is semistable if $d=2^l$, or
+        \item it is semistable at $2$ and $3$ if $d$ is divisible by some odd prime $q$.
+    \end{itemize}
+
     Then for any $\QQ(\sqrt{D})\subseteq\QQ(\zeta_d)$,
     $$\frac{\prod_i C_{E/F_i}}{\prod_j C_{E/F_j'}}$$
-    is a norm of $\QQ(\sqrt{D})$. Moreover, the contribution is always the square of rational number unless $d=2^n, p^n,2p^n$ for some odd prime $p$.
+    is a norm of $\QQ(\sqrt{D})$. 
 \end{thm}
 
 The first step in proving Theorem \ref{thm_consistent_cyclic} is to show that the fields $F_i, F'_j$ exist, and to give a precise description. Recall that for each $k\mid d$ the cyclic group $C_d$ has one unique subgroup of order $k$, which is of course also cyclic. Therefore, for each $k\mid d$, there is one unique subfield $L_k$ of $F$ of degree $k$ over $\QQ$ which is also cyclic. Under the Galois correspondence, this field corresponds to the subgroup $H_k=\Gal(F/L_k)=C_{d/k}$.
@@ -57,7 +64,7 @@ For the first case, we assume that $d$ is odd. Following the observation in Rema
 \begin{proof}
     Fix some prime $\pp$ in $K$ and note that since the extension $L/K$ is cyclic, the splitting behaviour of $\pp$ in $L$ is determined by the ramification index $e_\pp$ and the residual degree $f_\pp$. Since $\contr_\chi(\pp)=1$ if $E$ has good reduction at $\pp$, we assume that $E$ bad reduction at $\pp$. If $\pp$ has multiplicative reduction, then $D_{\fP\mid\pp}(F/K)=1$ and the following table records the contribution of the Tamagawa numbers of $\pp$ depending on $e_\pp$ and $f_\pp$, and the entries for split and non-split multiplicative reduction of type $\mathrm{I}_n$ are separated by a ``;''. To complete these calculations, we use repeatedly Proposition \ref{prop_semi_red} and Lemmas \ref{lem_mult_tam} and \ref{lem_add_tam}. We also use Notation \ref{not_n}.
 
-    \begin{table}[!ht]
+    \begin{table}[!ht]\label{table_Cp}
         \centering
         \begin{tabular}{|l|l|l|l|l|}
         \hline
@@ -66,6 +73,7 @@ For the first case, we assume that $d$ is odd. Following the observation in Rema
         $q$ & $1$ & $n;\tilde{n}$ & $qn;\tilde{n}$ & $q\square;\square$ \\ \hline
         $1$ & $q$ & $n;\tilde{n}$ & $n;\tilde{n}$ & $\square$ \\ \hline
         \end{tabular}
+        \caption{Contribution of semistable reduction primes in a $C_q$ extension.}
     \end{table}
 
     Since $q$ is indeed a norm from $\QQ(\sqrt{q^*})$ by Lemma \ref{p-norm}, it follows that $\contr_\chi(\pp)$ is a norm from $\QQ(\sqrt{q^*})$ as well.
@@ -77,11 +85,11 @@ For the first case, we assume that $d$ is odd. Following the observation in Rema
     Therefore, $p$ splits in $\QQ(\sqrt{q^*})$ and by Lemma \textbf{insert relevant thm here}, it follows that $p$ is a norm from $\QQ(\sqrt{q^*})$. 
     Finally, we need to consider the Tamagawa numbers. Note that since $q$ is odd, if $\fP$ is any prime in $F$ above $\pp$, then $\sqrt{D}\in K_\pp$ if and only if $\sqrt{D}\in L_\fP$ for any $D\in\QQ$. Moreover, if $q\neq 3$, then $\gcd(e_{\fP\mid\pp},12)=1$ and by Lemma \ref{lem_add_tam}, $c_\pp(E/K)=c_\fP(E/F)$. Since the number of primes $\fP$ in $L$ above $\fp$ is odd, we get a square in this case. If $q=3$ and $\pp$ is unramified in $L/K$, then $e_{\fP\mid\pp}=1$ and the same reasoning shows that we get a square in this case. 
 
-    So now assume that $q=3$ and that $L\fP/K_\pp$ is ramified. Let $n=\nu_\pp(\Delta_{E,\pp}^{\min})$ be the valuation of the minimal discriminant of $E$ at $\pp$. By Lemma \ref{lem_add_tam}, we can obtain factors of $2$ and $3$. Since $3$ is a norm from $\QQ(\sqrt{-3})$, we only need to take care of the factors of $2$, which can only arise if $F_\fP/K_\pp$ is ramified, $\gcd(n,10)=2$ and $\sqrt{\Delta}\not\in K_\pp$. However, we claim that this cannot happen, implying that the contribution must be a norm from $\QQ(\sqrt{-3})$. This is a non-trivial proof, so we prove it as a separate lemma, from which this result follows. 
+    So now assume that $q=3$ and that $L_\fP/K_\pp$ is ramified. Let $n=\nu_\pp(\Delta_{E,\pp}^{\min})$ be the valuation of the minimal discriminant of $E$ at $\pp$. By Lemma \ref{lem_add_tam}, we can obtain factors of $2$ and $3$. Since $3$ is a norm from $\QQ(\sqrt{-3})$, we only need to take care of the factors of $2$, which can only arise if $F_\fP/K_\pp$ is ramified, $\gcd(n,10)=2$ and $\sqrt{\Delta}\not\in K_\pp$. However, we claim that this cannot happen, implying that the contribution must be a norm from $\QQ(\sqrt{-3})$. This is a non-trivial proof, so we prove it as a separate lemma, from which this result follows. 
 \end{proof}
 
 \begin{lemma}\label{lem_nottwo}
-    Let $p\geq 5$ be a rational prime and $L_\fP/K_\fp/\QQ_p$ be finite extensions with $L_\fP/K_\fp$ Galois, ramified and $\Gal(L_\fP/K_\fp)=C_3$. Let $$E/\QQ_p:y^2=x^3+Ax+B$$ be a minimal Weierstrass equation at $\pp$ with potentially good reduction. Let $x=\nu_\pp(\Delta)$ be the valuation of the minimal discriminant. If $\gcd(n,12)=2$, then $\sqrt{\Delta}\in K_\pp$.
+    Let $p\geq 5$ be a rational prime and $L_\fP/K_\fp/\QQ_p$ be finite extensions with $L_\fP/K_\fp$ Galois, ramified and $\Gal(L_\fP/K_\fp)=C_3$. Let $$E/\QQ_p:y^2=x^3+Ax+B$$ be a minimal Weierstrass equation at $\pp$ with potentially good reduction. Let $n=\nu_\pp(\Delta)$ be the valuation of the minimal discriminant. If $\gcd(n,12)=2$, then $\sqrt{\Delta}\in K_\pp$.
 \end{lemma}
 
 \begin{proof}
@@ -131,19 +139,20 @@ Next, we prove an analogous result for $C_{pq}$ extensions, where $p$ and $q$ ar
         $r$ & $q$ & $n;\tilde{n}$ & $n;\tilde{n}$ & $rn;\tilde{n}$ & $rn;\tilde{n}$ & $\square$ \\ \hline
         $qr$ & $1$ & $n;\tilde{n}$ & $qn;\tilde{n}$ & $rn;\tilde{n}$ & $qrn;\tilde{n}$ & $\square$ \\ \hline
         \end{tabular}
+        \caption{Contribution of semistable reduction primes in a $C_{qr}$ extension.}
     \end{table}
 
     Assume instead that $\pp$ has additive reduction. It is straightforward to check that $\prod_{k\mid qr}T_{\fP\mid\fp}(E/L_k)^{\mu(qr/k)}$ is a rational square. Indeed, since $q$ and $r$ are distinct odd primes, we may assume that $q\neq 3$. In that case, both $L_q/K$ and $F/L_r$ are $C_q$ extensions, and from the proof of Lemma \ref*{lem_Cp}, the Tamagawa numbers of both extensions contribute a rational square.
     
     To compute the contribution of the $D_{\fP\mid\fp}$ terms, we note that by reescaling $\Delta_E$, the value of 
     $$\frac{D_{\fP\mid\fp}(E/K)D_{\fP\mid\fp}(E/F)}{D_{\fP\mid\fp}(E/L_q)D_{\fP\mid\fp}(E/L_r)}$$
-    does not change up to squares and hence we might assume that $\Delta_E=\Delta_{E,\pp}^{\min}$ and let $x=\nu_\pp(\Delta_{E,\pp}^{\min})$. Under this assumtion, we note that $D_{\fP\mid\fp}(E/L_k)=1$ for every $k$ unless $\pp$ ramifies $F/K$. 
+    does not change up to squares and hence we might assume that $\Delta_E=\Delta_{E,\pp}^{\min}$ and let $n=\nu_\pp(\Delta_{E,\pp}^{\min})$. Under this assumtion, we note that $D_{\fP\mid\fp}(E/L_k)=1$ for every $k$ unless $\pp$ ramifies $F/K$. 
     
     Suppose first that $e_\pp=r$, so $\pp$ is unramified in $L_q/K$. A simple calculation shows that 
-    $$D_{\fP\mid\fp}(E/L_k)=D_{\fP\mid\fp}(E/L_r)=1,\quad D_{\fP\mid\fp}(E/L_q)=N(\pp)^{\floor{\frac{px}{12}}}\quad\text{and}\quad D_{\fP\mid\fp}(E/F)=N(\pp)^{r\floor{\frac{px}{12}}},$$
-    and therefore the total contribution is $N(\pp)^{(r-1)\floor{px/12}}$, a rational square. The case $e_\pp=r$ is analogous. Finally, if $\pp$ ramifies everywhere, then a similar calculation shows that the total contribution of these terms is 
-    $$N(\pp)^{\floor{\frac{pqx}{12}}-\floor{\frac{px}{12}}-\floor{\frac{qx}{12}}}.$$
-    This may seem promising; but nevertheless the parity of the exponent only depends on $p,q,x$ modulo $12$, and for $p,q\in\{1,5,7,11\}$ (they are odd primes) and $x\in\{2,3,4,6,8,9,10\}$ (the valuation of the minimal discriminant must be relatively prime to $12$) the exponent is always even. Hence, the contribution is also a square, and we are done. 
+    $$D_{\fP\mid\fp}(E/L_k)=D_{\fP\mid\fp}(E/L_r)=1,\quad D_{\fP\mid\fp}(E/L_q)=N(\pp)^{\floor{\frac{pn}{12}}}\quad\text{and}\quad D_{\fP\mid\fp}(E/F)=N(\pp)^{r\floor{\frac{pn}{12}}},$$
+    and therefore the total contribution is $N(\pp)^{(r-1)\floor{pn/12}}$, a rational square. The case $e_\pp=r$ is analogous. Finally, if $\pp$ ramifies everywhere, then a similar calculation shows that the total contribution of these terms is 
+    $$N(\pp)^{\floor{\frac{pqn}{12}}-\floor{\frac{pn}{12}}-\floor{\frac{qn}{12}}}.$$
+    This may seem promising; but nevertheless the parity of the exponent only depends on $p,q,n$ modulo $12$, and for $p,q\in\{1,5,7,11\}$ (they are odd primes) and $n\in\{2,3,4,6,8,9,10\}$ (the valuation of the minimal discriminant must be relatively prime to $12$) the exponent is always even. Hence, the contribution is also a square, and we are done. 
 
     \begin{figure}[!ht]
         \centering
@@ -252,15 +261,16 @@ A bit more care is required to prove Theorem \ref{thm_consistent_cyclic} for eve
         $2$ & $q$ & $n;\tilde{n}$ & $n;\tilde{n}$ & $2n;1$ & $2n;1$ & $\square$ \\ \hline
         $2q$ & $1$ & $n;\tilde{n}$ & $qn;\tilde{n}$ & $2n;1$ & $2qn;1$ & $\square$ \\ \hline
         \end{tabular}
+        \caption{Contribution of semistable reduction primes in a $C_{2q}$ extension.}
     \end{table}
 
     Since $q$ is a norm from $\QQ(\sqrt{q^*})$, then $\contr_\chi(\pp)$ is also a norm. Now assume that $\pp$ has addtiive reduction and let $p\ZZ=\pp\cap\QQ$. We first consider the contribution of the Tamagawa numbers. Note that $L_q/K$ and $F/L_2$ are $C_q$ extensions and therefore their contribution is a square if $q\neq 3$ and a square up to factors of $3$ if $q=3$. In either case, this is a norm from $\QQ(\sqrt{q^*})$.
 
-    Finally, we consider the contribution of the $D_{\fP\mid\fp}$ terms. By reescaling $\Delta_E$, the contribution does not change up to squares, so we assume that $\Delta_E=\Delta_{E,\pp}^{\min}$ and let $x=\nu_\pp(\Delta_{E,\pp}^{\min})$. Under this assumption, all terms cancel unless $\pp$ ramifies in $F$. If $e_\pp=2$, then 
+    Finally, we consider the contribution of the $D_{\fP\mid\fp}$ terms. By reescaling $\Delta_E$, the contribution does not change up to squares, so we assume that $\Delta_E=\Delta_{E,\pp}^{\min}$ and let $n=\nu_\pp(\Delta_{E,\pp}^{\min})$. Under this assumption, all terms cancel unless $\pp$ ramifies in $F$. If $e_\pp=2$, then 
     \begin{equation}\label{eqn_ep=2}
-        D_{\fP\mid\fp}(E/K)=D_{\fP\mid\fp}(E/L_q)=1,\quad D_{\fP\mid\fp}(E/L_2)=N(\pp)^{\floor{\frac{2x}{12}}}\quad\text{and}\quad D_{\fP\mid\fp}(E/F)=N(\pp)^{q\floor{\frac{2x}{12}}},
+        D_{\fP\mid\fp}(E/K)=D_{\fP\mid\fp}(E/L_q)=1,\quad D_{\fP\mid\fp}(E/L_2)=N(\pp)^{\floor{\frac{2n}{12}}}\quad\text{and}\quad D_{\fP\mid\fp}(E/F)=N(\pp)^{q\floor{\frac{2n}{12}}},
     \end{equation}
-    and therefore the total contribution is $N(\pp)^{(r-1)\floor{x/6}}$, a rational square. If $q\mid e_\pp$, then $q\mid N(\pp)-1$ by Proposition \ref{prop_totally_ramified}. The reasoning is now identical to Lemma \ref{lem_Cp}. Writing $N(\pp)=p^s,\ s\geq1$ and note that the contribution is a square if $s$ is even and a square up to multiples of $p$ if $s$ is odd. However, in the latter case, $p=q$ if $(L_q)_\fP/K_\pp$ is wildly ramified and $p$ splits in $\QQ(q^*)$ if $(L_q)_\fP/K_\pp$ is tamely ramified. In either case, $p$ is a norm from $\QQ(\sqrt{q^*})$.   
+    and therefore the total contribution is $N(\pp)^{(r-1)\floor{n/6}}$, a rational square. If $q\mid e_\pp$, then $q\mid N(\pp)-1$ by Proposition \ref{prop_totally_ramified}. The reasoning is now identical to Lemma \ref{lem_Cp}. Writing $N(\pp)=p^s,\ s\geq1$ and note that the contribution is a square if $s$ is even and a square up to multiples of $p$ if $s$ is odd. However, in the latter case, $p=q$ if $(L_q)_\fP/K_\pp$ is wildly ramified and $p$ splits in $\QQ(q^*)$ if $(L_q)_\fP/K_\pp$ is tamely ramified. In either case, $p$ is a norm from $\QQ(\sqrt{q^*})$.   
 
     The result follows again from \eqref{eqn_local_contr}.
 
@@ -302,9 +312,9 @@ However, as soon as $d$ is divisible by $4$, the product of local factors is a r
 
     Assume now that $E$ has additive reduction over $\bar\pp$. When $q=3$, controlling the Tamagawa numbers is lengthy, so we leave it for the end. We consider first the contribution from the $D_{\fP\mid\fp}$ terms, which is trivial unless $\bar\pp$ ramifies in $L/F_2$ (equivalently, $\pp$ ramifies in $L/K$). If $\pp$ is inert in $L_2/K$, then $N(\bar{\pp})$ is square and hence the size of all residues fields above $\pp$ are also squares. By Lemma \ref{lem_Dterms}, we get squared contribution. If $\pp=\bar\pp\bar\pp'$ splits, then $D_{\fP\mid\bar\fp}(E/L_k)=D_{\fP\mid\bar\fp'}(E/L_k)$ for every $k$, and therefore the contribution from $\pp$ is a square too. Hence, $\pp=\bar\pp^2$ ramifies in $L_2/K$, which implies that $\bar\fp$ also ramifies in $L_4/L_2$. On the other hand, if $\bar\pp$ is unramified at $L_{2q}/L_2$, \eqref{eqn_ep=2} during the proof of Lemma \ref{lem_C2p} shows that the contribution is also a square. 
 
-    We are therefore left with the case where $\pp$ is totally ramified in $F/K$, and Propostion \ref{prop_totally_ramified} implies that $4q\mid N(\pp)-1$. Assuming again that $\Delta_E=\Delta_{E,\pp}^{\min}$ and letting $x=\nu_{\pp}(\Delta_{E,\pp}^{\min})$, Lemma \ref{lem_Dterms} imples that the $D_{\fP\mid\fp}$ terms contribute a total of 
-    $$N(\pp)^{\floor{\frac{x}{6}}-\floor{\frac{x}{3}}-\floor{\frac{qx}{6}}+\floor{\frac{qx}{3}}}.$$
-    Again, the parity of the expression only depends on $q,x\pmod{12}$. One can easily check that for $x\in\{2,3,4,6,8,9,10\}$, the above expression is a square unless $q\equiv 3\pmod{4}$. Write $N(\pp)=p^s$, which satisfies $p^s\equiv1\pmod{4q}$. If $s$ is even, then the contribution is clearly a square, so assume that $s$ is odd. Since $p^s\equiv1\pmod{4}$, this implies that $p\equiv1\pmod{4}$ and hence $p$ is a norm from $\QQ(i)$, which implies that $\contr_\chi(\pp)$ is a norm from $\QQ(i)$ too. Furthermore, the fact that $p^s\equiv1\pmod{4q}$ implies that
+    We are therefore left with the case where $\pp$ is totally ramified in $F/K$, and Propostion \ref{prop_totally_ramified} implies that $4q\mid N(\pp)-1$. Assuming again that $\Delta_E=\Delta_{E,\pp}^{\min}$ and letting $n=\nu_{\pp}(\Delta_{E,\pp}^{\min})$, Lemma \ref{lem_Dterms} imples that the $D_{\fP\mid\fp}$ terms contribute a total of 
+    $$N(\pp)^{\floor{\frac{n}{6}}-\floor{\frac{n}{3}}-\floor{\frac{qn}{6}}+\floor{\frac{qn}{3}}}.$$
+    Again, the parity of the expression only depends on $q,n\pmod{12}$. One can easily check that for $n\in\{2,3,4,6,8,9,10\}$, the above expression is a square unless $q\equiv 3\pmod{4}$. Write $N(\pp)=p^s$, which satisfies $p^s\equiv1\pmod{4q}$. If $s$ is even, then the contribution is clearly a square, so assume that $s$ is odd. Since $p^s\equiv1\pmod{4}$, this implies that $p\equiv1\pmod{4}$ and hence $p$ is a norm from $\QQ(i)$, which implies that $\contr_\chi(\pp)$ is a norm from $\QQ(i)$ too. Furthermore, the fact that $p^s\equiv1\pmod{4q}$ implies that
     $$\left(\frac{-q}{p}\right)=\left(\frac{q}{p}\right)=\left(\frac{p}{q}\right)=\left(\frac{p^s}{q}\right)=1,$$
     and therefore $p$ splits both in $\QQ(\sqrt{q})$ and $\QQ(\sqrt{-q})$. Since both fields have odd class number (Theorem \ref{thm_class_number}), it follows that $p$, and therefore $N(\pp)$ are norms from $\QQ(\sqrt{q})$ and $\QQ(\sqrt{-q})$ as desired. 
 
@@ -331,23 +341,27 @@ However, as soon as $d$ is divisible by $4$, the product of local factors is a r
 
 We are now ready to prove Theorem \ref{thm_consistent_cyclic} for even $d$. We break down the proof into three cases:
 
-\subsubsection*{Case 1: $d$ is not divisible by any odd prime, so $d=2^l$}
-If $l=1$, then $\QQ(\zeta_2)=\QQ$, so there is nothing to prove, so assume that $l\geq2$. If $\Gal(F/\QQ)=C_{2^l}$, then 
-$$\frac{\prod_i C_{E/F_i}}{\prod_j C_{E/F'_j}}=\frac{C_{E/F}}{C_{E/L_{2^{l-1}}}},$$
-and by Lemma \ref{lem_Cp}, we know that this is a rational square up to factors of $2$, so it suffices to show that $2$ is a norm of every quadratic subfield of $\QQ(\zeta_{2^l})$. A standard argument shows that $\Gal(\QQ(\zeta_{2^l})/\QQ)=(\ZZ/2^l\ZZ)^*=C_{2^{l-2}}\times C_2$ and therefore $\QQ(\zeta_{2^l})$ has $\QQ(i)$ as its unique quadratic subextension if $l=2$ and has three quadratic subextensions if $l\geq 3$. Note that $\zeta_8=(1+i)/\sqrt{2}$ and therefore $\QQ(\zeta_8)=\QQ(i,\sqrt{2})$. The three quadratic subextensions are therefore $\QQ(i), \QQ(\sqrt{2})$ and $\QQ(\sqrt{-2})$. Then the result follows from the fact that 
-$$2=\Norm_{\QQ(i)}(1+i)=\Norm_{\QQ(\sqrt{-2})}(2)=\Norm_{\QQ(\sqrt{2})}(2+\sqrt{2}).$$
-
 \subsubsection*{Case 1: $d$ is divisible by at least two odd primes}
 Let $K=L_{d/\rad(d)}$ be as in Remark \ref{rem_radical} such that $\Gal(F/K)=C_{\rad(d)}$ and all fields appearing in the product of local factors contain $K$. Then using the same idea as in Lemma \ref{lem_Cd_odd}, let 
 $$\mathcal{A}=\{L_k\supseteq K:2\nmid [L_k:K]\}\quad\text{and}\quad\mathcal{B}=\{L_k\supseteq K:2\mid [L_k:K]\}.$$
 Then the fields in $\mathcal{A}$ and $\mathcal{B}$ are the intermediate fields of (distinct!) $C_{\rad(d)/2}$ extensions. These are odd cyclic extensions, and therefore by Lemma \ref{lem_Cd_odd} the contribution is a rational square and therefore a norm from any quadratic extension.
 
-\subsubsection*{Case 3: $d$ is divisible by one odd prime}
-In this case, write $d=2^lp^n$ and let $L_k$ be the fields as above. In this case, we note that 
-$$\frac{\prod_i C_{E/F_i}}{\prod_j C_{E/F'_j}}=\frac{C_{E/F}C_{E/L_{d/2p}}}{C_{E/L_{d/2}}C_{E/L_{d/p}}}.$$
-By Lemma \ref{lem_Cp}, we know that this product is a square up to multiples of $p$. If $l=1$, then $\Gal(\QQ(\zeta_{2p^n})/\QQ)=(\ZZ/2p^n\ZZ)^*=(\ZZ/p^n\ZZ)^*$ is cyclic, and therefore the unique quadratic subfield is $\QQ(\sqrt{p^*})$, and we already know that $p$ is a norm of this field.
+\subsubsection*{Case 2: $d$ is divisible by one odd prime}
+In this case, write $d=2^lq^n$ and let $L_k$ be the fields as above. In this case, we note that
+\begin{equation}\label{eq_C2pterms}
+    \frac{\prod_i C_{E/F_i}}{\prod_j C_{E/F'_j}}=\frac{C_{E/F}C_{E/L_{d/2q}}}{C_{E/L_{d/2}}C_{E/L_{d/q}}}.
+\end{equation} 
 
-From Lemma \ref{lem_C2p} that the contribution of $p$ comes from those primes $\pp$ in $L_{d/2p}$ such that they ramify in $L_{d/2}$ and they split in $L_{d/p}$. However, as in the proof of Lemma \ref{lem_C4p}, the prime $\bar{\pp}=\pp\cap L_{d/4p}$ must also split in $L_{d/2p}$ so $\bar{\pp}=\pp\pp'$ for $\pp'\neq\pp$ in $L_{d/2p}$. Since $\pp$ and $\pp'$ have the same splitting behaviour, they give the same contribution. Hence, the product of local terms is in fact a rational square and therefore the norm of any quadratic extension.
+If $l=1$, then we know from Lemma \ref{lem_subfields} that the only subfield of $\QQ(\zeta_{2q^n})$ is $\QQ(\sqrt{q^*})$. By Lemma \ref{lem_C2p}, it follows that \eqref{eq_C2pterms} is a norm from $\QQ(\sqrt{q^*})$, as desired.
 
-This concludes the proof of Theorem \ref{thm_consistent_cyclic}, and we have in addition shown that the contribution is always a square except when $d=2^n,p^n$ or $2p^n$, where $p$ is an odd rational prime.
+Instead, if $l\geq2$, we consider the $C_{4q}$ extension $F/L_{d/4q}$, and all fields appearing in \eqref{eq_C2pterms} cointain $L_{d/4q}$. Hence, Lemma \ref{lem_C4p} shows that the product of local terms is a norm from $\QQ(i), \QQ(\sqrt{q})$ and $\QQ(\sqrt{-q})$. By Lemma \ref{lem_subfields}, these are all quadratic subfields of $\QQ(\zeta_{2^lp^n})$, 
+
+\subsubsection*{Case 3: $d$ is not divisible by any odd prime, so $d=2^l$}
+
+When $d$ is not divisible by any odd prime, then we assume that $E$ has no primes of additive reduction. If $l=1$, then $\QQ(\zeta_2)=\QQ$, so there is nothing to prove, so assume that $l\geq2$. If $\Gal(F/\QQ)=C_{2^l}$, then 
+$$\frac{\prod_i C_{E/F_i}}{\prod_j C_{E/F'_j}}=\frac{C_{E/F}}{C_{E/L_{2^{l-1}}}},$$
+and $F/L_{2^{l-1}}$ is a $C_2$ extension and we remark that Table \ref{table_Cp} also applies for $q=2$. This means that $\contr_\chi(\pp)$ is a rational prime up to factors of $2$ for any prime $\pp$ of $L^{2^{l-1}}$. Lemma \ref{lem_subfields} shows that the only subfields of $\QQ(\zeta_{2^{l-1}})$ are $\QQ(i),\QQ(\sqrt{2})$ and $\QQ(\sqrt{-2})$, and since 
+$$2=\Norm_{\QQ(i)}(1+i)=\Norm_{\QQ(\sqrt{-2})}(2)=\Norm_{\QQ(\sqrt{2})}(2+\sqrt{2}),$$
+it follows that $\contr_\chi(\pp)$ is a norm from every quadratic subfield of $\QQ(\chi)$, and the result follows.
+
 \qed

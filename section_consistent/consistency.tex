@@ -14,9 +14,9 @@ is always a norm for every subfield $\QQ(\sqrt{D})\subseteq\QQ(\rho)$. Before we
         \multirow{3}{*}{$\QQ(\zeta_{2^m})$}  & $m=1$      & none                                  \\ \cline{2-3} 
                                              & $m=2$      & $\QQ(i)$                              \\ \cline{2-3} 
                                              & $m\geq3$   & $\QQ(i),\QQ(\sqrt{2}),\QQ(\sqrt{-2})$ \\ \hline
-         \multirow{3}{*}{$\QQ(\zeta_{2^mp^n})$}  & $m=1$, $p$ odd, any $n$      & $\QQ(\sqrt{p^*})$                                  \\ \cline{2-3} 
-                                             & $m=2$, $p$ odd, any $n$      & $\QQ(i),\QQ(\sqrt{p}),\QQ(\sqrt{-p})$                              \\ \cline{2-3} 
-                                             & $m\geq3$, $p$ odd, any $n$   & {\color{red} $\QQ(i),\QQ(\sqrt{2}),\QQ(\sqrt{-2}),\QQ(\sqrt{p}),\QQ(\sqrt{-p}),\QQ(\sqrt{2p}),\QQ(\sqrt{-2p})$} \\ \hline
+         \multirow{2}{*}{$\QQ(\zeta_{2^mp^n})$}  & $m=1$, $p$ odd, any $n$      & $\QQ(\sqrt{p^*})$                                  \\ \cline{2-3} 
+                                             & $m=2$, $p$ odd, any $n$      & $\QQ(i),\QQ(\sqrt{p}),\QQ(\sqrt{-p})$                              \\ 
+                                             \hline
         \end{tabular}
         \end{table}
 
@@ -57,11 +57,7 @@ The second result gives a necessary condition on primes ramifying in finite exte
     is an isomorphism of groups, which proves that the extension is cyclic of degree $n$.
 
     Conversely, suppose that $F_n/F$ is a tame, totally ramified cyclic extension of degree $n$. An important result shows that there is some uniformizer $\pi$ of $F$ such that $F_n=F(\pi^{1/n})$. The polynomial $x^n-\pi$ is Einstein over $F$, and therefore irreducible over $F$. Since $F_n/F$ is assumed to be Galois, all roots of $x^n-\pi$ lie in $F_n$. In particular, $\QQ(\zeta_n)\subseteq F_n$. Since $\Char\kappa\nmid n$, it follows that $\kappa$ also contains all $n$-th roots of unity, proving that $n\nmid|\kappa^*|$ as desired. 
-    
-
 \end{proof}
-
-With these results we can state our first result.
 
 \input{section_consistent/cyclic_full.tex}
 
