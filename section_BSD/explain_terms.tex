@@ -36,25 +36,33 @@ The other factors are arithmetic values related to the elliptic curve $E$. Impor
 
     \item \textbf{Local data:} The term $C_{E/K}$ is defined in terms of local data as 
     $$C_{E/K}=\prod_{\pp}c_\pp(E/K)\left|\frac{\omega}{\omega_\pp^{\min}}\right|_\pp=\prod_{\pp}c_\pp(E/K)\left|\frac{\Delta_{E,\pp}^{\min}}{\Delta_E}\right|_\pp^{\frac{1}{12}}.$$
-    where $c_\pp(E/K)$ are the Tamagawa numbers of $E/K$ at a prime $\pp$ of $K$, as discussed in \S\ref*{subs_tamagawa}. To discuss the second term, fix some finite place $\pp$ of $K$ and let $p\ZZ=\pp\cap\QQ$. By assumption, $\Delta_E$ is a minimal discriminant at $p$, but this may not be a minimal discriminat at $\pp$ if $K_\pp/\QQ_p$ is ramified, and we denote $\Delta_{E,\pp}^{\min}$ as the minimal discriminat of $E/K$ at $\pp$. 
+    where $c_\pp(E/K)$ are the Tamagawa numbers of $E/K$ at a prime $\pp$ of $K$, as discussed in \S\ref*{subs_tamagawa}. To discuss the second term, fix some finite place $\pp$ of $K$ and let $p\ZZ=\pp\cap\QQ$. By assumption, $\Delta_E$ is a minimal discriminant at $p$, but this may not be a minimal discriminant at $\pp$ if $K_\pp/\QQ_p$ is ramified, and we denote $\Delta_{E,\pp}^{\min}$ as the minimal discriminant of $E/K$ at $\pp$. The following result is really helpful to compute these terms in explicit examples.
     
-    We remark that if $p$ is unramified at $K$, or if $E$ has semistable reduction at $p$, then $\Delta_{E,\pp}^{\min}=\Delta_E$ and the second term vanishes. 
+    \begin{lemma}\label{lem_Dterms}
+        Let $E$ be an elliptic curve over a number field $K$, and let $F/K$ be a finite extension. Let $\pp$ be a prime in $K$ and $\fP$ a prime in $L$ above $\pp$. Let $\Delta_\pp$ and $\Delta_\fP$ be the minimal discriminants for $E/K_\pp$ and $E/F_\fP$, respectively. Then the following holds.
+        \begin{enumerate}
+            \item If $\pp$ is unramified at $F/K$ or if $E$ has good or multiplicative reduction at $\pp$, then $\Delta_\pp=\Delta_\fP$, so $|\Delta_\fP/\Delta_\fp|=1$.
+            \item If the residual characteristic is distinct from $2$ or $3$, and $E$ has potentially good reduction, then $v_\pp(\Delta_\pp)<12$ and the same holds for $\fP$. In particular, 
+            $$\left|\frac{\Delta_\fP}{\Delta_\fp}\right|^{1/12}=q^{\floor{\frac{e_{\fP\mid\fp}\nu_\fp(\Delta_\fP)}{12}}},$$
+            where $e_{\fP\mid\fp}$ is the ramification index, and $q$ is the size of the residue field at $\fP$.
+        \end{enumerate}
+    \end{lemma}
+
 \end{enumerate}
 
 We will spend some time computing the local terms for families of elliptic curves, so we introduce some more notation that will be used throughout. 
 
 \begin{notation}\label{not_contr}
     Let $E$ be an elliptic curve defined over $\QQ$ and let $F/K$ be a finite extension of number fields. For each finite place $\pp$ of $K$, we write 
-    $$T_{\mathfrak{P}\mid\pp}(F/K)=\prod_{\mathfrak{P}\mid\pp}c_\mathfrak{P}(E/F)\quad\text{and}\quad D_{\mathfrak{P}\mid\pp}(F/K)=\prod_{\mathfrak{P}\mid\pp}\left|\frac{\Delta_{E,\mathfrak{P}}^{\min}}{\Delta_E}\right|_\mathfrak{P}^{\frac{1}{12}},$$
+    $$T_{\fP\mid\pp}(E/F)=\prod_{\fP\mid\pp}c_\fP(E/F)\quad\text{and}\quad D_{\fP\mid\pp}(E/F)=\prod_{\fP\mid\pp}\left|\frac{\Delta_{E,\fP}^{\min}}{\Delta_E}\right|_\fP^{\frac{1}{12}},$$
     and we also write 
-    $$C_{\mathfrak{P}\mid \pp}(F/K)=T_{\mathfrak{P}\mid \pp}(F/K)D_{\mathfrak{P}\mid \pp}(F/K)$$
+    $$C_{\fP\mid \pp}(E/F)=T_{\fP\mid \pp}(E/F)D_{\fP\mid \pp}(E/F)$$
     for the contribution of $\pp$ inside $F$, and
-    where the product is taken over the primes $\mathfrak{P}$ of $F$ above $\pp$. 
+    where the product is taken over the primes $\fP$ of $F$ above $\pp$. 
 \end{notation}
 
 An immediate consequence of this notation is the fact that 
-$$C_{E/F}=\prod_{\pp}C_{\mathfrak{P}\mid \pp}(F/K);$$
-that is, we can calculate $C_{E/F}$ by calculating the contribution locally at each prime of $K$. Another important observation is that if $E$ has good reduction over $\pp$, then $C_{\mathfrak{P}\mid\pp}(F/K)=1$ for any finite extension $F$ of $K$. 
+$$C_{E/F}=\prod_{\pp}C_{\fP\mid \pp}(E/F),$$ where the product ranges over all primes of $K$.We can therefore calculate $C_{E/F}$ by computing the contribution locally at each prime of $K$. Another important observation is that if $E$ has good reduction over $\pp$, then $C_{\fP\mid\pp}(F/K)=1$ for any finite extension $F$ of $K$. 
 %{\color{red} also important to mention at some point that if the reduction is semistable, then the terms in a norm relation coming from the discriminant also vanish. Probably this would have to be introduced later.}
 
 We remark that the way we have organised the terms in \eqref{BSD_2} is not arbitrary, and in fact we give specific notation to both sides of the equation. 
