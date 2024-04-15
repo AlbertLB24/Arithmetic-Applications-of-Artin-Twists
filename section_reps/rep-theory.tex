@@ -1,6 +1,6 @@
-{\color{red} improve this spiel}
+As observed in the introduction, we will be considering Artin representations over $\bQ$ that factor through finite Galois groups $G = \Gal(F / \bQ)$. Our methods in this report apply the theory of finite group representations to the study of elliptic curves over finite Galois extensions. This section introduces some representation-theoretic concepts that we will apply in later sections. 
 
-As observed in the introduction, it can be useful to apply the theory of representations of finite groups to the study of elliptic curves over finite Galois extensions. This section introduces some representation-theoretic concepts that we will apply in later sections. 
+
 
 Given a Galois finite extension $F / \bQ$ with $G = \ \Gal(F / \bQ)$, one may be interested in functions defined on subfields of $F / \bQ$, equivalently on subgroups of $G$. Since subgroups up to conjugacy correspond to subfields up to isomorphism, many functions one may consider are constant on conjugacy classes of subgroups. 
 
@@ -56,7 +56,9 @@ This does hold when $\bQ(\rho) = \bQ(\tau)$.
 %Such a character may not be in $R_{\bQ}(G)$, however. That is, it has rational character, but the corresponding representation cannot be realized over $\bQ$. The quotient $\Char_{\bQ}(G) / R_{\bQ}(G)$ is the study of Schur indices.  If $\rho \in R(G)$ is an irreducible representation, the \textbf{Schur index} is the smallest integer $m(\rho)$ such that 
 %\[ \sum_{\sigma \in \Gal(\bQ(\rho)/\bQ)}m(\rho) \cdot \rho^\sigma \quad \in R_{\bQ}(G). \]
 
-The group $$\C(G) \defeq \frac{\Char_{\bQ}(G)}{\Perm(G)}$$ is a finite abelian group, of exponent dividing $|G|$ (this follows from Artin's induction theorem {\color{red} ref}). The study of this group is quite subtle, see for example \cite{Tim-Alex}. For us, it's enough to know that there exists a minimum integer $m$, depending of $\rho$ and dividing $|G|$ such that $\repnorm{\rho}^{\ \oplus m } \in \Perm(G)$, where $m$ is the order of $\repnorm{\rho}$ in $\C(G)$. 
+\begin{rem}\label{image-of-burnside}
+The group $$\C(G) \defeq \frac{\Char_{\bQ}(G)}{\Perm(G)}$$ is a finite abelian group, of exponent dividing $|G|$ (this follows from Artin's induction theorem {\color{red} ref}). The study of this group is quite subtle. For us, it's enough to know that there exists a minimum integer $m$, depending on $\rho$ and dividing $|G|$ such that $\repnorm{\rho}^{\ \oplus m } \in \Perm(G)$, where $m$ is the order of $\repnorm{\rho}$ in $\C(G)$. 
+\end{rem}
 %Thus, we have a map $\Irr(G) \to \Perm(G)$. We extend this additively to a map $R(G) \to \Perm(G)$.
 \begin{example}
 If $G = C_n$ then $\C(G)$ is trivial (see Example \ref{cyclic-relns}). $\C(G)$ is also trivial for the symmetric groups $G = S_n$. 

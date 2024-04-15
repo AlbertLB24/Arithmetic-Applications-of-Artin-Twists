@@ -28,7 +28,7 @@ If $f(\Theta) \in \fieldnorm{\rho}$ for every $\rho$-relation in $\B(G)$, then w
     Let $G = C_p$ for $p$ a prime. Let $\rho$ be a character of degree $p$, so $\bQ(\rho) = \bQ(\zeta_p)$. There is a unique $\rho$-relation given by $\Theta = C_1 - C_p$. Let $\psi \colon \B(G) \to \bQ^{\times}$ be given by $\psi(H) = [G \colon H]$. Then $\psi(\Theta)$ is a norm relation, as $\psi(\Theta) = p \in \fieldnorm{\rho}$ is the norm of $1 - \zeta_p$.
 \end{example}
 
-In general, showing that a $\rho$-relation $\Theta$ is a norm relation for $f$ does not imply that this is the case for all possible $\rho$-relations. Under certain circumstances however, we can.
+In general, showing that a $\rho$-relation $\Theta$ is a norm relation for $f$ does not imply that this is the case for all possible $\rho$-relations. Under certain circumstances however, we can conclude as such:
 
 \begin{prop}\label{min-to-all}
     Let $\rho \in \R(G)$ and $f \colon \B(G) \to \bQ^{\times}$. Suppose that $f(\Psi) \in \fieldnorm{\rho}$ for every Brauer relation $\Psi \in \B(G)$. 
@@ -61,21 +61,22 @@ It appears quite difficult in general to describe the set of $\rho$-relations fo
 \end{prop}
 
 \begin{proof}
-    Let $\ff$ be the minimum positive integer such that $\bQ(\rho) \subset \bQ(\zeta_{\ff})$. As $\bQ(\rho)$ is quadratic, $\ff$ is described in Remark \ref{conductor} (it is the absolute value of the discriminant $\Delta$ of $\bQ(\rho)$). Observe that $\ff \mid n$ since all characters of $G$ are realized over $\bQ(\zeta_n)$. Since $\C(G) = 1$ and $G$ has no Brauer relations, by Proposition \ref{min-to-all} it suffices to show that $\Theta \in \fieldnorm{\rho}$ for $\Theta \in \B(G)$ such that $\bC[G / \Theta] = \repnorm{\rho}$.
+    Let $\ff$ be the minimum positive integer such that $\bQ(\rho) \subset \bQ(\zeta_{\ff})$. As $\bQ(\rho)$ is quadratic, $\ff$ is described in Remark \ref{conductor} (it is the absolute value of the discriminant $\Delta$ of $\bQ(\rho)$). Observe that $\ff \mid n$ since all characters of $G$ are realized over $\bQ(\zeta_n)$. Since $\C(G) = 1$ and $G$ has no Brauer relations, by Proposition \ref{min-to-all} it suffices to show that $g(\Theta) \in \fieldnorm{\rho}$ for $\Theta \in \B(G)$ such that $\bC[G / \Theta] = \repnorm{\rho}$.
 
 
     Let $\repnorm{\rho} = \sum_{d \mid n} a_d \chi_d$ where $a_d \in \bZ$ and $\chi_d$ are the basis of irreducible rational representations of $C_n$ defined in Example \ref{cyclic-relns}. %(recall $\chi_{d} = \repnorm{\varphi_{d}}$ with $\bQ(\varphi_{d}) = \bQ(\zeta_{d})$ form a basis for the irreducible rational representations of $C_n$). 
-    Let $\Psi_{d} = \sum_{d' | d}\mu(d / d')\cdot C_{n / d}$ so that $\bC[\Psi_{d}] = \chi_{d}$, as observed in the example. Then $\bC[G / \Theta] \simeq \bC[\sum_{d | n } a_{d} \Psi_{d}]$ which implies that $\Theta = \sum_{d | n } a_{d} \Psi_{d}$.
+    Let $\Psi_{d} = \sum_{d' | d}\mu(d / d')\cdot C_{n / d'}$ so that $\bC[\Psi_{d}] = \chi_{d}$, as observed in the example. Then $\bC[G / \Theta] \simeq \bC[\sum_{d | n } a_{d} \Psi_{d}]$ which implies that $\Theta = \sum_{d | n } a_{d} \Psi_{d}$.
 
     Evaluating $g$ on $\Psi_{d}$ is trivial unless $d = q^a$ for some $q$ prime, $a \geq 1$. Indeed, if $d = p_1^{e_1} \cdots p_r^{e_r}$ , with $r \geq 2$ and $e_i \geq 1$, then
-    \[ \prod_{d' \mid d} (d')^{\mu(d / d')} = \prod_{j_1, \ldots j_r \in \{0,1\}^r } \left(p_1^{e_1 - j_1} \cdots p_r^{e_r - j_r}\right)^{\# j_i = 1} = \prod_{i = 1}^r \left(\frac{p_i^{e_i}}{p_i^{e_i - 1}}\right)^{\sum_{ j = 0}^{r - 1} \binom{r-1}{j} (-1)^j} = 1. \]
+    \[ \prod_{d' \mid d} (d')^{\mu(d / d')} = \prod_{j_1, \ldots j_r \in \{0,1\}^r } \left(p_1^{e_1 - j_1} \cdots p_r^{e_r - j_r}\right)^{(-1)^{\# j_i = 1}} = 
+    \prod_{i = 1}^r \left(\frac{p_i^{e_i}}{p_i^{e_i - 1}}\right)^{\sum_{ j = 0}^{r - 1} \binom{r-1}{j} (-1)^j} = 1. \]
     On the other hand,
     \[ \prod_{d' \mid q^a} (d')^{\mu(q^a / d')} = q .\]
     
-    The irreducible representations of $C_n$ over $\bQ(\rho)$ are given by the orbits of the complex irreducible characters of $C_n$ acted upon by $H = \Gal (\bQ(\zeta_n) / \bQ(\rho))$. Consider $d \mid n$ with $\ff \nmid d$, so that $\bQ(\rho) \not\subset \bQ(\zeta_d)$. 
+    The irreducible representations of $C_n$ over $\bQ(\rho)$ are given by the orbits of the complex irreducible characters of $C_n$ acted upon by $H = \Gal (\bQ(\zeta_n) / \bQ(\rho))$. Consider $d \mid n$ with $\bQ(\rho) \not\subset \bQ(\zeta_d)$. 
     Recall that $\chi_d = \repnorm{\varphi_d}$, where $\bQ(\varphi_d) = \bQ(\zeta_d)$. Let $B = \Gal(\bQ(\zeta_n) / \bQ(\zeta_d))$. Then $\bQ(\rho) \cap \bQ(\zeta_d) = \bQ$, so $BH = \Gal(\bQ(\zeta_n) / \bQ)$. The orbit of $\varphi_{d}$ under $H$ is fixed by $BH$, hence is rational. It follows that $\langle \rho, \varphi_{d} \rangle = \langle \rho^{\sigma} , \varphi_{d} \rangle$ for $\sigma$ the generator of $\Gal(\bQ(\rho) / \bQ)$. Thus $2 = [\bQ(\rho) : \bQ]$ divides $a_d$, and so $g(a_d \Psi_d) = g(\Psi_d)^{a_d} \in \bQ^{\times 2} \subset \fieldnorm{\rho}$.
 
-    Thus $a_d$ can only be odd when $\ff \mid d$. Therefore for $g(\Theta)$ to be non-square we require $\ff = p$ for some prime $p$. Then $p$ must be odd ($|\Delta|$ cannot be $2$) and $\bQ(\rho) = \bQ(\sqrt{p^*})$. But $p$ is a norm in $\bQ(\sqrt{p^*})$ by Corollary \ref{p-norm}.
+    Thus $a_d$ can only be odd when $\bQ(\rho) \subset \bQ(\zeta_d)$, i.e  $\ff \mid d$. Therefore for $g(\Theta)$ to be non-square we require $\ff = p$ for some prime $p$. Then $p$ must be odd ($|\Delta|$ cannot be $2$) and $\bQ(\rho) = \bQ(\sqrt{p^*})$. But $p$ is a norm in $\bQ(\sqrt{p^*})$ by Corollary \ref{p-norm}.
 \end{proof}
 
 \subsubsection{D-local functions}\label{D-loc}

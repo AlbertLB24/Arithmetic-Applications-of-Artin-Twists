@@ -35,7 +35,7 @@ Take any representation $\rho \in \R(G)$ with quadratic subfield $\bQ(\sqrt{D}) 
 As in Remark \ref{rephrase-thm}, we may replace $\rho$ by the sum of its conjugates by elements of $ \Gal(\bQ(\rho) / \bQ(\sqrt{D}))$, we may assume that $\bQ(\rho) = \bQ(\sqrt{D})$. We take $D \in \bZ \ \{0,1 \}$ to be squarefree.
 
 The product of terms we are computing is $C(\Theta)$, where $C \colon \B(G) \to \bQ^{\times}$ is given by $C \colon H \mapsto C_{E / F^H}$, and $\Theta$ is any $\rho$-relation.
-We break up the function $C$ into $C = \prod_p C_{\fP \mid p} \prod_p = T_{\fP \mid p} \cdot D_{\fP \mid p}$, ranging over primes $p \in \bQ$,
+We break up the function $C$ into $C = \prod_p C_{\fP \mid p} = \prod_p = T_{\fP \mid p} \cdot D_{\fP \mid p}$, ranging over primes $p \in \bQ$,
 as defined in Notation \ref{not_contr_fns}.
 Then one has
 \begin{equation*}\label{Dp-loc}
@@ -90,7 +90,7 @@ Let $p$ have residue degree $f_p$. Let $L / \bQ$ be a Galois extension of degree
 
 Let $v$ be a place over $p$ in $F_i$. The extension $L_i / F_i$ is Galois, so $v$ is either split or inert in $L_i$.
 We claim that $C_v(E / F_i) \equiv \prod_{w | v} C_w(E / L_i) \mod \bQ^{\times 2}$. Indeed, the number of terms in the product on the right is odd, and by Lemma \ref{tam-up-to-square} $C_v(E / F_i) \equiv C_w(E / L_i) \mod \bQ^{\times 2}$. 
-Letting $T_{\fP \mid p}'$ and $D_{\fP \mid p}'$ be functions on $\B(G)$ defined as in (\ref{not_contr_fns}) but with $\bQ$, $F$ replaced by $L$, $FL$, we see that $(T_{\fP \mid p} \cdot D_{{\fP \mid p}})(\Theta) \equiv (T_{\fP \mid p}' \cdot D_{\fP \mid p})(\Theta) \mod \bQ^{\times 2}$. 
+Letting $T_{\fP \mid p}'$ and $D_{\fP \mid p}'$ be functions on $\B(G)$ defined as in \eqref{not_contr_fns} but with $\bQ$, $F$ replaced by $L$, $FL$, we see that $(T_{\fP \mid p} \cdot D_{{\fP \mid p}})(\Theta) \equiv (T_{\fP \mid p}' \cdot D_{\fP \mid p})(\Theta) \mod \bQ^{\times 2}$. 
 Thus it is equivalent to do our computation in $FL / L$, but here $p$ has residue degree $1$.
 \end{proof}
 
@@ -134,12 +134,12 @@ Consider the function $g$ on $B(C_l)$ with $H \mapsto [C_l : H] = \dim \bC[C_l /
 It follows from the above discussion that $(D_p, D_p, e)(\Theta)$ differs from $g(\Psi)$ up to a factor of $p$. Note that if $p = 2$ then $P_p = 1$ since $|P_p| \mid |G|$ which is odd. So we only need to consider this factor of $p$ for $p$ odd.
 Crucially, this factor of $p$ doesn't matter:
 
-\begin{lemma}
+\begin{lemma}\label{p-norm-odd}
     Let $K = \bQ(\sqrt{D})$, with $\ff$ the smallest positive integer such that $K \subset \bQ(\zeta_{\ff})$. Suppose that $\ff$ is odd. Let $\ff \mid p^u l $, for some odd prime $p$, $u \geq 0$ and $l$ such that $p \equiv 1 \pmod l$. Then $p$ is the norm of an element from $K^{\times}$.
 \end{lemma}
 
 \begin{proof}
-    Since $\ff$ is odd, one has $D = \prod_{q | \ff} q^*$, the product being taken over primes dividing $\ff$. Note that if $q \not= p$, then since $q \mid l$, we have $p \equiv 1 \pmod l \implies p \equiv 1 \pmod q$. By Theorem \ref{p-one-mod-disc},  $p$ is the norm of a principal fractional ideal of $K$. If $K$ is imaginary, then $p$ is the norm of an element of $K$. Else, we invoke Theorem \ref{p-norm-elem-1} or Theorem \ref{p-norm-elem-2}.
+    Since $\ff$ is odd, one has $D = \prod_{q | \ff} q^*$, the product being taken over primes dividing $\ff$. Note that if $q \not= p$, then since $q \mid l$, we have $p \equiv 1 \pmod l \implies p \equiv 1 \pmod q$. By Corollary \ref{p-one-mod-disc},  $p$ is the norm of a principal fractional ideal of $K$. If $K$ is imaginary, then $p$ is the norm of an element of $K$. Else, we invoke Theorem \ref{p-norm-elem-1} or Theorem \ref{p-norm-elem-2}.
     %We show that $p$ has residue degree $1$ in the extended genus field $E^{+} = K(\{\sqrt{q^*} \colon q | \ff \})$ of $K$ ({\color{red} cf. appendix}).
     %If $q \not= p$ then $q \mid l$, so $p \equiv 1 \pmod l$. Therefore $p$ splits in any quadratic subfield of $E^{+}$ of discriminant not divisible by $p$. Else, $p$ ramifies in any quadratic subfield with discriminant divisible by $p$. Thus it is clear that $p$ has residue degree $1$ in $E^{+}$, hence also in the genus field $E$, and it follows from theorem \ref{p-principal} that $p$ is the norm of a principal ideal.  Else, we invoke theorem \ref{minus-one-norm}.
 \end{proof}
@@ -168,7 +168,7 @@ Therefore we only need to worry about the tame part of our ramification indices.
 
 Now suppose that $E / \bQ_p$ has additive reduction. In this case, assume that $p \geq 5$. We have $D_p = P_p \ltimes C_l$ with $ l \mid p - 1$.  
 %is at worst tamely ramified in $F / \bQ$. This ensures that $D_p = I_p = C_l$ is cyclic, and $l \mid p - 1$. 
-Once again we may assume that $\ff \mid p^k l$ where $p^k l $ is the exponent of $D_p$ by Corollary \ref{rational-res-2}.
+Once again we may assume that $\ff \mid p^u l$ where $p^u l $ is the exponent of $D_p$ by Corollary \ref{rational-res-2}.
 
 Let $\delta = \ord_p(\Delta_E)$. Consider a place $\fP$ of $F^H$ over $p$ with ramification degree  $e_{\fP}$ over $\bQ$. Then $\Delta_E$ has valuation $n e_{\fP}$ with respect to $\fP$. Then $\left| \Delta_E / \Delta_{E, \fP}^{\min} \right|_{\fP} = p^{-(\delta\cdot e_{\fP} - \delta_H)}$, where $\delta_H = \ord_{\fP}(\Delta_{E, \fP}^{\min})$.
 Recall that
@@ -187,7 +187,7 @@ In conclusion,
     \end{cases}
     \]
 
-In either case, $D_{\fP \mid p}(\Theta) \in N_{\bQ(\rho) / \bQ}(\bQ(\rho)^{\times})$. Indeed, this takes values $1$ or $p$ in $\bQ^{\times} / \bQ^{\times 2}$. But $p \equiv 1 \pmod l$ implies $p \equiv 1 \pmod \ff$ so that $p$ is the norm of a principal ideal in $\bQ(\rho)$, and hence the norm of an element, by Corollary \ref{p-one-mod-disc} and Theorem \ref{p-norm-elem-1}.
+In either case, $D_{\fP \mid p}(\Theta) \in N_{\bQ(\rho) / \bQ}(\bQ(\rho)^{\times})$. Indeed, this takes values $1$ or $p$ in $\bQ^{\times} / \bQ^{\times 2}$. But $p$ is a norm from $\bQ(\rho)$ by Lemma \ref{p-norm-odd}.
 
 %\[ \left|\frac{\Delta_{E}}{\Delta_{E, w}^\min} \right|_w = p^{f_w 12 \cdot \floor{e_w n / 12}} \implies 
 %       \left|\frac{\omega}{\omega_{w}^\min} \right|_w = p \]
@@ -263,7 +263,7 @@ We have observed that for all reduction types of $E / \bQ_p$, one always has $T_
 
 {\color{red} corollary about restricting to odd order decomposition groups??}
 %However, it turns out we will only get $3$ occurring oddly when $d = 3$. Indeed, one has that $\langle \Ind_{D_{d'}}^D \trivial, \psi_3 \rangle = 1$ if $3 \mid d'$, and $0$ if $3 \nmid d'$, where $\psi_3$ is an irreducible character of $D$ of order $3$. Therefore one sees that the number of places with ramification degree divisible by $3$ cancels unless $d = 3$. Indeed, $\langle \chi_d , \psi_3 \rangle = 0$ unless $d = 3$, 
-%in which case it is $1$. Therefore (\ref{tam-contrib}) can only be non-square when $d = 3$. {\color{red} then conclude why this is fine}
+%in which case it is $1$. Therefore \eqref{tam-contrib} can only be non-square when $d = 3$. {\color{red} then conclude why this is fine}
 
 %\begin{lemma}
 %    Consider $M / L$ a field extension. Let $E / L$ be an elliptic curve, $v$ a finite place of $L$ and $w$ a finite place of $M$ with $w \mid v$. Let $\omega_v$ and $\omega_w$ be the minimal differentials for $E / L_v$ and $E / M_w$ respectively. 
