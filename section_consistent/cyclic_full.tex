@@ -64,7 +64,7 @@ For the first case, we assume that $d$ is odd. Following the observation in Rema
 \begin{proof}
     Fix some prime $\pp$ in $K$ and note that since the extension $L/K$ is cyclic, the splitting behaviour of $\pp$ in $L$ is determined by the ramification index $e_\pp$ and the residual degree $f_\pp$. Since $\contr_\chi(\pp)=1$ if $E$ has good reduction at $\pp$, we assume that $E$ bad reduction at $\pp$. If $\pp$ has multiplicative reduction, then $D_{\fP\mid\pp}(F/K)=1$ and the following table records the contribution of the Tamagawa numbers of $\pp$ depending on $e_\pp$ and $f_\pp$, and the entries for split and non-split multiplicative reduction of type $\mathrm{I}_n$ are separated by a ``;''. To complete these calculations, we use repeatedly Proposition \ref{prop_semi_red} and Lemmas \ref{lem_mult_tam} and \ref{lem_add_tam}. We also use Notation \ref{not_n}.
 
-    \begin{table}[!ht]\label{table_Cp}
+    \begin{table}[!ht]
         \centering
         \begin{tabular}{|l|l|l|l|l|}
         \hline
@@ -74,6 +74,7 @@ For the first case, we assume that $d$ is odd. Following the observation in Rema
         $1$ & $q$ & $n;\tilde{n}$ & $n;\tilde{n}$ & $\square$ \\ \hline
         \end{tabular}
         \caption{Contribution of semistable reduction primes in a $C_q$ extension.}
+        \label{table_Cp}
     \end{table}
 
     Since $q$ is indeed a norm from $\QQ(\sqrt{q^*})$ by Lemma \ref{p-norm}, it follows that $\contr_\chi(\pp)$ is a norm from $\QQ(\sqrt{q^*})$ as well.
@@ -109,7 +110,7 @@ For the first case, we assume that $d$ is odd. Following the observation in Rema
 
     In this case, $\nu_\pp(-4A^3-27B^2)=10$. When $E$ is defined by this simple expression, then $c_4=-48A$ and since $E$ is assumed to have potentially good reduction, $\nu_\pp(j)=\nu_\pp(A^3/\Delta)=3\nu_\pp(A)-10\geq 0$. Hence, $\nu_\pp(A^3)\geq12$ which implies that $\nu_\pp(-27B^2)=10$ or, equivalently, that $\nu_\pp(B)=5$. This means that $\nu_p(B)=5$ if $K_\pp/\QQ_p$ is unramified or $\nu_p(B)=1$ if $K_\pp/\QQ_p$ has ramification index $2$. In the latter case, we have that $v_p(4A^3+27B^2)=2$ and we are back to the case $n=2$. So assume that $K_\pp/\QQ_p$ is unramified. Then
     $$\frac{-4A^3-27B^2}{p^{10}}\equiv -3\left(\frac{3B}{p^5}\right)^2\pmod{p},$$
-    and therefore $\sqrt{\Delta}\in\FF_p$ if and only if $\sqrt{-3}\in K_\pp$. The remaining of the proof is indentical to the case $n=2$.
+    and therefore $\sqrt{\Delta}\in\FF_p$ if and only if $\sqrt{-3}\in K_\pp$. The remaining of the proof is identical to the case $n=2$.
 
 \end{proof}
 
@@ -144,9 +145,9 @@ Next, we prove an analogous result for $C_{pq}$ extensions, where $p$ and $q$ ar
 
     Assume instead that $\pp$ has additive reduction. It is straightforward to check that $\prod_{k\mid qr}T_{\fP\mid\fp}(E/L_k)^{\mu(qr/k)}$ is a rational square. Indeed, since $q$ and $r$ are distinct odd primes, we may assume that $q\neq 3$. In that case, both $L_q/K$ and $F/L_r$ are $C_q$ extensions, and from the proof of Lemma \ref*{lem_Cp}, the Tamagawa numbers of both extensions contribute a rational square.
     
-    To compute the contribution of the $D_{\fP\mid\fp}$ terms, we note that by reescaling $\Delta_E$, the value of 
+    To compute the contribution of the $D_{\fP\mid\fp}$ terms, we note that by rescaling $\Delta_E$, the value of 
     $$\frac{D_{\fP\mid\fp}(E/K)D_{\fP\mid\fp}(E/F)}{D_{\fP\mid\fp}(E/L_q)D_{\fP\mid\fp}(E/L_r)}$$
-    does not change up to squares and hence we might assume that $\Delta_E=\Delta_{E,\pp}^{\min}$ and let $n=\nu_\pp(\Delta_{E,\pp}^{\min})$. Under this assumtion, we note that $D_{\fP\mid\fp}(E/L_k)=1$ for every $k$ unless $\pp$ ramifies $F/K$. 
+    does not change up to squares and hence we might assume that $\Delta_E=\Delta_{E,\pp}^{\min}$ and let $n=\nu_\pp(\Delta_{E,\pp}^{\min})$. Under this assumption, we note that $D_{\fP\mid\fp}(E/L_k)=1$ for every $k$ unless $\pp$ ramifies $F/K$. 
     
     Suppose first that $e_\pp=r$, so $\pp$ is unramified in $L_q/K$. A simple calculation shows that 
     $$D_{\fP\mid\fp}(E/L_k)=D_{\fP\mid\fp}(E/L_r)=1,\quad D_{\fP\mid\fp}(E/L_q)=N(\pp)^{\floor{\frac{pn}{12}}}\quad\text{and}\quad D_{\fP\mid\fp}(E/F)=N(\pp)^{r\floor{\frac{pn}{12}}},$$
@@ -264,9 +265,9 @@ A bit more care is required to prove Theorem \ref{thm_consistent_cyclic} for eve
         \caption{Contribution of semistable reduction primes in a $C_{2q}$ extension.}
     \end{table}
 
-    Since $q$ is a norm from $\QQ(\sqrt{q^*})$, then $\contr_\chi(\pp)$ is also a norm. Now assume that $\pp$ has addtiive reduction and let $p\ZZ=\pp\cap\QQ$. We first consider the contribution of the Tamagawa numbers. Note that $L_q/K$ and $F/L_2$ are $C_q$ extensions and therefore their contribution is a square if $q\neq 3$ and a square up to factors of $3$ if $q=3$. In either case, this is a norm from $\QQ(\sqrt{q^*})$.
+    Since $q$ is a norm from $\QQ(\sqrt{q^*})$, then $\contr_\chi(\pp)$ is also a norm. Now assume that $\pp$ has additive reduction and let $p\ZZ=\pp\cap\QQ$. We first consider the contribution of the Tamagawa numbers. Note that $L_q/K$ and $F/L_2$ are $C_q$ extensions and therefore their contribution is a square if $q\neq 3$ and a square up to factors of $3$ if $q=3$. In either case, this is a norm from $\QQ(\sqrt{q^*})$.
 
-    Finally, we consider the contribution of the $D_{\fP\mid\fp}$ terms. By reescaling $\Delta_E$, the contribution does not change up to squares, so we assume that $\Delta_E=\Delta_{E,\pp}^{\min}$ and let $n=\nu_\pp(\Delta_{E,\pp}^{\min})$. Under this assumption, all terms cancel unless $\pp$ ramifies in $F$. If $e_\pp=2$, then 
+    Finally, we consider the contribution of the $D_{\fP\mid\fp}$ terms. By rescaling $\Delta_E$, the contribution does not change up to squares, so we assume that $\Delta_E=\Delta_{E,\pp}^{\min}$ and let $n=\nu_\pp(\Delta_{E,\pp}^{\min})$. Under this assumption, all terms cancel unless $\pp$ ramifies in $F$. If $e_\pp=2$, then 
     \begin{equation}\label{eqn_ep=2}
         D_{\fP\mid\fp}(E/K)=D_{\fP\mid\fp}(E/L_q)=1,\quad D_{\fP\mid\fp}(E/L_2)=N(\pp)^{\floor{\frac{2n}{12}}}\quad\text{and}\quad D_{\fP\mid\fp}(E/F)=N(\pp)^{q\floor{\frac{2n}{12}}},
     \end{equation}
@@ -285,7 +286,7 @@ However, as soon as $d$ is divisible by $4$, the product of local factors is a r
 \end{lemma}
 
 \begin{proof}
-    All fields appearing in the product are intermediate fields of $L_2$ and $F$, and $\Gal(F/L_2)=C_{2q}$. Let $\pp$ be a prime in $K$, let $\bar\pp\mid\pp$ be a prime above $\pp$ in $L_2$ and let $p\ZZ=\pp\cap\QQ$.. Lemma \ref{lem_C2p} shows that if $E$ has multiplicative reduction over $\bar\pp$, $\contr_\chi(\bar\pp)$ is a square unless $e_{\bar\pp}=q$ and $f_{\bar\pp}=1$ oveer $F$. That is, $\bar\pp$ ramifies in $L_{2q}/L_2$ and is split in $L_4/L_2$, and this forces $\pp$ to split in $L_2/K$ too. Hence, $\pp=\bar\pp\bar\pp'$ for two \textbf{distinct} primes in $K$ that have the same splitting behaviour and therefore $\contr_\chi(\pp)=\contr_\chi(\bar\pp)\contr_\chi(\bar\pp')=\contr_\chi(\bar\pp)^2$ is a rational square, as desired.
+    All fields appearing in the product are intermediate fields of $L_2$ and $F$, and $\Gal(F/L_2)=C_{2q}$. Let $\pp$ be a prime in $K$, let $\bar\pp\mid\pp$ be a prime above $\pp$ in $L_2$ and let $p\ZZ=\pp\cap\QQ$.. Lemma \ref{lem_C2p} shows that if $E$ has multiplicative reduction over $\bar\pp$, $\contr_\chi(\bar\pp)$ is a square unless $e_{\bar\pp}=q$ and $f_{\bar\pp}=1$ over $F$. That is, $\bar\pp$ ramifies in $L_{2q}/L_2$ and is split in $L_4/L_2$, and this forces $\pp$ to split in $L_2/K$ too. Hence, $\pp=\bar\pp\bar\pp'$ for two \textbf{distinct} primes in $K$ that have the same splitting behaviour and therefore $\contr_\chi(\pp)=\contr_\chi(\bar\pp)\contr_\chi(\bar\pp')=\contr_\chi(\bar\pp)^2$ is a rational square, as desired.
 
     \begin{figure}[!ht]
         \centering
@@ -312,7 +313,7 @@ However, as soon as $d$ is divisible by $4$, the product of local factors is a r
 
     Assume now that $E$ has additive reduction over $\bar\pp$. When $q=3$, controlling the Tamagawa numbers is lengthy, so we leave it for the end. We consider first the contribution from the $D_{\fP\mid\fp}$ terms, which is trivial unless $\bar\pp$ ramifies in $L/F_2$ (equivalently, $\pp$ ramifies in $L/K$). If $\pp$ is inert in $L_2/K$, then $N(\bar{\pp})$ is square and hence the size of all residues fields above $\pp$ are also squares. By Lemma \ref{lem_Dterms}, we get squared contribution. If $\pp=\bar\pp\bar\pp'$ splits, then $D_{\fP\mid\bar\fp}(E/L_k)=D_{\fP\mid\bar\fp'}(E/L_k)$ for every $k$, and therefore the contribution from $\pp$ is a square too. Hence, $\pp=\bar\pp^2$ ramifies in $L_2/K$, which implies that $\bar\fp$ also ramifies in $L_4/L_2$. On the other hand, if $\bar\pp$ is unramified at $L_{2q}/L_2$, \eqref{eqn_ep=2} during the proof of Lemma \ref{lem_C2p} shows that the contribution is also a square. 
 
-    We are therefore left with the case where $\pp$ is totally ramified in $F/K$, and Propostion \ref{prop_totally_ramified} implies that $4q\mid N(\pp)-1$. Assuming again that $\Delta_E=\Delta_{E,\pp}^{\min}$ and letting $n=\nu_{\pp}(\Delta_{E,\pp}^{\min})$, Lemma \ref{lem_Dterms} imples that the $D_{\fP\mid\fp}$ terms contribute a total of 
+    We are therefore left with the case where $\pp$ is totally ramified in $F/K$, and Proposition \ref{prop_totally_ramified} implies that $4q\mid N(\pp)-1$. Assuming again that $\Delta_E=\Delta_{E,\pp}^{\min}$ and letting $n=\nu_{\pp}(\Delta_{E,\pp}^{\min})$, Lemma \ref{lem_Dterms} implies that the $D_{\fP\mid\fp}$ terms contribute a total of 
     $$N(\pp)^{\floor{\frac{n}{6}}-\floor{\frac{n}{3}}-\floor{\frac{qn}{6}}+\floor{\frac{qn}{3}}}.$$
     Again, the parity of the expression only depends on $q,n\pmod{12}$. One can easily check that for $n\in\{2,3,4,6,8,9,10\}$, the above expression is a square unless $q\equiv 3\pmod{4}$. Write $N(\pp)=p^s$, which satisfies $p^s\equiv1\pmod{4q}$. If $s$ is even, then the contribution is clearly a square, so assume that $s$ is odd. Since $p^s\equiv1\pmod{4}$, this implies that $p\equiv1\pmod{4}$ and hence $p$ is a norm from $\QQ(i)$, which implies that $\contr_\chi(\pp)$ is a norm from $\QQ(i)$ too. Furthermore, the fact that $p^s\equiv1\pmod{4q}$ implies that
     $$\left(\frac{-q}{p}\right)=\left(\frac{q}{p}\right)=\left(\frac{p}{q}\right)=\left(\frac{p^s}{q}\right)=1,$$
@@ -331,11 +332,11 @@ However, as soon as $d$ is divisible by $4$, the product of local factors is a r
     Let $L/K$ be a Galois extension of number fields with $\Gal(L/K)=C_{12}$ and let $L_k$ be the intermediate fields with $[L_k:K]=k$. Let $E/\QQ$ be an elliptic curve and let $\pp$ be a prime in $K$ such that $E$ has potentially good reduction at $\pp$. If $\chi$ is a faithful character of $C_{12}$, then $$T_\chi(\pp):=\frac{T_{\fP\mid\fp}(E/F)T_{\fP\mid\fp}(E/L_2)}{T_{\fP\mid\fp}(E/L_6)T_{\fP\mid\fp}(E/L_4)}$$ is a rational square.
 \end{lemma}
 \begin{proof}
-    Let $\bar\pp$ be a prime in $L_2$ above $\pp$ and let $n=\nu_{\bar\pp}(\Delta_{E,\bar\pp}^{\min})$ be the minimal disciminant of $E$ at $\bar\pp$. The proof is divided in three cases, depending on the splitting behaviour of $\pp$ in $L_2$. If $\pp$ splits in $L_2/K$, then $\pp=\bar\pp\bar\pp'$ with $T_\chi(\bar\pp)=T_\chi(\bar\pp')$. Therefore, $T_\chi(\pp)=T_\chi(\bar\pp)T_\chi(\bar\pp')$ is a square. Next, suppose that $\pp$ is inert in $L_2/K$. This implies that $\bar\pp$ is also inert in $L_4/L_2$ and if $\fP$ is the prime in $L_4$ above $\bar\pp$, then the valuation of the minimal discriminant of $E$ at $\fP$ is also $n$. Since the splitting behaviour of $\bar\pp$ in $L_6/L_2$ coincides with the splitting behaviour of $\fP$ in $F/L_4$, then 
+    Let $\bar\pp$ be a prime in $L_2$ above $\pp$ and let $n=\nu_{\bar\pp}(\Delta_{E,\bar\pp}^{\min})$ be the minimal discriminant of $E$ at $\bar\pp$. The proof is divided in three cases, depending on the splitting behaviour of $\pp$ in $L_2$. If $\pp$ splits in $L_2/K$, then $\pp=\bar\pp\bar\pp'$ with $T_\chi(\bar\pp)=T_\chi(\bar\pp')$. Therefore, $T_\chi(\pp)=T_\chi(\bar\pp)T_\chi(\bar\pp')$ is a square. Next, suppose that $\pp$ is inert in $L_2/K$. This implies that $\bar\pp$ is also inert in $L_4/L_2$ and if $\fP$ is the prime in $L_4$ above $\bar\pp$, then the valuation of the minimal discriminant of $E$ at $\fP$ is also $n$. Since the splitting behaviour of $\bar\pp$ in $L_6/L_2$ coincides with the splitting behaviour of $\fP$ in $F/L_4$, then 
     $$\frac{T_{\fP\mid\fp}(E/F)}{T_{\fP\mid\fp}(E/L_4)}=\frac{T_{\fP\mid\fp}(E/L_6)}{T_{\fP\mid\fp}(E/L_2)},$$
     and therefore $T_\chi(\pp)=1$.
 
-    Finally, assume that $\pp$ ramifies in $L_2/K$ so that $\pp=\bar\pp^2$. This immediately implies that $\bar\pp$ also ramifies in $L_4/L_2$. From Lemma \ref{lem_Cp}, we also know that in $C_3$ extensions the Tamagawa numbers above some prime contribute a square unless the prime ramifies. Hence, we may also assume that $\pp$ ramifies in $L_3/K$ and therefore $\pp$ is totally ramified in $F/K$. Using Lemma \ref{lem_add_tam}, one can easily show that the Tamagawa numbers cancel out if $\gcd(n,12)\in\{3,4,6,12\}$, so we only need to consider the case $\gcd(n,12)=2$. However, recall that $E$ has potentially good reduction at $\pp$, and since $\pp=\bar\pp^2$ ramifies, then the valuation of the minimal discrimiant at $\pp$ is $n/2$ or $(n+12)/2$. But then $\gcd(\nu_\pp(\Delta_{E,\pp}^{\min}),12)=\gcd(n/2,12)=1$, a contradiction.
+    Finally, assume that $\pp$ ramifies in $L_2/K$ so that $\pp=\bar\pp^2$. This immediately implies that $\bar\pp$ also ramifies in $L_4/L_2$. From Lemma \ref{lem_Cp}, we also know that in $C_3$ extensions the Tamagawa numbers above some prime contribute a square unless the prime ramifies. Hence, we may also assume that $\pp$ ramifies in $L_3/K$ and therefore $\pp$ is totally ramified in $F/K$. Using Lemma \ref{lem_add_tam}, one can easily show that the Tamagawa numbers cancel out if $\gcd(n,12)\in\{3,4,6,12\}$, so we only need to consider the case $\gcd(n,12)=2$. However, recall that $E$ has potentially good reduction at $\pp$, and since $\pp=\bar\pp^2$ ramifies, then the valuation of the minimal discriminant at $\pp$ is $n/2$ or $(n+12)/2$. But then $\gcd(\nu_\pp(\Delta_{E,\pp}^{\min}),12)=\gcd(n/2,12)=1$, a contradiction.
 \end{proof}
 
 
@@ -354,7 +355,7 @@ In this case, write $d=2^lq^n$ and let $L_k$ be the fields as above. In this cas
 
 If $l=1$, then we know from Lemma \ref{lem_subfields} that the only subfield of $\QQ(\zeta_{2q^n})$ is $\QQ(\sqrt{q^*})$. By Lemma \ref{lem_C2p}, it follows that \eqref{eq_C2pterms} is a norm from $\QQ(\sqrt{q^*})$, as desired.
 
-Instead, if $l\geq2$, we consider the $C_{4q}$ extension $F/L_{d/4q}$, and all fields appearing in \eqref{eq_C2pterms} cointain $L_{d/4q}$. Hence, Lemma \ref{lem_C4p} shows that the product of local terms is a norm from $\QQ(i), \QQ(\sqrt{q})$ and $\QQ(\sqrt{-q})$. By Lemma \ref{lem_subfields}, these are all quadratic subfields of $\QQ(\zeta_{2^lp^n})$, 
+Instead, if $l\geq2$, we consider the $C_{4q}$ extension $F/L_{d/4q}$, and all fields appearing in \eqref{eq_C2pterms} contain $L_{d/4q}$. Hence, Lemma \ref{lem_C4p} shows that the product of local terms is a norm from $\QQ(i), \QQ(\sqrt{q})$ and $\QQ(\sqrt{-q})$. By Lemma \ref{lem_subfields}, these are all quadratic subfields of $\QQ(\zeta_{2^lp^n})$, 
 
 \subsubsection*{Case 3: $d$ is not divisible by any odd prime, so $d=2^l$}
 
