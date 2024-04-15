@@ -1,32 +1,31 @@
-At this point, we aim to study the arithmetic applications of Conjecture \ref*{conj_4}. Some of these applications are already studied in \cite[\S 3]{DEW1}, and it allows to predict non-trivial interplay of the primary parts of the Tate-Shafarevich group of families of elliptic curves, non-trivial Selmer groups and even positive rank. All of these results appear not to be tractable with other common current methods.
+At this point, we aim to study the arithmetic applications of Conjecture \ref*{conj_4}. Some of these applications are already studied in \cite[\S 3]{DEW1}, for example the conjecture allows one to predict non-trivial interplay of the primary parts of the Tate-Shafarevich group of families of elliptic curves, non-trivial Selmer groups and even positive rank. Interestingly, some of these results appear not to be tractable with other common current methods.
 
-The most interesting case is the prediction of positive rank for families of elliptic curves on certain number fields. We illustrate the proof of the main result that predict positive rank conditional on Conjecture \ref*{conj_4}. Let $F$ be a Galois extension over $\QQ$ and let $G=\Gal(F/\QQ)$. Let $E/\QQ$ be an elliptic curve and let $\rho$ be an irreducible representation over $G$, which we view as an Artin representation. Then the representation 
+We are concerned with the case of predicting positive rank for families of elliptic curves over certain number fields. We illustrate the proof of the main result that predicts positive rank conditional on Conjecture \ref*{conj_4}. Let $F$ be a Galois extension over $\QQ$ and let $G=\Gal(F/\QQ)$. Let $E/\QQ$ be an elliptic curve and let $\rho$ be a representation over $G$, which we view as an Artin representation. Then the representation 
 $$\bigoplus_{\mathfrak{g}\in\Gal(\QQ(\rho)/\QQ)}\rho^{\mathfrak{g}}$$
 has $\QQ$-valued character and therefore there is some $m\geq 1$ and subfields $F_i, F_j'$ such that 
 $$\left(\bigoplus_{\mathfrak{g}\in\Gal(\QQ(\rho)/\QQ)}\rho^{\mathfrak{g}}\right)^m\oplus\bigoplus_j\Ind_{F'_j/\QQ}\mathds{1}=\bigoplus_i\Ind_{F_i/\QQ}\mathds{1}.$$
 
-Assume that $\rk E/F=0$ so that in particular $\langle \rho, E(F)_\CC\rangle_G=0$. Therefore (C1), (C2) and (C5) from Conjecture \ref*{conj_4} imply that 
+Assume that $\rk E/F=0$ so that in particular $\langle \rho, E(F)_\CC\rangle_G=0$. Therefore Conjecture \ref*{conj_4} implies that 
 \begin{equation}\label{eqn_rank}
     \frac{\prod_i\BSD(E/F_i)}{\prod_j\BSD(E/F'_j)}=\frac{\prod_i\BSD(E,\Ind_{F_i/\QQ}\mathds{1})}{\prod_j\BSD(E, \Ind_{F'_j/\QQ}\mathds{1})}=\left(\prod_{\mathfrak{g}\in\Gal(\QQ(\rho)/\QQ)}\BSD(E,\rho)^{\mathfrak{g}}\right)^m
 \end{equation}
-
 and the right-hand side is clearly the $m$-th power of a norm of an element in $\QQ(\rho)$. 
 
-The product of BSD terms on the LHS of \eqref{eqn_rank} involve regulators, the torsion subgroups, the Tate-Shafarevich groups and the terms $C_{E/F}$ which are the product of local factors. Under the assumption that $\rk E/F=0$, the regulators vanish from the product. In general, it is very difficult to deal with the size of the Tate-Shafarevich group for families of elliptic curves, and therefore very difficult to know if the LHS is an $m$-th power the norm of an element in $\QQ(\rho)$. However, not all hope is lost, since Cassel's proved the following.
+The product of BSD terms on the LHS of \eqref{eqn_rank} involves regulators, the torsion subgroups, the Tate-Shafarevich groups and the terms $C_{E/F}$ which are the product of local factors. Under the assumption that $\rk E/F=0$, the regulators vanish from the product. In general, it is very difficult to deal with the size of the Tate-Shafarevich group for families of elliptic curves, and therefore very difficult to know if the LHS is an $m$-th power the norm of an element in $\QQ(\rho)$. However, not all hope is lost, since Cassel's proved the following.
 
 \begin{thm}
     Let $E$ be an elliptic curve over a number field $K$. If $\Sha_{E/K}$ is finite, then $|\Sha_{E/K}|$ is a square.
 \end{thm}
 
-Rational squares are not necessarily the norms of general number fields, but they are always norms of quadratic number fields. Furthermore, if $\QQ(\sqrt{D})$ is a quadratic subfield fo $\QQ(\rho)$, then the RHS of \eqref{eqn_rank} is also the norm of an element of $\QQ(\sqrt{D})$ and a rational square if $m$ is even. Under the assumption of finiteness of $\Sha$, we know that $|\Sha_{E/F}|$ and $|E(F)_{tors}|^2$ are rational squares and therefore norms of $\QQ(\sqrt{D})$. The only remaining terms on the LHS of \eqref{eqn_rank} are the product of local factors $C_{E/F_i}$ and $C_{E/F'_j}$. We have therefore proven the following.
+Rational squares are not necessarily the norms of general number fields, but they are always norms of quadratic number fields. Furthermore, if $\QQ(\sqrt{D})$ is a quadratic subfield of $\QQ(\rho)$, then the RHS of \eqref{eqn_rank} is also the norm of an element of $\QQ(\sqrt{D})$, and a rational square if $m$ is even. Under the assumption of finiteness of $\Sha$, we know that $|\Sha_{E/F}|$ and $|E(F)_{\tors}|^2$ are rational squares and therefore norms from $\QQ(\sqrt{D})$. The only remaining terms on the LHS of \eqref{eqn_rank} are the product of local factors $C_{E/F_i}$ and $C_{E/F'_j}$. We have therefore proven the following.
 
 \begin{thm}\cite[Theorem 33]{DEW1} \label{thm_positive_rank}
-    Suppose Conjecture \ref*{conj_4} holds. Let $E/\QQ$ be an elliptic curve, $F/\QQ$ a finite Galois extension with Galois group $G$, $\rho \in \R(G)$ and  
+    Suppose Conjecture \ref*{conj_4} holds. Let $E/\QQ$ be an elliptic curve, $F/\QQ$ a finite Galois extension with Galois group $G$, $\rho$ an Artin representation over $\bQ$ that factors through $G$ and 
     $$\left(\bigoplus_{\mathfrak{g}\in\Gal(\QQ(\rho)/\QQ)}\rho^{\mathfrak{g}}\right)^m=\bigoplus_i\Ind_{F_i/\QQ}\mathds{1}\ominus\bigoplus_j\Ind_{F'_j/\QQ}\mathds{1}$$
     for some $m\geq 1$ and subfields $F_i,F'_j\subseteq F$. If either $\frac{\prod_i C_{E/F_i}}{\prod_j C_{E/F'_j}}$ is not a norm from some quadratic subfield $\QQ(\sqrt{D})\subseteq\QQ(\rho)$, or if it is not a rational square when $m$ is even, then $E$ has a point of infinite order over $F$.
 \end{thm}
 
-This is a remarkable result, since it can predict positive rank of general families of elliptic curves based solely on local data. In later sections, we will aim to show that the product of local factors is indeed a norm in quadratic subextension of the field of values, and the following notation, which expands on Notation \ref*{not_contr} will be useful.
+This is a remarkable result, since it can predict positive rank of general families of elliptic curves based solely on local data. Let us call applying this theorem a "norm relations test". In later sections, we will aim to show that the product of local factors is indeed a norm in quadratic subextension of the field of values, and the following notation, which expands on Notation \ref*{not_contr} will be useful.
 
 \begin{notation} \label{not_total_contr}
     Let $F$, $\rho$, $m$ and the fields $F_i,F'_j$ be as in Theorem \ref*{thm_positive_rank}. Let $K$ be a subfield of $F$ and $\pp$ a prime of $K$. Then we define
@@ -37,6 +36,8 @@ This is a remarkable result, since it can predict positive rank of general famil
     where the product runs over all rational primes. Our strategy is to calculate all $\contr_\rho(p)$ locally first, to then multiply them together. We recall once again that if $p$ is a prime of good reduction of the elliptic curve, then $\contr_\rho(p)=1$, so we will only care about the primes of bad reduction.
 \end{notation}
 
+{\color{red} If $\Theta$ is the relation in $B(G)$ corresponding to our subfields $F_i$ and $F_j'$, then this is just the same as breaking $C(\Theta)$ into $\prod_p C_{\fP \mid p}(\Theta)$... so is this necessary to introduce?}
+
 \begin{rem}\label{rephrase-thm}
 We rephrase Theorem \ref{thm_positive_rank} in the language introduced in $\S$\ref{sec-norm-rels}. 
 Replacing $\rho$ by the sum of its conjugates by elements of $ \Gal(\bQ(\rho) / \bQ(\sqrt{D}))$, we may assume that $\bQ(\rho) = \bQ(\sqrt{D})$. Note that this does not affect the order of $\rho$ in $\C(G)$, nor the set of $\rho$-relations (since $\repnorm{\rho}$ is unchanged). 
@@ -44,19 +45,6 @@ Replacing $\rho$ by the sum of its conjugates by elements of $ \Gal(\bQ(\rho) / 
 Let $\Theta$ be a $\rho$-relation with $\bC[G / \Theta] = \repnorm{\rho}^{\oplus m}$. Let $C \colon \B(G) \to \bQ^{\times}$ be the function sending $H \mapsto C_{E / F^H}$. The theorem then states that, if $\Theta$ is not a norm relation for $C$ when $m$ is odd, or if $C(\Theta) \not\in \bQ^{\times 2}$ for $m$ even, then $ \rk E / F > 0$. 
 \end{rem}
 
+\input{section_rank/root_numbers.tex}
 
-%\subsection{Parity tests vs. norm relations tests}
-
-%Let $K$ be a number field and $E / K$ an elliptic curve. The parity conjecture states that the rank of $E / K$ is determined by the global root number $w(E / K) \in \{ \pm 1 \}$, that is
-
-%\begin{conj}
-%    $(-1)^{\rk E / K} = w(E / K).$
-%\end{conj}
-
-%{\color{red} This is known when... }
-
-%Therefore if $w(E / K) = -1$, one has that $\rk E / K$ is odd, in particular $\rk E / K > 0$. Therefore the computation of root numbers can force an elliptic curve to have positive rank. 
-
-%As expected, the global root number is a product of local root numbers 
-%\[ w(E / K) = \prod_v w(E / K_v), \]
-%taking the product over all places (including infinite ones) of $K$. 
+\input{section_rank/examples.tex}

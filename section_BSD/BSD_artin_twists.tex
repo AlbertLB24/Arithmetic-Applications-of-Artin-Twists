@@ -4,7 +4,8 @@ A natural question to ask at this point is whether there is a conjectural analog
 
 \begin{conj}[BSD1 for Twists]
     Let $E/\QQ$ be an elliptic curve, $\rho$ an Artin representation and $K$ any Galois extension over $\QQ$ such that $\rho$ factors through $G=\Gal(K/\QQ)$. Then
-    $$\ord_{s=1}L(E,\rho,s)=\langle\rho,E(K)_\CC\rangle_G.$$
+    $$\ord_{s=1}L(E,\rho,s)=\langle\rho,E(K)_\CC\rangle,$$
+    where $E(K)_{\bC} = E(K) \otimes_{\bZ} \bC$ is viewed as a $G$-representation, and $\langle \cdot, \cdot \rangle$ is the usual inner product of characters of $G$.
 \end{conj}
 
 Unfortunately, a conjectural analogue for $\BSD2$ is not known. The problem is the lack of an analogue for the term $\BSD(E/F)$ as above. However, there is indeed an important analogue of the term $\mathcal{L}(E/F)$ in this setting.
@@ -15,28 +16,38 @@ Unfortunately, a conjectural analogue for $\BSD2$ is not known. The problem is t
     where $r = \ord_{s=1} L(E, \rho, s)$ is the order of the zero at $s = 1$, $\mathfrak{f}_\rho$ is the conductor of $\rho$, and $d^{\pm}(\rho)$ are the dimensions of the $\pm1$-eigenspaces of complex conjugation in its action on $\rho$.
 \end{notation}
 
-Even though the precise conjectural expression of the $\BSD(E,\rho)$ is not known, they conjecturally satisfy many important properties. The next conjecture lists some of these properties.
+$\mathcal{L}(E, \rho)$ is the proposed analogue of the BSD term for twists by Artin representations. Thus we denote this by $\BSD(E, \rho) = \mathcal{L}(E, \rho)$. 
 
-\begin{conj}\cite[Conjecture 4]{DEW1}\label{conj_4}
-    Let $E/\QQ$ be an elliptic curve. For every Artin representation $\rho$ over $\QQ$ there is an invariant $\mathrm{BSD}(E,\rho)\in\CC^{\times}$ with the following properties. Let $\rho$ and $\tau$ be Artin representations and $K$ a finite extension of $\QQ$ such that $\rho$ and $\tau$ factor through $\Gal(K/\QQ)$.
+%Even though the precise conjectural expression of the $\BSD(E,\rho)$ is not known, they conjecturally satisfy many important properties. The next conjecture lists some of these properties.
+
+\begin{conj}{\cite[Conjecture 4]{DEW1}}\label{conj_4}
+    Let $E/\QQ$ be an elliptic curve, and assume that $L(E, \rho, s)$ has an analytic continuation to $\bC$ for all Artin representations $\rho$ over $\bQ$. Let $\rho$ and $\tau$ be Artin representations over $\bQ$ that factor through $\Gal(K/\QQ)$ for some finite Galois extension $K / \bQ$. Then 
     \begin{enumerate}[label={\bfseries C\arabic*.}]
         \item $\mathrm{BSD}(E/F)=\mathrm{BSD}(E,\Ind_{F/\QQ}\mathds{1})$ for a number field $F$ (and $\Sha_{E/F}$ is finite).
         \item $\mathrm{BSD}(E,\rho\oplus\tau)=\mathrm{BSD}(E,\rho)\mathrm{BSD}(E,\tau)$.
-        \item $\mathrm{BSD}(E,\rho)=\mathrm{BSD}(E,\rho^*)\cdot(-1)^{r}\omega_{E,\rho}\omega_\rho^{-2}$, where $r=\langle\rho,E(K)_\CC\rangle$.
-        \item If $\rho$ is self-dual, then $\mathrm{BSD}(E,\rho)\in\RR$ and $\sign\ \mathrm{BSD}(E,\rho)=\sign\ \omega_\rho$.
-        
+       %\item $\mathrm{BSD}(E,\rho)=\mathrm{BSD}(E,\rho^*)\cdot(-1)^{r}\omega_{E,\rho}\omega_\rho^{-2}$, where $r=\langle\rho,E(K)_\CC\rangle$.
+        %\item If $\rho$ is self-dual, then $\mathrm{BSD}(E,\rho)\in\RR$ and $\sign\ \mathrm{BSD}(E,\rho)=\sign\ \omega_\rho$.
+    \end{enumerate}       
         If $\langle\rho,E(K)_\CC\rangle=0$, then moreover:
-        \item $\BSD(E,\rho)\in\QQ(\rho)^{\times}$ and $\BSD(E,\rho^g)=\BSD(E,\rho)^g$ for all $g\in\Gal(\QQ(\rho)/\QQ)$.
-        \item If $\rho$ is a non-trivial primitive Dirichlet character of order $d$, and either the conductors of $E$ and $\rho$ are coprime or $E$ is semistable and has no non-trivial isogenies over $\QQ$, thenn $\BSD(E,\rho)\in\ZZ[\zeta_d]$. 
+    \begin{enumerate}[label={\bfseries C\arabic*.}]
+        \setcounter{enumi}{2}
+       \item $\BSD(E,\rho)\in\QQ(\rho)^{\times}$ and $\BSD(E,\rho^{\fg})=\BSD(E,\rho)^{\fg}$ for all $\fg\in\Gal(\QQ(\rho)/\QQ)$.
+        %\item If $\rho$ is a non-trivial primitive Dirichlet character of order $d$, and either the conductors of $E$ and $\rho$ are coprime or $E$ is semistable and has no non-trivial isogenies over $\QQ$, then $\BSD(E,\rho)\in\ZZ[\zeta_d]$. 
     \end{enumerate}
 \end{conj}
 
-The great advantage of the above conjecture is that it is free of $L$-functions since only the `arithmetic' $\BSD(E/F)$ terms appear. Conditional to some well-known conjectures, Conjecture \ref{conj_4} holds.
+The great advantage of the above conjecture is that it is free of $L$-functions since only the `arithmetic' $\BSD(E/F)$ terms appear.
 
-\begin{thm} \cite[Theorem 5]{DEW1}
-    Conjecture $4$ holds with $\BSD(E,\rho)=\mathcal{L}(E,\rho)$ assuming the analytic continuation of $L$-functions $L(E,\rho,s)$, their functional equation, the Birch-Swinnerton-Dyer conjecture,
-    Deligne's period conjecture, Stevens's Manin constant conjecture for $E/\QQ$ and the Riemann
-    hypothesis for $L(E,\rho,s)$.
-\end{thm}
+\begin{rem}
+   Conjecture \ref{conj_4} holds subject to some well-known conjectures. In particular, as proven in \cite[Corollary 25]{DEW1}, one has that
+   \begin{itemize}[-]
+    \setlength\itemsep{0em}
+    \item Conjecture $1$ holds assuming BSD holds for elliptic curves over number fields,
+    \item Conjecture $2$ holds unconditionally,
+    \item Conjecture $3$ holds if $L(E, \rho, s)$ satisfies Deligne's period conjecture ({\color{red} ref}).
+   \end{itemize}
+   
+\end{rem}
+
 
 
