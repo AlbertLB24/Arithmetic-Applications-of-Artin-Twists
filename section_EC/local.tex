@@ -1,6 +1,6 @@
 \subsection{Elliptic Curves over Local Fields and Reduction Types}
 
-Now assume that $K$ is a local field of characteristic $0$ with a discrete valuation $\nu$, ring of integers $R$ and residue field $\kappa$. We denote by $a\mapsto \tilde{a}$ for the natural quotient map $K\to\kappa$. We say that \eqref{eqn_gen_elliptic} is a \textbf{minimal Weierstrass equation} if $a_2,a_4,a_6\in R$ and $\nu(\Delta)$ is minimal among all such equations. When this is the case, we have a well-defined associated curve $\tilde{E}$ over $\kappa$ defined by the equation $y^2=x^3+\tilde{a_2}x^2+\tilde{a_4}x+\tilde{a_6}$ and the associated \textbf{reduction map}
+Now assume that $K$ is a local field of characteristic $0$ with a discrete valuation $\nu$, ring of integers $R$ and residue field $\kappa$. We denote by $a\mapsto \tilde{a}$ for the natural quotient map $K\to\kappa$. We say that \eqref{eqn_gen_elliptic} is a \textbf{minimal Weierstrass equation} if $a_1,a_2,a_3,a_4,a_6\in R$ and $\nu(\Delta)$ is minimal among all such equations. When this is the case, we have a well-defined associated curve $\tilde{E}$ over $\kappa$ defined by the equation $y^2+\tilde{a_1}xy+\tilde{a_3}y=x^3+\tilde{a_2}x^2+\tilde{a_4}x+\tilde{a_6}$ and the associated \textbf{reduction map}
 \begin{equation}\label{eqn_reduction}
     \widetilde{(\cdot)}:E(K)\longrightarrow \tilde{E}(\kappa),
 \end{equation}
@@ -10,9 +10,9 @@ obtained by reducing the coordinates of a point $P\in E(K)$ modulo $\kappa$. One
 \begin{defn}
     Let $E/K$ and $\tilde{E}/\kappa$ be as above. Then we say that 
     \begin{enumerate}[label={(\alph*)}]
-        \item $E/K$ has good (or stable) reduction if $\tilde{E}$ is non-singular.
-        \item $E/K$ has multiplicative (or semistable) reduction if $\tilde{E}$ has a node.
-        \item $E/K$ has additive (or unstable) reduction if $\tilde{E}$ has a cusp.
+        \item $E/K$ has \textbf{good} (or stable) reduction if $\tilde{E}$ is non-singular.
+        \item $E/K$ has \textbf{multiplicative} (or semistable) reduction if $\tilde{E}$ has a node.
+        \item $E/K$ has \textbf{additive} (or unstable) reduction if $\tilde{E}$ has a cusp.
     \end{enumerate}
     In cases (b) and (c) we say that $E/K$ has bad reduction. Moreover, if $E/K$ has multiplicative reduction, we say that the reduction is split if the slopes of the tangent lines at the node are in $K$, and non-split otherwise.
 \end{defn}

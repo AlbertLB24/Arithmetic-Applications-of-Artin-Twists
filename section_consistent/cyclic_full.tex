@@ -73,7 +73,7 @@ For the first case, we assume that $d$ is odd. Following the observation in Rema
         $q$ & $1$ & $n;\tilde{n}$ & $qn;\tilde{n}$ & $q\square;\square$ \\ \hline
         $1$ & $q$ & $n;\tilde{n}$ & $n;\tilde{n}$ & $\square$ \\ \hline
         \end{tabular}
-        \caption{Contribution of semistable reduction primes in a $C_q$ extension.}
+        \caption{Contribution of multiplicative reduction primes in a $C_q$ extension.}
     \end{table}
 
     Since $q$ is indeed a norm from $\QQ(\sqrt{q^*})$ by Lemma \ref{p-norm}, it follows that $\contr_\chi(\pp)$ is a norm from $\QQ(\sqrt{q^*})$ as well.
@@ -85,7 +85,7 @@ For the first case, we assume that $d$ is odd. Following the observation in Rema
     Therefore, $p$ splits in $\QQ(\sqrt{q^*})$ and by Lemma \textbf{insert relevant thm here}, it follows that $p$ is a norm from $\QQ(\sqrt{q^*})$. 
     Finally, we need to consider the Tamagawa numbers. Note that since $q$ is odd, if $\fP$ is any prime in $F$ above $\pp$, then $\sqrt{D}\in K_\pp$ if and only if $\sqrt{D}\in L_\fP$ for any $D\in\QQ$. Moreover, if $q\neq 3$, then $\gcd(e_{\fP\mid\pp},12)=1$ and by Lemma \ref{lem_add_tam}, $c_\pp(E/K)=c_\fP(E/F)$. Since the number of primes $\fP$ in $L$ above $\fp$ is odd, we get a square in this case. If $q=3$ and $\pp$ is unramified in $L/K$, then $e_{\fP\mid\pp}=1$ and the same reasoning shows that we get a square in this case. 
 
-    So now assume that $q=3$ and that $L_\fP/K_\pp$ is ramified. Let $n=\nu_\pp(\Delta_{E,\pp}^{\min})$ be the valuation of the minimal discriminant of $E$ at $\pp$. By Lemma \ref{lem_add_tam}, we can obtain factors of $2$ and $3$. Since $3$ is a norm from $\QQ(\sqrt{-3})$, we only need to take care of the factors of $2$, which can only arise if $F_\fP/K_\pp$ is ramified, $\gcd(n,10)=2$ and $\sqrt{\Delta}\not\in K_\pp$. However, we claim that this cannot happen, implying that the contribution must be a norm from $\QQ(\sqrt{-3})$. This is a non-trivial proof, so we prove it as a separate lemma, from which this result follows. 
+    So now assume that $q=3$ and that $L_\fP/K_\pp$ is ramified. Let $n=\nu_\pp(\Delta_{E,\pp}^{\min})$ be the valuation of the minimal discriminant of $E$ at $\pp$. By Lemma \ref{lem_add_tam}, we can obtain factors of $2$ and $3$. Since $3$ is a norm from $\QQ(\sqrt{-3})$, we only need to take care of the factors of $2$, which can only arise if $F_\fP/K_\pp$ is ramified, $\gcd(n,12)=2$ and $\sqrt{\Delta}\not\in K_\pp$. However, we claim that this cannot happen, implying that the contribution must be a norm from $\QQ(\sqrt{-3})$. This is a non-trivial proof, so we prove it as a separate lemma, from which this result follows. 
 \end{proof}
 
 \begin{lemma}\label{lem_nottwo}
@@ -139,7 +139,7 @@ Next, we prove an analogous result for $C_{pq}$ extensions, where $p$ and $q$ ar
         $r$ & $q$ & $n;\tilde{n}$ & $n;\tilde{n}$ & $rn;\tilde{n}$ & $rn;\tilde{n}$ & $\square$ \\ \hline
         $qr$ & $1$ & $n;\tilde{n}$ & $qn;\tilde{n}$ & $rn;\tilde{n}$ & $qrn;\tilde{n}$ & $\square$ \\ \hline
         \end{tabular}
-        \caption{Contribution of semistable reduction primes in a $C_{qr}$ extension.}
+        \caption{Contribution of multiplicative reduction primes in a $C_{qr}$ extension.}
     \end{table}
 
     Assume instead that $\pp$ has additive reduction. It is straightforward to check that $\prod_{k\mid qr}T_{\fP\mid\fp}(E/L_k)^{\mu(qr/k)}$ is a rational square. Indeed, since $q$ and $r$ are distinct odd primes, we may assume that $q\neq 3$. In that case, both $L_q/K$ and $F/L_r$ are $C_q$ extensions, and from the proof of Lemma \ref*{lem_Cp}, the Tamagawa numbers of both extensions contribute a rational square.
@@ -261,7 +261,7 @@ A bit more care is required to prove Theorem \ref{thm_consistent_cyclic} for eve
         $2$ & $q$ & $n;\tilde{n}$ & $n;\tilde{n}$ & $2n;1$ & $2n;1$ & $\square$ \\ \hline
         $2q$ & $1$ & $n;\tilde{n}$ & $qn;\tilde{n}$ & $2n;1$ & $2qn;1$ & $\square$ \\ \hline
         \end{tabular}
-        \caption{Contribution of semistable reduction primes in a $C_{2q}$ extension.}
+        \caption{Contribution of multiplicative reduction primes in a $C_{2q}$ extension.}
     \end{table}
 
     Since $q$ is a norm from $\QQ(\sqrt{q^*})$, then $\contr_\chi(\pp)$ is also a norm. Now assume that $\pp$ has addtiive reduction and let $p\ZZ=\pp\cap\QQ$. We first consider the contribution of the Tamagawa numbers. Note that $L_q/K$ and $F/L_2$ are $C_q$ extensions and therefore their contribution is a square if $q\neq 3$ and a square up to factors of $3$ if $q=3$. In either case, this is a norm from $\QQ(\sqrt{q^*})$.
@@ -307,7 +307,7 @@ However, as soon as $d$ is divisible by $4$, the product of local factors is a r
             \draw [red] (Q6)--(Q5) node [pos=0.8, below,inner sep=0.4cm] {split};
             \draw [red] (Q4)--(Q3) node [pos=0.8, below,inner sep=0.4cm] {split};
         \end{tikzpicture}
-        \caption[short]{\centering Field diagram for a $C_{4q}$ extension, together with the splitting\\ behaviour of a prime $\pp$ in $L_2$ with $e_\pp=q$ and $f_\pp=1$ over $F$.}
+        \caption[short]{\centering Field diagram for a $C_{4q}$ extension, together with the splitting \newline behaviour of a prime $\pp$ in $L_2$ with $e_\pp=q$ and $f_\pp=1$ over $F$.}
     \end{figure}
 
     Assume now that $E$ has additive reduction over $\bar\pp$. When $q=3$, controlling the Tamagawa numbers is lengthy, so we leave it for the end. We consider first the contribution from the $D_{\fP\mid\fp}$ terms, which is trivial unless $\bar\pp$ ramifies in $L/F_2$ (equivalently, $\pp$ ramifies in $L/K$). If $\pp$ is inert in $L_2/K$, then $N(\bar{\pp})$ is square and hence the size of all residues fields above $\pp$ are also squares. By Lemma \ref{lem_Dterms}, we get squared contribution. If $\pp=\bar\pp\bar\pp'$ splits, then $D_{\fP\mid\bar\fp}(E/L_k)=D_{\fP\mid\bar\fp'}(E/L_k)$ for every $k$, and therefore the contribution from $\pp$ is a square too. Hence, $\pp=\bar\pp^2$ ramifies in $L_2/K$, which implies that $\bar\fp$ also ramifies in $L_4/L_2$. On the other hand, if $\bar\pp$ is unramified at $L_{2q}/L_2$, \eqref{eqn_ep=2} during the proof of Lemma \ref{lem_C2p} shows that the contribution is also a square. 
