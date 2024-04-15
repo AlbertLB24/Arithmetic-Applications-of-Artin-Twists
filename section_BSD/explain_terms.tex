@@ -1,4 +1,4 @@
-\subsection{BSD and the Arithmetic Terms}
+\subsection{BSD and the Arithmetic Terms}\label{sec-explain-terms}
 
 The Birch-Swinnerton-Dyer conjecture states the following.
 
@@ -23,7 +23,7 @@ The other factors are arithmetic values related to the elliptic curve $E$. Impor
     $$\Omega_+(E)=\int_{E(\CC)^+}\omega \quad\text{and}\quad\Omega_-(E)=\int_{E(\CC)^-}\omega,$$
     and orientation chosen so that $\Omega_+(E)\in\RR_{>0}$ and $\Omega_-(E)\in i\RR_{>0}$ .
     \item \textbf{Torsion:} $|E(K)_{\tors}|$ is the size of the torsion subgroup of $E(K)$.
-    \item \textbf{Regulator:} To properly define the regulator one neeeds to carefully construct the canonical height $\hat{h}:E(\bar{K})\rightarrow\RR^+$, which rougly evaluates the `arithmetic complexity' of a given point $P\in E(\bar{K})$. We refer the reader to \cite[Chapter VIII: \S4, \S5, \S6 and \S9]{S1} for a complete discussion of this topic. This map satisfies many important properties (as listed in \cite[Chapter VIII, Theorem 9.3]{S1}), among which is the fact that $\hat{h}$ is a quadratic form; in particular, the pairing
+    \item \textbf{Regulator:} To properly define the regulator one needs to carefully construct the canonical height $\hat{h}:E(\bar{K})\rightarrow\RR^+$, which roughly evaluates the `arithmetic complexity' of a given point $P\in E(\bar{K})$. We refer the reader to \cite[Chapter VIII: \S4, \S5, \S6 and \S9]{S1} for a complete discussion of this topic. This map satisfies many important properties (as listed in \cite[Chapter VIII, Theorem 9.3]{S1}), among which is the fact that $\hat{h}$ is a quadratic form; in particular, the pairing
     \begin{align*}
         \langle\cdot,\cdot\rangle&:E(\bar{K})\times E(\bar{K})\longmapsto\RR\\
         \langle P,Q\rangle&=\hat{h}(P\oplus Q)-\hat{h}(P)-\hat{h}(Q)
@@ -35,8 +35,10 @@ The other factors are arithmetic values related to the elliptic curve $E$. Impor
     where $H^1(F,E):=H^1(G_F,E(\bar{F}))$ and the implicit map is induced by the inclusions $G_{K_\pp}\emb G_K$. One can interpret $H^1(F,E)$ as `homogeneous spaces' of $E$ over $K$ up to equivalence. A homogeneous space over $K$ is trivial if and only if it has a $K$-rational point, so a non-trivial element of $\Sha_{E/F}$ is a homogeneous space that has points locally in every $K_\pp$ but has no $K$-rational point.
 
     \item \textbf{Local data:} The term $C_{E/K}$ is defined in terms of local data as 
-    $$C_{E/K}=\prod_{\pp}c_\pp(E/K)\left|\frac{\omega}{\omega_\pp^{\min}}\right|_\pp=\prod_{\pp}c_\pp(E/K)\left|\frac{\Delta_{E,\pp}^{\min}}{\Delta_E}\right|_\pp^{\frac{1}{12}}.$$
-    where $c_\pp(E/K)$ are the Tamagawa numbers of $E/K$ at a prime $\pp$ of $K$, as discussed in \S\ref*{subs_tamagawa}. To discuss the second term, fix some finite place $\pp$ of $K$ and let $p\ZZ=\pp\cap\QQ$. By assumption, $\Delta_E$ is a minimal discriminant at $p$, but this may not be a minimal discriminant at $\pp$ if $K_\pp/\QQ_p$ is ramified, and we denote $\Delta_{E,\pp}^{\min}$ as the minimal discriminant of $E/K$ at $\pp$. The following result is really helpful to compute these terms in explicit examples.
+    \begin{equation}\label{fudge-factor}
+    C_{E/K}=\prod_{\pp}c_\pp(E/K)\left|\frac{\omega}{\omega_\pp^{\min}}\right|_\pp=\prod_{\pp}c_\pp(E/K)\left|\frac{\Delta_{E,\pp}^{\min}}{\Delta_E}\right|_\pp^{\frac{1}{12}}.
+    \end{equation}
+    where $c_\pp(E/K)$ are the Tamagawa numbers of $E/K$ at a prime $\pp$ of $K$, as discussed in \S\ref*{subs_tamagawa}. To discuss the second term, fix some finite place $\pp$ of $K$ and let $p\ZZ=\pp\cap\QQ$. By assumption, $\Delta_E$ is a minimal discriminant at $p$, but this may not be a minimal discriminannt at $\pp$ if $K_\pp/\QQ_p$ is ramified, and we denote $\Delta_{E,\pp}^{\min}$ as the minimal discriminannt of $E/K$ at $\pp$. The following result is really helpful to compute these terms in explicit examples.
     
     \begin{lemma}\label{lem_Dterms}
         Let $E$ be an elliptic curve over a number field $K$, and let $F/K$ be a finite extension. Let $\pp$ be a prime in $K$ and $\fP$ a prime in $L$ above $\pp$. Let $\Delta_\pp$ and $\Delta_\fP$ be the minimal discriminants for $E/K_\pp$ and $E/F_\fP$, respectively. Then the following holds.
@@ -54,15 +56,31 @@ We will spend some time computing the local terms for families of elliptic curve
 
 \begin{notation}\label{not_contr}
     Let $E$ be an elliptic curve defined over $\QQ$ and let $F/K$ be a finite extension of number fields. For each finite place $\pp$ of $K$, we write 
-    $$T_{\fP\mid\pp}(E/F)=\prod_{\fP\mid\pp}c_\fP(E/F)\quad\text{and}\quad D_{\fP\mid\pp}(E/F)=\prod_{\fP\mid\pp}\left|\frac{\Delta_{E,\fP}^{\min}}{\Delta_E}\right|_\fP^{\frac{1}{12}},$$
-    and we also write 
-    $$C_{\fP\mid \pp}(E/F)=T_{\fP\mid \pp}(E/F)D_{\fP\mid \pp}(E/F)$$
-    for the contribution of $\pp$ inside $F$, and
-    where the product is taken over the primes $\fP$ of $F$ above $\pp$. 
+    $$T_{\mathfrak{P}\mid\pp}(E/F)=\prod_{\mathfrak{P}\mid\pp}c_\mathfrak{P}(E/F)\quad\text{and}\quad D_{\mathfrak{P}\mid\pp}(E/F)=\prod_{\mathfrak{P}\mid\pp}\left|\frac{\Delta_{E,\mathfrak{P}}^{\min}}{\Delta_E}\right|_\mathfrak{P}^{\frac{1}{12}},$$
+    where the product ranges over primes $\fP$ of $F$ dividing $p$. We also write 
+    $$C_{\mathfrak{P}\mid \pp}(E/F)=T_{\mathfrak{P}\mid \pp}(E/F)D_{\mathfrak{P}\mid \pp}(E/F).$$
 \end{notation}
 
-An immediate consequence of this notation is the fact that 
-$$C_{E/F}=\prod_{\pp}C_{\fP\mid \pp}(E/F),$$ where the product ranges over all primes of $K$.We can therefore calculate $C_{E/F}$ by computing the contribution locally at each prime of $K$. Another important observation is that if $E$ has good reduction over $\pp$, then $C_{\fP\mid\pp}(F/K)=1$ for any finite extension $F$ of $K$. 
+An immediate consequence of this notation is the fact that $C_{E/F}=\prod_{\pp}C_{\mathfrak{P}\mid \pp}(E / F)$.
+Observe that if $E$ has good reduction over $\pp$, then $C_{\mathfrak{P}\mid\pp}(E/F)=1$ for any finite extension $F$ of $K$. 
+
+\begin{notation}\label{not_contr_fns}
+    If $G = \Gal(F / \bQ)$ then we define functions $T_{\fP \mid p}$, $D_{\fP \mid p}$ and $C_{\fP \mid p}$ on $\B(G)$ by 
+    \[ T_{\fP \mid p}(H) = T_{\fP \mid p}(E / F^H), \quad D_{\fP \mid p}(H) = D_{\fP \mid p}(E / F^H), \quad C_{\fP \mid p}(H) = C_{\fP \mid p}(E / F^H). \]
+    Note that if $H$, $H'$ are conjugate then $F^H$, $F^{H'}$ are isomorphic, and so the values of these functions are constant on conjugate subgroups, hence they are well-defined. Let $C \colon \B(G) \to \bQ^{\times}$ be given by $C \colon H \mapsto C_{E / F^H}$.  
+    
+    Note that $C_{\fP \mid p}$ is a $D_p$-local function. Indeed, suppose $D_p = \Gal(F_w / \bQ_p)$, where $F_w$ denotes the completion of $F$ with respect to a place $w$ lying above $p$. Recall the notation that for a number field $K$ and place $v$, $C_v(E / K) = c_v(E / K) \cdot \left| \omega / \omega_v^{\min} \right|_v$ {\color{red} put this somewhere...}. We use the same notation if $K$ is a local field (then the $v$ subscript holds no meaning).
+    One has
+    \begin{equation*}
+    C_{\fP \mid p} = (D_p, C_v)
+    \end{equation*}
+    where $C_v$ is a function on $\B(D_p)$ sending $H \mapsto C_v(E / F_w^H)$.
+
+\end{notation}
+
+%An immediate consequence of this notation is the fact that 
+%$$C_{E/F}=\prod_{\pp}C_{\mathfrak{P}\mid \pp}(F/K);$$
+%that is, we can calculate $C_{E/F}$ by calculating the contribution locally at each prime of $K$. 
 %{\color{red} also important to mention at some point that if the reduction is semistable, then the terms in a norm relation coming from the discriminant also vanish. Probably this would have to be introduced later.}
 
 We remark that the way we have organised the terms in \eqref{BSD_2} is not arbitrary, and in fact we give specific notation to both sides of the equation. 
