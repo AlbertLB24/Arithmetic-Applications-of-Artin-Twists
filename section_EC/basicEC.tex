@@ -1,0 +1,38 @@
+
+Having discussed the relevant aspects of representation theory that we will require, we now introduce elliptic curves, our main object to study. Our discussion will be rather informal and brief, and will avoid most proofs. We will spend some time discussing the reduction type of elliptic curves and how this can change over finite extensions. Nevertheless, we assume good familiarity with elliptic curves. There is great material available for elliptic curves, and \cite{S1} gives a complete discussion.
+
+An elliptic curve $E$ over a field $K$ is a genus one smooth projective curve with a specified $K$-rational point. Any such curve can be written as the locus on $\PP^2$ of a \textbf{Weierstrass equation}
+\begin{equation}\label{eqn_gen_elliptic}
+    E: y^2+a_1xy+a_3y=x^3+a_2x^2+a_4x+a_6,\quad a_2,a_4,a_6\in K,
+\end{equation}
+together with the specified $K$-rational point $[0:1:0]$ at infinity.
+
+When $\Char(K)\neq2$, which will always be the case, we can further simplify the equation to
+\begin{equation}\label{eqn_elliptic}
+    E: y^2=f(x)=x^3+a_2x^2+a_4x+a_6,\quad a_2,a_4,a_6\in K,
+\end{equation}
+so unless stated otherwise we will assume that $E$ has an equation of this form. We remark that if $\Char(K)=2$, then \eqref{eqn_elliptic} always defines a singular curve. Associated to this equation there are constants 
+$$c_4=16(a_2^2-3a_4) \quad\text{and}\quad \Delta=16(a_2^2a_4^2-4a_2^3a_6-4a_4^3-27a_6^2+18a_2a_4a_6)$$
+and differential 
+\begin{equation}\label{eqn_differential}
+    w=\frac{dx}{2y}=\frac{dy}{3x^2+2a_2x+a_4}.
+\end{equation}
+One can also define these constants for the general Wieirstrass equation \eqref{eqn_gen_elliptic}, but we omit the description. A complete description is given in \cite[\S III.1]{S1}
+
+The curve defined by \eqref{eqn_elliptic} is singular if and only if the polynomial $f(x)$ has repeated roots over $\bar{K}$. If it has a double and a simple root, then we say it has a node; if it has a triple root, then it has a cusp. The following proposition characterizes this behaviour in terms of $c_4$ and $\Delta$.
+
+\begin{prop}\label{prop_nodecusp}
+    The curve given by a Weierstrass equation satisfies:
+    \begin{enumerate}
+        \item It is nonsingular if and only if $\Delta\neq0$.
+        \item It has a node if and only if $\Delta=0$ and $c_4 \neq 0$.
+        \item It has a cusp if and only if $\Delta= c_4 = 0$. 
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    \cite[\S III Proposition 1.4]{S1}.
+\end{proof}
+
+When $\Delta\neq0$, the equation defines an elliptic curve. A fundamental property is that the set of $K$-rational points of an elliptic curve forms an abelian group, denoted by $(E(K),\oplus)$ (\cite[\S III.2]{S1}). When $K$ is a number field, the Mordell-Weil theorem shows that this group is also finitely generated, and therefore 
+$$E(K)=E(K)_{\tors}\times\ZZ^r,$$
+where $E(K)_{\tors}$ is a finite abelian group and $r$ is denoted the rank of $E$.
