@@ -6,7 +6,8 @@
 
 %\usepackage{enumerate}
 \usepackage[shortlabels]{enumitem}
-\usepackage{amsfonts, amsmath, amsthm, amssymb, float, mathtools, hyperref, bbm, etoolbox, xcolor}
+\usepackage{amsfonts, amsmath, amsthm, amssymb, float, mathtools, bbm, etoolbox, xcolor, enumitem}
+\usepackage[hyperfootnotes=false]{hyperref}
 %\usepackage{soul, matlab-prettifier, multirow, varwidth, array, bm, amssymb}
 %\usepackage[all]{xy}
 \usepackage[margin=1.3in]{geometry}
@@ -22,8 +23,6 @@
 \usepackage{wrapfig}
 \usepackage{subcaption}
 
-%\raggedbottom
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% operators and symbols
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -32,7 +31,7 @@
 
 
 % operators
-\forcsvlist{\define{\DeclareMathOperator}{\mathrm}{}}{Ad, Aut, B, BSD, Char, Cl, Det, End, Frob, Gal, GL, hol, Hom, Id, Ind, Irr, Jac, Ker, Mod, N, new, old, ord,  Perm, PGL, Pic, Proj, PSL, R, Rad, Reg, Rep, res, Res, rk, sign, SL, Smo, SO, Span, Spec, Stab, supp, sw, Sym, Ta, tors, Tr, Trace, un, Vect, contr, Sel, rad, Norm}
+\forcsvlist{\define{\DeclareMathOperator}{\mathrm}{}}{Ad, Aut, B, BSD, Char, Cl, Det, End, Frob, Gal, GL, hol, Hom, I, II, III, IV, Id, Ind, Irr, Jac, Ker, Mod, N, new, old, ord,  Perm, PGL, Pic, Proj, PSL, R, Rad, Reg, Rep, res, Res, rk, sign, SL, Smo, SO, Span, Spec, Stab, supp, sw, Sym, Ta, tors, Tr, Trace, un, Vect, contr, Sel, rad, Norm}
 
 %trivial and ell
 \newcommand{\trivial}{\mathbbm{1}}
@@ -114,11 +113,14 @@
 \newtheorem{notn}[thm]{Notation}
 \newtheorem{rem}[thm]{Remark}
 \newtheorem{example}[thm]{Example}
+\newtheorem{exercise}[thm]{Exercise}
 \newtheorem{examples}[thm]{Examples}
 \newtheorem{fact}[thm]{Fact}
 
 \newtheorem{conj}[thm]{Conjecture}
+\newtheorem*{conj*}{Conjecture}
 \newtheorem{notation}[thm]{Notation}
+\newtheorem*{thm*}{Theorem}
 
 %Sha:
 \usepackage[OT2,T1]{fontenc}
@@ -130,7 +132,6 @@
 %\DeclareMathSymbol{\Sha}{\mathalpha}{cyrletters}{"58}
 
 %\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
-
 
 \title{Arithmetic Applications of Artin Twist and BSD}
 \author{Edwina Aylward, Albert Lopez Bruch}
@@ -168,12 +169,10 @@
 \newpage
 \section{Predicting Positive Rank}
 \input{section_rank/positive_rank.tex}
-\input{section_rank/examples.tex}
 
 \newpage
 \section{Consistency cases with BSD}
 \input{section_consistent/consistency.tex}
-\input{section_consistent/odd-ext.tex}
 
 \newpage
 \begin{appendices}

@@ -1,0 +1,67 @@
+\subsection{Parity tests vs. norm relations tests}
+
+We briefly introduce root numbers, which govern the parity of the rank of an elliptic curve. Let $K$ be a number field and $E / K$ an elliptic curve. The parity conjecture states that the rank of $E / K$ is determined by the global root number $w(E / K) \in \{ \pm 1 \}$, that is
+
+\begin{conj}[Parity conjecture]\label{parity}
+    $(-1)^{\rk E / K} = w(E / K).$
+\end{conj}
+
+In particular if $w(E / K) = -1$, one has that $\rk E / K$ is odd, and so $\rk E / K > 0$. Therefore the computation of root numbers provides a test for forcing positive rank. The parity conjecture follows from assuming BSD and the Hasse--Weil conjecture. 
+
+\begin{conj}[Hasse--Weil conjecture]
+    $L(E / K, s)$ has a completed $L$-function 
+    $\hat{L}(E / K, s)$ that can be analytically continued to $\bC$ and satisfies the following functional equation:
+    \[ \hat{L}(E / K, s) = w(E / K) \hat{L}(E / K, 2- s) .\]
+\end{conj}
+
+This is known when $K = \bQ$ due to modularity of elliptic curves. Assuming the Hasse--Weil conjecture, one has that if $w(E / K) = 1$, then $\hat{L}(E / K, s)$ is symmetric under $s \leftrightarrow 2 - s$, and so the order of vanishing at $s = 1$ of $\hat{L}(E / K, s)$ is even. Then $\ord_{s = 1} L(E / K, s) = \ord_{s = 1}\hat{L}(E / K, s)$ and assuming BSD one has that $\rk E / K$ is even. 
+ 
+The parity conjecture has been proved independently of BSD in many cases, for example when $K = \bQ$ in \cite[Theorem 1.4]{DD-BSD}.
+
+
+The global root number is a product of local root numbers. 
+\[ w(E / K) = \prod_v w(E / K_v), \]
+taking the product over all places (including infinite ones) of $K$. 
+The following proposition details how to compute these root numbers (avoiding residue characteristic $2$ and $3$ in the case of additive reduction). 
+
+\begin{prop}\cite[Theorem 3.1]{DD-BSD}\label{compute-root}
+    Let $K$ be a number field, $K_v$ the completion of $K$ with respect to a place $v$. When $v$ is finite, 
+    let $k$ be the residue field of $K_v$. Then the local root number $w(E / K_v)$ is given by 
+    \begin{enumerate}
+        \setlength\itemsep{0em}
+        \item $w(E / K_v) = -1$ if $v$ is infinite, or if  $E / K_v$ has split multiplicative reduction
+        \item $w(E / K_v) = 1$ if $E / K_v$ has good reduction, or if $E / K_v$ has non-split multiplicative reduction, 
+        \item $w(E / K_v) = \legendre{-1}{k}$ if $E / K_v$ has potentially multiplicative reduction and $k$ has characteristic $\geq 3$, where $\legendre{*}{k}$ is the quadratic residue symbol on $k^{\times}$,
+        \item $w(E / K_v) = (-1)^{\floor{\frac{v(\Delta)|k|}{12}}}$, if $E / K_v$ has potentially good reduction and $k$ has characteristic $\geq 5$, where $\Delta$ is the minimal discriminant of $E$.  
+    \end{enumerate} 
+\end{prop}
+
+\begin{example}[Modular curve $X_1(11)$]
+    The elliptic curve $E \colon y^2 + y = x^3  - x^2$ over $\bQ$ has good reduction at $p \not= 11$, and split multiplicative reduction at $p = 11$. Hence by Proposition \ref{compute-root}, $w(E / \bQ) = (-1)(-1) = 1$ and so the parity conjecture implies that $\rk E / \bQ$ is even (actually, it is zero). 
+\end{example}
+
+Now let us justify the title of this subsection. We have seen that both Theorem \ref{thm_positive_rank} and Conjecture \ref{parity} can force the rank of an elliptic curve to be positive. One can observe that for the examples in the next subsection, whenever our norm relations test forces rank growth, a root number computation for the subfields appearing in our relation also implies positive rank. It would be a lot more interesting if we could find an example where the norm relations test forces positive rank and root numbers do not, but unfortunately we have not been able to do so. 
+
+{\color{red} On the other hand ... root numbers should help us determine what the regulators look like ... and we could put them into our factors... maybe talk about this in a conclusion / outlook?}
+
+\vspace{1em}
+There is also a global root number for the twist of $E$ by an Artin representation $\rho$, denoted $w(E / K, \rho) \in \{ \pm 1 \}$. This appears in a functional equation relating $\hat{L}(E / K, \rho, s)$ and $\hat{L}(E / K, \rho^*, 2 - s)$. Then one has a parity conjecture for twists
+
+\begin{conj}[Parity conjecture for twists]
+   Let $\rho$ be a self-dual Artin representation. Then $$ w(E / K, \rho) = (-1)^{\langle \rho, E(K)_{\bC} \rangle}.$$
+\end{conj}
+
+
+Again this is the product of local root numbers; $w(E / K, \rho) = w(E / K_v, \rho)$, with $w(E / K_v, \rho) \in \{ \pm 1\}$. The twisted root numbers satisfy the following properties:
+
+\begin{prop}\cite[Lemma A.1, Proposition A.2]{reg-const}\label{compute-root-twist}
+    Let $E / K$ be an elliptic curve, $L / K$ a finite Galois extension with Galois group $G$. Let $\rho$, $\tau$ be Artin representations over $K$ that factor through $G$ and let $\trivial$ denote the trivial Artin representation over $K$. Then
+    \begin{enumerate}
+        \setlength\itemsep{0em}
+        \item $w(E / K, \rho \oplus \tau) = w(E / K, \rho) w(E / K, \tau)$,
+        \item $w(E / K, \trivial) = w(E/ K)$, 
+        \item If $H \leq G$ then $w(E / L^H) = w(E/ K, \Ind_{H}^G \trivial)$, 
+        \item $w(E / K, \rho \oplus \rho^*) = 1$.
+    \end{enumerate}
+    
+\end{prop}
