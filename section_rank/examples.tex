@@ -1,11 +1,11 @@
 \subsection{Examples}
 
-We now present some examples where we use Theorem \ref{thm_positive_rank} to force positive rank. Throughout we will consider an elliptic curve $E$ defined over $\bQ$, and a finite Galois extension $F / \bQ$ with Galois group $G = \Gal(F / \bQ)$. As described in Remark \ref{rephrase-thm}, the strategy is to find $\rho \in \R(G)$ and a $\rho$-relation $\Theta \in \B(G)$ such that $C(\Theta)$ is either not a norm from a quadratic subfield of $\bQ(\rho)$, or not a rational square, as appropriate. We start with a small observation:
+We now present some examples where we use Theorem \ref{thm_positive_rank} to force positive rank. Throughout we will consider an elliptic curve $E$ defined over $\bQ$, and a finite Galois extension $F / \bQ$ with Galois group $G = \Gal(F / \bQ)$. As described in Remark \ref{rephrase-thm}, the strategy is to find a representation $\rho$ of $G$ and a $\rho$-relation $\Theta \in \B(G)$ such that $C(\Theta)$ is either not a norm from a quadratic subfield of $\bQ(\rho)$, or not a rational square, as appropriate. We start with a small observation:
 
 \begin{rem}[Taking quotients]
     Let $E$, $F$, $G$ be as above. Consider $H \leq G$, and $N \triangleleft G$ such that $N \leq H$. Then $C(H) = C_{E / F^H}$ is equal to $C(NH/N) = C_{E / L^{NH/N}}$ (viewing $C$ as a function on $\B(G / N)$) as the fields $F^H$ and $L^{NH/ N}$ are isomorphic. 
     
-    Consider $\rho \in \R(G)$ with $N \leq \ker \rho$, so that $\bQ(\rho) = \bQ(\rho^N)$. Then, if $\Theta = \sum_i n_i H_i \in \B(G)$ with $N \leq H_i$ for all $i$, it follows that $N \cdot \Theta / N = \Theta / N$ being a norm relation for $C \colon \B(G / N) \to \bQ^{\times}$ implies that $\Theta$ is a norm relation for $C \colon \B(G) \to \bQ^{\times}$. 
+    Consider a representation $\rho$ of $G$ with $N \leq \ker \rho$, so that $\bQ(\rho) = \bQ(\rho^N)$. Then, if $\Theta = \sum_i n_i H_i \in \B(G)$ with $N \leq H_i$ for all $i$, it follows that $N \cdot \Theta / N = \Theta / N$ being a norm relation for $C \colon \B(G / N) \to \bQ^{\times}$ implies that $\Theta$ is a norm relation for $C \colon \B(G) \to \bQ^{\times}$. 
 \end{rem}
 
 We will need to be able to count primes and compute residue degrees in intermediate extensions of $F / \bQ$, which is described by the following. 
@@ -51,7 +51,7 @@ Consider a prime $p \in \bQ$ and decomposition and inertia groups $D_p$, $I_p \l
 \end{example}
 
 \begin{example}[Dihedral]
-    Let $q_1$, $q_2$ be odd primes. Consider $G = D_{2 q_1 q_2}$ the dihedral group of order $2 q_1 q_2$. There is an irreducible representation $\rho \in \R(G)$, obtained by inducing a linear order $q_1 q_2$ faithful representation from $C_{q_1 q_2}$. Thus $\rho$ is of degree $2$ and $\bQ(\rho) = \bQ(\zeta_{q_1 q_2})^{C_2}$. Then $\rho$ has $\frac{(q_1 - 1)(q_2 - 1)}{2}$ Galois conjugates in $\R(G)$, and so $\repnorm{\rho}$ is of dimension $2 \cdot \frac{(q_1 - 1)(q_2 - 1)}{2}$. There is a $\rho$-relation $$\Theta = C_2 - D_{2 q_1} - D_{2 q_2} + G, \qquad \bC[G / \Theta] \simeq \repnorm{\rho}.$$ 
+    Let $q_1$, $q_2$ be odd primes. Consider $G = D_{2 q_1 q_2}$ the dihedral group of order $2 q_1 q_2$. There is an irreducible representation $\rho$ of $G$, obtained by inducing a linear order $q_1 q_2$ faithful representation from $C_{q_1 q_2}$. Thus $\rho$ is of degree $2$ and $\bQ(\rho) = \bQ(\zeta_{q_1 q_2})^{C_2}$. Then $\rho$ has $\frac{(q_1 - 1)(q_2 - 1)}{2}$ Galois conjugates, and so $\repnorm{\rho}$ is of dimension $2 \cdot \frac{(q_1 - 1)(q_2 - 1)}{2}$. There is a $\rho$-relation $$\Theta = C_2 - D_{2 q_1} - D_{2 q_2} + G, \qquad \bC[G / \Theta] \simeq \repnorm{\rho}.$$ 
 
     Suppose that $E / \bQ$ is semistable. Recall that $C(\Theta) = \prod_p T_{\fP \mid p}(\Theta)$, where $T_{\fP \mid p}$ depends on $D_p$, $I_p$, the decomposition group and inertia group at $p$ respectively. Suppose that $E / \bQ_p$ has split multiplicative reduction. Ranging over all possible $D_p$ and $I_p$, a case by case analysis yields that $T_{\fP \mid p}(\Theta)$ is non-square only when the decomposition group is $D_{2 q_1}$ or $D_{2 q_2}$ (and $I_p$ is non-trivial). 
 

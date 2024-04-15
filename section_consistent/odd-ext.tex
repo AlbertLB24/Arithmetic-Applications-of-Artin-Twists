@@ -9,7 +9,7 @@ We now prove a result analogous to the previous section, but when $F / \bQ$ is a
 \begin{proof}
 Consider $H \leq G$ and intermediate field $F^H$. Then 
 $\Ind_H^G \trivial \simeq \trivial \oplus 
-\rho \oplus \rho^*$ for some $\rho \in \R(G)$, since the only self-dual representation of an odd-order group is the trivial representation. Therefore by Proposition \ref{compute-root-twist}, $w(E / F^H) = w(E / F)w(E, \rho \oplus \rho^*)$ and $w(E, \rho \oplus \rho^*) = 1$. Thus $w(E / \bQ) = w(E / F^H)$ for all $H \leq G$. 
+\rho \oplus \rho^*$ for some non self-dual representation $\rho$ of $G$, since the only self-dual representation of an odd-order group is the trivial representation. Therefore by Proposition \ref{compute-root-twist}, $w(E / F^H) = w(E / F)w(E, \rho \oplus \rho^*)$ and $w(E, \rho \oplus \rho^*) = 1$. Thus $w(E / \bQ) = w(E / F^H)$ for all $H \leq G$. 
 \end{proof}
 
 Thus once we assume that $\rk E / \bQ = 0$, the parity conjecture tells us that $\rk E / F^H$ is even for all $H \leq G$, which does not force it to be non-zero. 
@@ -19,7 +19,7 @@ Thus once we assume that $\rk E / \bQ = 0$, the parity conjecture tells us that 
  Let $E / \bQ$ be an elliptic curve, $F / \bQ$ be an extension of odd order with Galois group $G$. 
  
 Assume that $E$ has semistable reduction at $2$ and $3$. 
-Take any representation $\rho \in \R(G)$ with quadratic subfield $\bQ(\sqrt{D}) \subset \bQ(\rho)$ and relation
+Take any representation $\rho$ of $G$ with quadratic subfield $\bQ(\sqrt{D}) \subset \bQ(\rho)$ and relation
 \begin{equation*}\label{odd-exp} \repnorm{\rho}^{\oplus m} =
  \left(\bigoplus_{\mathfrak{g}\in\Gal(\QQ(\rho)/\QQ)}\rho^{\mathfrak{g}}\right)^{\oplus m }=\bigoplus_i\Ind_{F_i/\QQ}\mathds{1}\ominus\bigoplus_j\Ind_{F'_j/\QQ}\mathds{1}
 \end{equation*}
