@@ -237,7 +237,7 @@ Similarly to the split multiplicative case, we may pass to the tame quotient $C_
 since $3 \nmid|P_p|$. Therefore we may compute the number of subgroups divisible by $3$ in $\Psi = P_p \cdot \Res_{D_p} \Theta / P_p \in \B(C_l)$.  Let $h \colon \B(C_l) \to \bQ^{\times}$ be the function given by $H \mapsto \begin{cases} 3 & 3 \mid [C_l : H], \\ 1 & 3 \nmid [C_l : H]. \end{cases}$
 
 \begin{prop}
-   Suppose that $E / \bQ_p$ has additive reduction of Type $IV$ or $IV^*$, with $c_v(E / \bQ_p) = 3$.  Then $T_{\fP \mid p}(\Theta) \equiv h(\Psi) \mod \bQ^{\times 2}$ and $T_{\fP \mid p}(\Theta) \in \fieldnorm{\rho}$. 
+   Suppose that $E / \bQ_p$ has additive reduction of Type $\IV$ or $\IV^*$, with $c_v(E / \bQ_p) = 3$.  Then $T_{\fP \mid p}(\Theta) \equiv h(\Psi) \mod \bQ^{\times 2}$ and $T_{\fP \mid p}(\Theta) \in \fieldnorm{\rho}$. 
 \end{prop}
 
 \begin{proof}
@@ -250,4 +250,10 @@ We have observed that for all reduction types of $E / \bQ_p$, one always has $C_
 
 \qed
 
-{\color{red} corollary about restricting to odd order decomposition groups??}
+\begin{cor}\label{cor-odd-decomp}
+    Let $G$ be a finite group, $\rho$ a character of $G$ with $\bQ(\rho)$ quadratic. Let $\Theta \in \B(G)$ be a $\rho$-relation. If $D_p \leq G$ is of odd order, then $C_{\fP \mid p}(\Theta) \in \fieldnorm{\rho}$.
+\end{cor}
+
+\begin{proof}
+ Throughout this section our results only depended on the oddness of $D_p$.
+\end{proof}

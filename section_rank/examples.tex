@@ -10,7 +10,7 @@ We now present some examples where we use Theorem \ref{thm_positive_rank} to for
 
 We will need to be able to count primes and compute residue degrees in intermediate extensions of $F / \bQ$, which is described by the following. 
 
-\begin{exercise}[Counting primes and ramification degrees]
+\begin{exercise}[Counting primes and ramification degrees]\label{ex-counting}
 Consider a prime $p \in \bQ$ and decomposition and inertia groups $D_p$, $I_p \leq G$. Let $H \leq G$. 
 \begin{enumerate}
     \setlength\itemsep{0em}
@@ -51,23 +51,23 @@ Consider a prime $p \in \bQ$ and decomposition and inertia groups $D_p$, $I_p \l
 \end{example}
 
 \begin{example}[Dihedral]
-    Let $q_1$, $q_2$ be odd primes. Consider $G = D_{2 q_1 q_2}$ the dihedral group of order $2 q_1 q_2$. There is an irreducible representation $\rho$ of $G$, obtained by inducing a linear order $q_1 q_2$ faithful representation from $C_{q_1 q_2}$. Thus $\rho$ is of degree $2$ and $\bQ(\rho) = \bQ(\zeta_{q_1 q_2})^{C_2}$. Then $\rho$ has $\frac{(q_1 - 1)(q_2 - 1)}{2}$ Galois conjugates, and so $\repnorm{\rho}$ is of dimension $2 \cdot \frac{(q_1 - 1)(q_2 - 1)}{2}$. There is a $\rho$-relation $$\Theta = C_2 - D_{2 q_1} - D_{2 q_2} + G, \qquad \bC[G / \Theta] \simeq \repnorm{\rho}.$$ 
+    Let $q_1, q_2$ be odd primes. Consider $G = D_{2 q_1 q_2}$ the dihedral group of order $2 q_1 q_2$. There is an irreducible representation $\rho$ of $G$, obtained by inducing a linear order $q_1 q_2$ faithful representation from $C_{q_1 q_2}$. Thus $\rho$ is of degree $2$ and $\bQ(\rho) = \bQ(\zeta_{q_1 q_2})^{C_2}$. Then $\rho$ has $\frac{(q_1 - 1)(q_2 - 1)}{2}$ Galois conjugates, and so $\repnorm{\rho}$ is of dimension $2 \cdot \frac{(q_1 - 1)(q_2 - 1)}{2}$. There is a $\rho$-relation $$\Theta = C_2 - D_{2 q_1} - D_{2 q_2} + G, \qquad \bC[G / \Theta] \simeq \repnorm{\rho}.$$ 
 
-    Suppose that $E / \bQ$ is semistable. Recall that $C(\Theta) = \prod_p T_{\fP \mid p}(\Theta)$, where $T_{\fP \mid p}$ depends on $D_p$, $I_p$, the decomposition group and inertia group at $p$ respectively. Suppose that $E / \bQ_p$ has split multiplicative reduction. Ranging over all possible $D_p$ and $I_p$, a case by case analysis yields that $T_{\fP \mid p}(\Theta)$ is non-square only when the decomposition group is $D_{2 q_1}$ or $D_{2 q_2}$ (and $I_p$ is non-trivial). 
+    Suppose that $E / \bQ$ is semistable. Recall that $C(\Theta) = \prod_p C_{\fP \mid p}(\Theta)$. Suppose that $E / \bQ_p$ has split multiplicative reduction, with $n = v_p(\Delta_E)$. Then by Proposition \ref{prop_local_fns}, $C_{\fP \mid p} = (D_p, I_p, en)$. Corollary \ref{cor-odd-decomp} implies that $C_{\fP \mid p}(\Theta)$ is a norm from the quadratic subfields of $\bQ(\rho)$ whenever $|D_p|$ is odd. In fact, ranging over all possible $D_p$ and $I_p$, a case by case analysis yields that $C_{\fP \mid p}(\Theta)$ is non-square only when the decomposition group is $D_{2 q_1}$ or $D_{2 q_2}$ (and $I_p$ is non-trivial). 
 
-    For example, let $p$ have decomposition group $D_{2 q_1}$ and inertia group $C_{q_1}$.
+    For example, let $p$ have decomposition group $D_{2 q_1}$ and inertia group $C_{q_1}$. We use Exercise \ref{ex-counting} to compute $(D_p, I_p, en)$ on each subgroup in $\Theta$:
         \begin{itemize}[--]
             \setlength\itemsep{0em}
-            \item The action of $D_{2 q_1}$ on $C_2 \backslash G$ yields $1$ orbit of size $C_{q_1}$ (the orbit of the identity) and $\frac{q_2 - 1}{2}$ orbits of size $2q_1$ (coming from $C_2$ acting faithfully on $C_{q_2}$). The size of the inertia sub-orbits is $q_1$. Hence $T_{\fP \mid p}(C_2) = (q_1 n)^{1 + \frac{q_2 - 1}{2}}$.
-            \item The action of $D_{2 q_1}$ on $D_{2 q_1} \backslash G$ yields the same number of orbits as above, but now the action of $C_{q_1} \leq D_{2 q_1}$ is trivial and the size of the inertia sub-orbits are all $1$, so that $T_{\fP \mid p}(D_{2 q_1}) = n^{1 + \frac{q_2 - 1}{2}}$.
-            \item The action of $D_{2 q_1}$ on $D_{2 q_2} \backslash G$ yields one orbit of size $q_1$, with the inertia sub-orbit also of size $q_1$, hence $T_{\fP \mid p}(D_{2 q_2}) = q_1 n$.
+            \item The action of $D_{2 q_1}$ on $C_2 \backslash G$ yields $1$ orbit of size $C_{q_1}$ (the orbit of the identity) and $\frac{q_2 - 1}{2}$ orbits of size $2q_1$ (coming from $C_2$ acting faithfully on $C_{q_2}$). The size of the inertia sub-orbits is $q_1$. Hence $C_{\fP \mid p}(C_2) = (q_1 n)^{1 + \frac{q_2 - 1}{2}}$.
+            \item The action of $D_{2 q_1}$ on $D_{2 q_1} \backslash G$ yields the same number of orbits as above, but now the action of $C_{q_1} \leq D_{2 q_1}$ is trivial and the size of the inertia sub-orbits are all $1$, so that $C_{\fP \mid p}(D_{2 q_1}) = n^{1 + \frac{q_2 - 1}{2}}$.
+            \item The action of $D_{2 q_1}$ on $D_{2 q_2} \backslash G$ yields one orbit of size $q_1$, with the inertia sub-orbit also of size $q_1$, hence $C_{\fP \mid p}(D_{2 q_2}) = q_1 n$.
         \end{itemize}
-    Hence
-    \[ T_{\fP \mid p}(\Theta) = \frac{(q_1 n )^{1 + \frac{q_2 - 1}{2}} (n)}{(n)^{1 + \frac{q_2 - 1}{2}} (q_1 n)} = q_1^{\frac{q_2 - 1}{2}} .\] 
+    In total,
+    \[ C_{\fP \mid p}(\Theta) = \frac{(q_1 n )^{1 + \frac{q_2 - 1}{2}} (n)}{(n)^{1 + \frac{q_2 - 1}{2}} (q_1 n)} = q_1^{\frac{q_2 - 1}{2}} .\] 
     By symmetry, taking the decomposition group to be $D_{2 q_2}$ and inertia group $C_{q_2}$, one has 
-     $T_{\fP \mid p}(\Theta) = q_2^{\frac{q_1 - 1}{2}}$.
+     $C_{\fP \mid p}(\Theta) = q_2^{\frac{q_1 - 1}{2}}$.
 
-    So let $E / \bQ$ have split multiplicative reduction at $p$ with decomposition group $D_{2 q_1}$ and inertia group $I_p = C_{q_1}$, and good reduction at all other primes. Further suppose that $q_1, q_2 \equiv 3 \pmod 4$ and that $\legendre{q_1}{q_2} = -1$. Then $\bQ(\sqrt{q_1 q_2}) \subset \bQ(\rho)$ but $T_{\fP \mid p}(\Theta) \not\in N_{\bQ(\sqrt{q_1 q_2}) / \bQ}(\bQ(\sqrt{q_1 q_2})^{\times})$. Indeed, one has $T_{\fP \mid p}(\Theta) \equiv q_1 \mod \bQ^{\times 2}$, but $q_1$ is not the norm of an element of $\bQ(\sqrt{q_1 q_2})$, since $z^2 q_1 = x^2 - q_1q_2 y^2$ for $x,y,z \in \bZ$ implies $q_1 = \square \pmod {q_2}$, a contradiction. Thus $\rk E / F > 0$.
+    So let $E / \bQ$ have split multiplicative reduction at $p$ with decomposition group $D_{2 q_1}$ and inertia group $I_p = C_{q_1}$, and good reduction at all other primes. Further suppose that $q_1, q_2 \equiv 3 \pmod 4$ and that $\legendre{q_1}{q_2} = -1$. Then $\bQ(\sqrt{q_1 q_2}) \subset \bQ(\rho)$ but $C_{\fP \mid p}(\Theta) \not\in N_{\bQ(\sqrt{q_1 q_2}) / \bQ}(\bQ(\sqrt{q_1 q_2})^{\times})$. Indeed, one has $C_{\fP \mid p}(\Theta) \equiv q_1 \mod \bQ^{\times 2}$, but $q_1$ is not the norm of an element of $\bQ(\sqrt{q_1 q_2})$, since $z^2 q_1 = x^2 - q_1q_2 y^2$ for $x,y,z \in \bZ$ implies $q_1 = \square \pmod {q_2}$, a contradiction. Thus $\rk E / F > 0$.
 
     This rank growth is predicted by root number computations also, however. Assume that $F / \bQ$ is totally real. Then $w(E / F^H) = (-1)^{[F^H \colon \bQ] + | H \backslash G / D_p|}$ by Proposition \ref{compute-root}. Thus
     \begin{itemize}[--]
