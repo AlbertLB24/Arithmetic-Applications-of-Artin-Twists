@@ -9,10 +9,10 @@ We now prove a result analogous to the previous section, but when $F / \bQ$ is a
 \begin{proof}
 Consider $H \leq G$ and intermediate field $F^H$. Then 
 $\Ind_H^G \trivial \simeq \trivial \oplus 
-\rho \oplus \rho^*$ for some non self-dual representation $\rho$ of $G$, since the only self-dual representation of an odd-order group is the trivial representation. Therefore by Proposition \ref{compute-root-twist}, $w(E / F^H) = w(E / F)w(E, \rho \oplus \rho^*)$ and $w(E, \rho \oplus \rho^*) = 1$. Thus $w(E / \bQ) = w(E / F^H)$ for all $H \leq G$. 
+\rho \oplus \rho^*$ for some non self-dual representation $\rho$ of $G$, since the only self-dual representation of an odd-order group is the trivial representation. Therefore by Proposition \ref{compute-root-twist}, $w(E / F^H) = w(E / F)w(E, \rho \oplus \rho^*)$ and $w(E, \rho \oplus \rho^*) = 1$. Hence $w(E / \bQ) = w(E / F^H)$ for all $H \leq G$. 
 \end{proof}
 
-Thus once we assume that $\rk E / \bQ = 0$, the parity conjecture tells us that $\rk E / F^H$ is even for all $H \leq G$, which does not force it to be non-zero. 
+Therefore once we assume that $\rk E / \bQ = 0$, the parity conjecture tells us that $\rk E / F^H$ is even for all $H \leq G$, which does not force it to be non-zero. 
 
 
 \begin{thm}\label{odd-exts}
@@ -37,11 +37,11 @@ As in Remark \ref{rephrase-thm}, we may replace $\rho$ by the sum of its conjuga
 The product of terms we are computing is $C(\Theta)$, where $C \colon \B(G) \to \bQ^{\times}$ is given by $C \colon H \mapsto C_{E / F^H}$, and $\Theta$ is any $\rho$-relation.
 We break up the function $C$ into $C = \prod_p C_{\fP \mid p} = \prod_p = T_{\fP \mid p} \cdot D_{\fP \mid p}$, ranging over primes $p \in \bQ$,
 as defined in Notation \ref{not_contr_fns}.
-Then one has
+We showed that
 \begin{equation*}\label{Dp-loc}
-T_{\fP \mid p} \cdot D_{\fP \mid p} = (D_p, C_v)
+C_{\fP \mid p} = (D_p, C_v)
 \end{equation*}
-where $C_v$ is a function on $\B(D_p)$ sending $H \mapsto C_v(E / F_w^H)$. The following result will allow us to apply some results from $\S$\ref{sec-norm-rels}.
+where $C_v$ is a function on $\B(D_p)$ sending $H \mapsto C_v(E / F_w^H)$, for $D_p = \Gal(F_w / \bQ_p)$. The following result will allow us to apply some results from $\S$\ref{sec-norm-rels}.
 
 \begin{thm}\label{odd-c-brauer}
     When $D_p$ has odd order, $C_v(\Psi) \in \bQ^{\times 2}$ for any Brauer relation $\Psi \in \B(D_p)$. 
@@ -61,17 +61,17 @@ It is enough to prove Theorem \ref{odd-exts} when $m$ is the order of $\repnorm{
 \end{proof}
 
 Let $\tau$ be the generator of $\Gal(\bQ(\sqrt{D}) / \bQ)$.
-Let $\ff$ be the smallest integer such that $\bQ(\sqrt{D}) \subset \bQ(\zeta_{\ff})$. Then $\ff \mid |G|$, hence is odd. By Remark \ref{conductor}, $\ff = |D|$ and that $D \equiv 1 \pmod 4$. The following shows that it is only of interest to consider decomposition groups of exponent divisible by $\ff$.
+Let $\ff$ be the smallest integer such that $\bQ(\sqrt{D}) \subset \bQ(\zeta_{\ff})$. Then $\ff \mid |G|$, hence is odd. By Remark \ref{conductor}, $\ff = |D|$ and $D \equiv 1 \pmod 4$. The following shows that it is only of interest to consider decomposition groups of exponent divisible by $\ff$.
 
 \begin{cor}\label{rational-res-2}
-    Let the exponent of $D_p$ be $b$. If $\ff \nmid b$, then $(T_{\fP \mid p} \cdot D_{\fP \mid p})(\Theta) \in \bQ^{\times 2}$.
+    Let the exponent of $D_p$ be $b$. If $\ff \nmid b$, then $C_{\fP \mid p}(\Theta) \in \bQ^{\times 2}$.
 \end{cor}
 
 \begin{proof}
     Note that $\bQ(\Res_{D_p}{\rho}) \subset \bQ(\zeta_b) \cap \bQ(\rho) \subset \bQ(\zeta_b)$. Then $\bQ(\rho) \subset \bQ(\zeta_b) \implies \ff \mid b$ by minimality of $\ff$. Since $\ff \nmid b$, we have $\bQ(\rho) \not\subset \bQ(\zeta_b)$, so $\bQ(\Res_{D_p} \rho) = \bQ$. The corollary then follows from Proposition \ref{rational-res} and Theorem \ref{odd-c-brauer}, noting that since $\C(D_p)$ is odd, multiplication by $2$ is injective. 
 \end{proof}
 
-Fix $\Theta = \sum_i n_i H_i \in \B(G)$ with $\bC[\Theta] \simeq \repnorm{\rho}^{\oplus m}$. We prove that at each prime $p$, $(T_{\fP \mid p}\cdot D_{\fP \mid p})(\Theta) \in \fieldnorm{\rho}$.  As observed, this depends on $D_p$ and $I_p$. As we deal with each local factor individually, we argue that one can take $D_p = I_p$.
+Fix $\Theta = \sum_i n_i H_i \in \B(G)$ with $\bC[\Theta] \simeq \repnorm{\rho}^{\oplus m}$. We prove that at each prime $p$, $C_{\fP \mid p}(\Theta) \in \fieldnorm{\rho}$.  As observed, this depends on $D_p$ and $I_p$. As we deal with each local factor individually, we argue that one can take $D_p = I_p$.
 
 \begin{lemma}\label{tam-up-to-square}
     Let $E / K$ be an elliptic curve. Let $K' / K$ be an extension of number fields odd degree, unramified at the place $v$ of $K$. Then $C_w(E / K') \equiv C_v(E / K) \mod \bQ^{\times 2}$ for any place $w$ of $K'$ with $ w \mid v$. 
@@ -82,7 +82,7 @@ This is automatic for good reduction and split multiplicative reduction. It is a
 \end{proof}
 
 \begin{lemma}\label{DeqI}
-    At a prime $p$, we may assume that $D_p = I_p$ when computing $(T_{\fP \mid p} \cdot D_{\fP \mid p})(\Theta)$. 
+    At a prime $p$, we may assume that $D_p = I_p$ when computing $C_{\fP \mid p}(\Theta)$. 
 \end{lemma}
 
 \begin{proof}
@@ -90,49 +90,49 @@ Let $p$ have residue degree $f_p$. Let $L / \bQ$ be a Galois extension of degree
 
 Let $v$ be a place over $p$ in $F_i$. The extension $L_i / F_i$ is Galois, so $v$ is either split or inert in $L_i$.
 We claim that $C_v(E / F_i) \equiv \prod_{w | v} C_w(E / L_i) \mod \bQ^{\times 2}$. Indeed, the number of terms in the product on the right is odd, and by Lemma \ref{tam-up-to-square} $C_v(E / F_i) \equiv C_w(E / L_i) \mod \bQ^{\times 2}$. 
-Letting $T_{\fP \mid p}'$ and $D_{\fP \mid p}'$ be functions on $\B(G)$ defined as in \eqref{not_contr_fns} but with $\bQ$, $F$ replaced by $L$, $FL$, we see that $(T_{\fP \mid p} \cdot D_{{\fP \mid p}})(\Theta) \equiv (T_{\fP \mid p}' \cdot D_{\fP \mid p})(\Theta) \mod \bQ^{\times 2}$. 
+Letting $C_{\fP \mid p}'$ be the function on $\B(G)$ defined as in \eqref{not_contr_fns} but with $\bQ$, $F$ replaced by $L$, $FL$, we see that $C_{\fP \mid p}'(\Theta) \equiv C_{\fP \mid p}(\Theta) \mod \bQ^{\times 2}$. 
 Thus it is equivalent to do our computation in $FL / L$, but here $p$ has residue degree $1$.
 \end{proof}
 
-To prove Theorem \ref{odd-exts}, we proceed by considering separately each reduction type.
+To prove Theorem \ref{odd-exts}, we proceed by computing $C_{\fP \mid p}(\Theta)$ for each reduction type.
 
 \subsubsection*{Good reduction}
-If $E / \bQ$ has good reduction at $p$, it has good reduction at all primes lying above $p$ in subfields of $F$. Hence the Tamagawa number is always one, as well as $\left|\omega / \omega_{\fP}^{\min}\right|_{\fP}$ for any finite place $\fP \mid p$ in an intermediate field. Therefore $T_{\fP \mid p} \cdot D_{\fP \mid p} = 1$ as a  function on $\B(G)$.
+If $E / \bQ$ has good reduction at $p$, then by Proposition \ref{prop_local_fns}(i), $C_{\fP \mid p} = 1$.
 
 \subsubsection*{Multiplicative reduction}
 
-If $E / \bQ_p$ has multiplicative reduction, then as in the good reduction case one has $\left|\omega / \omega_{\fP}^{\min}\right|_{\fP} = 1$ for any place $\fP \mid p$ in an intermediate field. Thus $D_{\fP \mid p} = 1$.
-For $T_{\fP \mid p}$, we consider non-split/split reduction separately.
-\vspace{1em}
+\begin{lemma}
+Let $E / \bQ_p$ have non-split multiplicative reduction. Then $C_{\fP \mid p}(\Theta) \in \bQ^{\times 2}$.
+\end{lemma}
 
-\noindent\underline{\textit{Non-split multiplicative reduction}}
+\begin{proof}
+Since $D_p = I_p$, all primes above $p$ have residue degree $1$. Moreover, the ramification degrees are always odd. Thus by Proposition \ref{prop_local_fns}(iii), $C_{\fP \mid p}  = (D_p, \alpha)$
+where $\alpha$ is the constant function on $\B(D_p)$ with $\alpha \in \{1, 2\}$, depending on $v_p(\Delta)$ being even or odd. By Proposition \ref{const-fns}, it follows that $C_{\fP \mid p}(\Theta) \in \bQ^{\times 2}$.
+\end{proof}
 
-Let $E / \bQ_p$ have non-split multiplicative reduction. Since $D_p = I_p$, all primes above $p$ have residue degree $1$. Then the reduction at places above $p$ remains non-split in all intermediate subfields.
-It follows that 
-\[ T_{\fP \mid p} = (D_p, \alpha) \]
-where $\alpha$ is the constant function on $B(D_p)$ with $\alpha \in \{1, 2\}$, depending on $\ord_p(\Delta)$ being even or odd. By Proposition \ref{const-fns}, it follows that $T_{\fP \mid p}(\Theta) \in \bQ^{\times 2}$.\\  
-
-\noindent\underline{\textit{Split multiplicative reduction}}
-
-Now suppose $E / \bQ_p$ has split multiplicative reduction. The reduction type remains split at all places above $p$ within sub-extensions of $F / \bQ$. Let $\ord_p(\Delta) = n$. Then 
-\[ T_{\fP \mid p} = (D_p, D_p, en). \]
+Now suppose $E / \bQ_p$ has split multiplicative reduction. The reduction type remains split at all places above $p$ within sub-extensions of $F / \bQ$. Let $v_p(\Delta) = n$. Then by Proposition \ref{prop_local_fns}(ii), 
+\[ C_{\fP \mid p} = (D_p, D_p, en). \]
 Since the $n$ factor is constant, $(D_p, D_p, en)(\Theta) \equiv (D_p, D_p, e)(\Theta) \mod \bQ^{\times 2}$ by Proposition \ref{const-fns} .
 
-We have $D_p = I_p = P_p \ltimes C_l$, where $P_p \triangleleft I_p$ is wild inertia, and $C_l = I_p / P_p$ is the tame quotient. $C_l$ is a cyclic group, with $l \mid p^f - 1 = p - 1$. By Corollary \ref{rational-res-2}, we may consider such $D_p$ with exponent  $p^u l$ for some $u \geq 0$ such that $\ff \mid p^u l$.
+We have $D_p = I_p = P_p \ltimes C_l$, where $P_p \triangleleft I_p$ is wild inertia, and $C_l = I_p / P_p$ is the tame quotient. $C_l$ is a cyclic group, with $l \mid p^f - 1 = p - 1$. By Corollary \ref{rational-res-2}, we may consider such $D_p$ with exponent  $p^u l$ for some $u \geq 0$ such that $\ff \mid p^u l$. To compute $C_{\fP \mid p}(\Theta)$, we reduce to the tame quotient.
 
-Now, $(D_p, D_p, e)(\Theta)$ is the product of ramification indices at primes above $p$. We separate the $p$-part and tame part of this expression.
+\begin{lemma}
+Let $g \colon \B(C_l) \to \bQ^{\times}$ be defined by $H \mapsto [C_l \colon H] = \dim \bC[C_l / H]$. Let $\Psi = P_p \cdot \Res_{D_p} \Theta / P_p \in \B(C_l)$ Then $(D_p, D_p, e)(\Theta)$ and $g(\Psi)$ differ by a (possible) factor of $p$. 
+\end{lemma}
+
+\begin{proof}
+%Now, $(D_p, D_p, e)(\Theta)$ is the product of ramification indices at primes above $p$. We separate the $p$-part and tame part of this expression.
 Recall that the ramification index of a place $w$ above $p$ corresponding to the double coset $H_i x D_p$ has ramification degree $e_w = \frac{|I_p|}{|H_i \cap I_p^x|} =\frac{|I_p|}{|I_p \cap H^{x^{-1}}|}$.
 This is the dimension of the permutation representation $\bC[D_p / D_p \cap H^{x^{-1}}]$.
 Let  $D_p \cap H^{x^{-1}} = P' \ltimes C_a$ where $P' \leq P$ and $a | l$. Then the ramification index is $\frac{|P|}{|P'|}\cdot \frac{l}{a}$. 
-
 Taking fixed points under wild inertia, one has the following isomorphism of $D_p$-representations  $$\bC[D_p / D_p \cap H^{x^{-1}}]^{P_p} \simeq \bC[D_p / P_p (D_p \cap H^{x^{-1}})] \simeq \bC[D_p / P_p \ltimes C_a].$$ This permutation representation has dimension $\frac{l}{a}$, so we've killed off the $p$-part. 
 Then $$\bC[\Res_{D_p} \Theta]^{P_p} \simeq \left(\Res_{D_p} \rho^{\oplus m} \oplus \tau\left(\Res_{D_p}\rho^{\oplus m}\right)\right)^{P_p},$$
 and we can consider these as representations of $D_p / P_p = C_l$.
+It follows that $(D_p, D_p, e)(\Theta)$ differs from $g(\Psi)$ up to a (possible) factor of $p$. 
+\end{proof}
 
-Let $\Psi = P_p \cdot \Res_{D_p}\Theta / P_p \in B(C_l)$.
-Consider the function $g$ on $B(C_l)$ with $H \mapsto [C_l : H] = \dim \bC[C_l / H]$. 
-It follows from the above discussion that $(D_p, D_p, e)(\Theta)$ differs from $g(\Psi)$ up to a factor of $p$. Note that if $p = 2$ then $P_p = 1$ since $|P_p| \mid |G|$ which is odd. So we only need to consider this factor of $p$ for $p$ odd.
-Crucially, this factor of $p$ doesn't matter:
+Now we show that this factor of $p$ is a norm from $\fieldnorm{\rho}$.
+Note that if $p = 2$ then $P_p = 1$ since $|P_p| \mid |G|$ which is odd. So we only need to consider this factor of $p$ for $p$ odd.
 
 \begin{lemma}\label{p-norm-odd}
     Let $K = \bQ(\sqrt{D})$, with $\ff$ the smallest positive integer such that $K \subset \bQ(\zeta_{\ff})$. Suppose that $\ff$ is odd. Let $\ff \mid p^u l $, for some odd prime $p$, $u \geq 0$ and $l$ such that $p \equiv 1 \pmod l$. Then $p$ is the norm of an element from $K^{\times}$.
@@ -144,80 +144,66 @@ Crucially, this factor of $p$ doesn't matter:
     %If $q \not= p$ then $q \mid l$, so $p \equiv 1 \pmod l$. Therefore $p$ splits in any quadratic subfield of $E^{+}$ of discriminant not divisible by $p$. Else, $p$ ramifies in any quadratic subfield with discriminant divisible by $p$. Thus it is clear that $p$ has residue degree $1$ in $E^{+}$, hence also in the genus field $E$, and it follows from theorem \ref{p-principal} that $p$ is the norm of a principal ideal.  Else, we invoke theorem \ref{minus-one-norm}.
 \end{proof}
 
-Therefore we only need to worry about the tame part of our ramification indices. Let $\phi = (\Res_{D_p} \rho)^{P_p}$, viewed as a representation on $D_p / P_p = C_l$. Then $\Psi$ is a $\phi$-relation. If $\ff \nmid l$ then $\bQ(\phi) = \bQ$. Therefore $\bC[C_l / \Psi] \simeq \phi^{\oplus 2}$, implying that $\Psi = 2\Psi'$ for some $\Psi' \in \B(C_l)$ with $\bC[C_l / \Psi'] = \phi$. Then $g(\Psi) = g(\Psi')^2 \in \fieldnorm{\rho}$. Otherwise, suppose that $\bQ(\phi) = \bQ(\rho)$. It follows from Proposition \ref{index-fn-trivial} that $g(\Psi) \in \fieldnorm{\rho}$.
-%has rational character. Then, arguing as in Lemma \ref{rational-res-2}, $g(\Psi) \in \bQ^{\times 2}$ {\color{red} say more?}.%Hence we may assume that $\ff \mid l$ and that $\bQ(\phi) = \bQ(\rho) = K$.
+\begin{cor}
+Let $E / \bQ_p$ have split multiplicative reduction. Then $C_{\fP \mid p}(\Theta) \in \fieldnorm{\rho}$.
+\end{cor}
 
-%\begin{prop}\label{semi-stable-gd}
-%    One has $g(P_p \cdot \Res_{D_p}\Theta / P_p) = g(\Psi) \in \fieldnorm{\rho}$.   
-%\end{prop}
-
-%\begin{proof}
-%    Write $\phi^{\oplus m} \oplus \tau(\phi^{\oplus m}) = \bC[C_l / \Psi] = \sum_{l' \mid l}{a_{l'}} \chi_{l'}$ where $a_{l'} \in \bZ$ and $\chi_{l'}$ are defined in Example \ref{cyclic-relns} (recall $\chi_{l'} = \repnorm{\varphi_{l'}}$ with $\bQ(\varphi_{l'}) = \bQ(\zeta_{l'})$ and these form a basis for the irreducible rational representations of $C_l$). Let $\Psi_{l'} = \sum_{l'' | l'}\mu(l' / l'')\cdot C_{l / l''}$ so that $\bC[\Psi_{l'}] = \chi_{l'}$, as observed in the example. Then $\bC[\Psi] \simeq \bC[\sum_{l' | l } a_{l'} \Psi_{l'}]$ which implies that $\Psi = \sum_{l' | l } a_{l'} \Psi_{l'}$ since cyclic groups have no Brauer relations.
-
- %   Evaluating $g$ on $\Psi_{l'}$ is trivial unless $l' = q^a$ for some $q$ prime, $a \geq 1$. Indeed, if $l' = p_1^{e_1} \cdots p_r^{e_r}$ , with $r \geq 2$ and $e_i \geq 1$, then
- %   \[ \prod_{l'' \mid l'} (l'')^{\mu(l' / l'')} = \prod_{j_1, \ldots j_r \in \{0,1\}^r } \left(p_1^{e_1 - j_1} \cdots p_r^{e_r - j_r}\right)^{\# j_i = 1} = \prod_{i = 1}^r \left(\frac{p_i^{e_i}}{p_i^{e_i - 1}}\right)^{\sum_{ j = 0}^{r - 1} \binom{r-1}{j} (-1)^j} = 1. \]
- %   On the other hand,
-  %  \[ \prod_{l' \mid q^a} (l')^{\mu(q^a / l')} = q .\]
-    
-   % We claim that $\ff \nmid l'$ implies $a_{l'}$ is even. The irreducible representations of $C_l$ over $\bQ(\phi)$ are given by the orbits of the complex irreducible characters of $C_l$ acted upon by $H = \Gal (\bQ(\zeta_l) / \bQ(\phi))$. If $ \ff \nmid l'$ then $\bQ(\phi) \not\subset \bQ(\zeta_{l'})$, so that $B = \Gal(\bQ(\zeta_l) / \bQ(\zeta_{l'})) \not\leq H$. Then $\bQ(\phi) \cap \bQ(\zeta_{l'}) = \bQ$ so $BH = \Gal(\bQ(\zeta_l) / \bQ)$. The orbit of $\varphi_{l'}$ under $H$ is fixed by $BH$, hence is rational. It follows that $\langle \phi, \varphi_{l'} \rangle = \langle \tau(\phi) , \varphi_{l'} \rangle$ so that $a_{l'}$ is even.  
-
-  %  Thus we can only possibly get something interesting if $\ff = q$ is a prime. But then $q$ is a norm from $\bQ(\sqrt{q^*})$ by Corollary \ref{p-norm}. 
-%\end{proof}
+\begin{proof}
+By the previous two results, it is sufficient to show that $g(\Psi) \in \fieldnorm{\rho}$. Let $\phi = (\Res_{D_p} \rho)^{P_p}$, viewed as a representation on $D_p / P_p = C_l$. Then $\Psi$ is a $\phi$-relation. If $\ff \nmid l$ then $\bQ(\phi) = \bQ$. Therefore $\bC[C_l / \Psi] \simeq \phi^{\oplus 2}$, implying that $\Psi = 2\Psi'$ for some $\Psi' \in \B(C_l)$ with $\bC[C_l / \Psi'] = \phi$. Then $g(\Psi) = g(\Psi')^2 \in \fieldnorm{\rho}$. Otherwise, suppose that $\bQ(\phi) = \bQ(\rho)$. It follows from Proposition \ref{index-fn-trivial} that $g(\Psi) \in \fieldnorm{\rho}$.
+\end{proof}
 
 \subsubsection*{Additive reduction}
 
-Now suppose that $E / \bQ_p$ has additive reduction. In this case, assume that $p \geq 5$. We have $D_p = P_p \ltimes C_l$ with $ l \mid p - 1$.  
-%is at worst tamely ramified in $F / \bQ$. This ensures that $D_p = I_p = C_l$ is cyclic, and $l \mid p - 1$. 
-Once again we may assume that $\ff \mid p^u l$ where $p^u l $ is the exponent of $D_p$ by Corollary \ref{rational-res-2}.
+Now suppose that $E / \bQ_p$ has additive reduction. In this case, assume that $p \geq 5$.
+Write $D_p = \Gal(F_w / \bQ_p)$ for $w \mid p$ a place of $F$.
 
-Let $\delta = \ord_p(\Delta_E)$. Consider a place $\fP$ of $F^H$ over $p$ with ramification degree  $e_{\fP}$ over $\bQ$. Then $\Delta_E$ has valuation $n e_{\fP}$ with respect to $\fP$. Then $\left| \Delta_E / \Delta_{E, \fP}^{\min} \right|_{\fP} = p^{-(\delta\cdot e_{\fP} - \delta_H)}$, where $\delta_H = \ord_{\fP}(\Delta_{E, \fP}^{\min})$.
-Recall that
-\[ \left| \frac{\omega}{\omega_{\fP}^{\min}} \right|_{\fP}^{-12} = \left| \frac{\Delta_E}{\Delta_{E, \fP}^{\min}} \right|_{\fP} .\] 
-Therefore $\left| \omega / \omega_{\fP}^{\min} \right|_{\fP} = p^{\floor{\frac{\delta\cdot e_{\fP} - \delta_H}{12}}}$.
-
-Suppose that $E / \bQ_p$ has Kodaira type $I_n^*$, so $\delta = 6 + n$. For a finite extension $K' / \bQ_p$ with ramification degree $e$, $E / K'$ has Kodaira type $I_{en}^*$ if $e$ is odd, and type $I_{en}$ if $n$ is even. Thus in odd degree extensions the reduction type will stay potentially multiplicative. Then $\delta \cdot e_{\fP} - \delta_H = 6 e_{\fP}$.
-
-If $E / \bQ_p$ has potentially good reduction then $\delta \in \{2,3,4,6,8,9,10 \}$. $E$ also has potentially good reduction at the place $\fP$ in $F^H$. Hence $\delta_H \leq 12$ and it follows that $\delta_H = \delta \cdot e_\fP - 12 \cdot \floor{\delta \cdot e_\fP /12}$.
-
-In conclusion, 
+Again we have $D_p = P_p \ltimes C_l$ with $ l \mid p - 1$, and may assume that $\ff \mid p^u l$ where $p^u l $ is the exponent of $D_p$ by Corollary \ref{rational-res-2}. Let $n = v_p(\Delta_E)$. By Proposition \ref{prop_local_fns}(iv) and (v)
 \[ D_{\fP \mid p} = 
     \begin{cases}
-        (D_p, D_p,\ p^{\floor{e_ /2}}) & \text{if } E \text{ has potentially multiplicative reduction}, \\
-        (D_p, D_p,\ p^{\floor{\delta \cdot e/12}}) & \text{if } E \text { has potentially good reduction}.
+        (D_p, D_p,\ p^{\floor{e_ /2}}) & \text{if } E / \bQ_p \text{ has potentially multiplicative reduction}, \\
+        (D_p, D_p,\ p^{\floor{en /12}}) & \text{if } E / \bQ_p \text { has potentially good reduction}.
     \end{cases}
     \]
-
 In either case, $D_{\fP \mid p}(\Theta) \in N_{\bQ(\rho) / \bQ}(\bQ(\rho)^{\times})$. Indeed, this takes values $1$ or $p$ in $\bQ^{\times} / \bQ^{\times 2}$. But $p$ is a norm from $\bQ(\rho)$ by Lemma \ref{p-norm-odd}.
 
 %\[ \left|\frac{\Delta_{E}}{\Delta_{E, w}^\min} \right|_w = p^{f_w 12 \cdot \floor{e_w n / 12}} \implies 
 %       \left|\frac{\omega}{\omega_{w}^\min} \right|_w = p \]
 \vspace{1em}
 
-For the Tamagawa number computations, since $p \geq 5$ we may write $E / \bQ_p$ as $E \colon y^2 = x^3 + A x + B$ and use the description from \cite{reg-const} for computing Tamagawa numbers, as detailed in Lemma \ref{tamagawa-num}. The discriminant of $E / \bQ_p$ is $\Delta = -16(4A^3 + 27 B^2)$, and we write $\delta = v_p(\Delta)$. {\color{red} maybe add a small reminder}
+To compute $T_{\fP \mid p}(\Theta)$, since $p \geq 5$ we may write $E / \bQ_p$ as $E \colon y^2 = x^3 + A x + B$ and use the description from \cite{reg-const} for computing Tamagawa numbers, as detailed in Lemma \ref{tamagawa-num}. The discriminant of $E / \bQ_p$ is $\Delta = -16(4A^3 + 27 B^2)$. The case of potentially multiplicative reduction is almost immediate:
 
-Firstly, suppose that $E / \bQ_p$ has reduction type $I_{n}^{*}$. 
-Write $D_p = \Gal(F_w / \bQ_p)$. Since we assume $D_p = I_p$, i.e. the residue degree is one, it follows that any subextension $L'$ of $F_{w} / \bQ_p$ satisfies $\sqrt{B} \in L' \iff \sqrt{B} \in \bQ_p$ and $\sqrt{\Delta} \in L' \iff \sqrt{B} \in \bQ_p$. 
-Therefore $T_{\fP \mid p} = (D_p, \alpha)$ where $\alpha \in \{2, 4\}$. But then $(D_p, \alpha)(\Theta) \in \bQ^{\times 2}$ by Proposition \ref{const-fns}.
+\begin{lemma}[Potentially multiplicative reduction]
+    If $E / \bQ_p$ has reduction type $\I_{n}^{*}$ then $T_{\fP \mid p}(\Theta) \in \bQ^{\times 2}$. 
+\end{lemma}
 
-Now suppose that $E / \bQ_p$ has potentially good reduction. Observe that in a totally ramified extension of degree coprime to $12$, the Tamagawa number remains the same. Hence for $D_p$ odd, if $3 \nmid |D_p|$ it follows that $T_{\fP \mid p} = (D_p, \alpha)$ for some constant $
-\alpha$ and so $T_{\fP \mid p}(\Theta) \in \bQ^{\times 2}$.
+\begin{proof}
+Since we assume $D_p = I_p$, i.e. the residue degree is one, it follows that any subextension $L'$ of $F_{w} / \bQ_p$ satisfies $\sqrt{B} \in L' \iff \sqrt{B} \in \bQ_p$ and $\sqrt{\Delta} \in L' \iff \sqrt{B} \in \bQ_p$. 
+Therefore $T_{\fP \mid p} = (D_p, \alpha)$ where $\alpha \in \{2, 4\}$ by Lemma \ref{lem_add_tam}. But then $(D_p, \alpha)(\Theta) \in \bQ^{\times 2}$ by Proposition \ref{const-fns}.
+\end{proof}
 
-Thus we assume that $3 \mid |D_p|$. Since we assumed $p \geq 5$, we have $D_p = I_p = P_p \ltimes C_l$ with $3 \mid l$ and $p \equiv 1 \pmod l$. 
-If we have type $III$ or $III^*$ or $I_0^*$ then the Tamagawa number is still unchanged in any totally ramified extension of odd degree extension, even when the degree is divisible by $3$. We will treat the other cases separately: 
+Now suppose that $E / \bQ_p$ has potentially good reduction. Recall from Lemma \ref{lem_add_tam} that if $L' / \bQ_p$ has ramification degree $e$, then the Kodaira type of $E / L'$ depends on $\gcd(e n, 12)$. Thus in a ramified extension of degree coprime to $12$, the Kodaira type is unchanged, and further if this extension is totally ramified (so the residue degree is $1$), the Tamagawa number is unchanged also. Thus when $3 \nmid |D_p|$, $T_{\fP \mid p} = (D_p, \alpha)$ for some constant $\alpha$. If we have type $\III$ or $\III^*$ or $\I_0^*$ then the Tamagawa number is still unchanged in any totally ramified extension of odd degree extension, even when the degree is divisible by $3$. Then the Proposition \ref{const-fns} implies the following lemma:
 
-\vspace{1em}
+\begin{lemma}
+    \
+    \begin{enumerate}[(i)]
+        \setlength\itemsep{0em}
+        \item If $E / \bQ_p$ has potentially good reduction and $3 \nmid |D_p|$, then $T_{\fP \mid p}(\Theta) \in \bQ^{\times 2}$.
+        \item If $E / \bQ_p$ has potentially good reduction of type $\III$, $\III^*$, or $\I_0^*$, then $T_{\fP \mid p}(\Theta) \in \bQ^{\times 2}$.
+    \end{enumerate}
+\end{lemma}
 
-\noindent\underline{\textit{Type $II$ and $II^*$ reduction:}}
+Thus we assume that $3 \mid |D_p|$. Since we assumed $p \geq 5$, we have $D_p = I_p = P_p \ltimes C_l$ with $3 \mid l$ and $p \equiv 1 \pmod l$.
 
-Suppose $\delta = 2$, that is we have Type $II$ reduction. If $L' / \bQ_p$ is an odd degree extension that is divisible by $3$, then $E / L'$ has reduction type $I_0^*$. By Lemma \ref{tamagawa-num} the Tamagawa number of $E / L'$ then depends on whether $\sqrt{\Delta} \in \bQ_p$. Since we have additive reduction, we know that $p \mid A$, $p \mid B$. Moreover, $\delta = 2$ implies $2 = v_p(\Delta) = v_p(27 B^2 + 4A^3)$, so that $v_p(B) = 1$. Then, $\Delta = p^2\cdot \alpha$, and $\alpha \equiv -27\cdot\square \pmod p$. Therefore $\sqrt{\Delta} \in \bQ_p \iff -3$ is a square $\pmod p$. But this is the case; we assumed $p \equiv 1 \pmod l$, so $p \equiv 1 \pmod 3$. Then $\legendre{-3}{p} = \legendre{p}{3} = 1$. Therefore the Tamagawa number will be $1$ or $4$, which is a square.
-On the other hand if $L' / \bQ_p$ is an extension of odd degree then the reduction type over $L'$ is $II$ or $II^*$ and the Tamagawa number is $1$. It follows that $T_{\fP \mid p}(\Theta)$ is a product of square terms, so is itself square. 
+\begin{lemma}
+If $E / \bQ_p$ has Type $\II$ or Type $\II^*$ additive reduction and $3 \mid |D_p|$, then $T_{\fP \mid p}(\Theta) \in \bQ^{\times 2}$. 
+\end{lemma}
 
-If $\delta = 10$, then $E / L'$ has reduction type $I_0^*$ whenever $3 \mid [ L' : \bQ_p]$. 
-We show again that one must have $\sqrt{\Delta} \in \bQ_p$. Recall that $E / \bQ_p$ has potentially good reduction if and only if its $j$-invariant is integral, i.e. $v_p(j) \geq 0$ (cf. \cite[\S VII.5, Proposition 5.5]{S1}). One has $j = -1728(4A^3) / \Delta$ and so $3 v_p(A) \geq v_p(\Delta) = 10 \implies 3 v_p(A) > v_p(\Delta) \implies v_p(\Delta) = 2v_p(B)$, so $v_p(B) = 5$. Thus $\Delta = p^{10} \cdot \alpha$ with $\alpha \equiv -27 \cdot \square \pmod p$, and we conclude as above.    
+\begin{proof}
+If $3 \mid |D_p|$ then there is a subextension $F'$ of $F_w / \bQ_p$ with $\Gal(F_w / F') = C_3$. Then Lemma \ref{lem_nottwo} implies that $\sqrt{\Delta} \in F'$. But $F' / \bQ_p$ has residue degree $1$, hence $\sqrt{\Delta} \in \bQ_p$. 
 
-\vspace{1em}
-
-\noindent\underline{\textit{Type $IV$ and $IV^*$ reduction:}}
+If $L' / \bQ_p$ is an odd degree extension that is divisible by $3$, then $E / L'$ has reduction type $I_0^*$. By Lemma \ref{tamagawa-num} the Tamagawa number of $E / L'$ is $2$ if $\sqrt{\Delta} \not\in \bQ_p$ and $1$ or $4$ if $\sqrt{\Delta} \in \bQ_p$. Therefore the Tamagawa number will be $1$ or $4$, which is a square.
+On the other hand if $L' / \bQ_p$ is an extension of odd degree then the reduction type over $L'$ is $\II$ or $\II^*$ and the Tamagawa number is $1$. It follows that $T_{\fP \mid p}(\Theta)$ is a product of square terms, so is itself square.  
+\end{proof} 
 
 Now, if $E /\bQ_p$ has additive reduction of type $IV$ or $IV^*$, it attains good reduction over any totally ramified cyclic extension of degree divisible by $3$. This could result with $3$ coming up an odd number of times in $T_{\fP \mid p}(\Theta)$, when $\sqrt{B} \not\in \bQ_p$. 
 %We show that for both types, one has $\sqrt{B} \in \bQ_p$. 
@@ -257,28 +243,8 @@ Let $\psi_3$ be an irreducible character of $D_p$ of order $3$. One has that $ \
 Thus $$h(\Psi) = 3^{\langle \bC[C_l / \Psi], \psi_3 \rangle}.$$ As in the proof of Proposition \ref{index-fn-trivial}, write $\bC[C_l / \Psi] = \sum_{l' \mid l} a_{l'} \chi_{l'}$, where $\chi_{l'}$ is an irreducible rational character, of $C_l$ with kernel of index $l'$. Observe that $\langle \chi_{l'}, \psi_3 \rangle = 0$ unless $l' = 3$, in which case it is $1$. Therefore $h(\Psi) \equiv 3^{a_3} \mod \bQ^{\times 2}$. In the proof of Proposition \ref{index-fn-trivial}, we showed that $a_3$ is even unless $\ff \mid 3$,  i.e. that $\bQ(\rho) = \bQ(\sqrt{-3})$. But then $3$ is a norm in $\bQ(\rho)$. Thus we see that in all cases $T_{\fP \mid p}(\Theta) \in N_{\bQ(\rho) / \bQ}(\bQ(\rho)^{\times})$. 
 \end{proof}
 
-We have observed that for all reduction types of $E / \bQ_p$, one always has $T_{\fP \mid p} \cdot D_{\fP \mid p}(\Theta) \in \fieldnorm{\rho}$, and so $C(\Theta) \in \fieldnorm{\rho}$, completing the proof of Theorem \ref{odd-exts}.
+We have observed that for all reduction types of $E / \bQ_p$, one always has $C_{\fP \mid p} (\Theta) \in \fieldnorm{\rho}$, and so $C(\Theta) \in \fieldnorm{\rho}$, completing the proof of Theorem \ref{odd-exts}.
 
 \qed
 
 {\color{red} corollary about restricting to odd order decomposition groups??}
-%However, it turns out we will only get $3$ occurring oddly when $d = 3$. Indeed, one has that $\langle \Ind_{D_{d'}}^D \trivial, \psi_3 \rangle = 1$ if $3 \mid d'$, and $0$ if $3 \nmid d'$, where $\psi_3$ is an irreducible character of $D$ of order $3$. Therefore one sees that the number of places with ramification degree divisible by $3$ cancels unless $d = 3$. Indeed, $\langle \chi_d , \psi_3 \rangle = 0$ unless $d = 3$, 
-%in which case it is $1$. Therefore \eqref{tam-contrib} can only be non-square when $d = 3$. {\color{red} then conclude why this is fine}
-
-%\begin{lemma}
-%    Consider $M / L$ a field extension. Let $E / L$ be an elliptic curve, $v$ a finite place of $L$ and $w$ a finite place of $M$ with $w \mid v$. Let $\omega_v$ and $\omega_w$ be the minimal differentials for $E / L_v$ and $E / M_w$ respectively. 
-    
-%    Then, if $E / K_v$ has potentially good reduction and the residue characteristic is not $3$ or $2$, one has
-    
-%    \[ \left|\frac{\omega_v}{\omega_w} \right|_{w} = q^{\floor{\frac{e_{F / K} \cdot \ord_v(\Delta_{E, v}^{\min})}{12}}}, \]
-%    where $q$ is the size of the residue field at $w$.
-%\end{lemma}
-%We consider $F / \bQ$ with additive potentially good reduction at $p$ . Since $D_p = I_p$, the size of the residue field is $p$ at all intermediate extensions. Let $n = v_p(\Delta)$. Then $n \in \{2,3,4,6,8,9,10\}$.  Consider $(D_p, I_p, \psi_p)$ where $\psi_p(e,f) = p^{\floor{e n / 12}}$. Then $(D_p, I_p, \psi_p) \sim_{\rho} 1$. Indeed, this takes values $1$ or $p$ in $\bQ^{\times} / \bQ^{\times 2}$. But $p \equiv 1 \pmod l$ implies that $p$ is the norm of a principal ideal in $\bQ(\rho)$, and hence the norm of an element, by corollary \ref{p-one-mod-disc} and theorem \ref{minus-one-norm}.
-%So suppose an elliptic curve $E / \bQ$ has additive reduction at $p$, with $p \geq 5$. Then we can write $E \colon y^2 = x^3 + Ax + B$. Let $D = \Gal(F_{\fp} / \bQ_p)$ be the local Galois group at $p$. Assume that $p$ is totally tamely ramified, so that $D = I = C_n$. Since there is no wild ramification, and $f = 1$, this means that $n \mid p - 1$. We consider the contribution corresponding to an irreducible rational character $\chi_d$ of $D$, given by 
-%\begin{equation}\label{tam-contrib}
-%\prod_{d ' \mid d} C(E / F_{\fp}^{D_{d'}})^{\mu(d / d')}.
-%\end{equation}
-%Observe that in a totally ramified extension of degree coprime to $12$, the Tamagawa number remains the same. If $(12, d) = 1$, then $(12, d') = 1$ for $d' \mid  d$, so the Tamagawa number is constant across subfields $F_{\fp}^{D_{d'}}$. Therefore,
-%\[\prod_{d ' \mid d} C(E / F_{\fp}^{D_{d'}})^{\mu(d / d')} = C(E / \bQ_p)^{\sum_{d' \mid d} \mu(d / d')} = 1,\]
-%assuming $d > 1$. 
-%So we only need to worry about when $3 \mid d$. 
