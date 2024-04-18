@@ -75,16 +75,16 @@ The following are some elementary properties of these relations:
 \end{prop}
 
 \begin{proof}
-    All but (5) are clear. For (5), observe that for $H \leq G$, $\bC[G / H]^N \simeq \bC[G / NH]$ as $G$-representations (see proof of \cite[Theorem 2.8]{reg-const}). We also need to show that $\repnorm{\rho}^N \simeq \repnorm{\rho^N}^{\oplus k}$ for some $k \geq 1$. This is the case; 
-    $$\repnorm{\rho}^N = \left(\bigoplus_{\fg \in \Gal(\bQ(\rho) / \bQ)} \rho^{\fg} \right)^N \simeq 
+    All but (5) are clear. For (5), observe that for $H \leq G$, $\bC[G / H]^N \simeq \bC[G / NH]$ as $G$-representations for $N$ normal (see proof of \cite[Theorem 2.8]{reg-const}). We also need to show that $\repnorm{\rho}^N \simeq \repnorm{\rho^N}^{\oplus k}$ for some $k \geq 1$. This is the case; 
+    $$\repnorm{\rho}^N \simeq 
     \bigoplus_{\fg \in \Gal(\bQ(\rho) / \bQ)} (\rho^{\fg})^N \simeq \bigoplus_{\fg \in \Gal(\bQ(\rho) / \bQ)} (\rho^N)^{\fg} = \repnorm{\rho^N}^{\oplus k},$$
     where $k = [ \bQ(\rho) : \bQ(\rho^N)]$. 
 \end{proof}
 
 
-\begin{example}\label{cyclic-relns}
+\begin{example}\label{cyclic-relns}[\cite[Exercise 13.1]{Serre}]
     Let $G = C_n$. For each $d \mid n$, let $\chi_d = \repnorm{\varphi_d}$, where $\varphi_d$ is an irreducible complex character of $G$ with field of values $\bQ(\zeta_d)$ and kernel of index $d$.
-    Then $\{ \chi_d \colon d\mid n \}$ form an orthogonal basis for the irreducible rational-valued representations of $G$ {\color{red} cite Serre exercise}. Since $C_{n / d} \trianglelefteq G$, $\Ind_{C_{n/ d}}^G \trivial$ is the direct sum of irreducible complex representations of $G$ containing $C_{n / d}$ in their kernel. Thus, $\Ind_{C_{n/ d}}^G \trivial \simeq \sum_{d' \mid d} \chi_{d'}$. Applying M\"{o}bius inversion, we obtain a $\varphi_d$-relation for each $d \mid n$:
-    \[ \chi_d = \sum_{d' \mid d} \mu(d / d') \cdot \Ind_{C_{n/ d}}^G \trivial. \]
+    Then $\{ \chi_d \colon d\mid n \}$ form an orthogonal basis for the irreducible rational-valued representations of $G$. Since $C_{n / d} \trianglelefteq G$, $\Ind_{C_{n/ d}}^G \trivial$ is the direct sum of irreducible complex representations of $G$ containing $C_{n / d}$ in their kernel. Thus, $\Ind_{C_{n/ d}}^G \trivial \simeq \sum_{d' \mid d} \chi_{d'}$. Applying M\"{o}bius inversion, we obtain a $\varphi_d$-relation for each $d \mid n$:
+    \[ \chi_d = \sum_{d' \mid d} \mu(d / d') \cdot \Ind_{C_{n/ d'}}^G \trivial. \]
     Note that this is the only way of writing $\chi_d$ as a sum of permutation representations, since cyclic groups have no Brauer relations (Example \ref{cyclic-no-brauer}). Similarly, there is a unique $\Theta \in B(G)$ such that $\bC[G / \Theta] \simeq \chi_d^{m}$ for all $m \geq 1$.
     \end{example}
