@@ -35,7 +35,7 @@ To give the required description, we recall that the Möbius function $\mu$ is t
 \begin{rem}\label{rem_radical}
     This lemma has an important consequence. Given an integer $d\geq2$, let $\rad(d)=\prod_{p\mid d}p$ be the radical of $d$, and note that a subgroup $C_k$ appears in $\Theta_d$ if and only if $C_k\leq C_{\rad(d)}$. Consequently, in terms of fields, if $L_k=F^{C_{d/k}}$ is the unique intermediate field with $[L_k:\QQ]=k$ and $K=F_{d/\rad(d)}$, then $C(\Theta_d)$ contains the local factors of $L_k$ if and only if $K\subseteq L_k\subseteq F$.
 
-    Following this observation, we will compute $T(\Theta_d)$ and $D(\Theta_d)$ by computing locally $\Tp(C_k)$ and $\Tp(C_k)$ for each prime $\pp$ of $K$ and $k$ such that $k\mid\rad(d)$ (equivalently, for every field $L$ such that $K\subseteq L\subseteq F$), and then combinining this local information via the formula
+    Following this observation, we will compute $T(\Theta_d)$ and $D(\Theta_d)$ by computing locally $\Tp(C_k)$ and $\Tp(C_k)$ for each prime $\pp$ of $K$ and $k$ such that $k\mid\rad(d)$ (equivalently, for every field $L$ such that $K\subseteq L\subseteq F$), and then combining this local information via the formula
     \begin{equation}\label{eqn_local_contr}
         T(\Theta_d)=\prod_{\pp}\Tp(\Theta_d)=\prod_\pp\left(\prod_{k\mid d} \Tp(C_k)^{\mu(k)}\right),    
     \end{equation}
@@ -44,7 +44,7 @@ To give the required description, we recall that the Möbius function $\mu$ is t
 
 
 
-We divide the proof of Theorem \ref{thm_consistent_cyclic} into two separate cases: odd and even cyclic extensions. The main idea in both cases is to simplify the general case into smaller cases where we can directly compute $\Cp(\Theta_d)$ for each finite place $\pp$ of $K$. Unless stated otherwise, we assume thoughout that $$\Theta_d=\sum_{k\mid d}\mu(k)C_k\in B(C_d).$$
+We divide the proof of Theorem \ref{thm_consistent_cyclic} into two separate cases: odd and even cyclic extensions. The main idea in both cases is to simplify the general case into smaller cases where we can directly compute $\Cp(\Theta_d)$ for each finite place $\pp$ of $K$. Unless stated otherwise, we assume throughout that $$\Theta_d=\sum_{k\mid d}\mu(k)C_k\in B(C_d).$$
 
 \subsubsection{Odd Cyclic Extensions} \label{case_Cp}
 
@@ -272,7 +272,7 @@ Recall that the quadratic subfields of $\QQ(\zeta_{2^mq^n})$ depend on whether $
 
     Since $q$ is a norm from $\QQ(\sqrt{q^*})$, then $\Tp(\Theta_{2q})$ is also a norm. Now assume that $\pp$ has additive reduction and let $p\ZZ=\pp\cap\QQ$. We first consider the contribution of the Tamagawa numbers. Note that $L_q/K$ and $F/L_2$ are $C_q$ extensions and therefore $\Tp(\Theta_{2q})\in\QQss$ if $q\neq 3$ and a square up to factors of $3$ if $q=3$. In either case, $\Tp(\Theta_{2q})$ is a norm from $\QQ(\sqrt{q^*})$.
 
-    Finally, we compute $\Dp(\Theta_{2q})$, whose value up to squares does not change if we reescale $\Delta_E$. Hence, we assume that $\Delta_E=\Delta_{E,\pp}^{\min}$ and let $n=\nu_\pp(\Delta_{E,\pp}^{\min})$. Under this assumption, all terms cancel unless $\pp$ ramifies in $F$. If $e_\pp=2$, then
+    Finally, we compute $\Dp(\Theta_{2q})$, whose value up to squares does not change if we rescale $\Delta_E$. Hence, we assume that $\Delta_E=\Delta_{E,\pp}^{\min}$ and let $n=\nu_\pp(\Delta_{E,\pp}^{\min})$. Under this assumption, all terms cancel unless $\pp$ ramifies in $F$. If $e_\pp=2$, then
     \begin{equation}\label{eqn_ep=2}
         \Dp(C_{2q})=\Dp(C_2)=1,\quad \Dp(C_q)=N(\pp)^{\floor{\frac{2n}{12}}}\quad\text{and}\quad \Dp(C_1)=N(\pp)^{q\floor{\frac{2n}{12}}},
     \end{equation}
@@ -338,7 +338,7 @@ Following this, we state and prove the analogous result for $m=2$.
     $$\frac{\Tp(E/F)}{\Tp(E/L_4)},\frac{\Tp(E/L_6)}{\Tp(E/L_2)}\in\QQss$$
     implying $\Tp(\Theta_{12})\in\QQss$. Hence, we assume that $\pp$ is ramified in $L_3/K$. If $\bar\pp$ is inert in $L_4/L_2$, then the valuation of the minimal discriminant of $E$ at $\fP$ is also $n$ and the splitting behaviour of $\bar\pp$ in $L_6/L_2$ coincides with the splitting behaviour of $\fP$ in $F/L_4$. Hence, 
     $$\frac{\Tp(E/F)}{\Tp(E/L_4)}=\frac{\Tp(E/L_6)}{\Tp(E/L_2)},$$
-    and therefore $\Tp(\Theta_{12})=1$. {\color{red} We might have a real problem if $\pp$ has $e_\pp=6$ and $f_\pp=2$. In that case, if $\gcd(n,12)=2$, then it feels that a non-trival contribution can arise.}
+    and therefore $\Tp(\Theta_{12})=1$. {\color{red} We might have a real problem if $\pp$ has $e_\pp=6$ and $f_\pp=2$. In that case, if $\gcd(n,12)=2$, then it feels that a non-trivial contribution can arise.}
 
     Finally, assume that $\pp$ ramifies in $L_2/K$ so that $\pp=\bar\pp^2$. This immediately implies that $\bar\pp$ also ramifies in $L_4/L_2$. From Lemma \ref{lem_Cp}, we also know that in $C_3$ extensions the Tamagawa numbers above some prime contribute a square unless the prime ramifies. Hence, we may also assume that $\pp$ ramifies in $L_3/K$ and therefore $\pp$ is totally ramified in $F/K$. Using Lemma \ref{lem_add_tam}, one can easily show that the Tamagawa numbers cancel out if $\gcd(n,12)\in\{3,4,6,12\}$, so we only need to consider the case $\gcd(n,12)=2$. However, recall that $E$ has potentially good reduction at $\pp$, and since $\pp=\bar\pp^2$ ramifies, then the valuation of the minimal discriminant at $\pp$ is $n/2$ or $(n+12)/2$. But then $\gcd(\nu_\pp(\Delta_{E,\pp}^{\min}),12)=\gcd(n/2,12)=1$, a contradiction. Hence, $\Tp(\Theta_{12})\in\QQss$ as desired.
 \end{proof}
@@ -352,7 +352,7 @@ Finally, we state and prove the last result, from which the case $m\geq3$ follow
 \end{lemma}
 
 \begin{proof}
-    We prove the result locally for all primes in $L_2$. Hence, let $\bar\pp$ be a prime in $L_2$ and note that $\Gal(F/L_2)=C_{4q}$. Since the relation $\Theta_{4q}=C_1-C_2-C_q+C_{2q}\in B(C_{4q})$ has the same fixed fields as $\Theta_{8q}$, by Lemma \ref{lem_C4p}, we know that $\Tpb(\Theta_{8q})\in\QQss$ for any $\bar\pp$ and $\Dpb(\Theta_{8q})\in\QQss$ too unless $\bar\pp$ is totally ramified in $F/L_2$ and $E$ has potentially good reduction at $\bar\pp$, so assume this is the case. If $\pp=\bar\pp\cap K$, then it also follows that $\pp$ is totally ramified in $F/K$ and $E$ has potentially good reduction at $\pp$. Again, $\Dp(\Theta_{8q})$ does not change up to squares if $\Delta_{E}$ is reescaled so assume that $\Delta_{E}=\Delta_{E,\pp}^{\min}$. Under these assumptions, $\Dpb(\Theta_{8q})=\Dp(\Theta_{8q})$ is a power of $N(\pp)=N(\bar\pp)=p^s$ for some rational prime $p$ and $s\geq1$. If $s$ is even, then $\Dpb(\Theta_{8q})\in\QQss$, so assume that $s$ is odd. In addition, by Proposition \ref{prop_totally_ramified}, it follows that $p^s\equiv 1\pmod{8q}$. Since $s$ is odd and $(\ZZ/8\ZZ)^*=C_2\times C_2$, it follows that $p\equiv 1\pmod{8}$ and therefore
+    We prove the result locally for all primes in $L_2$. Hence, let $\bar\pp$ be a prime in $L_2$ and note that $\Gal(F/L_2)=C_{4q}$. Since the relation $\Theta_{4q}=C_1-C_2-C_q+C_{2q}\in B(C_{4q})$ has the same fixed fields as $\Theta_{8q}$, by Lemma \ref{lem_C4p}, we know that $\Tpb(\Theta_{8q})\in\QQss$ for any $\bar\pp$ and $\Dpb(\Theta_{8q})\in\QQss$ too unless $\bar\pp$ is totally ramified in $F/L_2$ and $E$ has potentially good reduction at $\bar\pp$, so assume this is the case. If $\pp=\bar\pp\cap K$, then it also follows that $\pp$ is totally ramified in $F/K$ and $E$ has potentially good reduction at $\pp$. Again, $\Dp(\Theta_{8q})$ does not change up to squares if $\Delta_{E}$ is rescaled so assume that $\Delta_{E}=\Delta_{E,\pp}^{\min}$. Under these assumptions, $\Dpb(\Theta_{8q})=\Dp(\Theta_{8q})$ is a power of $N(\pp)=N(\bar\pp)=p^s$ for some rational prime $p$ and $s\geq1$. If $s$ is even, then $\Dpb(\Theta_{8q})\in\QQss$, so assume that $s$ is odd. In addition, by Proposition \ref{prop_totally_ramified}, it follows that $p^s\equiv 1\pmod{8q}$. Since $s$ is odd and $(\ZZ/8\ZZ)^*=C_2\times C_2$, it follows that $p\equiv 1\pmod{8}$ and therefore
     \begin{equation}\label{eqn_psplitsin2}
         \left(\frac{-1}{p}\right)=\left(\frac{2}{p}\right)=\left(\frac{-2}{p}\right)=1.
     \end{equation}
@@ -360,7 +360,7 @@ Finally, we state and prove the last result, from which the case $m\geq3$ follow
     \begin{equation}\label{eqn_psplitsinq}
         \left(\frac{-q}{p}\right)=\left(\frac{q}{p}\right)=\left(\frac{p}{q}\right)=1.
     \end{equation}
-    Combining \eqref{eqn_psplitsin2} and \eqref{eqn_psplitsinq} together with multiplicativity of the Legendre symbol, it follows that $p$ splits in every quadratic subfield $\QQ(\sqrt{D})$ for $D\in\{-1,\pm2,\pm q,\pm2q\}$.
+    Combining \eqref{eqn_psplitsin2} and \eqref{eqn_psplitsinq} together with multiplicity of the Legendre symbol, it follows that $p$ splits in every quadratic subfield $\QQ(\sqrt{D})$ for $D\in\{-1,\pm2,\pm q,\pm2q\}$.
 \end{proof}
 
 
