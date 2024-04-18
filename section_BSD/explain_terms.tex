@@ -55,14 +55,18 @@ The other factors are arithmetic values related to the elliptic curve $E$. Impor
 We will spend some time computing the local terms for families of elliptic curves, so we introduce some more notation that will be used throughout. 
 
 \begin{notation}\label{not_contr}
-    Let $E$ be an elliptic curve defined over $\QQ$ and let $F/K$ be a finite extension of number fields. For each finite place $\pp$ of $K$, we write 
-    $$T_{\mathfrak{P}\mid\pp}(E/F)=\prod_{\mathfrak{P}\mid\pp}c_\mathfrak{P}(E/F)\quad\text{and}\quad D_{\mathfrak{P}\mid\pp}(E/F)=\prod_{\mathfrak{P}\mid\pp}\left|\frac{\Delta_{E,\mathfrak{P}}^{\min}}{\Delta_E}\right|_\mathfrak{P}^{\frac{1}{12}},$$
-    where the product ranges over primes $\fP$ of $F$ dividing $p$. We also write 
-    $$C_{\mathfrak{P}\mid \pp}(E/F)=T_{\mathfrak{P}\mid \pp}(E/F)D_{\mathfrak{P}\mid \pp}(E/F).$$
+    Let $E$ be an elliptic curve defined over $\QQ$ and let $F/K$ be a finite extension of number fields. For each finite place $\pp$ of $K$, we write the \textbf{local contribution of $\pp$} as 
+    %$$T_{\mathfrak{P}\mid\pp}(E/F)=\prod_{\mathfrak{P}\mid\pp}c_\mathfrak{P}(E/F)\quad\text{and}\quad D_{\mathfrak{P}\mid\pp}(E/F)=\prod_{\mathfrak{P}\mid\pp}\left|\frac{\Delta_{E,\mathfrak{P}}^{\min}}{\Delta_E}\right|_\mathfrak{P}^{\frac{1}{12}},$$
+    $$T_{\mathfrak{P}\mid\pp}(E/F)=\prod_{\mathfrak{P}\mid\pp}c_\mathfrak{P}(E/F),\quad D_{\mathfrak{P}\mid\pp}(E/F)=\prod_{\mathfrak{P}\mid\pp}\left|\frac{\Delta_{E,\mathfrak{P}}^{\min}}{\Delta_E}\right|_\mathfrak{P}^{\frac{1}{12}}$$ 
+    and $C_{\fP\mid\fp}(E/F)=T_{\fP\mid\fp}(E/F)D_{\fP\mid\fp}(E/F)$, where the product ranges over primes $\fP$ of $F$ over $\pp$. 
+
+    We are ultimately interested in computing the global contrbutions from the terms above, so we also introduce notation for them. With the same notation as above, we denote the \textbf{global contribution over $F$} of the Tamagawa numbers and the discrimiant terms as 
+    $$T(E/F)=\prod_\pp T_{\fP\mid\pp}(E/F)=\prod_\fP c_\fP(E/F)\quad\text{and}\quad D(E/F)=\prod_\pp D_{\fP\mid\pp}(E/F)=\prod_\fP \left|\frac{\Delta_{E,\mathfrak{P}}^{\min}}{\Delta_E}\right|_\mathfrak{P}^{\frac{1}{12}}$$ 
+
 \end{notation}
 
-An immediate consequence of this notation is the fact that $C_{E/F}=\prod_{\pp}C_{\mathfrak{P}\mid \pp}(E / F)$.
-Observe that if $E$ has good reduction over $\pp$, then $C_{\mathfrak{P}\mid\pp}(E/F)=1$ for any finite extension $F$ of $K$. 
+An immediate consequence of this notation is the fact that $C_{E/F}=T(E/F)D(E/F)$.
+Observe that if $E$ has good reduction over $\pp$, then $T_{\mathfrak{P}\mid\pp}(E/F)=D_{\mathfrak{P}\mid\pp}(E/F)=1$ for any finite extension $F$ of $K$. 
 
 \begin{notation}\label{not_contr_fns}
     If $G = \Gal(F / \bQ)$ then we define functions $T_{\fP \mid p}$, $D_{\fP \mid p}$ and $C_{\fP \mid p}$ on $\B(G)$ by 

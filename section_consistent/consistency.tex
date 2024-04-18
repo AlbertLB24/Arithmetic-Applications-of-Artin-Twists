@@ -1,6 +1,6 @@
 As we discussed in the previous section, our motivation is to use Theorem \ref*{thm_positive_rank} to predict points of infinite order for families of elliptic curves. However, in this section we prove that in several cases the theorem will never make such a prediction. In other words, in such cases, the product 
 $$\frac{\prod_i C_{E/F_i}}{\prod_j C_{E/F_j'}}$$ 
-is always a norm for every subfield $\QQ(\sqrt{D})\subseteq\QQ(\rho)$. Before we give the precise statements, we give a proof of some important results that will be used throughout. The first one discussed the quadratic subfields of certain cyclotomic extensions.
+is always a norm for every subfield $\QQ(\sqrt{D})\subseteq\QQ(\rho)$. Before we give the precise statements, we give a proof of some important results that will be used throughout. The first one explicitly described the quadratic subfields of certain cyclotomic extensions.
 
 \begin{lemma}\label{lem_subfields}
     Let $p$ be a rational prime, $n$ a positive integer and let $p^*=(-1)^{(p-1)/2}p$. Then the following holds.
@@ -9,14 +9,15 @@ is always a norm for every subfield $\QQ(\sqrt{D})\subseteq\QQ(\rho)$. Before we
         \centering
         \begin{tabular}{|l|l|l|}
         \hline
-        Cyclotomic field                     & Conditions & Quadratic subfields                   \\ \hline
-        $\QQ(\zeta_{p^n})$                   & $p$ odd, any $n$    & $\QQ(\sqrt{p^*})$            \\ \hline
-        %\multirow{3}{*}{$\QQ(\zeta_{2^m})$}  & $m=1$      & none                                  \\ \cline{2-3} 
-        %                                     & $m=2$      & $\QQ(i)$                              \\ \cline{2-3} 
-        %                                     & $m\geq3$   & $\QQ(i),\QQ(\sqrt{2}),\QQ(\sqrt{-2})$ \\ \hline
-        %\multirow{2}{*}{$\QQ(\zeta_{2^mp^n})$}  & $m=1$, $p$ odd, any $n$      & $\QQ(\sqrt{p^*})$     \\ \cline{2-3} 
-        %                                     & $m=2$, $p$ odd, any $n$      & $\QQ(i),\QQ(\sqrt{p}),\QQ(\sqrt{-p})$                              \\ 
-        %                                     \hline
+        Cyclotomic field                    & Conditions & Quadratic subfields                   \\ \hline
+        $\QQ(\zeta_{p^n})$                  & $p$ odd, any $n$    & $\QQ(\sqrt{p^*})$            \\ \hline
+        \multirow{3}{*}{$\QQ(\zeta_{2^m})$} & $m=1$      & none                                  \\ \cline{2-3} 
+                                            & $m=2$      & $\QQ(i)$                              \\ \cline{2-3} 
+                                            & $m\geq3$   & $\QQ(i),\QQ(\sqrt{2}),\QQ(\sqrt{-2})$ \\ \hline
+        \multirow{3}{*}{$\QQ(\zeta_{2^mp^n})$}  & $m=1$, $p$ odd, any $n$      & $\QQ(\sqrt{p^*})$     \\ \cline{2-3} 
+                                            & $m=2$, $p$ odd, any $n$      & $\QQ(i),\QQ(\sqrt{p}),\QQ(\sqrt{-p})$                              \\ \cline{2-3}
+                                            & $m\geq 3$, $p$ odd, any $n$      & $\QQ(i),\QQ(\sqrt{2}),\QQ(\sqrt{-2}),\QQ(\sqrt{p}),\QQ(\sqrt{-p}),\QQ(\sqrt{2p}),\QQ(\sqrt{-2p})$                              \\ 
+                                             \hline
         \end{tabular}
         \end{table}
 
@@ -37,12 +38,12 @@ is always a norm for every subfield $\QQ(\sqrt{D})\subseteq\QQ(\rho)$. Before we
 
     Since $\QQ(\zeta_2)=\QQ$ and $\QQ(\zeta_4)=\QQ(i)$, the second and third row are immediate. For $m\geq3$, $\Gal(\QQ(\zeta_{2^m})/\QQ)=(\ZZ/2^m\ZZ)^*=C_2\times C_2^{m-2}$ and therefore $\QQ(\zeta_{2^m})$ has three quadratic subfields that can only ramify at $2$. Again, it is easy to check that the only such fields are $\QQ(i)$, $\QQ(\sqrt{2})$ and $\QQ(\sqrt{-2})$, as desired. Alternatively, one can also show that $\zeta_8=(1+i)/\sqrt{2}$, which also implies the result. This proves the third row.
 
-    The remaining rows are essentially a combination of the results we have already shown. We note that $\Gal(\QQ(\zeta_{2p^n})/\QQ)=(\ZZ/2p^n\ZZ)^*$ is cyclic while $$\Gal(\QQ(\zeta_{2^mp^n})/\QQ)=(\ZZ/2^mp^n\ZZ)^*=(\ZZ/2^m)^*\times(\ZZ/p^n\ZZ)^*=C_2\times C_{2^{m-2}}\times C_{p^{n-1}(p-1)}.$$
-    Hence, $\QQ(\zeta_{2^mp^n})$ has one unique quadratic subfield if $m=1$ which must be $\QQ(\sqrt{p^*})$, three quadratic subfields if $m=2$ which are $\QQ(i),\QQ(\sqrt{p}),\QQ(\sqrt{-p})$ and seven quadratic fields if $m=3$. In the latter case, we know that $i,\sqrt{p^*},\sqrt{2}\in\QQ(\zeta_{2^mp^n})$ and therefore the seven fields must be the ones listed in the table.
-
+    The remaining rows are essentially a combination of the results we have already shown. We note that $\Gal(\QQ(\zeta_{2p^n})/\QQ)=(\ZZ/2p^n\ZZ)^*$ is cyclic while 
+    $$\Gal(\QQ(\zeta_{4p^n})/\QQ)=(\ZZ/4p^n\ZZ)^*=(\ZZ/4)^*\times(\ZZ/p^n\ZZ)^*=C_2\times C_{p^{n-1}(p-1)}.$$
+    Hence, $\QQ(\zeta_{2^mp^n})$ has one unique quadratic subfield if $m=1$ which must be $\QQ(\sqrt{p^*})$ and three quadratic subfields if $m=2$ which are $\QQ(i),\QQ(\sqrt{p}),\QQ(\sqrt{-p})$.
 \end{proof}
 
-The second result gives a necessary condition on primes ramifying in finite extensions. The result is naturally phrased in terms of local fields.
+The second result gives a necessary divisibility condition on primes ramifying in finite extensions of number fields. The result, however, is naturally phrased in terms of local fields.
 
 \begin{prop}\label{prop_totally_ramified}
     Let $F/\QQ_p$ be a finite extension with residue field $\kappa$. Then there exists a tame, totally ramified cyclic extension $F_n$ of degree $n$ over $F$ if and only if $n\mid|\kappa^*|$.
@@ -56,10 +57,39 @@ The second result gives a necessary condition on primes ramifying in finite exte
     \end{align*}
     is an isomorphism of groups, which proves that the extension is cyclic of degree $n$.
 
-    Conversely, suppose that $F_n/F$ is a tame, totally ramified cyclic extension of degree $n$. An important result shows that there is some uniformizer $\pi$ of $F$ such that $F_n=F(\pi^{1/n})$. The polynomial $x^n-\pi$ is Einstein over $F$, and therefore irreducible over $F$. Since $F_n/F$ is assumed to be Galois, all roots of $x^n-\pi$ lie in $F_n$. In particular, $\QQ(\zeta_n)\subseteq F_n$. Since $\Char\kappa\nmid n$, it follows that $\kappa$ also contains all $n$-th roots of unity, proving that $n\nmid|\kappa^*|$ as desired. 
+    Conversely, suppose that $F_n/F$ is a tame, totally ramified cyclic extension of degree $n$. Any such field extension is generated by the $n$-th root of some uniformizer $\pi$ of $F$ (see \cite[Theorem 11.10]{Sun1}), and therefore $F_n=F(\pi^{1/n})$. The polynomial $x^n-\pi$ is Einstein over $F$, and therefore irreducible over $F$. Since $F_n/F$ is assumed to be Galois, all roots of $x^n-\pi$ lie in $F_n$. In particular, $\QQ(\zeta_n)\subseteq F_n$. Since $\Char\kappa\nmid n$, it follows that $\kappa$ also contains all $n$-th roots of unity, proving that $n\mid|\kappa^*|$ as desired. 
 \end{proof}
 
-\input{section_consistent/cyclic_full.tex}
+As a consequence of this proposition, we prove one technical result about Type II or $\mathrm{II}^*$ elliptic curves over local fields $K$ admitting a $C_3$ ramified extension. We advise the reader to skip the proof by now and revisit it when this result is used later.
+
+\begin{lemma}\label{lem_nottwo}
+    Let $p\geq 5$ be a rational prime and $L_\fP/K_\fp/\QQ_p$ be finite extensions with $L_\fP/K_\fp$ Galois, ramified and $\Gal(L_\fP/K_\fp)=C_3$. Let $$E/\QQ_p:y^2=x^3+Ax+B$$ be a minimal Weierstrass equation at $\pp$ with potentially good reduction. Let $n=\nu_\pp(\Delta)$ be the valuation of the minimal discriminant. If $\gcd(n,12)=2$, then $\sqrt{\Delta}\in K_\pp$.
+\end{lemma}
+
+\begin{proof}
+    The condition that $E$ has additive reduction is equivalent to $A,B\in\pp$, and the condition on ramification implies that $3\mid N(\pp)-1$ by Proposition \ref{prop_totally_ramified}. In addition, by Lemma \ref{lem_Dterms}(b), we know that $\nu_\pp(\Delta)<12$, so we need to consider two cases: $n=2$ and $n=10$, and we consider them separately. By Hensel's Lemma, $\sqrt{\Delta}\in K_\pp$ is equivalent to $\sqrt{\Delta}\in \kappa_\pp$ where $\kappa_\pp$ is the residue field of $K_\pp$. Recall that when $E$ has this simple expression, $\Delta=-16(4A^3+27B^2)$.
+
+
+    \textbf{Case $n=2$:}
+
+    In this case, $\nu_\pp(-4A^3-27B^2)=2$ and this implies that $\nu_\pp(B)=1$. Note that we also have that $A,B\in p\ZZ_p$ and therefore $\nu_p(B)=1$ and $\nu_p(-4A^3-27B^2)=2$. Let $\FF_p=\ZZ_p/p\ZZ_p$ be the residue field of $\QQ_p$. Then 
+    $$\frac{-4A^3-27B^2}{p^2}\equiv -3\left(\frac{3B}{p}\right)^2\pmod{p},$$
+    and hence $\sqrt{\Delta}\in\FF_p$ if and only if $\sqrt{-3}\in K_\pp$. 
+    If $p\equiv1\pmod{3}$, then
+    $$\left(\frac{-3}{p}\right)=\left(\frac{p}{3}\right)=1,$$
+    and hence $\sqrt{\Delta}\in \FF_p\subseteq \kappa_\pp$. If $p\equiv 2\pmod{3}$, then from the condition that $3\mid N(\pp)-1$, it follows that the extension $\kappa_\pp/\FF_p$ has even degree. By the uniqueness of extensions of finite fields, it follows that $\sqrt{\Delta}\pmod{\pp}\in\kappa_\pp$ as desired.
+
+    \textbf{Case $n=10$:} 
+
+    In this case, $\nu_\pp(-4A^3-27B^2)=10$. When $E$ is defined by this simple expression, then $c_4=-48A$ and since $E$ is assumed to have potentially good reduction, $\nu_\pp(j)=\nu_\pp(A^3/\Delta)=3\nu_\pp(A)-10\geq 0$. Hence, $\nu_\pp(A^3)\geq12$ which implies that $\nu_\pp(-27B^2)=10$ or, equivalently, that $\nu_\pp(B)=5$. This means that $\nu_p(B)=5$ if $K_\pp/\QQ_p$ is unramified or $\nu_p(B)=1$ if $K_\pp/\QQ_p$ has ramification index $2$. In the latter case, we have that $v_p(4A^3+27B^2)=2$ and we are back to the case $n=2$. So assume that $K_\pp/\QQ_p$ is unramified. Then
+    $$\frac{-4A^3-27B^2}{p^{10}}\equiv -3\left(\frac{3B}{p^5}\right)^2\pmod{p},$$
+    and therefore $\sqrt{\Delta}\in\FF_p$ if and only if $\sqrt{-3}\in K_\pp$. The remaining of the proof is identical to the case $n=2$.
+
+\end{proof}
+
+
+
+\input{section_consistent/cyclic_full copy.tex}
 
 \input{section_consistent/odd-ext.tex}
 

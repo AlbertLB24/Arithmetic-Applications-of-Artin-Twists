@@ -149,3 +149,19 @@ The odd prime $p \in \bQ$ is the norm of an element in $\bQ(\sqrt{p^*})^{\times}
     \end{itemize}
 \end{thm}
 
+\begin{prop}\label{prop_split_norm}
+    Let $\QQ(\sqrt{D})$ be a quadratic field with odd class number, and let $p$ be a rational prime splitting in $\QQ(\sqrt{D})$. If either $D\leq -1$ or $D\geq 2$ and $-1$ is a norm of an element of $\QQ(\sqrt{D})$, then $p$ is also the norm of an element in $\QQ(\sqrt{D})$.
+\end{prop}
+
+\begin{proof}
+    Firstly, we show that there is some principal fractional ideal $\qq$ of $\QQ(\sqrt{D})$ such that $N(\qq)=p$. Since $p$ splits, we may write $p\mathcal{O}_K=\pp_1\pp_2$ with $N(\pp_1)=N(\pp_2)=p$. Define the fractional ideal $\bar\pp=\pp_1\pp_2^{-1}$ and note that $N(\bar\pp)=N(\pp_1)N(\pp_2)^{-1}=1$ and $[\bar{\pp}]=[\pp_1]^2$. Since the class number is odd, the order of $\pp_1$ is also odd and therefore there is some $n\geq 0$ such that $[\pp_1\bar\pp^n]=[\pp_1]^{1+2n}$ is a principal fractional ideal, and it satisfies $N(\pp_1\bar\pp^n)=N(\pp_1)N(\bar\pp)^n=p$, as desired. 
+
+    This implies that there is some $\alpha\in\QQ(\sqrt{D})$ such that $|\Norm_{\QQ(\sqrt{D})/\QQ}(\alpha)|=p$. If $D\leq -1$, then the norm of any element is positive, and therefore $\Norm_{\QQ(\sqrt{D})/\QQ}(\alpha)=p$. If $D\geq 2$, we use the assumption that $-1$ is norm of some element to ensure that the norm of $\alpha$ is also positive. This concludes the result.
+\end{proof}
+
+\begin{cor}\label{cor_psplit_pnorm}
+    Let $q\equiv1\pmod{4}$ be a rational prime and let $p$ be a prime that splits in $\QQ(\sqrt{q})$. Then $p$ is a norm from $\QQ(\sqrt{q})$. 
+\end{cor}
+\begin{proof}
+    By Theorem \ref{minus-one-norm}, we know that $-1$ is a norm from $\QQ(\sqrt{q})$, and Theorem \ref{thm_class_number} shows that $\QQ(\sqrt{q})$ has odd class number. Now use Proposition \ref{prop_split_norm} to conclude.
+\end{proof}

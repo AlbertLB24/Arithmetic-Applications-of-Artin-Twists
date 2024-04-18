@@ -1,16 +1,22 @@
 
-\subsection{Elliptic Curves over Global Fields}
+\subsection{Elliptic Curves over Number Fields}
 
-The topics we have discussed so far, such as the reduction type of an elliptic curve and the Tamagawa number, are intrinsically local objects. We now briefly discuss how we can associate these objects to global fields. For simplicity, assume that $E$ is an elliptic curve over a number field $K$, let $\pp$ be a finite place of $K$ and denote $K_\pp$ by the completion of $K$ at $\pp$ with residue field $\kappa_\pp$. Clearly, we have that $E(K)\subseteq E(K_\pp)$ and therefore we can apply the previous description to the curve $E/K_\pp$.
+The topics we have discussed so far, such as the reduction type of an elliptic curve and the Tamagawa number, are intrinsically local objects. We now briefly discuss how we can associate these objects to elliptic curves over number fields. Hence, let $E$ be an elliptic curve over a number field $K$, let $\pp$ be a finite place of $K$ and denote $K_\pp$ by the completion of $K$ at $\pp$ with residue field $\kappa_\pp$. Clearly, we have that $E(K)\subseteq E(K_\pp)$ and therefore we can apply the previous description to the curve $E/K_\pp$.
 
 In particular, the reduction type of $E/K$ at $\pp$ is the reduction type of $E/K_\pp$ and the Tamagawa number of $E/K$ at $\pp$ is defined as 
-$$c_\pp(E/K):=c(E/K_\pp),$$
-and we also define 
-$$c(E/K):=\prod_\pp c_\pp(E/K).$$
-Finally, we say that a Weierstrass equation \eqref{eqn_gen_elliptic} is a \textbf{global minimal equation} if it is a minimal equation for all finite places $\pp$ of $K$. Even though such an equation does not always exists for any $K$, it does hold for $\QQ$.
+$$c_\pp(E/K):=c(E/K_\pp).$$
+Given a set $S$ of primes in $K$, we say that an elliptic curve $E/K$ is \textbf{semistable at $S$}  if the reduction at any prime of $S$ is good or multiplicative. In addition, if $E$ has nowhere additive reduction, we say that $E$ is \textbf{semistable}.
+
+%and we also define $$c(E/K):=\prod_\pp c_\pp(E/K).$$ 
+
+
+Finally, we say that a Weierstrass equation \eqref{eqn_gen_elliptic} is a \textbf{global minimal equation} if it is a minimal equation for all finite places $\pp$ of $K$. Even though such an equation does not always exists for general number fields $K$, it does hold for $\QQ$.
 
 \begin{prop}\label{prop_globmin}
     Let $E/\QQ$ be an elliptic curve. Then $E$ has a global minimal Weierstrass equation.
 \end{prop}
+\begin{proof}
+    \cite[\S VIII, Corollary 8.3]{S1}
+\end{proof}
 
 Throughout the document, we will work with elliptic curves over $\QQ$, so unless stated otherwise we will assume the defining equation is global minimal.
