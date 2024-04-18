@@ -18,7 +18,7 @@ Therefore once we assume that $\rk E / \bQ = 0$, the parity conjecture tells us 
 \begin{thm}\label{odd-exts}
  Let $E / \bQ$ be an elliptic curve, $F / \bQ$ be an extension of odd order with Galois group $G$. 
  
-Assume that $E$ has semistable reduction at $2$ and $3$. 
+Assume that $E$ has good or multiplicative reduction at $2$ and $3$. 
 Take any representation $\rho$ of $G$ with quadratic subfield $\bQ(\sqrt{D}) \subset \bQ(\rho)$ and relation
 \begin{equation*}\label{odd-exp} \repnorm{\rho}^{\oplus m} =
  \left(\bigoplus_{\mathfrak{g}\in\Gal(\QQ(\rho)/\QQ)}\rho^{\mathfrak{g}}\right)^{\oplus m }=\bigoplus_i\Ind_{F_i/\QQ}\mathds{1}\ominus\bigoplus_j\Ind_{F'_j/\QQ}\mathds{1}
@@ -27,12 +27,12 @@ Take any representation $\rho$ of $G$ with quadratic subfield $\bQ(\sqrt{D}) \su
  \[ \frac{\prod_i C_{E/F_i}}{\prod_j C_{E/F_j'}}  \in 
     \begin{cases}
         N_{\bQ(\sqrt{D}) / \bQ}(\bQ(\sqrt{D})^{\times}) & m \ \text{odd}, \\
-        \bQ^{\times 2} & m \ \text{even}.
+        (\bQ^{\times})^2 & m \ \text{even}.
     \end{cases} \] 
     In other words, one cannot use Theorem \ref{thm_positive_rank} to conclude that $E / F$ must have positive rank. 
 \end{thm}
 
-As in Remark \ref{rephrase-thm}, we may replace $\rho$ by the sum of its conjugates by elements of $ \Gal(\bQ(\rho) / \bQ(\sqrt{D}))$, we may assume that $\bQ(\rho) = \bQ(\sqrt{D})$. We take $D \in \bZ \ \{0,1 \}$ to be squarefree.
+As in Remark \ref{rephrase-thm}, replacing $\rho$ by the sum of its conjugates by elements of $ \Gal(\bQ(\rho) / \bQ(\sqrt{D}))$, we may assume that $\bQ(\rho) = \bQ(\sqrt{D})$. We take $D \in \bZ \backslash \{0,1 \}$ to be squarefree.
 
 The product of terms we are computing is $C(\Theta)$, where $C \colon \B(G) \to \bQ^{\times}$ is given by $C \colon H \mapsto C_{E / F^H}$, and $\Theta$ is any $\rho$-relation.
 We break up the function $C$ into $C = \prod_p C_{\fP \mid p} = \prod_p = T_{\fP \mid p} \cdot D_{\fP \mid p}$, ranging over primes $p \in \bQ$,
@@ -44,7 +44,7 @@ C_{\fP \mid p} = (D_p, C_v)
 where $C_v$ is a function on $\B(D_p)$ sending $H \mapsto C_v(E / F_w^H)$, for $D_p = \Gal(F_w / \bQ_p)$. The following result will allow us to apply some results from $\S$\ref{sec-norm-rels}.
 
 \begin{thm}\label{odd-c-brauer}
-    When $D_p$ has odd order, $C_v(\Psi) \in \bQ^{\times 2}$ for any Brauer relation $\Psi \in \B(D_p)$. 
+    When $D_p$ has odd order, $C_v(\Psi) \in (\bQ^{\times})^2$ for any Brauer relation $\Psi \in \B(D_p)$. 
 \end{thm}
 
 \begin{proof}
@@ -57,24 +57,24 @@ It is enough to prove Theorem \ref{odd-exts} when $m$ is the order of $\repnorm{
 \end{cor}
 
 \begin{proof}
-    Since $\bQ(\rho)$ is quadratic, we have $\bQ^{\times 2} \subset \fieldnorm{\rho}$. As $G$ is odd, any choice of $D_p$ is odd. It follows from Theorem \ref{odd-c-brauer} that $C(\Psi) \in \bQ^{\times 2}$ for all Brauer relations $\Psi \in \B(G)$. Therefore by Proposition \ref{min-to-all}, it is enough to prove Theorem \ref{odd-exts} when $m$ is the order of $\repnorm{\rho}$ in $\C(G)$. Then $m$ divides $|G|$, hence is odd.
+    Since $\bQ(\rho)$ is quadratic, we have that rational squares are norms from $\bQ(\rho)$. As $G$ is odd, any choice of $D_p$ is odd. It follows from Theorem \ref{odd-c-brauer} that $C(\Psi) \in (\bQ^{\times})^2$ for all Brauer relations $\Psi \in \B(G)$. Therefore by Proposition \ref{min-to-all}, it is enough to prove Theorem \ref{odd-exts} when $m$ is the order of $\repnorm{\rho}$ in $\C(G)$. Then $m$ divides $|G|$, hence is odd.
 \end{proof}
 
 Let $\tau$ be the generator of $\Gal(\bQ(\sqrt{D}) / \bQ)$.
 Let $\ff$ be the smallest integer such that $\bQ(\sqrt{D}) \subset \bQ(\zeta_{\ff})$. Then $\ff \mid |G|$, hence is odd. By Remark \ref{conductor}, $\ff = |D|$ and $D \equiv 1 \pmod 4$. The following shows that it is only of interest to consider decomposition groups of exponent divisible by $\ff$.
 
 \begin{cor}\label{rational-res-2}
-    Let the exponent of $D_p$ be $b$. If $\ff \nmid b$, then $C_{\fP \mid p}(\Theta) \in \bQ^{\times 2}$.
+    Let the exponent of $D_p$ be $b$. If $\ff \nmid b$, then $C_{\fP \mid p}(\Theta) \in (\bQ^{\times})^2$.
 \end{cor}
 
 \begin{proof}
-    Note that $\bQ(\Res_{D_p}{\rho}) \subset \bQ(\zeta_b) \cap \bQ(\rho) \subset \bQ(\zeta_b)$. Then $\bQ(\rho) \subset \bQ(\zeta_b) \implies \ff \mid b$ by minimality of $\ff$. Since $\ff \nmid b$, we have $\bQ(\rho) \not\subset \bQ(\zeta_b)$, so $\bQ(\Res_{D_p} \rho) = \bQ$. The corollary then follows from Proposition \ref{rational-res} and Theorem \ref{odd-c-brauer}, noting that since $\C(D_p)$ is odd, multiplication by $2$ is injective. 
+    One has $\bQ(\rho) \subset \bQ(\zeta_b) \implies \ff \mid b$ by minimality of $\ff$. Since $\ff \nmid b$, we have $\bQ(\rho) \not\subset \bQ(\zeta_b)$, so $\bQ(\Res_{D_p} \rho) = \bQ$. The corollary then follows from Proposition \ref{rational-res} and Theorem \ref{odd-c-brauer}, noting that since $\C(D_p)$ is odd, multiplication by $2$ is injective. 
 \end{proof}
 
-Fix $\Theta = \sum_i n_i H_i \in \B(G)$ with $\bC[\Theta] \simeq \repnorm{\rho}^{\oplus m}$. We prove that at each prime $p$, $C_{\fP \mid p}(\Theta) \in \fieldnorm{\rho}$.  As observed, this depends on $D_p$ and $I_p$. As we deal with each local factor individually, we argue that one can take $D_p = I_p$.
+Fix $\Theta = \sum_i n_i H_i \in \B(G)$ with $\bC[\Theta] \simeq \repnorm{\rho}^{\oplus m}$. We prove that at each prime $p$, $C_{\fP \mid p}(\Theta)$ is the norm of an element of $\bQ(\rho)$.  As observed ({\color{red} reference}), this depends on $D_p$ and $I_p$. As we deal with each local factor individually, we argue that one can take $D_p = I_p$.
 
 \begin{lemma}\label{tam-up-to-square}
-    Let $E / K$ be an elliptic curve. Let $K' / K$ be an extension of number fields odd degree, unramified at the place $v$ of $K$. Then $C_w(E / K') \equiv C_v(E / K) \mod \bQ^{\times 2}$ for any place $w$ of $K'$ with $ w \mid v$. 
+    Let $E / K$ be an elliptic curve. Let $K' / K$ be an extension of number fields odd degree, unramified at the place $v$ of $K$. Then $C_w(E / K') \equiv C_v(E / K) \mod (\bQ^{\times})^2$ for any place $w$ of $K'$ with $ w \mid v$. 
 \end{lemma}
 
 \begin{proof}
@@ -89,8 +89,8 @@ This is automatic for good reduction and split multiplicative reduction. It is a
 Let $p$ have residue degree $f_p$. Let $L / \bQ$ be a Galois extension of degree $f_p$ with cyclic Galois group, such that $p$ is inert in $L$. Further ensure that $F \cap L = \bQ$. Then $\Gal(FL / L) = G$. Let $F_i = F^{H_i}$ and $L_i = F_i L$.
 
 Let $v$ be a place over $p$ in $F_i$. The extension $L_i / F_i$ is Galois, so $v$ is either split or inert in $L_i$.
-We claim that $C_v(E / F_i) \equiv \prod_{w | v} C_w(E / L_i) \mod \bQ^{\times 2}$. Indeed, the number of terms in the product on the right is odd, and by Lemma \ref{tam-up-to-square} $C_v(E / F_i) \equiv C_w(E / L_i) \mod \bQ^{\times 2}$. 
-Letting $C_{\fP \mid p}'$ be the function on $\B(G)$ defined as in \eqref{not_contr_fns} but with $\bQ$, $F$ replaced by $L$, $FL$, we see that $C_{\fP \mid p}'(\Theta) \equiv C_{\fP \mid p}(\Theta) \mod \bQ^{\times 2}$. 
+We claim that $C_v(E / F_i) \equiv \prod_{w | v} C_w(E / L_i) \mod (\bQ^{\times})^2$. Indeed, the number of terms in the product on the right is odd, and by Lemma \ref{tam-up-to-square} $C_v(E / F_i) \equiv C_w(E / L_i) \mod (\bQ^{\times})^2$. 
+Letting $C_{\fP \mid p}'$ be the function on $\B(G)$ defined as in \eqref{not_contr_fns} but with $\bQ$, $F$ replaced by $L$, $FL$, we see that $C_{\fP \mid p}'(\Theta) \equiv C_{\fP \mid p}(\Theta) \mod (\bQ^{\times})^2$. 
 Thus it is equivalent to do our computation in $FL / L$, but here $p$ has residue degree $1$.
 \end{proof}
 
@@ -102,17 +102,17 @@ If $E / \bQ$ has good reduction at $p$, then by Proposition \ref{prop_local_fns}
 \subsubsection*{Multiplicative reduction}
 
 \begin{lemma}
-Let $E / \bQ_p$ have non-split multiplicative reduction. Then $C_{\fP \mid p}(\Theta) \in \bQ^{\times 2}$.
+Let $E / \bQ_p$ have non-split multiplicative reduction. Then $C_{\fP \mid p}(\Theta) \in (\bQ^{\times})^2$.
 \end{lemma}
 
 \begin{proof}
 Since $D_p = I_p$, all primes above $p$ have residue degree $1$. Moreover, the ramification degrees are always odd. Thus by Proposition \ref{prop_local_fns}(iii), $C_{\fP \mid p}  = (D_p, \alpha)$
-where $\alpha$ is the constant function on $\B(D_p)$ with $\alpha \in \{1, 2\}$, depending on $v_p(\Delta)$ being even or odd. By Proposition \ref{const-fns}, it follows that $C_{\fP \mid p}(\Theta) \in \bQ^{\times 2}$.
+where $\alpha$ is the constant function on $\B(D_p)$ with $\alpha \in \{1, 2\}$, depending on $v_p(\Delta)$ being even or odd. By Proposition \ref{const-fns}, it follows that $C_{\fP \mid p}(\Theta) \in (\bQ^{\times})^2$.
 \end{proof}
 
 Now suppose $E / \bQ_p$ has split multiplicative reduction. The reduction type remains split at all places above $p$ within sub-extensions of $F / \bQ$. Let $v_p(\Delta) = n$. Then by Proposition \ref{prop_local_fns}(ii), 
 \[ C_{\fP \mid p} = (D_p, D_p, en). \]
-Since the $n$ factor is constant, $(D_p, D_p, en)(\Theta) \equiv (D_p, D_p, e)(\Theta) \mod \bQ^{\times 2}$ by Proposition \ref{const-fns} .
+Since the $n$ factor is constant, $(D_p, D_p, en)(\Theta) \equiv (D_p, D_p, e)(\Theta) \mod (\bQ^{\times}) ^2$ by Proposition \ref{const-fns} .
 
 We have $D_p = I_p = P_p \ltimes C_l$, where $P_p \triangleleft I_p$ is wild inertia, and $C_l = I_p / P_p$ is the tame quotient. $C_l$ is a cyclic group, with $l \mid p^f - 1 = p - 1$. By Corollary \ref{rational-res-2}, we may consider such $D_p$ with exponent  $p^u l$ for some $u \geq 0$ such that $\ff \mid p^u l$. To compute $C_{\fP \mid p}(\Theta)$, we reduce to the tame quotient.
 
@@ -139,7 +139,7 @@ Note that if $p = 2$ then $P_p = 1$ since $|P_p| \mid |G|$ which is odd. So we o
 \end{lemma}
 
 \begin{proof}
-    Since $\ff$ is odd, one has $D = \prod_{q | \ff} q^*$, the product being taken over primes dividing $\ff$. Note that if $q \not= p$, then since $q \mid l$, we have $p \equiv 1 \pmod l \implies p \equiv 1 \pmod q$. By Corollary \ref{p-one-mod-disc},  $p$ is the norm of a principal fractional ideal of $K$. If $K$ is imaginary, then $p$ is the norm of an element of $K$. Else, we invoke Theorem \ref{p-norm-elem-1} or Theorem \ref{p-norm-elem-2}.
+    Since $\ff$ is odd, one has $D = \prod_{q | \ff} q^*$, the product being taken over primes dividing $\ff$. Note that if $q \not= p$, then since $q \mid l$, we have $p \equiv 1 \pmod l \implies p \equiv 1 \pmod q$. By Corollary \ref{p-one-mod-disc},  $p$ is the norm of a principal fractional ideal of $K$, and by Theorem \ref{p-norm-elem-1} or Theorem \ref{p-norm-elem-2}, it is the norm of an element of $K$.
     %We show that $p$ has residue degree $1$ in the extended genus field $E^{+} = K(\{\sqrt{q^*} \colon q | \ff \})$ of $K$ ({\color{red} cf. appendix}).
     %If $q \not= p$ then $q \mid l$, so $p \equiv 1 \pmod l$. Therefore $p$ splits in any quadratic subfield of $E^{+}$ of discriminant not divisible by $p$. Else, $p$ ramifies in any quadratic subfield with discriminant divisible by $p$. Thus it is clear that $p$ has residue degree $1$ in $E^{+}$, hence also in the genus field $E$, and it follows from theorem \ref{p-principal} that $p$ is the norm of a principal ideal.  Else, we invoke theorem \ref{minus-one-norm}.
 \end{proof}
@@ -167,7 +167,7 @@ By Proposition \ref{prop_local_fns}(iv), (v)
         (D_p, D_p,\ p^{\floor{en /12}}) & \text{if } E / \bQ_p \text { has potentially good reduction}.
     \end{cases}
     \]
-In either case, $D_{\fP \mid p}(\Theta) \in N_{\bQ(\rho) / \bQ}(\bQ(\rho)^{\times})$. Indeed, this takes values $1$ or $p$ in $\bQ^{\times} / \bQ^{\times 2}$. But $p$ is a norm from $\bQ(\rho)$ by Lemma \ref{p-norm-odd}.
+In either case, $D_{\fP \mid p}(\Theta) \in N_{\bQ(\rho) / \bQ}(\bQ(\rho)^{\times})$. Indeed, this takes values $1$ or $p$ in $\bQ^{\times} / (\bQ^{\times})^2$. But $p$ is a norm from $\bQ(\rho)$ by Lemma \ref{p-norm-odd}.
 
 %\[ \left|\frac{\Delta_{E}}{\Delta_{E, w}^\min} \right|_w = p^{f_w 12 \cdot \floor{e_w n / 12}} \implies 
 %       \left|\frac{\omega}{\omega_{w}^\min} \right|_w = p \]
@@ -176,12 +176,12 @@ In either case, $D_{\fP \mid p}(\Theta) \in N_{\bQ(\rho) / \bQ}(\bQ(\rho)^{\time
 To compute $T_{\fP \mid p}(\Theta)$, since $p \geq 5$ we may write $E / \bQ_p$ as $E \colon y^2 = x^3 + A x + B$ and use the description from \cite{reg-const} for computing Tamagawa numbers, as detailed in Lemma \ref{tamagawa-num}. The discriminant of $E / \bQ_p$ is $\Delta = -16(4A^3 + 27 B^2)$. The case of potentially multiplicative reduction is almost immediate:
 
 \begin{lemma}[Potentially multiplicative reduction]
-    If $E / \bQ_p$ has reduction type $\I_{n}^{*}$ then $T_{\fP \mid p}(\Theta) \in \bQ^{\times 2}$. 
+    If $E / \bQ_p$ has reduction type $\I_{n}^{*}$ then $T_{\fP \mid p}(\Theta) \in (\bQ^{\times})^2$. 
 \end{lemma}
 
 \begin{proof}
 Since we assume $D_p = I_p$, i.e. the residue degree is one, it follows that any subextension $L'$ of $F_{w} / \bQ_p$ satisfies $\sqrt{B} \in L' \iff \sqrt{B} \in \bQ_p$ and $\sqrt{\Delta} \in L' \iff \sqrt{B} \in \bQ_p$. 
-Therefore $T_{\fP \mid p} = (D_p, \alpha)$ where $\alpha \in \{2, 4\}$ by Lemma \ref{lem_add_tam}. But then $(D_p, \alpha)(\Theta) \in \bQ^{\times 2}$ by Proposition \ref{const-fns}.
+Therefore $T_{\fP \mid p} = (D_p, \alpha)$ where $\alpha \in \{2, 4\}$ by Lemma \ref{lem_add_tam}. But then $(D_p, \alpha)(\Theta) \in (\bQ^{\times})^2$ by Proposition \ref{const-fns}.
 \end{proof}
 
 Now suppose that $E / \bQ_p$ has potentially good reduction. Recall from Lemma \ref{lem_add_tam} that if $L' / \bQ_p$ has ramification degree $e$, then the Kodaira type of $E / L'$ depends on $\gcd(e n, 12)$. Thus in a ramified extension of degree coprime to $12$, the Kodaira type is unchanged, and further if this extension is totally ramified (so the residue degree is $1$), the Tamagawa number is unchanged also. Thus when $3 \nmid |D_p|$, $T_{\fP \mid p} = (D_p, \alpha)$ for some constant $\alpha$. If we have type $\III$ or $\III^*$ or $\I_0^*$ then the Tamagawa number is still unchanged in any totally ramified extension of odd degree extension, even when the degree is divisible by $3$. Then the Proposition \ref{const-fns} implies the following lemma:
@@ -190,15 +190,15 @@ Now suppose that $E / \bQ_p$ has potentially good reduction. Recall from Lemma \
     \
     \begin{enumerate}[(i)]
         \setlength\itemsep{0em}
-        \item If $E / \bQ_p$ has potentially good reduction and $3 \nmid |D_p|$, then $T_{\fP \mid p}(\Theta) \in \bQ^{\times 2}$.
-        \item If $E / \bQ_p$ has potentially good reduction of type $\III$, $\III^*$, or $\I_0^*$, then $T_{\fP \mid p}(\Theta) \in \bQ^{\times 2}$.
+        \item If $E / \bQ_p$ has potentially good reduction and $3 \nmid |D_p|$, then $T_{\fP \mid p}(\Theta) \in (\bQ^{\times})^2$.
+        \item If $E / \bQ_p$ has potentially good reduction of type $\III$, $\III^*$, or $\I_0^*$, then $T_{\fP \mid p}(\Theta) \in (\bQ^{\times})^2$.
     \end{enumerate}
 \end{lemma}
 
 Thus we assume that $3 \mid |D_p|$. Since we assumed $p \geq 5$, we have $D_p = I_p = P_p \ltimes C_l$ with $3 \mid l$ and $p \equiv 1 \pmod l$.
 
 \begin{lemma}
-If $E / \bQ_p$ has Type $\II$ or Type $\II^*$ additive reduction and $3 \mid |D_p|$, then $T_{\fP \mid p}(\Theta) \in \bQ^{\times 2}$. 
+If $E / \bQ_p$ has Type $\II$ or Type $\II^*$ additive reduction and $3 \mid |D_p|$, then $T_{\fP \mid p}(\Theta) \in (\bQ^{\times})^2$. 
 \end{lemma}
 
 \begin{proof}
@@ -237,16 +237,16 @@ Similarly to the split multiplicative case, we may pass to the tame quotient $C_
 since $3 \nmid|P_p|$. Therefore we may compute the number of subgroups divisible by $3$ in $\Psi = P_p \cdot \Res_{D_p} \Theta / P_p \in \B(C_l)$.  Let $h \colon \B(C_l) \to \bQ^{\times}$ be the function given by $H \mapsto \begin{cases} 3 & 3 \mid [C_l : H], \\ 1 & 3 \nmid [C_l : H]. \end{cases}$
 
 \begin{prop}
-   Suppose that $E / \bQ_p$ has additive reduction of Type $\IV$ or $\IV^*$, with $c_v(E / \bQ_p) = 3$.  Then $T_{\fP \mid p}(\Theta) \equiv h(\Psi) \mod \bQ^{\times 2}$ and $T_{\fP \mid p}(\Theta) \in \fieldnorm{\rho}$. 
+   Suppose that $E / \bQ_p$ has additive reduction of Type $\IV$ or $\IV^*$, with $c_v(E / \bQ_p) = 3$.  Then $T_{\fP \mid p}(\Theta) \equiv h(\Psi) \mod (\bQ^{\times})^2$ and $T_{\fP \mid p}(\Theta) \in \fieldnorm{\rho}$. 
 \end{prop}
 
 \begin{proof}
-The fact that $T_{\fP \mid p}(\Theta) \equiv h(\Psi) \mod \bQ^{\times 2}$ has been observed above.
+The fact that $T_{\fP \mid p}(\Theta) \equiv h(\Psi) \mod (\bQ^{\times})^2$ has been observed above.
 Let $\psi_3$ be an irreducible character of $D_p$ of order $3$. One has that $ \langle \Ind_{C_{l / l'}}^{C_l} \trivial , \psi_3 \rangle =  1$ when $3 \mid l'$ and is zero when  $3 \nmid l'$. 
-Thus $$h(\Psi) = 3^{\langle \bC[C_l / \Psi], \psi_3 \rangle}.$$ As in the proof of Proposition \ref{index-fn-trivial}, write $\bC[C_l / \Psi] = \sum_{l' \mid l} a_{l'} \chi_{l'}$, where $\chi_{l'}$ is an irreducible rational character, of $C_l$ with kernel of index $l'$. Observe that $\langle \chi_{l'}, \psi_3 \rangle = 0$ unless $l' = 3$, in which case it is $1$. Therefore $h(\Psi) \equiv 3^{a_3} \mod \bQ^{\times 2}$. In the proof of Proposition \ref{index-fn-trivial}, we showed that $a_3$ is even unless $\ff \mid 3$,  i.e. that $\bQ(\rho) = \bQ(\sqrt{-3})$. But then $3$ is a norm in $\bQ(\rho)$. Thus we see that in all cases $T_{\fP \mid p}(\Theta) \in N_{\bQ(\rho) / \bQ}(\bQ(\rho)^{\times})$. 
+Thus $$h(\Psi) = 3^{\langle \bC[C_l / \Psi], \psi_3 \rangle}.$$ As in the proof of Proposition \ref{index-fn-trivial}, write $\bC[C_l / \Psi] = \sum_{l' \mid l} a_{l'} \chi_{l'}$, where $\chi_{l'}$ is an irreducible rational character, of $C_l$ with kernel of index $l'$. Observe that $\langle \chi_{l'}, \psi_3 \rangle = 0$ unless $l' = 3$, in which case it is $1$. Therefore $h(\Psi) \equiv 3^{a_3} \mod (\bQ^{\times})^2$. In the proof of Proposition \ref{index-fn-trivial}, we showed that $a_3$ is even unless $\ff \mid 3$,  i.e. that $\bQ(\rho) = \bQ(\sqrt{-3})$. But then $3$ is a norm in $\bQ(\rho)$. Thus we see that in all cases $T_{\fP \mid p}(\Theta) \in N_{\bQ(\rho) / \bQ}(\bQ(\rho)^{\times})$. 
 \end{proof}
 
-We have observed that for all reduction types of $E / \bQ_p$, one always has $C_{\fP \mid p} (\Theta) \in \fieldnorm{\rho}$, and so $C(\Theta) \in \fieldnorm{\rho}$, completing the proof of Theorem \ref{odd-exts}.
+We have observed that for all reduction types of $E / \bQ_p$, one has $C_{\fP \mid p} (\Theta) \in \fieldnorm{\rho}$, and so $C(\Theta) \in \fieldnorm{\rho}$, completing the proof of Theorem \ref{odd-exts}.
 
 \qed
 
