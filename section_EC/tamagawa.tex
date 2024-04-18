@@ -37,37 +37,32 @@ Elliptic curves with multiplicative reduction and $n=\nu(\Delta)$ are said to be
     
 \end{notation}
 
-The unstable case is harder, but there exists an explicit description for elliptic curves with equation $y^2=x^3+Ax+B$ and residual characteristic is at least $5$. 
+In the case of additive reduction, if we assume that the residue characteristic is $\geq 5$, then one can determine the Tamagawa number from the shortened Weierstrass equation of $E$. The following result is a consequence of Tate's algorithm.
 
-\begin{lemma}\label{lem_add_tam}\label{tamagawa-num}
-    Let $F /K / \bQ_p$ be finite extensions and $p \geq 5$. Let 
-    $$E:  y^2 = x^3 + Ax + B$$
-    be an elliptic curve over $K$ with additive reduction. Let $n=v_K(\Delta)$ be the valuation of the minimal discriminant, and $e$ the ramification index of $F/K$.
-
-    If $E$ has potentially good reduction, then $n$ and $12$ cannot be relatively prime and moreover,
+\begin{lemma}\label{lem_add_tam}\label{tamagawa-num}\cite[Lemma 3.22]{reg-const}
+    Let $F /K / \bQ_p$ be finite extensions and $p \geq 5$. Let
+    $$E \colon  y^2 = x^3 + Ax + B, \qquad A, B \in K$$
+    be an elliptic curve over $K$ with additive reduction. One has $\Delta = -16(4A^3 + 27 B^2)$. Let $\delta=v_K(\Delta)$ be the valuation of the minimal discriminant, and $e$ the ramification index of $F/K$.
+    If $E$ has potentially good reduction, then 
         \[
         \begin{array}{l l l l}
-            \gcd(ne, 12) = 2 & \implies & c(E / F) = 1, & \quad (II, II^*) \\
-            \gcd(ne, 12) = 3 & \implies & c(E / F) = 2, & \quad (III, III^*) \\
-            \gcd(ne, 12) = 4 & \implies & c(E / F) = \begin{cases} 1, & \sqrt{B} \notin F
-                                \\ 3, & \sqrt{B} \in F \end{cases}, & \quad (IV, IV^*) \\
-            \gcd(ne, 12) = 6 & \implies & c(E / F) = \begin{cases} 2, & \sqrt{\Delta} \notin F
-                \\ 1 \ \text{or} \ 4, & \sqrt{\Delta} \in F \end{cases}, & \quad (I_0^*) \\
-            \gcd(ne, 12) = 12 & \implies & c(E / F) = 1. & \quad (I_0)
+            \gcd(\delta e, 12) = 2 & \implies & c(E / F) = 1, & \quad (\II, \II^*) \\
+            \gcd(\delta e, 12) = 3 & \implies & c(E / F) = 2, & \quad (\III, \III^*) \\
+            \gcd(\delta e, 12) = 4 & \implies & c(E / F) = \begin{cases} 1, & \sqrt{B} \notin F
+                                \\ 3, & \sqrt{B} \in F \end{cases}, & \quad (\IV, \IV^*) \\
+            \gcd(\delta e, 12) = 6 & \implies & c(E / F) = \begin{cases} 2, & \sqrt{\Delta} \notin F
+                \\ 1 \ \text{or} \ 4, & \sqrt{\Delta} \in F \end{cases}, & \quad (\I_0^*) 
         \end{array}
         \]
-    Moreover, the extensions $F\left(\sqrt{B}\right) / F$ and $F\left(\sqrt{\Delta}\right) / F$ are unramified.
-
-    If $E$ has potentially multiplicative reduction of type $I_n^*$ over $K$, and $e$ is odd, then it has Kodaira type $I_{en}^*$ over $F$. Moreover, 
-    \[
-        \begin{array}{l l l l}
-        2 \nmid n & \implies & c(E / F) = \begin{cases} 2, & \sqrt{B} \not\in F, \\ 4, & \sqrt{B} \in F. \end{cases} & \quad (I_{ne^*}) \\
-        2 \mid n & \implies & c(E / F) = \begin{cases} 2 & \sqrt{\Delta} \not\in F, \\ 4 & \sqrt{\Delta} \in F \end{cases} & \quad ({I_{ne}^*})   
-        \end{array} 
-    \]
+     
+        If $E$ has potentially multiplicative reduction of type $\I_n^*$ over $K$,
+        and $e$ is even, then it attains multiplicative reduction over $F$ of type $\I_{en}$. If $e$ is odd the reduction type remains potentially multiplicative of type $\I_{en}^*$. Moreover, 
+        \[
+            \begin{array}{l l l l}
+                2 \nmid e, 2 \nmid n & \implies & c(E / F) = \begin{cases} 2, & \sqrt{B} \not\in F, \\ 4, & \sqrt{B} \in F. \end{cases} & \quad (\I_{en}^*) \\
+                2 \nmid e, 2 \mid n & \implies & c(E / F) = \begin{cases} 2 & \sqrt{\Delta} \not\in F, \\ 4 & \sqrt{\Delta} \in F \end{cases} & \quad ({\I_{en}^*}) \\
+                2 \mid e, \sqrt{-6 B} \not\in F & \implies & c(E / F ) = 2 & \quad (\I_{en}, \text{ non-split}) \\
+                2 \mid e, \sqrt{-6 B} \in F & \implies & c(E / F) = en & \quad (\I_{en}, \text{ split})
+                \end{array} 
+            \]
 \end{lemma}
-
-\begin{proof}
-    \cite[Lemma 3.22]{reg-const}
-\end{proof}
-

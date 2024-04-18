@@ -27,14 +27,14 @@ An important question which will be of interest for us is to understand how the 
         \item Let $F/K$ be an unramified extension. Then the reduction type of $E$ over $K$ (good multiplicative or additive) is the same as the reduction type of $E$ over $F$.
         \item Let $F/K$ be a finite extension. If $E$ has good or multiplicative reduction over $K$, then it has the same reduction type over $F$. This also applies specfically to split multiplicative reduction.
         \item If $E$ has non-split multiplicative reduction over $K$ and $F/K$ is a finite extension with even residual degree, then $E$ has split multiplicative reduction over $F$. 
-        \item There exists a finite extension $F/K$ such that $E$ has either good or spit multiplicative over $F$.
+        \item There exists a finite extension $F/K$ such that $E$ has either good or split multiplicative over $F$.
     \end{enumerate}
 \end{prop}
 \begin{proof}
     \cite[\S VII Proposition 5.4]{S1} 
 \end{proof}
 
-Given an unstable elliptic curve $E$ over $K$, we say that it has potentially good (resp. multiplicative) reduction if it has good (resp. multiplicative) reduction over a finite field extension of $K$. This behaviour is chacterized by the value of the $j$-invariant.
+Given an unstable elliptic curve $E$ over $K$, we say that it has \textbf{potentially good} (resp. \textbf{potentially multiplicative}) reduction if it has good (resp. multiplicative) reduction over a finite field extension of $K$. This behaviour is characterized by the value of the $j$-invariant.
 
 \begin{prop}\label{prop_j_inv}
     Let $E$ be an elliptic curve of characteristic $0$. Then
@@ -43,3 +43,19 @@ Given an unstable elliptic curve $E$ over $K$, we say that it has potentially go
         \item If $\nu(j)<0$, then $E$ has multiplicative or potentially multiplicative reduction.
     \end{itemize}
 \end{prop}
+
+One can use Tate's algorithm $(\cite[\S \text{IV}.9]{S2})$ to determine the reduction type of $E$. The reduction types are encoded by Kodaira symbols. These are described in the following table, assuming that the characteristic of $\kappa$ is not equal to $2$ or $3$ when $E / K$ has additive reduction.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ c | l }
+        $\I_0:$ & $E / K$ has good reduction, \\ 
+        $\I_n:$ & $E / K$ has multiplicative reduction, $\nu(\Delta) = n$,\\
+        $\I_n^* :$ & $E / K$ has potentially multiplicative reduction, $\nu(\Delta) = 6 + n$, \\
+        $\I_0^*:$ & $E / K$ has potentially good reduction, $\nu(\Delta) = 6$, \\
+        $\II$, $\III$, $\IV:$ & $E / K$ has potentially good reduction, $\nu(\Delta) = 2$, $3$, $4$, respectively,\\
+        $\IV^*$, $\III^*$, $\II^*:$ & $E / K$ has potentially good reduction, $\nu(\Delta) = 8$, $9$, $10$ respectively. 
+    \end{tabular}
+    %\caption{Kodaira symbols for $E / K$, where $\Delta$ is the minimal discriminant, and $\text{char}(k) \not= 2, 3$ when $E / K$ has additive reduction.}
+\end{table}
+
+
