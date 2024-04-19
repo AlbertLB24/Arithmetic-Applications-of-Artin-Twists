@@ -1,23 +1,28 @@
 \subsection{Examples}
 
-We now present some examples where we use Theorem \ref{thm_positive_rank} to force positive rank. Throughout we will consider an elliptic curve $E$ defined over $\bQ$, and a finite Galois extension $F / \bQ$ with Galois group $G = \Gal(F / \bQ)$. As described in Remark \ref{rephrase-thm}, the strategy is to find a representation $\rho$ of $G$ and a $\rho$-relation $\Theta \in \B(G)$ such that $C(\Theta)$ is either not a norm from a quadratic subfield of $\bQ(\rho)$, or not a rational square, as appropriate. We start with a small observation:
+We now present some examples where we use Theorem \ref{thm_positive_rank} to force positive rank. Throughout we will consider an elliptic curve $E$ defined over $\bQ$, and a finite Galois extension $F / \bQ$ with Galois group $G = \Gal(F / \bQ)$. We let $\Delta_E$ denote the global minimal differential of $E / \bQ$. 
+%As described in Remark \ref{rephrase-thm}, the strategy is to find a representation $\rho$ of $G$ and a $\rho$-relation $\Theta \in \B(G)$ such that $C(\Theta)$ is either not a norm from a quadratic subfield of $\bQ(\rho)$, or not a rational square, as appropriate. 
+We start with a small observation:
 
 \begin{rem}[Taking quotients]
-    Let $E$, $F$, $G$ be as above. Consider $H \leq G$, and $N \triangleleft G$ such that $N \leq H$. Then $C_{E / F^H}$ is equal to $C_{E / L^{NH/N}}$ (viewing $C$ as a function on $\B(G / N)$) as the fields $F^H$ and $L^{NH/ N}$ are isomorphic. 
+   Let $E$, $F$, $G$ be as above. Consider $H \leq G$, and $N \triangleleft G$ such that $N \leq H$. Let $L = F^N$. Then $C_{E / F^H}$ is equal to $C_{E / L^{H/N}}$ as the fields $F^H$ and $L^{H/ N}$ are isomorphic. 
     
-    Consider a representation $\rho$ of $G$ with $N \leq \ker \rho$, so that $\bQ(\rho) = \bQ(\rho^N)$. Then, if $\Theta = \sum_i n_i H_i \in \B(G)$ with $N \leq H_i$ for all $i$, it follows that $N \cdot \Theta / N = \Theta / N$ being a norm relation for $C \colon \B(G / N) \to \bQ^{\times}$ implies that $\Theta$ is a norm relation for $C \colon \B(G) \to \bQ^{\times}$. 
+%    Consider a representation $\rho$ of $G$ with $N \leq \ker \rho$, so that $\bQ(\rho) = \bQ(\rho^N)$. Then, if $\Theta = \sum_i n_i H_i \in \B(G)$ with $N \leq H_i$ for all $i$, it follows that $N \cdot \Theta / N = \Theta / N$ being a norm relation for $C \colon \B(G / N) \to \bQ^{\times}$ implies that $\Theta$ is a norm relation for $C \colon \B(G) \to \bQ^{\times}$. 
 \end{rem}
 
-We will need to be able to count primes and compute residue degrees in intermediate extensions of $F / \bQ$, which is described by the following. 
+%We will be computing the terms $C_{E / F^H}$ for $F_i \subset F$ locally. Thus given a prime $p$ and subfield $F_i = F^H$ for 
 
-\begin{exercise}[Counting primes and ramification degrees]\label{ex-counting}
-Consider a prime $p \in \bQ$ and decomposition and inertia groups $D_p$, $I_p \leq G$. Let $H \leq G$. 
-\begin{enumerate}
-    \setlength\itemsep{0em}
-    \item The number of primes above $p$ in $F^H$ is given by the number of orbits of $D_p$ on $H \backslash G$, where $D_p$ acts by $d(Hg) = H g d^{-1}$ for $d \in D_p$. Equivalently it is $|H \backslash G / D_p|$.
-    \item The inertia degree of a prime $\fP$ above $p$ in $F^H$ is the size of the $I_p$ sub-orbits on $H \backslash G$. 
-\end{enumerate}
-\end{exercise}
+
+%We will need to be able to count primes and compute residue degrees in intermediate extensions of $F / \bQ$, which is described by the following. 
+
+%\begin{exercise}[Counting primes and ramification degrees]\label{ex-counting}
+%Consider a prime $p \in \bQ$ and decomposition and inertia groups $D_p$, $I_p \leq G$. Let $H \leq G$. 
+%\begin{enumerate}
+%    \setlength\itemsep{0em}
+%    \item The number of primes above $p$ in $F^H$ is given by the number of orbits of $D_p$ on $H \backslash G$, where $D_p$ acts by $d(Hg) = H g d^{-1}$ for $d \in D_p$. Equivalently it is $|H \backslash G / D_p|$.
+%    \item The inertia degree of a prime $\fp$ above $p$ in $F^H$ is the size of the $I_p$ sub-orbits on $H \backslash G$. 
+%\end{enumerate}
+%\end{exercise}
 
 
 \begin{example}[Brauer relation forces growth]
@@ -39,15 +44,50 @@ Consider a prime $p \in \bQ$ and decomposition and inertia groups $D_p$, $I_p \l
         \draw(C2a)--(C1);   \draw(C2b)--(C1);   \draw(C2c)--(C1);   \draw(C3)--(C1); 
     \end{tikzpicture}
     \end{figure}
-    There is a Brauer relation coming from the $C_2 \times C_2$-quotient, given by $$\Psi = C_3 - C_6^a - C_6^b - C_6^c + 2G.$$ Consider an order $6$ character $\rho_a$ of $G$ with $C_2^{a}$ in its kernel. This has $\bQ(\rho_a) = \bQ(\zeta_6) = \bQ(\zeta_3) = \bQ(\sqrt{-3})$. Then $$\Theta = C_2^{a} - C_6^{a} - C_2^{2} + G$$ is a $\rho_a$-relation, with $\bC[ G / \Theta] = \repnorm{\rho_a}$. 
+    %There is a Brauer relation coming from the $C_2 \times C_2$-quotient, given by $$\Psi = C_3 - C_6^a - C_6^b - C_6^c + 2G.$$ 
+    
+    Consider an order $6$ character $\rho_a$ of $G$ with $C_2^{a}$ in its kernel. This has $\bQ(\rho_a) = \bQ(\zeta_6) = \bQ(\sqrt{-3})$. Let $\tau$ generate $\Gal(\bQ(\rho_a) / \bQ)$. One has
+    \begin{equation}\label{ex1-rel}\tag{\textdagger}
+    \Ind_{C_2^{a}}^G \trivial  \ominus \Ind_{C_6^{a}}^G \trivial \ominus \Ind_{C_2^{2}}^G \trivial \oplus \Ind_G^G \trivial \simeq \rho_a \oplus \rho_a^{\tau} .
+    \end{equation}
+    Let $E / \bQ$ be a semistable elliptic curve. To apply Theorem \ref{thm_positive_rank}, we need to compute
+    \begin{equation}\label{ex1}\tag{*} 
+        \frac{C_{E / F^{C_2^a}} C_{E / \bQ} }{C_{E / F^{C_6^a}} C_{E / F^{C_2^2}}} = 
+        \frac{C_{E / L} C_{E / \bQ}}{C_{E / L^{C_3}} C_{E / L^{C_2}}}
+    \end{equation} 
+    where $L = F^{C_2^a}$ has $\Gal(L / \bQ) = C_6$, and check whether it is a norm from $\bQ(\sqrt{-3})$. This is a product of local Tamagawa numbers, as the minimal differential terms are $1$ when $E / \bQ$ is semistable (Lemma \ref{lem_Dterms}(i)). 
+    
+    One needs to compute these locally for each $p \in \bQ$. If $E / \bQ_p$ has good reduction, then the Tamagawa numbers at all places above $p$ in the subfields of $L$ are $1$. Suppose that $E / \bQ_p$ has split multiplicative reduction at $p$. Let $n = v_p(\Delta_E)$. For $H \leq G$, the Tamagawa number at a prime $\fp$ above $p$ in $L^H$ is given by $c_{\fp}(E / L^H) = e_{\fp / p} n$, where $e_{\fp \mid p}$ is the ramification degree. Thus the computation of Tamagawa numbers depends on the choice of decomposition group $D_p \leq C_6$ (to count the number of primes above $p$ in a given subfield) and the choice of inertia group $I_p \leq C_6$ (to compute the ramification indices). The following table describes the product of Tamagawa numbers at places above $p$ in our expression, for varying $D_p$ and $I_p$. We let $C_{\fp \mid p}(E / L^H) = \prod_{\fp \mid p}c_{\fp}(E / L^H_{\fp})$ for $H \leq \Gal(L / \bQ)$, and write $C_p = c_p(E / \bQ)C_{\fp \mid p}(E / L) \big/ C_{\fp \mid p}(E / L^{C_3})C_{\fp \mid p}(E / L^{C_2})$. 
+    \[
+    \begin{array}{c c c c c c c}
+        D_p & I_p & c_p(E / \bQ) & C_{\fp \mid p}(E / L^{C_3}) & C_{\fp \mid p}(E / L^{C_2}) & C_{\fp \mid p}(E / L) & C_p\\ 
+        \hline
+        C_1 & C_1 & n & n^2 & n^3 & n^6 & \square\\
+        C_2 & C_1 & n & n & n^3 & n^3 & \square\\
+        C_3 & C_1 & n & n^2 & n & n^2 & \square \\
+        C_6 & C_1 & n & n & n & n & \square \\
+        C_2 & C_2 & n & 2n & n^3 & (2n)^3 & \square \\
+        C_6 & C_2 & n & 2n & n & 2n & \square \\
+        C_3 & C_3 & n & n^2 & 3n & (3n)^2 & 3\cdot\square \\
+        C_6 & C_3 & n & n & 3n & 3n & \square\\
+        C_6 & C_6 & n & 2n & 3n & 6n & \square
+    \end{array}
+    \]
 
-    Let $E / \bQ$ be a semistable elliptic curve and $F / \bQ$ an abelian extension with $G = \Gal(F / \bQ)$. We claim that $C(\Theta) \in \fieldnorm{\rho_a}$, for all such $E$. Since each subgroup in $\Theta$ contains $C_2^{a}$, we have that $C(\Theta)$ equals $C(\Theta / C_2^{a})$ where $\Theta / C_2^{a} \in \B(G / C_2^{a}) = \B(C_6)$.  Now $\Theta / C_2^{a}$ is a $\chi_6$-relation, where $\chi_6 = \rho_a^{C_2^a}$ is a faithful order $6$ character of $C_6$, with $\bQ(\chi_6) = \bQ(\rho_a)$. But for cyclic groups we always get norm relations; by Theorem \ref{thm_consistent_cyclic}, $C(\Theta / C_2^{a}) \in \fieldnorm{\rho_a}$.
+    In all cases we see that $C_p$, the contribution of Tamagawa numbers above $p$, is a norm form $\bQ(\sqrt{-3})$. It is not too hard to check that this is also the case when $E / \bQ_p$ has non-split multiplicative reduction. Therefore the expression in \eqref{ex1} is always a norm from $\bQ(\rho_a)$. This is an example of a more general phenomenon; for cyclic groups and semistable elliptic curves we always get a norm. This follows from  Theorem \ref{thm_consistent_cyclic}, which is proven in \S\ref{sec-cyclic}.
+    %and $F / \bQ$ an abelian extension with $G = \Gal(F / \bQ)$. We claim that $C(\Theta) \in \fieldnorm{\rho_a}$, for all such $E$. Since each subgroup in $\Theta$ contains $C_2^{a}$, we have that $C(\Theta)$ equals $C(\Theta / C_2^{a})$ where $\Theta / C_2^{a} \in \B(G / C_2^{a}) = \B(C_6)$.  Now $\Theta / C_2^{a}$ is a $\chi_6$-relation, where $\chi_6 = \rho_a^{C_2^a}$ is a faithful order $6$ character of $C_6$, with $\bQ(\chi_6) = \bQ(\rho_a)$. But for cyclic groups we always get norm relations; by Theorem \ref{thm_consistent_cyclic}, $C(\Theta / C_2^{a}) \in \fieldnorm{\rho_a}$.
 
-    On the other hand, $C(\Theta + \Psi) = C(\Theta)C(\Psi)$ is not always a norm. Indeed suppose $E / \bQ$ has split multiplicative reduction at a prime $p$ with $D_p = G$, $I_p = C_6^b$ (assuming tamely ramified, one can take a prime $p$ such that $6 \mid p^2 - 1$, e.g. $p = 5$). Let $v_p(\Delta_E) = n$. Then there is only one prime above $p$ in each subfield, and the Tamagawa number at a prime $\fP$ above $p$ in $F^H$ is given by $c_{\fP}(E / F^H) = e_{\fP / p} n$. Suppose $E$ has good reduction at all other primes ({\color{red} or be more lenient}).
-     Then 
-        $$C(\Theta) = \frac{(6n)(n)}{(2n) (3n)} = 1, \qquad
-            C(\Psi) = \frac{(2n)(n)^2}{(2n)(n)(2n)} = \frac{1}{2} \cdot \square.$$
-    Thus $C(\Theta + \Psi) = \frac{1}{2} \mod (\bQ^{\times})^2$, but $2$ is not a norm in $\bQ(\sqrt{-3})$. Hence one must have $\rk E / F > 0$. 
+    But! Observe that{\footnote{this is called a Brauer relation, see Definition \ref{def-brauer}}} 
+    \[ \Ind_{C_3}^G \trivial \ominus \Ind_{C_6^a}^G \trivial \ominus \Ind_{C_6^b}^G \trivial \ominus \Ind_{C_6^c}^G \trivial \oplus (\Ind_G^G \trivial)^{\oplus 2} = 0 \]
+    as a virtual permutation representation. We can append this to the left hand side of \eqref{ex1-rel}. Then Theorem \ref{thm_positive_rank} asks us to compute 
+    \begin{equation}\label{ex1-rel2}\tag{**}
+    \left(\frac{C_{E / F^{C_2^a}} C_{E / \bQ} }{C_{E / F^{C_6^a}} C_{E / F^{C_2^2}}}\right) \cdot \left( \frac{C_{E / F^{C_3}} C_{E / \bQ}^2}{C_{E / F^{C_6^a}}C_{E / F^{C_6^b}}  C_{E / F^{C_6^c}} } \right). 
+    \end{equation}
+    
+    We can find instances where the second factor is not a norm from $\bQ(\sqrt{-3})$. Indeed suppose $E / \bQ$ has split multiplicative reduction at a prime $p$ with $D_p = G$, $I_p = C_6^b$ (assuming tamely ramified, one can take a prime $p$ such that $6 \mid p^2 - 1$, e.g. $p = 5$). Let $v_p(\Delta_E) = n$. Then there is only one prime above $p$ in each subfield. Suppose $E$ has good reduction at all other primes (or multiplicative reduction at primes that are totally split in $F / \bQ$ would also be fine).
+     Then our expression \eqref{ex1-rel2} is equal to
+     \[ \frac{(6n)(n)}{(2n) (3n)} \cdot \frac{(2n)(n)^2}{(2n)(n)(2n)} = \frac{1}{2} \cdot \square,\] 
+     but $\frac{1}{2}$ is not a norm in $\bQ(\sqrt{-3})$. Hence one must have $\rk E / F > 0$. 
 \end{example}
 
 \begin{example}[Dihedral]
@@ -64,21 +104,21 @@ Consider a prime $p \in \bQ$ and decomposition and inertia groups $D_p$, $I_p \l
 % There is an irreducible representation $\rho$ of $G$, obtained by inducing a linear order $q_1 q_2$ faithful representation from $C_{q_1 q_2}$. Thus $\rho$ is of degree $2$ and $\bQ(\rho) = \bQ(\zeta_{q_1 q_2})^{C_2}$. Then $\rho$ has $\frac{(q_1 - 1)(q_2 - 1)}{2}$ Galois conjugates, and so $\repnorm{\rho}$ is of dimension $2 \cdot \frac{(q_1 - 1)(q_2 - 1)}{2}$. 
 Thus there is a $\rho$-relation $$\Theta = C_2 - D_{2 q_1} - D_{2 q_2} + G, \qquad \bC[G / \Theta] \simeq \repnorm{\rho}.$$ 
 
-    Suppose that $E / \bQ$ is semistable. Recall that $C(\Theta) = \prod_p C_{\fP \mid p}(\Theta)$. Suppose that $E / \bQ_p$ has split multiplicative reduction, with $n = v_p(\Delta_E)$. Then by Proposition \ref{prop_local_fns}, $C_{\fP \mid p} = (D_p, I_p, en)$. Corollary \ref{cor-odd-decomp} implies that $C_{\fP \mid p}(\Theta)$ is a norm from the quadratic subfields of $\bQ(\rho)$ whenever $|D_p|$ is odd. In fact, ranging over all possible $D_p$ and $I_p$, a case by case analysis yields that $C_{\fP \mid p}(\Theta)$ is non-square only when the decomposition group is $D_{2 q_1}$ or $D_{2 q_2}$ (and $I_p$ is non-trivial). 
+    Suppose that $E / \bQ$ is semistable. Recall that $C(\Theta) = \prod_p C_{\fp \mid p}(\Theta)$. Suppose that $E / \bQ_p$ has split multiplicative reduction, with $n = v_p(\Delta_E)$. Then by Proposition \ref{prop_local_fns}, $C_{\fp \mid p} = (D_p, I_p, en)$. Corollary \ref{cor-odd-decomp} implies that $C_{\fp \mid p}(\Theta)$ is a norm from the quadratic subfields of $\bQ(\rho)$ whenever $|D_p|$ is odd. In fact, ranging over all possible $D_p$ and $I_p$, a case by case analysis yields that $C_{\fp \mid p}(\Theta)$ is non-square only when the decomposition group is $D_{2 q_1}$ or $D_{2 q_2}$ (and $I_p$ is non-trivial). 
 
     For example, let $p$ have decomposition group $D_{2 q_1}$ and inertia group $C_{q_1}$. We use Exercise \ref{ex-counting} to compute $(D_p, I_p, en)$ on each subgroup in $\Theta$:
         \begin{itemize}[--]
             \setlength\itemsep{0em}
-            \item The action of $D_{2 q_1}$ on $C_2 \backslash G$ yields $1$ orbit of size $C_{q_1}$ (the orbit of the identity) and $\frac{q_2 - 1}{2}$ orbits of size $2q_1$ (coming from $C_2$ acting faithfully on $C_{q_2}$). The size of the inertia sub-orbits is $q_1$. Hence $C_{\fP \mid p}(C_2) = (q_1 n)^{1 + \frac{q_2 - 1}{2}}$.
-            \item The action of $D_{2 q_1}$ on $D_{2 q_1} \backslash G$ yields the same number of orbits as above, but now the action of $C_{q_1} \leq D_{2 q_1}$ is trivial and the size of the inertia sub-orbits are all $1$, so that $C_{\fP \mid p}(D_{2 q_1}) = n^{1 + \frac{q_2 - 1}{2}}$.
-            \item The action of $D_{2 q_1}$ on $D_{2 q_2} \backslash G$ yields one orbit of size $q_1$, with the inertia sub-orbit also of size $q_1$, hence $C_{\fP \mid p}(D_{2 q_2}) = q_1 n$.
+            \item The action of $D_{2 q_1}$ on $C_2 \backslash G$ yields $1$ orbit of size $C_{q_1}$ (the orbit of the identity) and $\frac{q_2 - 1}{2}$ orbits of size $2q_1$ (coming from $C_2$ acting faithfully on $C_{q_2}$). The size of the inertia sub-orbits is $q_1$. Hence $C_{\fp \mid p}(C_2) = (q_1 n)^{1 + \frac{q_2 - 1}{2}}$.
+            \item The action of $D_{2 q_1}$ on $D_{2 q_1} \backslash G$ yields the same number of orbits as above, but now the action of $C_{q_1} \leq D_{2 q_1}$ is trivial and the size of the inertia sub-orbits are all $1$, so that $C_{\fp \mid p}(D_{2 q_1}) = n^{1 + \frac{q_2 - 1}{2}}$.
+            \item The action of $D_{2 q_1}$ on $D_{2 q_2} \backslash G$ yields one orbit of size $q_1$, with the inertia sub-orbit also of size $q_1$, hence $C_{\fp \mid p}(D_{2 q_2}) = q_1 n$.
         \end{itemize}
     In total,
-    \[ C_{\fP \mid p}(\Theta) = \frac{(q_1 n )^{1 + \frac{q_2 - 1}{2}} (n)}{(n)^{1 + \frac{q_2 - 1}{2}} (q_1 n)} = q_1^{\frac{q_2 - 1}{2}} .\] 
+    \[ C_{\fp \mid p}(\Theta) = \frac{(q_1 n )^{1 + \frac{q_2 - 1}{2}} (n)}{(n)^{1 + \frac{q_2 - 1}{2}} (q_1 n)} = q_1^{\frac{q_2 - 1}{2}} .\] 
     By symmetry, taking the decomposition group to be $D_{2 q_2}$ and inertia group $C_{q_2}$, one has 
-     $C_{\fP \mid p}(\Theta) = q_2^{\frac{q_1 - 1}{2}}$.
+     $C_{\fp \mid p}(\Theta) = q_2^{\frac{q_1 - 1}{2}}$.
 
-    So let $E / \bQ$ have split multiplicative reduction at $p$ with decomposition group $D_{2 q_1}$ and inertia group $I_p = C_{q_1}$, and good reduction at all other primes. Further suppose that $q_1, q_2 \equiv 3 \pmod 4$ and that $\legendre{q_1}{q_2} = -1$. Then $\bQ(\sqrt{q_1 q_2}) \subset \bQ(\rho)$ but $C_{\fP \mid p}(\Theta) \not\in N_{\bQ(\sqrt{q_1 q_2}) / \bQ}(\bQ(\sqrt{q_1 q_2})^{\times})$. Indeed, one has $C_{\fP \mid p}(\Theta) \equiv q_1 \mod (\bQ^{\times})^2$, but $q_1$ is not the norm of an element of $\bQ(\sqrt{q_1 q_2})$, since $z^2 q_1 = x^2 - q_1q_2 y^2$ for $x,y,z \in \bZ$ implies $q_1 = \square \pmod {q_2}$, a contradiction. Thus $\rk E / F > 0$.
+    So let $E / \bQ$ have split multiplicative reduction at $p$ with decomposition group $D_{2 q_1}$ and inertia group $I_p = C_{q_1}$, and good reduction at all other primes. Further suppose that $q_1, q_2 \equiv 3 \pmod 4$ and that $\legendre{q_1}{q_2} = -1$. Then $\bQ(\sqrt{q_1 q_2}) \subset \bQ(\rho)$ but $C_{\fp \mid p}(\Theta) \not\in N_{\bQ(\sqrt{q_1 q_2}) / \bQ}(\bQ(\sqrt{q_1 q_2})^{\times})$. Indeed, one has $C_{\fp \mid p}(\Theta) \equiv q_1 \mod (\bQ^{\times})^2$, but $q_1$ is not the norm of an element of $\bQ(\sqrt{q_1 q_2})$, since $z^2 q_1 = x^2 - q_1q_2 y^2$ for $x,y,z \in \bZ$ implies $q_1 = \square \pmod {q_2}$, a contradiction. Thus $\rk E / F > 0$.
 
     This rank growth is predicted by root number computations also, however. Assume that $F / \bQ$ is totally real. Then $w(E / F^H) = (-1)^{[F^H \colon \bQ] + | H \backslash G / D_p|}$ by Proposition \ref{compute-root}. Thus
     \begin{itemize}[--]

@@ -24,7 +24,7 @@ is always a norm for every subfield $\QQ(\sqrt{D})\subseteq\QQ(\rho)$. Before we
 \end{lemma}
 
 \begin{proof}
-    Firstly, we remark that the discrimant of the field $\QQ(\sqrt{D})$, with $D$ squarefree is
+    Firstly, we remark that the discriminant of the field $\QQ(\sqrt{D})$, with $D$ squarefree is
     \begin{equation}
         \Delta(\QQ(\sqrt{D}))=
         \begin{cases}
@@ -34,7 +34,7 @@ is always a norm for every subfield $\QQ(\sqrt{D})\subseteq\QQ(\rho)$. Before we
     \end{equation}
     In addition, we also recall that $\QQ(\zeta_N)/\QQ$ is a Galois extension with $\Gal(\QQ(\zeta_N)/\QQ)=(\ZZ/N\ZZ)^*$ and that a rational prime $q$ ramifies in $\QQ(\zeta_N)/\QQ$ if and only if $q\mid N$. The result follows by combining these two properties with the Galois correspondence, as we show now.
 
-    If $p$ is odd, then $\Gal(\QQ(\zeta_{p^n})/\QQ)=(\ZZ/p^n\ZZ)^*=C_{p^{n-1}(p-1)}$ is a cyclic group of even order, and therefore $\QQ(\zeta_{p^n})$ has one unique quadratic subfield, which can only ramifiy at $p$. If $p\equiv1\pmod{4}$, then the only such field is $\QQ(\sqrt{p})$ and if $p\equiv3\pmod{4}$ the only such field is $\QQ(\sqrt{-p})$. This proves the first row. 
+    If $p$ is odd, then $\Gal(\QQ(\zeta_{p^n})/\QQ)=(\ZZ/p^n\ZZ)^*=C_{p^{n-1}(p-1)}$ is a cyclic group of even order, and therefore $\QQ(\zeta_{p^n})$ has one unique quadratic subfield, which can only ramify at $p$. If $p\equiv1\pmod{4}$, then the only such field is $\QQ(\sqrt{p})$ and if $p\equiv3\pmod{4}$ the only such field is $\QQ(\sqrt{-p})$. This proves the first row. 
 
     Since $\QQ(\zeta_2)=\QQ$ and $\QQ(\zeta_4)=\QQ(i)$, the second and third row are immediate. For $m\geq3$, $\Gal(\QQ(\zeta_{2^m})/\QQ)=(\ZZ/2^m\ZZ)^*=C_2\times C_2^{m-2}$ and therefore $\QQ(\zeta_{2^m})$ has three quadratic subfields that can only ramify at $2$. Again, it is easy to check that the only such fields are $\QQ(i)$, $\QQ(\sqrt{2})$ and $\QQ(\sqrt{-2})$, as desired. Alternatively, one can also show that $\zeta_8=(1+i)/\sqrt{2}$, which also implies the result. This proves the third row.
 
@@ -50,7 +50,7 @@ The second result gives a necessary divisibility condition on primes ramifying i
 \end{prop}
 
 \begin{proof}
-    Assume first that $n\mid|\kappa^*|$. Let $\pi$ be a normalizer of $F$ and consider $F_n=F(\pi^{1/n})$. We claim that $F_n$ satisfies the desired properties. Since $n\mid|\kappa^*|$, $\kappa$ contains all $n$-th roots of unity and therefore the polynomial $x^n-1$ factors into linear terms in $\kappa[x]$. The divisibility condition above implies $\Char\kappa\nmid n$ and hence by Hensel's Lemma $x^n-1$ also factors into linear terms in $F[x]$. In other words, $\QQ_p(\zeta_n)\subseteq F$ and therefore $F_n$ is the splitting field of the polynomial $x^n-\pi$. This shows that $F_n/F$ is a tame, toally ramified Galois extension, and the map 
+    Assume first that $n\mid|\kappa^*|$. Let $\pi$ be a normalizer of $F$ and consider $F_n=F(\pi^{1/n})$. We claim that $F_n$ satisfies the desired properties. Since $n\mid|\kappa^*|$, $\kappa$ contains all $n$-th roots of unity and therefore the polynomial $x^n-1$ factors into linear terms in $\kappa[x]$. The divisibility condition above implies $\Char\kappa\nmid n$ and hence by Hensel's Lemma $x^n-1$ also factors into linear terms in $F[x]$. In other words, $\QQ_p(\zeta_n)\subseteq F$ and therefore $F_n$ is the splitting field of the polynomial $x^n-\pi$. This shows that $F_n/F$ is a tame, totally ramified Galois extension, and the map 
     \begin{align*}
         \psi: \Gal(F_n/F)&\longrightarrow \mu_n\cong C_n\\
         \sigma &\longmapsto \frac{\sigma(\pi^{1/n})}{\pi^{1/n}}
@@ -88,6 +88,7 @@ As a consequence of this proposition, we prove one technical result about Type I
 \end{proof}
 
 
+\input{section_consistent/notation.tex}
 
 \input{section_consistent/cyclic_full copy.tex}
 
