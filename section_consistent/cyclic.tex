@@ -1,6 +1,8 @@
 \subsection{Cyclic Extensions}
 
-The aim of this subsection is to give a complete analysis of the case when $F$ is a cyclic extension of $\QQ$. We show that for most $d\geq 2$ and representations $\rho$ of $C_d$, the product \eqref{eqn_localprod} of local factors is the norm of any quadratic subfield of $\QQ(\rho)$. We also provide an exhaustive list of cases when the product may not be a norm of quadratic subfield of $\QQ(\rho)$. Firstly, we recall the following result, whose proof was covered in Example \ref{cyclic-relns}.
+The aim of this subsection is to give a complete analysis of the case when $F/K$ is a cyclic extension of number fields. We show that for any $d\geq 2$ and representation $\rho$ of $C_d$, the product \eqref{eqn_localprod} of local factors is the norm of any quadratic subfield of $\QQ(\rho)$. 
+%We also provide an exhaustive list of cases when the product may not be a norm of quadratic subfield of $\QQ(\rho)$. 
+Firstly, we recall the following result, whose proof was covered in Example \ref{cyclic-relns}.
 
 \begin{lemma}\label{lem_relation}
     Let $\rho$ be a representation of the cyclic group $C_d$. Then there is one unique relation $\Theta_\rho\in B(C_d)$ such that 
@@ -10,16 +12,16 @@ The aim of this subsection is to give a complete analysis of the case when $F$ i
 \end{lemma}
 
 
-We also the following definition that characterises those $d$ that always give norms of the quadratic subfields and those that do not. Recall that given some integer $d\geq 2$, $\rad(d)=\prod_{p\mid d}p$ is the smallest squarefree integer dividing $d$.
+%We also the following definition that characterises those $d$ that always give norms of the quadratic subfields and those that do not. Recall that given some integer $d\geq 2$, $\rad(d)=\prod_{p\mid d}p$ is the smallest squarefree integer dividing $d$.
 
-\begin{defn}
-    Let $d\geq 2$ be an integer. We say that $d$ is \textbf{bad} if either $\rad(d)=2$ or $\rad(d)=6$ and $4\mid d$. Otherwise, we say that $d$ is \textbf{good}.
-\end{defn}
+%\begin{defn}
+    %Let $d\geq 2$ be an integer. We say that $d$ is \textbf{bad} if either $\rad(d)=2$ or $\rad(d)=6$ and $4\mid d$. Otherwise, we say that $d$ is \textbf{good}.
+%\end{defn}
 
-The main result of this section is to prove that for good $d$ and any representation $\rho$ od $d$, the product of local factors always gives a norm of any quadratic subfield of $\QQ(\rho)$.
+The main result of this section is to prove that for any $d$ and any representation $\rho$ od $C_d$, the product of local factors of an elliptic curve over $\QQ$ always gives a norm of any quadratic subfield of $\QQ(\rho)$.
 
 \begin{thm}\label{thm_consistent_cyclic}
-    Let $d\geq2$ be a good positive integer and let $F/K$ be a Galois extension of number fields such that $\Gal(F/K)=C_d$. Let $\rho$ be a representation of $C_d$ and let $\Theta_\rho\in B(C_d)$ be such that
+    Let $d\geq2$ be a positive integer and let $F/K$ be a Galois extension of number fields such that $\Gal(F/K)=C_d$. Let $\rho$ be a representation of $C_d$ and let $\Theta_\rho\in B(C_d)$ be such that
     $$\CC[G/\Theta_\rho]=\repnorm{\rho}.$$
 
     If $E/\QQ$ is a semistable elliptic curve at $2$ and $3$, then for any $\QQ(\sqrt{D})\subseteq\QQ(\rho)$,
@@ -33,7 +35,7 @@ The first step towards proving this theorem is to show that if the theorem holds
 \end{lemma}
 \begin{proof}
     Firstly, we show that the theorem also holds for arbitrary characters of $C_d$. Let $\psi_{d'}$ be a character of $C_d$ of order $d'$ for some $d'\mid d$, and recall that 
-    $$\Theta_{\psi_{d'}}=\sum_{k\mid d'}\mu(k)C_{dk/d'}.$$ Since $\ker\psi_k=C_{d/k}$, we can view $\psi_k$ as a faithful character of $C_k$. Then the result follows immediately from the theorem applied to $k$ and the $C_k$-extension $F/F^{C_{d/k}}$.
+    $$\Theta_{\psi_{d'}}=\sum_{k\mid d'}\mu(k)C_{dk/d'}.$$ Since $\ker\psi_{d'}=C_{d/d'}$, we can view $\psi_{d'}$ as a faithful character of $C_{d'}$. Then the result follows immediately from the theorem applied to ${d'}$ and the $C_{d'}$-extension $F/F^{C_{d'}}$.
     Now assume that $\rho$ is any representation of $C_d$. Then $\repnorm{\rho}$ is a rational valued representation, and the representations
     $$\chi_k:=\repnorm{\psi_k}$$
     for each $k\mid d$ are a basis of the rational representations. Hence, there is a unique decomposition
