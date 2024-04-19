@@ -11,7 +11,6 @@ More care is required to prove Theorem \ref{thm_consistent_cyclic} for even $d$.
     and by assumption $\rad(d)/2$ is an odd number with more than one prime factor. Then Lemma \ref{lem_subfields} applied to $L_{d/2}/L_{d/\rad(d)}$ and $F/L_{2d/\rad(d)}$ gives $\Theta_\mathcal{A},\Theta_\mathcal{B}\in\QQss$. The calculation in \eqref{eqn_theta} shows that $\Theta_d=\Theta_\mathcal{B}-\Theta_\mathcal{A}$ and therefore 
     $$C(\Theta_d)=\frac{C(\Theta_\mathcal{B})}{C(\Theta_\mathcal{A})}\in\QQss$$
     is the norm of any quadratic extension.
-
 \end{proof}
 
 If $d$ has no odd primes factors, then $d=2^l$ for some $l\geq1$. In that case, we assume in Theorem \ref{thm_consistent_cyclic} that $E$ is semistable, and the proof under this assumption is short. 
@@ -23,7 +22,6 @@ If $d$ has no odd primes factors, then $d=2^l$ for some $l\geq1$. In that case, 
     and $F/L_{2^{l-1}}$ is a $C_2$ extension. Importantly, we note that Table \ref{table_Cp} also applies for $q=2$, and therefore $\Cp(\Theta_d)$ is a rational square up to factors of $2$ for any prime $\pp$ of $L_{2^{l-1}}$. Lemma \ref{lem_subfields} shows that the only subfields of $\QQ(\zeta_{2^l})$ are $\QQ(i),\QQ(\sqrt{2})$ and $\QQ(\sqrt{-2})$, and since
     $$2=\Norm_{\QQ(i)}(1+i)=\Norm_{\QQ(\sqrt{-2})}(2)=\Norm_{\QQ(\sqrt{2})}(2+\sqrt{2}),$$
     it follows that $\Cp(\Theta_d)$ is a norm from every quadratic subfield of $\QQ(\zeta_{2^l})$, and the result follows.
-
 \end{proof}
 
 The remaining of this section is therefore devoted to the case when $d$ is divisible by one odd prime $q$, so $d=2^mq^n$. 
@@ -65,7 +63,6 @@ Recall that the quadratic subfields of $\QQ(\zeta_{2^mq^n})$ depend on whether $
     \end{equation}
     and therefore $D(\Theta_{2q})=N(\pp)^{(q-1)\floor{n/6}}\in\QQss$, a rational square. If $q\mid e_\pp$, then $q\mid N(\pp)-1$ by Proposition \ref{prop_totally_ramified}, and the reasoning is now identical to Lemma \ref{lem_Cp}. Write $N(\pp)=p^s$ for some $s\geq1$ and note that $\Dp(\Theta_{2q})\in\QQss$ if $s$ is even. Hence, we assume that $s$ is odd. In this case, $p=q$ if $(L_q)_\fP/K_\pp$ is wildly ramified and $p$ splits in $\QQ(q^*)$ if $(L_q)_\fP/K_\pp$ is tamely ramified. In either case, by Corollaries \ref{p-norm} and \ref{cor_psplit_pnorm}, $p$ is a norm from $\QQ(\sqrt{q^*})$, and hence so is $\Dp(\Theta_{2q})$.
     The result follows again from \eqref{eqn_local_contr}.
-
 \end{proof}
 
 Following this, we state and prove the analogous result for $m=2$.
@@ -112,24 +109,22 @@ Following this, we state and prove the analogous result for $m=2$.
     $$\left(\frac{-q}{p}\right)=\left(\frac{q}{p}\right)=\left(\frac{p}{q}\right)=\left(\frac{p^s}{q}\right)=1,$$
     and therefore $p$ splits both in $\QQ(\sqrt{q})$ and $\QQ(\sqrt{-q})$. Since $q\equiv3\pmod{4}$, both fields have odd class number (Theorem \ref{thm_class_number}), and hence $p$ and $\Dp(\Theta_{4q})$ are norms from $\QQ(\sqrt{q})$ and $\QQ(\sqrt{-q})$ as desired. 
 
-    Finally, we discuss Tamagawa numbers. Note that $L_{2q}/L_2$ and $F/L_4$ are $C_q$ extensions and therefore by Lemma \ref{lem_Cp} the Tamagawa numbers have a square contribution if $q\neq3$. If $q=3$, more work is required. From Lemma \ref{lem_Dterms}, we see that the Tamagawa numbers can only contribute factors of $2$ and $3$. In Lemma \ref{lem_nottwo} we showed that in $C_3$ extensions we cannot get a factor of $2$. Since $3$ is not a norm from $\QQ(\sqrt{3})$, we now need to show that we cannot get a factor of $3$ either. 
-    
-    We prove this result as a separate lemma, from which the result follows.    
+    Finally, we discuss Tamagawa numbers. Note that $L_{2q}/L_2$ and $F/L_4$ are $C_q$ extensions and therefore by Lemma \ref{lem_Cp} it follows that $\Dp(\Theta_{4q})\in\QQss$ if $q\neq3$. If $q=3$, it is also the case that $\Dp(\Theta_{4q})\in\QQss$, but more work is required. We prove this as a separate lemma, from which the result follows.    
 \end{proof}
 
 \begin{lemma}
-    Let $L/K$ be a Galois extension of number fields with $\Gal(L/K)=C_{12}$ and let $L_k$ be the intermediate fields with $\Gal(F/L_k)=C_{12/k}$. Let $E/\QQ$ be an elliptic curve and let $\pp$ be a prime in $K$ not dividing $2$ or $3$ such that $E$ has potentially good reduction at $\pp$. If $\Theta_{12}=C_1-C_2-C_3+C_6\in B(C_{12})$, then $$\Tp(\Theta_{12})=\frac{\Tp(E/F)\Tp(E/L_2)}{\Tp(E/L_6)\Tp(E/L_4)}\in\QQss.$$
+    Let $L/K$ be a Galois extension of number fields with $\Gal(L/K)=C_{12}$ and let $L_k=F^{C_{12/k}}$ be the intermediate fields such that $[L_k:K]=k$. Let $E/\QQ$ be an elliptic curve and let $\pp$ be a prime in $K$ not dividing $2$ or $3$ such that $E$ has potentially good reduction at $\pp$. If $\Theta_{12}=C_1-C_2-C_3+C_6\in B(C_{12})$, then $$\Tp(\Theta_{12})=\frac{\Tp(E/F)\Tp(E/L_2)}{\Tp(E/L_6)\Tp(E/L_4)}\in\QQss.$$
 \end{lemma}
 \begin{proof}
-    Let $\bar\pp$ be a prime in $L_2$ above $\pp$ and let $n=\nu_{\bar\pp}(\Delta_{E,\bar\pp}^{\min})$ be the minimal discriminant of $E$ at $\bar\pp$. The proof is divided in three cases, depending on the splitting behaviour of $\pp$ in $L_2$. If $\pp$ splits in $L_2/K$, then $\pp=\bar\pp\bar\pp'$ where $\bar\pp$ and $\bar\pp'$ have the same local behaviour. Therefore, $T_{\fP\mid\pp}(\Theta_{12})=T_{\fP\mid\bar\pp}(\Theta_{12})T_{\fP\mid\bar\pp'}(\Theta_{12})\in\QQss$ is a square. 
-    
-    Next, suppose that $\pp$ is inert in $L_2/K$, which implies that $(L_2)_{\bar\pp}$ contains all square roots from $K_\pp$. This also implies that $\bar\pp$ is either inert or ramified in $L_4/L_2$. In either case, $\bar\pp$ has a unique prime $\fP$ above it in $L_4$. We note that if $\pp$ is unramified in $L_3/K$ then so is $\bar\pp$ in $L_6/L_2$ and $\fP$ in $F/L_4$ and if this holds, then by Lemma \ref{lem_Cp}
-    $$\frac{\Tp(E/F)}{\Tp(E/L_4)},\frac{\Tp(E/L_6)}{\Tp(E/L_2)}\in\QQss$$
-    implying $\Tp(\Theta_{12})\in\QQss$. Hence, we assume that $\pp$ is ramified in $L_3/K$. If $\bar\pp$ is inert in $L_4/L_2$, then the valuation of the minimal discriminant of $E$ at $\fP$ is also $n$ and the splitting behaviour of $\bar\pp$ in $L_6/L_2$ coincides with the splitting behaviour of $\fP$ in $F/L_4$. Hence, 
-    $$\frac{\Tp(E/F)}{\Tp(E/L_4)}=\frac{\Tp(E/L_6)}{\Tp(E/L_2)},$$
-    and therefore $\Tp(\Theta_{12})=1$. {\color{red} We might have a real problem if $\pp$ has $e_\pp=6$ and $f_\pp=2$. In that case, if $\gcd(n,12)=2$, then it feels that a non-trival contribution can arise.}
+    Let $\bar\pp$ be a prime in $L_2$ above $\pp$ and let $n=\nu_{\bar\pp}(\Delta_{E,\bar\pp}^{\min})$ be the minimal discriminant of $E$ at $\bar\pp$. If $\pp$ is unramified in $L_3/K$, then so is $\bar\pp$ in $L_6/L_2$ and the primes above them in $F/L_4$. From Lemma \ref{lem_Cp}, we know that that the product of Tamagawa numbers in unramified $C_3$ extensions is a square, so assume that $\pp$ ramifies in $L_3/K$.
 
-    Finally, assume that $\pp$ ramifies in $L_2/K$ so that $\pp=\bar\pp^2$. This immediately implies that $\bar\pp$ also ramifies in $L_4/L_2$. From Lemma \ref{lem_Cp}, we also know that in $C_3$ extensions the Tamagawa numbers above some prime contribute a square unless the prime ramifies. Hence, we may also assume that $\pp$ ramifies in $L_3/K$ and therefore $\pp$ is totally ramified in $F/K$. Using Lemma \ref{lem_add_tam}, one can easily show that the Tamagawa numbers cancel out if $\gcd(n,12)\in\{3,4,6,12\}$, so we only need to consider the case $\gcd(n,12)=2$. However, recall that $E$ has potentially good reduction at $\pp$, and since $\pp=\bar\pp^2$ ramifies, then the valuation of the minimal discriminant at $\pp$ is $n/2$ or $(n+12)/2$. But then $\gcd(\nu_\pp(\Delta_{E,\pp}^{\min}),12)=\gcd(n/2,12)=1$, a contradiction. Hence, $\Tp(\Theta_{12})\in\QQss$ as desired.
+    The proof is now divided in three cases, depending on the splitting behaviour of $\pp$ in $L_2$. If $\pp$ splits in $L_2/K$, then $\pp=\bar\pp\bar\pp'$ where $\bar\pp$ and $\bar\pp'$ have the same local behaviour. Therefore, $T_{\fP\mid\pp}(\Theta_{12})=T_{\fP\mid\bar\pp}(\Theta_{12})T_{\fP\mid\bar\pp'}(\Theta_{12})\in\QQss$. 
+    
+    Next, suppose that $\pp$ is inert in $L_2/K$, which implies that $\bar\pp$ is either inert or ramified in $L_4/L_2$. Let $\fP$ be the prime in $L_4$ above $\bar\pp$. If $\bar\pp$ is inert in $L_4/L_2$, then the valuation of the minimal discriminant of $E$ at $\fP$ is also $n$ and the splitting behaviour of $\bar\pp$ in $L_6/L_2$ coincides with the splitting behaviour of $\fP$ in $F/L_4$. Hence, 
+    $$\frac{\Tp(E/F)}{\Tp(E/L_4)}=\frac{\Tp(E/L_6)}{\Tp(E/L_2)},$$
+    and therefore $\Tp(\Theta_{12})=1$. The case where $\bar\pp$ is ramified in $L_4/L_2$ is more subtle. We have already seen that in ramified $C_3$ extensions we cannot obtain factors of $2$. Upon inspection of Lemma \ref{lem_add_tam}, one can easily show that the Tamagawa numbers cancel out if $\gcd(n,12)\in\{3,4,6,12\}$, so we only need to consider the case $\gcd(n,12)=2$. Since $\Gal((L_4)_\fP/K_\pp)=C_4$ and $e_{\fP\mid\pp}=f_{\fP\mid\pp}=2$, Lemma \ref{lem_notthree} shows that $\sqrt{B}\not\in F_{\fP}$ and therefore $c_\fP(E/F)=1$, which imples that $\Dp(\Theta_{12})\in\QQss$.
+
+    Finally, assume that $\pp$ ramifies in $L_2/K$ so that $\pp=\bar\pp^2$. This immediately implies that $\bar\pp$ also ramifies in $L_4/L_2$, and therefore $\pp$ is totally ramified in $F/K$. As mentioned above, the Tamagawa numbers cancel unless $\gcd(n,12)=2$. However, recall that $E$ has potentially good reduction at $\pp$, and since $\pp=\bar\pp^2$ ramifies, then the valuation of the minimal discriminant at $\pp$ is $n/2$ or $(n+12)/2$. But then $\gcd(\nu_\pp(\Delta_{E,\pp}^{\min}),12)=\gcd(n/2,12)=1$, a contradiction. Hence, $\Tp(\Theta_{12})\in\QQss$ as desired.
 \end{proof}
 
 Finally, we state and prove the last result, from which the case $m\geq3$ follows easily. One needs to check that the product of local factors is the norm of many quadratic subfields; thankfully, Lemma \ref{lem_C4p} has done most of work required.
@@ -144,23 +139,22 @@ Finally, we state and prove the last result, from which the case $m\geq3$ follow
     We prove the result locally for all primes in $L_2$, and note $\Gal(F/L_2)=4q$. Let $\bar\pp$ and assume that $\Delta_E=\Delta_{E,\bar\pp}^{\min}$. Since the relation $\Theta_{4q}=C_1-C_2-C_q+C_{2q}\in B(C_{4q})$ has the same fixed fields as $\Theta_{8q}$, by Lemma \ref{lem_C4p}, we know that $\Tpb(\Theta_{8q})\in\QQss$ for any $\bar\pp$ and $\Dpb(\Theta_{8q})\in\QQss$ too unless $\bar\pp$ is totally ramified in $F/L_2$ and $E$ has potentially good reduction at $\bar\pp$, so assume this is the case. If $\pp=\bar\pp\cap K$, then it also follows that $\pp$ is totally ramified in $F/K$ and $E$ has potentially good reduction at $\pp$. If $n=\nu_{\bar\pp}(\Delta_{E,\bar\pp}^{\min})$, then recall from Lemma \ref{lem_C4p} that 
     $$\Dpb(\Theta_{8q})=N(\bar\pp)^{\floor{\frac{n}{6}}-\floor{\frac{n}{3}}-\floor{\frac{qn}{6}}+\floor{\frac{qn}{3}}},$$
     and that the exponent is even unless $n$ is odd and $q\equiv 3\pmod{4}$. However, $\pp=\bar\pp^2$ is ramified in $L_2/K$ and therefore $n\equiv 2\nu_\pp(\Delta_{E,\pp}^{\min})\pmod{12}$. That is, $n$ is even and therefore $\Dpb(\Theta_{8q})\in\QQss$ as desired.
-
-    %%% THIS IS ALL PROBABLY NOT NEEDED NOW
-    %Again, $\Dp(\Theta_{8q})$ does not change up to squares if $\Delta_{E}$ is reescaled so assume that $\Delta_{E}=\Delta_{E,\pp}^{\min}$. Under these assumptions, $\Dpb(\Theta_{8q})=\Dp(\Theta_{8q})$ is a power of $N(\pp)=N(\bar\pp)=p^s$ for some rational prime $p$ and $s\geq1$. If $s$ is even, then $\Dpb(\Theta_{8q})\in\QQss$, so assume that $s$ is odd. In addition, by Proposition \ref{prop_totally_ramified}, it follows that $p^s\equiv 1\pmod{8q}$. Since $s$ is odd and $(\ZZ/8\ZZ)^*=C_2\times C_2$, it follows that $p\equiv 1\pmod{8}$ and therefore
-    %\begin{equation}\label{eqn_psplitsin2}
-    %    \left(\frac{-1}{p}\right)=\left(\frac{2}{p}\right)=\left(\frac{-2}{p}\right)=1.
-    %\end{equation}
-    %Furthermore, since $p^s\equiv1\pmod{8s}$ and $s$ is odd, then 
-    %\begin{equation}\label{eqn_psplitsinq}
-    %    \left(\frac{-q}{p}\right)=\left(\frac{q}{p}\right)=\left(\frac{p}{q}\right)=1.
-    %\end{equation}
-    %Combining \eqref{eqn_psplitsin2} and \eqref{eqn_psplitsinq} together with multiplicativity of the Legendre symbol, it follows that $p$ splits in every quadratic subfield $\QQ(\sqrt{D})$ for $D\in\{-1,\pm2,\pm q,\pm2q\}$.
 \end{proof}
+%%% THIS IS ALL PROBABLY NOT NEEDED NOW
+%Again, $\Dp(\Theta_{8q})$ does not change up to squares if $\Delta_{E}$ is reescaled so assume that $\Delta_{E}=\Delta_{E,\pp}^{\min}$. Under these assumptions, $\Dpb(\Theta_{8q})=\Dp(\Theta_{8q})$ is a power of $N(\pp)=N(\bar\pp)=p^s$ for some rational prime $p$ and $s\geq1$. If $s$ is even, then $\Dpb(\Theta_{8q})\in\QQss$, so assume that $s$ is odd. In addition, by Proposition \ref{prop_totally_ramified}, it follows that $p^s\equiv 1\pmod{8q}$. Since $s$ is odd and $(\ZZ/8\ZZ)^*=C_2\times C_2$, it follows that $p\equiv 1\pmod{8}$ and therefore
+%\begin{equation}\label{eqn_psplitsin2}
+%    \left(\frac{-1}{p}\right)=\left(\frac{2}{p}\right)=\left(\frac{-2}{p}\right)=1.
+%\end{equation}
+%Furthermore, since $p^s\equiv1\pmod{8s}$ and $s$ is odd, then 
+%\begin{equation}\label{eqn_psplitsinq}
+%    \left(\frac{-q}{p}\right)=\left(\frac{q}{p}\right)=\left(\frac{p}{q}\right)=1.
+%\end{equation}
+%Combining \eqref{eqn_psplitsin2} and \eqref{eqn_psplitsinq} together with multiplicativity of the Legendre symbol, it follows that $p$ splits in every quadratic subfield $\QQ(\sqrt{D})$ for $D\in\{-1,\pm2,\pm q,\pm2q\}$.
+
 
 We are now ready to prove the remaining case of Theorem \ref{thm_consistent_cyclic}.
 
 \begin{proof}[Proof of Theorem \ref{thm_consistent_cyclic} for $d$ even and with one odd prime factor.]
-    In this case, write $d=2^mq^n$ for $n,m\geq 1$ and note that $\Theta_{d}=C_1-C_2-C_q+C_{2q}$ is the $\psi_d$-relation of a faithful character of $C_d$. If $m=1$, Lemma \ref{lem_C2p} applied to the $C_{2q}$ extension $F/F^{C_{2q}}$ shows that $C(\Theta_d)$ is a norm from $\QQ(\sqrt{q^*})$, which is the only subfield of $\QQ(\zeta_{2q^n})$ by Lemma \ref{lem_subfields}. If $m=2$, then Lemma \ref{lem_C4p} applied to the $C_{4q}$ extension $F/F^{C_{4q}}$ shows that $C(\Theta_{d})$ is a norm from $\QQ(i),\QQ(\sqrt{q})$ and $\QQ(\sqrt{q})$, which are all quadratic subfields of $\QQ(\zeta_{4q^n})$. Finally, if $m\geq3$, Lemma \ref{lem_C8p} applied to $F/F^{C_{8q}}$ shows that $C(\Theta_{8q})\in\QQss$, which is the norm from any quadratic subfield. The result follows.
-    
+    In this case, write $d=2^mq^n$ for $n,m\geq 1$ and note that $\Theta_{d}=C_1-C_2-C_q+C_{2q}$ is the $\psi_d$-relation of a faithful character of $C_d$. If $m=1$, Lemma \ref{lem_C2p} applied to the $C_{2q}$ extension $F/F^{C_{2q}}$ shows that $C(\Theta_d)$ is a norm from $\QQ(\sqrt{q^*})$, which is the only subfield of $\QQ(\zeta_{2q^n})$ by Lemma \ref{lem_subfields}. If $m=2$, then Lemma \ref{lem_C4p} applied to the $C_{4q}$ extension $F/F^{C_{4q}}$ shows that $C(\Theta_{d})$ is a norm from $\QQ(i),\QQ(\sqrt{q})$ and $\QQ(\sqrt{-q})$, which are all quadratic subfields of $\QQ(\zeta_{4q^n})$. Finally, if $m\geq3$, Lemma \ref{lem_C8p} applied to $F/F^{C_{8q}}$ shows that $C(\Theta_{8q})\in\QQss$, which is the norm from any quadratic subfield. The result follows.
 \end{proof}
 
