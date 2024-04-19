@@ -23,26 +23,31 @@ If $\bC[G / \Theta] = 0$ as a virtual permutation representation (i.e. $\chi_{\b
 
 Non-trivial Brauer relations are instances of non-isomorphic $G$-sets giving rise to isomorphic permutation representations. 
 
-\begin{example}
+\begin{examples}
+    \
+    \begin{enumerate}
+        \item 
     The irreducible representations of $G = S_3$ are the trivial representation $\trivial$, the sign representation $\epsilon$ and the $2$-dimensional representation $\rho$.
     We have
-    \begin{table}[H]
-        \centering
-    \begin{tabular}{l l l l l l l}
-        $\bC[G / C_1]$ & $=$ & $\trivial \oplus \epsilon \oplus \rho^{\oplus 2},$ & $\qquad$ &
-        $\bC[G / C_2]$ & $=$ & $\trivial \oplus \rho,$\\ 
-        $\bC[G / C_3]$ & $=$ & $\trivial \oplus \epsilon,$ & $\qquad$ &
-        $\bC[G / G]$ & $=$ & $\trivial.$  
-    \end{tabular}
-\end{table}
+   \[
+    \begin{array}{l l l l l l l}
+        \bC[G / C_1] & = & \trivial \oplus \epsilon \oplus \rho^{\oplus 2}, & \qquad &
+        \bC[G / C_2] & = & \trivial \oplus \rho,\\ 
+        \bC[G / C_3] & = & \trivial \oplus \epsilon, & \qquad &
+        \bC[G / G] & = & \trivial.  
+    \end{array}
+    \]
     Then $\Psi = C_1  - 2 C_2 - C_3 + 2S_3$ is the unique Brauer relation for $G$.
-\end{example}
+    \item In Example \ref{ex-C2C6}, we observed that $\Psi = C_3 - C_6^a - C_6^b - C_6^c - 2G$ is a Brauer relation for $G = C_2 \times C_6$. This relation can be lifted from the $C_2 \times C_2$ quotient of $G$. 
+\end{enumerate}
+
+\end{examples}
 
 \begin{example}\label{cyclic-no-brauer}
 Cyclic groups have no Brauer relations. Indeed, if $G = C_n$, the $\bZ$-rank of $\Perm(G)$ is the number of cyclic subgroups of $C_n$, i.e the number of subgroups of $C_n$, which is the $\bZ$-rank of $\B(G)$. Hence the rank of the kernel of the map $\B(G) \to \Perm(G)$ is zero.
 \end{example}
 
-In the last section, we described how to obtain a virtual permutation representation from an arbitrary representation of $G$. We are interested in when this is an image of an element from the Burnside ring.
+In the last section, we described how to obtain a virtual permutation representation from an arbitrary representation of $G$. As in Theorem \ref{thm_positive_rank}, we are interested in when this is an image of an element from the Burnside ring.
 
 \begin{defn}
 Let $\rho$ be a representation of $G$.    
