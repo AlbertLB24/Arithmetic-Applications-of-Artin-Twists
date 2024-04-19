@@ -2,23 +2,23 @@ As we discussed in the previous section, our motivation is to use Theorem \ref*{
 \begin{equation}\label{eqn_localprod}
     \frac{\prod_i C_{E/F_i}}{\prod_j C_{E/F_j'}}
 \end{equation}
-is always a norm for every subfield $\QQ(\sqrt{D})\subseteq\QQ(\rho)$. Before we give the precise statements, we give a proof of some important results that will be used throughout. The first one explicitly described the quadratic subfields of certain cyclotomic extensions.
+is always a norm for every subfield $\QQ(\sqrt{D})\subseteq\QQ(\rho)$. Before we give the precise statements, we require some important results in algebraic number theory that will be used throughout and that have surprinsing consequences for the local behaviour of certain elliptic curves. The first result explicitly describes the quadratic subfields of cyclotomic fields $\QQ(\zeta_d)$ where at most one odd prime factor $q$ divides $d$.
 
 \begin{lemma}\label{lem_subfields}
-    Let $p$ be a rational prime, $n$ a positive integer and let $p^*=(-1)^{(p-1)/2}p$. Then the following holds.
+    Let $q$ be an odd rational prime, $n,m$ a positive integers and let $q^*=(-1)^{(q-1)/2}q$. Then the following holds.
 
     \begin{table}[!ht]
         \centering
         \begin{tabular}{|l|l|l|}
         \hline
         Cyclotomic field                    & Conditions & Quadratic subfields                   \\ \hline
-        $\QQ(\zeta_{p^n})$                  & $p$ odd, any $n$    & $\QQ(\sqrt{p^*})$            \\ \hline
+        $\QQ(\zeta_{q^n})$                  & any $n$    & $\QQ(\sqrt{q^*})$            \\ \hline
         \multirow{3}{*}{$\QQ(\zeta_{2^m})$} & $m=1$      & none                                  \\ \cline{2-3} 
                                             & $m=2$      & $\QQ(i)$                              \\ \cline{2-3} 
                                             & $m\geq3$   & $\QQ(i),\QQ(\sqrt{2}),\QQ(\sqrt{-2})$ \\ \hline
-        \multirow{3}{*}{$\QQ(\zeta_{2^mp^n})$}  & $m=1$, $p$ odd, any $n$      & $\QQ(\sqrt{p^*})$     \\ \cline{2-3} 
-                                            & $m=2$, $p$ odd, any $n$      & $\QQ(i),\QQ(\sqrt{p}),\QQ(\sqrt{-p})$                              \\ \cline{2-3}
-                                            & $m\geq 3$, $p$ odd, any $n$      & $\QQ(i),\QQ(\sqrt{2}),\QQ(\sqrt{-2}),\QQ(\sqrt{p}),\QQ(\sqrt{-p}),\QQ(\sqrt{2p}),\QQ(\sqrt{-2p})$                              \\ 
+        \multirow{3}{*}{$\QQ(\zeta_{2^mq^n})$}  & $m=1$, any $n$      & $\QQ(\sqrt{q^*})$     \\ \cline{2-3} 
+                                            & $m=2$, any $n$      & $\QQ(i),\QQ(\sqrt{q}),\QQ(\sqrt{-q})$                              \\ \cline{2-3}
+                                            & $m\geq 3$, any $n$      & $\QQ(i),\QQ(\sqrt{2}),\QQ(\sqrt{-2}),\QQ(\sqrt{q}),\QQ(\sqrt{-q}),\QQ(\sqrt{2q}),\QQ(\sqrt{-2q})$                              \\ 
                                              \hline
         \end{tabular}
         \end{table}
@@ -34,18 +34,18 @@ is always a norm for every subfield $\QQ(\sqrt{D})\subseteq\QQ(\rho)$. Before we
             4D \quad\text{ if } D\equiv2,3\pmod{4}.
         \end{cases}
     \end{equation}
-    In addition, we also recall that $\QQ(\zeta_N)/\QQ$ is a Galois extension with $\Gal(\QQ(\zeta_N)/\QQ)=(\ZZ/N\ZZ)^*$ and that a rational prime $q$ ramifies in $\QQ(\zeta_N)/\QQ$ if and only if $q\mid N$. The result follows by combining these two properties with the Galois correspondence, as we show now.
+    In addition, we also recall that $\QQ(\zeta_N)/\QQ$ is a Galois extension with $\Gal(\QQ(\zeta_N)/\QQ)=(\ZZ/N\ZZ)^*$ and that a rational prime $r$ ramifies in $\QQ(\zeta_N)/\QQ$ if and only if $r\mid N$. The result follows by combining these two properties with the Galois correspondence, as we show now.
 
-    If $p$ is odd, then $\Gal(\QQ(\zeta_{p^n})/\QQ)=(\ZZ/p^n\ZZ)^*=C_{p^{n-1}(p-1)}$ is a cyclic group of even order, and therefore $\QQ(\zeta_{p^n})$ has one unique quadratic subfield, which can only ramifiy at $p$. If $p\equiv1\pmod{4}$, then the only such field is $\QQ(\sqrt{p})$ and if $p\equiv3\pmod{4}$ the only such field is $\QQ(\sqrt{-p})$. This proves the first row. 
+    If $q$ is odd, then $\Gal(\QQ(\zeta_{q^n})/\QQ)=(\ZZ/q^n\ZZ)^*=C_{q^{n-1}(q-1)}$ is a cyclic group of even order, and therefore $\QQ(\zeta_{q^n})$ has one unique quadratic subfield, which can only ramifiy at $q$. If $q\equiv1\pmod{4}$, then the only such field is $\QQ(\sqrt{q})$ and if $q\equiv3\pmod{4}$ the only such field is $\QQ(\sqrt{-q})$. This proves the first row. 
 
     Since $\QQ(\zeta_2)=\QQ$ and $\QQ(\zeta_4)=\QQ(i)$, the second and third row are immediate. For $m\geq3$, $\Gal(\QQ(\zeta_{2^m})/\QQ)=(\ZZ/2^m\ZZ)^*=C_2\times C_2^{m-2}$ and therefore $\QQ(\zeta_{2^m})$ has three quadratic subfields that can only ramify at $2$. Again, it is easy to check that the only such fields are $\QQ(i)$, $\QQ(\sqrt{2})$ and $\QQ(\sqrt{-2})$, as desired. Alternatively, one can also show that $\zeta_8=(1+i)/\sqrt{2}$, which also implies the result. This proves the third row.
 
-    The remaining rows are essentially a combination of the results we have already shown. We note that $\Gal(\QQ(\zeta_{2p^n})/\QQ)=(\ZZ/2p^n\ZZ)^*$ is cyclic while 
-    $$\Gal(\QQ(\zeta_{4p^n})/\QQ)=(\ZZ/4p^n\ZZ)^*=(\ZZ/4)^*\times(\ZZ/p^n\ZZ)^*=C_2\times C_{p^{n-1}(p-1)}.$$
-    Hence, $\QQ(\zeta_{2^mp^n})$ has one unique quadratic subfield if $m=1$ which must be $\QQ(\sqrt{p^*})$ and three quadratic subfields if $m=2$ which are $\QQ(i),\QQ(\sqrt{p}),\QQ(\sqrt{-p})$.
+    The remaining rows are essentially a combination of the results we have already shown. We note that $\Gal(\QQ(\zeta_{2q^n})/\QQ)=(\ZZ/2q^n\ZZ)^*$ is cyclic while 
+    $$\Gal(\QQ(\zeta_{2^mq^n})/\QQ)=(\ZZ/2^mq^n\ZZ)^*=(\ZZ/2^m)^*\times(\ZZ/q^n\ZZ)^*=C_2\times C_{2^{m-2}}\times C_{p^{n-1}(p-1)}.$$
+    Hence, $\QQ(\zeta_{2^mp^n})$ has one unique quadratic subfield if $m=1$ which must be $\QQ(\sqrt{p^*})$, three quadratic subfields if $m=2$, which must be $\QQ(i),\QQ(\sqrt{p}),\QQ(\sqrt{-p})$, and seven quadratic subfields if $m\geq 3$. Since $\QQ(\zeta_8),\QQ(\zeta_q)\subseteq\QQ(\zeta_{2^mq^n})$, it follows that $\QQ(\sqrt{D})\subseteq\QQ(\zeta_{2^mq^n})$ for $D\in\{-1,\pm2,\pm q,\pm 2q\}$. These are seven distinct quadratic fields, so we are done.
 \end{proof}
 
-The second result gives a necessary divisibility condition on primes ramifying in finite extensions of number fields. The result, however, is naturally phrased in terms of local fields.
+The following two results are naturally phrased in terms of local fields. The first gives a necessary divisibility condition on primes ramifying in finite extensions of number fields, which we will be essential during our analysis later on.
 
 \begin{prop}\label{prop_totally_ramified}
     Let $F/\QQ_p$ be a finite extension with residue field $\kappa$. Then there exists a tame, totally ramified cyclic extension $F_n$ of degree $n$ over $F$ if and only if $n\mid|\kappa^*|$.
@@ -62,10 +62,24 @@ The second result gives a necessary divisibility condition on primes ramifying i
     Conversely, suppose that $F_n/F$ is a tame, totally ramified cyclic extension of degree $n$. Any such field extension is generated by the $n$-th root of some uniformizer $\pi$ of $F$ (see \cite[Theorem 11.10]{Sun1}), and therefore $F_n=F(\pi^{1/n})$. The polynomial $x^n-\pi$ is Einstein over $F$, and therefore irreducible over $F$. Since $F_n/F$ is assumed to be Galois, all roots of $x^n-\pi$ lie in $F_n$. In particular, $\QQ(\zeta_n)\subseteq F_n$. Since $\Char\kappa\nmid n$, it follows that $\kappa$ also contains all $n$-th roots of unity, proving that $n\mid|\kappa^*|$ as desired. 
 \end{proof}
 
-As a consequence of this proposition, we prove one technical result about Type II or $\mathrm{II}^*$ elliptic curves over local fields $K$ admitting a $C_3$ ramified extension. We advise the reader to skip the proof by now and revisit it when this result is used later.
+The second result is more technical and specific, and it will become important when describing certain Type II and $\mathrm{II}^*$ elliptic curves. 
+
+\begin{lemma}\label{lem_localC4}
+    Let $F/K$ be a finite Galois extension of local fields of characteristic $0$ with residual characteristic distinct from $2$ or $3$ and such that $\Gal(F/K)=C_4$. If the ramification index and residual degree are both $2$, then $F=K(\sqrt{u},\sqrt{v\pi})$ where $\pi$ is a uniformizer of $K$, $u$ is a non-square unit of $K$ and $v$ is a non-square unit of $K(\sqrt{u})$.
+    In particular, if $\varpi$ is a uniformizer of $F$, then $\varpi^2/\pi$ is a non-square unit of $F$.
+\end{lemma}
+
+\begin{proof}
+    %We first recall a fundamental property of local fields. If $K$ is any local field of characteristic $0$ and residual characteristic distinct from $2$, then $K$ has three quadratic extensions, two of which are ramified and one unramified. 
+    Let $L=F^{C_2}$ be the unique intermediate field of $F/K$. Since $F$ is also the fixed field by intertia, then $F/L$ is ramified while $L/K$ is unramified. We recall that $K$ has a unique unramified extension of any degree, and the unramified quadratic extension is generated by any $\sqrt{u}$ of any non-square unit of $K$. Hence $L=K(\sqrt{u})$ for some non-square unit, and note that $\pi$ is a uniformizer of $L$ too. Since $F/L$ is ramified, $F$ is either generated by $\sqrt{\pi}$ or $\sqrt{v\pi}$ for some non-square unit $v$ of $L$. If $F=L(\sqrt{\pi})$, then $F$ contains all three quadratic extensions of $K$, in which case $\Gal(F/K)=C_2\times C_2$, a contradiction. Hence, necessarily, $F=L(\sqrt{v\pi})=K(\sqrt{u},\sqrt{v\pi})$ for some non-square unit $v$ of $L$.
+
+    To prove the last statement, note that $\sqrt{v\pi}$ is a uniformizer of $F$ and $(\sqrt{v\pi})^2/\pi=v$ is a non-square unit of $F$. Since any two uniformizers are equal up to multiplication by units, the result follows. 
+\end{proof}
+
+We now prove two technical consequences of these results about the behaviour of Type II or $\mathrm{II}^*$ elliptic curves over local fields $K$. We advise the reader to skip the proofs by now and revisit them when these results are used later.
 
 \begin{lemma}\label{lem_nottwo}
-    Let $p\geq 5$ be a rational prime and $L_\fP/K_\fp/\QQ_p$ be finite extensions with $L_\fP/K_\fp$ Galois, ramified and $\Gal(L_\fP/K_\fp)=C_3$. Let $$E/\QQ_p:y^2=x^3+Ax+B$$ be a minimal Weierstrass equation at $\pp$ with potentially good reduction. Let $n=\nu_\pp(\Delta)$ be the valuation of the minimal discriminant. If $\gcd(n,12)=2$, then $\sqrt{\Delta}\in K_\pp$.
+    Let $p\geq 5$ be a rational prime and $F_\fP/K_\fp/\QQ_p$ be finite extensions with $F_\fP/K_\fp$ Galois, ramified and $\Gal(F_\fP/K_\fp)=C_3$. Let $$E/\QQ_p:y^2=x^3+Ax+B$$ be a minimal Weierstrass equation at $\pp$ with potentially good reduction. Let $n=\nu_\pp(\Delta)$ be the valuation of the minimal discriminant. If $\gcd(n,12)=2$, then $\sqrt{\Delta}\in K_\pp$.
 \end{lemma}
 
 \begin{proof}
@@ -86,7 +100,24 @@ As a consequence of this proposition, we prove one technical result about Type I
     In this case, $\nu_\pp(-4A^3-27B^2)=10$. When $E$ is defined by this simple expression, then $c_4=-48A$ and since $E$ is assumed to have potentially good reduction, $\nu_\pp(j)=\nu_\pp(A^3/\Delta)=3\nu_\pp(A)-10\geq 0$. Hence, $\nu_\pp(A^3)\geq12$ which implies that $\nu_\pp(-27B^2)=10$ or, equivalently, that $\nu_\pp(B)=5$. This means that $\nu_p(B)=5$ if $K_\pp/\QQ_p$ is unramified or $\nu_p(B)=1$ if $K_\pp/\QQ_p$ has ramification index $2$. In the latter case, we have that $v_p(4A^3+27B^2)=2$ and we are back to the case $n=2$. So assume that $K_\pp/\QQ_p$ is unramified. Then
     $$\frac{-4A^3-27B^2}{p^{10}}\equiv -3\left(\frac{3B}{p^5}\right)^2\pmod{p},$$
     and therefore $\sqrt{\Delta}\in\FF_p$ if and only if $\sqrt{-3}\in K_\pp$. The remaining of the proof is identical to the case $n=2$.
+\end{proof}
 
+\begin{lemma}\label{lem_notthree}
+    Let $p\geq 5$ be a rational prime and $F_\fP/K_\fp/\QQ_p$ be finite extensions with $F_\fP/K_\fp$ Galois, $\Gal(F_\fP/K_\fp)=C_4$ and ramification index and residual degree equal to $2$. Let $$E/\QQ_p:y^2=x^3+Ax+B$$ be a minimal Weierstrass equation at $\pp$ with potentially good reduction. Let $n=\nu_\pp(\Delta)$ be the valuation of the minimal discriminant. If $\gcd(n,12)=2$, then $\sqrt{B}\not\in F_\fP$.
+\end{lemma}
+
+\begin{proof}
+    By Lemma \ref{lem_localC4}, we know that $F_\fP=K_\pp(\sqrt{u},\sqrt{v\pi})$ where $\pi$ is a uniformizer of $K$, $u$ is a non-square unit of $K$ and $v$ is a non-square unit of $K(\sqrt{u})$. We also note that $\pi$ is a uniformizer of $K(\sqrt{u})$.
+    Similarly to the previous proof, we need to consider the case $n=2$ and $n=10$. 
+
+    \textbf{Case $n=2$:}
+
+    In this case, $\nu_\pp(B)=1$ and therefore $B=\mu\pi$ for some unit $\mu$ of $K$. Since the extension $K(\sqrt{u})/K$ is unramified of degree $2$, $\mu=\lambda^2$ for some unit $\lambda$ of $K(\sqrt{u})$. Therefore, if $\varpi$ is a uniformizer of $F_\fP$, then $B/\varpi^2=\lambda^2\pi/\varpi^2$ is a non-square unit by Lemma \ref{lem_localC4}. In particular, $\sqrt{B}\not\in F_\fP$.
+
+    \textbf{Case $n=10$:}
+    This case is solved similarly. Following the same argument as in Lemma \ref{lem_nottwo}, it follows that $\nu_\pp(B)=5$ and hence $B=\mu\pi^5$ where $\mu$ is a unit in $K$ and $\mu=\lambda^2$ for some unit $\lambda$ in $K(\sqrt{u})$. Hence,
+    $$\frac{B}{\varpi^{10}}=\frac{\lambda^2\pi^5}{\varpi^{10}}=\left(\frac{\lambda\pi^2}{\varpi^4}\right)^2\frac{\pi}{\varpi^2}$$
+    is a non-square unit of $F_\fP$, which implies that $\sqrt{B}\not\in F_\fP$.
 \end{proof}
 
 \input{section_consistent/cyclic.tex}
