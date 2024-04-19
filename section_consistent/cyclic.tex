@@ -56,9 +56,24 @@ This lemma has the great advantage that it allows us to restrict our attention t
     and where the same equation holds for $D(\Theta_d)$.
 \end{rem}
 
+To compute $\Tp(\Theta_d)$ for multiplicative reduction, the following notation will also be useful.
 
+\begin{notation}\label{not_n}
+    Let $n$ be a positive integer. Let 
+    \[
+        \tilde{n}=
+        \begin{cases}
+            1 \text{ if } n \text{ is odd,}\\
+            2 \text{ if } n \text{ is even.}
+        \end{cases}
+    \]
+\end{notation}
+Therefore, if $E$ is an elliptic curve with multiplicative reduction at some prime $\pp$ of $K$ and $n=\nu_\pp(\Delta_{E,\pp}^{\min})$, then $c_\pp(E/K)=n$ if the reduction is split and $c_\pp(E/K)=\tilde{n}$ if non-split.
 
 We divide the proof of Theorem \ref{thm_consistent_cyclic} for faithful characters into two separate cases: odd and even cyclic extensions. The main idea in both cases is to simplify the general case into smaller cases where we can directly compute $\Cp(\Theta_d)$ for each finite place $\pp$ of $K$. Unless stated otherwise, we assume thoughout that $$\Theta_d=\sum_{k\mid d}\mu(k)C_k\in B(C_d).$$
+
+
+
 
 \input{section_consistent/odd_cyclic.tex}
  
