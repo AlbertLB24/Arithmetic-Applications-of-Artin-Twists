@@ -1,6 +1,6 @@
 \subsection{Notation and Preliminary Results}
 
-The following result will be helpful to compute the $C_{E / K}$ terms in explicit examples.
+In previous sections, we have discussed the behaviour of Tamagawa numbers of elliptic curves that allows us to compute them over finite extensions of number fields. The following result will be helpful to compute the local terms arising from the minimal differential in explicit examples.
 
     \begin{lemma}\label{lem_Dterms}
         Let $E$ be an elliptic curve over a number field $K$, $F/K$ a finite extension. Let $\pp$ be a prime in $K$ and $\fP$ a prime in $F$ above $\pp$. Let $q$ be the size of the residue field of $K$ at $\fp$. %Denote by $e_{\fP \mid \fp}$, $f_{\fP \mid \fp}$ the ramification index and residue degree of $F_{\fP} / K_{\fp}$. 
@@ -29,7 +29,7 @@ The following result will be helpful to compute the $C_{E / K}$ terms in explici
     \end{enumerate}
 \end{proof}
 
-We will spend some time computing the local terms for families of elliptic curves, so we introduce some more notation that will be used throughout. 
+Following this result, we introduce some notation that will be very useful to compute the local factors $C_{E/F}$ while using the representation theoretic language discussed in Section \ref{sec_norm}.
 
 \begin{notation}\label{not_contr}
     Let $E$ be an elliptic curve defined over $\QQ$ and let $F/K$ be a finite extension of number fields. For each finite place $\pp$ of $K$, we write the \textbf{local contribution of $\pp$} as 
@@ -38,7 +38,7 @@ We will spend some time computing the local terms for families of elliptic curve
     and $C_{\fP\mid\fp}(E/F)=T_{\fP\mid\fp}(E/F)D_{\fP\mid\fp}(E/F)$, where the product ranges over primes $\fP$ of $F$ over $\pp$. 
 
     We are ultimately interested in computing the global contributions from the terms above, so we also introduce notation for them. With the same notation as above, we denote the \textbf{global contribution over $F$} of the Tamagawa numbers and the discriminant terms as 
-    $$T(E/F)=\prod_\pp T_{\fP\mid\pp}(E/F)=\prod_\fP c_\fP(E/F)\quad\text{and}\quad D(E/F)=\prod_\pp D_{\fP\mid\pp}(E/F)=\prod_\fP \left|\frac{\Delta_{E,\mathfrak{P}}^{\min}}{\Delta_E}\right|_\mathfrak{P}^{\frac{1}{12}}$$ 
+    $$T(E/F)=\prod_\pp T_{\fP\mid\pp}(E/F)=\prod_\fP c_\fP(E/F)\quad\text{and}\quad D(E/F)=\prod_\pp D_{\fP\mid\pp}(E/F)=\prod_\fP \left|\frac{\Delta_{E,\mathfrak{P}}^{\min}}{\Delta_E}\right|_\mathfrak{P}^{\frac{1}{12}}.$$ 
 
 \end{notation}
 
@@ -51,16 +51,16 @@ Observe that if $E$ has good reduction over $\pp$, then $T_{\mathfrak{P}\mid\pp}
     Note that if $H$, $H'$ are conjugate then $F^H$, $F^{H'}$ are isomorphic, and so the values of these functions are constant on conjugate subgroups, hence they are well-defined. Define $C \colon \B(G) \to \bQ^{\times}$ by $C \colon H \mapsto C_{E / F^H}$.  
 \end{defn}
     
-    Note that $C_{\fP \mid p}$ is a $D_p$-local function. Indeed, suppose $D_p = \Gal(F_w / \bQ_p)$, where $F_w$ denotes the completion of $F$ with respect to a place $w$ lying above $p$. For a number field $K$ and place $v$, define $$C_v(E / K) = c_v(E / K) \cdot \left| \omega / \omega_v^{\min} \right|_v.$$ We use the same notation if $K$ is a local field (then the $v$ subscript holds no meaning).
-    One has
-    \begin{equation*}
+Note that $C_{\fP \mid p}$ is a $D_p$-local function. Indeed, suppose $D_p = \Gal(F_w / \bQ_p)$, where $F_w$ denotes the completion of $F$ with respect to a place $w$ lying above $p$. For a number field $K$ and place $v$, define $$C_v(E / K) = c_v(E / K) \cdot \left| \omega / \omega_v^{\min} \right|_v.$$ We use the same notation if $K$ is a local field (then the $v$ subscript holds no meaning).
+One has
+\begin{equation*}
     C_{\fP \mid p} = (D_p, C_v)
-    \end{equation*}
-    where $C_v$ is a function on $\B(D_p)$ sending $H \mapsto C_v(E / F_w^H)$.
+\end{equation*}
+where $C_v$ is a function on $\B(D_p)$ sending $H \mapsto C_v(E / F_w^H)$.
 
- The following proposition describes these functions in the language introduced in Section \ref{sec-norm-rels} for each reduction type of $E / \bQ$. We do not attempt to write a formula for $T_{\fP \mid \fp}$ in the case of additive reduction, computing this involves using Lemma \ref{lem_add_tam}.
+The following proposition describes these functions in the language introduced in Section \ref{sec-norm-rels} for each reduction type of $E / \bQ$. We do not attempt to write a formula for $T_{\fP \mid \fp}$ in the case of additive reduction, computing this involves using Lemma \ref{lem_add_tam}.
 
- \begin{prop}\label{prop_local_fns}
+\begin{prop}\label{prop_local_fns}
     Let $E / \bQ$ be an elliptic curve, $G = \Gal(F / \bQ)$ and $p$ a prime of $\bQ$. Let $n = v_p(\Delta_E)$. Consider the functions $C_{\fP \mid p}$, $T_{\fP \mid p}$, and $D_{\fP \mid p}$ on $\B(G)$ defined above. Then,
     \begin{enumerate}[(i)]
         \setlength\itemsep{0em}
@@ -76,19 +76,19 @@ Observe that if $E$ has good reduction over $\pp$, then $T_{\mathfrak{P}\mid\pp}
         \item If $E / \bQ_p$ has potentially good reduction and $p \not= 2, 3$, $D_{\fP \mid p} = (D_p, I_p, p^{f \floor{e n /12}})$, 
         \item If $E / \bQ_p$ has potentially multiplicative reduction and $p \not= 2, 3$, $D_{\fP \mid p} = (D_p, I_p, p^{f \floor{e / 2}})$.
     \end{enumerate}  
- \end{prop} 
+\end{prop} 
  
- \begin{proof}
+\begin{proof}
     \
-\begin{enumerate}[(i)]
-    \setlength\itemsep{0em}
-    \item Clear. 
-    \item Lemma \ref{lem_Dterms}(i) implies $D_{\fP \mid p} = 1$. If $K' / \bQ_p$ is a finite extension of ramification degree $e$, then $E / K'$ has split multiplicative reduction of type $\I_{en}$, which has Tamagawa number $en$ by Lemma \ref{lem_mult_tam}.
-    \item As for split, $D_{\fP \mid p} = 1$. The description follows from applying Proposition \ref{prop_semi_red} (iii) (non-split becomes split when the residue degree is even), and Lemma \ref{lem_mult_tam}. 
-    \item Follows from Lemma \ref{lem_Dterms}(ii),
-    \item Follows from Lemma \ref{lem_Dterms}(iii).
-\end{enumerate}
- \end{proof}
+    \begin{enumerate}[(i)]
+        \setlength\itemsep{0em}
+        \item Clear. 
+        \item Lemma \ref{lem_Dterms}(i) implies $D_{\fP \mid p} = 1$. If $K' / \bQ_p$ is a finite extension of ramification degree $e$, then $E / K'$ has split multiplicative reduction of type $\I_{en}$, which has Tamagawa number $en$ by Lemma \ref{lem_mult_tam}.
+        \item As for split, $D_{\fP \mid p} = 1$. The description follows from applying Proposition \ref{prop_semi_red} (iii) (non-split becomes split when the residue degree is even), and Lemma \ref{lem_mult_tam}. 
+        \item Follows from Lemma \ref{lem_Dterms}(ii),
+        \item Follows from Lemma \ref{lem_Dterms}(iii).
+    \end{enumerate}
+\end{proof}
 %An immediate consequence of this notation is the fact that 
 %$$C_{E/F}=\prod_{\pp}C_{\mathfrak{P}\mid \pp}(F/K);$$
 %that is, we can calculate $C_{E/F}$ by calculating the contribution locally at each prime of $K$. 
@@ -99,4 +99,4 @@ Observe that if $E$ has good reduction over $\pp$, then $T_{\mathfrak{P}\mid\pp}
     Replacing $\rho$ by the sum of its conjugates by elements of $ \Gal(\bQ(\rho) / \bQ(\sqrt{D}))$, we may assume that $\bQ(\rho) = \bQ(\sqrt{D})$. Note that this does not affect the order of $\rho$ in $\C(G)$, nor the set of $\rho$-relations (since $\repnorm{\rho}$ is unchanged). 
     
     Let $\Theta$ be a $\rho$-relation with $\bC[G / \Theta] = \repnorm{\rho}^{\oplus m}$. Let $C \colon \B(G) \to \bQ^{\times}$ be the function sending $H \mapsto C_{E / F^H}$. The theorem then states that, if $\Theta$ is not a norm relation for $C$ when $m$ is odd, or if $C(\Theta) \not\in (\bQ^{\times})^2$ for $m$ even, then $ \rk E / F > 0$. 
-    \end{rem}
+\end{rem}
