@@ -13,16 +13,16 @@ We start with a small observation:
 %We will be computing the terms $C_{E / F^H}$ for $F_i \subset F$ locally. Thus given a prime $p$ and subfield $F_i = F^H$ for 
 
 
-%We will need to be able to count primes and compute residue degrees in intermediate extensions of $F / \bQ$, which is described by the following. 
+When computing Tamagawa numbers, we will need to be able to count primes and compute ramification degrees in intermediate extensions of $F / \bQ$, which is described by the following. 
 
-%\begin{exercise}[Counting primes and ramification degrees]\label{ex-counting}
-%Consider a prime $p \in \bQ$ and decomposition and inertia groups $D_p$, $I_p \leq G$. Let $H \leq G$. 
-%\begin{enumerate}
-%    \setlength\itemsep{0em}
-%    \item The number of primes above $p$ in $F^H$ is given by the number of orbits of $D_p$ on $H \backslash G$, where $D_p$ acts by $d(Hg) = H g d^{-1}$ for $d \in D_p$. Equivalently it is $|H \backslash G / D_p|$.
-%    \item The inertia degree of a prime $\fp$ above $p$ in $F^H$ is the size of the $I_p$ sub-orbits on $H \backslash G$. 
-%\end{enumerate}
-%\end{exercise}
+\begin{exercise}[Counting primes and ramification degrees]\label{ex-counting}
+Consider a prime $p \in \bQ$ and decomposition and inertia groups $D_p$, $I_p \leq G$. Let $H \leq G$. 
+\begin{enumerate}
+    \setlength\itemsep{0em}
+    \item The number of primes above $p$ in $F^H$ is given by the number of orbits of $D_p$ on $H \backslash G$, where $D_p$ acts by $d(Hg) = H g d^{-1}$ for $d \in D_p$. Equivalently it is $|H \backslash G / D_p|$.
+    \item The inertia degree of a prime $\fp$ above $p$ in $F^H$ is the size of the $I_p$ sub-orbits on $H \backslash G$. 
+\end{enumerate}
+\end{exercise}
 
 
 \begin{example}[Brauer relation forces growth]
@@ -79,46 +79,56 @@ We start with a small observation:
 
     But! Observe that{\footnote{this is called a Brauer relation, see Definition \ref{def-brauer}}} 
     \[ \Ind_{C_3}^G \trivial \ominus \Ind_{C_6^a}^G \trivial \ominus \Ind_{C_6^b}^G \trivial \ominus \Ind_{C_6^c}^G \trivial \oplus (\Ind_G^G \trivial)^{\oplus 2} = 0 \]
-    as a virtual permutation representation. We can append this to the left hand side of \eqref{ex1-rel}. Then Theorem \ref{thm_positive_rank} asks us to compute 
+    as a virtual permutation representation. Append this to the left hand side of \eqref{ex1-rel}. Then Theorem \ref{thm_positive_rank} asks us to compute 
     \begin{equation}\label{ex1-rel2}\tag{**}
     \left(\frac{C_{E / F^{C_2^a}} C_{E / \bQ} }{C_{E / F^{C_6^a}} C_{E / F^{C_2^2}}}\right) \cdot \left( \frac{C_{E / F^{C_3}} C_{E / \bQ}^2}{C_{E / F^{C_6^a}}C_{E / F^{C_6^b}}  C_{E / F^{C_6^c}} } \right). 
     \end{equation}
     
     We can find instances where the second factor is not a norm from $\bQ(\sqrt{-3})$. Indeed suppose $E / \bQ$ has split multiplicative reduction at a prime $p$ with $D_p = G$, $I_p = C_6^b$ (assuming tamely ramified, one can take a prime $p$ such that $6 \mid p^2 - 1$, e.g. $p = 5$). Let $v_p(\Delta_E) = n$. Then there is only one prime above $p$ in each subfield. Suppose $E$ has good reduction at all other primes (or multiplicative reduction at primes that are totally split in $F / \bQ$ would also be fine).
      Then our expression \eqref{ex1-rel2} is equal to
-     \[ \frac{(6n)(n)}{(2n) (3n)} \cdot \frac{(2n)(n)^2}{(2n)(n)(2n)} = \frac{1}{2} \cdot \square,\] 
-     but $\frac{1}{2}$ is not a norm in $\bQ(\sqrt{-3})$. Hence one must have $\rk E / F > 0$. 
+     \[ \frac{(6n)(n)}{(2n) (3n)} \cdot \frac{(2n)(n)^2}{(2n)(n)(2n)} \cdot \square = \frac{1}{2} \cdot \square, \] 
+     which is not a norm from $\bQ(\sqrt{-3})$. Hence one must have $\rk E / F > 0$. 
 \end{example}
 
 \begin{example}[Dihedral]
     Let $q_1, q_2$ be odd primes. Consider $G = D_{2 q_1 q_2}$ the dihedral group of order $2 q_1 q_2$. 
-    Let $\rho$, $\tau_1$, $\tau_2$ be two-dimensional irreducible representations of $G$ corresponding to rotating a $(q_1 q_2)$-gon by $2 \pi / q_1 q_2$, $2 \pi / q_1$, $2 \pi q_2$ respectively. The Galois conjugates of these representations, as well as the trivial $\trivial$ and sign $\epsilon$, yield all the irreducible representations of $G$. One has
-    \begin{table}[H]
-        \centering
-    \begin{tabular}{l}
-        $\Ind_{C_2}^G \trivial \simeq \trivial \oplus \repnorm{\tau_1} \oplus \repnorm{\tau_2} \oplus \repnorm{\rho},$ \\
-        $\Ind_{D_{2 q_1}}^G \trivial \simeq \trivial \oplus \repnorm{\tau_2}$,\\
-        $\Ind_{D_{2 q_2}}^G \trivial \simeq \trivial \oplus \repnorm{\tau_1}$.
-    \end{tabular}
-\end{table}
+    Let $\rho$, $\tau_1$, $\tau_2$ be two-dimensional irreducible representations of $G$ corresponding to rotating a $(q_1 q_2)$-gon by $2 \pi / q_1 q_2$, $2 \pi / q_1$, $2 \pi/ q_2$ respectively. These are all self-dual. The Galois conjugates of these representations, as well as the trivial $\trivial$ and sign $\epsilon$, yield all the irreducible representations of $G$. Let 
+    \[  \sigma_{\rho} = \bigoplus_{ \fg \in \Gal(\bQ(\rho) / \bQ)} \rho^{\fg}, \qquad
+        \sigma_1 = \bigoplus_{ \fg \in \Gal(\bQ(\tau_1) / \bQ)} \tau_1^{\fg}, \qquad
+        \sigma_2 = \bigoplus_{ \fg \in \Gal(\bQ(\tau_2) / \bQ)} \tau_2^{\fg}. \]  
+    Then $ \{ \trivial , \epsilon, \sigma_{\rho}, \sigma_1, \sigma_2 \}$ are a basis for the irreducible representations of $G$ over $\bQ$. 
+    One has
+\[
+        \Ind_{C_2}^G \trivial \simeq \trivial \oplus \sigma_1 \oplus \sigma_2 \oplus \sigma_{\rho}, \quad
+        \Ind_{D_{2 q_1}}^G \trivial \simeq \trivial \oplus \sigma_2, \quad
+        \Ind_{D_{2 q_2}}^G \trivial \simeq \trivial \oplus \sigma_1,
+\]
 % There is an irreducible representation $\rho$ of $G$, obtained by inducing a linear order $q_1 q_2$ faithful representation from $C_{q_1 q_2}$. Thus $\rho$ is of degree $2$ and $\bQ(\rho) = \bQ(\zeta_{q_1 q_2})^{C_2}$. Then $\rho$ has $\frac{(q_1 - 1)(q_2 - 1)}{2}$ Galois conjugates, and so $\repnorm{\rho}$ is of dimension $2 \cdot \frac{(q_1 - 1)(q_2 - 1)}{2}$. 
-Thus there is a $\rho$-relation $$\Theta = C_2 - D_{2 q_1} - D_{2 q_2} + G, \qquad \bC[G / \Theta] \simeq \repnorm{\rho}.$$ 
+and so 
+\begin{equation*}
+\Ind_{C_2}^G \trivial \ominus \Ind_{D_{2 q_1}}^G \trivial \ominus \Ind_{D_{2 q_2}}^G \trivial \oplus \Ind_{G}^G \trivial \simeq \bigoplus_{ \fg \in \Gal(\bQ(\rho) / \bQ)} \rho^{\fg}.
+\end{equation*}
 
-    Suppose that $E / \bQ$ is semistable. Recall that $C(\Theta) = \prod_p C_{\fp \mid p}(\Theta)$. Suppose that $E / \bQ_p$ has split multiplicative reduction, with $n = v_p(\Delta_E)$. Then by Proposition \ref{prop_local_fns}, $C_{\fp \mid p} = (D_p, I_p, en)$. Corollary \ref{cor-odd-decomp} implies that $C_{\fp \mid p}(\Theta)$ is a norm from the quadratic subfields of $\bQ(\rho)$ whenever $|D_p|$ is odd. In fact, ranging over all possible $D_p$ and $I_p$, a case by case analysis yields that $C_{\fp \mid p}(\Theta)$ is non-square only when the decomposition group is $D_{2 q_1}$ or $D_{2 q_2}$ (and $I_p$ is non-trivial). 
-
-    For example, let $p$ have decomposition group $D_{2 q_1}$ and inertia group $C_{q_1}$. We use Exercise \ref{ex-counting} to compute $(D_p, I_p, en)$ on each subgroup in $\Theta$:
+    Assume $E / \bQ$ is semistable. Suppose that $E / \bQ_p$ has split multiplicative reduction, with $n = v_p(\Delta_E)$. We compute Tamagawa numbers above $p$ as in the previous example, using the same notation. 
+    Corollary \ref{cor-odd-decomp} and Corollary {\color{red} reference when written} imply that we always get a norm from the contribution above $p$ whenever the decomposition group $D_p$ is a group of odd-order or a cyclic group. In fact we only get a non-square contribution when the decomposition group is $D_{2 q_1}$ or $D_{2 q_2}$ (and $I_p$ is non-trivial). 
+     
+    For example, let $p$ have decomposition group $D_{2 q_1}$ and inertia group $C_{q_1}$.
+    This time, counting primes and computing ramification degrees is a little more awkward, we use Exercise \ref{ex-counting}.
         \begin{itemize}[--]
             \setlength\itemsep{0em}
-            \item The action of $D_{2 q_1}$ on $C_2 \backslash G$ yields $1$ orbit of size $C_{q_1}$ (the orbit of the identity) and $\frac{q_2 - 1}{2}$ orbits of size $2q_1$ (coming from $C_2$ acting faithfully on $C_{q_2}$). The size of the inertia sub-orbits is $q_1$. Hence $C_{\fp \mid p}(C_2) = (q_1 n)^{1 + \frac{q_2 - 1}{2}}$.
-            \item The action of $D_{2 q_1}$ on $D_{2 q_1} \backslash G$ yields the same number of orbits as above, but now the action of $C_{q_1} \leq D_{2 q_1}$ is trivial and the size of the inertia sub-orbits are all $1$, so that $C_{\fp \mid p}(D_{2 q_1}) = n^{1 + \frac{q_2 - 1}{2}}$.
-            \item The action of $D_{2 q_1}$ on $D_{2 q_2} \backslash G$ yields one orbit of size $q_1$, with the inertia sub-orbit also of size $q_1$, hence $C_{\fp \mid p}(D_{2 q_2}) = q_1 n$.
+            \item The action of $D_{2 q_1}$ on $C_2 \backslash G$ yields $1$ orbit of size $C_{q_1}$ (the orbit of the identity) and $\frac{q_2 - 1}{2}$ orbits of size $2q_1$ (coming from $C_2$ acting faithfully on $C_{q_2}$). The size of the inertia sub-orbits is $q_1$. Hence $C_{\fp \mid p}(E / F^{C_2}) = (q_1 n)^{1 + \frac{q_2 - 1}{2}}$.
+            
+            \item The action of $D_{2 q_1}$ on $D_{2 q_1} \backslash G$ yields the same number of orbits as above, but now the action of $C_{q_1} \leq D_{2 q_1}$ is trivial, so that $C_{\fp \mid p}(E / F^{D_{2 q_1}}) = n^{1 + \frac{q_2 - 1}{2}}$.
+            
+            \item The action of $D_{2 q_1}$ on $D_{2 q_2} \backslash G$ yields one orbit of size $q_1$, with the inertia sub-orbit also of size $q_1$, hence $C_{\fp \mid p}(E / F^{D_{2 q_2}}) = q_1 n$.
         \end{itemize}
     In total,
-    \[ C_{\fp \mid p}(\Theta) = \frac{(q_1 n )^{1 + \frac{q_2 - 1}{2}} (n)}{(n)^{1 + \frac{q_2 - 1}{2}} (q_1 n)} = q_1^{\frac{q_2 - 1}{2}} .\] 
-    By symmetry, taking the decomposition group to be $D_{2 q_2}$ and inertia group $C_{q_2}$, one has 
-     $C_{\fp \mid p}(\Theta) = q_2^{\frac{q_1 - 1}{2}}$.
+    \[ \frac{C_{\fp \mid p}(E / F^C_2) \cdot c_{\fp}(E / \bQ)}{C_{\fp \mid p}(E / F^{D_{2 q_1}})\cdot C_{\fp \mid p}(E / F^{D_{2 q_2}})} = \frac{(q_1 n )^{1 + \frac{q_2 - 1}{2}} (n)}{(n)^{1 + \frac{q_2 - 1}{2}} (q_1 n)} = q_1^{\frac{q_2 - 1}{2}} .\] 
+    %By symmetry, taking the decomposition group to be $D_{2 q_2}$ and inertia group $C_{q_2}$, one would obtain $ q_2^{\frac{q_1 - 1}{2}}$.
 
-    So let $E / \bQ$ have split multiplicative reduction at $p$ with decomposition group $D_{2 q_1}$ and inertia group $I_p = C_{q_1}$, and good reduction at all other primes. Further suppose that $q_1, q_2 \equiv 3 \pmod 4$ and that $\legendre{q_1}{q_2} = -1$. Then $\bQ(\sqrt{q_1 q_2}) \subset \bQ(\rho)$ but $C_{\fp \mid p}(\Theta) \not\in N_{\bQ(\sqrt{q_1 q_2}) / \bQ}(\bQ(\sqrt{q_1 q_2})^{\times})$. Indeed, one has $C_{\fp \mid p}(\Theta) \equiv q_1 \mod (\bQ^{\times})^2$, but $q_1$ is not the norm of an element of $\bQ(\sqrt{q_1 q_2})$, since $z^2 q_1 = x^2 - q_1q_2 y^2$ for $x,y,z \in \bZ$ implies $q_1 = \square \pmod {q_2}$, a contradiction. Thus $\rk E / F > 0$.
+    So let $E / \bQ$ have split multiplicative reduction at $p$ with decomposition group $D_{2 q_1}$ and inertia group $I_p = C_{q_1}$, and good reduction at all other primes. Further suppose that $q_1, q_2 \equiv 3 \pmod 4$ and that $\legendre{q_1}{q_2} = -1$. Then $\bQ(\sqrt{q_1 q_2}) \subset \bQ(\rho)$ but 
+$$\frac{C_{E / F^C_2} C_{E / \bQ}}{C_{E / F^{D_{2 q_1}}} C_{E / F^{D_{2 q_2}}}} = q_1 \cdot \square$$
+is not a norm from $\bQ(\sqrt{q_1 q_2})$. Indeed, $q_1$ is not the norm of an element of $\bQ(\sqrt{q_1 q_2})$, since $z^2 q_1 = x^2 - q_1q_2 y^2$ for $x,y,z \in \bZ$ implies $q_1 = \square \pmod {q_2}$, a contradiction. Thus $\rk E / F > 0$.
 
     This rank growth is predicted by root number computations also, however. Assume that $F / \bQ$ is totally real. Then $w(E / F^H) = (-1)^{[F^H \colon \bQ] + | H \backslash G / D_p|}$ by Proposition \ref{compute-root}. Thus
     \begin{itemize}[--]
@@ -130,15 +140,12 @@ Thus there is a $\rho$-relation $$\Theta = C_2 - D_{2 q_1} - D_{2 q_2} + G, \qqu
     \end{itemize}
     Therefore we must have $\rk E / F^{C_2}$, $\rk E / F^{D_{2q_1}} > 0$, so $\rk E / F > 0$. 
     Using the properties in Proposition \ref{compute-root-twist}, the computations of the root numbers for the subfields implies that 
-    \[ w\left(E / \bQ, \repnorm{\tau_1}\right) = 1, \quad w\left(E / \bQ, \repnorm{\tau_2}\right) = -1, \quad w\left(E / \bQ, \repnorm{\rho}\right) = 1, \]
-  and in particular there is an irreducible self-dual Artin rep $\tau'$ with $w(E / \bQ, \tau') = -1$ (some irreducible consistent of $\repnorm{\tau_2}$). In particular the parity conjecture for twists implies that $\left\langle \repnorm{\tau'}, E(F)_{\bC} \right\rangle > 0$. 
-    
-  
-  {\color{red} maybe I could add how this suggests we throw in a $q_1$ for the regulators and then everything is fine }
+    \[ w\left(E / \bQ, \sigma_1\right) = 1, \quad w\left(E / \bQ, \sigma_2\right) = -1, \quad w\left(E / \bQ, \sigma_{\rho}\right) = 1, \]
+  and in particular $w(E / \bQ, \tau_1^{\fg}) = -1$ for some $\fg \in \Gal(\bQ(\tau_1) / \bQ)$.
 \end{example}
 
 \begin{example}[Additive reduction example]
-
+{\color{red} TO DO}
 
 
 \end{example}
