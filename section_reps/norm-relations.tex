@@ -1,13 +1,15 @@
-\subsection{Functions on the Burnside ring and norm relations}\label{sec-norm-rels}
+\subsection{Functions on the Burnside Ring and Norm Relations}\label{sec-norm-rels}
 
-In this section, consider $f \colon \B(G) \to A$ a multiplicative function with $f(\sum_i n_i H_i) = \prod_i f(H_i)^{n_i}$ where $A$ is an abelian group. As in \cite{reg-const}, we say that $f$ is \textbf{representation theoretic} if $f$ is trivial on Brauer relations. This implies that for a $G$-set $X$, $f$ only depends on the representation $\bC[X]$. 
+In this subsection we explore functions on the Burnside ring. 
+
+Consider $f \colon \B(G) \to A$ a multiplicative function with $f(\sum_i n_i H_i) = \prod_i f(H_i)^{n_i}$ where $A$ is an abelian group. As in \cite{reg-const}, we say that $f$ is \textbf{representation theoretic} if $f$ is trivial on Brauer relations. This implies that for a $G$-set $X$, $f$ only depends on the representation $\bC[X]$. 
 %In other words, there exists a map $g \colon \R(G) \to A$ such that $f(H) = g(\bC[G / H])$ for all $H \leq G$. 
 
 \begin{example}
   Let $\lambda \in \bR^{\times}$ and consider the function $H \mapsto \lambda^{[G : H]}$. This is trivial on Brauer relations;  if $\sum_i n_i H_i$ is a Brauer relation then $\lambda^{\sum_i n_i [G : H]} = \lambda^{\dim( \oplus_i \bC[G / H_i]^{\oplus n_i})} = 1$.
 \end{example}
 
-Let $\rho$ be a representation of $G$. Let $\Theta \in \B(G)$ be a $\rho$-relation, with $\bC[G / \Theta] \simeq \repnorm{\rho}^{\oplus m}$. In the introduction, {\color{red} add motivation}
+Let $\rho$ be a representation of $G$. Let $\Theta \in \B(G)$ be a $\rho$-relation, with $\bC[G / \Theta] \simeq \repnorm{\rho}^{\oplus m}$. Let $f : \B(G) \to \bQ^{\times}$. Since $\rho \mapsto \repnorm{\rho}$ is a process analogous to taking the norm of an element of $\bQ(\rho)$, one may then expect that $f(\Theta)$ is a norm from $\bQ(\rho)$. 
 
 \begin{defn}
 Let $\rho$ be a representation of $G$, $\Theta$ a $\rho$-relation, and $f \colon \B(G) \to \bQ^{\times}$. If $f(\Theta) \in \fieldnorm{\rho}$, then we call $\Theta$ a \textbf{norm relation} for $f$. 
@@ -62,21 +64,21 @@ It appears quite difficult in general to describe the set of $\rho$-relations fo
     Let $\ff$ be the minimum positive integer such that $\bQ(\rho) \subset \bQ(\zeta_{\ff})$. As $\bQ(\rho)$ is quadratic, $\ff$ is described in Remark \ref{conductor} (it is the absolute value of the discriminant $\Delta$ of $\bQ(\rho)$). Observe that $\ff \mid n$ since all characters of $G$ are realized over $\bQ(\zeta_n)$. Since $\C(G) = 1$ and $G$ has no Brauer relations, by Proposition \ref{min-to-all} it suffices to show that $g(\Theta)$ is a norm from $\bQ(\rho)$ for $\Theta \in \B(G)$ such that $\bC[G / \Theta] = \repnorm{\rho}$.
 
     Let $\repnorm{\rho} = \sum_{d \mid n} a_d \chi_d$ where $a_d \in \bZ$ and $\chi_d$ are the basis of irreducible rational representations of $C_n$ defined in Example \ref{cyclic-relns}. %(recall $\chi_{d} = \repnorm{\varphi_{d}}$ with $\bQ(\varphi_{d}) = \bQ(\zeta_{d})$ form a basis for the irreducible rational representations of $C_n$). 
-    Let $\Psi_{d} = \sum_{d' | d}\mu(d / d')\cdot C_{n / d'}$ so that $\bC[\Psi_{d}] = \chi_{d}$, as observed in the example. Then $\bC[G / \Theta] \simeq \bC[\sum_{d | n } a_{d} \Psi_{d}]$ which implies that $\Theta = \sum_{d | n } a_{d} \Psi_{d}$.
+    Let $\Theta_{d} = \sum_{d' | d}\mu(d / d')\cdot C_{n / d'}$ so that $\bC[\Theta_{d}] = \chi_{d}$, as observed in the example. Then $\bC[G / \Theta] \simeq \bC[\sum_{d | n } a_{d} \Theta_{d}]$ which implies that $\Theta = \sum_{d | n } a_{d} \Theta_{d}$.
 
-    Evaluating $g$ on $\Psi_{d}$ is trivial unless $d = q^a$ for some $q$ prime, $a \geq 1$. Indeed, if $d = p_1^{e_1} \cdots p_r^{e_r}$ , with $r \geq 2$ and $e_i \geq 1$, then
+    Evaluating $g$ on $\Theta_{d}$ is trivial unless $d = q^a$ for some $q$ prime, $a \geq 1$. Indeed, if $d = p_1^{e_1} \cdots p_r^{e_r}$ , with $r \geq 2$ and $e_i \geq 1$, then
     \[ \prod_{d' \mid d} (d')^{\mu(d / d')} = \prod_{j_1, \ldots j_r \in \{0,1\}^r } \left(p_1^{e_1 - j_1} \cdots p_r^{e_r - j_r}\right)^{(-1)^{\# j_i = 1}} = 
     \prod_{i = 1}^r \left(\frac{p_i^{e_i}}{p_i^{e_i - 1}}\right)^{\sum_{ j = 0}^{r - 1} \binom{r-1}{j} (-1)^j} = 1. \]
     On the other hand,
     \[ \prod_{d' \mid q^a} (d')^{\mu(q^a / d')} = q .\]
     
     The irreducible representations of $C_n$ over $\bQ(\rho)$ are given by the orbits of the complex irreducible characters of $C_n$ acted upon by $H = \Gal (\bQ(\zeta_n) / \bQ(\rho))$. Consider $d \mid n$ with $\bQ(\rho) \not\subset \bQ(\zeta_d)$. 
-    Recall that $\chi_d = \repnorm{\varphi_d}$, where $\bQ(\varphi_d) = \bQ(\zeta_d)$. Let $B = \Gal(\bQ(\zeta_n) / \bQ(\zeta_d))$. Then $\bQ(\rho) \cap \bQ(\zeta_d) = \bQ$, so $BH = \Gal(\bQ(\zeta_n) / \bQ)$. The orbit of $\varphi_{d}$ under $H$ is fixed by $BH$, hence is rational. It follows that $\langle \rho, \varphi_{d} \rangle = \langle \rho^{\sigma} , \varphi_{d} \rangle$ for $\sigma$ the generator of $\Gal(\bQ(\rho) / \bQ)$. Thus $2 = [\bQ(\rho) : \bQ]$ divides $a_d$, and so $g(a_d \Psi_d) = g(\Psi_d)^{a_d} \in (\bQ^{\times})^2 \subset \fieldnorm{\rho}$.
+    Recall that $\chi_d = \repnorm{\varphi_d}$, where $\bQ(\varphi_d) = \bQ(\zeta_d)$. Let $B = \Gal(\bQ(\zeta_n) / \bQ(\zeta_d))$. Then $\bQ(\rho) \cap \bQ(\zeta_d) = \bQ$, so $BH = \Gal(\bQ(\zeta_n) / \bQ)$. The orbit of $\varphi_{d}$ under $H$ is fixed by $BH$, hence is rational. It follows that $\langle \rho, \varphi_{d} \rangle = \langle \rho^{\sigma} , \varphi_{d} \rangle$ for $\sigma$ the generator of $\Gal(\bQ(\rho) / \bQ)$. Thus $2 = [\bQ(\rho) : \bQ]$ divides $a_d$, and so $g(a_d \Theta_d) = g(\Theta_d)^{a_d} \in (\bQ^{\times})^2 \subset \fieldnorm{\rho}$.
 
     Thus $a_d$ can only be odd when $\bQ(\rho) \subset \bQ(\zeta_d)$, i.e  $\ff \mid d$. Therefore for $g(\Theta)$ to be non-square we require $\ff = p$ for some prime $p$. Then $p$ must be odd ($|\Delta|$ cannot be $2$) and $\bQ(\rho) = \bQ(\sqrt{p^*})$. But $p$ is a norm in $\bQ(\sqrt{p^*})$ by Corollary \ref{p-norm}.
 \end{proof}
 
-\subsubsection{D-local functions}\label{D-loc}
+\subsubsection{D-local Functions}\label{D-loc}
 
 We are interested in functions on the Burnside ring that are number-theoretic in nature, where we take $G$ to be a Galois group. Often, these functions are \textit{local}. 
 
@@ -97,9 +99,9 @@ Such functions motivate the following definition:
 \end{defn}
 
 \begin{example}\label{tama-ex}
-    For $G = \Gal(F / K)$, $v$ a place of $K$ with decomposition group $D$, the function
-    \[ H \mapsto \prod_{w | v} c_w(E / F^{H}) \]
-    is $D$-local, where $E$ is an elliptic curve over $K$ and $c_w$ is the local Tamagawa number. ({\color{red} reference later section})
+    For $G = \Gal(F / K)$, $\fp$ a place of $K$ with decomposition group $D$, the function
+    \[ H \mapsto \prod_{\fP | \fp} c_{\fP}(E / F^{H}) \]
+    is $D$-local, where $E$ is an elliptic curve over $K$ and $c_{\fP}$ is the local Tamagawa number.
 \end{example}
 
 Again assume that $G = \Gal(F / K)$ and let $I$, $D$ be the inertia group and decomposition group respectively of a place $v$ of $K$.  Then $D / I$ is cyclic. If a prime $w$ in $F^H$ corresponds to the double coset $HxD$, then its decomposition and inertia groups in $F / F^H$ are $H \cap D^x$ and $H \cap I^x$ respectively.
@@ -113,9 +115,9 @@ The ramification degree and residue degree of $w$ over $K$ are given by $e_w = \
     (since $(U \cap D) / (U \cap I) \simeq UI / I$ for $U \leq D$).
 \end{defn}
 
-%\begin{example} {\color{red} maybe move this example to later section}
-%    If $E / K$ has split multiplicative reduction at $v$ with $c_v(E / K) = n$, then $c_w(E / F^H) = e_w n$ for a place $w$ of $F^H$ above $v$. In this case the function in Example \ref{tama-ex} is $(D, I, e n)$. 
-%\end{example}
+\begin{example}
+    If $E / K$ has split multiplicative reduction at $\fp$ with $c_{\fp}(E / K) = n$, then $c_{\fP}(E / F^H) = e_{\fP} n$ for a place $\fP$ of $F^H$ above $\fp$. In this case the function in Example \ref{tama-ex} is $(D, I, e n)$. 
+\end{example}
 
 %\begin{example}\label{trivial-on-brauer}
 %    Let $\rho = 0$. If $W$ is a group of odd order, then $(W, W, e) \sim 1$ as functions to $\bQ^{\times} / \bQ^{\times 2}$.More generally if $D$ has odd order and $I \triangleleft D$ then $(D, I, e) \sim_{\rho} 1$. {\color{red} explain and reference}

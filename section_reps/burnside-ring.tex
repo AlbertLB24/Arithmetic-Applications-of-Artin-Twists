@@ -1,4 +1,4 @@
-\subsection{The Burnside ring and relations for permutation representations}
+\subsection{The Burnside Ring and Relations for Permutation Representations}
 
 Let $G$ be a finite group. Recall that there is a bijection  
 \[ \{ \text{transitive finite }G\text{-sets } X  \text{ up to isomorphism}\}\leftrightarrow  \{ \text{subgroups } H \leq G \text{ up to conjugacy} \} \] 
@@ -17,32 +17,37 @@ We only need that $\B(G)$ is a group, and do not use its multiplicative structur
     Let $\chi_{\bC[G / \Theta]}$ be the character of $\bC[G / \Theta]$. Then  $\Theta \mapsto \chi_{\bC[G / \Theta]}$ defines a homomorphism $\B(G) \to \Perm(G)$.
 \end{defn}
 
-\begin{defn}
+\begin{defn}\label{def-brauer}
 If $\bC[G / \Theta] = 0$ as a virtual permutation representation (i.e. $\chi_{\bC[G / \Theta]} = 0$), then $\Theta$ is called a  \textbf{Brauer relation}.
 \end{defn}
 
 Non-trivial Brauer relations are instances of non-isomorphic $G$-sets giving rise to isomorphic permutation representations. 
 
-\begin{example}
+\begin{examples}
+    \
+    \begin{enumerate}
+        \item 
     The irreducible representations of $G = S_3$ are the trivial representation $\trivial$, the sign representation $\epsilon$ and the $2$-dimensional representation $\rho$.
     We have
-    \begin{table}[H]
-        \centering
-    \begin{tabular}{l l l l l l l}
-        $\bC[G / C_1]$ & $=$ & $\trivial \oplus \epsilon \oplus \rho^{\oplus 2},$ & $\qquad$ &
-        $\bC[G / C_2]$ & $=$ & $\trivial \oplus \rho,$\\ 
-        $\bC[G / C_3]$ & $=$ & $\trivial \oplus \epsilon,$ & $\qquad$ &
-        $\bC[G / G]$ & $=$ & $\trivial.$  
-    \end{tabular}
-\end{table}
+   \[
+    \begin{array}{l l l l l l l}
+        \bC[G / C_1] & = & \trivial \oplus \epsilon \oplus \rho^{\oplus 2}, & \qquad &
+        \bC[G / C_2] & = & \trivial \oplus \rho,\\ 
+        \bC[G / C_3] & = & \trivial \oplus \epsilon, & \qquad &
+        \bC[G / G] & = & \trivial.  
+    \end{array}
+    \]
     Then $\Psi = C_1  - 2 C_2 - C_3 + 2S_3$ is the unique Brauer relation for $G$.
-\end{example}
+    \item In Example \ref{ex-C2C6}, we observed that $\Psi = C_3 - C_6^a - C_6^b - C_6^c - 2G$ is a Brauer relation for $G = C_2 \times C_6$. This relation can be lifted from the $C_2 \times C_2$ quotient of $G$. 
+\end{enumerate}
+
+\end{examples}
 
 \begin{example}\label{cyclic-no-brauer}
 Cyclic groups have no Brauer relations. Indeed, if $G = C_n$, the $\bZ$-rank of $\Perm(G)$ is the number of cyclic subgroups of $C_n$, i.e the number of subgroups of $C_n$, which is the $\bZ$-rank of $\B(G)$. Hence the rank of the kernel of the map $\B(G) \to \Perm(G)$ is zero.
 \end{example}
 
-In the last section, we described how to obtain a virtual permutation representation from an arbitrary representation of $G$. We are interested in when this is an image of an element from the Burnside ring.
+In the last section, we described how to obtain a virtual permutation representation from an arbitrary representation of $G$. As in Theorem \ref{thm_positive_rank}, we are interested in when this is an image of an element from the Burnside ring.
 
 \begin{defn}
 Let $\rho$ be a representation of $G$.    
@@ -83,8 +88,8 @@ The following are some elementary properties of these relations:
 
 
 \begin{example}\label{cyclic-relns}[\cite[Exercise 13.1]{Serre}]
-    Let $G = C_n$. For each $d \mid n$, let $\chi_d = \repnorm{\varphi_d}$, where $\varphi_d$ is an irreducible complex character of $G$ with field of values $\bQ(\zeta_d)$ and kernel of index $d$.
-    Then $\{ \chi_d \colon d\mid n \}$ form an orthogonal basis for the irreducible rational-valued representations of $G$. Since $C_{n / d} \trianglelefteq G$, $\Ind_{C_{n/ d}}^G \trivial$ is the direct sum of irreducible complex representations of $G$ containing $C_{n / d}$ in their kernel. Thus, $\Ind_{C_{n/ d}}^G \trivial \simeq \sum_{d' \mid d} \chi_{d'}$. Applying M\"{o}bius inversion, we obtain a $\varphi_d$-relation for each $d \mid n$:
+    Let $G = C_n$. For each $d \mid n$, let $\chi_d = \repnorm{\psi_d}$, where $\psi_d$ is a character of $G$ with field of values $\bQ(\zeta_d)$ and kernel of index $d$.
+    Then $\{ \chi_d \colon d\mid n \}$ form an orthogonal basis for the irreducible rational-valued representations of $G$. Since $C_{n / d} \trianglelefteq G$, $\Ind_{C_{n/ d}}^G \trivial$ is the direct sum of irreducible complex representations of $G$ containing $C_{n / d}$ in their kernel. Thus, $\Ind_{C_{n/ d}}^G \trivial \simeq \sum_{d' \mid d} \chi_{d'}$. Applying M\"{o}bius inversion, we obtain a $\psi_d$-relation for each $d \mid n$:
     \[ \chi_d = \sum_{d' \mid d} \mu(d / d') \cdot \Ind_{C_{n/ d'}}^G \trivial. \]
     Note that this is the only way of writing $\chi_d$ as a sum of permutation representations, since cyclic groups have no Brauer relations (Example \ref{cyclic-no-brauer}). Similarly, there is a unique $\Theta \in B(G)$ such that $\bC[G / \Theta] \simeq \chi_d^{m}$ for all $m \geq 1$.
     \end{example}

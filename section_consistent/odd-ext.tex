@@ -1,4 +1,4 @@
-\subsection{Norm relations in odd order extensions}
+\subsection{Norm Relations in Odd Order Extensions}
 
 We now prove a result analogous to the previous section, but when $F / \bQ$ is any Galois extension of odd order. The reason one would expect that our norm relations test never forces rank growth in this case is because root number computations do not, as we now show.
 
@@ -35,7 +35,7 @@ Take any representation $\rho$ of $G$ with quadratic subfield $\bQ(\sqrt{D}) \su
 As in Remark \ref{rephrase-thm}, replacing $\rho$ by the sum of its conjugates by elements of $ \Gal(\bQ(\rho) / \bQ(\sqrt{D}))$, we may assume that $\bQ(\rho) = \bQ(\sqrt{D})$. We take $D \in \bZ \backslash \{0,1 \}$ to be squarefree.
 
 The product of terms we are computing is $C(\Theta)$, where $C \colon \B(G) \to \bQ^{\times}$ is given by $C \colon H \mapsto C_{E / F^H}$, and $\Theta$ is any $\rho$-relation.
-We break up the function $C$ into $C = \prod_p C_{\fP \mid p} = \prod_p = T_{\fP \mid p} \cdot D_{\fP \mid p}$, ranging over primes $p \in \bQ$,
+We break up the function $C$ into $C = \prod_p C_{\fP \mid p} = \prod_p T_{\fP \mid p} \cdot D_{\fP \mid p}$, ranging over primes $p \in \bQ$,
 as defined in Notation \ref{not_contr_fns}.
 We showed that
 \begin{equation*}\label{Dp-loc}
@@ -71,7 +71,7 @@ Let $\ff$ be the smallest integer such that $\bQ(\sqrt{D}) \subset \bQ(\zeta_{\f
     One has $\bQ(\rho) \subset \bQ(\zeta_b) \implies \ff \mid b$ by minimality of $\ff$. Since $\ff \nmid b$, we have $\bQ(\rho) \not\subset \bQ(\zeta_b)$, so $\bQ(\Res_{D_p} \rho) = \bQ$. The corollary then follows from Proposition \ref{rational-res} and Theorem \ref{odd-c-brauer}, noting that since $\C(D_p)$ is odd, multiplication by $2$ is injective. 
 \end{proof}
 
-Fix $\Theta = \sum_i n_i H_i \in \B(G)$ with $\bC[\Theta] \simeq \repnorm{\rho}^{\oplus m}$. We prove that at each prime $p$, $C_{\fP \mid p}(\Theta)$ is the norm of an element of $\bQ(\rho)$.  As observed ({\color{red} reference}), this depends on $D_p$ and $I_p$. As we deal with each local factor individually, we argue that one can take $D_p = I_p$.
+Fix $\Theta = \sum_i n_i H_i \in \B(G)$ with $\bC[\Theta] \simeq \repnorm{\rho}^{\oplus m}$. We prove that at each prime $p$, $C_{\fP \mid p}(\Theta)$ is the norm of an element of $\bQ(\rho)$.  As observed, this depends on $D_p$ and $I_p$. As we deal with each local factor individually, we argue that one can take $D_p = I_p$.
 
 \begin{lemma}\label{tam-up-to-square}
     Let $E / K$ be an elliptic curve. Let $K' / K$ be an extension of number fields odd degree, unramified at the place $v$ of $K$. Then $C_w(E / K') \equiv C_v(E / K) \mod (\bQ^{\times})^2$ for any place $w$ of $K'$ with $ w \mid v$. 

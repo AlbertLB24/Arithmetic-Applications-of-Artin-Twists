@@ -2,7 +2,11 @@ As we discussed in the previous section, our motivation is to use Theorem \ref*{
 \begin{equation}\label{eqn_localprod}
     \frac{\prod_i C_{E/F_i}}{\prod_j C_{E/F_j'}}
 \end{equation}
-is always a norm for every subfield $\QQ(\sqrt{D})\subseteq\QQ(\rho)$. Before we give the precise statements, we require some important results in algebraic number theory that will be used throughout and that have surprinsing consequences for the local behaviour of certain elliptic curves. The first result explicitly describes the quadratic subfields of cyclotomic fields $\QQ(\zeta_d)$ where at most one odd prime factor $q$ divides $d$.
+is always a norm for every subfield $\QQ(\sqrt{D})\subseteq\QQ(\rho)$. Before we give the precise statements, we require some important results in algebraic number theory that will be used throughout and that have surprinsing consequences for the local behaviour of certain elliptic curves. 
+
+\input{section_consistent/notation.tex}
+
+The first result explicitly describes the quadratic subfields of cyclotomic fields $\QQ(\zeta_d)$ where at most one odd prime factor $q$ divides $d$.
 
 \begin{lemma}\label{lem_subfields}
     Let $q$ be an odd rational prime, $n,m$ a positive integers and let $q^*=(-1)^{(q-1)/2}q$. Then the following holds.
@@ -26,7 +30,7 @@ is always a norm for every subfield $\QQ(\sqrt{D})\subseteq\QQ(\rho)$. Before we
 \end{lemma}
 
 \begin{proof}
-    Firstly, we remark that the discrimant of the field $\QQ(\sqrt{D})$, with $D$ squarefree is
+    Firstly, we remark that the discriminant of the field $\QQ(\sqrt{D})$, with $D$ squarefree is
     \begin{equation}
         \Delta(\QQ(\sqrt{D}))=
         \begin{cases}
@@ -52,7 +56,7 @@ The following two results are naturally phrased in terms of local fields. The fi
 \end{prop}
 
 \begin{proof}
-    Assume first that $n\mid|\kappa^*|$. Let $\pi$ be a normalizer of $F$ and consider $F_n=F(\pi^{1/n})$. We claim that $F_n$ satisfies the desired properties. Since $n\mid|\kappa^*|$, $\kappa$ contains all $n$-th roots of unity and therefore the polynomial $x^n-1$ factors into linear terms in $\kappa[x]$. The divisibility condition above implies $\Char\kappa\nmid n$ and hence by Hensel's Lemma $x^n-1$ also factors into linear terms in $F[x]$. In other words, $\QQ_p(\zeta_n)\subseteq F$ and therefore $F_n$ is the splitting field of the polynomial $x^n-\pi$. This shows that $F_n/F$ is a tame, toally ramified Galois extension, and the map 
+    Assume first that $n\mid|\kappa^*|$. Let $\pi$ be a normalizer of $F$ and consider $F_n=F(\pi^{1/n})$. We claim that $F_n$ satisfies the desired properties. Since $n\mid|\kappa^*|$, $\kappa$ contains all $n$-th roots of unity and therefore the polynomial $x^n-1$ factors into linear terms in $\kappa[x]$. The divisibility condition above implies $\Char\kappa\nmid n$ and hence by Hensel's Lemma $x^n-1$ also factors into linear terms in $F[x]$. In other words, $\QQ_p(\zeta_n)\subseteq F$ and therefore $F_n$ is the splitting field of the polynomial $x^n-\pi$. This shows that $F_n/F$ is a tame, totally ramified Galois extension, and the map 
     \begin{align*}
         \psi: \Gal(F_n/F)&\longrightarrow \mu_n\cong C_n\\
         \sigma &\longmapsto \frac{\sigma(\pi^{1/n})}{\pi^{1/n}}

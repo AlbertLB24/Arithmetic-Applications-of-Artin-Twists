@@ -3,18 +3,18 @@
 The Birch-Swinnerton-Dyer conjecture states the following.
 
 \begin{conj}[BSD]
-    Let $E$ be an elliptic curve defined over a number field $K$. Then 
+    Let $E$ be an elliptic curve defined over a number field $F$. Then 
     \begin{enumerate}[label={\bfseries  BSD\arabic*.}]
-        \item The rank of the Mordell-Weil group of $E$ over $K$ equals the order of vanishing of the $L$-function; that is,
-        $$\ord_{s=1}L(E/K,s)=\rk E/K = r.$$
+        \item The rank of the Mordell-Weil group of $E$ over $F$ equals the order of vanishing of the $L$-function; that is,
+        $$\ord_{s=1}L(E/F,s)=\rk E/F = r.$$
         \item The leading term of the Taylor series at $s=1$ of the $L$-function is given by 
-        \begin{equation}\label{BSD_2}
-            \lim_{s\to1}\frac{L(E/K,s)}{(s-1)^r}\cdot\frac{\sqrt{|\Delta_K|}}{\Omega_+(E)^{r_1+r_2}|\Omega_-(E)|^{r_2}}=\frac{\Reg_{E/K}|\Sha_{E/K}|C_{E/K}}{|E(K)_{\tors}|^2}.
+        \begin{equation}\label{BSD_2}\tag{BSD2}
+            \lim_{s\to1}\frac{L(E/F,s)}{(s-1)^r}\cdot\frac{\sqrt{|\Delta_F|}}{\Omega_+(E)^{r_1+r_2}|\Omega_-(E)|^{r_2}}=\frac{\Reg_{E/F}|\Sha_{E/F}|C_{E/F}}{|E(F)_{\tors}|^2}.
         \end{equation}
     \end{enumerate}
 \end{conj}
 
-We briefly explore the arithmetic invariants that appear as part of the statement of BSD2. Some of these invariants depend only on the number field $K$. These are the discriminant $\Delta_K$ of $K$ and the numbers $r_1$ and $r_2$, corresponding to the number of real and complex embeddings of $K$. A basic formula states that if $n=[K:\QQ]$, then $r_1+2r_2=n$. 
+We briefly explore the arithmetic invariants that appear as part of the statement of BSD2. Some of these invariants depend only on the number field $F$. These are the discriminant $\Delta_F$ of $F$ and the numbers $r_1$ and $r_2$, corresponding to the number of real and complex embeddings of $F$. A basic formula states that if $n=[F:\QQ]$, then $r_1+2r_2=n$. 
 
 The other factors are arithmetic values related to the elliptic curve $E$. Importantly, here we assume that $E$ has rational coefficients.
 
@@ -22,128 +22,35 @@ The other factors are arithmetic values related to the elliptic curve $E$. Impor
     \item \textbf{Periods: } For elliptic curves $E$ defined over $\QQ$, there is a conjugation map $E\to E$, $P\mapsto\bar{P}$. We then define $E(\CC)^+=\{P\in E:\bar{P}=P\}=E(\RR)$ and $E(\CC)^-=\{P\in E:\bar{P}=-P\}$. Then the $\pm$-periods of $E$ are 
     $$\Omega_+(E)=\int_{E(\CC)^+}\omega \quad\text{and}\quad\Omega_-(E)=\int_{E(\CC)^-}\omega,$$
     and orientation chosen so that $\Omega_+(E)\in\RR_{>0}$ and $\Omega_-(E)\in i\RR_{>0}$ .
-    \item \textbf{Torsion:} $|E(K)_{\tors}|$ is the size of the torsion subgroup of $E(K)$.
-    \item \textbf{Regulator:} To properly define the regulator one needs to carefully construct the canonical height $\hat{h}:E(\bar{K})\rightarrow\RR^+$, which roughly evaluates the `arithmetic complexity' of a given point $P\in E(\bar{K})$. We refer the reader to \cite[Chapter VIII: \S4, \S5, \S6 and \S9]{S1} for a complete discussion of this topic. This map satisfies many important properties (as listed in \cite[Chapter VIII, Theorem 9.3]{S1}), among which is the fact that $\hat{h}$ is a quadratic form; in particular, the pairing
+    \item \textbf{Torsion:} $|E(F)_{\tors}|$ is the size of the torsion subgroup of $E(F)$.
+    \item \textbf{Regulator:} To properly define the regulator one needs to carefully construct the canonical height $\hat{h}:E(\bar{F})\rightarrow\RR^+$, which roughly evaluates the `arithmetic complexity' of a given point $P\in E(\bar{F})$. We refer the reader to \cite[Chapter VIII: \S4, \S5, \S6 and \S9]{S1} for a complete discussion of this topic. This map satisfies many important properties (as listed in \cite[Chapter VIII, Theorem 9.3]{S1}), among which is the fact that $\hat{h}$ is a quadratic form; in particular, the pairing
     \begin{align*}
-        \langle\cdot,\cdot\rangle&:E(\bar{K})\times E(\bar{K})\longmapsto\RR\\
+        \langle\cdot,\cdot\rangle&:E(\bar{F})\times E(\bar{F})\longmapsto\RR\\
         \langle P,Q\rangle&=\hat{h}(P\oplus Q)-\hat{h}(P)-\hat{h}(Q)
     \end{align*}
-    is bilinear. Then the regulator is the volume of $E(K)/E(K)_{\tors}$ computed using the quadratic form $\hat{h}$. In other words, let $P_1,\ldots,P_r$ be generators of the group $E(K)/E(K)_{\tors}$. Then $$\Reg_{E/K}=\det(\langle P_i,P_j\rangle)_{1\leq i,j\leq r}$$
-    if $r\geq1$ and $\Reg_{E/K}=1$ if $r=0$.
+    is bilinear. Then the regulator is the volume of $E(F)/E(F)_{\tors}$ computed using the quadratic form $\hat{h}$. In other words, let $P_1,\ldots,P_r$ be generators of the group $E(F)/E(F)_{\tors}$. Then $$\Reg_{E/F}=\det(\langle P_i,P_j\rangle)_{1\leq i,j\leq r}$$
+    if $r\geq1$ and $\Reg_{E/F}=1$ if $r=0$.
     \item \textbf{Tate-Shafarevich group:} This is the most mysterious group and it is commonly defined using Galois cohomology as
-    $$\Sha_{E/K}=\ker\left[H^1(K,E)\rightarrow\prod_{\pp}H^1(K_\pp,E)\right],$$
-    where $H^1(F,E):=H^1(G_F,E(\bar{F}))$ and the implicit map is induced by the inclusions $G_{K_\pp}\emb G_K$. One can interpret $H^1(F,E)$ as `homogeneous spaces' of $E$ over $K$ up to equivalence. A homogeneous space over $K$ is trivial if and only if it has a $K$-rational point, so a non-trivial element of $\Sha_{E/F}$ is a homogeneous space that has points locally in every $K_\pp$ but has no $K$-rational point.
+    $$\Sha_{E/F}=\ker\left[H^1(F,E)\rightarrow\prod_{\pp}H^1(F_\pp,E)\right],$$
+    where $H^1(F,E):=H^1(G_F,E(\bar{F}))$ and the implicit map is induced by the inclusions $G_{F_\pp}\emb G_F$. One can interpret $H^1(F,E)$ as `homogeneous spaces' of $E$ over $F$ up to equivalence. A homogeneous space over $F$ is trivial if and only if it has a $F$-rational point, so a non-trivial element of $\Sha_{E/F}$ is a homogeneous space that has points locally in every $F_\pp$ but has no $F$-rational point.
 
-    \item \textbf{Local data:} The term $C_{E/K}$ is defined in terms of local data as 
+    \item \textbf{Local data:} The term $C_{E/F}$ is defined in terms of local data as 
     \begin{equation}\label{fudge-factor}
-    C_{E/K}=\prod_{\pp}c_\pp(E/K)\left|\frac{\omega}{\omega_\pp^{\min}}\right|_\pp
+    C_{E/F}=\prod_{\pp}c_\pp(E/F)\left|\frac{\omega}{\omega_\pp^{\min}}\right|_\pp
     \end{equation}
-    where $c_\pp(E/K)$ are the Tamagawa numbers of $E/K$ at a prime $\pp$ of $K$, as discussed in \S\ref*{subs_tamagawa}.
-    Here $\omega$ is the global minimal differential for $E / \bQ$, and $\omega_{\fp}^{\min}$ is the minimal differential at $\fp$. By $\omega / \omega_{\fp}^{\min}$ one means any scalar $\lambda \in K^{\times}$ with $\omega = \lambda \omega_{\fp}^{\min}$. In terms of minimal discriminants, one has
+    where $c_\pp(E/F)$ are the Tamagawa numbers of $E/F$ at a prime $\pp$ of $F$, as discussed in \S\ref*{subs_tamagawa}.
+    Here $\omega$ is the global minimal differential for $E / \bQ$, and $\omega_{\fp}^{\min}$ is the minimal differential at $\fp$. By $\omega / \omega_{\fp}^{\min}$ one means any scalar $\lambda \in F^{\times}$ with $\omega = \lambda \omega_{\fp}^{\min}$. In terms of minimal discriminants, one has
     \[ \left| \frac{\omega}{\omega_{\fp}^{\min}} \right|_{\fp}^{-12} = \left|\frac{\Delta_E}{\Delta_{E, \pp}^{\min}} \right|_{\fp}, \]
     where $\Delta_{E, \pp}^{\min}$ is the minimal discriminant at $\fp$.    
 \end{enumerate}
 
-The following result will be helpful to compute the $C_{E / K}$ terms in explicit examples.
-
-    \begin{lemma}\label{lem_Dterms}
-        Let $E$ be an elliptic curve over a number field $K$, $F/K$ a finite extension. Let $\pp$ be a prime in $K$ and $\fP$ a prime in $F$ above $\pp$. Let $q$ be the size of the residue field of $K$ at $\fp$. %Denote by $e_{\fP \mid \fp}$, $f_{\fP \mid \fp}$ the ramification index and residue degree of $F_{\fP} / K_{\fp}$. 
-
-        Let $\Delta_\pp$, $\omega_{\pp}$ and $\Delta_\fP$, $\omega_{\fP}$ be the minimal discriminants and differentials for $E/K_\pp$ and $E/F_\fP$, respectively. Then the following holds.
-        \begin{enumerate}[(i)]
-            \setlength\itemsep{0em}
-            \item If $\pp$ is unramified at $F/K$ or if $E$ has good or multiplicative reduction at $\pp$, then the minimal model of $E / K_{\fp}$ and $E / F_{\fP}$ coincide so $| \omega_{\fp} / \omega_{\fP} |_{\fP} = 1$. 
-            
-            \item If the residual characteristic is distinct from $2$ or $3$, and $E$ has potentially good reduction, then $v_\pp(\Delta_\pp)<12$ and the same holds for $\fP$. In particular, 
-            $$\left|\frac{\omega_{\fp}}{\omega_{\fP}}\right|_{\fP} = q^{f_{\fP \mid \fp}\cdot\floor{\frac{e_{\fP\mid\fp}\nu_\fp(\Delta_\fp)}{12}}}.$$
-            \item If the residual characteristic is distinct from $2$ or $3$, and $E / K_{\fp}$ has potentially multiplicative reduction then 
-            $$ \left|\frac{\omega_{\fp}}{\omega_{\fP}}\right|_{\fP} = q^{f_{\fP \mid \fp} \cdot \floor{\frac{e_{\fP \mid \fp}}{2}}}.$$
-        \end{enumerate}
-    \end{lemma}
-
-\begin{proof}[Proof Sketch]
-    Let $e = e_{\fP \mid \fp}$, $f = f_{\fP \mid \fp}$, $\delta = v_{\fp}(\Delta_{\fp})$ and $\delta_{\fP} = v_{\fP}(\Delta_{\fP})$. Then $v_{\fP}(\Delta_{\fp}) = e n$. Thus $|\Delta_{\fp} / \Delta_{\fP} |_{\fP} = q^{f\cdot (\delta \cdot e - \delta_{\fP})}$, whence $$\left| \frac{\omega_{\fp}}{\omega_{\fP}}\right|_{\fP} = q^{f \cdot \floor{\frac{\delta \cdot e - \delta_{\fP}}{12}}}.$$ 
-    \begin{enumerate}[(i)]
-        \setlength\itemsep{0em}
-        \setcounter{enumi}{1}
-        \item If $E / K_{\fp}$ has potentially good reduction then $\delta \in \{ 2,3,4,6,8,9,10 \}$ and $\delta_{\fP} \leq 12$. By reducing to minimal Weierstrass equation for $E / F_{\fP}$ it follows that $\delta_{\fP} = \delta\cdot e - 12 \cdot \floor{\delta\cdot e / 12}$.
-        
-        \item Let $E / K_p$ have Kodaira type $\I_n^*$, so $\delta = 6 + n$. If $e$ is even then $E / F_{\fP}$ has Kodaira type $\I_{en}$, so $\delta_{\fP} = en$ and $\delta \cdot e - \delta_{\fP} = 6 e$.
-        Else if $e$ is odd, $E / F_{\fP}$ has Kodaira type $\I_{en}^*$ so $\delta_{\fP} = 6 + en$ and $\delta\cdot e - \delta_{\fP} = 6 e - 6$. But then $\floor{(6e - 6)/12} = \floor{(e - 1)/2} = \floor{e / 2}$ since $e$ is odd.
-    \end{enumerate}
-\end{proof}
-
-We will spend some time computing the local terms for families of elliptic curves, so we introduce some more notation that will be used throughout. 
-
-\begin{notation}\label{not_contr}
-    Let $E$ be an elliptic curve defined over $\QQ$ and let $F/K$ be a finite extension of number fields. For each finite place $\pp$ of $K$, we write the \textbf{local contribution of $\pp$} as 
-    %$$T_{\mathfrak{P}\mid\pp}(E/F)=\prod_{\mathfrak{P}\mid\pp}c_\mathfrak{P}(E/F)\quad\text{and}\quad D_{\mathfrak{P}\mid\pp}(E/F)=\prod_{\mathfrak{P}\mid\pp}\left|\frac{\Delta_{E,\mathfrak{P}}^{\min}}{\Delta_E}\right|_\mathfrak{P}^{\frac{1}{12}},$$
-    $$T_{\mathfrak{P}\mid\pp}(E/F)=\prod_{\mathfrak{P}\mid\pp}c_\mathfrak{P}(E/F),\quad D_{\mathfrak{P}\mid\pp}(E/F)=\prod_{\mathfrak{P}\mid\pp}\left|\frac{\Delta_{E,\mathfrak{P}}^{\min}}{\Delta_E}\right|_\mathfrak{P}^{\frac{1}{12}}$$ 
-    and $C_{\fP\mid\fp}(E/F)=T_{\fP\mid\fp}(E/F)D_{\fP\mid\fp}(E/F)$, where the product ranges over primes $\fP$ of $F$ over $\pp$. 
-
-    We are ultimately interested in computing the global contrbutions from the terms above, so we also introduce notation for them. With the same notation as above, we denote the \textbf{global contribution over $F$} of the Tamagawa numbers and the discrimiant terms as 
-    $$T(E/F)=\prod_\pp T_{\fP\mid\pp}(E/F)=\prod_\fP c_\fP(E/F)\quad\text{and}\quad D(E/F)=\prod_\pp D_{\fP\mid\pp}(E/F)=\prod_\fP \left|\frac{\Delta_{E,\mathfrak{P}}^{\min}}{\Delta_E}\right|_\mathfrak{P}^{\frac{1}{12}}$$ 
-
-\end{notation}
-
-An immediate consequence of this notation is the fact that $C_{E/F}=T(E/F)D(E/F)$.
-Observe that if $E$ has good reduction over $\pp$, then $T_{\mathfrak{P}\mid\pp}(E/F)=D_{\mathfrak{P}\mid\pp}(E/F)=1$ for any finite extension $F$ of $K$. 
-
-\begin{defn}\label{not_contr_fns}
-    If $G = \Gal(F / \bQ)$ then for $p \in \bQ$ we define functions $T_{\fP \mid p}$, $D_{\fP \mid p}$ and $C_{\fP \mid p}$ on $\B(G)$ by 
-    \[ T_{\fP \mid p}(H) = T_{\fP \mid p}(E / F^H), \quad D_{\fP \mid p}(H) = D_{\fP \mid p}(E / F^H), \quad C_{\fP \mid p}(H) = C_{\fP \mid p}(E / F^H). \]
-    Note that if $H$, $H'$ are conjugate then $F^H$, $F^{H'}$ are isomorphic, and so the values of these functions are constant on conjugate subgroups, hence they are well-defined. Define $C \colon \B(G) \to \bQ^{\times}$ by $C \colon H \mapsto C_{E / F^H}$.  
-\end{defn}
-    
-    Note that $C_{\fP \mid p}$ is a $D_p$-local function. Indeed, suppose $D_p = \Gal(F_w / \bQ_p)$, where $F_w$ denotes the completion of $F$ with respect to a place $w$ lying above $p$. For a number field $K$ and place $v$, define $$C_v(E / K) = c_v(E / K) \cdot \left| \omega / \omega_v^{\min} \right|_v.$$ We use the same notation if $K$ is a local field (then the $v$ subscript holds no meaning).
-    One has
-    \begin{equation*}
-    C_{\fP \mid p} = (D_p, C_v)
-    \end{equation*}
-    where $C_v$ is a function on $\B(D_p)$ sending $H \mapsto C_v(E / F_w^H)$.
-
- The following proposition describes these functions in the language introduced in Section \ref{sec-norm-rels} for each reduction type of $E / \bQ$. We do not attempt to write a formula for $T_{\fP \mid \fp}$ in the case of additive reduction, computing this involves using Lemma \ref{lem_add_tam}.
-
- \begin{prop}\label{prop_local_fns}
-    Let $E / \bQ$ be an elliptic curve, $G = \Gal(F / \bQ)$ and $p$ a prime of $\bQ$. Let $n = v_p(\Delta_E)$. Consider the functions $C_{\fP \mid p}$, $T_{\fP \mid p}$, and $D_{\fP \mid p}$ on $\B(G)$ defined above. Then,
-    \begin{enumerate}[(i)]
-        \setlength\itemsep{0em}
-        \item If $E / \bQ_p$ has good reduction, $C_{\fP \mid p} = 1$,
-        \item If $E / \bQ_p$ has split multiplicative reduction then $C_{\fP \mid p} = T_{\fP \mid \fp} = (D_p, I_p, e n)$,
-        \item If $E / \bQ_p$ has non-split multiplicative reduction, 
-        $C_{\fP \mid p} = T_{\fP \mid \fp} = \left(D_p, I_p,
-        \left\{\begin{smallmatrix}
-            2   & 2 \mid en, 2 \nmid f,  \\
-            en   &  2 \mid f, \\
-            1   & \text{else}
-        \end{smallmatrix}\right.\right),$ 
-        \item If $E / \bQ_p$ has potentially good reduction and $p \not= 2, 3$, $D_{\fP \mid p} = (D_p, I_p, p^{f \floor{e n /12}})$, 
-        \item If $E / \bQ_p$ has potentially multiplicative reduction and $p \not= 2, 3$, $D_{\fP \mid p} = (D_p, I_p, p^{f \floor{e / 2}})$.
-    \end{enumerate}  
- \end{prop} 
- 
- \begin{proof}
-    \
-\begin{enumerate}[(i)]
-    \setlength\itemsep{0em}
-    \item Clear. 
-    \item Lemma \ref{lem_Dterms}(i) implies $D_{\fP \mid p} = 1$. If $K' / \bQ_p$ is a finite extension of ramification degree $e$, then $E / K'$ has split multiplicative reduction of type $\I_{en}$, which has Tamagawa number $en$ by Lemma \ref{lem_mult_tam}.
-    \item As for split, $D_{\fP \mid p} = 1$. The description follows from applying Proposition \ref{prop_semi_red} (iii) (non-split becomes split when the residue degree is even), and Lemma \ref{lem_mult_tam}. 
-    \item Follows from Lemma \ref{lem_Dterms}(ii),
-    \item Follows from Lemma \ref{lem_Dterms}(iii).
-\end{enumerate}
- \end{proof}
-%An immediate consequence of this notation is the fact that 
-%$$C_{E/F}=\prod_{\pp}C_{\mathfrak{P}\mid \pp}(F/K);$$
-%that is, we can calculate $C_{E/F}$ by calculating the contribution locally at each prime of $K$. 
-%{\color{red} also important to mention at some point that if the reduction is semistable, then the terms in a norm relation coming from the discriminant also vanish. Probably this would have to be introduced later.}
 We remark that the way we have organised the terms in \eqref{BSD_2} is not arbitrary, and in fact we give specific notation to both sides of the equation. 
 
 \begin{notation}
-    Let $E/\QQ$ be an elliptic curve and $K$ a number field. We define 
-    $$\mathcal{L}(E/K)=\lim_{s\to1}\frac{L(E/K,s)}{(s-1)^r}\cdot\frac{\sqrt{|\Delta_K|}}{\Omega_+(E)^{r_1+r_2}|\Omega_-(E)|^{r_2}}$$
+    Let $E/\QQ$ be an elliptic curve and $F$ a number field. We define 
+    $$\mathcal{L}(E/F)=\lim_{s\to1}\frac{L(E/F,s)}{(s-1)^r}\cdot\frac{\sqrt{|\Delta_F|}}{\Omega_+(E)^{r_1+r_2}|\Omega_-(E)|^{r_2}}$$
     and
-    $$\BSD(E/K)=\frac{\Reg_{E/K}|\Sha_{E/K}|C_{E/K}}{|E(K)_{\tors}|^2}.$$
+    $$\BSD(E/F)=\frac{\Reg_{E/F}|\Sha_{E/F}|C_{E/F}}{|E(F)_{\tors}|^2}.$$
 \end{notation}
 
 
