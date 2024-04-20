@@ -1,12 +1,12 @@
 \subsection{Local Polynomials and L-functions}
-We now briefly discuss how to attach analytic objects to Artin and $\ell$-adic reperesentations. These objects are usually described for local fields of characteristic $0$ first. Then, one constructs global objects attached to number fields by completing them at their finite places, obtaining the local information and then combinining it appropiately. 
+We now briefly discuss how to attach analytic objects to Artin and $\ell$-adic representations. These objects are usually described for local fields of characteristic $0$ first. Then, one constructs global objects attached to number fields by completing them at their finite places, obtaining the local information and then combining it appropriately. 
 
-To begin, let $K$ be a local field with $0$ characteristic and let $p$ be the characteristic of the residue field $\kappa$. Let $\rho:G_K\to\GL(V)$ be an Artin or $\ell$-adic representation such that $\ell\neq p$ (this is an important technical assumption that we will not discuss further). It is a fundamental resut in algebraic number theory that the natural map 
+To begin, let $K$ be a local field with $0$ characteristic and let $p$ be the characteristic of the residue field $\kappa$. Let $\rho:G_K\to\GL(V)$ be an Artin or $\ell$-adic representation such that $\ell\neq p$ (this is an important technical assumption that we will not discuss further). It is a fundamental result in algebraic number theory that the natural map 
 $$\epsilon:\Gal(\bar{K}/K)\longrightarrow\Gal(\bar{\kappa}/\kappa)$$
 is surjective, and $I_K:=\ker\epsilon$ is denoted as the inertia group of $K$. Therefore, we have a short exact sequence
 $$0\longrightarrow I_K\longrightarrow \Gal(\bar{K}/K)\xlongrightarrow{\epsilon} \Gal(\bar{\kappa}/\kappa)\longrightarrow 0.$$
 
-In addition, the map $\phi\in\Gal(\bar\kappa/\kappa)$ such that $\phi(x)=x^p$ is a topological generator of $\Gal(\bar\kappa/\kappa)$ and any preimage of $\phi$ under $\epsilon$ is called a Frobenius element $\Frob_K$, which is well-defined up to $I_K$. Furthermore, the space of intertia-invariants 
+In addition, the map $\phi\in\Gal(\bar\kappa/\kappa)$ such that $\phi(x)=x^p$ is a topological generator of $\Gal(\bar\kappa/\kappa)$ and any preimage of $\phi$ under $\epsilon$ is called a Frobenius element $\Frob_K$, which is well-defined up to $I_K$. Furthermore, the space of inertia-invariants 
 $$V^{I_K}:=\{v\in V:\rho(g)v=v\text{ for all }g\in I_K\}$$
 is naturally a $G_K/I_K$ representation, which we denote $\rho^{I_K}$. In this setting, $\rho^{I_K}(\Frob_K)$ is therefore well-defined. We are now ready to define the local polynomial attached to $\rho$.
 
@@ -15,7 +15,7 @@ is naturally a $G_K/I_K$ representation, which we denote $\rho^{I_K}$. In this s
     $$P(\rho,T):=\det\left(I-T\cdot\rho^{I_K}\left(\Frob_K^{-1}\right)\right).$$  
 \end{defn}
 
-If $K$ is instead a number field, the idea is to consider all finite places of $K$ and consider all the local polynomials attached to all local completions of $K$ to build the corresponding L-function. More concretely, let $\rho:G_K\to\GL(V)$ be an Artin or $\ell$-adic representation, let $\pp$ be a finite place of $K$ and let $K_\pp$ be the corresponding completion. Since $G_{K_\pp}=\Gal(\bar{K_\pp}/K_\pp)$ is naturally a subgroup of $G_K$, we can restrict $\rho$ to $\Res_\pp\rho:G_{K_\pp}\to\GL(V)$ and then calculate the corresponding local polynomial as long as $\pp$ and $\ell$ are coprime. If $\rho$ is an Artin representation, this allows us to construct the associalted $L$-function.
+If $K$ is instead a number field, the idea is to consider all finite places of $K$ and consider all the local polynomials attached to all local completions of $K$ to build the corresponding L-function. More concretely, let $\rho:G_K\to\GL(V)$ be an Artin or $\ell$-adic representation, let $\pp$ be a finite place of $K$ and let $K_\pp$ be the corresponding completion. Since $G_{K_\pp}=\Gal(\bar{K_\pp}/K_\pp)$ is naturally a subgroup of $G_K$, we can restrict $\rho$ to $\Res_\pp\rho:G_{K_\pp}\to\GL(V)$ and then calculate the corresponding local polynomial as long as $\pp$ and $\ell$ are coprime. If $\rho$ is an Artin representation, this allows us to construct the associated $L$-function.
 
 \begin{defn}
     Let $K$ be a number field and $\rho$ an Artin representation over $K$. If $\pp$ is a finite place of $K$, we denote the local polynomial at $\pp$ as 

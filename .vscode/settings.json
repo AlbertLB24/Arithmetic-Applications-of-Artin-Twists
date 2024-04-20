@@ -1,10 +1,12 @@
 {
     "cSpell.words": [
         "abelian",
+        "adic",
         "Artin",
         "behaviour",
         "bius",
         "Brauer",
+        "characterises",
         "cokerenels",
         "cokernels",
         "consts",
@@ -24,7 +26,12 @@
         "mathfra",
         "mathfrak",
         "Mordell",
+        "neighbourhood",
+        "neighbourhoods",
+        "nonsingular",
+        "profinite",
         "quotiened",
+        "realise",
         "Schur",
         "Selmer",
         "semidirect",
@@ -38,6 +45,7 @@
         "Swinnerton",
         "Tamagawa",
         "uniformizer",
+        "uniformizers",
         "unramified",
         "Vect",
         "Weil"

@@ -46,12 +46,12 @@ The first step towards proving this theorem is to show that if the theorem holds
     In Proposition \ref{index-fn-trivial} we showed that if $\QQ(\rho)\nsubseteq \QQ(\zeta_d)=\QQ(\psi_k)$, then $a_k$ was even, so if $a_k$ is odd, then $\QQ(\rho)\subseteq\QQ(\zeta_k)$. If $\QQ(\sqrt{D})$ is a quadratic subfield of $\QQ(\rho)$, then $C(\Theta_{\psi_k})$ is a norm from $\QQ(\sqrt{D})$ whenever $a_k$ is odd. This implies that $C(\Theta_\rho)$ is a norm from $\QQ(\sqrt{D})$ too, and thus Theorem \ref{thm_consistent_cyclic} holds.
 \end{proof}
 
-This lemma has the great advantage that it allows us to restrict our attention to faithful characters of $C_d$. To simplify notatation, we will denote $\Theta_d=\sum_{k\mid d}\mu(k)C_k\in B(C_d)$ as the $\psi_d$-relation, where $\psi_d$ is a faithful character of $C_d$.
+This lemma has the great advantage that it allows us to restrict our attention to faithful characters of $C_d$. To simplify notation, we will denote $\Theta_d=\sum_{k\mid d}\mu(k)C_k\in B(C_d)$ as the $\psi_d$-relation, where $\psi_d$ is a faithful character of $C_d$.
 
 \begin{rem}\label{rem_radical}
     Lemma \ref{lem_relation} has an important consequence. Given an integer $d\geq2$, note that a subgroup $C_k$ appears in $\Theta_d$ if and only if $C_k\leq C_{\rad(d)}$. Consequently, in terms of fields, if $L_k=F^{C_{d/k}}$ is the unique intermediate field with $[L_k:\QQ]=k$ for each $k\mid d$, then $C(\Theta_d)$ contains the local factors of $L_k$ if and only if $L_{d/\rad(d)}\subseteq L_k\subseteq F$.
 
-    Following this observation, we will compute $T(\Theta_d)$ and $D(\Theta_d)$ by computing locally $\Tp(\Theta_d)$ and $\Tp(\Theta_d)$ for each prime $\pp$ of some conveniently chosen subfield $L_k\subseteq L_{d/\rad(d)}$, and then combinining this local information via the formula
+    Following this observation, we will compute $T(\Theta_d)$ and $D(\Theta_d)$ by computing locally $\Tp(\Theta_d)$ and $\Tp(\Theta_d)$ for each prime $\pp$ of some conveniently chosen subfield $L_k\subseteq L_{d/\rad(d)}$, and then combining this local information via the formula
     \begin{equation}\label{eqn_local_contr}
         T(\Theta_d)=\prod_{\pp}\Tp(\Theta_d)=\prod_\pp\left(\prod_{k\mid d} \Tp(C_k)^{\mu(k)}\right),    
     \end{equation}
@@ -72,7 +72,7 @@ To compute $\Tp(\Theta_d)$ for multiplicative reduction, the following notation 
 \end{notation}
 Therefore, if $E$ is an elliptic curve with multiplicative reduction at some prime $\pp$ of $K$ and $n=\nu_\pp(\Delta_{E,\pp}^{\min})$, then $c_\pp(E/K)=n$ if the reduction is split and $c_\pp(E/K)=\tilde{n}$ if non-split.
 
-We divide the proof of Theorem \ref{thm_consistent_cyclic} for faithful characters into two separate cases: odd and even cyclic extensions. The main idea in both cases is to simplify the general case into smaller cases where we can directly compute $\Cp(\Theta_d)$ for each finite place $\pp$ of $K$. Unless stated otherwise, we assume thoughout that $$\Theta_d=\sum_{k\mid d}\mu(k)C_k\in B(C_d).$$
+We divide the proof of Theorem \ref{thm_consistent_cyclic} for faithful characters into two separate cases: odd and even cyclic extensions. The main idea in both cases is to simplify the general case into smaller cases where we can directly compute $\Cp(\Theta_d)$ for each finite place $\pp$ of $K$. Unless stated otherwise, we assume throughout that $$\Theta_d=\sum_{k\mid d}\mu(k)C_k\in B(C_d).$$
 
 
 
