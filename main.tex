@@ -7,7 +7,7 @@
 %\usepackage{enumerate}
 \usepackage[shortlabels]{enumitem}
 \usepackage{amsfonts, amsmath, amsthm, amssymb, float, mathtools, bbm, etoolbox, xcolor, enumitem}
-\usepackage[hyperfootnotes=false]{hyperref}
+\usepackage[hyperfootnotes=false, linktocpage=true]{hyperref}
 %\usepackage{soul, matlab-prettifier, multirow, varwidth, array, bm, amssymb}
 %\usepackage[all]{xy}
 \usepackage[margin=1.3in]{geometry}
@@ -143,13 +143,16 @@
 
 \title{Arithmetic Applications of Artin Twist and BSD}
 \author{Edwina Aylward, Albert Lopez Bruch}
+%\date{}
 
 \begin{document}
-	\maketitle
-	\pagenumbering{arabic}
-	\newpage
+	\maketitle	\thispagestyle{empty}
+	%\newpage
+	{\abstract{dooo ba dee dooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo ba deedooo}}
 	\tableofcontents
-	\newpage
+	\pagenumbering{arabic}	
+	\setcounter{page}{1}
+	%\newpage
 
 \section{Introduction}
 \input{intro.tex}
@@ -167,7 +170,7 @@
 \input{section_BSD/BSD_conj.tex}
 
 \newpage
-\section{Predicting Positive Rank}
+\section{Predicting Positive Rank}\label{sec-pos-rank}
 \input{section_rank/positive_rank.tex}
 
 \newpage

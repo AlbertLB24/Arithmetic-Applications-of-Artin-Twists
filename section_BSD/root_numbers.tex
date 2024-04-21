@@ -1,13 +1,17 @@
-\subsection{Parity Tests vs. Norm Relations Tests}
-Root numbers (conjecturally) govern the parity of the rank of an elliptic curve. Let $K$ be a number field and $E / K$ an elliptic curve. The parity conjecture states that the rank of $E / K$ is determined by the global root number $w(E / K) \in \{ \pm 1 \}$, that is
+\subsection{Root Numbers and The Parity Conjecture}
+
+Root numbers (conjecturally) govern the parity of the rank of an elliptic curve. In this subsection, we briefly discuss root numbers and the parity conjecture. In $\S\ref{sec-pos-rank}$, we will compare using root number computations to another means of forcing positive rank for an elliptic curve, as described in Theorem \ref{thm_positive_rank}. One can learn more about root numbers in {\color{red} insert a general reference}. We omit the notation, but descriptions of the completed $L$-functions for $L(E / K, s)$ and $L(E / K, \rho, s)$ can be found in {\color{red} reference}.\\
+
+
+Let $K$ be a number field and $E / K$ an elliptic curve. The parity conjecture states that the rank of $E / K$ is determined by the global root number $w(E / K) \in \{ \pm 1 \}$, that is
 
 \begin{conj}[Parity conjecture]\label{parity}
     $(-1)^{\rk E / K} = w(E / K).$
 \end{conj}
 
-In particular if $w(E / K) = -1$, one has that $\rk E / K$ is odd, and so $\rk E / K > 0$. Therefore the computation of root numbers provides a test for forcing positive rank. The parity conjecture follows from assuming BSD and the Hasse--Weil conjecture. 
+In particular if $w(E / K) = -1$, one has that $\rk E / K$ is odd, and so $\rk E / K > 0$. Therefore the computation of root numbers provides a test for forcing positive rank. We note that parity conjecture follows from assuming BSD and the Hasse--Weil conjecture: 
 
-\begin{conj}[Hasse--Weil conjecture]
+\begin{conj}[Hasse--Weil conjecture]{\color{red} find ref}
     $L(E / K, s)$ has a completed $L$-function 
     $\hat{L}(E / K, s)$ that can be analytically continued to $\bC$ and satisfies the following functional equation:
     \[ \hat{L}(E / K, s) = w(E / K) \hat{L}(E / K, 2- s) .\]
@@ -43,7 +47,7 @@ There is also a global root number for the twist of $E$ by an Artin representati
    Let $\rho$ be a self-dual Artin representation that factors through $\Gal(K / \bQ)$. Then $$ w(E / K, \rho) = (-1)^{\langle \rho, E(K)_{\bC} \rangle}.$$
 \end{conj}
 
-Again this is the product of local root numbers; $w(E / K, \rho) = \prod_v w(E / K_v, \rho)$, $w(E / K_v, \rho) \in \{ \pm 1\}$. The twisted root numbers satisfy the following properties:
+Again this is the product of local root numbers; $w(E / K, \rho) = \prod_v w(E / K_v, \rho)$, where $w(E / K_v, \rho) \in \{ \pm 1\}$. The twisted root numbers satisfy the following properties:
 
 \begin{prop}\cite[Lemma A.1, Proposition A.2]{reg-const}\label{compute-root-twist}
     Let $E / K$ be an elliptic curve, $L / K$ a finite Galois extension with Galois group $G$. Let $\rho$, $\tau$ be Artin representations over $K$ that factor through $G$ and let $\trivial$ denote the trivial Artin representation over $K$. Then
@@ -54,19 +58,6 @@ Again this is the product of local root numbers; $w(E / K, \rho) = \prod_v w(E /
         \item If $H \leq G$ then $w(E / L^H) = w(E/ K, \Ind_{H}^G \trivial)$, 
         \item $w(E / K, \rho \oplus \rho^*) = 1$.
     \end{enumerate}
-    
 \end{prop}
 
-Now let us justify the title of this subsection. We have seen that both Theorem \ref{thm_positive_rank} and Conjecture \ref{parity} can force the rank of an elliptic curve to be positive. One can observe that for the examples in the next subsection, whenever our norm relations test forces rank growth, a root number computation for the subfields appearing in our relation also implies positive rank. It would be a lot more interesting if we could find an example where the norm relations test forces positive rank and root numbers do not, but unfortunately we have not been able to do so. 
-
-By Proposition \ref{compute-root-twist}, for $H \leq G = \Gal(L / K)$, 
-\[ \Ind_{H}^G \trivial \simeq \trivial\oplus \bigoplus_i \rho_i  \implies w(E / L^H) = w(E / K)\prod_i w(E / K, \rho_i) \] for some representations $\rho_i $ of $G $. Hence a change in parity from $w(E / K)$ to $w(E / L^H)$ is determined by $\prod_i w(E / K, \rho_i)$.
-
-{\color{red} ADD MORE}
-%{\color{red} On the other hand ... root numbers should help us determine what the regulators look like ... and we could put them into our factors... maybe talk about this in a conclusion / outlook?}
-
-\begin{conj}
-Consider an elliptic curve $E / \bQ$, $F / \bQ$ a finite Galois extension, and relation 
-$$\left(\bigoplus_{\mathfrak{g}\in\Gal(\QQ(\rho)/\QQ)}\rho^{\mathfrak{g}}\right)^m=\bigoplus_i\Ind_{F_i/\QQ}\mathds{1}\ominus\bigoplus_j\Ind_{F'_j/\QQ}\mathds{1}$$
-as in Theorem \ref{thm_positive_rank}. If the product $\frac{\prod_i C_{E/F_i}}{\prod_j C_{E/F'_j}}$ is not a norm from some quadratic subfield $\QQ(\sqrt{D})\subseteq\QQ(\rho)$, or if it is not a rational square when $m$ is even, then there exists a self-dual Artin representation $\tau$ of $G$ such that $w(E / \bQ, \tau) = -1 $. 
-\end{conj}
+Therefore, similarly to the $L$-function of $E / K$, one can factor the root number $w(E / K)$ into twisted root numbers.

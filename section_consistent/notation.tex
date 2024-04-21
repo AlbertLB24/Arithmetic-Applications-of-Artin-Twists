@@ -29,28 +29,16 @@ In previous sections, we have discussed the behaviour of Tamagawa numbers of ell
     \end{enumerate}
 \end{proof}
 
-Following this result, we introduce some notation that will be very useful to compute the local factors $C_{E/F}$ while using the representation theoretic language discussed in Section \ref{sec_norm}.
-
-\begin{notation}\label{not_contr}
-    Let $E$ be an elliptic curve defined over $\QQ$ and let $F/K$ be a finite extension of number fields. For each finite place $\pp$ of $K$, we write the \textbf{local contribution of $\pp$} as 
-    %$$T_{\mathfrak{P}\mid\pp}(E/F)=\prod_{\mathfrak{P}\mid\pp}c_\mathfrak{P}(E/F)\quad\text{and}\quad D_{\mathfrak{P}\mid\pp}(E/F)=\prod_{\mathfrak{P}\mid\pp}\left|\frac{\Delta_{E,\mathfrak{P}}^{\min}}{\Delta_E}\right|_\mathfrak{P}^{\frac{1}{12}},$$
-    $$T_{\mathfrak{P}\mid\pp}(E/F)=\prod_{\mathfrak{P}\mid\pp}c_\mathfrak{P}(E/F),\quad D_{\mathfrak{P}\mid\pp}(E/F)=\prod_{\mathfrak{P}\mid\pp}\left|\frac{\Delta_{E,\mathfrak{P}}^{\min}}{\Delta_E}\right|_\mathfrak{P}^{\frac{1}{12}}$$ 
-    and $C_{\fP\mid\fp}(E/F)=T_{\fP\mid\fp}(E/F)D_{\fP\mid\fp}(E/F)$, where the product ranges over primes $\fP$ of $F$ over $\pp$. 
-
-    We are ultimately interested in computing the global contributions from the terms above, so we also introduce notation for them. With the same notation as above, we denote the \textbf{global contribution over $F$} of the Tamagawa numbers and the discriminant terms as 
-    $$T(E/F)=\prod_\pp T_{\fP\mid\pp}(E/F)=\prod_\fP c_\fP(E/F)\quad\text{and}\quad D(E/F)=\prod_\pp D_{\fP\mid\pp}(E/F)=\prod_\fP \left|\frac{\Delta_{E,\mathfrak{P}}^{\min}}{\Delta_E}\right|_\mathfrak{P}^{\frac{1}{12}}.$$ 
-
-\end{notation}
-
-An immediate consequence of this notation is the fact that $C_{E/F}=T(E/F)D(E/F)$.
-Observe that if $E$ has good reduction over $\pp$, then $T_{\mathfrak{P}\mid\pp}(E/F)=D_{\mathfrak{P}\mid\pp}(E/F)=1$ for any finite extension $F$ of $K$. 
+Now we extend the notation introduced in Notation \ref{not_contr} by defining functions on $\B(G)$. 
 
 \begin{defn}\label{not_contr_fns}
-    If $G = \Gal(F / \bQ)$ then for $p \in \bQ$ we define functions $T_{\fP \mid p}$, $D_{\fP \mid p}$ and $C_{\fP \mid p}$ on $\B(G)$ by 
-    \[ T_{\fP \mid p}(H) = T_{\fP \mid p}(E / F^H), \quad D_{\fP \mid p}(H) = D_{\fP \mid p}(E / F^H), \quad C_{\fP \mid p}(H) = C_{\fP \mid p}(E / F^H). \]
-    Note that if $H$, $H'$ are conjugate then $F^H$, $F^{H'}$ are isomorphic, and so the values of these functions are constant on conjugate subgroups, hence they are well-defined. Define $C \colon \B(G) \to \bQ^{\times}$ by $C \colon H \mapsto C_{E / F^H}$.  
+    If $G = \Gal(F / K)$ then for $\fp \in \bQ$ we define functions $T_{\fP \mid \fp}$, $D_{\fP \mid \fp}$ and $C_{\fP \mid \fp}$ on $\B(G)$ by 
+    \[ T_{\fP \mid \fp}(H) = T_{\fP \mid \fp}(E / F^H), \quad D_{\fP \mid \fp}(H) = D_{\fP \mid \fp}(E / F^H), \quad C_{\fP \mid \fp}(H) = C_{\fP \mid \fp}(E / F^H), \]
+    as defined in Notation \ref{not_contr}.
+    Note that if $H$, $H'$ are conjugate then $F^H$, $F^{H'}$ are isomorphic, and so the values of these functions are constant on conjugate subgroups, hence they are well-defined. When $K = \bQ$ we write $p$ instead of $\fp$. Define $C \colon \B(G) \to \bQ^{\times}$ by $C \colon H \mapsto C_{E / F^H}$.  
 \end{defn}
-    
+ 
+{\color{red} EHHHH maybe I need to change some of this to be more general}
 Note that $C_{\fP \mid p}$ is a $D_p$-local function. Indeed, suppose $D_p = \Gal(F_w / \bQ_p)$, where $F_w$ denotes the completion of $F$ with respect to a place $w$ lying above $p$. For a number field $K$ and place $v$, define $$C_v(E / K) = c_v(E / K) \cdot \left| \omega / \omega_v^{\min} \right|_v.$$ We use the same notation if $K$ is a local field (then the $v$ subscript holds no meaning).
 One has
 \begin{equation*}
@@ -58,16 +46,16 @@ One has
 \end{equation*}
 where $C_v$ is a function on $\B(D_p)$ sending $H \mapsto C_v(E / F_w^H)$.
 
-The following proposition describes these functions in the language introduced in Section \ref{sec-norm-rels} for each reduction type of $E / \bQ$. We do not attempt to write a formula for $T_{\fP \mid \fp}$ in the case of additive reduction, computing this involves using Lemma \ref{lem_add_tam}.
+The following proposition describes these functions in the language introduced in Section \ref{sec-norm-rels} for each reduction type of $E / \bQ$. We do not attempt to write a formula for $T_{\fP \mid p}$ in the case of additive reduction, computing this involves using Lemma \ref{lem_add_tam}.
 
 \begin{prop}\label{prop_local_fns}
     Let $E / \bQ$ be an elliptic curve, $G = \Gal(F / \bQ)$ and $p$ a prime of $\bQ$. Let $n = v_p(\Delta_E)$. Consider the functions $C_{\fP \mid p}$, $T_{\fP \mid p}$, and $D_{\fP \mid p}$ on $\B(G)$ defined above. Then,
     \begin{enumerate}[(i)]
         \setlength\itemsep{0em}
         \item If $E / \bQ_p$ has good reduction, $C_{\fP \mid p} = 1$,
-        \item If $E / \bQ_p$ has split multiplicative reduction then $C_{\fP \mid p} = T_{\fP \mid \fp} = (D_p, I_p, e n)$,
+        \item If $E / \bQ_p$ has split multiplicative reduction then $C_{\fP \mid p} = T_{\fP \mid p} = (D_p, I_p, e n)$,
         \item If $E / \bQ_p$ has non-split multiplicative reduction, 
-        $C_{\fP \mid p} = T_{\fP \mid \fp} = \left(D_p, I_p,
+        $C_{\fP \mid p} = T_{\fP \mid p} = \left(D_p, I_p,
         \left\{\begin{smallmatrix}
             2   & 2 \mid en, 2 \nmid f,  \\
             en   &  2 \mid f, \\
