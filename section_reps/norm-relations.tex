@@ -1,7 +1,6 @@
 \subsection{Functions on the Burnside Ring and Norm Relations}\label{sec-norm-rels}
 
 In this subsection we explore functions on the Burnside ring. 
-
 Consider $f \colon \B(G) \to A$ a multiplicative function with $f(\sum_i n_i H_i) = \prod_i f(H_i)^{n_i}$ where $A$ is an abelian group. As in \cite{reg-const}, we say that $f$ is \textbf{representation theoretic} if $f$ is trivial on Brauer relations. This implies that for a $G$-set $X$, $f$ only depends on the representation $\bC[X]$. 
 %In other words, there exists a map $g \colon \R(G) \to A$ such that $f(H) = g(\bC[G / H])$ for all $H \leq G$. 
 
@@ -25,7 +24,7 @@ If $f(\Theta) \in \fieldnorm{\rho}$ for every $\rho$-relation in $\B(G)$, then w
 %If a function $f$ satisfies $f \sim_{\rho} 1$, we say $f$ is trivial on $\rho$-relations. 
 
 \begin{example}
-    Let $G = C_p$ for $p$ a prime. Let $\rho$ be a character of degree $p$, so $\bQ(\rho) = \bQ(\zeta_p)$. There is a unique $\rho$-relation given by $\Theta = C_1 - C_p$. Let $\psi \colon \B(G) \to \bQ^{\times}$ be given by $\psi(H) = [G \colon H]$. Then $\psi(\Theta)$ is a norm relation, as $\psi(\Theta) = p$ is the norm of $1 - \zeta_p$.
+    Let $G = C_p$ for $p$ an odd prime. Let $\psi_p$ be a character of degree $p$, so $\bQ(\psi_p) = \bQ(\zeta_p)$. There is a unique $\psi_p$-relation given by $\Theta = C_1 - C_p$. Let $\alpha \colon \B(G) \to \bQ^{\times}$ be given by $\alpha(H) = [G \colon H]$. Then $\alpha(\Theta)$ is a norm relation, as $\alpha(\Theta) = p$ is the norm of $1 - \zeta_p$.
 \end{example}
 
 In general, showing that a $\rho$-relation $\Theta$ is a norm relation for $f$ does not imply that this is the case for all possible $\rho$-relations. Under certain circumstances however, we can conclude as such:
@@ -43,7 +42,7 @@ In general, showing that a $\rho$-relation $\Theta$ is a norm relation for $f$ d
 \end{proof}
 
 \begin{example}
-    Let $G = C_n$. Then any function $f \colon \B(G) \to \bQ^{\times}$ is trivial on Brauer relations since $G$ does not have any. Let $\varphi_d$ be an irreducible complex character of $G$ of order $d \mid n$. Thus to conclude that $f$ is trivial on $\varphi_d$-relations, it is enough to show that the $\varphi_d$-relation constructed in Example \ref{cyclic-relns} is a norm relation for $f$.
+    Let $G = C_n$. Then any function $f \colon \B(G) \to \bQ^{\times}$ is trivial on Brauer relations since $G$ does not have any. Let $\psi_d$ be an irreducible complex character of $G$ of order $d \mid n$. Thus to conclude that $f$ is trivial on $\psi_d$-relations, it is enough to show that the $\psi_d$-relation constructed in Example \ref{cyclic-relns} is a norm relation for $f$.
 \end{example}
 
 %\begin{example}
@@ -51,7 +50,7 @@ In general, showing that a $\rho$-relation $\Theta$ is a norm relation for $f$ d
 %\end{example}
 
 \begin{example}
-Let $E / \bQ$ be an elliptic curve, $G = \Gal(F / \bQ)$ for $F / \bQ$ a Galois extension. The function $C \colon H \mapsto C_{E / F^H}$ (defined in \S\ref{sec-explain-terms}) for $H \leq G$ extends to a multiplicative function on the Burnside ring. In later sections we will investigate when this is trivial on $\rho$-relations, in particular when $\rho$ is a representation of $G$ with $\bQ(\rho)$ quadratic. 
+Let $E / \bQ$ be an elliptic curve, $G = \Gal(F / \bQ)$ for $F / \bQ$ a Galois extension. If $H$, $H' \leq G$ are conjugate subgroups, then $F^{H}$, $F^{H'}$ are isomorphic fields and so $C_{E / F^H} = C_{E/ F^{H'}}$. Thus the function $C \colon H \mapsto C_{E / F^H}$ for $H \leq G$ is well-defined and extends to a multiplicative function on the Burnside ring. In later sections we will investigate when this is trivial on $\rho$-relations, in particular when $\rho$ is a representation of $G$ with $\bQ(\rho)$ quadratic. 
 \end{example}
 
 It appears quite difficult in general to describe the set of $\rho$-relations for some finite group $G$ and representation $\rho$. Thus determining functions that are trivial on $\rho$-relations is even more difficult. As seen in Example \ref{cyclic-relns}, we at least have a better understanding of the relations when $G$ is cyclic, and can prove the following result.
@@ -73,7 +72,7 @@ It appears quite difficult in general to describe the set of $\rho$-relations fo
     \[ \prod_{d' \mid q^a} (d')^{\mu(q^a / d')} = q .\]
     
     The irreducible representations of $C_n$ over $\bQ(\rho)$ are given by the orbits of the complex irreducible characters of $C_n$ acted upon by $H = \Gal (\bQ(\zeta_n) / \bQ(\rho))$. Consider $d \mid n$ with $\bQ(\rho) \not\subset \bQ(\zeta_d)$. 
-    Recall that $\chi_d = \repnorm{\varphi_d}$, where $\bQ(\varphi_d) = \bQ(\zeta_d)$. Let $B = \Gal(\bQ(\zeta_n) / \bQ(\zeta_d))$. Then $\bQ(\rho) \cap \bQ(\zeta_d) = \bQ$, so $BH = \Gal(\bQ(\zeta_n) / \bQ)$. The orbit of $\varphi_{d}$ under $H$ is fixed by $BH$, hence is rational. It follows that $\langle \rho, \varphi_{d} \rangle = \langle \rho^{\sigma} , \varphi_{d} \rangle$ for $\sigma$ the generator of $\Gal(\bQ(\rho) / \bQ)$. Thus $2 = [\bQ(\rho) : \bQ]$ divides $a_d$, and so $g(a_d \Theta_d) = g(\Theta_d)^{a_d} \in (\bQ^{\times})^2 \subset \fieldnorm{\rho}$.
+    Recall that $\chi_d = \repnorm{\psi_d}$, where $\bQ(\psi_d) = \bQ(\zeta_d)$. Let $B = \Gal(\bQ(\zeta_n) / \bQ(\zeta_d))$. Then $\bQ(\rho) \cap \bQ(\zeta_d) = \bQ$, so $BH = \Gal(\bQ(\zeta_n) / \bQ)$. The orbit of $\psi_{d}$ under $H$ is fixed by $BH$, hence is rational. It follows that $\langle \rho, \psi_{d} \rangle = \langle \rho^{\sigma} , \psi_{d} \rangle$ for $\sigma$ the generator of $\Gal(\bQ(\rho) / \bQ)$. Thus $2 = [\bQ(\rho) : \bQ]$ divides $a_d$, and so $g(a_d \Theta_d) = g(\Theta_d)^{a_d} \in (\bQ^{\times})^2 \subset \fieldnorm{\rho}$.
 
     Thus $a_d$ can only be odd when $\bQ(\rho) \subset \bQ(\zeta_d)$, i.e  $\ff \mid d$. Therefore for $g(\Theta)$ to be non-square we require $\ff = p$ for some prime $p$. Then $p$ must be odd ($|\Delta|$ cannot be $2$) and $\bQ(\rho) = \bQ(\sqrt{p^*})$. But $p$ is a norm in $\bQ(\sqrt{p^*})$ by Corollary \ref{p-norm}.
 \end{proof}
@@ -85,9 +84,9 @@ We are interested in functions on the Burnside ring that are number-theoretic in
 \begin{example}
 Let $F / K$ be a finite Galois extension of number fields and let $G = \Gal(F / K)$. Let $\fp$ be a prime of $K$ and $\fq$ a prime of $F$ above $\fp$. Let $D_{\fq} \leq G$ be the corresponding decomposition group. For $H \leq G$, the number of primes in $L = F^{H}$ above $\fp$ are in one-to-one correspondence with the double cosets $H \backslash G / D_{\fq}$. This correspondence is given by sending a prime $\fs$ in $L$ above $\fp$ to the elements of $G$ that send $\fq$ to some prime above $\fs$.
 
-We can use the function $f \colon \B(G) \to \bQ^{\times}$ given by $H \mapsto  \lambda^{| H \backslash G / D|}$ (for $\lambda \not= \pm 1$) to describe the number of places above $\fp$ in any intermediate extension of $F / K$. But if we let $g \colon \B(D) \to \bQ^{\times}$ be defined by $H \mapsto \lambda$, then 
-        \[ f(H) = g\left(\Res_D H\right) = \prod_{x \in H \backslash G / D} g(D \cap H^{x^{-1}}) .\]
-Therefore the value of $f$ on any $G$-set $X$ only depends on the structure of $X$ as a $D$-set.
+We can use the function $f \colon \B(G) \to \bQ^{\times}$ given by $H \mapsto  \lambda^{| H \backslash G / D_{\fq}|}$ (for $\lambda \not= \pm 1$) to describe the number of places above $\fp$ in any intermediate extension of $F / K$. But if we let $g \colon \B(D_{\fq}) \to \bQ^{\times}$ be defined by $H \mapsto \lambda$, then 
+        \[ f(H) = g\left(\Res_{D_{\fq}} H\right) = \prod_{x \in H \backslash G / D_{\fq}} g(D_{\fq} \cap H^{x^{-1}}) .\]
+Therefore the value of $f$ on any $G$-set $X$ only depends on the structure of $X$ as a $D_{\fq}$-set.
 \end{example}
 
 Such functions motivate the following definition:
@@ -116,7 +115,7 @@ The ramification degree and residue degree of $w$ over $K$ are given by $e_w = \
 \end{defn}
 
 \begin{example}
-    If $E / K$ has split multiplicative reduction at $\fp$ with $c_{\fp}(E / K) = n$, then $c_{\fP}(E / F^H) = e_{\fP} n$ for a place $\fP$ of $F^H$ above $\fp$. In this case the function in Example \ref{tama-ex} is $(D, I, e n)$. 
+    Let $E / K$ have split multiplicative reduction at $\fp$ with $c_{\fp}(E / K) = n$. Then $c_{\fP}(E / F^H) = e_{\fP} n$ for a place $\fP$ of $F^H$ above $\fp$. In this case the function in Example \ref{tama-ex} is $(D, I, e n)$. 
 \end{example}
 
 %\begin{example}\label{trivial-on-brauer}
@@ -150,6 +149,23 @@ Then, if $\bQ(\Res_D \rho) = \bQ$, $f$ is trivial on $\rho$-relations.
     since $f_D(\Psi) \in \fieldnorm{\rho}$ and $(\bQ^{\times})^n \subset \fieldnorm{\rho}$. 
 \end{proof}
 
+Sometimes we don't need our functions to be trivial on $\rho$-relations, but require that they give norms from quadratic subfields of $\bQ(\rho)$ when evaluated on $\rho$-relations. The following proposition shows when this holds for certain $D$-local functions.
+
+\begin{prop}
+Let $G$ be a group and $\rho$ a representation of $G$. Consider $f = (D, f_D) \colon \B(G) \to \bQ^{\times}$ for $D \leq G$. Suppose that $f_D(\Theta) \in (\bQ^{\times})^2$ for all Brauer relations $\Theta \in \B(D)$, and $\hat{C}(D)$ has odd order.
+
+Then, if $f_D(\Psi')$ is a norm from every quadratic subfield of $\bQ(\Res_D \rho)$ for every $(\Res_D \rho)$-relation $\Psi' \in \B(D)$, it follows that $f(\Psi)$ is a norm from every quadratic subfield of $\bQ(\rho)$ for every $\rho$-relation $\Psi$. 
+\end{prop}
+
+\begin{proof}
+    If $\bQ(\rho)$ has no quadratic subfields, there is nothing to prove, so assume it has least one. 
+
+    First suppose that there is a quadratic subfield $\bQ(\sqrt{d}) \subset \bQ(\rho)$ such that $\bQ(\sqrt{d}) \cap \bQ(\Res_D \rho) = \bQ$. Then $[\bQ(\rho) : \bQ(\Res_D \rho)]$ is even since $\bQ(\Res_D \rho)(\sqrt{d}) \subset \bQ(\rho)$. Then, if $\Psi \in \B(G)$ is a $\rho$-relation, one has that $\bC[ D / \Res_D \Psi] \simeq \repnorm{\Res_D \rho}^{\oplus \alpha}$ where $\alpha$ is even. Applying the same computation as in Proposition \ref{rational-res}, one has $f(\Psi) = f_{D}(\Res_D \Psi) \in (\bQ^{\times})^2$, hence is the norm of an element of every quadratic subfield of $\bQ(\rho)$.
+    
+    On the other hand, if $\bQ(\Res_D \rho)$ contains all the quadratic subfields of $\bQ(\rho)$ then $f(\Psi) = f_D(\Res_D \Psi)$ is a norm from every quadratic subfield of $\bQ(\rho)$ by assumption.
+\end{proof}
+
+
 The following is an example of when constant $D$-local functions are squares when evaluated on $\rho$-relations.
 
 \begin{prop}\label{const-fns}
@@ -157,7 +173,7 @@ The following is an example of when constant $D$-local functions are squares whe
 \end{prop}
 
 \begin{proof}
-    The function $(D, \alpha)$ on $\B(G)$ sends $H \leq G$ to $\alpha^{| H \backslash G / D|}$. Let $\Theta = \sum_i n_i H_i$ be a $\rho$-relation with $\bC[G / \Theta] \simeq \repnorm{\rho}^{\oplus m}$ for some $m \geq 1$. One has $(D, \alpha)(\Theta) = \alpha^{\sum_i n_i \cdot | H_i \backslash G / D|}$. We show that $\sum_i n_i \cdot | H_i \backslash G / D |$ is even.
+    The function $(D, \alpha)$ on $\B(G)$ sends $H \leq G$ to $\alpha^{| H \backslash G / D|}$. Let $\Theta = \sum_i n_i H_i$ be a $\rho$-relation with $\bC[G / \Theta] \simeq \repnorm{\rho}^{\oplus m}$ for some $m \geq 1$. Then $$(D, \alpha)(\Theta) = \alpha^{\sum_i n_i \cdot | H_i \backslash G / D|}.$$ We show that $\sum_i n_i \cdot | H_i \backslash G / D |$ is even.
 
     One has $\Res_D \Theta = \sum_i n_i \sum_{x \in H_i \backslash G / D} D \cap H_i^{x^{-1}}$, and $\bC[D / \Res_D \Theta]$ has even dimension, since it is isomorphic to $\sum_{\fg \in \Gal(\bQ(\rho) / \bQ)} \Res_D \rho^{\fg}$, which has dimension $[\bQ(\rho) \colon \bQ]\cdot \dim(\Res_D \rho)$. The dimension is $$\sum_i n_i \sum_{x \in H_i \backslash G / D} [D : D \cap H_i^{x^{-1}} ].$$ Since each $[D : D \cap H_i^{x^{-1}} ]$ is odd, this implies there are an even number of terms in the summation, i.e. that $\sum_i n_i \cdot | H_i \backslash G / D|$ is even. 
 

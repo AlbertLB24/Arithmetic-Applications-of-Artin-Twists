@@ -1,10 +1,9 @@
 \subsection{Elliptic Curves over Local Fields and Reduction Types}
 
 Now assume that $K$ is a local field of characteristic $0$ with a discrete valuation $\nu$, ring of integers $R$ and residue field $\kappa$. We denote by $a\mapsto \tilde{a}$ for the natural quotient map $K\to\kappa$. We say that \eqref{eqn_gen_elliptic} is a \textbf{minimal Weierstrass equation} if $a_1,a_2,a_3,a_4,a_6\in R$ and $\nu(\Delta)$ is minimal among all such equations. When this is the case, we have a well-defined associated curve $\tilde{E}$ over $\kappa$ defined by the equation $y^2+\tilde{a_1}xy+\tilde{a_3}y=x^3+\tilde{a_2}x^2+\tilde{a_4}x+\tilde{a_6}$ and the associated \textbf{reduction map}
-\begin{equation}\label{eqn_reduction}
+\begin{equation*}%\label{eqn_reduction}
     \widetilde{(\cdot)}:E(K)\longrightarrow \tilde{E}(\kappa),
-\end{equation}
-
+\end{equation*}
 obtained by reducing the coordinates of a point $P\in E(K)$ modulo $\kappa$. One needs to have some care defining the reduction map. For a detailed construction, see \cite[\S1 VII.2]{S1}. We remark that $\tilde{E}$ may be a singular curve, and the \textbf{reduction type} of $E$ over $K$ describes the behaviour of $\tilde{E}$ as a curve over $\kappa$.
 
 \begin{defn}
@@ -17,7 +16,7 @@ obtained by reducing the coordinates of a point $P\in E(K)$ modulo $\kappa$. One
     In cases (b) and (c) we say that $E/K$ has bad reduction. Moreover, if $E/K$ has multiplicative reduction, we say that the reduction is split if the slopes of the tangent lines at the node are in $K$, and non-split otherwise.
 \end{defn}
 
-By Proposition \ref*{prop_nodecusp} we immediately see that $E/K$ has good reduction if $\nu(\Delta)=0$ and bad otherwise. In that case, $E/K$ has multiplicative reduction if $\nu(c_4)=0$ and additive otherwise.
+By Proposition \ref{prop_nodecusp} we immediately see that $E/K$ has good reduction if $\nu(\Delta)=0$ and bad otherwise. In that case, $E/K$ has multiplicative reduction if $\nu(c_4)=0$ and additive otherwise.
 
 An important question which will be of interest for us is to understand how the reduction type of an elliptic curve $E$ changes over a finite field extension $F/K$. The following proposition gathers this information.
 
