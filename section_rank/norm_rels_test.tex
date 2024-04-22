@@ -47,7 +47,7 @@ Consider $G = \Gal(F / K)$. Then changes in parity between subfields of $F / K$ 
 \[ \Ind_{H}^G \trivial \simeq \trivial\oplus \bigoplus_i \rho_i  \implies w(E / F^H) = w(E / K)\prod_i w(E / K, \rho_i) \] for some representations $\rho_i $ of $G $. Hence a change in parity from $w(E / K)$ to $w(E / F^H)$ is determined by $\prod_i w(E / K, \rho_i)$. On the premise that a failure of our norms relations test is always explained by root numbers, we conjecture the following:
 %{\color{red} On the other hand ... root numbers should help us determine what the regulators look like ... and we could put them into our factors... maybe talk about this in a conclusion / outlook?}
 
-\begin{conj}
+\begin{conj}\label{conj_normtwist}
 Consider an elliptic curve $E / \bQ$, $F / \bQ$ a finite Galois extension, and relation 
 $$\left(\bigoplus_{\mathfrak{g}\in\Gal(\QQ(\rho)/\QQ)}\rho^{\mathfrak{g}}\right)^m=\bigoplus_i\Ind_{F_i/\QQ}\mathds{1}\ominus\bigoplus_j\Ind_{F'_j/\QQ}\mathds{1}$$
 as in Theorem \ref{thm_positive_rank}. If the product $\frac{\prod_i C_{E/F_i}}{\prod_j C_{E/F'_j}}$ is not a norm from some quadratic subfield $\QQ(\sqrt{D})\subseteq\QQ(\rho)$, or if it is not a rational square when $m$ is even, then there exists a self-dual Artin representation $\tau$ of $G$ such that $w(E / \bQ, \tau) = -1 $. 
@@ -56,7 +56,7 @@ as in Theorem \ref{thm_positive_rank}. If the product $\frac{\prod_i C_{E/F_i}}{
 The case of odd order Galois groups inspires some confidence in this conjecture. Let $F / \bQ$ be a Galois extension of odd order. In $\S$\ref{sec_odd}, we prove that one cannot use Theorem \ref{thm_positive_rank} to conclude that $\rk E / F > 0$, i.e. that our norms relation test never "fails".
 The reason one would expect that our norm relations test never forces rank growth in this case is because root number computations do not, as we now show.
 
-\begin{lemma}
+\begin{lemma}\label{lem_oddroot}
  Let $F / \bQ$ be an odd Galois extension with $G = \Gal(F / \bQ)$. Then $w(E / \bQ) = w(E / F^H)$ for all $H \leq G$. 
 \end{lemma}
 
