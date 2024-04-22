@@ -1,19 +1,6 @@
 %\subsection{Norm Relations in Odd Order Extensions}
 
-In this section we prove the analogous result to the previous section when $F / \bQ$ is any Galois extension of odd order. The reason one would expect that our norm relations test never forces rank growth in this case is because root number computations do not, as we now show.
-
-\begin{lemma}
- Let $F / \bQ$ be an odd Galois extension with $G = \Gal(F / \bQ)$. Then $w(E / \bQ) = w(E / F^H)$ for all $H \leq G$. 
-\end{lemma}
-
-\begin{proof}
-Consider $H \leq G$ and intermediate field $F^H$. Then 
-$\Ind_H^G \trivial \simeq \trivial \oplus 
-\rho \oplus \rho^*$ for some non self-dual representation $\rho$ of $G$, since the only self-dual representation of an odd-order group is the trivial representation. Therefore by Proposition \ref{compute-root-twist}, $w(E / F^H) = w(E / F)w(E, \rho \oplus \rho^*)$ and $w(E, \rho \oplus \rho^*) = 1$. Hence $w(E / \bQ) = w(E / F^H)$ for all $H \leq G$. 
-\end{proof}
-
-Therefore once we assume that $\rk E / \bQ = 0$, the parity conjecture tells us that $\rk E / F^H$ is even for all $H \leq G$, which does not force it to be non-zero. 
-
+In this section we prove the analogous result to the previous section when $F / \bQ$ is any Galois extension of odd order. As discussed in \S\ref{sec-norm-rels-test}, we expect our Norms Relations test to be "uninteresting"  because root number computations don't predict positive rank.  
 
 \begin{thm}\label{odd-exts}
  Let $E / \bQ$ be an elliptic curve, $F / \bQ$ be an extension of odd order with Galois group $G$. 
@@ -37,8 +24,8 @@ As in Remark \ref{rephrase-thm}, replacing $\rho$ by the sum of its conjugates b
 The product of terms we are computing is $C(\Theta)$, where $C \colon \B(G) \to \bQ^{\times}$ is given by $C \colon H \mapsto C_{E / F^H}$, and $\Theta$ is any $\rho$-relation.
 We break up the function $C$ into $C = \prod_p C_{\fP \mid p} = \prod_p T_{\fP \mid p} \cdot D_{\fP \mid p}$, ranging over primes $p \in \bQ$,
 as defined in Notation \ref{not_contr_fns}.
-We showed that
-\begin{equation*}\label{Dp-loc}
+In Remark \ref{Rem-C-D-loc} we showed that
+\begin{equation*}%\label{Dp-loc}
 C_{\fP \mid p} = (D_p, C_v)
 \end{equation*}
 where $C_v$ is a function on $\B(D_p)$ sending $H \mapsto C_v(E / F_w^H)$, for $D_p = \Gal(F_w / \bQ_p)$. The following result will allow us to apply some results from $\S$\ref{sec-norm-rels}.
@@ -86,11 +73,11 @@ This is automatic for good reduction and split multiplicative reduction. It is a
 \end{lemma}
 
 \begin{proof}
-Let $p$ have residue degree $f_p$. Let $L / \bQ$ be a Galois extension of degree $f_p$ with cyclic Galois group, such that $p$ is inert in $L$. Further ensure that $F \cap L = \bQ$. Then $\Gal(FL / L) = G$. Let $F_i = F^{H_i}$ and $L_i = F_i L$.
+Let $p$ have residue degree $f_p$. Let $L / \bQ$ be a Galois extension of degree $f_p$ with cyclic Galois group, such that $p$ is inert in $L$. Further ensure that $F \cap L = \bQ$. Then $\Gal(FL / L) = G' \simeq G$. Let $F_i = F^{H_i}$ and $L_i = F_i L$.
 
 Let $v$ be a place over $p$ in $F_i$. The extension $L_i / F_i$ is Galois, so $v$ is either split or inert in $L_i$.
 We claim that $C_v(E / F_i) \equiv \prod_{w | v} C_w(E / L_i) \mod (\bQ^{\times})^2$. Indeed, the number of terms in the product on the right is odd, and by Lemma \ref{tam-up-to-square} $C_v(E / F_i) \equiv C_w(E / L_i) \mod (\bQ^{\times})^2$. 
-Letting $C_{\fP \mid p}'$ be the function on $\B(G)$ defined as in \eqref{not_contr_fns} but with $\bQ$, $F$ replaced by $L$, $FL$, we see that $C_{\fP \mid p}'(\Theta) \equiv C_{\fP \mid p}(\Theta) \mod (\bQ^{\times})^2$. 
+Letting $C_{\fP \mid \fp}$ be the function on $\B(G')$ defined as in Notation \ref{not_contr_fns} but now $G' = \Gal(FL / L)$, we see that $C_{\fP \mid \fp}(\Theta) \equiv C_{\fP \mid p}(\Theta) \mod (\bQ^{\times})^2$. 
 Thus it is equivalent to do our computation in $FL / L$, but here $p$ has residue degree $1$.
 \end{proof}
 
@@ -251,9 +238,16 @@ We have observed that for all reduction types of $E / \bQ_p$, one has $C_{\fP \m
 \qed
 
 \begin{cor}\label{cor-odd-decomp}
-    Let $G$ be a finite group, $\rho$ a character of $G$ with $\bQ(\rho)$ quadratic. Let $\Theta \in \B(G)$ be a $\rho$-relation. If $D_p \leq G$ is of odd order, then $C_{\fP \mid p}(\Theta) \in \fieldnorm{\rho}$.
-\end{cor}
-
-\begin{proof}
- Throughout this section our results only depended on the oddness of $D_p$.
-\end{proof}
+    Let $E / \bQ$ be an elliptic curve, $F / \bQ$ a Galois extension with Galois group $G$. Assume that $E$ has good or multiplicative reduction at $2$ and $3$. 
+    
+    Consider $\rho$ a character of $G$. Let $\Theta$ be a $\rho$-relation, with $\bC[G / \Theta] \simeq \repnorm{\rho}^{\oplus m}$, $ m \geq 1$. Let $D_p \leq G$ be of odd order. 
+    If $m$ is even, $C_{\fP \mid p}(\Theta) \in (\bQ^{\times})^2$. Else, $C_{\fP \mid p}(\Theta)$ is the norm of an element of every quadratic subfield of $\bQ(\rho)$. 
+    \end{cor}
+    
+    \begin{proof}
+        This result essentially follows from Proposition \ref{prop-restrict-decomp}. Recall that $C_{\fP \mid p} = (D_p, C_v)$ by Remark \ref{Rem-C-D-loc}, and if $D_p$ is odd, then $C_v\left(\Psi\right) \in (\bQ^{\times})^2$ for all Brauer relations $\Psi \in \B(D_p)$ by Theorem \ref{odd-c-brauer}. In addition $\hat{C}(D_p)$ is of odd order. 
+    
+        Taking restriction, one has $\bC[D_p / \Res_{D_{p}} \Theta] \simeq \repnorm{\Res_{D_p} \rho}^{\oplus m \cdot [\bQ(\rho) \colon \bQ(\Res_{D_p} \rho)]}$. If $m$ is even then $C_{\fP \mid p}(\Theta) = C_v(\Res_{D_p} \Theta) \in (\bQ^{\times})^2$, since there exists some $(\Res_{D_p} \rho)$-relation $\Theta' \in \B(D_p)$ with $\bC[D_p / 2 \Theta'] \simeq \bC[D_p / \Res_{D_p} \Theta]$. 
+    
+        Else, by Theorem \ref{odd-exts}, $C_v(\Theta')$ is a norm from every quadratic subfield of $\Res_{D_p} \rho$ for every $\left(\Res_{D_p} \rho\right)$-relation $\Theta'$. The result follows by the statement of Proposition \ref{prop-restrict-decomp}. 
+    \end{proof}

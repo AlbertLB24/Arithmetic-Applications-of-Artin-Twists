@@ -2,7 +2,7 @@
 
 We extend the notation introduced in Notation \ref{not_contr} by defining functions on $\B(G)$. 
 
-\begin{defn}\label{not_contr_fns}
+\begin{notation}\label{not_contr_fns}
     If $G = \Gal(F / K)$ then for $\fp \in \bQ$ we define functions $T_{\fP \mid \fp}$, $D_{\fP \mid \fp}$ and $C_{\fP \mid \fp}$ on $\B(G)$ by 
     \[ T_{\fP \mid \fp}(H) = T_{\fP \mid \fp}(E / F^H), \quad D_{\fP \mid \fp}(H) = D_{\fP \mid \fp}(E / F^H), \quad C_{\fP \mid \fp}(H) = C_{\fP \mid \fp}(E / F^H), \]
     as defined in Notation \ref{not_contr}.
@@ -10,10 +10,9 @@ We extend the notation introduced in Notation \ref{not_contr} by defining functi
     
     Define the global contributions $C \colon \B(G) \to \bQ^{\times}$, $T \colon \B(G) \to \bQ^{\times}$ and $D \colon \B(G) \to \bQ^{\times}$ by 
     \[ C(H) = C_{E / F^H}, \quad T(H) = T(E / F^H), \quad D(H) = D(E / F^H). \] 
-    Of course one then has $C = $
-\end{defn}
- 
-{\color{red} EHHHH maybe I need to change some of this to be more general}
+    Of course one then has $C = T \cdot D = \prod_{\fp} C_{\fP \mid \fp}$, ranging over the primes $\fp$ of $K$. 
+\end{notation}
+
 \begin{rem}\label{Rem-C-D-loc}
 Note that $C_{\fP \mid p}$ is a $D_p$-local function. Indeed, suppose $D_p = \Gal(F_w / \bQ_p)$, where $F_w$ denotes the completion of $F$ with respect to a place $w$ lying above $p$. For a number field $K$ and place $v$, define $$C_v(E / K) = c_v(E / K) \cdot \left| \omega / \omega_v^{\min} \right|_v.$$ We use the same notation if $K$ is a local field (then the $v$ subscript holds no meaning).
 One has
