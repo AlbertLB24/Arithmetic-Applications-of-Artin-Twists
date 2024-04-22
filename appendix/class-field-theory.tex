@@ -51,9 +51,9 @@ Let $\varphi \colon C_K \to \Gal(H / K)$ be the isomorphism induced by the Artin
 $[\fp] = [\sigma(\fU)\fU^{-1}]$. Observe that $N_{K / \bQ}(\sigma(\fU)\fU^{-1}) = 1$. It follows that we can represent $[\fp]^n$ by a fractional ideal of norm $p$ for all $n \geq 1$. Since $\Cl_K$ is finite, this implies there is a principal fractional ideal in $K$ of norm $p$. 
 \end{proof}
 
-%\begin{thm}\cite[Ch VI, \S3, Theorem 3.9]{Janusz}
-%Suppose the discriminant of $K / \bQ$ has $t$ prime divisors. Then $C_K / (C_K)^2$ has order $2^{t-1}$ if $D < 0$ or if $D > 0$ and a unit of $K$ has norm $-1$. Otherwise, if $D > 0$ and all units of $K$ have norm $1$, it has order $2^{t - 2}$.
-%\end{thm} 
+\begin{thm}\cite[Ch VI, \S3, Theorem 3.9]{Janusz}\label{2-part}
+Suppose the discriminant of $K / \bQ$ has $t$ prime divisors. Then $C_K / (C_K)^2$ has order $2^{t-1}$ if $D < 0$ or if $D > 0$ and a unit of $K$ has norm $-1$. Otherwise, if $D > 0$ and all units of $K$ have norm $1$, it has order $2^{t - 2}$.
+\end{thm} 
 Our introduction of the extended genus field $L^{+}$ is because it is easier to describe than $L$.
 
 \begin{thm}\label{extended-genus}\cite[Ch VI, \S3, Theorem 3.10]{Janusz}
@@ -139,8 +139,6 @@ The odd prime $p \in \bQ$ is the norm of an element in $\bQ(\sqrt{p^*})^{\times}
     If $K$ is imaginary then one must have $N_{K / \bQ}(\alpha) = p$. Else, $K$ is real and $q \equiv 1 \pmod 4$. Then by Theorem \ref{minus-one-norm}, $-1$ is a norm from $\QQ(\sqrt{q})$, and the result follows.
 \end{proof}
 
-We quote the following result that is of use to us.
-
 \begin{thm}\label{thm_class_number}
     Let $h(D)$ be the class number of $\QQ(\sqrt{D})$ and let $p$ be a rational prime. Then the following holds.
     \begin{itemize}
@@ -148,6 +146,13 @@ We quote the following result that is of use to us.
         \item If $p\equiv3\pmod{4}$, then $h(p)$ and $h(-p)$ are both odd.
     \end{itemize}
 \end{thm}
+
+\begin{proof}
+By Theorem \ref{2-part}, it follows that $C_K / (C_K)^2$ is trivial for $\bQ(\sqrt{p})$ when $p \equiv 1 \pmod 4$, and $\bQ(\sqrt{ \pm p})$ when $p \equiv 3 \pmod 4$. Hence $C_K$ is odd in each of these cases. 
+
+When $p \equiv 1 \pmod 4$, then $\bQ(i, \sqrt{-p})$ is a quadratic unramified extension of $\bQ(\sqrt{-p})$, hence $h(-p)$ is even.
+\end{proof}
+
 %\begin{prop}\label{prop_split_norm}
 %    Let $\QQ(\sqrt{D})$ be a quadratic field with odd class number, and let $p$ be a rational prime splitting in $\QQ(\sqrt{D})$. If either $D\leq -1$ or $D\geq 2$ and $-1$ is a norm of an element of $\QQ(\sqrt{D})$, then $p$ is also the norm of an element in $\QQ(\sqrt{D})$.
 %\end{prop}
