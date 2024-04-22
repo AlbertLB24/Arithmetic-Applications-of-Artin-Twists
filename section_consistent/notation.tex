@@ -6,16 +6,22 @@ We extend the notation introduced in Notation \ref{not_contr} by defining functi
     If $G = \Gal(F / K)$ then for $\fp \in \bQ$ we define functions $T_{\fP \mid \fp}$, $D_{\fP \mid \fp}$ and $C_{\fP \mid \fp}$ on $\B(G)$ by 
     \[ T_{\fP \mid \fp}(H) = T_{\fP \mid \fp}(E / F^H), \quad D_{\fP \mid \fp}(H) = D_{\fP \mid \fp}(E / F^H), \quad C_{\fP \mid \fp}(H) = C_{\fP \mid \fp}(E / F^H), \]
     as defined in Notation \ref{not_contr}.
-    Note that if $H$, $H'$ are conjugate then $F^H$, $F^{H'}$ are isomorphic, and so the values of these functions are constant on conjugate subgroups, hence they are well-defined. When $K = \bQ$ we write $p$ instead of $\fp$. Define $C \colon \B(G) \to \bQ^{\times}$ by $C \colon H \mapsto C_{E / F^H}$.  
+    Note that if $H$, $H'$ are conjugate then $F^H$, $F^{H'}$ are isomorphic, and so the values of these functions are constant on conjugate subgroups, hence they are well-defined. When $K = \bQ$ we write $p$ instead of $\fp$. 
+    
+    Define the global contributions $C \colon \B(G) \to \bQ^{\times}$, $T \colon \B(G) \to \bQ^{\times}$ and $D \colon \B(G) \to \bQ^{\times}$ by 
+    \[ C(H) = C_{E / F^H}, \quad T(H) = T(E / F^H), \quad D(H) = D(E / F^H). \] 
+    Of course one then has $C = $
 \end{defn}
  
 {\color{red} EHHHH maybe I need to change some of this to be more general}
+\begin{rem}\label{Rem-C-D-loc}
 Note that $C_{\fP \mid p}$ is a $D_p$-local function. Indeed, suppose $D_p = \Gal(F_w / \bQ_p)$, where $F_w$ denotes the completion of $F$ with respect to a place $w$ lying above $p$. For a number field $K$ and place $v$, define $$C_v(E / K) = c_v(E / K) \cdot \left| \omega / \omega_v^{\min} \right|_v.$$ We use the same notation if $K$ is a local field (then the $v$ subscript holds no meaning).
 One has
 \begin{equation*}
     C_{\fP \mid p} = (D_p, C_v)
 \end{equation*}
 where $C_v$ is a function on $\B(D_p)$ sending $H \mapsto C_v(E / F_w^H)$.
+\end{rem}
 
 The following proposition describes these functions in the language introduced in Section \ref{sec-norm-rels} for each reduction type of $E / \bQ$. We do not attempt to write a formula for $T_{\fP \mid p}$ in the case of additive reduction, computing this involves using Lemma \ref{lem_add_tam}.
 
