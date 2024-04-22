@@ -145,11 +145,10 @@
 \author{Edwina Aylward, Albert Lopez Bruch}
 
 \begin{document}
-	\maketitle
-	\pagenumbering{arabic}
-	\newpage
-	\tableofcontents
-	\newpage
+\maketitle
+\pagenumbering{arabic}
+\tableofcontents
+\newpage
 
 \section{Introduction}
 \input{intro.tex}
@@ -159,15 +158,15 @@
 \input{section_EC/elliptic_curves.tex}
 
 \newpage
-\section{Representations, L-functions and Artin Twists}
+\section{Representations, L-functions and Artin Twists}\label{sec_Lside}
 \input{section_L-side/L-side.tex}
 
 \newpage
-\section{Birch and Swinnerton-Dyer and Other Conjectures}
+\section{Birch and Swinnerton-Dyer and Other Conjectures}\label{sec_BSD}
 \input{section_BSD/BSD_conj.tex}
 
 \newpage
-\section{Predicting Positive Rank}
+\section{Predicting Positive Rank}\label{sec_pos_rank}
 \input{section_rank/positive_rank.tex}
 
 \newpage
@@ -177,10 +176,21 @@
 \input{section_reps/norm-relations.tex}
 
 
+\newpage
+\section{Preliminary Results}
+\input{section_NTbackground/background.tex}
 
 \newpage
-\section{Consistency Cases with BSD}
-\input{section_consistent/consistency.tex}
+\section{Cyclic Extensions and Consistency with BSD}\label{sec_cyclic}
+\input{section_cons_cyclic/cons_cyclic.tex}
+
+\newpage
+\section{Odd Extensions and Consistency with BSD}\label{sec_odd}
+\input{section_cons_odd/cons_odd.tex}
+
+%\newpage
+%\section{Consistency Cases with BSD}
+%\input{section_consistent/consistency.tex}
 
 \newpage
 \begin{appendices}

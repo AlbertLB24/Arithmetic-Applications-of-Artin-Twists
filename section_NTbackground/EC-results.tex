@@ -1,0 +1,45 @@
+\subsection{Type II and \texorpdfstring{$\mathrm{II}^*$}{TEXT}  Elliptic Curves}\label{sec_type2EC}
+
+As mentioned earlier, we now prove two technical consequences of these results about the behaviour of Type II or $\mathrm{II}^*$ elliptic curves over local fields $K$. We advise the reader to skip the proofs by now and revisit them when these results are used later.
+
+\begin{lemma}\label{lem_nottwo}
+    Let $p\geq 5$ be a rational prime and $F_\fP/K_\fp/\QQ_p$ be finite extensions with $F_\fP/K_\fp$ Galois, ramified and $\Gal(F_\fP/K_\fp)=C_3$. Let $$E/\QQ_p:y^2=x^3+Ax+B$$ be a minimal Weierstrass equation at $\pp$ with potentially good reduction. Let $n=\nu_\pp(\Delta)$ be the valuation of the minimal discriminant. If $\gcd(n,12)=2$, then $\sqrt{\Delta}\in K_\pp$.
+\end{lemma}
+
+\begin{proof}
+    The condition that $E$ has additive reduction is equivalent to $A,B\in\pp$, and the condition on ramification implies that $3\mid N(\pp)-1$ by Proposition \ref{prop_totally_ramified}. In addition, by Lemma \ref{lem_Dterms}(b), we know that $\nu_\pp(\Delta)<12$, so we need to consider two cases: $n=2$ and $n=10$, and we consider them separately. By Hensel's Lemma, $\sqrt{\Delta}\in K_\pp$ is equivalent to $\sqrt{\Delta}\in \kappa_\pp$ where $\kappa_\pp$ is the residue field of $K_\pp$. Recall that when $E$ has this simple expression, $\Delta=-16(4A^3+27B^2)$.
+
+
+    \textbf{Case $n=2$:}
+
+    In this case, $\nu_\pp(-4A^3-27B^2)=2$ and this implies that $\nu_\pp(B)=1$. Note that we also have that $A,B\in p\ZZ_p$ and therefore $\nu_p(B)=1$ and $\nu_p(-4A^3-27B^2)=2$. Let $\FF_p=\ZZ_p/p\ZZ_p$ be the residue field of $\QQ_p$. Then 
+    $$\frac{-4A^3-27B^2}{p^2}\equiv -3\left(\frac{3B}{p}\right)^2\pmod{p},$$
+    and hence $\sqrt{\Delta}\in\FF_p$ if and only if $\sqrt{-3}\in K_\pp$. 
+    If $p\equiv1\pmod{3}$, then
+    $$\left(\frac{-3}{p}\right)=\left(\frac{p}{3}\right)=1,$$
+    and hence $\sqrt{\Delta}\in \FF_p\subseteq \kappa_\pp$. If $p\equiv 2\pmod{3}$, then from the condition that $3\mid N(\pp)-1$, it follows that the extension $\kappa_\pp/\FF_p$ has even degree. By the uniqueness of extensions of finite fields, it follows that $\sqrt{\Delta}\pmod{\pp}\in\kappa_\pp$ as desired.
+
+    \textbf{Case $n=10$:} 
+
+    In this case, $\nu_\pp(-4A^3-27B^2)=10$. When $E$ is defined by this simple expression, then $c_4=-48A$ and since $E$ is assumed to have potentially good reduction, $\nu_\pp(j)=\nu_\pp(A^3/\Delta)=3\nu_\pp(A)-10\geq 0$. Hence, $\nu_\pp(A^3)\geq12$ which implies that $\nu_\pp(-27B^2)=10$ or, equivalently, that $\nu_\pp(B)=5$. This means that $\nu_p(B)=5$ if $K_\pp/\QQ_p$ is unramified or $\nu_p(B)=1$ if $K_\pp/\QQ_p$ has ramification index $2$. In the latter case, we have that $v_p(4A^3+27B^2)=2$ and we are back to the case $n=2$. So assume that $K_\pp/\QQ_p$ is unramified. Then
+    $$\frac{-4A^3-27B^2}{p^{10}}\equiv -3\left(\frac{3B}{p^5}\right)^2\pmod{p},$$
+    and therefore $\sqrt{\Delta}\in\FF_p$ if and only if $\sqrt{-3}\in K_\pp$. The remaining of the proof is identical to the case $n=2$.
+\end{proof}
+
+\begin{lemma}\label{lem_notthree}
+    Let $p\geq 5$ be a rational prime and $F_\fP/K_\fp/\QQ_p$ be finite extensions with $F_\fP/K_\fp$ Galois, $\Gal(F_\fP/K_\fp)=C_4$ and ramification index and residual degree equal to $2$. Let $$E/\QQ_p:y^2=x^3+Ax+B$$ be a minimal Weierstrass equation at $\pp$ with potentially good reduction. Let $n=\nu_\pp(\Delta)$ be the valuation of the minimal discriminant. If $\gcd(n,12)=2$, then $\sqrt{B}\not\in F_\fP$.
+\end{lemma}
+
+\begin{proof}
+    By Lemma \ref{lem_localC4}, we know that $F_\fP=K_\pp(\sqrt{u},\sqrt{v\pi})$ where $\pi$ is a uniformizer of $K$, $u$ is a non-square unit of $K$ and $v$ is a non-square unit of $K(\sqrt{u})$. We also note that $\pi$ is a uniformizer of $K(\sqrt{u})$.
+    Similarly to the previous proof, we need to consider the case $n=2$ and $n=10$. 
+
+    \textbf{Case $n=2$:}
+
+    In this case, $\nu_\pp(B)=1$ and therefore $B=\mu\pi$ for some unit $\mu$ of $K$. Since the extension $K(\sqrt{u})/K$ is unramified of degree $2$, $\mu=\lambda^2$ for some unit $\lambda$ of $K(\sqrt{u})$. Therefore, if $\varpi$ is a uniformizer of $F_\fP$, then $B/\varpi^2=\lambda^2\pi/\varpi^2$ is a non-square unit by Lemma \ref{lem_localC4}. In particular, $\sqrt{B}\not\in F_\fP$.
+
+    \textbf{Case $n=10$:}
+    This case is solved similarly. Following the same argument as in Lemma \ref{lem_nottwo}, it follows that $\nu_\pp(B)=5$ and hence $B=\mu\pi^5$ where $\mu$ is a unit in $K$ and $\mu=\lambda^2$ for some unit $\lambda$ in $K(\sqrt{u})$. Hence,
+    $$\frac{B}{\varpi^{10}}=\frac{\lambda^2\pi^5}{\varpi^{10}}=\left(\frac{\lambda\pi^2}{\varpi^4}\right)^2\frac{\pi}{\varpi^2}$$
+    is a non-square unit of $F_\fP$, which implies that $\sqrt{B}\not\in F_\fP$.
+\end{proof}
