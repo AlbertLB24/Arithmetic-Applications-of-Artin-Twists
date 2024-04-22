@@ -7,7 +7,7 @@
 %\usepackage{enumerate}
 \usepackage[shortlabels]{enumitem}
 \usepackage{amsfonts, amsmath, amsthm, amssymb, float, mathtools, bbm, etoolbox, xcolor, enumitem}
-\usepackage[hyperfootnotes=false]{hyperref}
+\usepackage[hyperfootnotes=false, linktocpage=true]{hyperref}
 %\usepackage{soul, matlab-prettifier, multirow, varwidth, array, bm, amssymb}
 %\usepackage[all]{xy}
 \usepackage[margin=1.3in]{geometry}
@@ -144,12 +144,16 @@
 
 \title{Arithmetic Applications of Artin Twist and BSD}
 \author{Edwina Aylward, Albert Lopez Bruch}
+%\date{}
 
 \begin{document}
-\maketitle
-\pagenumbering{arabic}
-\tableofcontents
-\newpage
+	\maketitle	\thispagestyle{empty}
+	%\newpage
+	{\abstract{Let $E / \bQ$ be an elliptic curve, $F / \bQ$ a Galois extension. We investigate a new test introduced in \cite{DEW1} that can force $E$ to have positive rank over $F$. This test appears very different to existing parity tests. We show that one cannot use this test to force positive rank when $F / \bQ$ is a cyclic or odd degree extension.}}
+	\tableofcontents
+	\pagenumbering{arabic}	
+	\setcounter{page}{1}
+	%\newpage
 
 \section{Introduction}
 \input{intro.tex}

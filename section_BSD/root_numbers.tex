@@ -1,0 +1,63 @@
+\subsection{Root Numbers and The Parity Conjecture}
+
+Root numbers (conjecturally) govern the parity of the rank of an elliptic curve. In this subsection, we briefly discuss root numbers and the parity conjecture. In $\S\ref{sec_pos_rank}$, we will compare using root number computations to another means of forcing positive rank for an elliptic curve, as described in Theorem \ref{thm_positive_rank}. We omit the notation, but descriptions of the completed $L$-functions for $L(E / F, s)$ and $L(E / F, \rho, s)$ can be found in \cite[$\S$2.5]{DEW1}.\\
+
+
+Let $F$ be a number field and $E / F$ an elliptic curve. The parity conjecture states that the rank of $E / F$ is determined by the global root number $w(E / F) \in \{ \pm 1 \}$, that is
+
+\begin{conj}[Parity conjecture]\label{parity}
+    $(-1)^{\rk E / F} = w(E / F).$
+\end{conj}
+
+In particular if $w(E / F) = -1$, one has that $\rk E / F$ is odd, and so $\rk E / F > 0$. Therefore the computation of root numbers provides a test for forcing positive rank. We note that parity conjecture follows from assuming BSD and the Hasse--Weil conjecture: 
+
+\begin{conj}[Hasse--Weil conjecture]
+    $L(E / F, s)$ has a completed $L$-function 
+    $\hat{L}(E / F, s)$ that can be analytically continued to $\bC$ and satisfies the following functional equation:
+    \[ \hat{L}(E / F, s) = w(E / F) \hat{L}(E / F, 2- s) .\]
+\end{conj}
+
+This is known when $F = \bQ$ due to modularity of elliptic curves. Assuming the Hasse--Weil conjecture, one has that if $w(E / F) = 1$, then $\hat{L}(E / F, s)$ is symmetric under $s \leftrightarrow 2 - s$, and so the order of vanishing at $s = 1$ of $\hat{L}(E / F, s)$ is even. Then $\ord_{s = 1} L(E / F, s) = \ord_{s = 1}\hat{L}(E / F, s)$ and assuming BSD one has that $\rk E / F$ is even. 
+The parity conjecture for elliptic curves is known to be true over number fields $F$, assuming finiteness of $|\Sha_{E / F}|$, as proven in \cite{TimVlad}.
+
+The global root number is a product of local root numbers. 
+\[ w(E / F) = \prod_v w(E / F_v), \]
+taking the product over all places (including infinite ones) of $F$. 
+The following proposition details how to compute these root numbers. 
+
+\begin{prop}\cite[Theorem 3.1]{DD-BSD}\label{compute-root}
+    Let $F$ be a number field, $F_v$ the completion of $F$ with respect to a place $v$. When $v$ is finite, 
+    let $\kappa$ be the residue field of $F_v$. Then the local root number $w(E / F_v)$ is given by 
+    \begin{enumerate}[(i)]
+        \setlength\itemsep{0em}
+        \item $w(E / F_v) = -1$ if $v$ is infinite, or if  $E / F_v$ has split multiplicative reduction,
+        \item $w(E / F_v) = 1$ if $E / F_v$ has good reduction, or if $E / F_v$ has non-split multiplicative reduction, 
+        \item $w(E / F_v) = \legendre{-1}{\kappa}$ if $E / F_v$ has potentially multiplicative reduction and $\kappa$ has characteristic $\geq 3$, where $\legendre{*}{\kappa}$ is the quadratic residue symbol on ${\kappa}^{\times}$,
+        \item $w(E / F_v) = (-1)^{\floor{\frac{v(\Delta_E)|\kappa|}{12}}}$, if $E / F_v$ has potentially good reduction and $\kappa$ has characteristic $\geq 5$, where $\Delta_E$ is the minimal discriminant of $E$.  
+    \end{enumerate} 
+\end{prop}
+
+\begin{example}[Modular curve $X_1(11)$]
+    The elliptic curve $E \colon y^2 + y = x^3  - x^2$ over $\bQ$ has good reduction at $p \not= 11$, and split multiplicative reduction at $p = 11$. Hence by Proposition \ref{compute-root}, $w(E / \bQ) = (-1)(-1) = 1$ and so the parity conjecture implies that $\rk E / \bQ$ is even (actually, it is zero). 
+\end{example}
+
+There is also a global root number for the twist of $E$ by an Artin representation $\rho$, denoted $w(E / F, \rho) \in \{ \pm 1 \}$. This appears in a functional equation relating the completed twisted $L$ functions $\hat{L}(E / F, \rho, s)$ and $\hat{L}(E / F, \rho^*, 2 - s)$, where $\rho^*$ is the dual representation of $\rho$. Then one has a parity conjecture for twists by self-dual representations:
+
+\begin{conj}[Parity conjecture for twists]
+   Let $\rho$ be a self-dual Artin representation that factors through $\Gal(F / \bQ)$. Then $$ w(E / F, \rho) = (-1)^{\langle \rho, E(F)_{\bC} \rangle}.$$
+\end{conj}
+
+Again this is the product of local root numbers; $w(E / F, \rho) = \prod_v w(E / F_v, \rho)$, where $w(E / F_v, \rho) \in \{ \pm 1\}$. The twisted root numbers satisfy the following properties:
+
+\begin{prop}\cite[Lemma A.1, Proposition A.2]{reg-const}\label{compute-root-twist}
+    Let $E / F$ be an elliptic curve, $L / F$ a finite Galois extension with Galois group $G$. Let $\rho$, $\tau$ be Artin representations over $F$ that factor through $G$ and let $\trivial$ denote the trivial Artin representation over $F$. Then
+    \begin{enumerate}[(i)]
+        \setlength\itemsep{0em}
+        \item $w(E / F, \rho \oplus \tau) = w(E / F, \rho) w(E / F, \tau)$,
+        \item $w(E / F, \trivial) = w(E/ F)$, 
+        \item If $H \leq G$ then $w(E / L^H) = w(E/ F, \Ind_{H}^G \trivial)$, 
+        \item $w(E / F, \rho \oplus \rho^*) = 1$.
+    \end{enumerate}
+\end{prop}
+
+Therefore, similarly to the $L$-function of $E / F$, one can factor the root number $w(E / F)$ into twisted root numbers.

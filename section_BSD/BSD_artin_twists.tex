@@ -10,7 +10,7 @@ A natural question to ask at this point is whether there is a conjectural analog
 
 Unfortunately, a conjectural analogue for $\BSD2$ is not known. The problem is the lack of an analogue for the term $\BSD(E/F)$ as above. However, there is indeed an important analogue of the term $\mathcal{L}(E/F)$ in this setting.
 
-\begin{notation}
+\begin{notation}\cite[Definition 12]{DEW1}
     Let $E/\QQ$ be an elliptic curve and $\rho$ an Artin representation over $\QQ$. We define
     $$\mathcal{L}(E,\rho)=\lim_{s\to1}\frac{L(E,\rho,s)}{(s-1)^r}\cdot\frac{\sqrt{\mathfrak{f}_\rho}}{\Omega_+(E)^{d^+(\rho)}|\Omega_-(E)|^{d^-(\rho)}\omega_\rho},$$
     where $r = \ord_{s=1} L(E, \rho, s)$ is the order of the zero at $s = 1$, $\mathfrak{f}_\rho$ is the conductor of $\rho$, and $d^{\pm}(\rho)$ are the dimensions of the $\pm1$-eigenspaces of complex conjugation in its action on $\rho$.
@@ -35,7 +35,7 @@ For an elliptic curve $E / \bQ$ and Galois extension $F / \bQ$, Artin formalism 
         If $\langle\rho,E(F)_\CC\rangle=0$, then moreover:
     \begin{enumerate}[label={\bfseries C\arabic*.}]
         \setcounter{enumi}{2}
-       \item $\BSD(E,\rho)\in\QQ(\rho)^{\times}$ and $\BSD(E,\rho^{\fg})=\BSD(E,\rho)^{\fg}$ for all $\fg\in\Gal(\QQ(\rho)/\QQ)$.\footnote{$\bQ(\rho)$ is the abelian extension of $\bQ$ obtained by adjoining $\{\Tr \rho (g) \colon g \in G \}$ to $\bQ$}
+       \item $\BSD(E,\rho)\in\QQ(\rho)^{\times}$ and $\BSD(E,\rho^{\fg})=\BSD(E,\rho)^{\fg}$ for all $\fg\in\Gal(\QQ(\rho)/\QQ)$. \footnote{$\bQ(\rho)$ is the abelian extension of $\bQ$ obtained by adjoining $\{\Tr \rho (g) \colon g \in G \}$ to $\bQ$, and $\rho^{\fg}$ is the Artin representation over $\bQ$ with $\Tr \rho^{\fg} = \fg \circ \Tr \rho$. }
         %\item If $\rho$ is a non-trivial primitive Dirichlet character of order $d$, and either the conductors of $E$ and $\rho$ are coprime or $E$ is semistable and has no non-trivial isogenies over $\QQ$, then $\BSD(E,\rho)\in\ZZ[\zeta_d]$. 
     \end{enumerate}
 \end{conj}

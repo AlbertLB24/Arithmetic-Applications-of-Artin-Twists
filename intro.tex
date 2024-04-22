@@ -1,4 +1,4 @@
-The Birch-Swinnerton-Dyer conjecture is one the most important and celebrated statements in classical algebraic number theory, and has been driving large amounts of current research in the area. The statement conjecturally provides a bridge between the arithmetic of elliptic curves, or abelian varieties more generally, and the properties of their associated L-functions, a (conjecturally) meromoprhic function in the complex plane, and therefore an analytic object in nature. This connection between arithmetic and analytic objects is ubiquitous throughout pure matematics, and it has remarkable and surprising consequences, many of which are deep and non-trivial. The BSD conjecture for elliptic curves establishes the following connection.
+The Birch-Swinnerton-Dyer conjecture is one the most important and celebrated statements in classical algebraic number theory, and has been driving large amounts of current research in the area. The statement conjecturally provides a bridge between the arithmetic of elliptic curves, or abelian varieties more generally, and the properties of their associated L-functions, a (conjecturally) meromorphic function in the complex plane, and therefore an analytic object in nature. This connection between arithmetic and analytic objects is ubiquitous throughout pure mathematics, and it has remarkable and surprising consequences, many of which are deep and non-trivial. The BSD conjecture for elliptic curves establishes the following connection.
 
 \begin{conj}[BSD Conjecture]
     Let $E$ be an elliptic curve over a number field $F$, and let $L(E/F,s)$ be the associated L-function. Then
@@ -14,7 +14,7 @@ The Birch-Swinnerton-Dyer conjecture is one the most important and celebrated st
 
 Furthermore, we remark that the organization of the terms in \eqref{eqn_BSD2} is not arbitrary; one should think of the terms in left hand side as `analytic' and the ones in the right hand side as `arithmetic'. We give a detailed discussion of these terms in Section \ref{sec_BSD}. In fact, we follow the common notation found in the literature and denote $\BSD(E/F)$ as the right hand side of \eqref{eqn_BSD2}, and $\mathcal{L}(E,F)$ as the left hand side.
 
-The bridge described in the BSD conjecture is mysterious in many ways, and has unexpected consequences that are often revealing about the arithmetic associated to elliptic curves. The following is a celbrated example that illustrates this phenomenon. A classical result in the theory of elliptic curves shows that isogenous elliptic curves over a number field have the same L-functions, and the BDS conjecure consequently imposes arithmetic conditions. On one hand, BSD1 imposes their ranks to be equal, and this is a well-known classical result. On the other hand, BSD2 imposes that the quantities $\Omega_E\cdot\BSD(E/F)$ should also be the same, where $\Omega_E$ is the contribution of the periods in the formula. This result was shown by Cassels, but the proof highly non-trivial. 
+The bridge described in the BSD conjecture is mysterious in many ways, and has unexpected consequences that are often revealing about the arithmetic associated to elliptic curves. The following is a celebrated example that illustrates this phenomenon. A classical result in the theory of elliptic curves shows that isogenous elliptic curves over a number field have the same L-functions, and the BDS conjecture consequently imposes arithmetic conditions. On one hand, BSD1 imposes their ranks to be equal, and this is a well-known classical result. On the other hand, BSD2 imposes that the quantities $\Omega_E\cdot\BSD(E/F)$ should also be the same, where $\Omega_E$ is the contribution of the periods in the formula. This result was shown by Cassels, but the proof highly non-trivial. 
 
 In this document, we investigate the arithmetic consequences of the factorization of L-functions of elliptic curves over number fields. The idea of the factorization is the following: given an elliptic curve $E/\QQ$ and an Artin representation $\rho$ over $\QQ$, there is also an associated an L-function $L(E,\rho,s)$, denoted as L-function of the Artin twist of $E$ by $\rho$. In Section \ref{sec_Lside} we give a detailed discussion on Artin representations and on the construction of these L-functions. Then, if $F$ is a number field, the L-function $L(E/F,s)$ can be factorized as a product of certain L-functions of Artin twists according to the properties
 $$L(E,\rho_1\oplus\rho_2,s)=L(E,\rho_1,s)L(E,\rho_2,s)\quad\text{and}\quad L(E/F,s)=L(E,\Ind_{F/\QQ}\mathds{1},s).$$
@@ -26,7 +26,7 @@ This result is known as Artin formalism, and it is central in the theory of L-fu
     where $E(K)_{\CC}=E(K)\otimes_{\ZZ}\CC$ is viewed as a representation of $\Gal(K/\QQ)$ and the inner product is the standard inner product of characters in representation theory.
 \end{conj}
 
-This conjecture provides an example where an arithmetic property implies an analytic one. Consider an Artin representation $\rho$ that factors through $\Gal(K/\QQ)$, and let $\QQ(\rho)$ be the field obtained by attaching $\{\Tr(\rho(\fg)):\fg\in\Gal(K/\QQ)\}$, which is a Galois abelian extension of $\QQ$. Since $E(K)_{\CC}$ is a rational representation, then $\langle\rho,E(K)_{\CC}\rangle=\langle\rho^{\fg},E(K)_{\CC}\rangle$ where $\rho^{\fg}$ is the repersentation with character given by $\Tr\circ\rho^{\fg}=(\Tr\circ\rho)^{\fg}$ and $\fg\in\Gal(\QQ(\rho)/\QQ)$. The corresponding result for L-functions is proven for some cases, but the general one remains open.
+This conjecture provides an example where an arithmetic property implies an analytic one. Consider an Artin representation $\rho$ that factors through $\Gal(K/\QQ)$, and let $\QQ(\rho)$ be the field obtained by attaching $\{\Tr(\rho(\fg)):\fg\in\Gal(K/\QQ)\}$, which is a Galois abelian extension of $\QQ$. Since $E(K)_{\CC}$ is a rational representation, then $\langle\rho,E(K)_{\CC}\rangle=\langle\rho^{\fg},E(K)_{\CC}\rangle$ where $\rho^{\fg}$ is the representation with character given by $\Tr\circ\rho^{\fg}=(\Tr\circ\rho)^{\fg}$ and $\fg\in\Gal(\QQ(\rho)/\QQ)$. The corresponding result for L-functions is proven for some cases, but the general one remains open.
 
 \begin{conj}
     Let $E$ be an elliptic curve over a number field $K$ and let $\rho$ be an Artin representation over $\QQ$ factoring through $\Gal(K/\QQ)$. Then
@@ -34,7 +34,7 @@ This conjecture provides an example where an arithmetic property implies an anal
     for any $\fg\in\Gal(\QQ(\rho)/\QQ)$.
 \end{conj}
 
-Simiarly to Conjecture \ref{conj_BSD1Artin}, one would be interested in stating a conjectural analogue of BSD2 for L-functions of Artin twists, but such an statement does not exist. The main barrier to this is the lack of a formulation of a $\BSD(E,\rho)$ term for the arithmetic side. This barrier is explained and studied in \cite[\S4]{DEW1}, where they provide some examples of `arithmetically similar representations' but whose Artin L-functions have distinct values at $s=1$. However, in a similar way that Artin formalism allows to factor $L(E/F,s)$ as a prodcut of F-functions twisted by Artin representations, one expects the following to hold.
+Similarly to Conjecture \ref{conj_BSD1Artin}, one would be interested in stating a conjectural analogue of BSD2 for L-functions of Artin twists, but such an statement does not exist. The main barrier to this is the lack of a formulation of a $\BSD(E,\rho)$ term for the arithmetic side. This barrier is explained and studied in \cite[\S4]{DEW1}, where they provide some examples of `arithmetically similar representations' but whose Artin L-functions have distinct values at $s=1$. However, in a similar way that Artin formalism allows to factor $L(E/F,s)$ as a product of F-functions twisted by Artin representations, one expects the following to hold.
 
 \begin{conj}{\cite[Conjecture 4]{DEW1}}\label{conj_conjecture4}
     Let $E/\QQ$ be an elliptic curve. 
@@ -51,7 +51,7 @@ Simiarly to Conjecture \ref{conj_BSD1Artin}, one would be interested in stating 
         If $\langle\rho,E(F)_\CC\rangle=0$, then moreover:
     \begin{enumerate}[label={\bfseries C\arabic*.}]
         \setcounter{enumi}{2}
-       \item $\BSD(E,\rho)\in\QQ(\rho)^{\times}$ and $\BSD(E,\rho^{\fg})=\BSD(E,\rho)^{\fg}$ for all $\fg\in\Gal(\QQ(\rho)/\QQ)$.
+       \item $\BSD(E,\rho)\in\QQ(\rho)^{\times}$ and $\BSD(E,\rho^{\fg})=\BSD(E,\rho)^{\fg}$ for all $\fg\in\Gal(\QQ(\rho)/\QQ)$.%\footnote{$\bQ(\rho)$ is the abelian extension of $\bQ$ obtained by adjoining $\{\Tr \rho (g) \colon g \in G \}$ to $\bQ$}
         %\item If $\rho$ is a non-trivial primitive Dirichlet character of order $d$, and either the conductors of $E$ and $\rho$ are coprime or $E$ is semistable and has no non-trivial isogenies over $\QQ$, then $\BSD(E,\rho)\in\ZZ[\zeta_d]$. 
     \end{enumerate}
 \end{conj}
@@ -120,17 +120,25 @@ The other setting in which norm relation tests cannot predict rank growth is whe
 The statement and proofs of these results are number theoretic in nature, but can be naturally phrased in representation theoretic terms. Section \ref{sec_norm} introduces this representation theoretic notation and proves the results we will require during the proofs of the main theorems.  
 
 
-\newpage
 \subsection*{Notation}
+
+We use the following notation\newline
+
+\begin{tabular}{l | l}
+    $E / K$ & an elliptic curve over a field $K$,\\
+    $\Delta_E$ & the discriminant of $E / K$,\\
+    $K_v$  & the completion of a number field $K$ at a place $v$, \\
+    $\omega$ & a global invariant differential of $E$ over a number field $K$,\\
+    $\omega_v^{\min}$ & the minimal differential of $E / K_{v}$, where $E$ is defined over a number field $K$, $v$ is a place of $K$. 
+\end{tabular}\newline
+
 Let $G$ be a finite group, $K$ a field of characteristic $0$, and $\rho$ a representation of $G$. We use the following notation for characters and representations of $G$:
 
 \bigskip
 
 \begin{tabular}{l | l}
      $\R_{K}(G)$ & the ring generated by the characters of representations of $G$ over $K$,\\
-    $\Perm(G)$ & the ring of characters of virtual permutations representations of $G$, \\
-    $\Char_{\bQ}(G)$ & the ring of rationally-valued characters of $G$,\\ 
-    $\C(G)$ & the finite abelian group $\Char_{\bQ}(G) / \Perm(G)$, \\ 
+    $\C(G)$ & the finite abelian group $\Char_{\bQ}(G) / \Perm(G)$ (see Remark \ref{image-of-burnside}), \\ 
     $\bQ(\rho)$ & the abelian extension of $\bQ$ generated by the character values of $\rho$, \\
     $\rho^{\fg}$ & the representation of $G$ with trace $\Tr \rho^{\fg} = \fg \circ \Tr \rho$, where $\fg \in \Gal\left(\bQ(\rho) / \bQ\right)$,\\
     $\repnorm{\rho}$ &  $ = \sum_{\fg \in \Gal(\bQ(\rho) / \bQ)} \rho^{\fg},$ (Definition \ref{rho-norm}),\\
@@ -141,7 +149,10 @@ Let $G$ be a finite group, $K$ a field of characteristic $0$, and $\rho$ a repre
 \vspace{1em}
 
 For a subgroup $H \leq G$ and $x \in F$, let $H^{x} = x H x^{-1}$.  
+For an odd prime $p$, let $p^* = p$ if $p \equiv 1 \pmod 4$, and $p^* = -p$ if $p \equiv 3 \pmod 4$. We let 
+$\Ind_{F / K} \trivial  = \Ind_{G_F}^{G_K} \trivial$ for a finite extension of number fields $F / K$.
 
-For an odd prime $p$, let $p^* = p$ if $p \equiv 1 \pmod 4$, and $p^* = -p$ if $p \equiv 3 \pmod 4$. 
 
-$\Ind_{F / K} \trivial  = \Ind_{G_F}^{G_K} \trivial$ for a finite extension of number fields $F / K$?
+\subsection*{Acknowledgements}
+
+We would like to thank our supervisor Vladimir Dokchitser for his generosity with his time, his many helpful suggestions, and for introducing us to this interesting topic.
