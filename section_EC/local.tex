@@ -1,10 +1,16 @@
 \subsection{Elliptic Curves over Local Fields and Reduction Types}
 
-Now assume that $K$ is a local field of characteristic $0$ with a discrete valuation $\nu$, ring of integers $R$ and residue field $\kappa$. We denote by $a\mapsto \tilde{a}$ for the natural quotient map $K\to\kappa$. We say that \eqref{eqn_gen_elliptic} is a \textbf{minimal Weierstrass equation} if $a_1,a_2,a_3,a_4,a_6\in R$ and $\nu(\Delta)$ is minimal among all such equations. When this is the case, we have a well-defined associated curve $\tilde{E}$ over $\kappa$ defined by the equation $y^2+\tilde{a_1}xy+\tilde{a_3}y=x^3+\tilde{a_2}x^2+\tilde{a_4}x+\tilde{a_6}$ and the associated \textbf{reduction map}
+Recall that an elliptic curve $E$ over a field $K$ is a genus one smooth projective curve with a specified $K$-rational point. Any such curve can be written as the locus on $\PP^2$ of a \textbf{Weierstrass equation}
+\begin{equation}\label{eqn_gen_elliptic}\tag{*}
+    E: y^2+a_1xy+a_3y=x^3+a_2x^2+a_4x+a_6,\quad a_1,a_2,a_3,a_4,a_6\in K,
+\end{equation}
+together with the specified $K$-rational point $[0:1:0]$ at infinity. Associated to this equation is the $j$-invariant $j$, as well as the discriminant $\Delta$ ( see \cite[\S III.1]{S1} for more details). 
+
+Now assume that $K$ is a local field of characteristic $0$ with a discrete valuation $\nu$, ring of integers $R$, maximal ideal $\fm$ and residue field $\kappa = R / \fm$. We denote by $a\mapsto \tilde{a}$ for the natural quotient map $K\to\kappa$. We say that \eqref{eqn_gen_elliptic} is a \textbf{minimal Weierstrass equation} if $a_1,a_2,a_3,a_4,a_6\in R$ and $\nu(\Delta)$ is minimal among all such equations. When this is the case, we have a well-defined associated curve $\tilde{E}$ over $\kappa$ defined by the equation $y^2+\tilde{a_1}xy+\tilde{a_3}y=x^3+\tilde{a_2}x^2+\tilde{a_4}x+\tilde{a_6}$ and the associated \textbf{reduction map}
 \begin{equation*}%\label{eqn_reduction}
     \widetilde{(\cdot)}:E(K)\longrightarrow \tilde{E}(\kappa),
 \end{equation*}
-obtained by reducing the coordinates of a point $P\in E(K)$ modulo $\kappa$. One needs to have some care defining the reduction map. For a detailed construction, see \cite[\S1 VII.2]{S1}. We remark that $\tilde{E}$ may be a singular curve, and the \textbf{reduction type} of $E$ over $K$ describes the behaviour of $\tilde{E}$ as a curve over $\kappa$.
+obtained by reducing the coordinates of a point $P\in E(K)$ modulo $\fm$. One needs to have some care defining the reduction map. For a detailed construction, see \cite[\S1 VII.2]{S1}. We remark that $\tilde{E}$ may be a singular curve, and the \textbf{reduction type} of $E$ over $K$ describes the behaviour of $\tilde{E}$ as a curve over $\kappa$.
 
 \begin{defn}
     Let $E/K$ and $\tilde{E}/\kappa$ be as above. Then we say that 
@@ -16,11 +22,11 @@ obtained by reducing the coordinates of a point $P\in E(K)$ modulo $\kappa$. One
     In cases (b) and (c) we say that $E/K$ has bad reduction. Moreover, if $E/K$ has multiplicative reduction, we say that the reduction is split if the slopes of the tangent lines at the node are in $K$, and non-split otherwise.
 \end{defn}
 
-By Proposition \ref{prop_nodecusp} we immediately see that $E/K$ has good reduction if $\nu(\Delta)=0$ and bad otherwise. In that case, $E/K$ has multiplicative reduction if $\nu(c_4)=0$ and additive otherwise.
+%By Proposition \ref{prop_nodecusp} we immediately see that $E/K$ has good reduction if $\nu(\Delta)=0$ and bad otherwise. In that case, $E/K$ has multiplicative reduction if $\nu(c_4)=0$ and additive otherwise.
 
 An important question which will be of interest for us is to understand how the reduction type of an elliptic curve $E$ changes over a finite field extension $F/K$. The following proposition gathers this information.
 
-\begin{prop}[Semistable Reduction Theorem]\label{prop_semi_red}
+\begin{prop}[{\cite[\S VII Proposition 5.4]{S1} }]\label{prop_semi_red}
     Let $E$ be an elliptic curve over a local field $K$ of characteristic $0$. 
     \begin{enumerate}[label={(\roman*)}]
         \item Let $F/K$ be an unramified extension. Then the reduction type of $E$ over $K$ (good multiplicative or additive) is the same as the reduction type of $E$ over $F$.
@@ -29,9 +35,6 @@ An important question which will be of interest for us is to understand how the 
         \item There exists a finite extension $F/K$ such that $E$ has either good or split multiplicative over $F$.
     \end{enumerate}
 \end{prop}
-\begin{proof}
-    \cite[\S VII Proposition 5.4]{S1} 
-\end{proof}
 
 Item (ii) of the above lemma motivates the following definition that we will use later on.
 

@@ -7,11 +7,11 @@ Let $\ell$ be a rational prime number. For any $n\geq1$, we denote by $E[\ell^n]
     \longrightarrow E[\ell^{n+1}]\xlongrightarrow{[\ell]} E[\ell^{n}]\xlongrightarrow{[\ell]}\cdots\xlongrightarrow{[\ell]} E[\ell^2]\xlongrightarrow{[\ell]} E[\ell]\xlongrightarrow{[\ell]} \mathrm{O}_E 
 \] 
 and therefore we can construct the inverse limit of this diagram
-$$T_\ell(E):=\varprojlim_{n}E[\ell^n],$$
-denoted as the $\ell$-adic Tate module of the elliptic curve $E$. By the uniformization theorem, we know that 
+$T_\ell(E):=\varprojlim_{n}E[\ell^n],$
+denoted as the \textbf{$\ell$-adic Tate module} of the elliptic curve $E$. By the uniformization theorem, we know that 
 $$E[\ell^n]\cong\frac{\ZZ}{\ell^n\ZZ}\oplus\frac{\ZZ}{\ell^n\ZZ}$$
 as groups, and therefore 
-$$T_\ell(E)\cong\ZZ_\ell\oplus\ZZ_\ell$$
+$T_\ell(E)\cong\ZZ_\ell\oplus\ZZ_\ell$
 as $\ZZ_\ell$-modules. In addition, the Tate module carries important extra structure, namely the action of the absolute Galois group $G_K$. Since $E$ is defined over $K$, and the multiplication by $m$ maps are determined by polynomials with coefficients in $K$, there is a well-defined additive action $\psi_n:G_K\rightarrow\Aut_{\ZZ}(E[\ell^n])$. Furthermore, one can show that these actions are compatible with the inverse limit diagram of the Tate module. That is, for every $n\geq 1$ and $\sigma\in G_K$, the diagram
 
 
@@ -21,7 +21,6 @@ as $\ZZ_\ell$-modules. In addition, the Tate module carries important extra stru
         E[\ell^{n+1}] \arrow[r, "\ell"] & E[\ell^n]
     \end{tikzcd}
 \end{center}
-
 commutes. Therefore, the actions $\psi_n$ induce an action of $G_K$ on $T_\ell(E)$ and since $T_\ell(E)\cong\ZZ_\ell\oplus\ZZ_\ell$, this corresponds to a $2$-dimensional $\ell$-adic representations
 $$\psi_{E,\ell}:G_K\longrightarrow \GL_2(\ZZ_\ell)\subseteq\GL_2(\QQ_\ell).$$
 We will also denote from now on $\rho_{E,\ell}$ to be the dual representation of $\psi_{E,\ell}$. For technical reasons we will not discuss, the $L$-function is typically constructed using the later ones.
@@ -42,10 +41,8 @@ Of course, the above construction can be followed by any rational prime $\ell$, 
             & = 1, & \text{if } E/K_\pp \text{ has additive reduction.}
         \end{array}
     \]
-    
-
     In particular, for any $\ell,\ell'$ not divisible by $\pp$, 
-    $$P_\pp(\rho_{E,\ell},T)=P_\pp(\rho_{E,\ell'},T),$$
+    $P_\pp(\rho_{E,\ell},T)=P_\pp(\rho_{E,\ell'},T),$
     and so $\{\rho_{E,\ell}\}$ is a weakly compatible system of $\ell$-adic representations.
 \end{thm}
 

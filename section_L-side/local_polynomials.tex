@@ -1,7 +1,7 @@
 \subsection{Local Polynomials and L-functions}
-We now briefly discuss how to attach analytic objects to Artin and $\ell$-adic representations. These objects are usually described for local fields of characteristic $0$ first. Then, one constructs global objects attached to number fields by completing them at their finite places, obtaining the local information and then combining it appropriately. 
+We now briefly discuss how to attach analytic objects to Artin and $\ell$-adic representations. These objects are usually described for local fields. Then, one constructs global objects attached to number fields by completing them at their finite places, obtaining the local information and then combining it appropriately. 
 
-To begin, let $K$ be a local field with $0$ characteristic and let $p$ be the characteristic of the residue field $\kappa$. Let $\rho:G_K\to\GL(V)$ be an Artin or $\ell$-adic representation such that $\ell\neq p$ (this is an important technical assumption that we will not discuss further). It is a fundamental result in algebraic number theory that the natural map 
+To begin, let $K$ be a local field and let $p$ be the characteristic of the residue field $\kappa$. Let $\rho:G_K\to\GL(V)$ be an Artin or $\ell$-adic representation such that $\ell\neq p$ (this is an important technical assumption that we will not discuss further). It is a fundamental result in algebraic number theory that the natural map 
 $$\epsilon:\Gal(\bar{K}/K)\longrightarrow\Gal(\bar{\kappa}/\kappa)$$
 is surjective, and $I_K:=\ker\epsilon$ is denoted as the inertia group of $K$. Therefore, we have a short exact sequence
 $$0\longrightarrow I_K\longrightarrow \Gal(\bar{K}/K)\xlongrightarrow{\epsilon} \Gal(\bar{\kappa}/\kappa)\longrightarrow 0.$$
@@ -11,7 +11,7 @@ $$V^{I_K}:=\{v\in V:\rho(g)v=v\text{ for all }g\in I_K\}$$
 is naturally a $G_K/I_K$ representation, which we denote $\rho^{I_K}$. In this setting, $\rho^{I_K}(\Frob_K)$ is therefore well-defined. We are now ready to define the local polynomial attached to $\rho$.
 
 \begin{defn}
-    Let $K$ be a local field of characteristic $0$ and let $p$ the characteristic of its local field. If $\rho$ is an Artin or $\ell$-adic representation such that $\ell\neq p$, then the local polynomial attached to $\rho$ is
+    Let $K$ be a local field and let $p$ the characteristic of its residue field. If $\rho$ is an Artin or $\ell$-adic representation such that $\ell\neq p$, then the local polynomial attached to $\rho$ is
     $$P(\rho,T):=\det\left(I-T\cdot\rho^{I_K}\left(\Frob_K^{-1}\right)\right).$$  
 \end{defn}
 
