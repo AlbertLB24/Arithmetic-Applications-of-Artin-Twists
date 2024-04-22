@@ -1,7 +1,65 @@
-{\color{red} to do!!}
+The Birch-Swinnerton-Dyer conjecture is one the most important and celebrated statements in classical algebraic number theory, and has been driving large amounts of current research in the area. The statement conjecturally provides a bridge between the arithmetic of elliptic curves, or abelian varieties more generally, and the properties of their associated L-functions, a (conjecturally) meromoprhic function in the complex plane, and therefore an analytic object in nature. This connection between arithmetic and analytic objects is ubiquitous throughout pure matematics, and it has remarkable and surprising consequences, many of which are deep and non-trivial. The BSD conjecture for elliptic curves establishes the following connection.
 
-\subsection*{Overview}
+\begin{conj}[BSD Conjecture]
+    Let $E$ be an elliptic curve over a number field $F$, and let $L(E/F,s)$ be the associated L-function. Then
+    \begin{equation}\label{eqn_BSD1}\tag{BSD1}
+        \quad\ord_{s=1}L(E/F,s)=\rk E/F,
+    \end{equation}
+    and the leading term of the Taylor series at $s=1$ of $L(E/F,s)$ is given by
+    \begin{equation}\label{eqn_BSD2}\tag{BSD2}
+        \lim_{s\to1}\frac{L(E/F,s)}{(s-1)^r}\cdot\frac{\sqrt{|\Delta_F|}}{\Omega_+(E)^{r_1+r_2}|\Omega_-(E)|^{r_2}}=\frac{\Reg_{E/F}|\Sha_{E/F}|C_{E/F}}{|E(F)_{\tors}|^2},
+    \end{equation}
+    where $r$ is the order of the zero of $L(E/F,s)$ at $s=1$, $(r_1,r_2)$ is the signature of $F$, $\Omega_{\pm}$ are the periods of $E$, $\Reg_{E/F}$ is the regulator, $\Sha_{E/F}$ is the Tate-Shafarevich group and $C_{E/F}$ is a product of local terms depending on the primes in $F$ of bad reduction over $E$.
+\end{conj}
 
+Furthermore, we remark that the organization of the terms in \eqref{eqn_BSD2} is not arbitrary; one should think of the terms in left hand side as `analytic' and the ones in the right hand side as `arithmetic'. We give a detailed discussion of these terms in Section \ref{sec_BSD}. In fact, we follow the common notation found in the literature and denote $\BSD(E/F)$ as the right hand side of \eqref{eqn_BSD2}, and $\mathcal{L}(E,F)$ as the left hand side.
+
+The bridge described in the BSD conjecture is mysterious in many ways, and has unexpected consequences that are often revealing about the arithmetic associated to elliptic curves. The following is a celbrated example that illustrates this phenomenon. A classical result in the theory of elliptic curves shows that isogenous elliptic curves over a number field have the same L-functions, and the BDS conjecure consequently imposes arithmetic conditions. On one hand, BSD1 imposes their ranks to be equal, and this is a well-known classical result. On the other hand, BSD2 imposes that the quantities $\Omega_E\cdot\BSD(E/F)$ should also be the same, where $\Omega_E$ is the contribution of the periods in the formula. This result was shown by Cassels, but the proof highly non-trivial. 
+
+In this document, we investigate the arithmetic consequences of the factorization of L-functions of elliptic curves over number fields. The idea of the factorization is the following: given an elliptic curve $E/\QQ$ and an Artin representation $\rho$ over $\QQ$, there is also an associated an L-function $L(E,\rho,s)$, denoted as L-function of the Artin twist of $E$ by $\rho$. In Section \ref{sec_Lside} we give a detailed discussion on Artin representations and on the construction of these L-functions. Then, if $F$ is a number field, the L-function $L(E/F,s)$ can be factorized as a product of certain L-functions of Artin twists according to the properties
+$$L(E,\rho_1\oplus\rho_2,s)=L(E,\rho_1,s)L(E,\rho_2,s)\quad\text{and}\quad L(E/F,s)=L(E,\Ind_{F/\QQ}\mathds{1},s).$$
+This result is known as Artin formalism, and it is central in the theory of L-functions. In this context, there is a well-known analogue to the BSD1 conjecture. 
+
+\begin{conj}\label{conj_BSD1Artin}
+    Let $E/\QQ$ be an elliptic curve and let $\rho$ be an Artin representation over $\QQ$ such that it factors through $\Gal(K/\QQ)$, where $K$ is some finite Galois extension of $\QQ$. Then
+    $$\ord_{s=1}L(E,\rho,s)=\langle\rho,E(K)_{\CC}\rangle,$$
+    where $E(K)_{\CC}=E(K)\otimes_{\ZZ}\CC$ is viewed as a representation of $\Gal(K/\QQ)$ and the inner product is the standard inner product of characters in representation theory.
+\end{conj}
+
+This conjecture provides an example where an arithmetic property implies an analytic one. Consider an Artin representation $\rho$ that factors through $\Gal(K/\QQ)$, and let $\QQ(\rho)$ be the field obtained by attaching $\{\Tr(\rho(\fg)):\fg\in\Gal(K/\QQ)\}$, which is a Galois abelian extension of $\QQ$. Since $E(K)_{\CC}$ is a rational representation, then $\langle\rho,E(K)_{\CC}\rangle=\langle\rho^{\fg},E(K)_{\CC}\rangle$ where $\rho^{\fg}$ is the repersentation with character given by $\Tr\circ\rho^{\fg}=(\Tr\circ\rho)^{\fg}$ and $\fg\in\Gal(\QQ(\rho)/\QQ)$. The corresponding result for L-functions is proven for some cases, but the general one remains open.
+
+\begin{conj}
+    Let $E$ be an elliptic curve over a number field $K$ and let $\rho$ be an Artin representation over $\QQ$ factoring through $\Gal(K/\QQ)$. Then
+    $$\ord_{s=1}L(E,\rho,s)=\ord_{s=1}L(E,\rho^{\fg},s)$$
+    for any $\fg\in\Gal(\QQ(\rho)/\QQ)$.
+\end{conj}
+
+Simiarly to Conjecture \ref{conj_BSD1Artin}, one would be interested in stating a conjectural analogue of BSD2 for L-functions of Artin twists, but such an statement does not exist. The main barrier to this is the lack of a formulation of a $\BSD(E,\rho)$ term for the arithmetic side. This barrier is explained and studied in \cite[\S4]{DEW1}, where they provide some examples of `arithmetically similar representations' but whose Artin L-functions have distinct values at $s=1$. However, in a similar way that Artin formalism allows to factor $L(E/F,s)$ as a prodcut of F-functions twisted by Artin representations, one expects the following to hold.
+
+\begin{conj}{\cite[Conjecture 4]{DEW1}}
+    Let $E/\QQ$ be an elliptic curve. 
+    For every Artin representation $\rho$ over $\bQ$ there exists an invariant $\BSD(E, \rho) \in \bC^{\times}$ with the following properties. 
+    %and assume that $L(E, \rho, s)$ has an analytic continuation to $\bC$ for all Artin representations $\rho$ over $\bQ$.
+    Let $\rho$ and $\tau$ be Artin representations over $\bQ$ that factor through $G = \Gal(F/\QQ)$ for some finite Galois extension $F / \bQ$. Then 
+    \begin{enumerate}[label={\bfseries C\arabic*.}]
+        \setlength\itemsep{0em}
+        \item $\mathrm{BSD}(E/F)=\mathrm{BSD}(E,\Ind_{F/\QQ}\trivial)$ for a number field $F$ (and $\Sha_{E/F}$ is finite).
+        \item $\mathrm{BSD}(E,\rho\oplus\tau)=\mathrm{BSD}(E,\rho)\mathrm{BSD}(E,\tau)$.
+       %\item $\mathrm{BSD}(E,\rho)=\mathrm{BSD}(E,\rho^*)\cdot(-1)^{r}\omega_{E,\rho}\omega_\rho^{-2}$, where $r=\langle\rho,E(K)_\CC\rangle$.
+        %\item If $\rho$ is self-dual, then $\mathrm{BSD}(E,\rho)\in\RR$ and $\sign\ \mathrm{BSD}(E,\rho)=\sign\ \omega_\rho$.
+    \end{enumerate}       
+        If $\langle\rho,E(F)_\CC\rangle=0$, then moreover:
+    \begin{enumerate}[label={\bfseries C\arabic*.}]
+        \setcounter{enumi}{2}
+       \item $\BSD(E,\rho)\in\QQ(\rho)^{\times}$ and $\BSD(E,\rho^{\fg})=\BSD(E,\rho)^{\fg}$ for all $\fg\in\Gal(\QQ(\rho)/\QQ)$.\footnote{$\bQ(\rho)$ is the abelian extension of $\bQ$ obtained by adjoining $\{\Tr \rho (g) \colon g \in G \}$ to $\bQ$}
+        %\item If $\rho$ is a non-trivial primitive Dirichlet character of order $d$, and either the conductors of $E$ and $\rho$ are coprime or $E$ is semistable and has no non-trivial isogenies over $\QQ$, then $\BSD(E,\rho)\in\ZZ[\zeta_d]$. 
+    \end{enumerate}
+\end{conj}
+
+However, a conjectural analogue of the $\mathcal{L}(E/F)$ for Artin twists does exist, which includes information analytic information related to $\rho$ (see Section \ref{sec_BSDArtin}), and it is denoted by $\mathcal{L}(E,\rho)$. For our purposes, the precisde definition of this constant is not important. The relevant 
+
+
+\newpage
 \subsection*{Notation}
 Let $G$ be a finite group, $K$ a field of characteristic $0$, and $\rho$ a representation of $G$. We use the following notation for characters and representations of $G$:
 
