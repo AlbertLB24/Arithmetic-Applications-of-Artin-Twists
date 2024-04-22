@@ -12,7 +12,7 @@ The Birch--Swinnerton-Dyer conjecture is one the most important and celebrated s
     where $r$ is the order of the zero of $L(E/F,s)$ at $s=1$, $(r_1,r_2)$ is the signature of $F$, $\Omega_{\pm}$ are the periods of $E$, $\Reg_{E/F}$ is the regulator, $\Sha_{E/F}$ is the Tate-Shafarevich group and $C_{E/F}$ is a product of local terms depending on the primes in $F$ of bad reduction over $E$ (see Section \ref{sec_BSD}).
 \end{conj}
 
-In this document, we investigate the arithmetic consequences of the factorization of L-functions of elliptic curves over number fields, commonly known as Artin formalism. Dokchitser, Evans and Wiersema in \cite{DEW1} have already studied some of these and, in particular, they constructed a test that predicts positive rank for families of elliptic curves, which is only dependent on certain local arithmetic data associated to the primes of bad reduction of the elliptic curve. The existence of such tests, which we call `Norm Relations tests', is enconded in the following statement. 
+In this document, we investigate the arithmetic consequences of the factorization of L-functions of elliptic curves over number fields, commonly known as Artin formalism. Dokchitser, Evans and Wiersema in \cite{DEW1} have already studied some of these and, in particular, they constructed a test that predicts positive rank for families of elliptic curves, which is only dependent on certain local arithmetic data associated to the primes of bad reduction of the elliptic curve. The existence of such tests, which we call `Norm Relations tests', is encoded in the following statement. 
 
 \begin{conj}\cite[Theorem 33]{DEW1}\label{conj_normstest}
     Let $E/\QQ$ be an elliptic curve, $F/\QQ$ a finite Galois extension with Galois group $G$, $\rho$ an Artin representation over $\bQ$ that factors through $G$ and 
@@ -47,21 +47,21 @@ Let us briefly describe an example where Conjecture \ref{conj_normstest} indeed 
             \draw(C2a)--(C1);   \draw(C2b)--(C1);   \draw(C2c)--(C1);   \draw(C3)--(C1); 
         \end{tikzpicture}
     \end{figure}
-    Let $E/\QQ$ be an elliptic curve such that it has multiplicative reduction at a prime $p$ with decomposition group $G$ and inertia group $C_6^b$ and such that every other prime of bad reduction is unramified in $F/\QQ$. If $\rho$ is an order $6$ character of $C_2\times C_6$ with kernel $C_2^a$, then $\QQ(\rho)=\QQ(\zeta_6)=\QQ(\sqrt{-3})$. Following Conjecture \ref{conj_normstest}, we aim to compute 
+    Let $E/\QQ$ be an elliptic curve such that it has multiplicative reduction at a prime $p$ with decomposition group $G$ and inertia group $C_6^b$ and such that every other prime of bad reduction is unramified in $F/\QQ$. If $\rho$ is an order $6$ character of $G$ with kernel $C_2^a$, then $\QQ(\rho)=\QQ(\zeta_6)=\QQ(\sqrt{-3})$. Following Conjecture \ref{conj_normstest}, we aim to compute 
     \begin{equation*}\label{eqn-rel2}
         \left(\frac{C_{E / F^{C_2^a}} C_{E / \bQ} }{C_{E / F^{C_6^a}} C_{E / F^{C_2^2}}}\right) \cdot \left( \frac{C_{E / F^{C_3}} C_{E / \bQ}^2}{C_{E / F^{C_6^a}}C_{E / F^{C_6^b}}  C_{E / F^{C_6^c}} } \right).
     \end{equation*}
-    We remark that the underlying fields do satisfy the condtion \eqref{eqn_localterms} from Conjecture \ref{conj_normstest}. This evaluates to $2\cdot\square$, and since $2$ is not a norm of an element from $\QQ(\sqrt{-3})$, Conjecture \ref{conj_normstest} forces $\rk E/F>0$. 
+    We remark that the underlying fields do satisfy the condition \eqref{eqn_localterms} from Conjecture \ref{conj_normstest}. This evaluates to $2\cdot\square$, and since $2$ is not a norm of an element from $\QQ(\sqrt{-3})$, Conjecture \ref{conj_normstest} forces $\rk E/F>0$. 
 \end{example}
 
 This test of predicting positive rank for families of elliptic curves should be reminiscent of using root number computations to predict positive rank based on local data. One takes the product of local roots numbers to obtain a global root number $w(E/K)\in{\pm1}$, and this arises in the (conjectural) functional equation of $L(E/K,s)$ (see Conjecture \ref{conj_hasseweil}). Hence, it describes the parity of the vanishing of the L-function at $s=1$. Assuming BSD, one expects the following to hold.
 
-\begin{conj}[Parity conjecture]\label{conj_parity}
+\begin{conj}[Parity Conjecture]\label{conj_parity}
     Let $E$ be an elliptic curve over a number field $K$. Then
     $(-1)^{\rk E / K} = w(E / K).$
 \end{conj}
 
-These so called `parity tests' have been extensively studied in the literature {\color{red} reference parity conjecture}, and they are known to hold in certain conditions under the assumption of finiteness of $\Sha_{E/F}$. One can observe that the rank growth in the above example can also be explained with the Parity conjecture, and we expect this phenomenon to happen in general. 
+Using the Parity Conjecture to test for rank growth is known as a `parity test'. The Parity Conjecture has been extensively studied in the literature, see for example \cite{Tim} It is known to hold in certain conditions under the assumption of finiteness of $\Sha_{E/F}$. One can observe that the rank growth in the above example can also be explained by the Parity Conjecture, and we expect this phenomenon to happen in general. 
 
 \begin{conj}\label{conj_normroot}
     Consider an elliptic curve $E / \bQ$, $F / \bQ$ a finite Galois extension, and relation 
@@ -71,7 +71,7 @@ These so called `parity tests' have been extensively studied in the literature {
 
 In Section \ref{sec-norm-rels-test} we describe a refined version of this conjecture, where it is phrased in terms of Artin twists of root numbers.
 
-Parity tests cannot predict rank growth of elliptic curves in odd degree extensions . This is a direct consequence of the fact that odd degree groups have no non-trivial self dual representations (see Lemma \ref{lem_oddroot}). Accordingly, Norm Relations tests cannot make such a prediction either.
+Parity tests cannot predict rank growth of elliptic curves in odd degree extensions. This is a direct consequence of the fact that odd degree groups have no non-trivial self dual representations (see Lemma \ref{lem_oddroot}). Accordingly, Norm Relations tests cannot make such a prediction either.
 
 \begin{thm}[Theorem \ref{odd-exts}]\label{thm_odd-cons}
     Let $E / \bQ$ be an elliptic curve and let $F / \bQ$ be a Galois extension of odd order with Galois group $G$. Assume that $E$ has semistable reduction at $2$ and $3$ and take any representation $\rho$ of $G$. Suppose $m\geq 1$ and $F_i,F_j'\subseteq F$ satisfy 
@@ -114,8 +114,7 @@ into the local contributions of each prime $\pp$ in the base field (see Notation
     \[
         \frac{\prod_i C_{\fP\mid p}(E/F_i)}{\prod_j C_{\fP\mid p}(E/F_j')}\in
         \begin{cases}
-            \QQss \text{ if $m$ is even,}\\
-            N_{\QQ(\sqrt{D})/\QQ}(\QQ(\sqrt{D})^{\times}) \text{ if $m$ is odd.}
+            N_{\QQ(\sqrt{D})/\QQ}(\QQ(\sqrt{D})^{\times}) & \text{ $m$ odd,}\\ \QQss & \text{ $m$ even.}
         \end{cases}
     \] 
 \end{cor}
@@ -127,7 +126,7 @@ The purpose of this project is two-fold: firstly, it aims to serve as an introdu
 
 Sections \ref{sec_EC} to \ref{sec_BSD} serve the first purpose. In Section \ref{sec_EC}, we give a brief and rather informal discussion on the theory of elliptic curves, where we dedicate most of our attention in describing their local behaviour. 
 %Of course, we assume familiarity with the topic, but we give appropiate references for those results that are generally less known or harder to find in the literature. 
-In Section \ref{sec_Lside}, we introduce the notion of an Artin representation and $\ell$-adic representation, and we also give a detailed description on the construction of the L-functions $L(E/F,s)$ associated to an elliptic curve over a number field $F$ and of its twist by an Artin representation $\rho$. Finally, in Section \ref{sec_BSD} we discuss the BSD conjecture in more detail and we explain the arithmetic terms appearing in the statement of the conjecture. We also discuss an important conjectural analaogue of BSD for Artin twists which naturally leads to the statement of Conjecture \ref{conj_4}, which motivates the latter half of the discussion.
+In Section \ref{sec_Lside}, we introduce the notion of an Artin representation and $\ell$-adic representation, and we also give a detailed description on the construction of the L-functions $L(E/F,s)$ associated to an elliptic curve over a number field $F$ and of its twist by an Artin representation $\rho$. Finally, in Section \ref{sec_BSD} we discuss the BSD conjecture in more detail and we explain the arithmetic terms appearing in the statement of the conjecture. We also discuss an important conjectural analogue of BSD for Artin twists which naturally leads to the statement of Conjecture \ref{conj_4}, which motivates the latter half of the discussion.
 
 The remaining sections serve the second purpose of studying the arithmetic of elliptic curves through Conjecture \ref{conj_4}. In Section \ref{sec_pos_rank} we describe how to derive Conjecture \ref{conj_normstest} from the statement of Conjecture \ref{conj_4}, and we provide detailed examples on how Norm Relations test predict positive rank. The statement and proofs of Theorems \ref{thm_odd-cons} and \ref{thm_cyclic-cons} are more naturally phrased in representation theoretic terms. Therefore, in Section \ref{sec_norm}, we introduce the necessary notation and results required for the later sections. 
 
