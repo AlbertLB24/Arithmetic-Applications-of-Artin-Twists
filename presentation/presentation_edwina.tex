@@ -2,7 +2,8 @@
 \usepackage{amsmath}
 \usepackage{xcolor}
 \usepackage{multimedia}
-\usetheme{copenhagen}
+\usepackage{bbm}
+\usetheme{Copenhagen}
 \definecolor{purple}{rgb}{0.3,0,0.4}
 \definecolor{aqua}{rgb}{0,0.85,0.8}
 \definecolor{grey}{rgb}{60,60,60}
@@ -18,6 +19,14 @@
 
 \newcommand{\Gal}{\mathrm{Gal}}
 \newcommand{\Cl}{\mathrm{Cl}}
+\newcommand{\BSD}{\mathrm{BSD}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\Reg}{\mathrm{Reg}}
+\newcommand{\rk}{\mathrm{rk}}
+\newcommand{\trivial}{\mathbbm{1}}
+\newcommand{\Ind}{\mathrm{Ind}}
+\newcommand{\Rep}{\mathrm{Rep}}
+\newcommand{\Tr}{\mathrm{Tr}}
 
 \newcommand{\CC}{\mathbb{C}}
 \newcommand{\FF}{\mathbb{F}}
@@ -32,18 +41,29 @@
 \newcommand{\qq}{\mathfrak{q}}
 \newcommand{\rr}{\mathfrak{r}}
 \newcommand{\af}{\mathfrak{a}}
+\newcommand{\fg}{\mathfrak{g}}
+\newcommand{\bQ}{\mathbb{Q}}
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\bZ}{\mathbb{Z}}
+
+%Sha:
+\usepackage[OT2,T1]{fontenc}
+\DeclareSymbolFont{cyrletters}{OT2}{wncyr}{m}{n}
+\DeclareMathSymbol{\Sha}{\mathalpha}{cyrletters}{"58}
+%end of Sha
 
 \theoremstyle{plain}
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{rem}[thm]{Remark}
 \newtheorem{proposition}[thm]{Proposition}
-
+\newtheorem{conjecture}[thm]{Conjecture}
+\newtheorem{test}[thm]{Test}
 
 
 \graphicspath{ }
 
 
-\title{A Study of the Arithmetic Consequences of Artin Formalism for
+\title[Artin Formalism]{A Study of the Arithmetic Consequences of Artin Formalism for
 Predicting Positive Rank}
 \author{Edwina Aylward, Albert Lopez Bruch}
 %\institute{LSGNT}
@@ -51,6 +71,187 @@ Predicting Positive Rank}
 
 \begin{document}
 
+%THINGS TO SAY AT THE BEGINNING. E IS ALWAYS AN ELLIPTIC CURVE. ALL EXTENSIONS ARE ASSUMED TO BE FINITE.
+
+
 \frame{\titlepage}
+
+\begin{frame}
+    \frametitle{Plan for today}
+    \tableofcontents
+    \end{frame}
+
+\begin{section}{Norm relations test}
+
+\begin{frame}
+    \frametitle{BSD term}
+    We discard some of the BSD terms for $E / K$
+    and define  
+
+    \begin{definition}
+        $$\BSD(E / K) = \frac{\Reg_{E / K}|\Sha_{E / K}| C_{E / K}}{|E(K)_{\tors}|^2 }$$
+    \end{definition}
+    \pause
+
+    Suppose $\rk E / K = 0$. Then $\Reg_{E / K} = 1$. Assuming finiteness of $\Sha_{E / K}$, Cassels proved that $|\Sha_{E / K}|$ is a square. \pause Thus one has
+    $$ \BSD(E / K) \equiv C_{E / K} \mod (\QQ^{\times})^2. $$
+\end{frame}
+\end{section}
+
+\begin{frame}
+    \frametitle{Artin formalism for BSD}
+    Consider $E / \QQ$, and $F / \QQ$ with $G = \Gal(F / \QQ)$.  \pause
+    As in the $L$-function case, we would like to be able to break up $\BSD(E / F)$ according to representations of $G$. \pause
+    
+    \begin{conjecture}
+        For each representation $\rho$ of $G$, there exists an invariant $\BSD(E, \rho) \in \CC^{\times}$ such that:\pause
+        \begin{enumerate}
+            \item$\BSD(E / F^H) = \BSD(E, \Ind_H^G \trivial)$ for $H \leq G$, \pause
+            \item $\BSD(E, \rho \oplus \tau) = \BSD(E, \rho)\BSD(E , \tau)$, where $\tau \in \Rep(G)$.\pause
+        \end{enumerate}
+    \end{conjecture}
+
+    Therefore, if $\Ind_H^G \trivial \simeq \trivial \oplus \bigoplus_i \rho_i$, one has
+    $$ \BSD(E / F^H) = \BSD(E / \QQ)\prod_i \BSD(E, \rho_i). $$ 
+\end{frame}
+
+\begin{frame}
+    \frametitle{Artin formalism for BSD}
+This conjecture is studied in \cite{DEW1}. They show it is true assuming some well-known conjectures. \pause They also conjecture (and justify) an additional useful property: 
+
+\begin{conjecture}
+    For each representation $\rho$ of $G$, there exists an invariant $\BSD(E, \rho) \in \CC^{\times}$ (as before) \pause such that if $\langle \rho, E(F)_{\CC} \rangle = 0$, then
+    \begin{enumerate}\setcounter{enumi}{2}
+        \item Galois equivariance: $\BSD(E, \rho) \in \QQ(\rho)^{\times}$ and $$\BSD(E, \rho^{\mathfrak{g}}) = \BSD(E, \rho)^{\mathfrak{g}} \text{ for } \mathfrak{g} \in \Gal(\bQ(\rho) / \bQ).$$ 
+    \end{enumerate}
+
+\end{conjecture}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Artin formalism for BSD}
+    \begin{conjecture}
+        For each representation $\rho$ of $G$, there exists an invariant $\BSD(E, \rho) \in \CC^{\times}$ (as before)  such that if $\langle \rho, E(F)_{\CC} \rangle = 0$, then
+        \begin{enumerate}\setcounter{enumi}{2}
+            \item Galois equivariance: $\BSD(E, \rho) \in \QQ(\rho)^{\times}$ and $$\BSD(E, \rho^{\mathfrak{g}}) = \BSD(E, \rho)^{\mathfrak{g}} \text{ for } \mathfrak{g} \in \Gal(\bQ(\rho) / \bQ).$$ 
+        \end{enumerate}
+    
+    \end{conjecture}
+    \pause
+    Here 
+    \begin{itemize}
+        \item $E(F)_{\bC} = E(F) \otimes_{\bZ} \bC$ is viewed as a $G$-representation, \pause
+        \item $\langle -, - \rangle$ is the usual inner product of characters of $G$, \pause
+        \item $\bQ(\rho)$ is an abelian extension of $\bQ$ obtained by adding $\{ \Tr \rho(\fg) \colon \fg \in G \}$ to $\bQ$, \pause
+        \item $\rho^{\fg}$ is the representation of $G$ with character $\Tr \rho^{\fg} = \fg \circ \Tr \rho $.
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Norm relations test}
+    Again, consider $E/ \bQ$, $F / \bQ$ and $G = \Gal(F / \bQ)$. \pause Take a representation $\rho$ of $G$, and assume $\langle \rho, E(F)_{\bC} \rangle = 0$. Then 
+    $$ \bigoplus_{\fg \in \Gal(\bQ(\rho) / \bQ)} \rho^{\fg}$$
+    has rational character. \pause 
+    Our conjecture implies that
+    $$\BSD(E, \bigoplus_{\fg \in \Gal(\bQ(\rho) / \bQ)} \rho^{\fg}) = \prod_{\fg \in \Gal(\bQ(\rho) / \bQ)} \BSD(E, \rho)^{\fg}$$\pause
+    is the norm of an element from $\bQ(\rho)^{\times}$. 
+\end{frame}
+
+\begin{frame}
+    \frametitle{Norm relations test}
+    There exists some $m \geq 1$ such that $$\left(\bigoplus_{\fg \in \Gal(\bQ(\rho) / \bQ)} \rho^{\fg}\right)^{\oplus m}$$
+    can be written in terms of permutation representations, i.e. \pause
+    $$ \bigoplus_{i} \Ind_{H_i}^G \trivial \ominus \left(\bigoplus_{j} \Ind_{H_j'}^G \trivial \right) = \left(\bigoplus_{\fg \in \Gal(\bQ(\rho) / \bQ)} \rho^{\fg}\right)^{\oplus m}$$
+    for some $H_i$, $H_j' \leq G$. 
+\end{frame}
+
+\begin{frame}
+    \frametitle{Norm relations test}
+    $$ \bigoplus_{i} \Ind_{H_i}^G \trivial \ominus \left(\bigoplus_{j} \Ind_{H_j'}^G \trivial \right) = \left(\bigoplus_{\fg \in \Gal(\bQ(\rho) / \bQ)} \rho^{\fg}\right)^{\oplus m}$$ \pause
+    On the level of BSD terms we get
+    $$ \frac{\prod_i \BSD(E / F^{H_i})}{\prod_j \BSD(E / F^{H_j'})} = \left(\prod_{\fg \in \Gal(\bQ(\rho) / \bQ)} \BSD(E, \rho)^{\fg}\right)^m$$
+    \pause so the left hand side is the norm of an element of $\bQ(\rho)$. \pause It is also the norm of an element from any subfield of $\bQ(\rho)$. 
+\end{frame}
+
+\begin{frame}
+    \frametitle{Norm relations test}
+    Now assume $\rk E / F = 0$. Then for all $H \leq G$, 
+    $$ \BSD(E / F^{H}) \equiv C_{E / F^H} \mod (\bQ)^{\times 2}.$$ \pause
+    Squares are norms from quadratic fields. \pause Thus if $\bQ(\sqrt{D}) \subset \bQ(\rho)$, then 
+   $$\frac{\prod_i \BSD(E / F^{H_i})}{\prod_j \BSD(E / F^{H_j'})} \in N_{\bQ(\sqrt{D}) / \bQ}(\bQ(\sqrt{D})^{\times})$$ \pause $$\implies 
+   \frac{\prod_i C_{E / F^{H_i}}}{\prod_j C_{E / F^{H_j'}}} \in N_{\bQ(\sqrt{D}) / \bQ}(\bQ(\sqrt{D}^{\times})). $$\pause
+   \textbf{so if this product isn't a norm...\pause our rank assumption was wrong!}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Norm relations test}
+    %We have deduced the following:
+    \begin{theorem}[{Norm relations test, \cite[Theorem 33]{DEW1}}]\label{thm_positive_rank}
+    \small{  Suppose our conjecture for the BSD terms holds. Consider $E/\QQ$, and $F/\QQ$  with $G = \Gal(F / \bQ)$. Let $\rho$ be a representation of $G$ containing a quadratic subfield $\bQ(\sqrt{D}) \subset \bQ(\rho)$. Suppose we have  
+        $$\left(\bigoplus_{\mathfrak{g}\in\Gal(\QQ(\rho)/\QQ)}\rho^{\mathfrak{g}}\right)^{\oplus m}=\bigoplus_i\Ind_{H_i}^G\mathbbm{1}\ominus\bigoplus_j\Ind_{H'_j}^G\mathbbm{1}$$
+        for some $m\geq 1$ and $H_i, H_j' \leq G$. If 
+        $$\frac{\prod_i C_{E/F^{H_i}}}{\prod_j C_{E/F^{H_j'}}} \not\in
+        \begin{cases}
+            \bQ^{\times 2} & m \text{ even,}\\
+            N_{\bQ(\sqrt{D}) / \bQ}(\bQ(\sqrt{D})^{\times}) & m \text{ odd,}
+        \end{cases}
+        $$
+        then $\rk E / F > 0.$ }
+    \end{theorem}
+\end{frame}
+
+
+\begin{section}{Representation theoretic methods}
+\begin{frame}
+    \frametitle{Representation theory}
+\end{frame}
+\end{section}
+
+\begin{section}{Odd degree extensions}
+\begin{frame}
+    \frametitle{Odd degree extensions}
+    Now consider $E / \bQ$, and $F / \bQ$ Galois with $G = \Gal(F / \bQ)$ of odd order. \pause
+    We proved that
+    \begin{thm}\label{odd-exts}
+       Assume $E$ has good or multiplicative reduction at $2$ and $3$. 
+       Take any representation $\rho$ of $G$ with $\bQ(\sqrt{D}) \subset \bQ(\rho)$ and relation
+       \begin{equation*}\label{odd-exp}
+        \left(\bigoplus_{\mathfrak{g}\in\Gal(\QQ(\rho)/\QQ)}\rho^{\mathfrak{g}}\right)^{\oplus m }=\bigoplus_i\Ind_{H_i}^G\mathbbm{1}\ominus\bigoplus_j\Ind_{H_j'}^G\mathbbm{1}
+       \end{equation*}
+         Then
+        \[ \frac{\prod_i C_{E/F^{H_i}}}{\prod_j C_{E/F^{H_j'}}}  \in 
+           \begin{cases} 
+            (\bQ^{\times})^2 & m \ \text{even},\\
+               N_{\bQ(\sqrt{D}) / \bQ}(\bQ(\sqrt{D})^{\times}) & m \ \text{odd}.
+           \end{cases} \] 
+       \end{thm}
+\end{frame}
+\end{section}
+
+\begin{frame}
+    \frametitle{Why would we expect this?}
+        So the norm relations test can never predict positive growth in the case of odd degree Galois extensions. \pause 
+
+        We expected this because 
+\end{frame}
+
+\begin{frame}
+    \frametitle{Why could we prove this?}
+    
+\end{frame}
+
+\begin{frame}{Outlook}
+\begin{itemize}
+    \item What do we expect if we add in regulators?
+    \item Future work: e.g. additive reduction at $2$ and $3$. 
+\end{itemize}
+\end{frame}
+
+\begin{frame} 
+    \bibliographystyle{amsalpha}
+    \bibliography{../references.bib}
+\end{frame}
+
 
 \end{document}
