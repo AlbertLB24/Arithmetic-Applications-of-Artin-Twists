@@ -45,6 +45,8 @@
 \newcommand{\bQ}{\mathbb{Q}}
 \newcommand{\bC}{\mathbb{C}}
 \newcommand{\bZ}{\mathbb{Z}}
+\newcommand{\fP}{\mathfrak{P}}
+\newcommand{\cO}{\mathcal{O}}
 
 %Sha:
 \usepackage[OT2,T1]{fontenc}
@@ -71,7 +73,7 @@ Predicting Positive Rank}
 
 \begin{document}
 
-%THINGS TO SAY AT THE BEGINNING. E IS ALWAYS AN ELLIPTIC CURVE. ALL EXTENSIONS ARE ASSUMED TO BE FINITE.
+%THINGS TO SAY AT THE BEGINNING. E IS ALWAYS AN ELLIPTIC CURVE. ALL EXTENSIONS ARE ASSUMED TO BE FINITE. K, F ARE NUMBER FIELDS
 
 
 \frame{\titlepage}
@@ -201,6 +203,27 @@ This conjecture is studied in \cite{DEW1}. They show it is true assuming some we
     \end{theorem}
 \end{frame}
 
+\begin{frame}{Parity conjecture and parity tests}
+    A more common method of forcing positive rank for an elliptic curve $E / K$ is by use of the parity conjecture:
+    \begin{conjecture}[Parity conjecture]\label{parity}
+            The \textit{global root number} $w(E / K) \in \{ \pm 1 \}$ satisfies 
+            $$(-1)^{\rk E / K} = w(E / K)$$
+    \end{conjecture} \pause
+    
+    Thus one computes $w(E / K)$ and if it is $-1$, then $\rk E / K$ is odd and so $> 0$. 
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Parity tests vs. norm relations tests}
+
+    Originally we hoped to find an example where our norm relations test forced rank growth, and root number computations didn't. \pause But we couldn't. \pause \text{:(} \pause
+
+    \begin{conjecture}
+        Let $E / \bQ$, and $F / \bQ$ Galois. Whenever our norm relations test forces $\rk E / F >0$ then there is some intermediate field $\bQ \subset K \subset F$ such that $w(E / K)w(E / \bQ) = -1$.
+    \end{conjecture}
+\end{frame}
+
 
 \begin{section}{Representation theoretic methods}
 \begin{frame}
@@ -213,7 +236,7 @@ This conjecture is studied in \cite{DEW1}. They show it is true assuming some we
     \frametitle{Odd degree extensions}
     Now consider $E / \bQ$, and $F / \bQ$ Galois with $G = \Gal(F / \bQ)$ of odd order. \pause
     We proved that
-    \begin{thm}\label{odd-exts}
+    \only<2>{\begin{thm}\label{odd-exts}
        Assume $E$ has good or multiplicative reduction at $2$ and $3$. 
        Take any representation $\rho$ of $G$ with $\bQ(\sqrt{D}) \subset \bQ(\rho)$ and relation
        \begin{equation*}\label{odd-exp}
@@ -225,26 +248,35 @@ This conjecture is studied in \cite{DEW1}. They show it is true assuming some we
             (\bQ^{\times})^2 & m \ \text{even},\\
                N_{\bQ(\sqrt{D}) / \bQ}(\bQ(\sqrt{D})^{\times}) & m \ \text{odd}.
            \end{cases} \] 
-       \end{thm}
+       \end{thm}}
+       %\uncover<3>{\vspace{6em} \begin{center}i.e. our Norm relations test never forces $\rk E / F > 0$ when $[F : \bQ]$ is odd. \end{center}}
 \end{frame}
 \end{section}
 
 \begin{frame}
     \frametitle{Why would we expect this?}
-        So the norm relations test can never predict positive growth in the case of odd degree Galois extensions. \pause 
+        So the norm relations test can never predict positive growth in the case of odd degree Galois extensions. \pause We expected this because root number computations never force rank growth in this case either. \pause
+        \begin{lemma}\label{lem_oddroot}
+            Let $F / \bQ$ be an odd Galois extension with $G = \Gal(F / \bQ)$. Then $w(E / \bQ) = w(E / F^H)$ for all $H \leq G$. 
+        \end{lemma}
 
-        We expected this because 
 \end{frame}
 
 \begin{frame}
-    \frametitle{Why could we prove this?}
+    \frametitle{Towards proving...}
     
+    Recall that 
+    $$ C_{E / K} = \prod_{\fP \subset \cO_K} 
+    c_{\fP}(E / K) \cdot d_{\fP}(E / K, \omega) = \prod_p C_{\fP \mid p}
+    $$
+    where $C_{\fP \mid p} = \prod_{\fP \mid p} c_{\fP}(E / K) \cdot d_{\fP}(E / K, \omega)$.
 \end{frame}
 
 \begin{frame}{Outlook}
 \begin{itemize}
     \item What do we expect if we add in regulators?
     \item Future work: e.g. additive reduction at $2$ and $3$. 
+    \item Hyperelliptic curves? Abelian varieties?
 \end{itemize}
 \end{frame}
 
