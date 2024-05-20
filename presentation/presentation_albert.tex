@@ -91,12 +91,13 @@ Predicting Positive Rank}
 \end{frame}
 
 \begin{frame}
-    \frametitle{The Mordell-Weil Group}
+    \frametitle{The Mordell--Weil Group}
     Let $K$ be a field and let $E$ be an elliptic curve over $K$. The set of $K$-points of $E$ form an abelian group $E(K)$. 
-    \begin{theorem}[Mordell-Weil]
+    \begin{theorem}[Mordell--Weil]
         Let $K$ be a number field and let $E$ be an elliptic curve over $K$. Then $E(K)$ is a finitely generated abelian group.
     \end{theorem}
     Consequently, $E(K)\cong E(K)_{tors}\times\ZZ^r$, where $r$ is denoted the \textbf{rank} of the elliptic curve.
+
     %\centering
     %\includegraphics[scale=0.4]{MW_group.png}
 \end{frame}
@@ -105,7 +106,7 @@ Predicting Positive Rank}
     \frametitle{Reduction of an Elliptic Curve}
     Suppose $K$ is a local field with $\mathrm{char}(K)=0$, discrete valuation $\nu$, valuation ring $R$ and max ideal $\mathfrak{m}$ and residue field $\kappa=R/\mathfrak{m}$.
     \begin{definition}
-        A Weierstrass equation for $E/K$ is \textbf{minimal} if $a_i\in R$ and $\nu(\Delta)$ is minimal among all Weierstrass equations defining $E$.
+        A Weierstrass equation for $E/K$ is \textbf{minimal} if $a_i\in R$ and $\nu(\Delta)$ is minimal among all such equations.
     \end{definition}
     When the Weierstrass equation is minimal, we have an associated curve $\tilde{E}$ over $\kappa$ (which could be singular!) and a reduction map 
     $$\widetilde{(\cdot)}:E(K)\longrightarrow \tilde{E}(\kappa)$$
@@ -195,11 +196,11 @@ Predicting Positive Rank}
         Let $K$ be a field. An Artin representation $\rho$ is a complex finite dimensional vector space $V$ together with a homomorphism $\rho:G_K\to\GL(V)$ such that $\Gal(\bar{K}/F)\subseteq\ker\rho$ for some finite Galois extension $F/K$.
     \end{definition}
     Effectively, Artin representations of $K$ are finite dimensional reps of $\Gal(F/K)$ for some finite extension $F/K$.
-    \begin{deflem}
-        Let $L/K$ be a finite extension of number fields. If $\rho$ is an Artin representation of $L$, then the induction representation
-        $$\Ind_{L/K}\rho:=\Ind_{G_L}^{G_K}\rho$$
-        is an Artin representation of $K$.
-    \end{deflem}
+    \begin{rem}
+        Let $L/K$ be a finite extension of number fields and $\rho$ an Artin rep of $L$ factoring through $\Gal(F/L)$. 
+        Then $\Ind_{G_L}^{G_K}\rho$ is an Artin rep factoring through $\Gal(F/K)$, which is equivalent to 
+        $$\Ind_{\Gal(F/L)}^{\Gal(F/K)}\rho.$$
+    \end{rem}
 \end{frame}
 
 \begin{frame}
@@ -212,7 +213,7 @@ Predicting Positive Rank}
             \item For Artin representations $\rho_1,\rho_2$ over $K$,
             $$L(E/K,\rho_1\oplus\rho_2,s)=L(E/K,\rho_1,s)L(E/K,\rho_2,s).$$
             \item If $L/K$ is a finite extension and $\rho$ is an Artin representation over $L$,
-            $$L(E/L,\rho,s)=L(E/K,\Ind_{L/K}\rho,s).$$
+            $$L(E/L,\rho,s)=L(E/K,\Ind_{G_L}^{G_K}\rho,s).$$
             \item If $L/K$ as above and 
             $\Ind_{L/K}\mathds{1}\cong\bigoplus_i\rho_i,$
             then 
@@ -263,10 +264,10 @@ Predicting Positive Rank}
 
 \begin{frame}
     \frametitle{Birch and Swinnerton-Dyer for Artin Twists}
-    \begin{definition}
-        For an elliptic curve $E$ over a number field $K$, let
-        $$\BSD(E/K):=\frac{\Reg_{E/K}|\Sha_{E/K}|C_{E/K}}{|E(K)_{\tors}|^2}.$$
-    \end{definition}
+    %\begin{definition}
+        %For an elliptic curve $E$ over a number field $K$, let
+        %$$\BSD(E/K):=\frac{\Reg_{E/K}|\Sha_{E/K}|C_{E/K}}{|E(K)_{\tors}|^2}.$$
+    %\end{definition}
     \begin{conjecture}[BSD1 for Artin Twists]
         Let $E/\QQ$ be an elliptic curve, $\rho$ an Artin representation and $F/\QQ$ a Galois extension $\QQ$ such that $\rho$ factors through $Gal(F/\QQ)$. Then
         $$\ord_{s=1}L(E,\rho,s)=\langle\rho,E(F)_\CC\rangle,$$
@@ -279,11 +280,11 @@ Predicting Positive Rank}
     \frametitle{Arithmetic and Analytic Information}
     The BSD conjecture gives a way to obtain arithmetic information from analytic and viceversa.
     \begin{example}
-        Isogenous elliptic curves have the same L-function. Hence, BSD predicts that their rank and $\BSD$ terms with the periods are equal. The former is elementary, but the later is a deep result by Cassels.
+        Isogenous elliptic curves have the same L-function. Hence, BSD predicts that their rank and leading terms of the L-functions at $s=1$ are equal. The former is elementary, but the later is a deep result by Cassels.
     \end{example}
     \begin{example}
         Let $\rho$ be an Artin representation over $\QQ$ that factors through $\Gal(F/\QQ)$. If $\rho^\mathfrak{g}$ is the representation such that $\Tr\circ \rho^\mathfrak{g}=\mathfrak{g}(\Tr\circ\rho)$ for some $\mathfrak{g}\in\Gal(\QQ(\rho)/\QQ)$, then $$\langle\rho,E(F)_\CC\rangle=\langle\rho^\mathfrak{g},E(F)_\CC\rangle.$$
-        One then expects that $\ord_{s=1}L(E,\rho,s)=\ord_{s=1}L(E,\rho^\mathfrak{g},s)$, but this is still a conjecture.
+        Thus, BSD then predicts $\ord_{s=1}L(E,\rho,s)=\ord_{s=1}L(E,\rho^\mathfrak{g},s)$.
     \end{example}
 \end{frame}
 
@@ -320,7 +321,7 @@ Predicting Positive Rank}
 
 \begin{frame}
     \frametitle{Tamagawa Numbers of Multiplicative Reduction}
-    Tamawaga numbers can always be computed using Tate's algorithm. When $E/K$ is multiplicative, then Tamagawa numbers have a simple description.
+    Tamawaga numbers can always be computed using Tate's algorithm. When $E/K$ is multiplicative, Tamagawa numbers have a simple description.
     \begin{lemma}
         Suppose that $E/K$ has multiplicative reduction and let $n=\nu(\Delta^{\min})$. Then
         \[
@@ -328,7 +329,7 @@ Predicting Positive Rank}
         \begin{cases}
             n\quad \text{ if $E/K$ is split,}\\
             1\quad \text{ if $n$ is odd and $E/K$ is non-split,}\\
-            2\quad \text{ if $n$ is even and $E/K$ is non-split,}
+            2\quad \text{ if $n$ is even and $E/K$ is non-split.}
         \end{cases}    
         \] 
     \end{lemma}
@@ -357,8 +358,10 @@ Predicting Positive Rank}
     Apart from the Tamagawa numbers, a second local term appears in the $C_{E/K}$ term arising from the minimal discriminant.
     \begin{definition}
         Let $E/\QQ$ be an elliptic curve and let $\Delta$ a \textbf{global minimal differential}. Let $K$ be a number field and $\pp$ a prime of $K$. If $\Delta_{\pp}^{\min}$ is the minimal differential of $E/K_\pp$, then we define 
-        $$d_\pp(E/K)=\left|\frac{\Delta_\pp^{\min}}{\Delta}\right|^{1/12}.$$
+        $$d_\pp(E/K)=\left|\frac{\Delta_\pp^{\min}}{\Delta}\right|_\pp^{1/12}.$$
     \end{definition}
+    The term $C_{E/K}$ is then defined as 
+    $$C_{E/K}=\prod_{\pp}c_\pp(E/K)d_\pp(E/K).$$
 \end{frame}
 
 \begin{frame}
@@ -386,13 +389,13 @@ Predicting Positive Rank}
 
 \begin{frame}
     \frametitle{Consistency with the Cyclic Case}
-    We have now seen some examples where the Norm Relations test predicts positive rank. When the extension is cyclic, however, the test will never predict rank growth.
+    We have now seen some examples where the Norm Relations Test predicts positive rank. When the extension is cyclic, however, the test will never predict rank growth.
 
     \begin{lemma}
-        Let $\rho$ be a representation of the cyclic group $C_d$. Then there is one unique relation $\Theta_\rho\in \B(C_d)$ such that 
-        $$\CC[C_d/\Theta_{\rho}]=\repnorm{\rho}=\bigoplus_{\mathfrak{g}\in\Gal(\QQ(\rho)/\QQ)}\rho^{\mathfrak{g}}.$$
-        In particular, if $\rho=\psi_d$ is a faithful character of $C_d$, then
-        $$\Theta_{\psi_d}=\sum_{k\mid d}\mu(k)C_k.$$
+        Let $\rho$ be a representation of the cyclic group $C_d$. Then there are unique integers $\{a_k:k\mid d\}$ such that 
+        $$\repnorm{\rho}=\bigoplus_{\mathfrak{g}\in\Gal(\QQ(\rho)/\QQ)}\rho^{\mathfrak{g}}=\sum_{k\mid d}a_k\Ind_{C_k}^{C_d}\mathds{1}.$$
+        In particular, if $\rho=\psi_d$ is a faithful character of $C_d$, then $a_k=\mu(k)$ so that
+        $$\repnorm{\psi_d}=\bigoplus_{(a,d)=1}\psi_d^a=\sum_{k\mid d}\mu(k)\Ind_{C_k}^{C_d}\mathds{1}.$$
     \end{lemma}
 
 \end{frame}
@@ -439,7 +442,7 @@ Predicting Positive Rank}
     \end{figure}
     \begin{align*}
         \Ind_{C_1}^{C_{12}}\mathds{1}=\oplus_{a=0}^{11}\psi^a,&\quad\quad\Ind_{C_2}^{C_{12}}\mathds{1}=\oplus_{a=0}^{5}\psi^{2a},\\
-        \Ind_{C_4}^{C_{12}}\mathds{1}=\oplus_{a=0}^{3}\psi^{3a},&\quad\quad\Ind_{C_6}^{C_{12}}\mathds{1}=\oplus_{a=0}^{1}\psi^{6a},\\
+        \Ind_{C_3}^{C_{12}}\mathds{1}=\oplus_{a=0}^{3}\psi^{3a},&\quad\quad\Ind_{C_6}^{C_{12}}\mathds{1}=\oplus_{a=0}^{1}\psi^{6a},\\
         \Ind_{C_1}^{C_{12}}\mathds{1}\ominus\Ind_{C_2}^{C_{12}}\mathds{1}\ominus\Ind&_{C_3}^{C_{12}}\mathds{1}\oplus\Ind_{C_6}^{C_{12}}\mathds{1}=\bigoplus_{(a,12)=1}\psi^a
     \end{align*}
 \end{frame}
@@ -447,12 +450,11 @@ Predicting Positive Rank}
 \begin{frame}
     \frametitle{Consistency with the Cyclic Case}
     The main result is the following.
-    \begin{thm}\label{thm_consistent_cyclic}
-        Let $d\geq2$ be a positive integer and let $F/K$ be a Galois extension of number fields such that $\Gal(F/K)=C_d$. Let $\rho$ be a representation of $C_d$ and let $\Theta_\rho\in \B(C_d)$ be such that
-        $$\CC[G/\Theta_\rho]=\repnorm{\rho}.$$
+    \begin{thm}
+        Let $d\geq2$ be a positive integer and let $F/K$ be a Galois extension of number fields such that $\Gal(F/K)=C_d$. Let $\rho$ be a representation of $C_d$ and let $\{a_k:k\mid d\}$ be such that $$\repnorm{\rho}=\sum_{k\mid d}a_k\Ind_{C_k}^{C_d}\mathds{1}.$$
     
         If $E/\QQ$ is a semistable elliptic curve at $2$ and $3$, then for any $\QQ(\sqrt{D})\subseteq\QQ(\rho)$,
-        $$C(\Theta_\rho)\in N_{\QQ(\sqrt{D})/\QQ}(\QQ(\sqrt{D})^{\times}).$$
+        $$\prod_{k\mid d}(C_{E/F^{C_k}})^{a_k}\in N_{\QQ(\sqrt{D})/\QQ}(\QQ(\sqrt{D})^{\times}).$$
     \end{thm}
 
 \end{frame}
@@ -477,19 +479,30 @@ Predicting Positive Rank}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Strategy for the Proof of the Theorem}
+    \frametitle{Simplification to Faithful Characters}
+    If $\psi_d$ is a faithful character of $C_d$, then $\QQ(\psi_d)=\QQ(\zeta_d)$. Hence we have simplified the main result into proving the following.
+    \begin{thm}
+        Let $d\geq2$ be a positive integer and let $F/K$ be a Galois extension of number fields such that $\Gal(F/K)=C_d$. If $E/\QQ$ is a semistable elliptic curve at $2$ and $3$, then for any $\QQ(\sqrt{D})\subseteq\QQ(\zeta_d)$,
+        $$\prod_{k\mid d}(C_{E/F^{C_k}})^{\mu(k)}\in N_{\QQ(\sqrt{D})/\QQ}(\QQ(\sqrt{D})^{\times}).$$
+    \end{thm}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Strategy for the Proof}
     The outline for the proof is the following.
     \begin{enumerate}
         \item Proof for $\Gal(F/K)=C_{q}$ where $q$ is an odd prime.
         \item Proof for $\Gal(F/K)=C_{qr}$ where $q,r$ are distinct odd primes.
-        \item An inductive reasoning gives the proof for $\Gal(F/K)=C_d$ is an odd extension.
-        \\~\\
+        \item An inductive reasoning gives the proof for $d$ odd.
+        \vspace{0.1cm}
+
         However, when $d$ is even more care is required.
         \item Prove separately the cases $\Gal(F/K)=C_4, C_{2q}, C_{4q}, C_{8q}$ where $q$ is an odd prime.
         \item A similar inductive reasoning gives the proof for $d$ even.
     \end{enumerate}
-    
-    Furthermore, to prove each case, we fix some prime $\pp$ of $K$ and study the `local contribution' $C_\pp(\Theta_d)$ of the primes above $\pp$ is the corresponding fields.
+    \textbf{Idea for each case:} Given a prime $\pp$ of $K$, denote $$C_{\PP\mid\pp}(E/F^H)=\prod_{\PP\mid\pp}c_\PP(E/F^H)d_\PP(E/F^H).$$
+    We study the `contribution' $C_\pp(E,F/K)=\prod_{k\mid d}C_{\PP\mid\pp}(E/F^{C_k})^{\mu(k)}$.
 \end{frame}
 
 \begin{frame}
@@ -499,7 +512,7 @@ Predicting Positive Rank}
     \begin{lemma}
         Let $p$ be an odd prime and let $p^*=(-1)^{(p-1)/2}p$. Then
         \begin{itemize}
-            \item $\QQ(\sqrt{p^*})$ is the unique quadratic subfield of $\QQ(\zeta_{p})$.
+            \item $\QQ(\sqrt{p^*})$ is the unique quadratic subfield of $\QQ(\zeta_{p})=\QQ(\zeta_{2p})$.
             \item $\QQ(i), \QQ(\sqrt{\pm p})$ are the unique quadratic subfields of $\QQ(\zeta_{4p})$.
         \end{itemize}
     \end{lemma}
@@ -511,13 +524,13 @@ Predicting Positive Rank}
 
 \begin{frame}
     \frametitle{The $C_q$ Case: Multiplicative Reduction}
-    If $\Gal(F/K)=C_q$ then $\Theta_q=C_1-C_q$. Let $\pp$ be a prime of $K$ such that $E/K_\pp$ has multiplicative reduction.
+    Suppose $\Gal(F/K)=C_q$ and let $\pp$ be a prime of $K$ such that $E/K_\pp$ has multiplicative reduction and let $n$ be the valuation of the minimal discriminant at $\pp$. Then $C_\pp(E,F/K)$ is recorded in the following table.
 
     \begin{table}[!ht]
         \centering
         \begin{tabular}{|l|l|l|l|l|}
         \hline
-        $e_\pp$ & $f_\pp$  & $c(E/K_\pp)$ & $\prod_{\PP\mid\pp}c(E/F_\PP)$  & $C_\pp(\Theta_q)$ \\ \hline
+        $e_\pp$ & $f_\pp$  & $C_{\PP\mid\pp}(E/K)$ & $C_{\PP\mid\pp}(E/F)$  & $C_\pp(E,F/K)$ \\ \hline
         $1$ & $1$ & $n;\tilde{n}$ & $n^q;\tilde{n}^q$ & $\square$ \\ \hline
         $q$ & $1$ & $n;\tilde{n}$ & $qn;\tilde{n}$ & $q\square;\square$ \\ \hline
         $1$ & $q$ & $n;\tilde{n}$ & $n;\tilde{n}$ & $\square$ \\ \hline
@@ -558,8 +571,14 @@ Predicting Positive Rank}
 
 
 \begin{frame}
-    \frametitle{Proof of Lemma 2}
-    
+    \frametitle{Proof of Lemma $2$}
+    The proof of Lemma $2$ is a lot more subtle. Important ingrediets for its proof are:
+    \begin{enumerate}
+        \item The ramification condition implies $q\mid N(\pp)-1$.
+        \item Quadratic reciprocity to show that in certain conditions $p$ splits in $\QQ(\sqrt{q^*})$.
+        \item The class number of $\QQ(\sqrt{q^*})$ is odd.
+        \item The fundamental unit of $\QQ(\sqrt{q}), q\equiv1\pmod{4}$ is negative.
+    \end{enumerate}
 \end{frame}
 
 
