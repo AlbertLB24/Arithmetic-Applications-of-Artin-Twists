@@ -18,6 +18,8 @@
 \usepackage{tikz-cd}
 \usepackage{dsfont}
 \usepackage[OT2,T1]{fontenc}
+\usepackage{wrapfig}
+\usepackage{multirow}
 \DeclareSymbolFont{cyrletters}{OT2}{wncyr}{m}{n}
 \DeclareMathSymbol{\Sha}{\mathalpha}{cyrletters}{"58}
 
@@ -31,6 +33,8 @@
 \newcommand{\rk}{\mathrm{rk}}
 \newcommand{\BSD}{\mathrm{BSD}}
 \newcommand{\Tr}{\mathrm{Tr}}
+\newcommand{\B}{\mathrm{B}}
+
 
 
 \newcommand{\CC}{\mathbb{C}}
@@ -47,12 +51,15 @@
 \newcommand{\rr}{\mathfrak{r}}
 \newcommand{\af}{\mathfrak{a}}
 
+\newcommand{\repnorm}[1]{\mathfrak{N}_{\QQ(#1) / \QQ}(#1)}
+
 \theoremstyle{plain}
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{rem}[thm]{Remark}
 \newtheorem{proposition}[thm]{Proposition}
 \newtheorem{conjecture}[thm]{Conjecture}
 \newtheorem{deflem}[thm]{Definition/Lemma}
+\newtheorem{question}[thm]{Question}
 
 
 
@@ -85,14 +92,13 @@ Predicting Positive Rank}
 
 \begin{frame}
     \frametitle{The Mordell-Weil Group}
-    Let $K$ be a field and let $E$ be an elliptic curve over $K$. The set of $K$-points of $E$ form an abelian group $E(K)$, denoted as the Mordell-Weil group. 
-    \begin{theorem}
+    Let $K$ be a field and let $E$ be an elliptic curve over $K$. The set of $K$-points of $E$ form an abelian group $E(K)$. 
+    \begin{theorem}[Mordell-Weil]
         Let $K$ be a number field and let $E$ be an elliptic curve over $K$. Then $E(K)$ is a finitely generated abelian group.
     \end{theorem}
     Consequently, $E(K)\cong E(K)_{tors}\times\ZZ^r$, where $r$ is denoted the \textbf{rank} of the elliptic curve.
-
-    \centering
-    \includegraphics[scale=0.4]{MW_group.png}
+    %\centering
+    %\includegraphics[scale=0.4]{MW_group.png}
 \end{frame}
 
 \begin{frame}
@@ -106,7 +112,22 @@ Predicting Positive Rank}
     by reducing the corrdinates modulo $\mathfrak{m}$.
 \end{frame}
 
+\begin{frame}
+    \frametitle{Reduction Types}
+    The reduction type of $E$ over $K$ describes the behaviour of $\tilde{E}/\kappa$.
+    \begin{definition}
+        We say that
+        \begin{enumerate}%[label={(\alph*)}]
+            \item $E/K$ has \textbf{good} reduction if $\tilde{E}$ is non-singular (i.e. $\nu(\Delta)=0$).
+            \item $E/K$ has \textbf{multiplicative} reduction if $\tilde{E}$ has a node.
+            \item $E/K$ has \textbf{additive} reduction if $\tilde{E}$ has a cusp.
+        \end{enumerate}
+        If $E/K$ has multiplicative reduction, then we say that the reduction is \textbf{split} if the slopes of the tangent lines at the node lie in $\kappa$, and \textbf{non-split} otherwise.
+    \end{definition}
 
+\end{frame}
+
+\iffalse
 \begin{frame}
     \frametitle{Reduction Types}
     The reduction type of $E$ over $K$ describes the behaviour of $\tilde{E}/\kappa$.
@@ -144,13 +165,9 @@ Predicting Positive Rank}
         \end{enumerate}
     \end{proposition}   
 \end{frame}
-
-\iffalse
-\begin{frame}
-    \frametitle{Elliptic Curves over Global Fields}
-    Suppose now that $K$ is a number field. 
-\end{frame}
 \fi
+
+
 
 \begin{frame}
     \frametitle{L-function of an Elliptic Curve}
@@ -369,13 +386,192 @@ Predicting Positive Rank}
 
 \begin{frame}
     \frametitle{Consistency with the Cyclic Case}
+    We have now seen some examples where the Norm Relations test predicts positive rank. When the extension is cyclic, however, the test will never predict rank growth.
+
+    \begin{lemma}
+        Let $\rho$ be a representation of the cyclic group $C_d$. Then there is one unique relation $\Theta_\rho\in \B(C_d)$ such that 
+        $$\CC[C_d/\Theta_{\rho}]=\repnorm{\rho}=\bigoplus_{\mathfrak{g}\in\Gal(\QQ(\rho)/\QQ)}\rho^{\mathfrak{g}}.$$
+        In particular, if $\rho=\psi_d$ is a faithful character of $C_d$, then
+        $$\Theta_{\psi_d}=\sum_{k\mid d}\mu(k)C_k.$$
+    \end{lemma}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{$C_{12}$ Example}
+    Let $F/K$ be a Galois extension with $\Gal(F/K)=C_{12}$ and let $\psi$ be a faithful character.
+
+    \begin{figure}[!ht]
+        \centering
+        \begin{tikzpicture}
+
+            \node (Q1) at (-3,0) {$K$};
+            \node (Q2) at (-4,1) {$L_3$};
+            \node [red] (Q3) at (-1,2) {$L_4$};
+            \node [red] (Q4) at (-2,1) {$L_2$};
+            \node [red] (Q5) at (-2,3) {$F$};
+            \node [red] (Q6) at (-3,2) {$L_6$};
+
+            \node (Q7) at (1,0) {$C_{12}$};
+            \node (Q8) at (0,1) {$C_4$};
+            \node [red] (Q9) at (3,2) {$C_3$};
+            \node [red] (Q10) at (2,1) {$C_6$};
+            \node [red] (Q11) at (2,3) {$C_1$};
+            \node [red] (Q12) at (1,2) {$C_2$};
+            
+
+            \draw (Q1)--(Q2) node [pos=0.8, below,inner sep=0.4cm] {};
+            \draw (Q1)--(Q4) node [pos=0.8, below,inner sep=0.4cm] {};
+            \draw (Q2)--(Q6) node [pos=0.8, below,inner sep=0.4cm] {};
+            \draw [red] (Q3)--(Q5) node [pos=0.8, below,inner sep=0.4cm] {};
+            \draw [red] (Q4)--(Q6) node [pos=0.8, below,inner sep=0.4cm] {};
+            \draw [red] (Q6)--(Q5) node [pos=0.8, below,inner sep=0.4cm] {};
+            \draw [red] (Q4)--(Q3) node [pos=0.8, below,inner sep=0.4cm] {};
+
+            \draw (Q7)--(Q8) node [pos=0.8, below,inner sep=0.4cm] {};
+            \draw (Q7)--(Q10) node [pos=0.8, below,inner sep=0.4cm] {};
+            \draw (Q8)--(Q12) node [pos=0.8, below,inner sep=0.4cm] {};
+            \draw [red] (Q9)--(Q11) node [pos=0.8, below,inner sep=0.4cm] {};
+            \draw [red] (Q10)--(Q12) node [pos=0.8, below,inner sep=0.4cm] {};
+            \draw [red] (Q12)--(Q11) node [pos=0.8, below,inner sep=0.4cm] {};
+            \draw [red] (Q10)--(Q9) node [pos=0.8, below,inner sep=0.4cm] {};
+        \end{tikzpicture}
+    \end{figure}
+    \begin{align*}
+        \Ind_{C_1}^{C_{12}}\mathds{1}=\oplus_{a=0}^{11}\psi^a,&\quad\quad\Ind_{C_2}^{C_{12}}\mathds{1}=\oplus_{a=0}^{5}\psi^{2a},\\
+        \Ind_{C_4}^{C_{12}}\mathds{1}=\oplus_{a=0}^{3}\psi^{3a},&\quad\quad\Ind_{C_6}^{C_{12}}\mathds{1}=\oplus_{a=0}^{1}\psi^{6a},\\
+        \Ind_{C_1}^{C_{12}}\mathds{1}\ominus\Ind_{C_2}^{C_{12}}\mathds{1}\ominus\Ind&_{C_3}^{C_{12}}\mathds{1}\oplus\Ind_{C_6}^{C_{12}}\mathds{1}=\bigoplus_{(a,12)=1}\psi^a
+    \end{align*}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Consistency with the Cyclic Case}
+    The main result is the following.
+    \begin{thm}\label{thm_consistent_cyclic}
+        Let $d\geq2$ be a positive integer and let $F/K$ be a Galois extension of number fields such that $\Gal(F/K)=C_d$. Let $\rho$ be a representation of $C_d$ and let $\Theta_\rho\in \B(C_d)$ be such that
+        $$\CC[G/\Theta_\rho]=\repnorm{\rho}.$$
+    
+        If $E/\QQ$ is a semistable elliptic curve at $2$ and $3$, then for any $\QQ(\sqrt{D})\subseteq\QQ(\rho)$,
+        $$C(\Theta_\rho)\in N_{\QQ(\sqrt{D})/\QQ}(\QQ(\sqrt{D})^{\times}).$$
+    \end{thm}
+
 \end{frame}
 
 
 \begin{frame}
     \frametitle{Simplification to Faithful Characters}
+
+    \begin{lemma}
+        Suppose that the Theorem holds for faithful characters $\psi_d$ of $C_d$. Then it also holds for any representation $\rho$ of $C_d$.
+    \end{lemma}
+
+    Ideas for the proof:
+    \begin{enumerate}
+        \item If $\psi_{d'}$ is another character of order $d'$, then we can view it as a faithful character of $C_{d'}=\Gal(F/F^{C_{d'}})$.
+        \item For any representation $\rho$ of $C_d$, $\repnorm{\rho}$ is a rational representation.
+        \item The basis for the rational representations of $C_d$ is 
+        $$\left\{\chi_k:=\repnorm{\psi_k}:k\mid d\right\},$$
+        where $\psi_k$ is a character of order $k$.
+    \end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Strategy for the Proof of the Theorem}
+    The outline for the proof is the following.
+    \begin{enumerate}
+        \item Proof for $\Gal(F/K)=C_{q}$ where $q$ is an odd prime.
+        \item Proof for $\Gal(F/K)=C_{qr}$ where $q,r$ are distinct odd primes.
+        \item An inductive reasoning gives the proof for $\Gal(F/K)=C_d$ is an odd extension.
+        \\~\\
+        However, when $d$ is even more care is required.
+        \item Prove separately the cases $\Gal(F/K)=C_4, C_{2q}, C_{4q}, C_{8q}$ where $q$ is an odd prime.
+        \item A similar inductive reasoning gives the proof for $d$ even.
+    \end{enumerate}
+    
+    Furthermore, to prove each case, we fix some prime $\pp$ of $K$ and study the `local contribution' $C_\pp(\Theta_d)$ of the primes above $\pp$ is the corresponding fields.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Quadratic Subfields of Cyclotomic Extensions}
+    If $\psi_d$ is a faithful character of $C_d$, then $\QQ(\psi_d)=\QQ(\zeta_d)$ where $\zeta_d$ is a primitive $d$-th root of unity.
+
+    \begin{lemma}
+        Let $p$ be an odd prime and let $p^*=(-1)^{(p-1)/2}p$. Then
+        \begin{itemize}
+            \item $\QQ(\sqrt{p^*})$ is the unique quadratic subfield of $\QQ(\zeta_{p})$.
+            \item $\QQ(i), \QQ(\sqrt{\pm p})$ are the unique quadratic subfields of $\QQ(\zeta_{4p})$.
+        \end{itemize}
+    \end{lemma}
+    \begin{proof}
+        The number of quadratic subfields is determined by Galois correspondence. Also, $p$ is the only prime that ramifies in $\QQ(\zeta_p)$, and the only quadratic subfield unramified outside $p$ is $\QQ(\sqrt{p^*})$. The second part is similar with ramification at $2$ and $p$.
+    \end{proof}
 \end{frame}
 
 
+\begin{frame}
+    \frametitle{The $C_q$ Case: Multiplicative Reduction}
+    If $\Gal(F/K)=C_q$ then $\Theta_q=C_1-C_q$. Let $\pp$ be a prime of $K$ such that $E/K_\pp$ has multiplicative reduction.
+
+    \begin{table}[!ht]
+        \centering
+        \begin{tabular}{|l|l|l|l|l|}
+        \hline
+        $e_\pp$ & $f_\pp$  & $c(E/K_\pp)$ & $\prod_{\PP\mid\pp}c(E/F_\PP)$  & $C_\pp(\Theta_q)$ \\ \hline
+        $1$ & $1$ & $n;\tilde{n}$ & $n^q;\tilde{n}^q$ & $\square$ \\ \hline
+        $q$ & $1$ & $n;\tilde{n}$ & $qn;\tilde{n}$ & $q\square;\square$ \\ \hline
+        $1$ & $q$ & $n;\tilde{n}$ & $n;\tilde{n}$ & $\square$ \\ \hline
+        \end{tabular}
+    \end{table}
+    From this it is clear we need to show that 
+
+    \begin{lemma}[1]
+        Let $q$ be an odd prime. Then $q$ is a norm from $\QQ(\sqrt{q^*})$.
+    \end{lemma}
+    
+    
+    
+
+\end{frame}
+    
+
+\begin{frame}
+    \frametitle{The $C_q$ Case: Additive Reduction}
+    If $E/K_\pp$ is additive and $\PP\mid\pp$ is a prime in $F$ above $\pp$, then the minimal discriminants agree unless $\pp$ is totally ramified in $F/K$. In that case, $d_\PP(E/F)$ is a power of $N(\pp)$. So we need to show the following.
+    \begin{lemma}[2]
+        Let $\pp$ be a prime on a number field $K$ that ramifies in a $C_q$ extension of $K$. Then $N(\pp)$ is a norm from $\QQ(\sqrt{q^*})$.
+    \end{lemma}
+    
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Proof of Lemma 1}
+    \begin{lemma}
+        Let $q\equiv1\pmod{4}$. Then the fundamental unit of $\QQ(\sqrt{q})$ is negative.
+    \end{lemma}
+    \begin{proof}[Proof of Lemma 1]
+        If $q\equiv 3\pmod{4}$, then $N(\sqrt{q^*})=N(\sqrt{-q})=q$. If $q\equiv 1\pmod{4}$ and $\epsilon$ is a fundamental unit, then $N(\epsilon\sqrt{q})=N(\epsilon)N(\sqrt{q})=(-1)(-q)=q$. 
+    \end{proof}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Proof of Lemma 2}
+    
+\end{frame}
+
+
+
+
+
+
+\begin{frame}
+    \frametitle{End}
+
+    
+
+\end{frame}
 
 \end{document}
