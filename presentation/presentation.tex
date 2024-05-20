@@ -527,8 +527,40 @@ This conjecture is studied in \cite{DEW1}. They show it is true assuming some we
 \end{frame}
 
 \begin{frame}
-    \frametitle{Example (maybe dihedral --> The unit example from Vladimir)}
-        
+    \frametitle{A $D_{12}$ Example with $\QQ(\rho)=\QQ(\sqrt{3})$}
+    \begin{minipage}[t]{0.6\textwidth}
+        Let $F/\QQ$ such that $G=\Gal(F/\QQ)=D_{12}$ and let $\rho_1,\rho_2$ be an irreducible $2$-dimensional representations such that $\QQ(\rho_i)=\QQ(\sqrt{3})$. Then 
+        \begin{align*}
+            \rho_1\oplus\rho_2=\Ind_{C_2}^{G}\mathds{1}\ominus\Ind_{C_2^2}^{G}\mathds{1}\ominus\\
+            \Ind_{S_3}^{G}\mathds{1}\oplus\Ind_{D_6}^{G}\mathds{1}.
+        \end{align*}
+        Let $E/\QQ$ be an elliptic curve. We need to check whether
+        $$\frac{C_{E/F^{C_2}}C_{E/F^{D_6}}}{C_{E/F^{C_2^2}}C_{E/F^{S_3}}}\in N_{\bQ(\sqrt{3}) / \bQ}(\bQ(\sqrt{3})^{\times}).$$
+    \end{minipage}
+    \begin{minipage}[t]{0.3\textwidth}
+        \begin{figure}[!ht]
+            \centering
+            \begin{tikzpicture}
+    
+                \node (Q1) at (0,0) {$D_{12}$};
+                \node (Q2) at (0,1) {$D_6$};
+                \node (Q3) at (-1,2) {$S_3$};
+                \node (Q4) at (1,2) {$C_2^2$};
+                \node (Q5) at (0,3) {$C_2$};
+                \node (Q6) at (0,4) {$C_1$};
+    
+                
+                
+    
+                \draw (Q1)--(Q2) node [pos=0.8, below,inner sep=0.4cm] {};
+                \draw (Q2)--(Q3) node [pos=0.8, below,inner sep=0.4cm] {};
+                \draw (Q2)--(Q4) node [pos=0.8, below,inner sep=0.4cm] {};
+                \draw (Q3)--(Q5) node [pos=0.8, below,inner sep=0.4cm] {};
+                \draw (Q4)--(Q5) node [pos=0.8, below,inner sep=0.4cm] {};
+                \draw (Q5)--(Q6) node [pos=0.8, below,inner sep=0.4cm] {};
+            \end{tikzpicture}
+        \end{figure}
+    \end{minipage}
 \end{frame}
 
 
