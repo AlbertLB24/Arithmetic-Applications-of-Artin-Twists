@@ -105,7 +105,7 @@ Predicting Positive Rank}
 \textbf{Notation:} Throughout, $E$ will refer to an elliptic curve. All field extensions are finite. 
 \end{frame}
 
-\section*{Elliptic curves, Artin formalism, $\BSD$}
+\section*{Elliptic curves, Artin formalism, BSD}
 \frame{\sectionpage}
 
 \begin{frame}
@@ -428,7 +428,7 @@ This conjecture is studied in \cite{DEW1}. They show it is true assuming some we
     $$\bigg(\bigoplus_{\fg \in \Gal(\bQ(\rho) / \bQ)} \rho^{\fg}\bigg)^{\oplus m} \simeq \bigoplus_{i} \Ind_{H_i}^G \trivial \ominus \bigoplus_{j} \Ind_{H_j'}^G \trivial$$ \pause
     On the level of BSD terms we get
     $$\bigg(\prod_{\fg \in \Gal(\bQ(\rho) / \bQ)} \BSD(E, \rho)^{\fg}\bigg)^m = \frac{\prod_i \BSD(E / F^{H_i})}{\prod_j \BSD(E / F^{H_j'})} ,$$
-    \pause so the left hand side is the norm of an element of $\bQ(\rho)$. \pause It is also the norm of an element from any subfield of $\bQ(\rho)$. 
+    \pause so the right hand side is the norm of an element of $\bQ(\rho)$. \pause It is also the norm of an element from any subfield of $\bQ(\rho)$. 
 \end{frame}
 
 \begin{frame}
@@ -520,7 +520,7 @@ This conjecture is studied in \cite{DEW1}. They show it is true assuming some we
         Let $E$ be an elliptic curve over a local field $K$ of characteristic $0$ and let $F/K$ be a finite extension. \pause
         \begin{enumerate}
             \item If $F/K$ unramified, the reduction of $E/K$ equals that of $E/F$.\pause
-            \item If $E/K$ is good or multiplicative, then $E/F$ has the same reduction.\pause
+            \item If $E/K$ is good or multiplicative,then $E/F$ has the same reduction.\pause
             \item If $E/K$ is non-split multiplicative, then $E/F$ is split multiplicative if and only if $F/K$ has even residual degree. \pause
             \item There exists a finite extension $L/K$ such that $E/L$ is either good or split multiplicative.
         \end{enumerate}
@@ -592,7 +592,7 @@ This conjecture is studied in \cite{DEW1}. They show it is true assuming some we
     \frametitle{A $D_{12}$ Example with $\QQ(\rho)=\QQ(\sqrt{3})$}
     Given a rational prime $p$, the splitting behaviour of $p$ in the intermediate fields of $F/\QQ$ is completely determined by $D_p$ and $I_p$. \pause By ranging over all possible combinations, one shows that 
     $$\frac{\prod_{\PP\mid p}c_\PP(E/F^{C_2})\prod_{\PP\mid p}c_\PP(E/F^{D_6})}{\prod_{\PP\mid p}c_\PP(E/F^{C_2^2})\prod_{\PP\mid p}c_\PP(E/F^{S_3})}\in\QQss.$$
-    \pause On the other hand, the contribution from additive reduction can be nontrivial. \pause For example, if $p=11$ has ramification degree $12$ and residue degree $2$, then we get a contribution of $11\cdot\square$. \pause
+    \pause On the other hand, the contribution from additive reduction can be nontrivial. \pause For example, if $p=11$ has ramification degree $12$ and residue degree $2$, then for any $E/\QQ$ additive at $11$ with $\nu_{11}(\Delta)=2$ we get a contribution of $11\cdot\square$. \pause
     \\~\\
     However, $11$ is not a norm from $\QQ(\sqrt{3})$, so we indeed expect rank growth!
 \end{frame}
@@ -828,6 +828,7 @@ is not unique, and is only defined up to Brauer relations.
     \pause We study the `contribution' $C_\pp(E,F/K)=\prod_{k\mid d}C_{\PP\mid\pp}(E/F^{C_k})^{\mu(k)}$.
 \end{frame}
 
+\iffalse
 \begin{frame}
     \frametitle{Quadratic Subfields of Cyclotomic Extensions}
     If $\psi_d$ is a faithful character of $C_d$, then $\QQ(\psi_d)=\QQ(\zeta_d)$ where $\zeta_d$ is a primitive $d$-th root of unity. \pause
@@ -843,6 +844,7 @@ is not unique, and is only defined up to Brauer relations.
     %    The number of quadratic subfields is determined by Galois correspondence. Also, $p$ is the only prime that ramifies in $\QQ(\zeta_p)$, and the only quadratic subfield unramified outside $p$ is $\QQ(\sqrt{p^*})$. The second part is similar with ramification at $2$ and $p$.
     %\end{proof}
 \end{frame}
+\fi
 
 
 \begin{frame}
@@ -859,7 +861,7 @@ is not unique, and is only defined up to Brauer relations.
         $1$ & $q$ & $n;\tilde{n}$ & $n;\tilde{n}$ & $\square$ \\ \hline
         \end{tabular}
     \end{table}\pause
-    From this it is clear we need to show that 
+    \textbf{Fact:} The only quadratic subfield of $\QQ(\zeta_q)$ is $\QQ(\sqrt{q^*})$ where $q^*=(-1)^{(q-1)/2}q$. \pause From this it is clear we need to show that 
 
     \begin{lemma}[1]
         Let $q$ be an odd prime. Then $q$ is a norm from $\QQ(\sqrt{q^*})$.
