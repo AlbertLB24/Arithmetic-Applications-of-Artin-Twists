@@ -278,6 +278,7 @@ Predicting Positive Rank}
 
 \end{frame}
 
+\iffalse
 \begin{frame}
     \frametitle{Birch and Swinnerton-Dyer for Artin Twists}
     %\begin{definition}
@@ -304,8 +305,10 @@ Predicting Positive Rank}
     \end{example}
 \end{frame}
 
+\fi
+
 \begin{frame}
-    \frametitle{Arithmetic and Analytic Information}
+    \frametitle{$S_3$ Example revisited}
     \begin{example}
         From the $S_3$ example, BSD1 predicts that $$\rk E/\QQ(\sqrt[3]{2},\zeta_3)+2\rk E/\QQ=\rk E/\QQ(\zeta_3)+2\rk E/\QQ(\sqrt[3]{2}).$$ \pause
         Let $V=E(\QQ(\sqrt[3]{2},\zeta_3))\otimes_\ZZ \CC$, which is naturally a $\CC S_3$-module. \pause Then 
@@ -749,6 +752,18 @@ is not unique, and is only defined up to Brauer relations.
     \begin{lemma}
         Suppose that the Theorem holds for faithful characters $\psi_d$ of $C_d$. Then it also holds for any representation $\rho$ of $C_d$.
     \end{lemma} \pause
+    If $\psi_d$ is a faithful character of $C_d$, then $\QQ(\psi_d)=\QQ(\zeta_d)$.
+    \begin{thm}
+        Let $d\geq2$ be a positive integer and let $F/K$ be a Galois extension of number fields such that $\Gal(F/K)=C_d$. If $E/\QQ$ is a semistable elliptic curve at $2$ and $3$, then for any $\QQ(\sqrt{D})\subseteq\QQ(\zeta_d)$,
+        $$\prod_{k\mid d}(C_{E/F^{C_k}})^{\mu(k)}\in N_{\QQ(\sqrt{D})/\QQ}(\QQ(\sqrt{D})^{\times}).$$
+    \end{thm}
+
+\end{frame}
+
+\iffalse
+
+\begin{frame}
+    \frametitle{Simplification to Faithful Characters}
 
     Ideas for the proof:
     \begin{enumerate}
@@ -759,17 +774,11 @@ is not unique, and is only defined up to Brauer relations.
         where $\psi_k$ is a character of order $k$.
     \end{enumerate}
 
+     Hence we have simplified the main result into proving the following. \pause
+    
 \end{frame}
 
-\begin{frame}
-    \frametitle{Simplification to Faithful Characters}
-    If $\psi_d$ is a faithful character of $C_d$, then $\QQ(\psi_d)=\QQ(\zeta_d)$. Hence we have simplified the main result into proving the following. \pause
-    \begin{thm}
-        Let $d\geq2$ be a positive integer and let $F/K$ be a Galois extension of number fields such that $\Gal(F/K)=C_d$. If $E/\QQ$ is a semistable elliptic curve at $2$ and $3$, then for any $\QQ(\sqrt{D})\subseteq\QQ(\zeta_d)$,
-        $$\prod_{k\mid d}(C_{E/F^{C_k}})^{\mu(k)}\in N_{\QQ(\sqrt{D})/\QQ}(\QQ(\sqrt{D})^{\times}).$$
-    \end{thm}
-\end{frame}
-
+\fi
 
 \begin{frame}
     \frametitle{Strategy for the Proof}
@@ -839,7 +848,7 @@ is not unique, and is only defined up to Brauer relations.
 
 \end{frame}
 
-
+\iffalse
 \begin{frame}
     \frametitle{Proof of Lemma 1}
     \begin{lemma}
@@ -850,7 +859,6 @@ is not unique, and is only defined up to Brauer relations.
     \end{proof}
 \end{frame}
 
-\iffalse
 \begin{frame}
     \frametitle{Proof of Lemma $2$}
     The proof of Lemma $2$ is a lot more subtle. Important ingrediets for its proof are:
