@@ -339,7 +339,7 @@ Predicting Positive Rank}
 
 \begin{frame}
     \frametitle{BSD term}
-    We discard some of the BSD terms for $E / K$
+    We discard some of the terms in BSD2 for $E / K$
     and define  
 
     \begin{definition}
@@ -358,7 +358,7 @@ Predicting Positive Rank}
     As in the $L$-function case, we would like to be able to break up $\BSD(E / F)$ according to representations of $G$. \pause
     
     \begin{conjecture}[BSD-term conjecture]
-        For each representation $\rho$ of $G$, there exists an invariant $\BSD(E, \rho) \in \CC^{\times}$ such that:\pause
+        For each representation $\rho$ of $G$\only<3>{( i.e. an Artin representation over $\bQ$ that factors though $G$)}, \pause there exists an invariant $\BSD(E, \rho) \in \CC^{\times}$ such that:\pause
         \begin{enumerate}
             \item$\BSD(E / F^H) = \BSD(E, \Ind_H^G \trivial)$ for $H \leq G$, \pause
             \item $\BSD(E, \rho \oplus \tau) = \BSD(E, \rho)\BSD(E , \tau)$, where $\tau \in \Rep(G)$.\pause
@@ -442,7 +442,7 @@ This conjecture is studied in \cite{DEW1}. They show it is true assuming some we
     \frametitle{Norm Relations Test}
     %We have deduced the following:
     \begin{theorem}[{Norm Relations Test, \cite[Theorem 33]{DEW1}}]\label{thm_positive_rank}
-    \small{  Suppose our conjecture for the BSD terms holds. Consider $E/\QQ$, and $F/\QQ$  with $G = \Gal(F / \bQ)$. Let $\rho$ be a representation of $G$, and let $\bQ(\sqrt{D}) \subset \bQ(\rho)$. Suppose we have  
+    \small{  Suppose the BSD-term conjecture holds. Consider $E/\QQ$, and $F/\QQ$  with $G = \Gal(F / \bQ)$. Let $\rho$ be a representation of $G$, and let $\bQ(\sqrt{D}) \subset \bQ(\rho)$. Suppose we have  
         $$\left(\bigoplus_{\mathfrak{g}\in\Gal(\QQ(\rho)/\QQ)}\rho^{\mathfrak{g}}\right)^{\oplus m}=\bigoplus_i\Ind_{H_i}^G\mathbbm{1}\ominus\bigoplus_j\Ind_{H'_j}^G\mathbbm{1}$$
         for some $m\geq 1$ and $H_i, H_j' \leq G$. If 
         $$\frac{\prod_i C_{E/F^{H_i}}}{\prod_j C_{E/F^{H_j'}}} \not\in
