@@ -15,7 +15,7 @@
 \setbeamercolor*{block body example}{fg=black,use=block title,bg=purple!20}
 \setbeamercolor*{block title}{use=example text,fg=white,bg=aqua!60!black}
 \setbeamercolor*{block body}{fg=black,use=block title example,bg=aqua!10}
-
+\setbeamertemplate{headline}{}
 \usepackage{graphicx}
 \usepackage{tikz-cd}
 
@@ -88,9 +88,24 @@ Predicting Positive Rank}
 
 \frame{\titlepage}
 
-\begin{frame}{Table of contents}
-    +notation
+\begin{frame}{Plan for today}
+
+\begin{enumerate}
+    \itemsep\setlength{1em}
+    \item Elliptic curves, Artin formalism, $\BSD$,
+    \item Norm Relations Test,
+    \item Computing local data + example, 
+    \item Representation theory,
+    \item Cyclic extensions,
+    \item Odd degree extensions.\pause
+\end{enumerate}
+     
+\vspace{1em}
+\textbf{Notation:} Throughout, $E$ will refer to an elliptic curve. All field extensions are finite. 
 \end{frame}
+
+\section*{Elliptic curves, Artin formalism, $\BSD$}
+\frame{\sectionpage}
 
 \begin{frame}
     \frametitle{Elliptic Curves}
@@ -319,6 +334,9 @@ Predicting Positive Rank}
 
 \end{frame}
 
+\section*{Norm Relations Test}
+\frame{\sectionpage}
+
 \begin{frame}
     \frametitle{BSD term}
     We discard some of the BSD terms for $E / K$
@@ -364,25 +382,25 @@ This conjecture is studied in \cite{DEW1}. They show it is true assuming some we
 \end{conjecture}
 \end{frame}
 
-%\begin{frame}
-%    \frametitle{Artin formalism for BSD}
-%    \begin{conjecture}
-%        For each representation $\rho$ of $G$, there exists an invariant $\BSD(E, \rho) \in \CC^{\times}$ (as before)  such that if $\langle \rho, E(F)_{\CC} \rangle = 0$, then
-%        \begin{enumerate}\setcounter{enumi}{2}
-%            \item Galois equivariance: $\BSD(E, \rho) \in \QQ(\rho)^{\times}$ and $$\BSD(E, \rho^{\mathfrak{g}}) = \BSD(E, \rho)^{\mathfrak{g}} \text{ for } \mathfrak{g} \in \Gal(\bQ(\rho) / \bQ).$$ 
-%        \end{enumerate}
+\begin{frame}
+    \frametitle{Artin formalism for BSD}
+    \begin{conjecture}
+        For each representation $\rho$ of $G$, there exists an invariant $\BSD(E, \rho) \in \CC^{\times}$ (as before)  such that if $\langle \rho, E(F)_{\CC} \rangle = 0$, then
+        \begin{enumerate}\setcounter{enumi}{2}
+            \item Galois equivariance: $\BSD(E, \rho) \in \QQ(\rho)^{\times}$ and $$\BSD(E, \rho^{\mathfrak{g}}) = \BSD(E, \rho)^{\mathfrak{g}} \text{ for } \mathfrak{g} \in \Gal(\bQ(\rho) / \bQ).$$ 
+        \end{enumerate}
     
-%    \end{conjecture}
-%    \pause
-%    Here 
-%    \begin{itemize}
-%        \item $E(F)_{\bC} = E(F) \otimes_{\bZ} \bC$ is viewed as a $G$-representation, \pause
-%        \item $\langle -, - \rangle$ is the usual inner product of characters of $G$, \pause
-%       \item $\bQ(\rho)$ is an abelian extension of $\bQ$ obtained by adding $\{ \Tr \rho(\fg) \colon \fg \in G \}$ to $\bQ$, \pause
-%        \item $\rho^{\fg}$ is the representation of $G$ with character $\Tr \rho^{\fg} = \fg \circ \Tr \rho $.
-%    \end{itemize}
+    \end{conjecture}
+    \pause
+    Here 
+    \begin{itemize}
+        \item $E(F)_{\bC} = E(F) \otimes_{\bZ} \bC$ is viewed as a $G$-representation, \pause
+        \item $\langle -, - \rangle$ is the usual inner product of characters of $G$, \pause
+       \item $\bQ(\rho)$ is an abelian extension of $\bQ$ obtained by adding $\{ \Tr \rho(\fg) \colon \fg \in G \}$ to $\bQ$, \pause
+        \item $\rho^{\fg}$ is the representation of $G$ with character $\Tr \rho^{\fg} = \fg \circ \Tr \rho $.
+    \end{itemize}
 
-%\end{frame}
+\end{frame}
 
 \begin{frame}
     \frametitle{Norm Relations Test}
@@ -458,6 +476,9 @@ This conjecture is studied in \cite{DEW1}. They show it is true assuming some we
     \end{conjecture}
 \end{frame}
 
+\section*{Computing local data}
+\frame{\sectionpage}
+
 \begin{frame}
     \frametitle{Local Data: Tamagawa Numbers}
     We now begin our study of the $C_{E/K}$ factor, upon which the test depends. 
@@ -531,6 +552,9 @@ This conjecture is studied in \cite{DEW1}. They show it is true assuming some we
         
 \end{frame}
 
+\section*{Representation theory}
+\frame{\sectionpage}
+
 
 \begin{frame}
     \frametitle{Brauer relations}
@@ -560,7 +584,7 @@ This conjecture is studied in \cite{DEW1}. They show it is true assuming some we
     \begin{example}
         Consider $G = S_3$. \pause 
         Then 
-        \[ \bC[G / C_1] \oplus \bC[G / G]^{\oplus 2} \simeq \bC[G / C_2]^{\oplus 2} \oplus \bC[G / C_3] .\] 
+        \[ \Ind_{C_1}^G \trivial \oplus (\Ind_{G}^G \trivial )^{\oplus 2} \simeq (\Ind_{C_2}^G \trivial)^{\oplus 2} \oplus \Ind_{C_3}^G \trivial .\] 
     \end{example}
 \end{frame}
 
@@ -587,7 +611,7 @@ This conjecture is studied in \cite{DEW1}. They show it is true assuming some we
     \[ \bigg(\bigoplus_{\mathfrak{g}\in\Gal(\QQ(\rho)/\QQ)}\rho^{\mathfrak{g}}\bigg)^{\oplus m}=\bigoplus_i\Ind_{H_i}^G\mathbbm{1}\ominus\bigoplus_j\Ind_{H'_j}^G\mathbbm{1}\] 
     for $\rho$ a representation of $G$, $H_i, H_j' \leq G$. \pause 
     If we have a Brauer relation
-    \[ \bigoplus_{k \in K} \Ind_{F_k}^G \trivial \ominus \big{(}\bigoplus_{l \in L} \Ind_{F_l}^G \trivial\big{)} = 0 \] 
+    \[ \bigoplus_{k \in K} \Ind_{F_k}^G \trivial \ominus \bigoplus_{l \in L} \Ind_{F_l}^G \trivial = 0 \] 
     for $F_k, F_l \leq G$, \pause then 
     \small{\[ \bigg(\bigoplus_{\mathfrak{g}\in\Gal(\QQ(\rho)/\QQ)}\rho^{\mathfrak{g}}\bigg)^{\oplus m}=\bigoplus_i\Ind_{H_i}^G\mathbbm{1}\ominus\bigoplus_j\Ind_{H'_j}^G\mathbbm{1} \oplus \bigoplus_{k \in K} \Ind_{F_k}^G \trivial \ominus \bigoplus_{l \in L} \Ind_{F_l}^G \trivial \]}
 \end{frame}
@@ -622,14 +646,18 @@ is not unique, and is only defined up to Brauer relations.
         A representation-theoretic formula for counting the number of primes of given ramification degree does not exist. 
 \end{frame}
 
-\begin{frame}{D-local functions}
-    Consider $E / F$, and $F / \bQ$ Galois with $G = \Gal(F / \bQ)$. Let $L = F^H$.
+\begin{frame}{Local functions}
+    Consider $E / \bQ$, and $F / \bQ$ Galois with $G = \Gal(F / \bQ)$. Let $L = F^H$.
     
     As we saw, the reduction types of elliptic curves at primes change in field extensions according to ramification and residue degrees.\pause 
 
     Now $$C_{E / L} = \prod_{\fP \subset \cO_L} c_{\fP}(E / L) \cdot d_{\fP}(E / L).$$ 
     Let $\fP \mid p$ for $p \in \bQ$ prime. \pause Then $c_{\fP}(E / L) \cdot d_{\fP}(E / L)$ can be expressed as a function of $e_{\fP \mid p}$, $f_{\fP \mid p}$ (depending on the reduction type of $E / \bQ_p$). \pause As we saw, these depend on $D$, $I$, $H$, $DxH$. 
 \end{frame}
+
+
+\section*{Cyclic extensions}
+\frame{\sectionpage}
 
 \begin{frame}
     \frametitle{Consistency with the Cyclic Case}
@@ -825,6 +853,9 @@ is not unique, and is only defined up to Brauer relations.
     \end{enumerate}
 \end{frame}
 
+\section*{Odd degree extensions}
+\frame{\sectionpage}
+
 \begin{frame}
     \frametitle{Odd degree extensions}
     Now consider $E / \bQ$, and $F / \bQ$ Galois with $G = \Gal(F / \bQ)$ of odd order. \pause
@@ -856,7 +887,7 @@ is not unique, and is only defined up to Brauer relations.
 \end{frame}
 
 \begin{frame}
-    \frametitle{Towards proving...}
+    \frametitle{Notation}
     Recall that 
     $$ C_{E / K} = \prod_{\fP \subset \cO_K} 
     c_{\fP}(E / K) \cdot d_{\fP}(E / K) = \prod_{p \in \bQ \text{ prime}} C_{\fP \mid p}(E / K)
@@ -867,9 +898,13 @@ is not unique, and is only defined up to Brauer relations.
     depends on the choice of decomposition group $D_{p}$ and inertia group $I_{p}$ of $p$ in $F / \bQ$.
 \end{frame}
 
-%\begin{frame}{Minimal $m$}
-%    
-%\end{frame}
+\begin{frame}{Brauer relations}
+    Let $F / \bQ$ be an extension of odd order with $G = \Gal(F / \bQ)$. \pause 
+    If we have a Brauer relation
+    \[ \bigoplus_{k \in K} \Ind_{J_k}^G \trivial \ominus \bigoplus_{l \in L} \Ind_{J_l}^G \trivial = 0 \] 
+    for $J_k, J_l \leq G$, \pause then 
+     $$\frac{\prod_k C_{\fP \mid p}(E / F^{J_k})}{\prod_l C_{\fP \mid p}(E / F^{J_l})} \in (\bQ)^{\times 2}.$$ 
+\end{frame}
 
 \begin{frame}{Residue degree one}
     
@@ -956,7 +991,7 @@ The following is a refinement of our Norm Relations Test:
 \begin{frame}
     \vspace{4em}
     \begin{center}
-        \textbf{Thank you!}
+        \textbf{Thank you! Questions?}
     \end{center}
 \end{frame}
 
